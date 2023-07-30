@@ -20,8 +20,8 @@
     <!-- jQuery 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- nav script -->
-    <script src="js/onpick_nav.js"></script>
-    <script src="js/onpick_nav2.js"></script>
+    <script src="<%=request.getContextPath() %>/onpick/js/onpick_nav.js"></script>
+    <script src="<%=request.getContextPath() %>/onpick/js/onpick_nav2.js"></script>
 </head>
 <body>
     <div class="wrap">

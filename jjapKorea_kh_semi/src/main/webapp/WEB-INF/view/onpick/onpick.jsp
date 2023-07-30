@@ -24,7 +24,7 @@
     <!-- [8] main 영역 -->
     <link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_main.css">
     <!-- [9] footer 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/onpick_footer.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_footer.css">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- 부트스트랩 css -->
@@ -34,7 +34,7 @@
     <!-- jQuery 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- nav script -->
-    <script src="js/onpick_nav.js"></script>
+    <script src="<%=request.getContextPath() %>/onpick/js/onpick_nav.js"></script>
     <jsp:include page="onpick_header.jsp"></jsp:include>
     <jsp:include page="onpick_nav.jsp"></jsp:include>
     <jsp:include page="onpick_main.jsp"></jsp:include>
