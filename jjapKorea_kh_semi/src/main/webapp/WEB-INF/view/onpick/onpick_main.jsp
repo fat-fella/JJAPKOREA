@@ -4708,6 +4708,6 @@
     <script>
     </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="./js/onepick_main_scroll.js"></script>
+    <script src="<%=request.getContextPath() %>/onpick/js/onepick_main_scroll.js"></script>
 </body>
 </html>
