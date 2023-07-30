@@ -376,7 +376,7 @@
                                                         <!-- row01 영역으로 이동 -->
                                                         <div class="sideBtmBx">
                                                             <div class="sideLinkType01">
-                                                                <a href="<%=request.getContextPath() %>/./onpick/onpick.jsp" class="onepick">
+                                                                <a href="<%=request.getContextPath() %>/onpick" class="onepick">
                                                                     <strong>이직은 원픽</strong>
                                                                 </a>
                                                             </div>
@@ -445,7 +445,7 @@
                                 <!-- 신입공채 레이어 // -->
                             </li>
                             <li class="navItem lyNull theme" id="theme">
-                                <a href="<%=request.getContextPath() %>/onpick/onpick" class="linkItem"><span class="spNav"><span class="txIr">원픽</span></span></a>
+                                <a href="<%=request.getContextPath() %>/onpick" class="linkItem"><span class="spNav"><span class="txIr">원픽</span></span></a>
                             </li>
                             <li id="gnbHh" class="navItem hh">
                                 <a href="https://www.jobkorea.co.kr/headhunting/home" class="linkItem"><span class="spNav"><span class="txIr">헤드헌팅</span></span></a>
