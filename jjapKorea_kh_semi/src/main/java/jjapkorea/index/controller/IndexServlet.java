@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class IndenxServlet
  */
 @WebServlet("/index")
-public class IndenxServlet extends HttpServlet {
+public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public IndenxServlet() {
+    public IndexServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
