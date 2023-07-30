@@ -68,3 +68,4 @@ REFERENCES "MEMBER" (
 	"MID"
 );
 
+desc 
