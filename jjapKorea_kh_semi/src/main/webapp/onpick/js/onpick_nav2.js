@@ -40,6 +40,8 @@ $(document).ready(function () {
     }
 
 
+	$(".companyname").children().text();
+    $('.bannereach');
     $.ajax({
     url: "onpick_main.html",
     success: function (result) {

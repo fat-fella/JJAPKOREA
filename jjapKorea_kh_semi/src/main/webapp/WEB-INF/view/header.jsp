@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mainpage Header</title>
     <!-- [5] layout 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_layout.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_layout.css">
     <!-- [6] header 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_header.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_header.css">
     <!-- [7] nav 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_nav.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_nav.css">
     <!-- [8] main 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_main.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_main.css">
     <!-- [9] footer 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_footer.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_footer.css">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- 부트스트랩 css -->

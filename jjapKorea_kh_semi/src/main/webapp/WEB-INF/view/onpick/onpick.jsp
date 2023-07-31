@@ -36,7 +36,7 @@
     <!-- nav script -->
     <script src="<%=request.getContextPath() %>/onpick/js/onpick_nav.js"></script>
     <jsp:include page="onpick_header.jsp"></jsp:include>
-    <jsp:include page="onpick_nav.jsp"></jsp:include>
+    <%-- <jsp:include page="onpick_nav.jsp"></jsp:include> --%>
     <jsp:include page="onpick_main.jsp"></jsp:include>
     <jsp:include page="onpick_footer.jsp"></jsp:include>
     <script>

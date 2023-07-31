@@ -9,7 +9,7 @@
     <!-- [1] 해상도 - 최적해상도 1250 결정 -->
     <!-- [2] content 영역 1040px 80vw 90% 배치(center) -->
     <!-- [3] reset.css 폴더경로 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/reset.css" />
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/reset.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -21,15 +21,15 @@
     <!-- [4] button 3개 class 미리 만들어두기 -->
     <!-- [4] a 모양 미리 만들어두기 -->
     <!-- [5] layout 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_layout.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_layout.css">
     <!-- [6] header 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_header.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_header.css">
     <!-- [7] nav 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_nav.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_nav.css">
     <!-- [8] main 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_main.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_main.css">
     <!-- [9] footer 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_footer.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_footer.css">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- 부트스트랩 css -->

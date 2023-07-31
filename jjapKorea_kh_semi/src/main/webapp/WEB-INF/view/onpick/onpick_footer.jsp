@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onpick Footer</title>
     <!-- [3] reset.css 폴더경로 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/reset.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/reset.css">
     <!-- [5] layout 영역 -->
     <link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_layout.css">
     <!-- [9] footer 영역 -->

@@ -9,7 +9,7 @@
     <!-- [1] 해상도 - 최적해상도 1260 결정 -->
     <!-- [2] content 영역 1260px 설정 -->
     <!-- [3] reset.css 폴더경로 -->
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/reset.css">
     <!-- [4] project명 또는 core.css 폴더경로 - bootstrap 등으로 대체 -->
     <!-- [4] 기본색상 10~15개 정도 class 미리 만들어두기 -->
     <!-- [4] 폰트크기 3~7개 정도 class 미리 만들어두기 -->
@@ -17,15 +17,15 @@
     <!-- [4] a 모양 미리 만들어두기 -->
     
     <!-- [5] layout 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_layout.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_layout.css">
     <!-- [6] header 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_header.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_header.css">
     <!-- [7] nav 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_nav.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_nav.css">
     <!-- [8] main 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_main.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_main.css">
     <!-- [9] footer 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/jobkh_footer.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_footer.css">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <!-- 부트스트랩 css -->
@@ -1143,17 +1143,17 @@
                         <div class="tool">
                             <p class="tit">취업 성공 툴</p>
                             <ul class="menu">
-                                <li class="menu-item"><a href="# return false;"><img src="images/자소서.png">자소서작성</a></li>
-                                <li class="menu-item"><a href="# return false;"><img src="images/맞춤법.png">맞춤법검사</a></li>
-                                <li class="menu-item"><a href="# return false;"><img src="images/글자수.png">글자수세기</a></li>
-                                <li class="menu-item"><a href="# return false;"><img src="images/학점.png">학점계산기</a></li>
+                                <li class="menu-item"><a href="# return false;"><img src="resources/images/자소서.png">자소서작성</a></li>
+                                <li class="menu-item"><a href="# return false;"><img src="resources/images/맞춤법.png">맞춤법검사</a></li>
+                                <li class="menu-item"><a href="# return false;"><img src="resources/images/글자수.png">글자수세기</a></li>
+                                <li class="menu-item"><a href="# return false;"><img src="resources/images/학점.png">학점계산기</a></li>
                             </ul>
                         </div>
                         <hr>
                         <div class="rcmd">
                             <p class="tit">추천 서비스</p>
                             <div class="tags blind">
-                                <p><a href="./onpick/onpick.html" class="onpick"><img src="images/check.svg" width="15px" height="15px"> 이직은 원픽</a></p>
+                                <p><a href="./onpick/onpick.html" class="onpick"><img src="resources/images/check.svg" width="15px" height="15px"> 이직은 원픽</a></p>
                                 <p><a href="# return false;"># 합격자소서</a></p>
                                 <p><a href="# return false;"># 인적성·면접후기</a></p>
                                 <p><a href="# return false;"># 공채달력</a></p>
