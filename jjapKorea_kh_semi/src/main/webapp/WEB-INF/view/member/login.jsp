@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/member/css/login.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/member/css/jobkh_login.css">
 </head>
 
 <body>
