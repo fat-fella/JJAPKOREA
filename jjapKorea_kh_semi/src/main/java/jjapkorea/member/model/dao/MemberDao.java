@@ -15,7 +15,7 @@ public class MemberDao {
 			System.out.println("[Member Dao login] vo:" + vo);
 
 			int result = 0;
-			String query="select count(*) cnt from member where mid=? and mpwd=?";
+			String query="select count(*) cnt from member where mid=? and mpw=?";
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			try {
@@ -40,7 +40,7 @@ public class MemberDao {
 			System.out.println("[Member Dao login] mid:" + mid);
 
 			String result = null;
-			String query="select mpwd from member where mid=?";
+			String query="select mpw from member where mid=?";
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			try {
