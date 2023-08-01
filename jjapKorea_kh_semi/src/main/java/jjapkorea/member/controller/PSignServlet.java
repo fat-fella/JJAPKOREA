@@ -28,7 +28,7 @@ public class PSignServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	
-	request.getRequestDispatcher("WEB-INF/view/member/psignup.jsp");
+	request.getRequestDispatcher("WEB-INF/view/member/psignup.jsp").forward(request, response);
 	}
 
 	/**
