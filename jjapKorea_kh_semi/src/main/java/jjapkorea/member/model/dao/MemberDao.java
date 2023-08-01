@@ -48,7 +48,7 @@ public class MemberDao {
 				pstmt.setString(1, mid);
 				rs = pstmt.executeQuery();
 				if(rs.next()) {
-					result = rs.getString("mpwd");
+					result = rs.getString("mpw");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
