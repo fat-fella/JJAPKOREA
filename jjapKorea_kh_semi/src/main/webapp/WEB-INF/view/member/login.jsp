@@ -24,7 +24,7 @@
                 <div class="logWrap" id="loginFormWrite">
                     <h2 class="blind">로그인</h2>
 
-                    <form name="form" id="form" method="post" action="/Login/Login.asp" onsubmit="return login_send();">
+                    <form name="form" id="form" method="post" action="<%=request.getContextPath() %>/login.login" onsubmit="return login_send();">
                         <fieldset class="login_form">
                             <legend class="blind">로그인 입력폼</legend>
                             <input type="hidden" name="re_url" id="re_url" value="/">
@@ -61,7 +61,6 @@
                                 </p>
                             </div>
 
-							<form action="<%=request.getContextPath() %>/login.login" method="post">
                             <div class="input_row">
                                 <label for="M_ID" id="lb_id" class="blind">아이디</label>
                                 <input type="text" class="inpTxt inpID off" name="M_ID" id="M_ID" size="16"
@@ -74,7 +73,6 @@
                                     <em>Caps Lock</em>이 켜져 있습니다.<span class="mainIcn mainIcnArrUp"></span>
                                 </div>
                             </div>
-                            </form>
                             <div class="check_row">
                                 <input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y"> <label
                                     for="lb_idSave">로그인 상태 유지</label>
