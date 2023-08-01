@@ -4,9 +4,19 @@ public class MemberVo {
 	private String mid;
 	private String mpw;
 	private int mtype;
-	
-	
-	
+	public MemberVo() {
+	}
+	public MemberVo(String mid, String mpw) {
+		super();
+		this.mid = mid;
+		this.mpw = mpw;
+	}
+	public MemberVo(String mid, String mpw, int mtype) {
+		super();
+		this.mid = mid;
+		this.mpw = mpw;
+		this.mtype = mtype;
+	}
 	public String getMid() {
 		return mid;
 	}
