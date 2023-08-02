@@ -88,7 +88,7 @@
             <!-- // headerInner -->
             <div class="headInner">
                 <h1 class="jkLogo">
-                    <a href="<%=request.getContextPath() %>./index.jsp"></a> 
+                    <a href="<%=request.getContextPath() %>/index"></a> 
                 </h1>
                 <!-- // search -->
                 <div class="search">
