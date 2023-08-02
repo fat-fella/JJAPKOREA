@@ -35,8 +35,8 @@
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person "><a href="#">개인회원</a></li>
-				<li class="corp on"><a href="#">기업회원</a></li>
+				<li class="person "><a href="<%=request.getContextPath()%>/psignup">개인회원</a></li>
+				<li class="corp on"><a href="<%=request.getContextPath()%>/signup">기업회원</a></li>
 			</ul>
 		</div>
 
