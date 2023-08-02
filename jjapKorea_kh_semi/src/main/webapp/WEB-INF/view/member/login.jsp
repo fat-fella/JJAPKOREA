@@ -16,7 +16,7 @@
         <div id="container">
             <div class="logtop logtop_login">
                 <h1 class="hd"><span class="logo"></span>하나의 아이디로 잡코리아, 알바몬 서비스를 모두 이용하실 수 있습니다.</h1>
-                <p class="lnb"><a href="http://www.jobkorea.co.kr/">잡코리아홈</a> <span class="txtBar">|</span> <a
+                <p class="lnb"><a href="<%=request.getContextPath() %>/index">잡코리아홈</a> <span class="txtBar">|</span> <a
                         href="http://www.jobkorea.co.kr/Customer_C/CC_Main.asp">고객센터</a></p>
             </div>
 
