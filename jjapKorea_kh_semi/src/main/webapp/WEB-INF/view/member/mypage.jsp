@@ -25,10 +25,13 @@
     <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_main.css">
     <!-- [9] footer 영역 -->
     <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/jobkh_footer.css">
-	<!-- contwrap -->
+	<!-- 스크랩부 -->
     <link rel="stylesheet" href="<%=request.getContextPath() %>/member/css/jobkh_mypage.css">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+    
+    
     <!-- 부트스트랩 css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="icon" href="resources/favicon.ico">
