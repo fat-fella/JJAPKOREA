@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>회원가입 | KH</title>
+<link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath() %>/member/css/jobkh_psignup.css">
 </head>
@@ -1596,7 +1597,7 @@
 		/* document.querySelector(".mbrRegist .dev-phone").addEventListener("focusout", function(){
 			col_1List[4].style.cssText = "";
 	        document.querySelector(".mbr_phone label").style.cssText = "font-size: 16px";
-		}) */
+		}) */		
 	</script>
 </body>
 </html>

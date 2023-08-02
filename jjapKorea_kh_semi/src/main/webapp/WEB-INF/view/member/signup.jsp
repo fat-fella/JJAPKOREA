@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>회원가입 | KH</title>
+<link rel="icon" href="resources/favicon.ico">
 <link rel="SHORTCUT ICON" href="/favicon.ico?202307261400">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/member/css/jobkh_signup.css">
