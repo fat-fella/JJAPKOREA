@@ -265,6 +265,19 @@
         </div><!-- footer //-->
 
     </div>
+    <script>
+        document.querySelector("#devMemTab>li:first-child").addEventListener("click", function(){
+                document.querySelector("#devMemTab>li:first-child").classList.add("on");
+                document.querySelector("#devMemTab>li:nth-child(2)").classList.remove("on");
+                document.querySelector("#M_Alert").style.display = "block";
+                document.querySelector("#Co_Alert").style.display = "none";
+        })
+        document.querySelector("#devMemTab>li:nth-child(2)").addEventListener("click", function(){
+                document.querySelector("#devMemTab>li:first-child").classList.remove("on");
+                document.querySelector("#devMemTab>li:nth-child(2)").classList.add("on");
+                document.querySelector("#M_Alert").style.display = "none";
+                document.querySelector("#Co_Alert").style.display = "block";
+        })
+    </script>
 </body>
-
 </html>
