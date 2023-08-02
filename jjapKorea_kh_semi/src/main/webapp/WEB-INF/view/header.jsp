@@ -648,10 +648,10 @@
                         <ul id="devMyPage" class="userNav">
                             <ul class="userNav">
                                 <li class="userNav-item login">
-                                    <a href="https://www.jobkorea.co.kr/Login/Login_Tot.asp?rDBName=GG&amp;re_url=/" class="txt-button login-button">로그인</a>
+                                    <a href="<%=request.getContextPath()%>/login" class="txt-button login-button">로그인</a>
                                 </li>
                                 <li class="userNav-item join">
-                                    <a href="https://www.jobkorea.co.kr/Join/M_Regist" class="txt-button join-button">회원가입</a>
+                                    <a href="<%=request.getContextPath() %>/psignup" class="txt-button join-button">회원가입</a>
                                 </li>
                                 <li class="userNav-item corp">
                                     <a href="https://www.jobkorea.co.kr/Corp/Index" target="_blank"><span class="spGnb">기업서비스</span></a>

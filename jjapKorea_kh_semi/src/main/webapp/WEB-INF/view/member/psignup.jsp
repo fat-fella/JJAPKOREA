@@ -33,9 +33,9 @@
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
 				<li class="person on"><a
-					href="https://www.jobkorea.co.kr/Join/M_Regist?OEM_No=1&amp;Org_OEM_No=1">개인회원</a></li>
+					href="<%=request.getContextPath()%>/psignup">개인회원</a></li>
 				<li class="corp "><a
-					href="https://www.jobkorea.co.kr/Join/GI_Regist?OEM_No=1&amp;Org_OEM_No=1">기업회원</a></li>
+					href="<%=request.getContextPath()%>/signup">기업회원</a></li>
 			</ul>
 		</div>
 
