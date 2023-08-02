@@ -26,7 +26,7 @@
 
 			<h3 class="skip">글로벌 메뉴</h3>
 			<ul class="gnb f_clear">
-				<li><a href="https://www.jobkorea.co.kr">홈</a></li>
+				<li><a href="<%=request.getContextPath()%>/index">홈</a></li>
 				<li><a href="/help/">고객센터</a></li>
 			</ul>
 

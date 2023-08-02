@@ -17,7 +17,7 @@
 
 		<div id="header">
 			<h1>
-				<a href="https://www.jobkorea.co.kr"><img
+				<a href="<%request.getContextPath() %>/index"><img
 					src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
 					alt="JOBKOREA x albamon"></a>
 			</h1>
@@ -29,7 +29,7 @@
 
 			<h3 class="skip">글로벌 메뉴</h3>
 			<ul class="gnb f_clear">
-				<li><a href="https://www.jobkorea.co.kr">홈</a></li>
+				<li><a href="<%request.getContextPath() %>/index">홈</a></li>
 				<li><a href="/help/">고객센터</a></li>
 			</ul>
 
@@ -79,7 +79,7 @@
 
 
 						<div class="tabs tabsGiCateogry" role="tablist">
-							<a href="#" class="tab tabGi active">기업회원</a> <a href="#"
+							<a href="<%=request.getContextPath() %>/psignup" class="tab tabGi active">기업회원</a> <a href="#"
 								class="tab tabGi ">서치펌회원</a>
 						</div>
 
