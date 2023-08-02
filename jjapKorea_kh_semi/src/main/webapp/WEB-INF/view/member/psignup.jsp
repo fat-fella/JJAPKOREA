@@ -1555,5 +1555,48 @@
 		height="0" style="display: none;"></iframe>
 	<iframe height="0" width="0" title="Criteo DIS iframe"
 		style="display: none;"></iframe>
+	<script>
+		var col_1List = document.getElementsByClassName("col_1");
+		document.querySelector(".mbrRegist .dev-name").addEventListener("focus", function(){
+			col_1List[0].style.cssText = "top: 9px";
+	        document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 11px";
+		})
+		/* document.querySelector(".mbrRegist .dev-name").addEventListener("focusout", function(){
+			col_1List[0].style.cssText = "";
+	        document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 16px";
+		}) */
+		document.querySelector(".mbrRegist .dev-id").addEventListener("focus", function(){
+			col_1List[1].style.cssText = "top: 9px";
+	        document.querySelector(".mbr_id label").style.cssText = "font-size: 11px";
+		})
+		/* document.querySelector(".mbrRegist .dev-id").addEventListener("focusout", function(){
+			col_1List[1].style.cssText = "";
+	        document.querySelector(".mbr_id label").style.cssText = "font-size: 16px";
+		}) */
+		document.querySelector(".mbrRegist .dev-password").addEventListener("focus", function(){
+			col_1List[2].style.cssText = "top: 9px";
+	        document.querySelector(".mbr_passwd label").style.cssText = "font-size: 11px";
+		})
+		/* document.querySelector(".mbrRegist .dev-password").addEventListener("focusout", function(){
+			col_1List[2].style.cssText = "";
+	        document.querySelector(".mbr_passwd label").style.cssText = "font-size: 16px";
+		}) */
+		document.querySelector(".mbrRegist .dev-mail").addEventListener("focus", function(){
+			col_1List[3].style.cssText = "top: 9px";
+	        document.querySelector(".mbr_email label").style.cssText = "font-size: 11px";
+		})
+		/* document.querySelector(".mbrRegist .dev-mail").addEventListener("focusout", function(){
+			col_1List[3].style.cssText = "";
+	        document.querySelector(".mbr_email label").style.cssText = "font-size: 16px";
+		}) */
+		document.querySelector(".mbrRegist .dev-phone").addEventListener("focus", function(){
+			col_1List[4].style.cssText = "top: 9px";
+	        document.querySelector(".mbr_phone label").style.cssText = "font-size: 11px";
+		})
+		/* document.querySelector(".mbrRegist .dev-phone").addEventListener("focusout", function(){
+			col_1List[4].style.cssText = "";
+	        document.querySelector(".mbr_phone label").style.cssText = "font-size: 16px";
+		}) */
+	</script>
 </body>
 </html>
