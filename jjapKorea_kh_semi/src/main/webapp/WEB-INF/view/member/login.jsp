@@ -290,7 +290,8 @@
 
     </div>
     <script>
-    document.querySelector(".input_row.co").style.display = "none";
+   		document.querySelector(".input_row.co").style.display = "none";
+   		
         document.querySelector("#devMemTab>li:first-child").addEventListener("click", function(){
                 document.querySelector("#devMemTab>li:first-child").classList.add("on");
                 document.querySelector("#devMemTab>li:nth-child(2)").classList.remove("on");
@@ -308,6 +309,18 @@
                 document.querySelector(".input_row").style.display = "none";
                 document.querySelector(".input_row.co").style.display = "block";
         })
+        
+        document.querySelector("#devMemTab>li>a").setAttribute("href","javascript:void(0)"); 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </script>
 </body>
 </html>
