@@ -39,11 +39,11 @@
                             <input type="hidden" name="LoginPage" value="/Login/Login_Tot.asp">
                             <input type="hidden" name="returnHost" id="returnHost" value="http://www.jobkorea.co.kr">
                             <input type="hidden" name="jkwww_host" id="jkwww_host" value="https://www.jobkorea.co.kr">
-                            <input type="hidden" name="m_type" id="m_type" value="">
                             <input type="hidden" name="NaverReferReURL_Stat" id="NaverReferReURL_Stat" value="">
                             <input type="hidden" name="DB_Name" id="DB_Name" value="GG">
                             <input type="hidden" name="ignoreSession" id="ignoreSession" value="">
 
+                            <input type="hidden" name="m_type" id="m_type" value="">
                             <!-- 회원선택-->
                             <div class="select_row">
                                 <ul id="devMemTab">
@@ -346,6 +346,7 @@
 	    inputRows[1].style.display = "none";
 	    
 	    tabs[0].addEventListener("click", function() {
+	    	$("#m_type").val("P");
 	        tabs[0].classList.add("on");
 	        tabs[1].classList.remove("on");
 	        document.querySelector("#M_Alert").style.display = "block";
@@ -355,6 +356,7 @@
 	    });
 
 	    tabs[1].addEventListener("click", function() {
+	    	$("#m_type").val("B");
 	        tabs[0].classList.remove("on");
 	        tabs[1].classList.add("on");
 	        document.querySelector("#M_Alert").style.display = "none";
