@@ -72,4 +72,13 @@ public class MemberService {
 		close(conn);
 		return result;
 	}
+	//businesslogin
+	public String businessLogin(String mid) {
+		String result = null;
+		Connection conn = getConnection();
+		result = dao.businessLogin(conn, mid);
+		close(conn);
+		return result;
+	}
+	
 }

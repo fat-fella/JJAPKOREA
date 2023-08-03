@@ -73,7 +73,30 @@
                                 <div class="lyCapsLock" id="ipNotice">
                                     <em>Caps Lock</em>이 켜져 있습니다.<span class="mainIcn mainIcnArrUp"></span>
                                 </div>
+                                
                             </div>
+
+                            <div class="input_row co">
+                                <label for="M_ID" id="lb_id" class="blind">아이디</label>
+                                <input type="text" class="inpTxt inpID off" name="M_ID2" id="M_ID" size="16"
+                                    maxlength="20" title="아이디 입력" style="ime-mode:inactive;" autocomplete="off">
+                                <label for="M_PWD" id="lb_pw" class="blind">비밀번호</label>
+                                <input type="password" class="inpTxt inpPW devCapsLock off" name="M_PWD2" id="M_PWD"
+                                    size="16" title="비밀번호 입력" autocomplete="off">
+                                <button type="submit" class="btLoin">로그인</button>
+                                <div class="lyCapsLock" id="ipNotice">
+                                    <em>Caps Lock</em>이 켜져 있습니다.<span class="mainIcn mainIcnArrUp"></span>
+                                </div>
+                                
+                            </div>
+
+
+
+
+
+
+
+
                             <div class="check_row">
                                 <input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y"> <label
                                     for="lb_idSave">로그인 상태 유지</label>
@@ -267,17 +290,23 @@
 
     </div>
     <script>
+    document.querySelector(".input_row.co").style.display = "none";
         document.querySelector("#devMemTab>li:first-child").addEventListener("click", function(){
                 document.querySelector("#devMemTab>li:first-child").classList.add("on");
                 document.querySelector("#devMemTab>li:nth-child(2)").classList.remove("on");
                 document.querySelector("#M_Alert").style.display = "block";
                 document.querySelector("#Co_Alert").style.display = "none";
+                document.querySelector(".input_row").style.display = "block";
+                document.querySelector(".input_row.co").style.display = "none";
+               
         })
         document.querySelector("#devMemTab>li:nth-child(2)").addEventListener("click", function(){
                 document.querySelector("#devMemTab>li:first-child").classList.remove("on");
                 document.querySelector("#devMemTab>li:nth-child(2)").classList.add("on");
                 document.querySelector("#M_Alert").style.display = "none";
                 document.querySelector("#Co_Alert").style.display = "block";
+                document.querySelector(".input_row").style.display = "none";
+                document.querySelector(".input_row.co").style.display = "block";
         })
     </script>
 </body>

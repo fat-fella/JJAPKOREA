@@ -40,7 +40,7 @@ public class MemberDao {
 			System.out.println("[Member Dao login] mid:" + mid);
 
 			String result = null;
-			String query="select mpw from member where mid=?";
+			String query="select mpw from member where mid=? and mtype=1";
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			try {
@@ -59,7 +59,31 @@ public class MemberDao {
 			return result;
 		}
 	
-	
+
+		
+		//기업회원로그인
+		public String businessLogin(Connection conn, String mid) {
+			System.out.println("[Business Dao login] mid:" + mid);
+
+			String result = null;
+			String query="select mpw from member where mid=? and mtype=2";
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			try {
+				pstmt = conn.prepareStatement(query);
+				pstmt.setString(1, mid);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					result = rs.getString("mpw");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				close(pstmt);
+			}
+			System.out.println("[Business Dao login] return:" + result);
+			return result;
+		}
 	
 	
 	

@@ -31,6 +31,7 @@ public class LoginDoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mid=	request.getParameter("M_ID");
 		String mpw = request.getParameter("M_PWD");
+		
 		MemberVo vo = new MemberVo(mid, mpw);
 		String result = new MemberService().login(mid);
 		String sendUrl = request.getContextPath(); 
@@ -49,6 +50,25 @@ public class LoginDoServlet extends HttpServlet {
 			sendUrl += "/login";
 		}
 		response.sendRedirect(sendUrl);
+		//기업
+		String mid2=	request.getParameter("M_ID2");
+		String mpw2 = request.getParameter("M_PWD2");
+		MemberVo vo2 = new MemberVo(mid2, mpw2);
+		String result2 = new MemberService().businessLogin(mid2);
+		String sendUrl2 = request.getContextPath();
+		if(mpw2 == null) {
+			// 아이디가 존재하지 않습니다.
+		} else if(mpw2.equals(result2)) {
+			System.out.println("로그인 성공");
+			request.setAttribute("loginId2", mid2);
+			request.getSession().setAttribute("successFailMsg2", "로그인성공");
+			request.getSession().setAttribute("SsLoginId2", mid2);
+			sendUrl2 += "/index"; 
+		} else {
+			System.out.println("로그인 실패");
+			request.getSession().setAttribute("successFailMsg2", "로그인 실패하였습니다.\n 아이디와 패스워드를 다시 확인하고 로그인 시도해주세요.");
+			sendUrl2 += "/login";
+		}
 	}
 
 	/**
