@@ -37,7 +37,7 @@ public class LoginDoServlet extends HttpServlet {
 		String result = new MemberService().login(mid);
 		String sendUrl = request.getContextPath(); 
 		// TODO session
-		if(mtype.equals("P")) {
+		if(!mtype.equals("B")) {
 			if(mpw == null) {
 				// 아이디가 존재하지 않습니다.
 			} else if(mpw.equals(result)) {
