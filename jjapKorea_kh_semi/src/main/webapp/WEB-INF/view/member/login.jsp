@@ -9,6 +9,8 @@
     <title>로그인 | KH</title>
     <link rel="icon" href="resources/favicon.ico">
     <link rel="stylesheet" href="<%=request.getContextPath() %>/member/css/jobkh_login.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </head>
 
 <body>
@@ -76,7 +78,7 @@
                                 
                             </div>
 
-                            <div class="input_row co">
+                            <div class="input_row">
                                 <label for="M_ID" id="lb_id" class="blind">아이디</label>
                                 <input type="text" class="inpTxt inpID off" name="M_ID2" id="M_ID" size="16"
                                     maxlength="20" title="아이디 입력" style="ime-mode:inactive;" autocomplete="off">
@@ -290,9 +292,24 @@
 
     </div>
     <script>
+    	/* var aList = document.querySelectorAll("#devMemTab a");
+    	for(int i=0; i<aList.length; i++){        	
+    		aList[i].setAttribute("href","javascript:void(0)"); 
+    	} */
+    
+/*     	document.addEventListener("DOMContentLoaded", function() {
+    	    var aList = document.querySelectorAll("#devMemTab a");
+    	    for (var i = 0; i < aList.length; i++) {
+    	        aList[i].addEventListener("click", function(e) {
+    	            e.preventDefault(); // 기본 동작(링크 이동)을 막습니다.
+    	        });
+    	    }
+    	});
+    	
+    	
    		document.querySelector(".input_row.co").style.display = "none";
    		
-        document.querySelector("#devMemTab>li:first-child").addEventListener("click", function(){
+        document.querySelector("#devMemTab>li:first-child").addEventListener("click", function()){
                 document.querySelector("#devMemTab>li:first-child").classList.add("on");
                 document.querySelector("#devMemTab>li:nth-child(2)").classList.remove("on");
                 document.querySelector("#M_Alert").style.display = "block";
@@ -301,6 +318,7 @@
                 document.querySelector(".input_row.co").style.display = "none";
                
         })
+   		
         document.querySelector("#devMemTab>li:nth-child(2)").addEventListener("click", function(){
                 document.querySelector("#devMemTab>li:first-child").classList.remove("on");
                 document.querySelector("#devMemTab>li:nth-child(2)").classList.add("on");
@@ -309,11 +327,42 @@
                 document.querySelector(".input_row").style.display = "none";
                 document.querySelector(".input_row.co").style.display = "block";
         })
+  */
+  
         
-        document.querySelector("#devMemTab>li>a").setAttribute("href","javascript:void(0)"); 
-        
-        
-        
+  document.addEventListener("DOMContentLoaded", function() {
+	    // 링크 클릭 시 기본 동작(페이지 새로고침) 막기
+	    var aList = document.querySelectorAll("#devMemTab a");
+	    for (var i = 0; i < aList.length; i++) {
+	        aList[i].addEventListener("click", function(e) {
+	            e.preventDefault();
+	        });
+	    }
+
+	    // 개인회원, 기업회원 탭 클릭 시 내용 변경
+	    var devMemTab = document.querySelector("#devMemTab");
+	    var tabs = devMemTab.querySelectorAll("li");
+	    var inputRows = document.querySelectorAll(".input_row");
+	    inputRows[1].style.display = "none";
+	    
+	    tabs[0].addEventListener("click", function() {
+	        tabs[0].classList.add("on");
+	        tabs[1].classList.remove("on");
+	        document.querySelector("#M_Alert").style.display = "block";
+            document.querySelector("#Co_Alert").style.display = "none";
+	        inputRows[0].style.display = "block";
+	        inputRows[1].style.display = "none";
+	    });
+
+	    tabs[1].addEventListener("click", function() {
+	        tabs[0].classList.remove("on");
+	        tabs[1].classList.add("on");
+	        document.querySelector("#M_Alert").style.display = "none";
+            document.querySelector("#Co_Alert").style.display = "block";
+	        inputRows[0].style.display = "none";
+	        inputRows[1].style.display = "block";
+	    });
+	});
         
         
         
