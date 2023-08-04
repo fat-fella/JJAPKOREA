@@ -683,7 +683,7 @@
                 </div>
             </div>
             <div id="banner-area">
-                <div class="bnr-big"><a href="https://yellow.contentsfeed.com/RealMedia/ads/click_lx.ads/jobkorea/main/L13/1511508775/Top3/jobkorea/230623_voxelmaps_mb_s/230623_voxelmaps_mb.html/41643134773253614c45454143467172" target="_blank"><img src="//apple.contentsfeed.com/RealMedia/ads/Creatives/jobkorea/230623_voxelmaps_mb_s/230626_voxelmaps_75090.png" alt="대체텍스트"></a></div>
+                <div class="bnr-big"><a href="https://yellow.contentsfeed.com/RealMedia/ads/click_lx.ads/jobkorea/main/L13/1511508775/Top3/jobkorea/230623_voxelmaps_mb_s/230623_voxelmaps_mb.html/41643134773253614c45454143467172" target="_blank"><img src="https://apple.contentsfeed.com/RealMedia/ads/Creatives/jobkorea/230718_seoul_mb/230718_seoul_75090.png" alt="대체텍스트"></a></div>
                 <div class="bnr-service">
                     <div class="swiper-container bnr-swiper">
                         <ul class="swiper-wrapper">
