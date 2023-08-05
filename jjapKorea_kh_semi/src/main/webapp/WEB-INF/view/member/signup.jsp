@@ -18,7 +18,7 @@
 
 		<div id="header">
 			<h1>
-				<a href="<%=request.getContextPath() %>/index"><img
+				<a href="<%=request.getContextPath()%>/index"><img
 					src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
 					alt="JOBKOREA x albamon"></a>
 			</h1>
@@ -30,14 +30,16 @@
 
 			<h3 class="skip">글로벌 메뉴</h3>
 			<ul class="gnb f_clear">
-				<li><a href="<%=request.getContextPath() %>/index">홈</a></li>
+				<li><a href="<%=request.getContextPath()%>/index">홈</a></li>
 				<li><a href="/help/">고객센터</a></li>
 			</ul>
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person "><a href="<%=request.getContextPath()%>/psignup">개인회원</a></li>
-				<li class="corp on"><a href="<%=request.getContextPath()%>/signup">기업회원</a></li>
+				<li class="person "><a
+					href="<%=request.getContextPath()%>/psignup">개인회원</a></li>
+				<li class="corp on"><a
+					href="<%=request.getContextPath()%>/signup">기업회원</a></li>
 			</ul>
 		</div>
 
@@ -49,23 +51,24 @@
 			<h3 class="skip">기업 회원가입 정보</h3>
 			<fieldset>
 				<legend>기업 회원가입</legend>
-				<form action="<%=request.getContextPath() %>/signup.do" method="POST" id="form" name="form"
-					enctype="multipart/form-data">
-					<input type="hidden" id="Mem_Type" value="GI"> 
-					<input data-val="true" data-val-required="CertifyType 필드가 필요합니다."
+				<form action="<%=request.getContextPath()%>/signup.do"
+					method="POST" id="form" name="form" enctype="multipart/form-data">
+					<input type="hidden" id="Mem_Type" value="GI"> <input
+						data-val="true" data-val-required="CertifyType 필드가 필요합니다."
 						id="CertifyType" name="CertifyType" type="hidden" value="phone">
-						<input id="CertifyCode" name="CertifyCode" type="hidden" value="">
-						<input id="CertifyReCall" name="CertifyReCall" type="hidden" value="">
-						<input id="DI_Code" name="DI_Code" type="hidden" value="">
-						<input id="getCertifynum" name="getCertifynum" type="hidden" value="">
-						<input id="ReSubmit" name="ReSubmit" type="hidden" value="">
-						<input id="Mobile_Encrypt" name="Mobile_Encrypt" type="hidden" value="">
-						<input data-val="true" data-val-number="OEM_No 필드는 숫자여야 합니다."
+					<input id="CertifyCode" name="CertifyCode" type="hidden" value="">
+					<input id="CertifyReCall" name="CertifyReCall" type="hidden"
+						value=""> <input id="DI_Code" name="DI_Code" type="hidden"
+						value=""> <input id="getCertifynum" name="getCertifynum"
+						type="hidden" value=""> <input id="ReSubmit"
+						name="ReSubmit" type="hidden" value=""> <input
+						id="Mobile_Encrypt" name="Mobile_Encrypt" type="hidden" value="">
+					<input data-val="true" data-val-number="OEM_No 필드는 숫자여야 합니다."
 						data-val-required="OEM_No 필드가 필요합니다." id="OEM_No" name="OEM_No"
-						type="hidden" value="1">
-						<input id="CorpAuthStat" name="CorpAuthStat" type="hidden" value="">
-						<input id="Mem_HPhone" name="Mem_HPhone" type="hidden" value="">
-						<input data-val="true"
+						type="hidden" value="1"> <input id="CorpAuthStat"
+						name="CorpAuthStat" type="hidden" value=""> <input
+						id="Mem_HPhone" name="Mem_HPhone" type="hidden" value="">
+					<input data-val="true"
 						data-val-maxlength="필드 Mem_Ident은(는) 최대 길이가 '8'인 문자열 또는 배열 형식이어야 합니다."
 						data-val-maxlength-max="8" id="Mem_Ident" name="Mem_Ident"
 						type="hidden" value="">
@@ -80,8 +83,8 @@
 
 
 						<div class="tabs tabsGiCateogry" role="tablist">
-							<a href="<%=request.getContextPath() %>/psignup" class="tab tabGi active">기업회원</a> <a href="#"
-								class="tab tabGi ">서치펌회원</a>
+							<a href="<%=request.getContextPath()%>/psignup"
+								class="tab tabGi active">기업회원</a> <a href="#" class="tab tabGi ">서치펌회원</a>
 						</div>
 
 						<div class="row mbr_name mbr_co_type">
@@ -219,25 +222,35 @@
 								고객센터 (1588-9350) 로 문의 해 주세요.</p>
 						</div>
 						<div class="row mbr_zipcode">
-
-							<a
+							<!-- <a
 								href="https://www.jobkorea.co.kr/Address/Index?callback=join.corp.cb_address"
 								onclick="window.open(this.href, 'popupAddress', 'left=0, top=0, width=550,height=300, scrollbar=no, statusbar=no, resize=no'); return false;"
 								class="input is-label input-profile-addr">
 								<div class="label">
 									회사주소<i class="icon required" aria-hidden="hidde">*</i>
 								</div>
-								<div class="value"></div>
-								<i class="icon icon-search" aria-hidden="true"></i>
+								<div class="value"></div> <i class="icon icon-search"
+								aria-hidden="true"></i>
 								<div class="notice_msg" id="msg_addr"></div>
-							</a>
-							<input type="hidden" id="Zip_Code" name="Zip_Code"> 
-							<input type="hidden" id="Add_Addr" name="Add_Addr">
-							<input type="hidden" id="Addr_Type" name="Addr_Type">
-							<input type="hidden" id="Addr_Text" name="Addr_Text">
-							<input type="hidden" id="Addr_Text1" name="Addr_Text1">
-							<input type="hidden" name="X_Position">
-							<input type="hidden" name="Y_Position">
+							</a> <input type="hidden" id="Zip_Code" name="Zip_Code"> <input
+								type="hidden" id="Add_Addr" name="Add_Addr"> <input
+								type="hidden" id="Addr_Type" name="Addr_Type"> <input
+								type="hidden" id="Addr_Text" name="Addr_Text"> <input
+								type="hidden" id="Addr_Text1" name="Addr_Text1"> <input
+								type="hidden" name="X_Position"> <input type="hidden"
+								name="Y_Position"> -->
+								<div class="col_1">
+									<label class="mbr_name" for="Boss_Name">대표자명<i
+										class="icon required" aria-hidden="hidde">*</i></label>
+								</div>
+								<div class="col_2">
+									<input class="mbr_name dev-ceo-name" data-val="true"
+										data-val-maxlength="필드 Boss_Name은(는) 최대 길이가 '20'인 문자열 또는 배열 형식이어야 합니다."
+										data-val-maxlength-max="20"
+										data-val-required="Boss_Name 필드가 필요합니다." id="Boss_Name"
+										maxlength="20" name="Boss_Name" type="text" value="">
+									<div class="notice_msg" id="notice_msg_ceo_name"></div>
+								</div>
 						</div>
 
 						<div class="row mbr_zipcode" style="display: none;">
