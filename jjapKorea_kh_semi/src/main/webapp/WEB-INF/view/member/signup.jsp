@@ -49,7 +49,7 @@
 			<h3 class="skip">기업 회원가입 정보</h3>
 			<fieldset>
 				<legend>기업 회원가입</legend>
-				<form action="/Join/GI_Regist" method="POST" id="form" name="form"
+				<form action="<%=request.getContextPath() %>/signup.do" method="POST" id="form" name="form"
 					enctype="multipart/form-data">
 					<input type="hidden" id="Mem_Type" value="GI"> 
 					<input data-val="true" data-val-required="CertifyType 필드가 필요합니다."
@@ -59,7 +59,7 @@
 						<input id="DI_Code" name="DI_Code" type="hidden" value="">
 						<input id="getCertifynum" name="getCertifynum" type="hidden" value="">
 						<input id="ReSubmit" name="ReSubmit" type="hidden" value="">
-						<input d="Mobile_Encrypt" name="Mobile_Encrypt" type="hidden" value="">
+						<input id="Mobile_Encrypt" name="Mobile_Encrypt" type="hidden" value="">
 						<input data-val="true" data-val-number="OEM_No 필드는 숫자여야 합니다."
 						data-val-required="OEM_No 필드가 필요합니다." id="OEM_No" name="OEM_No"
 						type="hidden" value="1">
