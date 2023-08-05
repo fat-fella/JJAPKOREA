@@ -222,7 +222,7 @@
 								고객센터 (1588-9350) 로 문의 해 주세요.</p>
 						</div>
 						<div class="row mbr_zipcode">
-							<a
+							<!-- <a
 								href="https://www.jobkorea.co.kr/Address/Index?callback=join.corp.cb_address"
 								onclick="window.open(this.href, 'popupAddress', 'left=0, top=0, width=550,height=300, scrollbar=no, statusbar=no, resize=no'); return false;"
 								class="input is-label input-profile-addr">
@@ -238,7 +238,19 @@
 								type="hidden" id="Addr_Text" name="Addr_Text"> <input
 								type="hidden" id="Addr_Text1" name="Addr_Text1"> <input
 								type="hidden" name="X_Position"> <input type="hidden"
-								name="Y_Position">
+								name="Y_Position"> -->
+								<div class="col_1">
+									<label class="mbr_name" for="Boss_Name">대표자명<i
+										class="icon required" aria-hidden="hidde">*</i></label>
+								</div>
+								<div class="col_2">
+									<input class="mbr_name dev-ceo-name" data-val="true"
+										data-val-maxlength="필드 Boss_Name은(는) 최대 길이가 '20'인 문자열 또는 배열 형식이어야 합니다."
+										data-val-maxlength-max="20"
+										data-val-required="Boss_Name 필드가 필요합니다." id="Boss_Name"
+										maxlength="20" name="Boss_Name" type="text" value="">
+									<div class="notice_msg" id="notice_msg_ceo_name"></div>
+								</div>
 						</div>
 
 						<div class="row mbr_zipcode" style="display: none;">
