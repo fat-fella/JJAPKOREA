@@ -114,7 +114,7 @@ public class MemberDao {
 	}
 	public int businessSignUp ( Connection conn, BusinessVo vo) {
 		int result = 0;
-		String query = "insert into business values (?,?,?,?,?,?,?,?)";
+		String query = "insert into business(mid,bform,brno,bizname,baddress,bname,btel,bemail) values (?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(query);
