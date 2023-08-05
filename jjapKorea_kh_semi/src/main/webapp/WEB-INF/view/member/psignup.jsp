@@ -51,10 +51,10 @@
 					<!-- 약관 동의 -->
 					<input data-val="true"
 						data-val-required="<p class=&quot;failure&quot;>필수 정보입니다.</p>"
-						id="M_Id" name="M_Id" type="hidden" value=""><input
-						id="OEM_No" name="OEM_No" type="hidden" value="1"><input
-						id="DI_Code" name="DI_Code" type="hidden" value=""><input
-						id="getCertifynum" name="getCertifynum" type="hidden" value=""><input
+						id="M_Id" name="M_Id" type="hidden" value="">
+						<input id="OEM_No" name="OEM_No" type="hidden" value="1">
+						<input id="DI_Code" name="DI_Code" type="hidden" value="">
+						<input id="getCertifynum" name="getCertifynum" type="hidden" value=""><input
 						id="CertifyReCall" name="CertifyReCall" type="hidden" value=""><input
 						id="ReSubmit" name="ReSubmit" type="hidden" value=""><input
 						id="CertifyCode" name="CertifyCode" type="hidden" value=""><input

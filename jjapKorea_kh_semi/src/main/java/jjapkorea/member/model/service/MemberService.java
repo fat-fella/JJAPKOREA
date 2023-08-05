@@ -11,6 +11,7 @@ import java.util.List;
 
 import jjapkorea.member.model.dao.MemberDao;
 import jjapkorea.member.model.vo.MemberVo;
+import jjapkorea.member.model.vo.PersonVo;
 
 public class MemberService {
 	private MemberDao dao = new MemberDao();
@@ -54,16 +55,6 @@ public class MemberService {
 //		close(conn);
 //		return result;
 //	}
-	
-	// 추가
-	// login 
-	public int login(MemberVo vo) {
-		int result = 0;
-		Connection conn = getConnection();
-		result = dao.login(conn, vo);
-		close(conn);
-		return result;
-	}
 	// login 
 	public String login(String mid) {
 		String result = null;
@@ -80,5 +71,18 @@ public class MemberService {
 		close(conn);
 		return result;
 	}
-	
+	public int pSignup(MemberVo vo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.pSignup(conn, vo);
+		close(conn);
+		return result;
+	}
+	public int personSignup(PersonVo vo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.personSignup(conn, vo);
+		close(conn);
+		return result;
+	}
 }
