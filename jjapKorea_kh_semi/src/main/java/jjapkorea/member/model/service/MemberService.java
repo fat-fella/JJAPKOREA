@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import jjapkorea.member.model.dao.MemberDao;
+import jjapkorea.member.model.vo.BusinessVo;
 import jjapkorea.member.model.vo.MemberVo;
 import jjapkorea.member.model.vo.PersonVo;
 
@@ -71,6 +72,7 @@ public class MemberService {
 		close(conn);
 		return result;
 	}
+	//개인 회원가입 
 	public int pSignup(MemberVo vo) {
 		int result = 0;
 		Connection conn = getConnection();
@@ -85,4 +87,25 @@ public class MemberService {
 		close(conn);
 		return result;
 	}
+	//기업 회원가입 
+
+	public int bSignUp(MemberVo vo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.bSignUp(conn, vo);
+		close(conn);
+		return result;
+	}
+	public int businessSignUp(BusinessVo vo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.businessSignUp(conn, vo);
+		close(conn);
+		return result;
+	}
+	
+	
+	
+	
+	
 }

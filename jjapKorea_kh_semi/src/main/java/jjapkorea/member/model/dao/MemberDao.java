@@ -5,7 +5,9 @@ import static jjapkorea.common.jdbc.JdbcTemplate.close;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import jjapkorea.member.model.vo.BusinessVo;
 import jjapkorea.member.model.vo.MemberVo;
 import jjapkorea.member.model.vo.PersonVo;
 
@@ -87,6 +89,45 @@ public class MemberDao {
 			pstmt.setString(4, pvo.getPphone());
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	//기업 회원가입
+	public int bSignUp(Connection conn, MemberVo vo) {
+		int result = 0;
+		String query = "insert into member values (?,?,2)";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1,vo.getMid());
+			pstmt.setString(2, vo.getMpw());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	public int businessSignUp ( Connection conn, BusinessVo vo) {
+		int result = 0;
+		String query = "insert into business values (?,?,?,?,?,?,?,?)";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, vo.getMid());
+			pstmt.setString(2, vo.getBform());
+			pstmt.setString(3, vo.getBrno());
+			pstmt.setString(4, vo.getBizname());
+			pstmt.setString(5, vo.getBaddress());
+			pstmt.setString(6, vo.getBname());
+			pstmt.setString(7, vo.getBtel());
+			pstmt.setString(8, vo.getBemail());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);
