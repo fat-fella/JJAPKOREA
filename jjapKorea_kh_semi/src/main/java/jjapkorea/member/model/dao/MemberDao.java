@@ -61,7 +61,7 @@ public class MemberDao {
 	// 개인 회원가입
 	public int pSignup(Connection conn, MemberVo vo) {
 		int result = 0;
-		String query = "insert into member valuse (?,?,1)";
+		String query = "insert into member values (?,?,1)";
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(query);

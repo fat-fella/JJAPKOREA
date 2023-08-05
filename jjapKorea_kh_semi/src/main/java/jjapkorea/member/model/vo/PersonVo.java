@@ -10,6 +10,16 @@ public class PersonVo {
 	private String pname;
 	private String pemail;
 	private String pphone;
+	
+	public PersonVo() {
+	}
+	public PersonVo(String mid, String pname, String pemail, String pphone) {
+		super();
+		this.mid = mid;
+		this.pname = pname;
+		this.pemail = pemail;
+		this.pphone = pphone;
+	}
 	public String getMid() {
 		return mid;
 	}

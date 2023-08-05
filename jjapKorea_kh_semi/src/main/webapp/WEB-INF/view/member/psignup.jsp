@@ -73,8 +73,8 @@
 								<li><a href="javascript:;" id="btnFbLogin" class="facebook"
 									onclick="facebookLogin(); _LA.EVT('4285')">페이스북 로그인</a></li>
 								<li><a href="javascript:;" id="btnGlLogin" class=""
-									onclick="_LA.EVT('4288')"><div class="S9gUrf-YoZ4jf"
-											style="position: relative;">
+									onclick="_LA.EVT('4288')">
+									<div class="S9gUrf-YoZ4jf" style="position: relative;">
 											<div></div>
 											<iframe
 												src="https://accounts.google.com/gsi/button?type=icon&amp;shape=circle&amp;theme=outline&amp;size=large&amp;client_id=751392317978-jjc5ov9kf0tgnr4anlbe2crbfjk3it1c.apps.googleusercontent.com&amp;iframe_id=gsi_473968_623004&amp;as=ifo6DocCTOVPDX%2B5rjLHFg"
