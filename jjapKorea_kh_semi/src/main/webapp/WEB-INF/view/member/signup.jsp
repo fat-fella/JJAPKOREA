@@ -227,16 +227,17 @@
 								<div class="label">
 									회사주소<i class="icon required" aria-hidden="hidde">*</i>
 								</div>
-								<div class="value"></div> <i class="icon icon-search"
-								aria-hidden="true"></i>
+								<div class="value"></div>
+								<i class="icon icon-search" aria-hidden="true"></i>
 								<div class="notice_msg" id="msg_addr"></div>
-							</a> <input type="hidden" id="Zip_Code" name="Zip_Code"> <input
-								type="hidden" id="Add_Addr" name="Add_Addr"> <input
-								type="hidden" id="Addr_Type" name="Addr_Type"> <input
-								type="hidden" id="Addr_Text" name="Addr_Text"> <input
-								type="hidden" id="Addr_Text1" name="Addr_Text1"> <input
-								type="hidden" name="X_Position"> <input type="hidden"
-								name="Y_Position">
+							</a>
+							<input type="hidden" id="Zip_Code" name="Zip_Code"> 
+							<input type="hidden" id="Add_Addr" name="Add_Addr">
+							<input type="hidden" id="Addr_Type" name="Addr_Type">
+							<input type="hidden" id="Addr_Text" name="Addr_Text">
+							<input type="hidden" id="Addr_Text1" name="Addr_Text1">
+							<input type="hidden" name="X_Position">
+							<input type="hidden" name="Y_Position">
 						</div>
 
 						<div class="row mbr_zipcode" style="display: none;">
