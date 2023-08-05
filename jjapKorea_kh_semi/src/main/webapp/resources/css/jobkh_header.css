@@ -1114,7 +1114,7 @@ header .headNavBar .navInner:after {
     overflow: hidden;
 }
 
-#banner-area .bnr-big > a img,
+#banner-area .bnr-big >  img,
 #banner-area .bnr-marketing > a img {
     margin: 0;
 }
