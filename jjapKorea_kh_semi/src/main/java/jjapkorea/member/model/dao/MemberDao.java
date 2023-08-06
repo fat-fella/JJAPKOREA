@@ -128,12 +128,11 @@ public class MemberDao {
 		list.add("insert into businessform values (10, '외국 기관·비영리기구·단체')");
 		PreparedStatement pstmt = null;
 		try {
-			if(list.size() != 10) {
-				for(int i=0; i<list.size(); i++) {
-					pstmt = conn.prepareStatement(list.get(i));
-					pstmt.executeUpdate();
-				}
+			for(int i=0; i<list.size(); i++) {
+				pstmt = conn.prepareStatement(list.get(i));
+				pstmt.executeUpdate();
 			}
+			System.out.println("dd:"+pstmt);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
