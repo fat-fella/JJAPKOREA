@@ -115,27 +115,39 @@ public class MemberDao {
 		return result;
 	}
 	public void insert(Connection conn) {
+		String checkQuery = "SELECT COUNT(*) FROM businessform";
+		String insertQuery = "INSERT INTO businessform VALUES (?, ?)";
 		List<String> list = new ArrayList<String>();
-		list.add("insert into businessform values (1, '대기업')");
-		list.add("insert into businessform values (2, '대기업 계열사·자회사')");
-		list.add("insert into businessform values (3, '중소기업(300명이하)')");
-		list.add("insert into businessform values (4, '중견기업(300명이상)')");
-		list.add("insert into businessform values (5, '벤처기업')");
-		list.add("insert into businessform values (6, '외국계(외국 투자기업)')");
-		list.add("insert into businessform values (7, '외국계(외국 법인기업)')");
-		list.add("insert into businessform values (8, '국내 공공기관·공기업')");
-		list.add("insert into businessform values (9, '비영리단체·협회·교육재단')");
-		list.add("insert into businessform values (10, '외국 기관·비영리기구·단체')");
-		PreparedStatement pstmt = null;
+		if(list.size() == 0) {
+			list.add("대기업");
+		    list.add("대기업 계열사·자회사");
+		    list.add("중소기업(300명이하)");
+		    list.add("중견기업(300명이상)");
+		    list.add("벤처기업");
+		    list.add("외국계(외국 투자기업)");
+		    list.add("외국계(외국 법인기업)");
+		    list.add("국내 공공기관·공기업");
+		    list.add("비영리단체·협회·교육재단");
+		    list.add("외국 기관·비영리기구·단체");
+		}
+		PreparedStatement checkStmt = null;
+	    PreparedStatement insertStmt = null;
 		try {
-			for(int i=0; i<list.size(); i++) {
-				pstmt = conn.prepareStatement(list.get(i));
-				pstmt.executeUpdate();
-			}
+	        checkStmt = conn.prepareStatement(checkQuery);
+	        ResultSet rs = checkStmt.executeQuery();
+	        if (rs.next() && rs.getInt(1) == 0) {
+	            insertStmt = conn.prepareStatement(insertQuery);
+	            for (int i = 0; i < list.size(); i++) {
+	                insertStmt.setInt(1, i + 1);
+	                insertStmt.setString(2, list.get(i));
+	                insertStmt.executeUpdate();
+	            }
+	        }
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			close(pstmt);
+			close(checkStmt);
+			close(insertStmt);
 		}
 	}
 	public int businessSignUp ( Connection conn, BusinessVo vo) {
