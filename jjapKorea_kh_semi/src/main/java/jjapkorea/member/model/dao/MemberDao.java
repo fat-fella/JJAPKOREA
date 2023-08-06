@@ -118,18 +118,16 @@ public class MemberDao {
 		String checkQuery = "SELECT COUNT(*) FROM businessform";
 		String insertQuery = "INSERT INTO businessform VALUES (?, ?)";
 		List<String> list = new ArrayList<String>();
-		if(list.size() == 0) {
-			list.add("대기업");
-		    list.add("대기업 계열사·자회사");
-		    list.add("중소기업(300명이하)");
-		    list.add("중견기업(300명이상)");
-		    list.add("벤처기업");
-		    list.add("외국계(외국 투자기업)");
-		    list.add("외국계(외국 법인기업)");
-		    list.add("국내 공공기관·공기업");
-		    list.add("비영리단체·협회·교육재단");
-		    list.add("외국 기관·비영리기구·단체");
-		}
+		list.add("대기업");
+	    list.add("대기업 계열사·자회사");
+	    list.add("중소기업(300명이하)");
+	    list.add("중견기업(300명이상)");
+	    list.add("벤처기업");
+	    list.add("외국계(외국 투자기업)");
+	    list.add("외국계(외국 법인기업)");
+	    list.add("국내 공공기관·공기업");
+	    list.add("비영리단체·협회·교육재단");
+	    list.add("외국 기관·비영리기구·단체");
 		PreparedStatement checkStmt = null;
 	    PreparedStatement insertStmt = null;
 		try {
@@ -143,6 +141,9 @@ public class MemberDao {
 	                insertStmt.executeUpdate();
 	            }
 	        }
+	        for (int i = 0; i < list.size(); i++) {
+            	System.out.println(list.get(i));
+            }
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
