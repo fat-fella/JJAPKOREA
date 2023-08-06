@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import jjapkorea.member.model.vo.BusinessVo;
 import jjapkorea.member.model.vo.MemberVo;
@@ -77,16 +79,16 @@ public class MemberDao {
 		}
 		return result;
 	}
-	public int personSignup(Connection conn, PersonVo pvo) {
+	public int personSignup(Connection conn, PersonVo vo) {
 		int result = 0;
 		String query = "insert into person values (?,?,?,?)";
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, pvo.getMid());
-			pstmt.setString(2, pvo.getPname());
-			pstmt.setString(3, pvo.getPemail());
-			pstmt.setString(4, pvo.getPphone());
+			pstmt.setString(1, vo.getMid());
+			pstmt.setString(2, vo.getPname());
+			pstmt.setString(3, vo.getPemail());
+			pstmt.setString(4, vo.getPphone());
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -102,7 +104,7 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1,vo.getMid());
+			pstmt.setString(1, vo.getMid());
 			pstmt.setString(2, vo.getMpw());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -112,9 +114,33 @@ public class MemberDao {
 		}
 		return result;
 	}
+	public void insert(Connection conn) {
+		List<String> list = new ArrayList<String>();
+		list.add("insert into businessform values (1, '대기업')");
+		list.add("insert into businessform values (2, '대기업 계열사·자회사')");
+		list.add("insert into businessform values (3, '중소기업(300명이하)')");
+		list.add("insert into businessform values (4, '중견기업(300명이상)')");
+		list.add("insert into businessform values (5, '벤처기업')");
+		list.add("insert into businessform values (6, '외국계(외국 투자기업)')");
+		list.add("insert into businessform values (7, '외국계(외국 법인기업)')");
+		list.add("insert into businessform values (8, '국내 공공기관·공기업')");
+		list.add("insert into businessform values (9, '비영리단체·협회·교육재단')");
+		list.add("insert into businessform values (10, '외국 기관·비영리기구·단체')");
+		PreparedStatement pstmt = null;
+		try {
+			for(int i=0; i<list.size(); i++) {
+				pstmt = conn.prepareStatement(list.get(i));
+				pstmt.executeUpdate();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+	}
 	public int businessSignUp ( Connection conn, BusinessVo vo) {
 		int result = 0;
-		String query = "insert into business(mid,bform,brno,bizname,baddress,bname,btel,bemail) values (?,?,?,?,?,?,?,?)";
+		String query = "insert into business (mid,bform,brno,bizname,brep_name,baddress,bname,btel,bemail) values (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = null;
 		try {
 			pstmt = conn.prepareStatement(query);
@@ -122,12 +148,28 @@ public class MemberDao {
 			pstmt.setString(2, vo.getBform());
 			pstmt.setString(3, vo.getBrno());
 			pstmt.setString(4, vo.getBizname());
-			pstmt.setString(5, vo.getBaddress());
-			pstmt.setString(6, vo.getBname());
-			pstmt.setString(7, vo.getBtel());
-			pstmt.setString(8, vo.getBemail());
+			pstmt.setString(5, vo.getBrepName());
+			pstmt.setString(6, vo.getBaddress());
+			pstmt.setString(7, vo.getBname());
+			pstmt.setString(8, vo.getBtel());
+			pstmt.setString(9, vo.getBemail());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	public int delete(Connection conn, String mid) {
+		int result = 0;
+		String query = "delete from member where mid = ?";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, mid);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close(pstmt);

@@ -17,45 +17,6 @@ import jjapkorea.member.model.vo.PersonVo;
 public class MemberService {
 	private MemberDao dao = new MemberDao();
 	
-//	public List<MemberVo> selectList(){
-//		List<MemberVo> result = null;
-//		Connection conn = getConnection();
-//		result = dao.selectList(conn);
-//		close(conn);
-//		return result;
-//	}
-//	// 한 행 읽기 - PK로where조건
-//	public MemberVo selectOne(int bno){
-//		MemberVo result = null;
-//		Connection conn = getConnection();
-//		result = dao.selectOne(conn, bno);
-//		close(conn);
-//		return result;
-//	}
-//	// 한 행 삽입 - Member 자료형을 받아와야 함.
-//	public int insert(MemberVo dto){
-//		int result = 0;
-//		Connection conn = getConnection();
-//		result = dao.insert(conn, dto);
-//		close(conn);
-//		return result;
-//	}
-//	// 한 행 수정 - Member 또는 경우에 따라서 특정 컬럼값만 받아오기도 함.
-//	public int update(MemberVo dto){
-//		int result = 0;
-//		Connection conn = getConnection();
-//		result = dao.update(conn, dto);
-//		close(conn);
-//		return result;
-//	}
-//	// 한 행 삭제 - 주로 PK로 where조건
-//	public int delete(int bno){
-//		int result = 0;
-//		Connection conn = getConnection();
-//		result = dao.delete(conn, bno);
-//		close(conn);
-//		return result;
-//	}
 	// login 
 	public String login(String mid) {
 		String result = null;
@@ -103,9 +64,16 @@ public class MemberService {
 		close(conn);
 		return result;
 	}
-	
-	
-	
-	
-	
+	public int delete(String mid) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.delete(conn, mid);
+		close(conn);
+		return result;
+	}
+	public void insert() {
+		Connection conn = getConnection();
+		dao.insert(conn);
+		close(conn);
+	}
 }

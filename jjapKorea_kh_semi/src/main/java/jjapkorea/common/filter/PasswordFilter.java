@@ -7,20 +7,19 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 
-public class EncodingFilter implements Filter {
+import jjapkorea.common.filter.wrapper.PasswordWrapper;
+
+public class PasswordFilter implements Filter {
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		System.out.println("[jjapkorea] filter 들어옴");
-		// 한글 깨짐 방지 
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
-		
-		// 다음 filter 동작 또는 doGet() / doPost() 호출
-		chain.doFilter(request, response); 
+		HttpServletRequest httpRequest = (HttpServletRequest)request;
+		PasswordWrapper pwrapper = new PasswordWrapper(httpRequest);
+		chain.doFilter(pwrapper, response);  // request 대신 wrapper 거친 값을 넣어줌
 	}
+	
 
 }

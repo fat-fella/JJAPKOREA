@@ -13,17 +13,20 @@ public class BusinessVo {
 	private String bform;
 	private String brno;
 	private String bizname;
+	private String brepName;
 	private String baddress;
 	private String bname;
 	private String btel;
 	private String bemail;
-	public BusinessVo(String mid, String bform, String brno, String bizname, String baddress, String bname, String btel,
-			String bemail) {
+	
+	public BusinessVo(String mid, String bform, String brno, String bizname, String brepName, String baddress,
+			String bname, String btel, String bemail) {
 		super();
 		this.mid = mid;
 		this.bform = bform;
 		this.brno = brno;
 		this.bizname = bizname;
+		this.brepName = brepName;
 		this.baddress = baddress;
 		this.bname = bname;
 		this.btel = btel;
@@ -55,6 +58,12 @@ public class BusinessVo {
 	}
 	public void setBizname(String bizname) {
 		this.bizname = bizname;
+	}
+	public String getBrepName() {
+		return brepName;
+	}
+	public void setBrepName(String brepName) {
+		this.brepName = brepName;
 	}
 	public String getBaddress() {
 		return baddress;

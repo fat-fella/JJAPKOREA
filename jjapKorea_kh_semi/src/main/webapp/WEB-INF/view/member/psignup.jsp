@@ -8,7 +8,7 @@
 <title>회원가입 | KH</title>
 <link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
-	href="<%=request.getContextPath() %>/member/css/jobkh_psignup.css">
+	href="<%=request.getContextPath()%>/member/css/jobkh_psignup.css">
 </head>
 <body class="jkJoin" style="">
 	<div id="wrap">
@@ -33,10 +33,8 @@
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person on"><a
-					href="<%=request.getContextPath()%>/psignup">개인회원</a></li>
-				<li class="corp "><a
-					href="<%=request.getContextPath()%>/signup">기업회원</a></li>
+				<li class="person on"><a href="<%=request.getContextPath()%>/psignup">개인회원</a></li>
+				<li class="corp "><a href="<%=request.getContextPath()%>/signup">기업회원</a></li>
 			</ul>
 		</div>
 
@@ -47,20 +45,19 @@
 			<h3 class="skip">개인회원 가입 정보</h3>
 			<fieldset>
 				<legend>개인회원 가입</legend>
-				<form action="<%=request.getContextPath() %>/psignup.do" id="frm" method="post" name="frm">
+				<form action="<%=request.getContextPath()%>/psignup.do" id="frm" method="post" name="frm">
 					<!-- 약관 동의 -->
-					<input data-val="true"
-						data-val-required="<p class=&quot;failure&quot;>필수 정보입니다.</p>"
-						id="M_Id" name="M_Id" type="hidden" value="">
-						<input id="OEM_No" name="OEM_No" type="hidden" value="1">
-						<input id="DI_Code" name="DI_Code" type="hidden" value="">
-						<input id="getCertifynum" name="getCertifynum" type="hidden" value="">
-						<input id="CertifyReCall" name="CertifyReCall" type="hidden" value="">
-						<input id="ReSubmit" name="ReSubmit" type="hidden" value="">
-						<input id="CertifyCode" name="CertifyCode" type="hidden" value="">
-						<input id="Aptitute_Stat" name="Aptitute_Stat" type="hidden" value="">
-						<input id="CheckParamString" name="CheckParamString" type="hidden" value="8d3bc0d8e98202294a311db74c5eb05d">
-						<input id="Re_Url" name="Re_Url" type="hidden" value="">
+					<input data-val="true" data-val-required="<p class=&quot;failure&quot;>필수 정보입니다.</p>" id="M_Id" name="M_Id"
+					type="hidden" value="">
+					<input id="OEM_No" name="OEM_No" type="hidden" value="1">
+					<input id="DI_Code" name="DI_Code" type="hidden" value="">
+					<input id="getCertifynum" name="getCertifynum" type="hidden" value="">
+					<input id="CertifyReCall" name="CertifyReCall" type="hidden" value="">
+					<input id="ReSubmit" name="ReSubmit" type="hidden" value="">
+					<input id="CertifyCode" name="CertifyCode" type="hidden" value="">
+					<input id="Aptitute_Stat" name="Aptitute_Stat" type="hidden" value="">
+					<input id="CheckParamString" name="CheckParamString" type="hidden" value="8d3bc0d8e98202294a311db74c5eb05d">
+					<input id="Re_Url" name="Re_Url" type="hidden" value="">
 					<!-- 소셜 로그인 -->
 					<div class="row_group row_group_social">
 						<h4>소셜로 간편하게 로그인하세요</h4>
@@ -74,13 +71,14 @@
 									onclick="facebookLogin(); _LA.EVT('4285')">페이스북 로그인</a></li>
 								<li><a href="javascript:;" id="btnGlLogin" class=""
 									onclick="_LA.EVT('4288')">
-									<div class="S9gUrf-YoZ4jf" style="position: relative;">
+										<div class="S9gUrf-YoZ4jf" style="position: relative;">
 											<div></div>
 											<iframe
 												src="https://accounts.google.com/gsi/button?type=icon&amp;shape=circle&amp;theme=outline&amp;size=large&amp;client_id=751392317978-jjc5ov9kf0tgnr4anlbe2crbfjk3it1c.apps.googleusercontent.com&amp;iframe_id=gsi_473968_623004&amp;as=ifo6DocCTOVPDX%2B5rjLHFg"
 												id="gsi_473968_623004" title="Sign in with Google Button"
 												style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 64px; border: 0px; margin: -2px -12px;"></iframe>
-										</div></a></li>
+										</div>
+								</a></li>
 								<li><a href="javascript:;" id="btnApLogin" class="apple">애플
 										로그인</a></li>
 							</ul>
@@ -1019,8 +1017,7 @@
 						}
 					</script>
 					<!-- 회원 가입 버튼 -->
-					<div class="row_group line_none regist_complete"
-						style="position: relative;">
+					<div class="row_group line_none regist_complete" style="position: relative;">
 						<div class="row">
 							<button type="submit" class="mbrBtnRegist">
 								<span>가입하기</span>
@@ -1065,8 +1062,7 @@
 
 
 
-	<div
-		style="position: absolute; left: -5000px; overflow: hidden; display: none;">
+	<div style="position: absolute; left: -5000px; overflow: hidden; display: none;">
 
 
 
@@ -1557,46 +1553,46 @@
 		style="display: none;"></iframe>
 	<script>
 		var col_1List = document.getElementsByClassName("col_1");
-		document.querySelector(".mbrRegist .dev-name").addEventListener("focus", function(){
+		document.querySelector(".mbrRegist .dev-name").addEventListener("focus", function() {
 			col_1List[0].style.cssText = "top: 9px";
-	        document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 11px";
+			document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 11px";
 		})
 		/* document.querySelector(".mbrRegist .dev-name").addEventListener("focusout", function(){
 			col_1List[0].style.cssText = "";
-	        document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 16px";
+		    document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 16px";
 		}) */
-		document.querySelector(".mbrRegist .dev-id").addEventListener("focus", function(){
+		document.querySelector(".mbrRegist .dev-id").addEventListener("focus", function() {
 			col_1List[1].style.cssText = "top: 9px";
-	        document.querySelector(".mbr_id label").style.cssText = "font-size: 11px";
+			document.querySelector(".mbr_id label").style.cssText = "font-size: 11px";
 		})
 		/* document.querySelector(".mbrRegist .dev-id").addEventListener("focusout", function(){
 			col_1List[1].style.cssText = "";
-	        document.querySelector(".mbr_id label").style.cssText = "font-size: 16px";
+		    document.querySelector(".mbr_id label").style.cssText = "font-size: 16px";
 		}) */
-		document.querySelector(".mbrRegist .dev-password").addEventListener("focus", function(){
+		document.querySelector(".mbrRegist .dev-password").addEventListener("focus", function() {
 			col_1List[2].style.cssText = "top: 9px";
-	        document.querySelector(".mbr_passwd label").style.cssText = "font-size: 11px";
+			document.querySelector(".mbr_passwd label").style.cssText = "font-size: 11px";
 		})
 		/* document.querySelector(".mbrRegist .dev-password").addEventListener("focusout", function(){
 			col_1List[2].style.cssText = "";
-	        document.querySelector(".mbr_passwd label").style.cssText = "font-size: 16px";
+		    document.querySelector(".mbr_passwd label").style.cssText = "font-size: 16px";
 		}) */
-		document.querySelector(".mbrRegist .dev-mail").addEventListener("focus", function(){
+		document.querySelector(".mbrRegist .dev-mail").addEventListener("focus", function() {
 			col_1List[3].style.cssText = "top: 9px";
-	        document.querySelector(".mbr_email label").style.cssText = "font-size: 11px";
+			document.querySelector(".mbr_email label").style.cssText = "font-size: 11px";
 		})
 		/* document.querySelector(".mbrRegist .dev-mail").addEventListener("focusout", function(){
 			col_1List[3].style.cssText = "";
-	        document.querySelector(".mbr_email label").style.cssText = "font-size: 16px";
+		    document.querySelector(".mbr_email label").style.cssText = "font-size: 16px";
 		}) */
-		document.querySelector(".mbrRegist .dev-phone").addEventListener("focus", function(){
+		document.querySelector(".mbrRegist .dev-phone").addEventListener("focus", function() {
 			col_1List[4].style.cssText = "top: 9px";
-	        document.querySelector(".mbr_phone label").style.cssText = "font-size: 11px";
+			document.querySelector(".mbr_phone label").style.cssText = "font-size: 11px";
 		})
 		/* document.querySelector(".mbrRegist .dev-phone").addEventListener("focusout", function(){
 			col_1List[4].style.cssText = "";
-	        document.querySelector(".mbr_phone label").style.cssText = "font-size: 16px";
-		}) */		
+		    document.querySelector(".mbr_phone label").style.cssText = "font-size: 16px";
+		}) */
 	</script>
 </body>
 </html>
