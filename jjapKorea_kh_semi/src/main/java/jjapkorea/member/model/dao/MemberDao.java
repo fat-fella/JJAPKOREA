@@ -132,7 +132,6 @@ public class MemberDao {
 				pstmt = conn.prepareStatement(list.get(i));
 				pstmt.executeUpdate();
 			}
-			System.out.println("dd:"+pstmt);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
