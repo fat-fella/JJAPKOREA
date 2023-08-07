@@ -10,11 +10,11 @@ public class JobpostingDto {
 	private String salary;
 	private String minSalary;
 	private String maxSalary;
-	private Date registDate;
-	private Date closeDate;
-	private String raTitle;
+	private String registDate;
+	private String closeDate;
+	private String reTitle;
 	private String career;
-	private String holidayType;
+	private String workType;
 	private String empTypeCode;
 	
 	
@@ -62,23 +62,23 @@ public class JobpostingDto {
 	public void setMaxSalary(String maxSalary) {
 		this.maxSalary = maxSalary;
 	}
-	public Date getRegistDate() {
+	public String getRegistDate() {
 		return registDate;
 	}
-	public void setRegistDate(Date registDate) {
+	public void setRegistDate(String registDate) {
 		this.registDate = registDate;
 	}
-	public Date getCloseDate() {
+	public String getCloseDate() {
 		return closeDate;
 	}
-	public void setCloseDate(Date closeDate) {
+	public void setCloseDate(String closeDate) {
 		this.closeDate = closeDate;
 	}
-	public String getRaTitle() {
-		return raTitle;
+	public String getReTitle() {
+		return reTitle;
 	}
-	public void setRaTitle(String raTitle) {
-		this.raTitle = raTitle;
+	public void setReTitle(String reTitle) {
+		this.reTitle = reTitle;
 	}
 	public String getCareer() {
 		return career;
@@ -86,11 +86,11 @@ public class JobpostingDto {
 	public void setCareer(String career) {
 		this.career = career;
 	}
-	public String getHolidayType() {
-		return holidayType;
+	public String getWorkType() {
+		return workType;
 	}
-	public void setHolidayType(String holidayType) {
-		this.holidayType = holidayType;
+	public void setWorkType(String workType) {
+		this.workType = workType;
 	}
 	public String getEmpTypeCode() {
 		return empTypeCode;
