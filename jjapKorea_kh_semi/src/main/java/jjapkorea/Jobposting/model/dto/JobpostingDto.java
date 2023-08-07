@@ -5,7 +5,7 @@ import java.sql.Date;
 public class JobpostingDto {
 	private String recruitField;
 	private String companyName;
-	private String Busino;
+	private String busino;
 	private String userEducation;
 	private String salary;
 	private String minSalary;
@@ -17,6 +17,34 @@ public class JobpostingDto {
 	private String workType;
 	private String empTypeCode;
 	
+	
+	
+
+    @Override
+    public String toString() {
+        return "JobpostingDto{" +
+                "recruitField='" + recruitField + '\'' +
+                ", companyName='" + companyName + '\'' +
+                ", busino='" + busino + '\'' +
+                ", userEducation='" + userEducation + '\'' +
+                ", salary='" + salary + '\'' +
+                ", minSalary='" + minSalary + '\'' +
+                ", maxSalary='" + maxSalary + '\'' +
+                ", registDate='" + registDate + '\'' +
+                ", closeDate='" + closeDate + '\'' +
+                ", reTitle='" + reTitle + '\'' +
+                ", career='" + career + '\'' +
+                ", workType='" + workType + '\'' +
+                ", empTypeCode='" + empTypeCode + '\'' +
+                '}';
+    }
+
+
+
+
+
+
+
 	
 	
 	
@@ -33,10 +61,10 @@ public class JobpostingDto {
 		this.companyName = companyName;
 	}
 	public String getBusino() {
-		return Busino;
+		return busino;
 	}
 	public void setBusino(String busino) {
-		Busino = busino;
+		this.busino = busino;
 	}
 	public String getUserEducation() {
 		return userEducation;

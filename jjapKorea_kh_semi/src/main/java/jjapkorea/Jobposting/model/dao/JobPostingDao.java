@@ -1,6 +1,5 @@
 package jjapkorea.Jobposting.model.dao;
 
-public class JobPostingDao {
+public class JobpostingDao {
 
-	
 }
