@@ -9,7 +9,7 @@ import java.net.URLEncoder;
 public class WorknetApi {
 	public static void main(String[] args) throws Exception {
 		StringBuilder urlBuilder = new StringBuilder("http://openapi.work.go.kr/opi/opi/opia/wantedApi.do"); /*URL*/
-        urlBuilder.append("?" + URLEncoder.encode("authKey","UTF-8") + "="); /*Service Key*/
+        urlBuilder.append("?" + URLEncoder.encode("authKey","UTF-8") + "=WNLBET6R0WPQK95R8VLU02VR1HJ"); /*Service Key*/
         urlBuilder.append("&" + URLEncoder.encode("returnType","UTF-8") + "=" + URLEncoder.encode("xml", "UTF-8")); /*결과형식(xml)*/
         urlBuilder.append("&" + URLEncoder.encode("callTp","UTF-8") + "=" + URLEncoder.encode("L", "UTF-8")); /*L(목록), D(상세)*/
         urlBuilder.append("&" + URLEncoder.encode("startPage","UTF-8") + "=" + URLEncoder.encode("3", "UTF-8")); /*페이지번호 - 수정4!!*/
