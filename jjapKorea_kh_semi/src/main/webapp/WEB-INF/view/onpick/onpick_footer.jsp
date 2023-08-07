@@ -1,3 +1,14 @@
+<!-- [3] reset.css 폴더경로 -->
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/reset.css">
+<!-- [5] layout 영역 -->
+<link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_layout.css">
+<!-- [9] footer 영역 -->
+<link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_footer.css">
+<!-- swiper css -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<!-- 부트스트랩 css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,17 +18,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onpick Footer</title>
-    <!-- [3] reset.css 폴더경로 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/reset.css">
-    <!-- [5] layout 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_layout.css">
-    <!-- [9] footer 영역 -->
-    <link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_footer.css">
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <!-- 부트스트랩 css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- jQuery 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
