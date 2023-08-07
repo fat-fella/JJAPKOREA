@@ -99,7 +99,10 @@ public class WorknetApi {
                 // 고용형태
                 dto.setEmpTypeCode(getTextContentByTagName(ele, "empTp"));
 
-                list.add(dto);
+               list.add(dto);
+               for(i=0; i<list.size(); i++) {
+            	   System.out.println(list.get(i));
+               }
             }
 
             // 출력 또는 다른 처리 작업
