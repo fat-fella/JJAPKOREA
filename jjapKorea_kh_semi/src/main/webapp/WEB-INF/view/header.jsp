@@ -24,12 +24,6 @@
 	crossorigin="anonymous">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mainpage Header</title>
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -90,8 +84,6 @@
             })
         });
     </script>
-</head>
-<body>
 	<div class="wrap">
 		<header>
 			<!-- // headerInner -->
@@ -990,5 +982,3 @@
             observeParents: true,
         });
     </script>
-</body>
-</html>

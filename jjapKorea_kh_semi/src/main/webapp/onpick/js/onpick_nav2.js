@@ -42,12 +42,12 @@ $(document).ready(function () {
 
 	$(".companyname").children().text();
     $('.bannereach');
-    $.ajax({
+    /*$.ajax({
     url: "onpick_main.html",
     success: function (result) {
         $(".companyname").children().text();
         $('.bannereach');
         }
-    });
+    });*/
 });
 
