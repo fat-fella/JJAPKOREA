@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -9,23 +10,23 @@
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous" />
 <script>
-      $(function() {
-          $(window).scroll(function() {
-              if ($(this).scrollTop() > 500) {
-                  $('.go_top').fadeIn();
-              } else {
-                  $('.go_top').fadeOut();
-              }
-          });
-          
-          $(".go_top").click(function() {
-              $('html, body').animate({
-                  scrollTop : 0
-              }, 0);
-              return false;
-          });
-      });
-  </script>
+	$(function() {
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 500) {
+				$('.go_top').fadeIn();
+			} else {
+				$('.go_top').fadeOut();
+			}
+		});
+
+		$(".go_top").click(function() {
+			$('html, body').animate({
+				scrollTop : 0
+			}, 0);
+			return false;
+		});
+	});
+</script>
 <div class="wrap">
 	<main>
 		<div id="content">
@@ -40,9 +41,22 @@
 					<c:forEach items="${list}" var="item">
 						<li>
 							<div>
-								<img
-									src="https://imgs.jobkorea.co.kr/Images/Logo/180/m/o/2459z00ztjdvslqtl2_3320gaegxiagxnwtlzg.gif?p=y&hash=c&upddt=20230622165543"
-									alt="" />
+								<%
+								// 이미지 파일들의 경로 배열
+								String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
+										"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
+										"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
+										"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
+										// 추가 이미지 경로들...
+								};
+
+								// 랜덤으로 인덱스 생성
+								int randomIndex = (int) (Math.random() * imagePaths.length);
+
+								// 랜덤 이미지의 경로
+								String randomImagePath = imagePaths[randomIndex];
+								%>
+								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
 							<div class="compName">${item.companyName}</div>
 							<div class="recruitInfo">
@@ -52,17 +66,17 @@
 								<c:choose>
 									<c:when test="${item.today == 0}">
 										<div class="applydateWithApply">오늘시작</div>
-							    	</c:when>
+									</c:when>
 									<c:when test="${item.dday == 0}">
 										<div class="applydateWithApply">오늘마감</div>
-							    	</c:when>
+									</c:when>
 									<c:when test="${item.dday <= 7}">
 										<button onclick="" class="applynow">즉시지원</button>
 										<div class="applydateWithApply">D-${item.dday}</div>
-							    	</c:when>
-							    	<c:otherwise>
-							    		<div class="applydateWithApply">D-${item.dday}</div>
-							    	</c:otherwise>
+									</c:when>
+									<c:otherwise>
+										<div class="applydateWithApply">D-${item.dday}</div>
+									</c:otherwise>
 								</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
 							</div>
@@ -298,9 +312,22 @@
 					<c:forEach items="${list}" var="item">
 						<li>
 							<div>
-								<img
-									src="https://imgs.jobkorea.co.kr/Images/Logo/180/m/o/2459z00ztjdvslqtl2_3320gaegxiagxnwtlzg.gif?p=y&hash=c&upddt=20230622165543"
-									alt="" />
+								<%
+								// 이미지 파일들의 경로 배열
+								String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
+										"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
+										"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
+										"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
+										// 추가 이미지 경로들...
+								};
+
+								// 랜덤으로 인덱스 생성
+								int randomIndex = (int) (Math.random() * imagePaths.length);
+
+								// 랜덤 이미지의 경로
+								String randomImagePath = imagePaths[randomIndex];
+								%>
+								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
 							<div class="compName">${item.companyName}</div>
 							<div class="recruitInfo">
@@ -310,17 +337,17 @@
 								<c:choose>
 									<c:when test="${item.today == 0}">
 										<div class="applydateWithApply">오늘시작</div>
-							    	</c:when>
+									</c:when>
 									<c:when test="${item.dday == 0}">
 										<div class="applydateWithApply">오늘마감</div>
-							    	</c:when>
+									</c:when>
 									<c:when test="${item.dday <= 7}">
 										<button onclick="" class="applynow">즉시지원</button>
 										<div class="applydateWithApply">D-${item.dday}</div>
-							    	</c:when>
-							    	<c:otherwise>
-							    		<div class="applydateWithApply">D-${item.dday}</div>
-							    	</c:otherwise>
+									</c:when>
+									<c:otherwise>
+										<div class="applydateWithApply">D-${item.dday}</div>
+									</c:otherwise>
 								</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
 							</div>
@@ -367,9 +394,22 @@
 					<c:forEach items="${list}" var="item">
 						<li>
 							<div>
-								<img
-									src="https://imgs.jobkorea.co.kr/Images/Logo/180/m/o/2459z00ztjdvslqtl2_3320gaegxiagxnwtlzg.gif?p=y&hash=c&upddt=20230622165543"
-									alt="" />
+								<%
+								// 이미지 파일들의 경로 배열
+								String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
+										"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
+										"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
+										"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
+										// 추가 이미지 경로들...
+								};
+
+								// 랜덤으로 인덱스 생성
+								int randomIndex = (int) (Math.random() * imagePaths.length);
+
+								// 랜덤 이미지의 경로
+								String randomImagePath = imagePaths[randomIndex];
+								%>
+								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
 							<div class="compName">${item.companyName}</div>
 							<div class="recruitInfo">
@@ -379,17 +419,17 @@
 								<c:choose>
 									<c:when test="${item.today == 0}">
 										<div class="applydateWithApply">오늘시작</div>
-							    	</c:when>
+									</c:when>
 									<c:when test="${item.dday == 0}">
 										<div class="applydateWithApply">오늘마감</div>
-							    	</c:when>
+									</c:when>
 									<c:when test="${item.dday <= 7}">
 										<button onclick="" class="applynow">즉시지원</button>
 										<div class="applydateWithApply">D-${item.dday}</div>
-							    	</c:when>
-							    	<c:otherwise>
-							    		<div class="applydateWithApply">D-${item.dday}</div>
-							    	</c:otherwise>
+									</c:when>
+									<c:otherwise>
+										<div class="applydateWithApply">D-${item.dday}</div>
+									</c:otherwise>
 								</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
 							</div>
