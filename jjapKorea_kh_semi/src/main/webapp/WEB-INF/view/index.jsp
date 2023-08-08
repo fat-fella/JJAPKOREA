@@ -97,7 +97,7 @@
             });
 
             // html 파일 불러오기
-            $.ajax({
+            /* $.ajax({
                 url : "header.html",
                 success : function(result) {
                     var headerrefine = $(".wrap.header").html(result).find('header');
@@ -124,7 +124,7 @@
                     var footerrefine = $(".wrap.footer").html(result).find('footer');
                     $('.wrap.footer').html(footerrefine);
                 }
-            });
+            }); */
         });
     </script>
 </head>

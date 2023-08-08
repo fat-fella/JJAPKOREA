@@ -31,12 +31,14 @@
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <!-- 부트스트랩 css -->
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+crossorigin="anonymous">
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link
@@ -73,22 +75,37 @@
 					</button>
 				</div>
 				<ul class="grid-container">
-					<li>
-						<div>
-							<img
-								src="https://imgs.jobkorea.co.kr/Images/Logo/180/m/o/2459z00ztjdvslqtl2_3320gaegxiagxnwtlzg.gif?p=y&hash=c&upddt=20230622165543"
-								alt="" />
-						</div>
-						<div class="compName">모니터랩</div>
-						<div class="recruitInfo">
-							신입/경력 사원 공개채용<br> <br>
-						</div>
-						<div id="applyscrap">
-							<button onclick="" class="applynow">즉시지원</button>
-							<div class="applydateWithApply">D-8</div>
-							<button onclick="" class="scrap">채용정보 스크랩</button>
-						</div>
-					</li>
+					<c:forEach items="${list}" var="item">
+						<li>
+							<div>
+								<img
+									src="https://imgs.jobkorea.co.kr/Images/Logo/180/m/o/2459z00ztjdvslqtl2_3320gaegxiagxnwtlzg.gif?p=y&hash=c&upddt=20230622165543"
+									alt="" />
+							</div>
+							<div class="compName">${item.companyName}</div>
+							<div class="recruitInfo">
+								${item.reTitle}<br> <br>
+							</div>
+							<div id="applyscrap">
+								<c:choose>
+									<c:when test="${item.today == 0}">
+										<div class="applydateWithApply">오늘시작</div>
+							    	</c:when>
+									<c:when test="${item.dday == 0}">
+										<div class="applydateWithApply">오늘마감</div>
+							    	</c:when>
+									<c:when test="${item.dday <= 7}">
+										<button onclick="" class="applynow">즉시지원</button>
+										<div class="applydateWithApply">D-${item.dday}</div>
+							    	</c:when>
+							    	<c:otherwise>
+							    		<div class="applydateWithApply">D-${item.dday}</div>
+							    	</c:otherwise>
+								</c:choose>
+								<button onclick="" class="scrap">채용정보 스크랩</button>
+							</div>
+						</li>
+					</c:forEach>
 				</ul>
 			</section>
 			<section class="sliderwrap">

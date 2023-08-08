@@ -16,37 +16,17 @@ public class JobpostingDto {
 	private String career;
 	private String workType;
 	private String empTypeCode;
+	private int today;
+	private int dday;
 	
-	
-	
-
-    @Override
-    public String toString() {
-        return "JobpostingDto{" +
-                "recruitField='" + recruitField + '\'' +
-                ", companyName='" + companyName + '\'' +
-                ", busino='" + busino + '\'' +
-                ", userEducation='" + userEducation + '\'' +
-                ", salary='" + salary + '\'' +
-                ", minSalary='" + minSalary + '\'' +
-                ", maxSalary='" + maxSalary + '\'' +
-                ", registDate='" + registDate + '\'' +
-                ", closeDate='" + closeDate + '\'' +
-                ", reTitle='" + reTitle + '\'' +
-                ", career='" + career + '\'' +
-                ", workType='" + workType + '\'' +
-                ", empTypeCode='" + empTypeCode + '\'' +
-                '}';
-    }
-
-
-
-
-
-
-
-	
-	
+	@Override
+	public String toString() {
+		return "JobpostingDto [recruitField=" + recruitField + ", companyName=" + companyName + ", busino=" + busino
+				+ ", userEducation=" + userEducation + ", salary=" + salary + ", minSalary=" + minSalary
+				+ ", maxSalary=" + maxSalary + ", registDate=" + registDate + ", closeDate=" + closeDate + ", reTitle="
+				+ reTitle + ", career=" + career + ", workType=" + workType + ", empTypeCode=" + empTypeCode
+				+ ", today=" + today + ", dday=" + dday + "]";
+	}
 	
 	public String getRecruitField() {
 		return recruitField;
@@ -125,5 +105,17 @@ public class JobpostingDto {
 	}
 	public void setEmpTypeCode(String empTypeCode) {
 		this.empTypeCode = empTypeCode;
+	}
+	public int getToday() {
+		return today;
+	}
+	public void setToday(int today) {
+		this.today = today;
+	}
+	public int getDday() {
+		return dday;
+	}
+	public void setDday(int dday) {
+		this.dday = dday;
 	}
 }

@@ -8,7 +8,12 @@ import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -25,11 +30,15 @@ import org.xml.sax.SAXException;
 import jjapkorea.Jobposting.model.dto.JobpostingDto;
 
 public class WorknetApi {
-	
-	
+	private List<JobpostingDto> list;
 	
     public static void main(String[] args) {
-        try {
+    	WorknetApi worknetApi = new WorknetApi();
+        worknetApi.getJobPostings();
+    }
+    
+    public List<JobpostingDto> getJobPostings() {
+    	try {
             StringBuilder urlBuilder = new StringBuilder("http://openapi.work.go.kr/opi/opi/opia/wantedApi.do"); /* URL */
             urlBuilder.append("?" + URLEncoder.encode("authKey", "UTF-8") + "=WNLBET6R0WPQK95R8VLU02VR1HJ"); /* Service Key */
             urlBuilder.append("&" + URLEncoder.encode("returnType", "UTF-8") + "=" + URLEncoder.encode("xml", "UTF-8")); /* 결과형식(xml) */
@@ -67,7 +76,7 @@ public class WorknetApi {
             NodeList wantedList = doc.getElementsByTagName("wanted");
             System.out.println("Total items: " + wantedList.getLength());
 
-            List<JobpostingDto> list = new ArrayList<>();
+            list = new ArrayList<>();
             for (int i = 0; i < wantedList.getLength(); i++) {
                 JobpostingDto dto = new JobpostingDto();
                 Node wanted = wantedList.item(i);
@@ -87,9 +96,28 @@ public class WorknetApi {
                 // 연봉 최대치
                 dto.setMaxSalary(getTextContentByTagName(ele, "maxSal"));
                 // 지원등록기간
-                dto.setRegistDate(getTextContentByTagName(ele, "regDt"));
-                // 지원마감일 - '채용시까지 23-05-28' 에서 띄워쓰리로 분리하지 않고 d-day표기시 분리하기
-                dto.setCloseDate(getTextContentByTagName(ele, "closeDt"));
+                String resistDateStr = getTextContentByTagName(ele, "regDt");
+                Date resistDate = parseDateString(resistDateStr);
+                if (resistDate != null) {
+                    String formattedResistDate = formatDateToString(resistDate);
+                    dto.setRegistDate(formattedResistDate);
+                    LocalDate currentDate = LocalDate.now();
+                    LocalDate resistDateLocal = LocalDate.parse(formattedResistDate, DateTimeFormatter.ofPattern("yy-MM-dd"));
+                    long daysRemaining = resistDateLocal.toEpochDay() - currentDate.toEpochDay();
+                    dto.setToday((int)daysRemaining);
+                }
+                // 지원마감일 - '채용시까지 23-05-28' 에서 띄워쓰기로 분리하지 않고 d-day표기시 분리하기
+                String closeDateStr = getTextContentByTagName(ele, "closeDt");
+                Date closeDate = parseDateString(closeDateStr);
+                if (closeDate != null) {
+                    String formattedCloseDate = formatDateToString(closeDate);
+                    dto.setCloseDate(formattedCloseDate);
+                    // D-Day 계산
+                    LocalDate currentDate = LocalDate.now();
+                    LocalDate closeDateLocal = LocalDate.parse(formattedCloseDate, DateTimeFormatter.ofPattern("yy-MM-dd"));
+                    long daysRemaining = closeDateLocal.toEpochDay() - currentDate.toEpochDay();
+                    dto.setDday((int)daysRemaining);
+                }
                 // 채용제목
                 dto.setReTitle(getTextContentByTagName(ele, "title"));
                 // 경력
@@ -100,9 +128,6 @@ public class WorknetApi {
                 dto.setEmpTypeCode(getTextContentByTagName(ele, "empTp"));
 
                list.add(dto);
-               for(i=0; i<list.size(); i++) {
-            	   System.out.println(list.get(i));
-               }
             }
 
             // 출력 또는 다른 처리 작업
@@ -113,6 +138,7 @@ public class WorknetApi {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    	return list;
     }
 
     private static String getTextContentByTagName(Element element, String tagName) {
@@ -129,5 +155,26 @@ public class WorknetApi {
         DocumentBuilderFactory objDocumentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder objDocumentBuilder = objDocumentBuilderFactory.newDocumentBuilder();
         return objDocumentBuilder.parse(new InputSource(new StringReader(xmlString)));
-    }}
+    }
+    
+    private Date parseDateString(String dateString) {
+        // "채용시까지"와 같은 문자열 제거
+        String dateWithoutPrefix = dateString.replace("채용시까지 ", "");
+
+        // 날짜 포맷을 지정함. "yy-MM-dd" 형태로 입력된 날짜 문자열을 Date 객체로 파싱함.
+        SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+        Date date = null;
+        try {
+            date = sdf.parse(dateWithoutPrefix);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+    
+    private String formatDateToString(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+        return sdf.format(date);
+    }
+}
 
