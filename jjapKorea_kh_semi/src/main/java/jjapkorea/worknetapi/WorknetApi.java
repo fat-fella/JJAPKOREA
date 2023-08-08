@@ -131,9 +131,9 @@ public class WorknetApi {
             }
 
             // 출력 또는 다른 처리 작업
-            for (JobpostingDto dto : list) {
-                System.out.println(dto);
-            }
+//            for (JobpostingDto dto : list) {
+//                System.out.println(dto);
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();
