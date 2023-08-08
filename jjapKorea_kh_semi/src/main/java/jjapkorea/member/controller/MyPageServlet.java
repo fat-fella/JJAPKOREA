@@ -26,8 +26,9 @@ public class MyPageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String pname = (String) request.getSession().getAttribute("pname");
+		request.setAttribute("pname", pname);
 		request.getRequestDispatcher("/WEB-INF/view/member/mypage.jsp").forward(request, response);
-		
 	}
 
 	/**
