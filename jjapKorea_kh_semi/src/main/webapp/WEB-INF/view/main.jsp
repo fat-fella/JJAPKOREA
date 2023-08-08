@@ -2,7 +2,7 @@
 <!-- [2] content 영역 1040px 80vw 90% 배치(center) -->
 <!-- [3] reset.css 폴더경로 -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/reset.css" />
+	href="<%=request.getContextPath() %>/resources/css/reset.css" />
 <!-- TODO js jQuery -->
 <!-- [4] project명 또는 core.css 폴더경로 - bootstrap 등으로 대체 -->
 <!-- [4] 기본색상 10~15개 정도 class 미리 만들어두기 -->
@@ -11,19 +11,19 @@
 <!-- [4] a 모양 미리 만들어두기 -->
 <!-- [5] layout 영역 -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_layout.css">
+	href="<%=request.getContextPath() %>/resources/css/jobkh_layout.css">
 <!-- [6] header 영역 -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_header.css">
+	href="<%=request.getContextPath() %>/resources/css/jobkh_header.css">
 <!-- [7] nav 영역 -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_nav.css">
+	href="<%=request.getContextPath() %>/resources/css/jobkh_nav.css">
 <!-- [8] main 영역 -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_main.css">
+	href="<%=request.getContextPath() %>/resources/css/jobkh_main.css">
 <!-- [9] footer 영역 -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
+	href="<%=request.getContextPath() %>/resources/css/jobkh_footer.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <!-- swiper css -->
@@ -31,14 +31,13 @@
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <!-- 부트스트랩 css -->
 <link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+crossorigin="anonymous">
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -48,41 +47,26 @@
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous" />
 <script>
-	$(function() {
-		$(window).scroll(function() {
-			if ($(this).scrollTop() > 500) {
-				$('.go_top').fadeIn();
-			} else {
-				$('.go_top').fadeOut();
-			}
-		});
-
-		$(".go_top").click(function() {
-			$('html, body').animate({
-				scrollTop : 0
-			}, 0);
-			return false;
-		});
-	});
-</script>
+      $(function() {
+          $(window).scroll(function() {
+              if ($(this).scrollTop() > 500) {
+                  $('.go_top').fadeIn();
+              } else {
+                  $('.go_top').fadeOut();
+              }
+          });
+          
+          $(".go_top").click(function() {
+              $('html, body').animate({
+                  scrollTop : 0
+              }, 0);
+              return false;
+          });
+      });
+  </script>
 <div class="wrap">
 	<main>
 		<div id="content">
-			<%
-			// 이미지 파일들의 경로 배열
-			String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
-					"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
-					"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
-					"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
-					// 추가 이미지 경로들...
-			};
-
-			// 랜덤으로 인덱스 생성
-			int randomIndex = (int) (Math.random() * imagePaths.length);
-
-			// 랜덤 이미지의 경로
-			String randomImagePath = imagePaths[randomIndex];
-			%>
 			<section class="First VVIP 채용관">
 				<div class="bannerwrap">
 					<h4>First VVIp 채용관</h4>
@@ -94,7 +78,9 @@
 					<c:forEach items="${list}" var="item">
 						<li>
 							<div>
-								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
+								<img
+									src="https://imgs.jobkorea.co.kr/Images/Logo/180/m/o/2459z00ztjdvslqtl2_3320gaegxiagxnwtlzg.gif?p=y&hash=c&upddt=20230622165543"
+									alt="" />
 							</div>
 							<div class="compName">${item.companyName}</div>
 							<div class="recruitInfo">
@@ -104,17 +90,17 @@
 								<c:choose>
 									<c:when test="${item.today == 0}">
 										<div class="applydateWithApply">오늘시작</div>
-									</c:when>
+							    	</c:when>
 									<c:when test="${item.dday == 0}">
 										<div class="applydateWithApply">오늘마감</div>
-									</c:when>
+							    	</c:when>
 									<c:when test="${item.dday <= 7}">
 										<button onclick="" class="applynow">즉시지원</button>
 										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:when>
-									<c:otherwise>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:otherwise>
+							    	</c:when>
+							    	<c:otherwise>
+							    		<div class="applydateWithApply">D-${item.dday}</div>
+							    	</c:otherwise>
 								</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
 							</div>
@@ -350,8 +336,9 @@
 					<c:forEach items="${list}" var="item">
 						<li>
 							<div>
-								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
-
+								<img
+									src="https://imgs.jobkorea.co.kr/Images/Logo/180/m/o/2459z00ztjdvslqtl2_3320gaegxiagxnwtlzg.gif?p=y&hash=c&upddt=20230622165543"
+									alt="" />
 							</div>
 							<div class="compName">${item.companyName}</div>
 							<div class="recruitInfo">
@@ -361,17 +348,17 @@
 								<c:choose>
 									<c:when test="${item.today == 0}">
 										<div class="applydateWithApply">오늘시작</div>
-									</c:when>
+							    	</c:when>
 									<c:when test="${item.dday == 0}">
 										<div class="applydateWithApply">오늘마감</div>
-									</c:when>
+							    	</c:when>
 									<c:when test="${item.dday <= 7}">
 										<button onclick="" class="applynow">즉시지원</button>
 										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:when>
-									<c:otherwise>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:otherwise>
+							    	</c:when>
+							    	<c:otherwise>
+							    		<div class="applydateWithApply">D-${item.dday}</div>
+							    	</c:otherwise>
 								</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
 							</div>
@@ -418,8 +405,9 @@
 					<c:forEach items="${list}" var="item">
 						<li>
 							<div>
-								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
-
+								<img
+									src="https://imgs.jobkorea.co.kr/Images/Logo/180/m/o/2459z00ztjdvslqtl2_3320gaegxiagxnwtlzg.gif?p=y&hash=c&upddt=20230622165543"
+									alt="" />
 							</div>
 							<div class="compName">${item.companyName}</div>
 							<div class="recruitInfo">
@@ -429,17 +417,17 @@
 								<c:choose>
 									<c:when test="${item.today == 0}">
 										<div class="applydateWithApply">오늘시작</div>
-									</c:when>
+							    	</c:when>
 									<c:when test="${item.dday == 0}">
 										<div class="applydateWithApply">오늘마감</div>
-									</c:when>
+							    	</c:when>
 									<c:when test="${item.dday <= 7}">
 										<button onclick="" class="applynow">즉시지원</button>
 										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:when>
-									<c:otherwise>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:otherwise>
+							    	</c:when>
+							    	<c:otherwise>
+							    		<div class="applydateWithApply">D-${item.dday}</div>
+							    	</c:otherwise>
 								</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
 							</div>
