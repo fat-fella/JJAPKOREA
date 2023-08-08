@@ -95,36 +95,6 @@
                     // data-contentnumber와 일치하는 tab-cont 항목에 active 클래스를 추가합니다.
                     $(".tab-cont[data-contentnumber='" + contentNumber + "']").addClass("active");
             });
-
-            // html 파일 불러오기
-            /* $.ajax({
-                url : "header.html",
-                success : function(result) {
-                    var headerrefine = $(".wrap.header").html(result).find('header');
-                    $('.wrap.header').html(headerrefine);
-                }
-            });
-            $.ajax({
-                url : "nav.html",
-                success : function(result) {
-                    var navrefine = $(".wrap.nav").html(result).find('nav');
-                    $('.wrap.nav').html(navrefine);
-                }
-            });
-            $.ajax({
-                url : "main.html",
-                success : function(result) {
-                    var contentrefine = $(".wrap.content").html(result).find('main');
-                    $('.wrap.content').html(contentrefine);
-                }
-            });
-            $.ajax({
-                url : "footer.html",
-                success : function(result) {
-                    var footerrefine = $(".wrap.footer").html(result).find('footer');
-                    $('.wrap.footer').html(footerrefine);
-                }
-            }); */
         });
     </script>
 </head>

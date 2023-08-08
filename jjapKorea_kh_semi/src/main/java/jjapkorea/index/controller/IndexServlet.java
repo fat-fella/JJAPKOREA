@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jjapkorea.Jobposting.model.dto.JobpostingDto;
-import jjapkorea.member.model.service.MemberService;
 import jjapkorea.worknetapi.WorknetApi;
 
 /**
@@ -26,7 +25,6 @@ public class IndexServlet extends HttpServlet {
 	
 	private WorknetApi worknetApi;
 
-	
     public IndexServlet() {
         super();
         worknetApi = new WorknetApi();

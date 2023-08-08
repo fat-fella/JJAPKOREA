@@ -32,10 +32,6 @@
     <title>KH Job!</title>
     <!-- jQuery 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    
-    
-    
     <jsp:include page="headerLogin.jsp"></jsp:include>
     <jsp:include page="nav.jsp"></jsp:include>
     <jsp:include page="main.jsp"></jsp:include>
@@ -104,19 +100,5 @@
     </script>
 </head>
 <body>
-    <div class="wrap header">
-        <!-- header.html 파일 불러오기 -->
-    </div>
-    <div class="wrap nav">
-        <!-- nav.html 파일 불러오기 -->
-    </div>
-    <div class="wrap content">
-        <!-- main.html 파일 불러오기 -->
-    </div>
-    <div class="wrap footer">
-        <!-- footer.html 파일 불러오기 -->
-    </div>
-    <!-- swiper 스크립트 -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
