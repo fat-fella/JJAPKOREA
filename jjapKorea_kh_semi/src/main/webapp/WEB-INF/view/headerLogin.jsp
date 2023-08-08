@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -834,22 +835,11 @@
 						</a></li>
 					</ul>
 					<!-- my 홈일경우 클래스 myPage -->
-
-
-
-
-
-
-
 					<ul class="userNav" style="">
 						<li class="userNav-item resume"><a
 							href="https://www.jobkorea.co.kr/User/ResumeMng"
 							class="txt-button ico-mng"
 							onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">이력서 관리</a></li>
-
-
-
-
 						<li class="userNav-item notification devLiNotification"><a
 							href="javascript:void(0)" class="bell notify" id="js-bell"
 							onclick="GA_Event('공통_PC', 'gnb', '알림');"> 알림 <span
@@ -916,14 +906,12 @@
 																});
 											});
 						</script>
-
 						<ul id="devMyPage" class="userNav">
-
 							<li class="userNav-item my member"><a
 								href="https://www.jobkorea.co.kr/User/Mypage"
 								class="btnMyOpen txt-button ico-cp"
 								onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');"><span
-									class="spGnb"></span><span class="user-name">이상훈</span><span
+									class="spGnb"></span><span class="user-name">${pname}</span><span
 									class="skip">열기</span></a>
 								<div class="lyMyArea">
 									<div class="myInner">
@@ -962,22 +950,6 @@
 									<span class="icnArr spGnb"></span>
 								</div></li>
 						</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 				</div>
 			</div>
 		</div>

@@ -32,6 +32,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			close(rs);
 			close(pstmt);
 		}
 		System.out.println("[Member Dao login] return:" + result);
@@ -56,6 +57,7 @@ public class MemberDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
+			close(rs);
 			close(pstmt);
 		}
 		System.out.println("[Business Dao login] return:" + result);
@@ -189,4 +191,25 @@ public class MemberDao {
 		}
 		return result;
 	}
+	// IndexLogin
+	public String indexLogin(Connection conn, String mid) {
+        String result = null;
+        String query = "select pname from person where mid=?";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            pstmt = conn.prepareStatement(query);
+            pstmt.setString(1, mid);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                result = rs.getString("pname");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+        	close(rs);
+            close(pstmt);
+        }
+        return result;
+    }
 }

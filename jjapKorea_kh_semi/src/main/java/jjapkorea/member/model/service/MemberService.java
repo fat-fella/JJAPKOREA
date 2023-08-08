@@ -76,4 +76,11 @@ public class MemberService {
 		dao.insert(conn);
 		close(conn);
 	}
+	public String indexLogin(String mid) {
+        String result = null;
+        Connection conn = getConnection();
+        result = dao.indexLogin(conn, mid);
+        close(conn);
+		return result;
+    }
 }

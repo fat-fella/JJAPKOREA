@@ -38,6 +38,10 @@ public class IndexLoginServlet extends HttpServlet {
 		int endIndex = Math.min(list.size(), 8); // 8개 요소 이하인 경우 끝 인덱스를 리스트 크기로 설정
 		List<JobpostingDto> firstEightItems = list.subList(0, endIndex);
 		request.setAttribute("list", firstEightItems);
+		
+		String pname = (String) request.getSession().getAttribute("pname");
+		request.setAttribute("pname", pname);
+		
 		request.getRequestDispatcher("/WEB-INF/view/indexLogin.jsp").forward(request, response);
 	}
 

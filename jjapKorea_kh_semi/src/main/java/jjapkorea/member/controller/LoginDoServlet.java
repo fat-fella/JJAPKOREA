@@ -45,6 +45,10 @@ public class LoginDoServlet extends HttpServlet {
 				request.setAttribute("loginId", mid);
 				request.getSession().setAttribute("successFailMsg", "로그인성공");
 				request.getSession().setAttribute("SsLoginId", mid);
+				
+				String pname = new MemberService().indexLogin(mid); // 사용자 이름을 가져오는 메서드 호출
+				request.getSession().setAttribute("pname", pname); // 사용자 이름 세션에 저장
+				
 				sendUrl += "/index/login";
 			} else {
 				System.out.println("로그인 실패");
@@ -64,11 +68,15 @@ public class LoginDoServlet extends HttpServlet {
 				request.setAttribute("loginId2", mid2);
 				request.getSession().setAttribute("successFailMsg2", "로그인성공");
 				request.getSession().setAttribute("SsLoginId2", mid2);
-				sendUrl = request.getContextPath() + "/index"; 
+				
+				String pname2 = new MemberService().indexLogin(mid2); // 사용자 이름을 가져오는 메서드 호출
+				request.getSession().setAttribute("pname2", pname2); // 사용자 이름 세션에 저장
+				
+				sendUrl += "/index/login";
 			} else {
 				System.out.println("로그인 실패");
 				request.getSession().setAttribute("successFailMsg2", "로그인 실패하였습니다.\n 아이디와 패스워드를 다시 확인하고 로그인 시도해주세요.");
-				sendUrl = request.getContextPath() + "/login";
+				sendUrl += "/login";
 			}
 		}
 		response.sendRedirect(sendUrl);
