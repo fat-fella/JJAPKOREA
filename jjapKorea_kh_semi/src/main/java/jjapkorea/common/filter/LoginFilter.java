@@ -25,7 +25,7 @@ public class LoginFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpSession session = httpRequest.getSession(false); // 세션이 없으면 null 반환
 
-        if (session == null || session.getAttribute("SsLoginId") == null) {
+        if (session == null || session.getAttribute("SsLoginId") == null || session.getAttribute("SsLoginId2") == null) {
             // 로그인되지 않았으면 다른 페이지로 리다이렉트
         	request.getRequestDispatcher("/WEB-INF/view/member/login.jsp").forward(request, response);
         } else {

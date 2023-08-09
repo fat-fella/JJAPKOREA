@@ -34,7 +34,7 @@ public class JdbcTemplate {
 //				Class.forName("oracle.jdbc.driver.OracleDriver");
 				// 2. Connection 객체 생성 // dbms와 연결
 				conn = DriverManager.getConnection(prop.getProperty("jdbc.url"),prop.getProperty("jdbc.username"),prop.getProperty("jdbc.password"));
-				conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","jjapkorea","jjapkorea");
+//				conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","jjapkorea","jjapkorea");
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {
