@@ -66,7 +66,7 @@ public class LoginDoServlet extends HttpServlet {
 			} else if(mpw2.equals(result2)) {
 				System.out.println("로그인 성공");
 				request.setAttribute("loginId2", mid2);
-				request.getSession().setAttribute("successFailMsg2", "로그인성공");
+				request.getSession().setAttribute("successFailMsg", "로그인성공");
 				request.getSession().setAttribute("SsLoginId2", mid2);
 				
 				String pname2 = new MemberService().indexLogin(mid2); // 사용자 이름을 가져오는 메서드 호출
@@ -75,7 +75,7 @@ public class LoginDoServlet extends HttpServlet {
 				sendUrl += "/index/login";
 			} else {
 				System.out.println("로그인 실패");
-				request.getSession().setAttribute("successFailMsg2", "로그인 실패하였습니다.\n 아이디와 패스워드를 다시 확인하고 로그인 시도해주세요.");
+				request.getSession().setAttribute("successFailMsg", "로그인 실패하였습니다.\n 아이디와 패스워드를 다시 확인하고 로그인 시도해주세요.");
 				sendUrl += "/login";
 			}
 		}

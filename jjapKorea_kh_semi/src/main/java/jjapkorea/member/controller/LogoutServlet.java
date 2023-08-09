@@ -16,6 +16,8 @@ public class LogoutServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getSession().removeAttribute("SsLoginId");
+		request.getSession().removeAttribute("pname");
+		request.getSession().removeAttribute("pname2");
 		request.getSession().setAttribute("successFailMsg", "로그아웃되었습니다.");
 		response.sendRedirect(request.getContextPath()+"/index");
 	}

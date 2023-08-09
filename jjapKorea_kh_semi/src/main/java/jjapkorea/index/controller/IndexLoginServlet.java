@@ -41,6 +41,8 @@ public class IndexLoginServlet extends HttpServlet {
 		
 		String pname = (String) request.getSession().getAttribute("pname");
 		request.setAttribute("pname", pname);
+		String pname2 = (String) request.getSession().getAttribute("pname2");
+		request.setAttribute("pname2", pname2);
 		
 		request.getRequestDispatcher("/WEB-INF/view/indexLogin.jsp").forward(request, response);
 	}
