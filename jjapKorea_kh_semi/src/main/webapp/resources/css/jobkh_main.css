@@ -15,6 +15,21 @@
     
   } */
 
+  #applyscrap .scraped {
+    background: url(../images/tpl_bg_icn.png) no-repeat;
+    background-position: -29px -193px;
+    display: block;
+    margin-top: 2.5px;
+    margin-left: auto;
+    margin-right: 35px;
+    width: 19px;
+    height: 19px;
+    text-indent: -9999px;
+    position: relative;
+    border: 0;
+    cursor: pointer;
+    float: right;
+}
   
   #applyscrap .scrap {
     background: url(../images/tpl_bg_icn.png) no-repeat;
