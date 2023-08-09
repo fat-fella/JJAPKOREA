@@ -59,6 +59,17 @@
 				$('.jkNavDimm-hover5').toggleClass("on");
 			}
 		})
+		$(document).ready(function() {
+		    $('.userNav-item.my.member').hover(function() {
+		        $('.lyMyArea').css({
+		        	display: 'block'
+		        })
+		    }, function() {
+		        $('.lyMyArea').css({
+		        	display: 'none'
+		        })
+		    });
+		});
 	});
 </script>
 <div class="wrap">
@@ -884,8 +895,9 @@
 								href="<%=request.getContextPath() %>/mypage"
 								class="btnMyOpen txt-button ico-cp"
 								onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');"><span
-									class="spGnb"></span><span class="user-name">${pname}</span><span
-									class="skip">열기</span></a>
+									class="spGnb"></span><span class="user-name">${pname}</span>
+									<span class="skip">열기</span>
+									</a>
 								<div class="lyMyArea">
 									<div class="myInner">
 										<div class="myLists">
