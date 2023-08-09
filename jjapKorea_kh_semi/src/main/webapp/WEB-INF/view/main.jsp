@@ -21,6 +21,19 @@
 			return false;
 		});
 	});
+	 $(document).ready(function() {
+         $('.scrap').on('click', function() {
+             $(this).toggleClass('scraped');
+             if ($(this).hasClass('scraped')) {
+                 $(this).text('스크랩됨');
+                 $(this).removeClass('scrap');
+             } else {
+                 $(this).text('채용정보 스크랩');
+                 $(this).addClass('scrap');
+             }
+         });
+     });
+
 </script>
 <div class="wrap">
 	<main>
