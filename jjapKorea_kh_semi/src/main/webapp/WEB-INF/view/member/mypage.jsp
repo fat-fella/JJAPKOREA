@@ -1,3 +1,5 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!-- [1] 해상도 - 최적해상도 1260 결정 -->
 <!-- [2] content 영역 1260px -->
 <!-- [3] reset.css 폴더경로 -->
@@ -128,13 +130,34 @@
 		<h2 class="skip">스마트매치 리스트</h2>
 		<div class="mtuList boothList smartMatchList" id="smartMatch">
 			<ul>
-				<li class="mtuNoData">스크랩한 공고가 없습니다. <br>스크랩 관리 내역은 최대
-					3개월까지 확인하실 수 있습니다.
-					<div class="btnWrap">
-						<a class="btnLink mtuSpImgAfter" href="/Recruit/Home">채용정보 보기</a>
-					</div>
-				</li>
+				<li data-source="{&quot;memberId&quot;:&quot;KA_38458836&quot;,&quot;gno&quot;:42542903,&quot;giNo&quot;:45082596,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;headhunterId&quot;:null,&quot;oemCode&quot;:&quot;C1&quot;}" class="">
+                        <div class="col infoCol">
+                            <div class="company">
+                                    <a class="company" href="/Recruit/Co_Read/C/univtomorrow?Oem_Code=C1&amp;sc=10" target="_blank">㈜대학내일</a>
+                                    <button type="button" class="tplBtnTy tplBtnFavOff js-tplBtn" data-mem-sys="13401121"><span class="blind">관심기업</span></button>
 
+                            </div>
+                            <div class="tit">
+                                <a class="devLinkRecruit" href="/Recruit/GI_Read/42542903?Oem_Code=C1" target="_blank">대학내일ES 경력/인턴 상시채용</a>
+                            </div>
+                            <div class="desc">
+                                <a class="devLinkRecruit" href="/Recruit/GI_Read/42542903?Oem_Code=C1" target="_blank">
+                                    <span class="cell">신입·경력3년↑</span>
+                                            ,<span class="cell">학력무관</span>
+
+                                    ,<span class="cell"> 서울 &gt; 마포구</span>
+                                            ,<span class="cell">정규직</span>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col btnCol">
+                                <button type="button" class="tplBtn tplBtn_1 tplBtnBlue mtuBtn_2 mtuBtnBdDi devBtnPassHomepage" onclick="_LA.EVT('5283')"><span>홈페이지 지원</span></button>
+
+                                <em class="deadline date"><span class="tahoma">~08.15</span>(화)</em>
+
+                        </div>
+                    </li>
 			</ul>
 		</div>
 		<div class="btnMoreBlock">

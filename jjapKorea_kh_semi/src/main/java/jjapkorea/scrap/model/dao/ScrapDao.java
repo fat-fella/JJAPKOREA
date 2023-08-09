@@ -10,13 +10,13 @@ import static jjapkorea.common.jdbc.JdbcTemplate.*;
 import jjapkorea.scrap.model.dto.ScrapDto;
 
 public class ScrapDao {
-	public List<ScrapDto> scrapList(Connection conn){
+	public List<ScrapDto> scrapList(){
 		List<ScrapDto> result = null;
 		String query = "select * from SCRAP";
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		try {
-			pstmt= conn.prepareStatement(query);
+			pstmt= getConnection().prepareStatement(query);
 			rs = pstmt.executeQuery();
 			result = new ArrayList<ScrapDto>();	
 			while(rs.next()==true) {
