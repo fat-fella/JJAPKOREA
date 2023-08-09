@@ -927,7 +927,7 @@
 										</div>
 										<div class="lyRow">
 											<div class="btnRowWrap">
-												<a href="/Login/Logout.asp" class="btnLogOut"
+												<a href="<%=request.getContextPath() %>/logout" class="btnLogOut"
 													onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 											</div>
 										</div>
