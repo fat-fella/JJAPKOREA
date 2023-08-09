@@ -21,6 +21,19 @@
 			return false;
 		});
 	});
+	$(document).ready(function() {
+	    $('.scrap').click(function() {
+	        $(this).css({
+	            background: 'url(../images/scrap.svg) no-repeat';
+	        })
+	    }, function() {
+	        $(this).css({
+	            background: 'url(../images/tpl_bg_icn.png) no-repeat';
+
+	        })
+	    });
+	});
+
 </script>
 <div class="wrap">
 	<main>
