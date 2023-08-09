@@ -848,63 +848,36 @@
 							<div class="popup-notification" id="js-notiLayer"></div></li>
 
 						<script type="text/javascript">
-							$(document)
-									.ready(
-											function() {
-												$('#js-bell')
-														.on(
-																"click",
-																function() {
-																	$(
-																			'.notification')
-																			.find(
-																					'.popup-notification')
-																			.toggleClass(
-																					"attached");
+							$(document).ready(function() {
+								$('#js-bell').on("click",function() {
+									$('.notification').find('.popup-notification').toggleClass("attached");
+										if ($("#js-notiLayer").children().size() == 0)
+											$("#js-notiLayer").load("/User/Alarm/AlarmLayerDetail?Page_Num=1");
+										if ($('.notification').find('.popup-notification').hasClass("attached")) {
+											var idxNo = 88518; // 레이어 호출 수(로그인 상태)
+											var loginFlag = 'False';
+											if (loginFlag == 'True')
+												idxNo = 88517;
+												$.ajax({
+														url : '//m.jobkorea.co.kr/Link/default_JSON.asp?No='
+														+ idxNo,
+														method : "post",
+														dataType : "jsonp",
+														success : function() {
+														}
+														});
+											if ($(
+													'#js-alarmCnt')
+													.hasClass(
+															"badge"))
+												$(
+														'#js-alarmCnt')
+														.removeClass(
+																"badge");
 
-																	if ($(
-																			"#js-notiLayer")
-																			.children()
-																			.size() == 0)
-																		$(
-																				"#js-notiLayer")
-																				.load(
-																						"/User/Alarm/AlarmLayerDetail?Page_Num=1");
-
-																	if ($(
-																			'.notification')
-																			.find(
-																					'.popup-notification')
-																			.hasClass(
-																					"attached")) {
-																		var idxNo = 88518; // 레이어 호출 수(로그인 상태)
-																		var loginFlag = 'False';
-
-																		if (loginFlag == 'True')
-																			idxNo = 88517;
-
-																		$
-																				.ajax({
-																					url : '//m.jobkorea.co.kr/Link/default_JSON.asp?No='
-																							+ idxNo,
-																					method : "post",
-																					dataType : "jsonp",
-																					success : function() {
-																					}
-																				});
-
-																		if ($(
-																				'#js-alarmCnt')
-																				.hasClass(
-																						"badge"))
-																			$(
-																					'#js-alarmCnt')
-																					.removeClass(
-																							"badge");
-
-																	}
-																});
-											});
+										}
+									});
+				});
 						</script>
 						<ul id="devMyPage" class="userNav">
 							<li class="userNav-item my member"><a
