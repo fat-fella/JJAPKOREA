@@ -33,11 +33,11 @@
 	</filter>
 	<filter-mapping>
 	    <filter-name>LoginFilter</filter-name>
-	    <url-pattern>/indexLogin.jsp</url-pattern>
+	    <url-pattern>/WEB-INF/view/indexLogin.jsp</url-pattern>
 	</filter-mapping>
 	<filter-mapping>
 	    <filter-name>LoginFilter</filter-name>
-	    <url-pattern>/WEB-INF/view/indexLogin.jsp</url-pattern>
+	    <url-pattern>/jjapkorea/index/login</url-pattern>
 	</filter-mapping>
 
 </web-app>

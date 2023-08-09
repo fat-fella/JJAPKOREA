@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter("/indexLogin.jsp")
+@WebFilter({"/jjapkorea/index/login", "/WEB-INF/view/indexLogin.jsp"})
 public class LoginFilter implements Filter {
 	
 	@Override
@@ -27,7 +27,8 @@ public class LoginFilter implements Filter {
 
         if (session == null || session.getAttribute("SsLoginId") == null || session.getAttribute("SsLoginId2") == null) {
             // 로그인되지 않았으면 다른 페이지로 리다이렉트
-        	request.getRequestDispatcher("/WEB-INF/view/member/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/view/member/login.jsp").forward(request, response);
+            System.out.println("hi");
         } else {
             // 로그인된 상태이면 요청 허용
             chain.doFilter(request, response);
