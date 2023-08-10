@@ -34,8 +34,8 @@ public class MyPageServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<ScrapDto> list = scrapDao.scrapList();
-		
+		List<ScrapDto> scraplist = scrapDao.scrapList();
+		request.setAttribute("scraplist", scraplist);
 		String pname = (String) request.getSession().getAttribute("pname");
 		request.setAttribute("pname", pname);
 		request.getRequestDispatcher("/WEB-INF/view/member/mypage.jsp").forward(request, response);
