@@ -1,7 +1,5 @@
 package jjapkorea.Jobposting.model.dto;
 
-import java.sql.Date;
-
 public class JobpostingDto {
 	private String recruitField;
 	private String companyName;
