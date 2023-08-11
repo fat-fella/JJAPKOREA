@@ -87,10 +87,11 @@
 										</c:otherwise>
 									</c:choose>
 									<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
-									<input type="hidden" name="recruitField"
-										value="${item.recruitField}"> <input type="hidden"
-										name="companyName" value="${item.companyName}"> <input
-										type="hidden" name="busino" value="${item.busino}"> <input
+									<input type="hidden" name="jid" value="${item.jid}"> <input
+										type="hidden" name="recruitField" value="${item.recruitField}">
+									<input type="hidden" name="companyName"
+										value="${item.companyName}"> <input type="hidden"
+										name="busino" value="${item.busino}"> <input
 										type="hidden" name="userEducation"
 										value="${item.userEducation}"> <input type="hidden"
 										name="salary" value="${item.salary}"> <input
@@ -104,8 +105,21 @@
 									<input type="hidden" name="workType" value="${item.workType}">
 									<input type="hidden" name="empTypeCode"
 										value="${item.empTypeCode}">
-									<button type="submit" onclick="" class="scrap">채용정보
-										스크랩</button>
+									<button type="submit" onclick="" data-jid="${item.jid }"
+										class="scrap">채용정보 스크랩</button>
+									<script>
+function setScrap(){
+	$.ajax({
+		url:"${}/scrap.ajax"
+		, data: {jid: $(this).data("jid"), mid: $(SsLoginId)}
+		, success: function(result){
+			if(result == 0) {
+				
+			}
+		}
+	});
+}
+</script>
 								</div>
 							</form>
 						</li>

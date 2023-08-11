@@ -22,7 +22,7 @@ public class ScrapDao {
 			result = new ArrayList<ScrapDto>();	
 			while(rs.next()==true) {
 				ScrapDto dto = new ScrapDto();
-				dto.setJid(rs.getInt("jid"));
+				dto.setJid(rs.getString("jid"));
 				dto.setMid(rs.getString("mid"));
 				dto.setRecruitField(rs.getString("recruit_field"));
 				dto.setCompanyName(rs.getString("company_name"));

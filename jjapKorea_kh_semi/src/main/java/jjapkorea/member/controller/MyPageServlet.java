@@ -58,6 +58,7 @@ public class MyPageServlet extends HttpServlet {
 		String pname2 = (String)request.getSession().getAttribute("pname2");
 		request.setAttribute("pname2", pname2);
 		
+		String jid = request.getParameter("jid");
 		String recruitField = request.getParameter("recruitField");
 		String companyName = request.getParameter("companyName");
 		String busino = request.getParameter("busino");
@@ -75,8 +76,8 @@ public class MyPageServlet extends HttpServlet {
 		String mid = (String)request.getSession().getAttribute("SsLoginId");
 		String mid2 = (String)request.getSession().getAttribute("SsLoginId2");
 		
-		ScrapDto dto = new ScrapDto(mid, recruitField, companyName, busino, userEducation, salary, minSalary, maxSalary, registDate, closeDate, reTitle, career, workType, empTypeCode);
-		ScrapDto dto2 = new ScrapDto(mid2, recruitField, companyName, busino, userEducation, salary, minSalary, maxSalary, registDate, closeDate, reTitle, career, workType, empTypeCode);
+		ScrapDto dto = new ScrapDto(jid, mid, recruitField, companyName, busino, userEducation, salary, minSalary, maxSalary, registDate, closeDate, reTitle, career, workType, empTypeCode);
+		ScrapDto dto2 = new ScrapDto(jid, mid2, recruitField, companyName, busino, userEducation, salary, minSalary, maxSalary, registDate, closeDate, reTitle, career, workType, empTypeCode);
 		
 		ScrapService service = new ScrapService();
 		
@@ -91,7 +92,7 @@ public class MyPageServlet extends HttpServlet {
 		request.setAttribute("list", list);
 		request.setAttribute("list2", list2);
 		
-		response.sendRedirect(request.getContextPath()+"/mypage");
+		//response.sendRedirect(request.getContextPath()+"/mypage");
 	}
 
 }

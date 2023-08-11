@@ -16,8 +16,8 @@ public class ScrapDto {
 //	"CAREER"	VARCHAR(50)		NULL,
 //	"WORK_TYPE"	VARCHAR(50)		NULL,
 //	"EMP_TYPE_CODE"	VARCHAR(20)		NULL
-	
-	private int jid;
+
+	private String jid;
 	private String mid;
 	private String recruitField;
 	private String companyName;
@@ -46,10 +46,11 @@ public class ScrapDto {
 		super();
 	}
 
-	public ScrapDto(String mid, String recruitField, String companyName, String busiNo, String userEducation,
+	public ScrapDto(String jid, String mid, String recruitField, String companyName, String busiNo, String userEducation,
 			String salary, String minSalary, String maxSalary, String registDate, String closeDate, String reTitle,
 			String career, String workType, String empTypeCode) {
 		super();
+		this.jid = jid;
 		this.mid = mid;
 		this.recruitField = recruitField;
 		this.companyName = companyName;
@@ -66,11 +67,11 @@ public class ScrapDto {
 		this.empTypeCode = empTypeCode;
 	}
 
-	public int getJid() {
+	public String getJid() {
 		return jid;
 	}
 
-	public void setJid(int jid) {
+	public void setJid(String jid) {
 		this.jid = jid;
 	}
 
