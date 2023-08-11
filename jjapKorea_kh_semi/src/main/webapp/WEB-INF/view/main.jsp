@@ -110,7 +110,8 @@
 									<script>
 function setScrap(){
 	$.ajax({
-		url:"${}/scrap.ajax"
+		//url:"${}/scrap.ajax"
+		url:"${pageContext.request.contextPath}/mypage"
 		, data: {jid: $(this).data("jid"), mid: $(SsLoginId)}
 		, success: function(result){
 			if(result == 0) {

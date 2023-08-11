@@ -29,6 +29,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import jjapkorea.Jobposting.model.dto.JobpostingDto;
+import jjapkorea.Jobposting.model.service.JobpostingService;
 
 public class WorknetApi {
 	private List<JobpostingDto> list;
@@ -132,6 +133,9 @@ public class WorknetApi {
                 dto.setEmpTypeCode(getTextContentByTagName(ele, "empTp"));
 
                list.add(dto);
+               
+               JobpostingService service = new JobpostingService();
+               service.insert(dto);
             }
 
             // 출력 또는 다른 처리 작업
