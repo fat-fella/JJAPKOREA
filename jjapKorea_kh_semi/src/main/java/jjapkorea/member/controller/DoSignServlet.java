@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import jjapkorea.member.model.service.MemberService;
 import jjapkorea.member.model.vo.BusinessVo;
 import jjapkorea.member.model.vo.MemberVo;
-import jjapkorea.member.model.vo.PersonVo;
 
 /**
  * Servlet implementation class DoSignServlet

@@ -130,34 +130,46 @@
 		<h2 class="skip">스마트매치 리스트</h2>
 		<div class="mtuList boothList smartMatchList" id="smartMatch">
 			<ul>
-				<li data-source="{&quot;memberId&quot;:&quot;KA_38458836&quot;,&quot;gno&quot;:42542903,&quot;giNo&quot;:45082596,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;headhunterId&quot;:null,&quot;oemCode&quot;:&quot;C1&quot;}" class="">
-                        <div class="col infoCol">
-                            <div class="company">
-                                    <a class="company" href="/Recruit/Co_Read/C/univtomorrow?Oem_Code=C1&amp;sc=10" target="_blank">㈜대학내일</a>
-                                    <button type="button" class="tplBtnTy tplBtnFavOff js-tplBtn" data-mem-sys="13401121"><span class="blind">관심기업</span></button>
+				<c:forEach items="${list}" var="item">
+					<li
+						data-source="{&quot;memberId&quot;:&quot;KA_38458836&quot;,&quot;gno&quot;:42542903,&quot;giNo&quot;:45082596,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;headhunterId&quot;:null,&quot;oemCode&quot;:&quot;C1&quot;}"
+						class="">
+						<div class="col infoCol">
+							<div class="company">
+								<a class="company"
+									href="/Recruit/Co_Read/C/univtomorrow?Oem_Code=C1&amp;sc=10"
+									target="_blank">${item.companyName}</a>
+								<button type="button" class="tplBtnTy tplBtnFavOff js-tplBtn"
+									data-mem-sys="13401121">
+									<span class="blind">관심기업</span>
+								</button>
 
-                            </div>
-                            <div class="tit">
-                                <a class="devLinkRecruit" href="/Recruit/GI_Read/42542903?Oem_Code=C1" target="_blank">대학내일ES 경력/인턴 상시채용</a>
-                            </div>
-                            <div class="desc">
-                                <a class="devLinkRecruit" href="/Recruit/GI_Read/42542903?Oem_Code=C1" target="_blank">
-                                    <span class="cell">신입·경력3년↑</span>
-                                            ,<span class="cell">학력무관</span>
+							</div>
+							<div class="tit">
+								<a class="devLinkRecruit"
+									href="/Recruit/GI_Read/42542903?Oem_Code=C1" target="_blank">${item.reTitle}</a>
+							</div>
+							<div class="desc">
+								<a class="devLinkRecruit"
+									href="/Recruit/GI_Read/42542903?Oem_Code=C1" target="_blank">
+									<span class="cell">${item.career}</span> ,<span class="cell">${item.userEducation}</span>
+									<!-- ,<span class="cell"> 서울 &gt; 마포구</span> ,<span class="cell">정규직</span> -->
+									,<span class="cell">${item.salary}</span> ,<span class="cell">${item.workType}</span>
+								</a>
+							</div>
+						</div>
+						<div class="col btnCol">
+							<button type="button"
+								class="tplBtn tplBtn_1 tplBtnBlue mtuBtn_2 mtuBtnBdDi devBtnPassHomepage"
+								onclick="_LA.EVT('5283')">
+								<span>홈페이지 지원</span>
+							</button>
 
-                                    ,<span class="cell"> 서울 &gt; 마포구</span>
-                                            ,<span class="cell">정규직</span>
+							<em class="deadline date"><span class="tahoma">~08.15</span>(화)</em>
 
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col btnCol">
-                                <button type="button" class="tplBtn tplBtn_1 tplBtnBlue mtuBtn_2 mtuBtnBdDi devBtnPassHomepage" onclick="_LA.EVT('5283')"><span>홈페이지 지원</span></button>
-
-                                <em class="deadline date"><span class="tahoma">~08.15</span>(화)</em>
-
-                        </div>
-                    </li>
+						</div>
+					</li>
+				</c:forEach>
 			</ul>
 		</div>
 		<div class="btnMoreBlock">
@@ -166,6 +178,6 @@
 		</div>
 
 	</div>
-<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -12,6 +12,7 @@ import java.util.List;
 import jjapkorea.member.model.vo.BusinessVo;
 import jjapkorea.member.model.vo.MemberVo;
 import jjapkorea.member.model.vo.PersonVo;
+import jjapkorea.scrap.model.dto.ScrapDto;
 
 public class MemberDao {
 	// login : mpwd를 return 함. id 존재하지 않으면 return null
@@ -153,7 +154,7 @@ public class MemberDao {
 			close(insertStmt);
 		}
 	}
-	public int businessSignUp ( Connection conn, BusinessVo vo) {
+	public int businessSignUp (Connection conn, BusinessVo vo) {
 		int result = 0;
 		String query = "insert into business (mid,bform,brno,bizname,brep_name,baddress,bname,btel,bemail) values (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = null;

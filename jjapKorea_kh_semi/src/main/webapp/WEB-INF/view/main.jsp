@@ -33,8 +33,6 @@
              }
          });
      });
-	 
-
 </script>
 <div class="wrap">
 	<main>
@@ -49,46 +47,62 @@
 				<ul class="grid-container">
 					<c:forEach items="${list}" var="item">
 						<li>
-							<div>
-								<%
-								// 이미지 파일들의 경로 배열
-								String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
-										"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
-										"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
-										"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
-										// 추가 이미지 경로들...
-								};
-
-								// 랜덤으로 인덱스 생성
-								int randomIndex = (int) (Math.random() * imagePaths.length);
-
-								// 랜덤 이미지의 경로
-								String randomImagePath = imagePaths[randomIndex];
-								%>
-								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
-							</div>
-							<div class="compName">${item.companyName}</div>
-							<div class="recruitInfo">
-								${item.reTitle}<br> <br>
-							</div>
-							<div id="applyscrap">
-								<c:choose>
-									<c:when test="${item.today == 0}">
-										<div class="applydateWithApply">오늘시작</div>
-									</c:when>
-									<c:when test="${item.dday == 0}">
-										<div class="applydateWithApply">오늘마감</div>
-									</c:when>
-									<c:when test="${item.dday <= 7}">
-										<button onclick="" class="applynow">즉시지원</button>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:when>
-									<c:otherwise>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:otherwise>
-								</c:choose>
-								<button onclick="" class="scrap">채용정보 스크랩</button>
-							</div>
+							<form action="<%=request.getContextPath() %>/mypage" method="post">
+								<div>
+									<%
+									// 이미지 파일들의 경로 배열
+									String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
+											"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
+											"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
+											"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
+											// 추가 이미지 경로들...
+									};
+	
+									// 랜덤으로 인덱스 생성
+									int randomIndex = (int) (Math.random() * imagePaths.length);
+	
+									// 랜덤 이미지의 경로
+									String randomImagePath = imagePaths[randomIndex];
+									%>
+									<img src="<%=randomImagePath%>" alt="랜덤 이미지">
+								</div>
+								<div class="compName">${item.companyName}</div>
+								<div class="recruitInfo">
+									${item.reTitle}<br> <br>
+								</div>
+								<div id="applyscrap">
+									<c:choose>
+										<c:when test="${item.today == 0}">
+											<div class="applydateWithApply">오늘시작</div>
+										</c:when>
+										<c:when test="${item.dday == 0}">
+											<div class="applydateWithApply">오늘마감</div>
+										</c:when>
+										<c:when test="${item.dday <= 7}">
+											<button onclick="" class="applynow">즉시지원</button>
+											<div class="applydateWithApply">D-${item.dday}</div>
+										</c:when>
+										<c:otherwise>
+											<div class="applydateWithApply">D-${item.dday}</div>
+										</c:otherwise>
+									</c:choose>
+									<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
+									<input type="hidden" name="recruitField" value="${item.recruitField}">
+					                <input type="hidden" name="companyName" value="${item.companyName}">
+					                <input type="hidden" name="busino" value="${item.busino}">
+					                <input type="hidden" name="userEducation" value="${item.userEducation}">
+					                <input type="hidden" name="salary" value="${item.salary}">
+					                <input type="hidden" name="minSalary" value="${item.minSalary}">
+					                <input type="hidden" name="maxSalary" value="${item.maxSalary}">
+					                <input type="hidden" name="registDate" value="${item.registDate}">
+					                <input type="hidden" name="closeDate" value="${item.closeDate}">
+					                <input type="hidden" name="reTitle" value="${item.reTitle}">
+					                <input type="hidden" name="career" value="${item.career}">
+					                <input type="hidden" name="workType" value="${item.workType}">
+					                <input type="hidden" name="empTypeCode" value="${item.empTypeCode}">
+									<button type="submit" onclick="" class="scrap">채용정보 스크랩</button>
+								</div>
+							</form>
 						</li>
 					</c:forEach>
 				</ul>
@@ -587,7 +601,3 @@
 		</button>
 	</main>
 </div>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-	crossorigin="anonymous"></script>
