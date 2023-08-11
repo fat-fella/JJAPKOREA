@@ -1,6 +1,7 @@
 package jjapkorea.Jobposting.model.dto;
 
 public class JobpostingDto {
+	private String jid;
 	private String recruitField;
 	private String companyName;
 	private String busino;
@@ -19,13 +20,20 @@ public class JobpostingDto {
 	
 	@Override
 	public String toString() {
-		return "JobpostingDto [recruitField=" + recruitField + ", companyName=" + companyName + ", busino=" + busino
-				+ ", userEducation=" + userEducation + ", salary=" + salary + ", minSalary=" + minSalary
-				+ ", maxSalary=" + maxSalary + ", registDate=" + registDate + ", closeDate=" + closeDate + ", reTitle="
-				+ reTitle + ", career=" + career + ", workType=" + workType + ", empTypeCode=" + empTypeCode
-				+ ", today=" + today + ", dday=" + dday + "]";
+		return "JobpostingDto [jid=" + jid + ", recruitField=" + recruitField + ", companyName=" + companyName
+				+ ", busino=" + busino + ", userEducation=" + userEducation + ", salary=" + salary + ", minSalary="
+				+ minSalary + ", maxSalary=" + maxSalary + ", registDate=" + registDate + ", closeDate=" + closeDate
+				+ ", reTitle=" + reTitle + ", career=" + career + ", workType=" + workType + ", empTypeCode="
+				+ empTypeCode + ", today=" + today + ", dday=" + dday + "]";
 	}
-	
+
+	public String getJid() {
+		return jid;
+	}
+
+	public void setJid(String jid) {
+		this.jid = jid;
+	}
 	public String getRecruitField() {
 		return recruitField;
 	}

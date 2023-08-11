@@ -15,6 +15,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -81,6 +82,9 @@ public class WorknetApi {
                 JobpostingDto dto = new JobpostingDto();
                 Node wanted = wantedList.item(i);
                 Element ele = (Element) wanted;
+                // 고유한 값
+                String uniqueId = UUID.randomUUID().toString();
+                dto.setJid(uniqueId);
                 // 모집분야
                 dto.setRecruitField(getTextContentByTagName(ele, "jobsCd"));
                 // 회사명
