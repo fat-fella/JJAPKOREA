@@ -33,6 +33,8 @@ public class MyPageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pname = (String)request.getSession().getAttribute("pname");
 		request.setAttribute("pname", pname);
+		String pname2 = (String)request.getSession().getAttribute("pname2");
+		request.setAttribute("pname2", pname2);
 		
 		String mid = (String)request.getSession().getAttribute("SsLoginId");
 		String mid2 = (String)request.getSession().getAttribute("SsLoginId2");
@@ -53,6 +55,8 @@ public class MyPageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pname = (String)request.getSession().getAttribute("pname");
 		request.setAttribute("pname", pname);
+		String pname2 = (String)request.getSession().getAttribute("pname2");
+		request.setAttribute("pname2", pname2);
 		
 		String recruitField = request.getParameter("recruitField");
 		String companyName = request.getParameter("companyName");
