@@ -105,7 +105,7 @@
 									<input type="hidden" name="workType" value="${item.workType}">
 									<input type="hidden" name="empTypeCode"
 										value="${item.empTypeCode}">
-									<button type="submit" onclick="" data-jid="${item.jid }"
+									<button type="button" onclick="" data-jid="${item.jid }"
 										class="scrap">채용정보 스크랩</button>
 									<script>
 function setScrap(){
