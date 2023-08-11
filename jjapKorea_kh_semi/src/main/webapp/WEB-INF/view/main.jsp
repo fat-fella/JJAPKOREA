@@ -21,18 +21,18 @@
 			return false;
 		});
 	});
-	 $(document).ready(function() {
-         $('.scrap').on('click', function() {
-             $(this).toggleClass('scraped');
-             if ($(this).hasClass('scraped')) {
-                 $(this).text('스크랩됨');
-                 $(this).removeClass('scrap');
-             } else {
-                 $(this).text('채용정보 스크랩');
-                 $(this).addClass('scrap');
-             }
-         });
-     });
+	$(document).ready(function() {
+		$('.scrap').on('click', function() {
+			$(this).toggleClass('scraped');
+			if ($(this).hasClass('scraped')) {
+				$(this).text('스크랩됨');
+				$(this).removeClass('scrap');
+			} else {
+				$(this).text('채용정보 스크랩');
+				$(this).addClass('scrap');
+			}
+		});
+	});
 </script>
 <div class="wrap">
 	<main>
@@ -47,7 +47,7 @@
 				<ul class="grid-container">
 					<c:forEach items="${list}" var="item">
 						<li>
-							<form action="<%=request.getContextPath() %>/mypage" method="post">
+							<form id="scrapForm">
 								<div>
 									<%
 									// 이미지 파일들의 경로 배열
@@ -57,10 +57,10 @@
 											"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
 											// 추가 이미지 경로들...
 									};
-	
+
 									// 랜덤으로 인덱스 생성
 									int randomIndex = (int) (Math.random() * imagePaths.length);
-	
+
 									// 랜덤 이미지의 경로
 									String randomImagePath = imagePaths[randomIndex];
 									%>
@@ -87,20 +87,25 @@
 										</c:otherwise>
 									</c:choose>
 									<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
-									<input type="hidden" name="recruitField" value="${item.recruitField}">
-					                <input type="hidden" name="companyName" value="${item.companyName}">
-					                <input type="hidden" name="busino" value="${item.busino}">
-					                <input type="hidden" name="userEducation" value="${item.userEducation}">
-					                <input type="hidden" name="salary" value="${item.salary}">
-					                <input type="hidden" name="minSalary" value="${item.minSalary}">
-					                <input type="hidden" name="maxSalary" value="${item.maxSalary}">
-					                <input type="hidden" name="registDate" value="${item.registDate}">
-					                <input type="hidden" name="closeDate" value="${item.closeDate}">
-					                <input type="hidden" name="reTitle" value="${item.reTitle}">
-					                <input type="hidden" name="career" value="${item.career}">
-					                <input type="hidden" name="workType" value="${item.workType}">
-					                <input type="hidden" name="empTypeCode" value="${item.empTypeCode}">
-									<button type="submit" onclick="" class="scrap">채용정보 스크랩</button>
+									<input type="hidden" name="recruitField"
+										value="${item.recruitField}"> <input type="hidden"
+										name="companyName" value="${item.companyName}"> <input
+										type="hidden" name="busino" value="${item.busino}"> <input
+										type="hidden" name="userEducation"
+										value="${item.userEducation}"> <input type="hidden"
+										name="salary" value="${item.salary}"> <input
+										type="hidden" name="minSalary" value="${item.minSalary}">
+									<input type="hidden" name="maxSalary" value="${item.maxSalary}">
+									<input type="hidden" name="registDate"
+										value="${item.registDate}"> <input type="hidden"
+										name="closeDate" value="${item.closeDate}"> <input
+										type="hidden" name="reTitle" value="${item.reTitle}">
+									<input type="hidden" name="career" value="${item.career}">
+									<input type="hidden" name="workType" value="${item.workType}">
+									<input type="hidden" name="empTypeCode"
+										value="${item.empTypeCode}">
+									<button type="submit" onclick="" class="scrap">채용정보
+										스크랩</button>
 								</div>
 							</form>
 						</li>
