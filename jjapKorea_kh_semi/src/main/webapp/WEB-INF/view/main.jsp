@@ -47,7 +47,7 @@
 				<ul class="grid-container">
 					<c:forEach items="${list}" var="item">
 						<li>
-							<form action="<%=request.getContextPath() %>/mypage" id="scrapForm">
+							<form id="scrapForm">
 								<div>
 									<%
 									// 이미지 파일들의 경로 배열
