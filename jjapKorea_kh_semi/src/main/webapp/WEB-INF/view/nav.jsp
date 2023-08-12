@@ -97,7 +97,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42201900" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+                                                    <a href="#" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg a">이번주 공채</span>
                                                         </span>
@@ -109,7 +109,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42203408" class="link clickcnt" data-cntnt-no="12333" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+                                                    <a href="#" class="link clickcnt" data-cntnt-no="12333" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg a">이번주 공채</span>
                                                         </span>
@@ -123,7 +123,7 @@
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42163374" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+                                                    <a href="#" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg a">이번주 공채</span>
                                                         </span>
@@ -135,7 +135,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42162732" class="link clickcnt" data-cntnt-no="12318" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+                                                    <a href="#" class="link clickcnt" data-cntnt-no="12318" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg a">이번주 공채</span>
                                                         </span>
@@ -149,17 +149,17 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Login/Login_TOT.asp?re_url=/" class="bnr-box blind-login devBnrBox" id="ortb-bannr-login" data-rcmdsvc-galabel="로그인" target="_self">
+                                                    <a href="<%=request.getContextPath()%>/login" class="bnr-box blind-login devBnrBox" id="ortb-bannr-login" data-rcmdsvc-galabel="로그인" target="_self">
                                                         <img src="//i.jobkorea.kr/content/images/personal/main/ps_bnr1.png?202305180000" alt="로그인하면 합격률 높은 채용공고를 추천해드려요">
                                                     </a>
-                                                    <a href="/Review/Home" class="bnr-box blind devBnrBox" id="ortb-bannr-review" data-rcmdsvc-galabel="기업리뷰_1" target="_blank">
+                                                    <a href="#" class="bnr-box blind devBnrBox" id="ortb-bannr-review" data-rcmdsvc-galabel="기업리뷰_1" target="_blank">
                                                         <img src="//i.jobkorea.kr/content/images/personal/main/ps_bnr6.png" alt="경험해 본 사람들의 이야기 그 기업이 궁금할 땐 잡코리아 기업리뷰">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42178931" class="link clickcnt" data-cntnt-no="12334" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
+                                                    <a href="#" class="link clickcnt" data-cntnt-no="12334" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg b">그룹사 공채</span>
                                                         </span>
@@ -171,7 +171,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42138052" class="link clickcnt" data-cntnt-no="12330" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
+                                                    <a href="#" class="link clickcnt" data-cntnt-no="12330" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg b">그룹사 공채</span>
                                                         </span>
@@ -189,7 +189,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42206014" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg c">최근 시작 공채</span>
                                                         </span>
@@ -201,7 +201,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42206010" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg c">최근 시작 공채</span>
                                                         </span>
@@ -215,7 +215,7 @@
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42205951" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg c">최근 시작 공채</span>
                                                         </span>
@@ -227,7 +227,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42205938" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg c">최근 시작 공채</span>
                                                         </span>
@@ -241,14 +241,14 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="https://www.jobkorea.co.kr/Top100/?Main_Career_Type=1&Search_Type=1" class="bnr-box devBnrBox" data-rcmdsvc-galabel="일간 채용 TOP100_1">
+                                                    <a href="#" class="bnr-box devBnrBox" data-rcmdsvc-galabel="일간 채용 TOP100_1">
                                                         <img src="//i.jobkorea.kr/content/images/personal/main/ps_bnr2.png" alt="채용 TOP100 실시간 인기 채용 공고를 확인해 보세요!">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42102053" class="link" data-rcmdsvcagi-galabel="마감 임박 공채" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="마감 임박 공채" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg d">마감 임박 공채</span>
                                                         </span>
@@ -260,7 +260,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42102247" class="link" data-rcmdsvcagi-galabel="마감 임박 공채" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="마감 임박 공채" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg d">마감 임박 공채</span>
                                                         </span>
@@ -319,14 +319,14 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Top100" class="bnr-box devBnrBox" data-rcmdsvc-galabel="일간 채용 TOP100_2" target="_blank">
+                                                    <a href="#" class="bnr-box devBnrBox" data-rcmdsvc-galabel="일간 채용 TOP100_2" target="_blank">
                                                         <img src="//i.jobkorea.kr/content/images/personal/main/ps_bnr14.png" alt="다른공고 둘러보고 맞춤공고 추천받아보세요">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42010466" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -338,7 +338,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42115305" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -352,7 +352,7 @@
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42085990" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -364,7 +364,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/41809505" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -382,7 +382,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42139725" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -394,7 +394,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42010830" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="놓치면 안되는 공고" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -408,14 +408,14 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/starter/interview" class="bnr-box devBnrBox" data-rcmdsvc-galabel="직무인터뷰 유도 배너" target="_blank">
+                                                    <a href="#" class="bnr-box devBnrBox" data-rcmdsvc-galabel="직무인터뷰 유도 배너" target="_blank">
                                                         <img src="//i.jobkorea.kr/content/images/personal/main/ps_bnr4.png" alt="직업과 미래에 대한 고민 해결! 현직자들의 job 이야기">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42139248" class="link" target="_blank" data-rcmdsvcagi-galabel="놓치면 안되는 공고">
+                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="놓치면 안되는 공고">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -427,7 +427,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42139427" class="link" target="_blank" data-rcmdsvcagi-galabel="놓치면 안되는 공고">
+                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="놓치면 안되는 공고">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -441,7 +441,7 @@
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/42182157" class="link" target="_blank" data-rcmdsvcagi-galabel="놓치면 안되는 공고">
+                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="놓치면 안되는 공고">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -453,7 +453,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Recruit/GI_Read/41891452" class="link" target="_blank" data-rcmdsvcagi-galabel="놓치면 안되는 공고">
+                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="놓치면 안되는 공고">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg i">놓치면 안되는 공고</span>
                                                         </span>
@@ -486,7 +486,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Theme/ffsb" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
                                                         <span class="img-box">
                                                             <img src="//file1.jobkorea.co.kr/Theme/ffsb/게이트_pc.png" alt="">
                                                         </span>
@@ -502,7 +502,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Theme/start_up" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
                                                         <span class="img-box">
                                                             <img src="//file1.jobkorea.co.kr/Theme/start_up/스타트업-전용채용관PC_gate.png" alt="">
                                                         </span>
@@ -518,7 +518,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Theme/kotra" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
                                                         <span class="img-box">
                                                             <img src="//file1.jobkorea.co.kr/Theme/kotra/2023_PC_gate.png" alt="">
                                                         </span>
@@ -534,7 +534,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Theme/RegionDSC" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
                                                         <span class="img-box">
                                                             <img src="//file1.jobkorea.co.kr/Theme/RegionDSC/RegionDSC_GatePage.jpg" alt="">
                                                         </span>
@@ -554,7 +554,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Theme/Edu" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
                                                         <span class="img-box">
                                                             <img src="//file1.jobkorea.co.kr/Theme/Edu/Edu_GatePage.jpg" alt="">
                                                         </span>
@@ -570,7 +570,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Theme/Const" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
                                                         <span class="img-box">
                                                             <img src="//file1.jobkorea.co.kr/Theme/Const/Const_GatePage.jpg" alt="">
                                                         </span>
@@ -586,7 +586,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Theme/adagency" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="전문채용관" target="_blank">
                                                         <span class="img-box">
                                                             <img src="//file1.jobkorea.co.kr/Theme/adagency/PC_gate copy.png" alt="">
                                                         </span>
@@ -602,7 +602,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/FutureLab" class="bnr-box devBnrBox" data-rcmdsvc-galabel="퓨처랩">
+                                                    <a href="#" class="bnr-box devBnrBox" data-rcmdsvc-galabel="퓨처랩">
                                                         <img src="//i.jobkorea.kr/content/images/personal/main/ps_bnr7.png" alt="취업정보를 한 곳에서 취업의 내비게이션 퓨쳐랩">
                                                     </a>
                                                 </div>
@@ -628,7 +628,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Review/ServiceView?ucoNo=43661319" class="link" data-rcmdsvc-galabel="신규 오픈 기업리뷰" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="신규 오픈 기업리뷰" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg o">NEW</span>
                                                         </span>
@@ -644,7 +644,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Review/ServiceView?ucoNo=1836081" class="link" data-rcmdsvc-galabel="워너비 기업 추천" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="워너비 기업 추천" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg q">워너비 기업 추천</span>
                                                         </span>
@@ -663,7 +663,7 @@
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Review/ServiceView?ucoNo=43501177" class="link" data-rcmdsvc-galabel="인기 기업리뷰" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="인기 기업리뷰" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg p">HOT</span>
                                                         </span>
@@ -679,7 +679,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Starter/CompanyReport?schTxt=한국도로공사" class="link" data-rcmdsvc-galabel="기업분석보고서" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="기업분석보고서" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg r">기업분석보고서</span>
                                                         </span>
@@ -697,14 +697,14 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Review/Home" class="bnr-box devBnrBox" data-rcmdsvc-galabel="기업리뷰_1" target="_blank">
+                                                    <a href="#" class="bnr-box devBnrBox" data-rcmdsvc-galabel="기업리뷰_1" target="_blank">
                                                         <img src="https://i.jobkorea.kr/content/images/personal/main/ps_bnr6.png" alt="경험해 본 사람들의 이야기 그 기업이 궁금할 땐 잡코리아 기업리뷰">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box-double">
-                                                    <a href="/Salary/" class="link" data-rcmdsvc-galabel="연봉 검색 순위" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="연봉 검색 순위" target="_blank">
                                                         <div class="ms-head">
                                                             <span class="bdgs">
                                                                 <span class="ut-bdg e">연봉 검색 순위</span>
@@ -747,7 +747,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box">
-                                                    <a href="/GoodJob/Tip/View?News_No=21087" class="link" data-rcmdsvc-galabel="취업뉴스" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="취업뉴스" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg j">취업뉴스</span>
                                                         </span>
@@ -759,7 +759,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Starter/OnAir/View?Brdcst_No=1280" class="link" data-rcmdsvc-galabel="잡코리아 TV" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="잡코리아 TV" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg k">잡코리아 TV</span>
                                                         </span>
@@ -772,7 +772,7 @@
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/GoodJob/Tip/View?News_No=21084" class="link" data-rcmdsvc-galabel="취업뉴스" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="취업뉴스" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg j">취업뉴스</span>
                                                         </span>
@@ -784,7 +784,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Starter/Interview/View/22354?Route=product" class="link" data-rcmdsvc-galabel="직무인터뷰" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="직무인터뷰" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg l">직무인터뷰</span>
                                                         </span>
@@ -797,14 +797,14 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Top100/?Main_Career_Type=1&amp;Search_Type=1" class="bnr-box devBnrBox" data-rcmdsvc-galabel="일간 채용 TOP100_3" target="_blank">
+                                                    <a href="#" class="bnr-box devBnrBox" data-rcmdsvc-galabel="일간 채용 TOP100_3" target="_blank">
                                                         <img src="https://i.jobkorea.kr/content/images/personal/main/ps_bnr5.png" alt="채용 TOP100 이번 주 가장 인기있는 공고!">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Starter/PassAssay/View/145456" class="link" data-rcmdsvc-galabel="합격자소서" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="합격자소서" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg m">합격자소서</span>
                                                         </span>
@@ -816,7 +816,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Starter/Review/view?C_Idx=6909&amp;Ctgr_Code=2" class="link" data-rcmdsvc-galabel="인적성·면접후기" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="인적성·면접후기" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg n">인적성·면접후기</span>
                                                         </span>
@@ -849,7 +849,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box-double">
-                                                    <a href="/User/Qstn/AnswerWrite?QstnNo=103989" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg d">인기글</span>
                                                         </span>
@@ -865,14 +865,14 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/starter/interview" class="bnr-box devBnrBox" data-rcmdsvc-galabel="직무인터뷰 유도 배너" target="_blank">
+                                                    <a href="#" class="bnr-box devBnrBox" data-rcmdsvc-galabel="직무인터뷰 유도 배너" target="_blank">
                                                         <img src="https://i.jobkorea.kr/content/images/personal/main/ps_bnr4.png" alt="직업과 미래에 대한 고민 해결! 현직자들의 job 이야기">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box-double">
-                                                    <a href="/User/Qstn/AnswerWrite?QstnNo=103470" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg d">인기글</span>
                                                         </span>
@@ -889,7 +889,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-double">
-                                                    <a href="/User/Qstn/AnswerWrite?QstnNo=104182" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg d">인기글</span>
                                                         </span>
@@ -910,7 +910,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box-double">
-                                                    <a href="/User/Qstn/AnswerWrite?QstnNo=103576" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg d">인기글</span>
                                                         </span>
@@ -926,14 +926,14 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/FutureLab" class="bnr-box devBnrBox" data-rcmdsvc-galabel="퓨처랩" target="_blank">
+                                                    <a href="#" class="bnr-box devBnrBox" data-rcmdsvc-galabel="퓨처랩" target="_blank">
                                                         <img src="https://i.jobkorea.kr/content/images/personal/main/ps_bnr7.png" alt="취업정보를 한 곳에서 취업의 내비게이션 퓨쳐랩">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box-double">
-                                                    <a href="/User/Qstn/AnswerWrite?QstnNo=103732" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg d">인기글</span>
                                                         </span>
@@ -950,7 +950,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-double">
-                                                    <a href="/User/Qstn/AnswerWrite?QstnNo=104571" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg d">인기글</span>
                                                         </span>
@@ -986,7 +986,7 @@
                                         <ul class="box-lst">
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Corp/Lounge/News_View?GI_Trend_News_No=638" class="link" data-rcmdsvc-galabel="HR연봉자료" target="_self">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="HR연봉자료" target="_self">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg e">HR매거진</span>
                                                         </span>
@@ -998,7 +998,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/GoodJob/Tip/View?News_No=21177" class="link" data-rcmdsvc-galabel="취업뉴스" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="취업뉴스" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg j">취업뉴스</span>
                                                         </span>
@@ -1012,7 +1012,7 @@
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Corp/Lounge/News_View?GI_Trend_News_No=636" class="link" data-rcmdsvc-galabel="HR연봉자료" target="_self">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="HR연봉자료" target="_self">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg e">HR매거진</span>
                                                         </span>
@@ -1024,7 +1024,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/GoodJob/Tip/View?News_No=21016" class="link" data-rcmdsvc-galabel="취업뉴스" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="취업뉴스" target="_blank">
                                                         <span class="bdgs">
                                                             <span class="ut-bdg j">취업뉴스</span>
                                                         </span>
@@ -1038,14 +1038,14 @@
                                             </li>
                                             <li>
                                                 <div class="box-img">
-                                                    <a href="/Corp/Index" class="bnr-box" data-rcmdsvc-galabel="채용솔루션" target="_self">
+                                                    <a href="#" class="bnr-box" data-rcmdsvc-galabel="채용솔루션" target="_self">
                                                         <img src="//i.jobkorea.kr/content/images/personal/main/corp_bnr1.png" alt="인재 채용의 정석 채용의 시작은 간편 공고 등록부터. 채용 공고">
                                                     </a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="box">
-                                                    <a href="/Service/Company/Searching" class="link" data-rcmdsvc-galabel="인재 검색 서칭 서비스" target="_self">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="인재 검색 서칭 서비스" target="_self">
                                                         <h4 class="box-tit">내가 원하는 인재를<br> 직접 찾아 연락해 보세요!</h4>
                                                         <span class="box-bot">
                                                             <span class="info-txt ico-arw">인재검색 서칭 서비스</span>
@@ -1053,7 +1053,7 @@
                                                     </a>
                                                 </div>
                                                 <div class="box">
-                                                    <a href="/Service/Company/Package" class="link" data-rcmdsvc-galabel="채용 광고 패키지 상품" target="_self">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="채용 광고 패키지 상품" target="_self">
                                                         <h4 class="box-tit ells3">
                                                             채용 공고 등록,<br>
                                                             처음이라 어려울 땐<br>
