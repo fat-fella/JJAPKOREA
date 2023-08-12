@@ -45,6 +45,7 @@ public class MyPageServlet extends HttpServlet {
 		
 		List<ScrapDto> list = service.scrapList(mid);
 		List<ScrapDto> list2 = service.scrapList(mid2);
+		
 		request.setAttribute("list", list);
 		request.setAttribute("list2", list2);
 		

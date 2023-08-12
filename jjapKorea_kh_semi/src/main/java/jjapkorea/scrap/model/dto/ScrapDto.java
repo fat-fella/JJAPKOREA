@@ -1,5 +1,9 @@
 package jjapkorea.scrap.model.dto;
 
+import java.util.List;
+
+import jjapkorea.Jobposting.model.dto.JobpostingDto;
+
 public class ScrapDto {
 //	--- -------- ------------ 
 //	MID NOT NULL VARCHAR2(20) 
@@ -7,6 +11,7 @@ public class ScrapDto {
 
 	private String mid;
 	private String jid;
+	private List<JobpostingDto> jobPostingList;
 	
 	@Override
 	public String toString() {
@@ -38,4 +43,10 @@ public class ScrapDto {
 	public void setJid(String jid) {
 		this.jid = jid;
 	}
+	public List<JobpostingDto> getJobPostingList() {
+        return jobPostingList;
+    }
+    public void setJobPostingList(List<JobpostingDto> jobPostingList) {
+        this.jobPostingList = jobPostingList;
+    }
 }
