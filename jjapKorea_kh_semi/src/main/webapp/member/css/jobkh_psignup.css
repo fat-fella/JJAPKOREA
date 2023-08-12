@@ -2,11 +2,13 @@
 
 
 /* mbr_common.css 에서 사용중인 css 시작 */
-
+.babo {
+	width: 220px;
+}
 /* 헤더 슬로건 */
 body.jkJoin {background-color:#f5f6f8;}
 #wrap {width:640px !important; margin:0 auto; text-align:left; box-sizing:border-box;}
-#header{padding-bottom:0px !important; padding-top: 43px;}
+#header{padding-bottom:0px !important; padding-top: 110px;}
 #header h1{display:none;}
 #header .joinTop {text-align:center; box-sizing: border-box; padding:42px 0 40px 0; min-height: 154px;}
 .jkJoin #header .joinTop {margin:0;}
@@ -25,7 +27,7 @@ body.jkJoin {background-color:#f5f6f8;}
 #header .joinTop p strong {display:block; color:#000; font:bold 16px 'Malgun Gothic','맑은고딕', '돋움', Dotum, sans-serif;}
 
 /* 탭 메뉴*/
-#header .snb {margin:0 0 0; position:relative;}
+#header .snb {margin-top: 700;margin:0 0 0; position:relative;}
 /*#header .snb li span,*/
 #header .snb > li {float:left; width:220px; height:60px; box-sizing:border-box; font-weight:normal; letter-spacing:-1px; text-align:center; font-family: 'Malgun Gothic','맑은고딕', '돋움', Dotum, sans-serif;}
 #header .snb > li.on > a {padding-top:12px; font-size:22px; font-weight:bold; color:#fff; background-color:#3399ff;}
@@ -777,7 +779,7 @@ a {text-decoration:none;}
 
 #header .snb {margin-top:41px;}
 #header .snb li {float:left; width:124px; height:74px;}
-#header .snb li span, #header .snb li a {overflow:hidden; display:block; height:100%; background:url('/content/images/member/sprites/mbr_header.png') no-repeat 0 0; white-space:nowrap; text-indent:-1000em;}
+#header .snb li span, #header .snb li a {overflow:hidden; display:block; height:60px; background:url('/content/images/member/sprites/mbr_header.png') no-repeat 0 0; white-space:nowrap;}
 #header .snb .gg a {background-position:0 0;}
 #header .snb .gi a {background-position:-124px 0;}
 #header .snb .hr a {background-position:-249px 0;}
