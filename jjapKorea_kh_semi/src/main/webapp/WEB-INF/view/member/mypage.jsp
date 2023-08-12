@@ -114,11 +114,11 @@
 	<div class="contWrap">
 		<div class="mtuTab devFixedTab">
 			<ul>
-				<li class="on"><a href="/user/mypage"
+				<li class="on"><a href="#"
 					onclick="GA_Event('마이페이지_PC', '나의소식', '스크랩 공고')">스크랩 공고</a></li>
-				<li><a href="/user/mypage?PageFlag=RE"
+				<li><a href="#"
 					onclick="GA_Event('마이페이지_PC', '나의소식', '최근 본 공고')">최근 본 공고</a></li>
-				<li><a href="/user/mypage?PageFlag=SM"
+				<li><a href="#"
 					onclick="GA_Event('마이페이지_PC', '나의소식', '스마트매치')">스마트매치</a></li>
 				<!--li>
         <a href="/user/mypage?PageFlag=FA" onclick="GA_Event('마이페이지_PC', '나의소식', '맞춤채용정보')">맞춤채용정보</a>
