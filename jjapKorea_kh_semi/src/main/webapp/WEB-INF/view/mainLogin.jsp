@@ -22,26 +22,27 @@
 		});
 	});
 	function setScrap(jid) {
-		var mid = "${SsLoginId}";
-		var mid2 = "${SsLoginId2}";
-		var isScraped = false; // 초기 스크랩 상태
-		var url = isScraped ? "${pageContext.request.contextPath}/cancle" : "${pageContext.request.contextPath}/mypage";
-		/* console.log("jid:", jid);
-	    console.log("ssLoginId:", ssLoginId); */
+	    var mid = "${SsLoginId}";
+	    var mid2 = "${SsLoginId2}";
+	    var scrapButton = $('[data-jid="' + jid + '"]');
+	 	// 현재 스크랩 상태 가져오기
+	    var isScraped = scrapButton.hasClass('scrap');
+	 	console.log(isScraped);
+	    var url = isScraped ? "${pageContext.request.contextPath}/mypage" : "${pageContext.request.contextPath}/cancle";
+	    console.log(url);
 	    $.ajax({
 	        url: url,
-	        type:"post",
+	        type: "post",
 	        data: {
 	            jid: jid,
 	            mid: mid,
 	            mid2: mid2
 	        },
 	        success: function(result) {
-	        	//console.log("success");
-	        	if (result == 0) {
+	            console.log("success");
+	            if (result == 0) {
 	                // 스크랩 되었을 때 처리
 	                // 예: 스크랩 버튼 텍스트 변경 및 클래스 추가/제거
-	                var scrapButton = $('[data-jid="' + jid + '"]');
 	                scrapButton.toggleClass('scraped');
 	                if (scrapButton.hasClass('scraped')) {
 	                    scrapButton.text('스크랩됨');
@@ -50,7 +51,6 @@
 	                    scrapButton.text('채용정보 스크랩');
 	                    scrapButton.addClass('scrap');
 	                }
-	                isScraped = !isScraped; // 스크랩 상태 토글
 	            } else {
 	                // 실패 시 처리
 	            }
@@ -402,7 +402,8 @@
 										<div class="applydateWithApply">D-${item.dday}</div>
 									</c:otherwise>
 								</c:choose>
-								<button onclick="" class="scrap">채용정보 스크랩</button>
+								<button type="button" onclick="setScrap('${item.jid}')" data-jid="${item.jid}"
+										class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
 					</c:forEach>
@@ -484,7 +485,8 @@
 										<div class="applydateWithApply">D-${item.dday}</div>
 									</c:otherwise>
 								</c:choose>
-								<button onclick="" class="scrap">채용정보 스크랩</button>
+								<button type="button" onclick="setScrap('${item.jid}')" data-jid="${item.jid}"
+										class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
 					</c:forEach>
