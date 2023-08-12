@@ -24,10 +24,12 @@
 	function setScrap(jid) {
 		var mid = "${SsLoginId}";
 		var mid2 = "${SsLoginId2}";
+		var isScraped = false; // 초기 스크랩 상태
+		var url = isScraped ? "${pageContext.request.contextPath}/cancle" : "${pageContext.request.contextPath}/mypage";
 		/* console.log("jid:", jid);
 	    console.log("ssLoginId:", ssLoginId); */
 	    $.ajax({
-	        url: "${pageContext.request.contextPath}/mypage",
+	        url: url,
 	        type:"post",
 	        data: {
 	            jid: jid,
@@ -48,6 +50,7 @@
 	                    scrapButton.text('채용정보 스크랩');
 	                    scrapButton.addClass('scrap');
 	                }
+	                isScraped = !isScraped; // 스크랩 상태 토글
 	            } else {
 	                // 실패 시 처리
 	            }

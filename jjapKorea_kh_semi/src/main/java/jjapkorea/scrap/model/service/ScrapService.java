@@ -41,4 +41,11 @@ public class ScrapService {
 		close(conn);
 		return result;
 	}
+	public int scrapCancle(ScrapDto vo) {
+		int result = 0;
+		Connection conn = getConnection();
+		result = dao.scrapCancle(conn, vo);
+		close(conn);
+		return result;
+	}
 }

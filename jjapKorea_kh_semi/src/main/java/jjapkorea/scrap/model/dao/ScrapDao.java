@@ -52,4 +52,19 @@ public class ScrapDao {
 		}
 		return result;
 	}
+	public int scrapCancle(Connection conn, ScrapDto vo) {
+		int result = 0;
+		String query = "delete from scrap where jid = ?";
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, vo.getJid());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
 }

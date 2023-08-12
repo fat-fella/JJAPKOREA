@@ -13,48 +13,31 @@ import jjapkorea.scrap.model.dto.ScrapDto;
 import jjapkorea.scrap.model.service.ScrapService;
 
 /**
- * Servlet implementation class MyPageServlet
+ * Servlet implementation class ScrapCancleServlet
  */
-@WebServlet("/mypage")
-public class MyPageServlet extends HttpServlet {
+@WebServlet("/cancle")
+public class ScrapCancleServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-	
-    public MyPageServlet() {
+    public ScrapCancleServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pname = (String)request.getSession().getAttribute("pname");
-		request.setAttribute("pname", pname);
-		String pname2 = (String)request.getSession().getAttribute("pname2");
-		request.setAttribute("pname2", pname2);
-		
-		String mid = (String)request.getSession().getAttribute("SsLoginId");
-		String mid2 = (String)request.getSession().getAttribute("SsLoginId2");
-		request.setAttribute("SsLoginId", mid);
-		request.setAttribute("SsLoginId2", mid2);
-		
-		ScrapService service = new ScrapService();
-		
-		List<ScrapDto> list = service.scrapList(mid);
-		List<ScrapDto> list2 = service.scrapList(mid2);
-		
-		request.setAttribute("list", list);
-		request.setAttribute("list2", list2);
-		
-		request.getRequestDispatcher("/WEB-INF/view/member/mypage.jsp").forward(request, response);
-	}
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+//	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-//	 */
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pname = (String)request.getSession().getAttribute("pname");
 		request.setAttribute("pname", pname);
@@ -72,9 +55,9 @@ public class MyPageServlet extends HttpServlet {
 		ScrapService service = new ScrapService();
 		
 		if(mid != null && mid2 == null) {
-			service.scrap(dto);
+			service.scrapCancle(dto);
 		} else if(mid == null && mid2 != null) {
-			service.scrap(dto2);
+			service.scrapCancle(dto2);
 		}
 		
 		List<ScrapDto> list = service.scrapList(mid);
@@ -82,4 +65,5 @@ public class MyPageServlet extends HttpServlet {
 		request.setAttribute("list", list);
 		request.setAttribute("list2", list2);
 	}
+
 }
