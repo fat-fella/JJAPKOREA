@@ -34,7 +34,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <jsp:include page="headerLogin.jsp"></jsp:include>
     <jsp:include page="nav.jsp"></jsp:include>
-    <jsp:include page="main.jsp"></jsp:include>
+    <jsp:include page="mainLogin.jsp"></jsp:include>
     <jsp:include page="footer.jsp"></jsp:include>
     <!-- nav active 별 스크립트 구성 -->
     <script>

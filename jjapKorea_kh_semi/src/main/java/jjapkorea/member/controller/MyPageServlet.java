@@ -38,6 +38,8 @@ public class MyPageServlet extends HttpServlet {
 		
 		String mid = (String)request.getSession().getAttribute("SsLoginId");
 		String mid2 = (String)request.getSession().getAttribute("SsLoginId2");
+		request.setAttribute("SsLoginId", mid);
+		request.setAttribute("SsLoginId2", mid2);
 		
 		ScrapService service = new ScrapService();
 		
@@ -59,25 +61,12 @@ public class MyPageServlet extends HttpServlet {
 		request.setAttribute("pname2", pname2);
 		
 		String jid = request.getParameter("jid");
-		String recruitField = request.getParameter("recruitField");
-		String companyName = request.getParameter("companyName");
-		String busino = request.getParameter("busino");
-		String userEducation = request.getParameter("userEducation");
-		String salary = request.getParameter("salary");
-		String minSalary = request.getParameter("minSalary");
-		String maxSalary = request.getParameter("maxSalary");
-		String registDate = request.getParameter("registDate");
-		String closeDate = request.getParameter("closeDate");
-		String reTitle = request.getParameter("reTitle");
-		String career = request.getParameter("career");
-		String workType = request.getParameter("workType");
-		String empTypeCode = request.getParameter("empTypeCode");
 		
 		String mid = (String)request.getSession().getAttribute("SsLoginId");
 		String mid2 = (String)request.getSession().getAttribute("SsLoginId2");
 		
-		ScrapDto dto = new ScrapDto(jid, mid, recruitField, companyName, busino, userEducation, salary, minSalary, maxSalary, registDate, closeDate, reTitle, career, workType, empTypeCode);
-		ScrapDto dto2 = new ScrapDto(jid, mid2, recruitField, companyName, busino, userEducation, salary, minSalary, maxSalary, registDate, closeDate, reTitle, career, workType, empTypeCode);
+		ScrapDto dto = new ScrapDto(mid, jid);
+		ScrapDto dto2 = new ScrapDto(mid2, jid);
 		
 		ScrapService service = new ScrapService();
 		

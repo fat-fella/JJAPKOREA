@@ -21,18 +21,6 @@
 			return false;
 		});
 	});
-	$(document).ready(function() {
-		$('.scrap').on('click', function() {
-			$(this).toggleClass('scraped');
-			if ($(this).hasClass('scraped')) {
-				$(this).text('스크랩됨');
-				$(this).removeClass('scrap');
-			} else {
-				$(this).text('채용정보 스크랩');
-				$(this).addClass('scrap');
-			}
-		});
-	});
 </script>
 <div class="wrap">
 	<main>
@@ -105,22 +93,8 @@
 									<input type="hidden" name="workType" value="${item.workType}">
 									<input type="hidden" name="empTypeCode"
 										value="${item.empTypeCode}">
-									<button type="button" onclick="" data-jid="${item.jid }"
+									<button type="button" onclick="" data-jid="${item.jid}"
 										class="scrap">채용정보 스크랩</button>
-									<script>
-function setScrap(){
-	$.ajax({
-		//url:"${}/scrap.ajax"
-		url:"${pageContext.request.contextPath}/mypage"
-		, data: {jid: $(this).data("jid"), mid: $(SsLoginId)}
-		, success: function(result){
-			if(result == 0) {
-				
-			}
-		}
-	});
-}
-</script>
 								</div>
 							</form>
 						</li>

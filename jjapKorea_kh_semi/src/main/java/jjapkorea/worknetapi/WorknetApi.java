@@ -133,15 +133,19 @@ public class WorknetApi {
                 dto.setEmpTypeCode(getTextContentByTagName(ele, "empTp"));
 
                list.add(dto);
-               
-               JobpostingService service = new JobpostingService();
-               service.insert(dto);
             }
+            JobpostingService service = new JobpostingService();
 
             // 출력 또는 다른 처리 작업
-//            for (JobpostingDto dto : list) {
-//                System.out.println(dto);
-//            }
+            for (JobpostingDto dto : list) {
+                //System.out.println(dto);
+            	int result = service.insert(dto); // insert 메서드 호출하여 데이터 삽입
+//                if (result > 0) {
+//                    System.out.println("Data inserted successfully: " + dto);
+//                } else {
+//                    System.out.println("Failed to insert data: " + dto);
+//                }
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
