@@ -11,28 +11,27 @@
                             </a></dd>
                     </dl>
                     <ul class="list-service">
-                        <li><a href="https://www.jobkorea.co.kr/starter/onair">잡코리아 TV</a></li>
-                        <li><a href="https://www.jobkorea.co.kr/theme/main">전문채용관</a></li>
-                        <li><a href="https://www.jobkorea.co.kr/super/main">슈퍼기업관</a></li>
-                        <li><a href="https://www.jobkorea.co.kr/corp/offer/list">헤드헌팅 의뢰</a></li>
-                        <li><a href="https://www.jobkorea.co.kr/service/company/learning">기업러닝</a></li>
+                        <li><a href="#">잡코리아 TV</a></li>
+                        <li><a href="#">전문채용관</a></li>
+                        <li><a href="#">슈퍼기업관</a></li>
+                        <li><a href="#">헤드헌팅 의뢰</a></li>
+                        <li><a href="#">기업러닝</a></li>
                     </ul>
-                    <span class="footer__notice_service">
-                        <a href="https://www.jobkorea.co.kr/service/sitemap"><em>더보기</em></a>
+                    <span class="footer__notice_service"><a href="#"><em>더보기</em></a>
                     </span>
                 </div>
 
                 <div class="footer__service">
                     <ul>
-                        <li><a href="https://jobkoreacareer.oopy.io">회사소개</a></li>
-                        <li><a href="http://company.jobkorea.co.kr/service/default.asp">운영사이트</a></li>
-                        <li><a href="https://www.jobkorea.co.kr/service_jk/provision/provision_gg.asp">이용약관</a></li>
-                        <li><a href="https://www.jobkorea.co.kr/service/PolicyPrivacy"><strong>개인정보처리방침</strong></a></li>
-                        <li><a href="https://www.jobkorea.co.kr/service/ProvisionLOC"><strong>위치기반서비스이용약관</strong></a></li>
-                        <li><a href="http://company.jobkorea.co.kr/network/api.asp">Open API</a></li>
-                        <li><a href="https://www.jobkorea.co.kr/service/company/ad">광고문의</a></li>
-                        <li><a href="http://company.jobkorea.co.kr/network/default.asp#Partners">제휴문의</a></li>
-                        <li><a href="https://www.jobkorea.co.kr/help/faq/user">고객센터</a></li>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">운영사이트</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                        <li><a href="#"><strong>위치기반서비스이용약관</strong></a></li>
+                        <li><a href="#">Open API</a></li>
+                        <li><a href="#">광고문의</a></li>
+                        <li><a href="#">제휴문의</a></li>
+                        <li><a href="#">고객센터</a></li>
                     </ul>
                 </div>
 
@@ -52,26 +51,26 @@
                         <dd class="footer__help-text"><a href="#" class="footer__help-link">gkwls8561@gmail.com</a></dd>
                     </dl>
                     <dl class="footer__help-wrap footer__help-wrap--consult">
-                        <a href="https://talk.naver.com/ct/wcb8l5" title="새창" class="footer__help-link">
+                        <a href="#" title="새창" class="footer__help-link">
                             <span class="footer__help--icon"></span>
                             <span class="footer__help--text">톡톡상담</span>
                         </a>
                     </dl>
                     <ul class="footer__sns">
                         <li class="footer__sns-item">
-                            <a href="https://blog.naver.com/jobkorea1" class="footer__sns-item--blog">
+                            <a href="#" class="footer__sns-item--blog">
                             <span class="skip">블로그</span></a></li>
                         <li class="footer__sns-item" >
-                            <a href="https://m.post.naver.com/my.nhn?memberNo=9028903" class="footer__sns-item--post">
+                            <a href="#" class="footer__sns-item--post">
                             <span class="skip">포스트</span></a></li>
                         <li class="footer__sns-item">
-                            <a href="https://www.facebook.com/jobkorea" class="footer__sns-item--facebook">
+                            <a href="#" class="footer__sns-item--facebook">
                             <span class="skip">페이스북</span></a></li>
                         <li class="footer__sns-item">
-                            <a href="https://www.instagram.com/jobkorea_albamon/" class="footer__sns-item--instagram">
+                            <a href="#" class="footer__sns-item--instagram">
                             <span class="skip">인스타그램</span></a></li>
                         <li class="footer__sns-item">
-                            <a href="https://www.youtube.com/channel/UCOrdY3p46GJh_CYacfwYieg" class="footer__sns-item--youtube">
+                            <a href="#" class="footer__sns-item--youtube">
                                 <span class="skip">유튜브</span></a></li>
                     </ul>
                 </div>
@@ -98,37 +97,36 @@
                 <div class="footer__award">
                     <ul class="clear">
                         <li class="footer__award-item footer__award-item--kbpi">
-                            <a href="https://www.jobkorea.co.kr/help/notice/view?no=14626" align="left">2023 한국산업의
+                            <a href="#" align="left">2023 한국산업의
                                 브랜드파워 1위<br />(취업전문포털 부문)</a></li>
                         <li class="footer__award-item footer__award-item--bcli">
-                            <a href="https://www.jobkorea.co.kr/help/notice/view?no=14427">2022 브랜드 고객
+                            <a href="#">2022 브랜드 고객
                                 충성도<br>대상 수상</a></li>
                         <li class="footer__award-item footer__award-item--ismsp">
-                            <a href="https://www.jobkorea.co.kr/help/notice/view?no=14625">[인증범위] 온라인
+                            <a href="#">[인증범위] 온라인
                                 리크루팅 서비스<br />[유효기간] 2022.01.19 ~ 2025.01.18</a></li>
                         <li class="footer__award-item footer__award-item--fav">
-                            <a href="https://www.jobkorea.co.kr/help/notice/view?no=14276">
+                            <a href="#">
                                 한국대학신문 대상<br>취업플랫폼 선호도 1위</a></li>
                         <li class="footer__award-item footer__award-item--kict">
-                            <a href="https://www.jobkorea.co.kr/help/notice/view?no=13874">업계최초!
+                            <a href="#">업계최초!
                                 K-ICT<br>정보보호대상 우수상 수상</a></li>
 
                     </ul>
-                    <a href="http://company.jobkorea.co.kr/cyber_pr/default.asp#award" class="footer__award--more awardMore"
-                        class="footer__award--more awardMore">더보기</a>
+                    <a href="#" class="footer__award--more awardMore" class="footer__award--more awardMore">더보기</a>
                 </div>
 
                 <div class="footer__mobile-service">
-                    <a href="http://company.jobkorea.co.kr/Service/default.asp#mobile"
+                  <a href="#"
                         class="footer__mobile-service--information">
                         <img src="https://i.jobkorea.kr/content/images/main/footer_mobile_info.png" alt="모바일 서비스 안내">
                     </a>
-                    <a href="https://m.jobkorea.co.kr" class="footer__mobile-service--link" return false;">
+                    <a href="#" class="footer__mobile-service--link" return false;">
                         <img src="https://i.jobkorea.kr/content//images/main/footer_mobile_link.png" alt="모바일 버전보기">
                     </a>
                 </div>
                 <p class="copyright">
-                    © <strong><a href="http://company.jobkorea.co.kr/" target="_blank">JOBKOREA</a></strong> LLC. All
+                    © <strong><a href="#" target="_blank">JOBKOREA</a></strong> LLC. All
                     rights reserved.
                 </p>
             </div>
