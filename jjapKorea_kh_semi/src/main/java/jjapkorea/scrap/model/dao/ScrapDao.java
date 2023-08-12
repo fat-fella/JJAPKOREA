@@ -44,7 +44,11 @@ public class ScrapDao {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setString(1, vo.getMid());
 			pstmt.setString(2, vo.getJid());
-			result = pstmt.executeUpdate();
+			//result = pstmt.executeUpdate();
+			// 중복된 데이터인지 확인
+	        if (!isScrapped(conn, vo.getMid(), vo.getJid())) {
+	            result = pstmt.executeUpdate();
+	        }
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -66,5 +70,24 @@ public class ScrapDao {
 			close(pstmt);
 		}
 		return result;
+	}
+	private boolean isScrapped(Connection conn, String mid, String jid) throws SQLException {
+	    String query = "SELECT COUNT(*) FROM scrap WHERE mid = ? AND jid = ?";
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    try {
+	        pstmt = conn.prepareStatement(query);
+	        pstmt.setString(1, mid);
+	        pstmt.setString(2, jid);
+	        rs = pstmt.executeQuery();
+	        if (rs.next()) {
+	            int count = rs.getInt(1);
+	            return count > 0;
+	        }
+	    } finally {
+	        close(rs);
+	        close(pstmt);
+	    }
+	    return false;
 	}
 }
