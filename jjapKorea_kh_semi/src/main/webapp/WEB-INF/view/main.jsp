@@ -33,7 +33,7 @@
 					</button>
 				</div>
 				<ul class="grid-container">
-					<c:forEach items="${list}" var="item">
+					<c:forEach items="${list1}" var="item">
 						<li>
 							<form id="scrapForm">
 								<div>
@@ -326,7 +326,7 @@
 					</button>
 				</div>
 				<ul class="grid-container">
-					<c:forEach items="${list}" var="item">
+					<c:forEach items="${list2}" var="item">
 						<li>
 							<div>
 								<%
@@ -408,7 +408,7 @@
 					</button>
 				</div>
 				<ul class="grid-container">
-					<c:forEach items="${list}" var="item">
+					<c:forEach items="${list3}" var="item">
 						<li>
 							<div>
 								<%
