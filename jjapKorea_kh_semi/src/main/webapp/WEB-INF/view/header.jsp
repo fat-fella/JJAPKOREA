@@ -567,12 +567,9 @@
 															class="tit beta">기업리뷰<span class="spGnb"></span></a></strong>
 														<div class="listBx">
 															<ul>
-																<li><a
-																	href="#">기업리뷰 홈</a></li>
-																<li><a
-																	href="#">리뷰 비교</a></li>
-																<li><a
-																	href="javascript:if('' != '' &amp;&amp; '' != 'M'){alert('기업리뷰는 개인회원만 작성이 가능합니다.');}else{location.href='/Review/MyReview';}">MY
+																<li><a href="#">기업리뷰 홈</a></li>
+																<li><a href="#">리뷰 비교</a></li>
+																<li><a href="javascript:if('' != '' &amp;&amp; '' != 'M'){alert('기업리뷰는 개인회원만 작성이 가능합니다.');}else{location.href='/Review/MyReview';}">MY
 																		기업리뷰</a></li>
 															</ul>
 														</div>
