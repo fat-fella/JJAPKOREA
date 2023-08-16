@@ -31,13 +31,13 @@
       - Random images for job posting
 
 ## URL
-  - original website : jobkorea.co.kr
-  - mainpage : jjapkorea/index
-  - login : jjapkorea/login
-  - signup : jjapkorea/signup , jjapkorea/psignup
-  - main page when logged in : jjapkorea/index/login
-  - mypage : jjapkorea/mypage
-  - one pick : jjapkorea/onpick
+    - original website : jobkorea.co.kr
+    - mainpage : jjapkorea/index
+    - login : jjapkorea/login
+    - signup : jjapkorea/signup , jjapkorea/psignup
+    - main page when logged in : jjapkorea/index/login
+    - mypage : jjapkorea/mypage
+    - one pick : jjapkorea/onpick
 
 ## TODOs
       - image loaidng problems (images not shown for unknown reasons)
