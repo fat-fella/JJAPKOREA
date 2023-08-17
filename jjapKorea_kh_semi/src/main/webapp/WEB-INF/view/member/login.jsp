@@ -14,6 +14,8 @@
 </head>
 
 <body>
+<!-- 경고창 띄우기 위한 방법 -->
+<jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>
     <div id="wrap">
 
         <div id="container">

@@ -36,6 +36,7 @@
     <jsp:include page="nav.jsp"></jsp:include>
     <jsp:include page="mainLogin.jsp"></jsp:include>
     <jsp:include page="footer.jsp"></jsp:include>
+    <jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>
     <!-- nav active 별 스크립트 구성 -->
     <script>
         $(document).ready(function() {
