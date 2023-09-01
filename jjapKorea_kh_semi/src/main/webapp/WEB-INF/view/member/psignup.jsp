@@ -1556,42 +1556,47 @@
 			col_1List[0].style.cssText = "top: 9px";
 			document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 11px";
 		})
-		/* document.querySelector(".mbrRegist .dev-name").addEventListener("focusout", function(){
-			col_1List[0].style.cssText = "";
-		    document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 16px";
-		}) */
+		document.querySelector(".mbrRegist .dev-name").addEventListener("blur", function() {
+		    // 포커스가 해제될 때 원래 스타일로 복구
+		    col_1List[0].style.cssText = ""; // 빈 문자열로 스타일 초기화
+		    document.querySelector(".col_1>.mbr_name").style.cssText = ""; // 빈 문자열로 스타일 초기화
+		});
 		document.querySelector(".mbrRegist .dev-id").addEventListener("focus", function() {
 			col_1List[1].style.cssText = "top: 9px";
 			document.querySelector(".mbr_id label").style.cssText = "font-size: 11px";
 		})
-		/* document.querySelector(".mbrRegist .dev-id").addEventListener("focusout", function(){
-			col_1List[1].style.cssText = "";
-		    document.querySelector(".mbr_id label").style.cssText = "font-size: 16px";
-		}) */
+		document.querySelector(".mbrRegist .dev-id").addEventListener("blur", function() {
+		    // 포커스가 해제될 때 원래 스타일로 복구
+		    col_1List[1].style.cssText = ""; // 빈 문자열로 스타일 초기화
+		    document.querySelector(".mbr_id label").style.cssText = ""; // 빈 문자열로 스타일 초기화
+		});
 		document.querySelector(".mbrRegist .dev-password").addEventListener("focus", function() {
 			col_1List[2].style.cssText = "top: 9px";
 			document.querySelector(".mbr_passwd label").style.cssText = "font-size: 11px";
 		})
-		/* document.querySelector(".mbrRegist .dev-password").addEventListener("focusout", function(){
-			col_1List[2].style.cssText = "";
-		    document.querySelector(".mbr_passwd label").style.cssText = "font-size: 16px";
-		}) */
+		document.querySelector(".mbrRegist .dev-password").addEventListener("blur", function() {
+		    // 포커스가 해제될 때 원래 스타일로 복구
+		    col_1List[2].style.cssText = ""; // 빈 문자열로 스타일 초기화
+		    document.querySelector(".mbr_passwd label").style.cssText = ""; // 빈 문자열로 스타일 초기화
+		});
 		document.querySelector(".mbrRegist .dev-mail").addEventListener("focus", function() {
 			col_1List[3].style.cssText = "top: 9px";
 			document.querySelector(".mbr_email label").style.cssText = "font-size: 11px";
 		})
-		/* document.querySelector(".mbrRegist .dev-mail").addEventListener("focusout", function(){
-			col_1List[3].style.cssText = "";
-		    document.querySelector(".mbr_email label").style.cssText = "font-size: 16px";
-		}) */
+		document.querySelector(".mbrRegist .dev-mail").addEventListener("blur", function() {
+		    // 포커스가 해제될 때 원래 스타일로 복구
+		    col_1List[3].style.cssText = ""; // 빈 문자열로 스타일 초기화
+		    document.querySelector(".mbr_email label").style.cssText = ""; // 빈 문자열로 스타일 초기화
+		});
 		document.querySelector(".mbrRegist .dev-phone").addEventListener("focus", function() {
 			col_1List[4].style.cssText = "top: 9px";
 			document.querySelector(".mbr_phone label").style.cssText = "font-size: 11px";
 		})
-		/* document.querySelector(".mbrRegist .dev-phone").addEventListener("focusout", function(){
-			col_1List[4].style.cssText = "";
-		    document.querySelector(".mbr_phone label").style.cssText = "font-size: 16px";
-		}) */
+		document.querySelector(".mbrRegist .dev-phone").addEventListener("blur", function() {
+		    // 포커스가 해제될 때 원래 스타일로 복구
+		    col_1List[4].style.cssText = ""; // 빈 문자열로 스타일 초기화
+		    document.querySelector(".mbr_phone label").style.cssText = ""; // 빈 문자열로 스타일 초기화
+		});
 	</script>
 </body>
 </html>
