@@ -97,6 +97,14 @@
             });
         });
     </script>
+    <script src="https://www.momentcrm.com/embed"></script>
+<script>
+  MomentCRM('init', {
+    'teamVanityId': 'jjapkorea',
+    'doChat': true,
+    'doTracking': true,
+  });
+</script>
 </head>
 <body>
     <div class="wrap header">
