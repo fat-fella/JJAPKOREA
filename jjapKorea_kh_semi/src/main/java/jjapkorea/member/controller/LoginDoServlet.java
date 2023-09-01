@@ -10,24 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import jjapkorea.member.model.service.MemberService;
 import jjapkorea.member.model.vo.MemberVo;
 
-/**
- * Servlet implementation class LoginDoServlet
- */
+
 @WebServlet("/login.login")
 public class LoginDoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginDoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mid=	request.getParameter("M_ID");
 		String mpw = request.getParameter("M_PWD");

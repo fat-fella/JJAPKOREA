@@ -20,11 +20,11 @@
 		<result property="dday" column="dday"/>
 	</resultMap>
 	
-	<insert id="insert"> 
+	<insert id="insert" parameterType="jobpostingDto"> 
 		<!-- 쿼리문이 두개? -->
 	</insert>
 	
-	<select id="selectList" resultMap="jobposting">
+	<select id="list" resultMap="jobpostingDto">
 		select * from info
 	</select>
 	

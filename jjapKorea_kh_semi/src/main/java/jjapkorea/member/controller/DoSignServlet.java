@@ -11,30 +11,13 @@ import jjapkorea.member.model.service.MemberService;
 import jjapkorea.member.model.vo.BusinessVo;
 import jjapkorea.member.model.vo.MemberVo;
 
-/**
- * Servlet implementation class DoSignServlet
- */
 @WebServlet("/signup.do")
 public class DoSignServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DoSignServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberService service = new MemberService();
 		service.insert();
