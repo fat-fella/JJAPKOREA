@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="jobposting">
-	<resultMap type="jobpostingDto" id="jobposting">
+	<resultMap type="jobpostingDto" id="jobpostingDto">
 		<id property="jid" column="jid"/>
 		<result property="recruitField" column="recruitField"/>
 		<result property="companyName" column="companyName"/>

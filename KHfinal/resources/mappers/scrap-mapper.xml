@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="scrap">
-	<resultMap type="scrapDto" id="scrap">
+	<resultMap type="scrapDto" id="scrapDto">
 		<id property="mid" column="mid"/>
 		<id property="jid" column="jid"/>
 	</resultMap>
 	
-	<select id="scrapList" resultMap="scrap" parameterType="string">
+	<select id="scrapList" resultMap="scrapDto" parameterType="scrapDto">
 		select * from scrap join info using (jid) where mid=#{mid}
 	</select>
 	
@@ -18,7 +18,7 @@
 		delete from scrap where jid = #{jid}
 	</delete>
 	
-	<select id="isScrapped" parameterType="map" resultMap="_int">
+	<select id="isScrapped" parameterType="scrapDto" resultMap="scrapDto">
 		select count(*) from scrap where mid=#{mid} and jid=#{jid}
 	</select>
 	
