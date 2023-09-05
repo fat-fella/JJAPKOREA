@@ -1,4 +1,4 @@
-package kh.final.jjapkorea;
+package kh.lclass.jjapkorea;
 
 import java.text.DateFormat;
 import java.util.Date;

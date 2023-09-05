@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="kh.final.jjapkorea">
+	<logger name="kh.lclass.jjapkorea">
 		<level value="info" />
 	</logger>
 	
