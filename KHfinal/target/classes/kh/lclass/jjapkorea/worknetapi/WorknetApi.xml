@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wantedRoot>
+	<total>134</total>
+	<startPage>3</startPage>
+	<display>10</display>
+	<wanted>
+		<wantedAuthNo>K152122308010024</wantedAuthNo>
+		<company>주식회사단비코리아</company>
+		<title>UX Designer(기획자)</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>3400만원</sal>
+		<minSal>34000000</minSal>
+		<maxSal>0</maxSal>
+		<region>서울 서대문구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>학력무관</minEdubg>
+		<career>경력</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>채용시까지 23-09-29</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K152122308010024
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K152122308010024
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011609</smodifyDtm>
+		<zipCd>03766</zipCd>
+		<strtnmCd>114104136322</strtnmCd>
+		<basicAddr>서울특별시 서대문구 이화여대길 59</basicAddr>
+		<detailAddr>2층</detailAddr>
+		<empTpCd>10</empTpCd>
+		<jobsCd>415504</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120612308010063</wantedAuthNo>
+		<company>(주)넥스가이드</company>
+		<title>JAVA 신입 및 경력개발자 모집</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>2700만원 ~ 3000만원</sal>
+		<minSal>27000000</minSal>
+		<maxSal>30000000</maxSal>
+		<region>서울 구로구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>대졸(2~3년)</minEdubg>
+		<maxEdubg>대졸(4년)</maxEdubg>
+		<career>관계없음</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>23-08-31</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120612308010063
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120612308010063
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011508</smodifyDtm>
+		<zipCd>08389</zipCd>
+		<strtnmCd>115304148334</strtnmCd>
+		<basicAddr>서울특별시 구로구 디지털로30길 28</basicAddr>
+		<detailAddr>마리오디지털타워 1311호</detailAddr>
+		<empTpCd>10</empTpCd>
+		<jobsCd>133301</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120032308010065</wantedAuthNo>
+		<company>(주)써지컬에이아이</company>
+		<title>응용, 시스템 소프트웨어 개발자(프로그래머) 모집</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>3500만원</sal>
+		<minSal>35000000</minSal>
+		<maxSal>0</maxSal>
+		<region>서울 강남구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>대졸(4년)</minEdubg>
+		<maxEdubg>박사</maxEdubg>
+		<career>경력</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>23-08-20</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120032308010065
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120032308010065
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011457</smodifyDtm>
+		<zipCd>06247</zipCd>
+		<strtnmCd>116803122008</strtnmCd>
+		<basicAddr>서울특별시 강남구 역삼로 169</basicAddr>
+		<detailAddr>6층</detailAddr>
+		<empTpCd>10</empTpCd>
+		<jobsCd>133200</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120032308010064</wantedAuthNo>
+		<company>(주)써지컬에이아이</company>
+		<title>3D프린팅 응용 SW 개발 및 디자이너</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>3000만원</sal>
+		<minSal>30000000</minSal>
+		<maxSal>0</maxSal>
+		<region>서울 강남구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>대졸(4년)</minEdubg>
+		<maxEdubg>박사</maxEdubg>
+		<career>경력</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>23-08-20</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120032308010064
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120032308010064
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011457</smodifyDtm>
+		<zipCd>06247</zipCd>
+		<strtnmCd>116803122008</strtnmCd>
+		<basicAddr>서울특별시 강남구 역삼로 169</basicAddr>
+		<detailAddr>6층</detailAddr>
+		<empTpCd>10</empTpCd>
+		<jobsCd>159105</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120032308010056</wantedAuthNo>
+		<company>(주)더크림유니언</company>
+		<title>[더크림유니언] UIUX기획 구축 경력 채용</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>2800만원</sal>
+		<minSal>28000000</minSal>
+		<maxSal>0</maxSal>
+		<region>서울 강남구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>학력무관</minEdubg>
+		<career>경력</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>23-08-31</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120032308010056
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120032308010056
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011444</smodifyDtm>
+		<zipCd>06039</zipCd>
+		<strtnmCd>116804166258</strtnmCd>
+		<basicAddr>서울특별시 강남구 도산대로12길 18</basicAddr>
+		<detailAddr>크림빌딩 2F, 3F</detailAddr>
+		<empTpCd>20</empTpCd>
+		<jobsCd>133302</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120032308010055</wantedAuthNo>
+		<company>(주)더크림유니언</company>
+		<title>[더크림유니언] 웹 퍼블리셔 경력 및 PL 채용</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>2800만원</sal>
+		<minSal>28000000</minSal>
+		<maxSal>0</maxSal>
+		<region>서울 강남구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>학력무관</minEdubg>
+		<career>경력</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>23-08-31</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120032308010055
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120032308010055
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011443</smodifyDtm>
+		<zipCd>06039</zipCd>
+		<strtnmCd>116804166258</strtnmCd>
+		<basicAddr>서울특별시 강남구 도산대로12길 18</basicAddr>
+		<detailAddr>크림빌딩 2F, 3F</detailAddr>
+		<empTpCd>20</empTpCd>
+		<jobsCd>133300</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120312308010058</wantedAuthNo>
+		<company>하이퍼테크</company>
+		<title>[경력]공공기관 SM 경력자 모집</title>
+		<salTpNm>월급</salTpNm>
+		<sal>300만원 ~ 500만원</sal>
+		<minSal>3000000</minSal>
+		<maxSal>5000000</maxSal>
+		<region>서울 마포구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>대졸(2~3년)</minEdubg>
+		<maxEdubg>박사</maxEdubg>
+		<career>경력</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>채용시까지 23-09-29</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120312308010058
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120312308010058
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011415</smodifyDtm>
+		<zipCd>03909</zipCd>
+		<strtnmCd>114403113007</strtnmCd>
+		<basicAddr>서울특별시 마포구 매봉산로 37</basicAddr>
+		<detailAddr>DMC산학협력연구센터 1402</detailAddr>
+		<empTpCd>10</empTpCd>
+		<jobsCd>133200</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120612308010053</wantedAuthNo>
+		<company>(주)은우 소프트</company>
+		<title>[은우소프트] 시스템 개발자 인력 채용 공고</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>3000만원 ~ 3000만원</sal>
+		<minSal>30000000</minSal>
+		<maxSal>30000000</maxSal>
+		<region>서울 금천구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>대졸(2~3년)</minEdubg>
+		<maxEdubg>석사</maxEdubg>
+		<career>신입</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>23-08-31</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120612308010053
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120612308010053
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011343</smodifyDtm>
+		<zipCd>08505</zipCd>
+		<strtnmCd>115453117002</strtnmCd>
+		<basicAddr>서울특별시 금천구 가산디지털2로 101</basicAddr>
+		<detailAddr>A동1206호, A동 1207호(가산동,한라원앤원타워)</detailAddr>
+		<empTpCd>10</empTpCd>
+		<jobsCd>133301</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120612308010048</wantedAuthNo>
+		<company>(주)메가투스</company>
+		<title>[메가투스] 연계 솔루션 프로젝트 수행 진천 파견...</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>3000만원</sal>
+		<minSal>30000000</minSal>
+		<maxSal>0</maxSal>
+		<region>서울 구로구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>대졸(2~3년)</minEdubg>
+		<maxEdubg>대졸(4년)</maxEdubg>
+		<career>신입</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>채용시까지 23-09-30</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120612308010048
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120612308010048
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011334</smodifyDtm>
+		<zipCd>08380</zipCd>
+		<strtnmCd>115304148340</strtnmCd>
+		<basicAddr>서울특별시 구로구 디지털로33길 27</basicAddr>
+		<detailAddr>705호</detailAddr>
+		<empTpCd>10</empTpCd>
+		<jobsCd>134303</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+	<wanted>
+		<wantedAuthNo>K120122308010032</wantedAuthNo>
+		<company>스포츠토토코리아</company>
+		<title>㈜스포츠토토코리아 IT 및 시스템개발부문 투표권개...</title>
+		<salTpNm>연봉</salTpNm>
+		<sal>3000만원 ~ 5000만원</sal>
+		<minSal>30000000</minSal>
+		<maxSal>50000000</maxSal>
+		<region>서울 중구</region>
+		<holidayTpNm>주5일근무</holidayTpNm>
+		<minEdubg>대졸(2~3년)</minEdubg>
+		<maxEdubg>대졸(4년)</maxEdubg>
+		<career>경력</career>
+		<regDt>23-08-01</regDt>
+		<closeDt>23-08-31</closeDt>
+		<infoSvc>VALIDATION</infoSvc>
+		<wantedInfoUrl>http://www.work.go.kr/empDetailRedirect.do?wantedAuthNo=K120122308010032
+		</wantedInfoUrl>
+		<wantedMobileInfoUrl>https://m.work.go.kr/regionJobsWorknet/jobDetailView2.do?srchInfotypeNm=VALIDATION&amp;srchWantedAuthNo=K120122308010032
+		</wantedMobileInfoUrl>
+		<smodifyDtm>202308011240</smodifyDtm>
+		<zipCd>04526</zipCd>
+		<strtnmCd>111404103188</strtnmCd>
+		<basicAddr>서울특별시 중구 세종대로12길 12</basicAddr>
+		<detailAddr>해남2빌딩 5층</detailAddr>
+		<empTpCd>10</empTpCd>
+		<jobsCd>133201</jobsCd>
+		<prefCd></prefCd>
+	</wanted>
+</wantedRoot>
