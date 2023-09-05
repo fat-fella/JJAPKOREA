@@ -1,13 +1,6 @@
 package jjapkorea.member.model.dao;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 
 import jjapkorea.member.model.vo.BusinessVo;
@@ -50,7 +43,8 @@ public class MemberDao {
 		int result = session.delete("member.delete", mid);
 		return result;
 	}	
-	// IndexLogin
+	
+// IndexLogin
 	public String indexLogin(SqlSession session, String mid) {
 		String result = session.selectOne("member.delete" ,mid);
 		return result;

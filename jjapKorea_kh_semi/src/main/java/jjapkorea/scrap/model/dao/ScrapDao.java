@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
@@ -111,8 +113,11 @@ public class ScrapDao {
 //	    return false;
 //	}
 //<--------------- isScrapped --------------->	
-	private boolean isScrapped(SqlSession session, @Param("mid") String mid, @Param("jid")String jid) throws SQLException {
-        int count = session.select("scrap.isScrapped", mid, jid); //TODO
+	private boolean isScrapped(SqlSession session, String mid, String jid) throws SQLException {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("mid", mid);
+		map.put("jid", jid);
+		int count = session.selectOne("scrap.isScrapped", map);
         return count > 0; // 0이 아니면 true, 0이면 false 반환
     }
 }

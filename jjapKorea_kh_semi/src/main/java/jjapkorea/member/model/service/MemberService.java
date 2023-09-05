@@ -1,7 +1,5 @@
 package jjapkorea.member.model.service;
 
-import java.sql.Connection;
-import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -14,7 +12,7 @@ import jjapkorea.member.model.vo.PersonVo;
 public class MemberService {
 	private MemberDao dao = new MemberDao();
 
-	// login 
+// login 
 	public String login(String mid) {
 		String result = null;
 		SqlSession session = MybatisTemplate.getSqlSession();
@@ -22,7 +20,7 @@ public class MemberService {
 		session.close();
 		return result;
 	}
-	//businesslogin
+//businesslogin
 	public String businessLogin(String mid) {
 		String result = null;
 		SqlSession session = MybatisTemplate.getSqlSession();
@@ -30,7 +28,7 @@ public class MemberService {
 		session.close();
 		return result;
 	}
-	//개인 회원가입 
+//개인 회원가입 
 	public int pSignup(MemberVo vo) {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
@@ -45,7 +43,7 @@ public class MemberService {
 		session.close();
 		return result;
 	}
-	//기업 회원가입 
+//기업 회원가입 
 	public int bSignUp(MemberVo vo) {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();

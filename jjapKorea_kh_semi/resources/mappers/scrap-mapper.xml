@@ -18,7 +18,7 @@
 		delete from scrap where jid = #{jid}
 	</delete>
 	
-	<select id="isScrapped" resultMap="_int">
+	<select id="isScrapped" parameterType="map" resultMap="_int">
 		select count(*) from scrap where mid=#{mid} and jid=#{jid}
 	</select>
 	
