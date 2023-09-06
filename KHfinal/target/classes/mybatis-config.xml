@@ -27,9 +27,9 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="/mappers/member-mapper.xml"/>
-		<mapper resource="/mappers/jobposting-mapper.xml"/>
-		<mapper resource="/mappers/scrap-mapper.xml"/>
+		<mapper resource="mappers/member-mapper.xml"/>
+		<mapper resource="mappers/jobposting-mapper.xml"/>
+		<mapper resource="mappers/scrap-mapper.xml"/>
 	</mappers>
 		
 </configuration>

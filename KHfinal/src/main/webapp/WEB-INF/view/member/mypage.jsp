@@ -27,7 +27,7 @@
 	href="<%=request.getContextPath() %>/resources/css/jobkh_footer.css">
 <!-- 스크랩부 -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath() %>/member/css/jobkh_mypage.css">
+	href="<%=request.getContextPath() %>/resources//member/css/jobkh_mypage.css">
 <!-- swiper css -->
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />

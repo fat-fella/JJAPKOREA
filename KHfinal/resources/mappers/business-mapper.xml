@@ -16,9 +16,9 @@
 
 	<insert id="businessSignUp" parameterType="businessVo">
 		insert into business values (
-				#{mid}, #{bform}, #{brno}, #{bizname}, #{brepName}
-				, #{baddress}, #{bname}, #{btel}, #{bemail}
-				)	
+			#{mid}, #{bform}, #{brno}, #{bizname}, #{brepName}
+			, #{baddress}, #{bname}, #{btel}, #{bemail}
+		)	
 	</insert>
 
 </mapper>

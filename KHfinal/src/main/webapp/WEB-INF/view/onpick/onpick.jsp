@@ -8,15 +8,15 @@
 <!-- [4] button 3개 class 미리 만들어두기 -->
 <!-- [4] a 모양 미리 만들어두기 -->
 <!-- [5] layout 영역 -->
-<link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_layout.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources//onpick/css/onpick_layout.css">
 <!-- [6] header 영역 -->
-<link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_header.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources//onpick/css/onpick_header.css">
 <!-- [7] nav 영역 -->
-<link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_nav.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources//onpick/css/onpick_nav.css">
 <!-- [8] main 영역 -->
-<link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_main.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources//onpick/css/onpick_main.css">
 <!-- [9] footer 영역 -->
-<link rel="stylesheet" href="<%=request.getContextPath() %>/onpick/css/onpick_footer.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources//onpick/css/onpick_footer.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
 	    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -34,7 +34,7 @@
     <!-- jQuery 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- nav script -->
-    <script src="<%=request.getContextPath() %>/onpick/js/onpick_nav.js"></script>
+    <script src="<%=request.getContextPath() %>/resources//onpick/js/onpick_nav.js"></script>
 
     <script>
         /* $(document).ready(function() {
@@ -78,7 +78,7 @@
     top: 0;
     z-index: 999;
     margin: 0;
-    background-image: url(/jjapkorea/onpick//images/prev-filter-button.svg);
+    background-image: url(/jjapkorea/resources/onpick/images/prev-filter-button.svg);
     background-size: cover;
 }
         </style>

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<%=request.getContextPath() %>/member/css/jobkh_login.css">
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/member/css/jobkh_login.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
