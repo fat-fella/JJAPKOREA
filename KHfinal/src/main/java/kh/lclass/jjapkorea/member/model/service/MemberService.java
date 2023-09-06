@@ -33,6 +33,11 @@ public class MemberService {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.pSignup(session, vo);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 		return result;
 	}
@@ -40,6 +45,11 @@ public class MemberService {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.personSignup(session, vo);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 		return result;
 	}
@@ -48,6 +58,11 @@ public class MemberService {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.bSignUp(session, vo);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 		return result;
 	}
@@ -55,6 +70,11 @@ public class MemberService {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.businessSignUp(session, vo);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 		return result;
 	}
@@ -62,12 +82,22 @@ public class MemberService {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.delete(session, mid);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 		return result;
 	}
 	public void insert() {
 		SqlSession session = MybatisTemplate.getSqlSession();
-		dao.insert(session);
+		int result = dao.insert(session);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 	}
 	public String indexLogin(String mid) {

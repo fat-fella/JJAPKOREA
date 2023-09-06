@@ -27,8 +27,10 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="mappers/member-mapper.xml"/>
+		<mapper resource="mappers/business-mapper.xml"/>
 		<mapper resource="mappers/jobposting-mapper.xml"/>
+		<mapper resource="mappers/member-mapper.xml"/>
+		<mapper resource="mappers/person-mapper.xml"/>
 		<mapper resource="mappers/scrap-mapper.xml"/>
 	</mappers>
 		
