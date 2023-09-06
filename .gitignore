@@ -8,11 +8,6 @@ Servers/
 properties/
 *.properties
 
-target/
-.settings/
-.DS_Store
-.classpath
-
 # Log file
 *.log
 
