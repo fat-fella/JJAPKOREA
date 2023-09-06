@@ -30,10 +30,13 @@ public class MemberDao {
 		int result = session.insert("member.bSignUp", vo);
 		return result;
 	}
-	public int insert(SqlSession session) {
+	public int countAll() {
 		//TODO
-		int result = 0;
-		return result;
+        int result = 0;
+        return result;
+    }
+	public void insert(SqlSession session) {
+		//TODO
 	}
 	public int businessSignUp(SqlSession session, BusinessVo vo) {
 		int result = session.insert("business.businessSignUp", vo);

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="member">
-	<resultMap type="memberVo" id="member">
+	<resultMap type="memberVo" id="memberVo">
 		<id property="mid" column="mid"/>
 		<result property="mpw" column="mpw"/>
 		<result property="mtype" column="mtype"/>
 	</resultMap>
 
-	<select id="login" resultMap="member">
+	<select id="login" resultMap="memberVo">
 		select mpw from member where mid=#{mid} and mtype=1
 	</select>
 	
-	<select id="businessLogin" resultMap="member">
+	<select id="businessLogin" resultMap="memberVo">
 		select mpw from member where mid=#{mid} and mtype=2
 	</select>
 	
@@ -23,11 +23,16 @@
 		insert into member values (#{mid}, #{mpw},2)
 	</insert>
 	
-	<insert id="insert">
+	<insert id="insert" parameterType="memberVo">
 		<!-- 쿼리문이 두개? -->
-	</insert>
+        INSERT INTO businessform VALUES (#{BFORM}, #{BFORM_NAME})
+    </insert>
+
+    <select id="countAll" resultType="memberVo">
+        SELECT COUNT(*) FROM businessform
+    </select>
 	
-	<delete id="delete" parameterType="string">
+	<delete id="delete" parameterType="memberVo">
 		delete from member where mid = #{mid}
 	</delete>
 </mapper>

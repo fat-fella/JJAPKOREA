@@ -92,12 +92,8 @@ public class MemberService {
 	}
 	public void insert() {
 		SqlSession session = MybatisTemplate.getSqlSession();
-		int result = dao.insert(session);
-		if(result>0) {
-			session.commit();
-		} else {
-			session.rollback();
-		}
+		dao.insert(session);
+		session.commit();
 		session.close();
 	}
 	public String indexLogin(String mid) {

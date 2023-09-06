@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="person">
-	<resultMap type="personVo" id="person">
+	<resultMap type="personVo" id="personVo">
 		<id property="mid" column="mid"/>
 		<result property="pname" column="pname"/>
 		<result property="pemail" column="pemail"/>
 		<result property="pphone" column="pphone"/>
 	</resultMap>
 	
-	<select id="indexLogin" resultMap="person" parameterType="string">
+	<select id="indexLogin" resultMap="personVo" parameterType="personVo">
 		select pname from person where mid=#{mid}
 	</select>
 	
-	<select id="personSignup" resultMap="person">
+	<select id="personSignup" resultMap="personVo">
 		insert into person values (#{mid}, #{pname}, #{pemail}, #{pphone})
 	</select>
 	
