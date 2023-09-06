@@ -27,6 +27,11 @@ public class ScrapService {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.scrap(session, vo);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 		return result;
 	}
@@ -81,6 +86,11 @@ public class ScrapService {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.scrapCancle(session, vo);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 		return result;
 	}

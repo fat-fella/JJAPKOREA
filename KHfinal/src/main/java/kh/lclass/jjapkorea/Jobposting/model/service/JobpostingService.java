@@ -16,6 +16,11 @@ public class JobpostingService {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.insert(session, vo);
+		if(result>0) {
+			session.commit();
+		} else {
+			session.rollback();
+		}
 		session.close();
 		return result;
 	}
