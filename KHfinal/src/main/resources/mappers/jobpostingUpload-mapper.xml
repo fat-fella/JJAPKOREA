@@ -3,19 +3,19 @@
 <mapper namespace="jobpostingUpload">
 	<resultMap type="jobpostingDto" id="jobpostingDto">
 		<id property="jid" column="jid"/>
-		<result property="recruitField" column="recruitField"/>
-		<result property="companyName" column="companyName"/>
+		<result property="recruitField" column="RECRUIT_FIELD"/>
+		<result property="companyName" column="COMPANY_NAME"/>
 		<result property="busino" column="busino"/>
-		<result property="userEducation" column="userEducation"/>
+		<result property="userEducation" column="USER_EDUCATION"/>
 		<result property="salary" column="salary"/>
-		<result property="minSalary" column="minSalary"/>
-		<result property="maxSalary" column="maxSalary"/>
-		<result property="registDate" column="registDate"/>
-		<result property="closeDate" column="closeDate"/>
-		<result property="reTitle" column="reTitle"/>
+		<result property="minSalary" column="MIN_SALARY"/>
+		<result property="maxSalary" column="MAX_SALARY"/>
+		<result property="registDate" column="REGIST_DATE"/>
+		<result property="closeDate" column="CLOSE_DATE"/>
+		<result property="reTitle" column="RE_TITLE"/>
 		<result property="career" column="career"/>
-		<result property="workType" column="workType"/>
-		<result property="empTypeCode" column="empTypeCode"/>
+		<result property="workType" column="WORK_TYPE"/>
+		<result property="empTypeCode" column="EMP_TYPE_CODE"/>
 		<result property="today" column="today"/>
 		<result property="dday" column="dday"/>
 	</resultMap>
