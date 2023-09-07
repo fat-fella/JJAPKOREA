@@ -190,20 +190,20 @@
 		    <version>2.6</version>
 		</dependency>
 		
-		<!-- Ajax사용하기 -->
-		<!-- jackson-databind -->
+<!-- Ajax사용하기 -->
+	<!-- jackson-databind -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.12.3</version>
 		</dependency>
-		<!-- jackson-core -->
+	<!-- jackson-core -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-core</artifactId>
 		    <version>2.12.3</version>
 		</dependency>
-		<!-- jackson-annotations -->
+	<!-- jackson-annotations -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-annotations</artifactId>
