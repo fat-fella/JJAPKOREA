@@ -11,7 +11,7 @@ properties/
 target/
 .settings/
 .DS_Store
-.classpath
+
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
