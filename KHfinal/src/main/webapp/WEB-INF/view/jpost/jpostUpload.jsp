@@ -6,158 +6,12 @@
 <meta charset="UTF-8">
 <title>짭코리아 취업공고</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        margin: 0;
-        padding: 0;
-    }
-
-    header {
-        background-color: #0077b6;
-        color: white;
-        padding: 10px 0;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-    }
-
-    .logo {
-        text-decoration: none;
-    }
-
-    .links {
-        margin-left: auto;
-    }
-
-    .link {
-        color: white;
-        margin-left: 20px;
-        text-decoration: none;
-    }
-
-    .jpostform {
-        max-width: 1000px;
-        margin: 20px auto;
-        background-color: white;
-        padding: 20px;
-        border: 1px solid #ddd;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .jposthead {
-        text-align: center;
-    }
-
-    .jpostfieldset {
-        border: 1px solid #ddd;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-    label {
-        font-weight: bold;
-    }
-
-    input[type="text"],
-    select {
-        width: 100%;
-        padding: 5px;
-        margin: 5px 0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-
-    textarea {
-        width: 100%;
-        height: 150px;
-        padding: 5px;
-        margin: 5px 0;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-
-    .jpostsubmitbtn {
-        text-align: center;
-        
-    }
-
-	.jpostdetails {
-	    text-align: center;
-	}
-	
-	.jpostsubmitbtn button:hover{
-	    background-color: #005b8a;
-	}
-	.jpostsubmitbtn button{
-		background-color: #0077b6;
-	    color: white;
-	    border: none;
-	    border-radius: 5px;
-	    cursor: pointer;
-	    display: block;
-	    margin: 0 auto; 
-	    margin-top: 10px;
-        padding: 10px 0; 
-   		width: 100%;
- 		box-sizing: border-box;
-	}
-	
-	.submitBtn {
-	    background-color: #0077b6;
-	    color: white;
-	    padding: 10px 20px;
-	    border: none;
-	    border-radius: 5px;
-	    cursor: pointer;
-	    display: block; 
-	    margin: 0 auto; 
-	    margin-top: 10px;
-	}
-	
-	.submitBtn:hover {
-	    background-color: #005b8a;
-	}
-	
-
-    .jpostdateset {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    footer {
-        text-align: center;
-        background-color: #333;
-        color: white;
-        padding: 10px 0;
-    }
-    .logoimg{
-    	height: 48px;
-    	width: 90px;
-    }
-    span{
-    	color:red;	
-    }
-    .ck-editor__editable {
-    min-height: 400px;
-    }
-    
-</style>
-
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_jpostupload.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <a href="https://www.jobkorea.co.kr/" class="logo linkLogo">
+            <a href="<%=request.getContextPath() %>/index" class="logo linkLogo">
             <img src="<%=request.getContextPath()%>/resources/images/짭코리아.png"
                 alt="JJAPKOREA" class="logoimg"></a>
             <div class="links">
@@ -178,8 +32,8 @@
                     <input type="text" id="jobTitle" name="jobTitle" required>
                 </div>
                 <div class="recruitfieldinputBox">
-                    <label for="recruitField">채용분야 1차 분류<span>*</span></label>
-                    <select name="recruitField" id="recruitField" required>
+                    <label for="firstRecruitField">채용분야 1차 분류<span>*</span></label>
+                    <select name="firstRecruitField" id="firstRecruitField" required>
                         <option value="건설·채굴">건설·채굴</option>
                         <option value="경영·사무·금융·보험">경영·사무·금융·보험</option>
                         <option value="교육·법률·사회복지·경찰·소방 및 군인">교육·법률·사회복지·경찰·소방 및 군인</option>
@@ -195,18 +49,18 @@
                         <option value="예술·디자인·방송·스포츠</">예술·디자인·방송·스포츠</option>
                     </select>
                     <label style=font-size:12px;color:red;>1차 세부채용분야<span>*</span></label>
-                    <select>
+                    <select name="secondRecruitField" id="secondRecruitField">
                     	<option>TODO</option>
                     </select>
                      <label style=font-size:12px;color:red;>2차 세부채용분야<span>*</span></label>
-                    <select>
+                    <select name="recruitFiled" id="recruitField">
                     	<option>TODO</option>
                     </select>
                 </div>
                 <h4>모집조건</h4>
                 <div class="usereducationinputBox">
                     <label for="userEducation">필요학력 <span>*</span></label>
-                    <select name="usereducation">
+                    <select name="userEducation" id="userEducation">
                     	<option value="학력무관">학력무관</option>
                     	<option value="고등학교졸업">고등학교졸업</option>
                     	<option value="대학원 박사졸업">대학원 박사졸업</option>

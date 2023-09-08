@@ -25,8 +25,5 @@
 		INSERT INTO info VALUES (#{jid}, #{recruitField}, #{companyName}, #{busino}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
     </insert>
 	
-	<select id="list" resultMap="jobpostingDto">
-		select * from info
-	</select>
 	
 </mapper>
