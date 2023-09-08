@@ -23,14 +23,14 @@
 		insert into member values (#{mid}, #{mpw},2)
 	</insert>
 	
-	<insert id="insert" parameterType="memberVo">
+    <select id="check" resultType="int">
+        SELECT COUNT(*) FROM businessform
+    </select>
+    
+    <insert id="insert" parameterType="memberVo">
 		<!-- 쿼리문이 두개? -->
         INSERT INTO businessform VALUES (#{BFORM}, #{BFORM_NAME})
     </insert>
-
-    <select id="countAll" resultType="memberVo">
-        SELECT COUNT(*) FROM businessform
-    </select>
 	
 	<delete id="delete" parameterType="memberVo">
 		delete from member where mid = #{mid}
