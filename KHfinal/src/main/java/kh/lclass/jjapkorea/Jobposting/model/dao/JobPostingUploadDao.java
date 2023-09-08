@@ -11,8 +11,9 @@ public class JobPostingUploadDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public int insert(JobpostingDto dto) {
-		return sqlSession.insert("jobPostingUpload.insert", dto);
+	public JobpostingDto insert(JobpostingDto dto) throws Exception{
+		int result = sqlSession.insert("jobPostingUpload.insert", dto);
+		return dto;
 	}
 	
 	

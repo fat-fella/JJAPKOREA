@@ -7,9 +7,44 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class JobPostingUploadServlet
- */
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.Jobposting.model.service.JobPostingUploadService;
+
+//@Controller
+//@RequestMapping("/jjapkorea/jpost")
+//public class JobPostingUploadServlet {
+//	@Autowired
+//	private JobPostingUploadService jobPostingUploadService;
+//	
+//	@GetMapping("/jobpostingupload")
+//	public String insert() {
+//		String viewPage = "jjapkorea/jobpostingupload";
+//		return viewPage;
+//		
+//	}
+//	
+//	
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @WebServlet("/jobpostingupload")
 public class JobPostingUploadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
