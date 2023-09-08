@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="business">
-	<resultMap type="businessVo" id="business">
+	<resultMap type="businessVo" id="businessVo">
 		<id property="mid" column="mid"/>
-		<result property="mpw" column="mpw"/>
 		<result property="bform" column="bform"/>
 		<result property="brno" column="brno"/>
 		<result property="bizname" column="bizname"/>
-		<result property="brepName" column="brepName"/>
+		<result property="brepName" column="brep_name"/>
 		<result property="baddress" column="baddress"/>
 		<result property="bname" column="bname"/>
 		<result property="btel" column="btel"/>
 		<result property="bemail" column="bemail"/>
 	</resultMap>
 
-	<insert id="businessSignUp" parameterType="businessVo">
-		insert into business values (
-			#{mid}, #{bform}, #{brno}, #{bizname}, #{brepName}
-			, #{baddress}, #{bname}, #{btel}, #{bemail}
-		)	
+	<insert id="businessSignup" parameterType="businessVo">
+		insert into business (mid, bform, brno, bizname, brep_name, baddress, bname, btel, bemail) values (#{mid}, #{bform}, #{brno}, #{bizname}, #{brepName}, #{baddress}, #{bname}, #{btel}, #{bemail})	
 	</insert>
 
 </mapper>

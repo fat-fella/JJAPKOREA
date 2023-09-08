@@ -25,7 +25,7 @@
 	</insert>
 
 	<insert id="bSignUp" parameterType="memberVo">
-		insert into member values (#{mid}, #{mpw},2)
+		insert into member values (#{mid}, #{mpw}, 2)
 	</insert>
 	
     <select id="check" resultType="int">

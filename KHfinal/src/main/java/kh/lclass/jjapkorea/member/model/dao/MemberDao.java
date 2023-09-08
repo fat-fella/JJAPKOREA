@@ -60,7 +60,7 @@ public class MemberDao {
 	}
 
 	public int businessSignup(SqlSession session, BusinessVo vo) {
-		int result = session.insert("person.businessSignup", vo);
+		int result = session.insert("business.businessSignup", vo);
 		return result;
 	}
 
