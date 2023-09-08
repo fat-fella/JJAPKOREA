@@ -8,12 +8,28 @@
 		<result property="pphone" column="pphone"/>
 	</resultMap>
 	
+	<resultMap type="businessVo" id="businessVo">
+		<id property="mid" column="mid"/>
+		<result property="bform" column="BFORM"/>
+		<result property="brno" column="BRNO"/>
+		<result property="bizname" column="BIZNAME"/>
+		<result property="brepName" column="brep_Name"/>
+		<result property="baddress" column="BADDRESS"/>
+		<result property="bname" column="BNAME"/>
+		<result property="btel" column="BTEL"/>
+		<result property="bemail" column="BEMAIL"/>
+	</resultMap>
+	
 	<select id="indexLogin" resultMap="personVo" parameterType="personVo">
 		select pname from person where mid=#{mid}
 	</select>
 	
-	<select id="personSignup" resultMap="personVo">
+	<insert id="personSignup" parameterType="personVo">
 		insert into person values (#{mid}, #{pname}, #{pemail}, #{pphone})
-	</select>
+	</insert>
+	
+	<insert id="businessSignup" parameterType="businessVo">
+		insert into person values (#{mid}, #{bform}, #{brno}, #{bizname}, #{brepName}, #{baddress}, #{bname}, #{btel}, #{bemail})
+	</insert>
 	
 </mapper>

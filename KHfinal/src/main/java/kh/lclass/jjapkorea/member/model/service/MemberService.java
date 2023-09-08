@@ -66,10 +66,10 @@ public class MemberService {
 		session.close();
 		return result;
 	}
-	public int businessSignUp(BusinessVo vo) {
+	public int businessSignup(BusinessVo vo) {
 		int result = 0;
 		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.businessSignUp(session, vo);
+		result = dao.businessSignup(session, vo);
 		if(result>0) {
 			session.commit();
 		} else {

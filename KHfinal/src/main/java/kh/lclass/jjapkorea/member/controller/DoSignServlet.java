@@ -36,7 +36,7 @@ public class DoSignServlet extends HttpServlet {
 		String btel = request.getParameter("Corp_Phone");
 		String bemail = request.getParameter("email");
 		BusinessVo vo2 = new BusinessVo(mid, bform, brno, bizname, brepName, baddress, bname, btel, bemail);
-		int result = service.businessSignUp(vo2);
+		int result = service.businessSignup(vo2);
 		if(result < 1) {
 			System.out.println("회원가입 실패");
 			service.delete(mid);
