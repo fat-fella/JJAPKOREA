@@ -6,6 +6,11 @@
 		<result property="mpw" column="mpw"/>
 		<result property="mtype" column="mtype"/>
 	</resultMap>
+	
+	<resultMap type="businessFormVo" id="businessFormVo">
+		<id property="bform" column="bform"/>
+		<result property="bformName" column="bform_name"/>
+	</resultMap>
 
 	<select id="login" resultMap="memberVo">
 		select mpw from member where mid=#{mid} and mtype=1
@@ -27,9 +32,9 @@
         SELECT COUNT(*) FROM businessform
     </select>
     
-    <insert id="insert" parameterType="memberVo">
+    <insert id="insert" parameterType="businessFormVo">
 		<!-- 쿼리문이 두개? -->
-        INSERT INTO businessform VALUES (#{BFORM}, #{BFORM_NAME})
+        INSERT INTO businessform VALUES (#{bform}, #{bformName})
     </insert>
 	
 	<delete id="delete" parameterType="memberVo">
