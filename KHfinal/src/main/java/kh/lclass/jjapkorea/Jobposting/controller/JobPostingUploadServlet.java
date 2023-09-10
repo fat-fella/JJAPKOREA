@@ -16,18 +16,14 @@ import org.springframework.web.servlet.ModelAndView;
 import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
 import kh.lclass.jjapkorea.Jobposting.model.service.JobPostingUploadService;
 
-//@Controller
-//@RequestMapping("/jjapkorea/jpost")
-//public class JobPostingUploadServlet {
-//	@Autowired
-//	private JobPostingUploadService jobPostingUploadService;
-//	
-//	@GetMapping("/jobpostingupload")
-//	public String insert() {
-//		String viewPage = "jjapkorea/jobpostingupload";
-//		return viewPage;
-//		
-//	}
+@Controller
+public class JobPostingUploadServlet {
+
+    @GetMapping("/jobpostingupload")
+    public String jobPostingUpload() {
+        return "jpost/jpostUpload";
+    }
+}
 //	
 //	
 //}
@@ -44,25 +40,25 @@ import kh.lclass.jjapkorea.Jobposting.model.service.JobPostingUploadService;
 
 
 
-
-@WebServlet("/jobpostingupload")
-public class JobPostingUploadServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public JobPostingUploadServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/view/jpost/jpostUpload.jsp").forward(request, response);
-	}
+//
+//@WebServlet("/jobpostingupload")
+//public class JobPostingUploadServlet extends HttpServlet {
+//	private static final long serialVersionUID = 1L;
+//       
+//    /**
+//     * @see HttpServlet#HttpServlet()
+//     */
+//    public JobPostingUploadServlet() {
+//        super();
+//        // TODO Auto-generated constructor stub
+//    }
+//
+//	/**
+//	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+//	 */
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		request.getRequestDispatcher("/WEB-INF/view/jpost/jpostUpload.jsp").forward(request, response);
+//	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -72,4 +68,4 @@ public class JobPostingUploadServlet extends HttpServlet {
 //		doGet(request, response);
 //	}
 
-}
+//}
