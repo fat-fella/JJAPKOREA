@@ -41,7 +41,12 @@ public class ScrapDao {
 //		return result;
 //	}
 	public List<ScrapDto> scrapList(SqlSession session, String mid){
-		List<ScrapDto> result = session.selectList("scrap.scrapList" ,mid);
+		List<ScrapDto> result = null;
+		try {
+			result = session.selectList("scrap.scrapList" ,mid);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return result;
 	}
 
@@ -67,7 +72,12 @@ public class ScrapDao {
 //		return result;
 //	}
 	public int scrap(SqlSession session, ScrapDto vo) {
-		int result = session.insert("scrap.insertScrap", vo);
+		int result = 0;
+		try {
+			result = session.insert("scrap.insertScrap", vo);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return result;
 	}
 
@@ -88,7 +98,12 @@ public class ScrapDao {
 //		return result;
 //	}
 	public int scrapCancle(SqlSession session, ScrapDto vo) {
-		int result = session.delete("scrap.scrapCancle", vo);
+		int result = 0;
+		try {
+			result = session.delete("scrap.scrapCancle", vo);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return result;
 	}
 
@@ -117,7 +132,12 @@ public class ScrapDao {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("mid", mid);
 		map.put("jid", jid);
-		int count = session.selectOne("scrap.isScrapped", map);
+		int count = 0;
+		try {
+			count = session.selectOne("scrap.isScrapped", map);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
         return count > 0; // 0이 아니면 true, 0이면 false 반환
     }
 }

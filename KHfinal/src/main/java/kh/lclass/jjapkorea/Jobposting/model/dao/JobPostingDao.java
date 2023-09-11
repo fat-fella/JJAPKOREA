@@ -50,7 +50,12 @@ public class JobPostingDao {
 //		return result;
 //	}
 	public int insert(SqlSession session, JobpostingDto vo) {
-		int result = session.insert("jobposting.insert", vo);
+		int result = 0;
+		try {
+			result = session.insert("jobposting.insert", vo);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return result;
 	}
 	
@@ -92,7 +97,12 @@ public class JobPostingDao {
 //		return result;
 //	}
 	public List<JobpostingDto> list(SqlSession session){
-		List<JobpostingDto> result = session.selectList("jobposting.list");
+		List<JobpostingDto> result = null;
+		try {
+			result = session.selectList("jobposting.list");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return result;
 	}
 }
