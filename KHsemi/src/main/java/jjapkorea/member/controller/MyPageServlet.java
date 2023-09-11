@@ -12,10 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 import jjapkorea.scrap.model.dto.ScrapDto;
 import jjapkorea.scrap.model.service.ScrapService;
 
+/**
+ * Servlet implementation class MyPageServlet
+ */
 @WebServlet("/mypage")
 public class MyPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+	
+    public MyPageServlet() {
+        super();
+    }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pname = (String)request.getSession().getAttribute("pname");
 		request.setAttribute("pname", pname);
@@ -38,6 +52,9 @@ public class MyPageServlet extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/view/member/mypage.jsp").forward(request, response);
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+//	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pname = (String)request.getSession().getAttribute("pname");
 		request.setAttribute("pname", pname);

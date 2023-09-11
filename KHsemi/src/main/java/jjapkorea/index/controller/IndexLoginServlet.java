@@ -12,10 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 import jjapkorea.Jobposting.model.dto.JobpostingDto;
 import jjapkorea.Jobposting.model.service.JobpostingService;
 
+/**
+ * Servlet implementation class IndexLoginServlet
+ */
 @WebServlet("/index/login")
 public class IndexLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+	
+    public IndexLoginServlet() {
+        super();
+    }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JobpostingService service = new JobpostingService();
 		List<JobpostingDto> list = service.list();

@@ -1,9 +1,14 @@
 package jjapkorea.member.model.service;
 
+import static jjapkorea.common.jdbc.JdbcTemplate.close;
+import static jjapkorea.common.jdbc.JdbcTemplate.commit;
+import static jjapkorea.common.jdbc.JdbcTemplate.getConnection;
+import static jjapkorea.common.jdbc.JdbcTemplate.rollback;
+import static jjapkorea.common.jdbc.JdbcTemplate.setAutoCommit;
 
-import org.apache.ibatis.session.SqlSession;
+import java.sql.Connection;
+import java.util.List;
 
-import jjapkorea.common.MybatisTemplate;
 import jjapkorea.member.model.dao.MemberDao;
 import jjapkorea.member.model.vo.BusinessVo;
 import jjapkorea.member.model.vo.MemberVo;
@@ -11,70 +16,71 @@ import jjapkorea.member.model.vo.PersonVo;
 
 public class MemberService {
 	private MemberDao dao = new MemberDao();
-
-// login 
+	
+	// login 
 	public String login(String mid) {
 		String result = null;
-		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.login(session, mid);
-		session.close();
+		Connection conn = getConnection();
+		result = dao.login(conn, mid);
+		close(conn);
 		return result;
 	}
-//businesslogin
+	//businesslogin
 	public String businessLogin(String mid) {
 		String result = null;
-		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.businessLogin(session, mid);
-		session.close();
+		Connection conn = getConnection();
+		result = dao.businessLogin(conn, mid);
+		close(conn);
 		return result;
 	}
-//개인 회원가입 
+	//개인 회원가입 
 	public int pSignup(MemberVo vo) {
 		int result = 0;
-		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.pSignup(session, vo);
-		session.close();
+		Connection conn = getConnection();
+		result = dao.pSignup(conn, vo);
+		close(conn);
 		return result;
 	}
 	public int personSignup(PersonVo vo) {
 		int result = 0;
-		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.personSignup(session, vo);
-		session.close();
+		Connection conn = getConnection();
+		result = dao.personSignup(conn, vo);
+		close(conn);
 		return result;
 	}
-//기업 회원가입 
+	//기업 회원가입 
+
 	public int bSignUp(MemberVo vo) {
 		int result = 0;
-		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.bSignUp(session, vo);
-		session.close();
+		Connection conn = getConnection();
+		result = dao.bSignUp(conn, vo);
+		close(conn);
 		return result;
 	}
 	public int businessSignUp(BusinessVo vo) {
 		int result = 0;
-		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.businessSignUp(session, vo);
-		session.close();
+		Connection conn = getConnection();
+		result = dao.businessSignUp(conn, vo);
+		close(conn);
 		return result;
 	}
 	public int delete(String mid) {
 		int result = 0;
-		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.delete(session, mid);
-		session.close();
+		Connection conn = getConnection();
+		result = dao.delete(conn, mid);
+		close(conn);
 		return result;
 	}
 	public void insert() {
-		SqlSession session = MybatisTemplate.getSqlSession();
-		dao.insert(session);
-		session.close();
+		Connection conn = getConnection();
+		dao.insert(conn);
+		close(conn);
 	}
 	public String indexLogin(String mid) {
-		String result = null;
-		SqlSession session = MybatisTemplate.getSqlSession();
-		result = dao.indexLogin(session, mid);
-		session.close();
+        String result = null;
+        Connection conn = getConnection();
+        result = dao.indexLogin(conn, mid);
+        close(conn);
 		return result;
-	}	
+    }
 }

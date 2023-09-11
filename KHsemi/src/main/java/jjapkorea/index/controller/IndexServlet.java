@@ -13,10 +13,17 @@ import jjapkorea.Jobposting.model.dto.JobpostingDto;
 import jjapkorea.Jobposting.model.service.JobpostingService;
 import jjapkorea.worknetapi.WorknetApi;
 
+/**
+ * Servlet implementation class IndenxServlet
+ */
 @WebServlet("/index")
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+	
 	private WorknetApi worknetApi;
 	
     public IndexServlet() {
@@ -25,6 +32,9 @@ public class IndexServlet extends HttpServlet {
         worknetApi.getJobPostings();
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JobpostingService service = new JobpostingService();
 		List<JobpostingDto> list = service.list();
@@ -44,5 +54,13 @@ public class IndexServlet extends HttpServlet {
 		}
 		request.getRequestDispatcher("/WEB-INF/view/index.jsp").forward(request, response);
 	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+//		doGet(request, response);
+//	}
 
 }
