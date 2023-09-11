@@ -8,7 +8,7 @@
 		<result property="pphone" column="pphone"/>
 	</resultMap>
 	
-	<select id="indexLogin" resultMap="personVo" parameterType="personVo">
+	<select id="indexLogin" resultType="string" parameterType="string">
 		select pname from person where mid=#{mid}
 	</select>
 	

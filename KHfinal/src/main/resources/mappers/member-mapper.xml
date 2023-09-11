@@ -12,11 +12,11 @@
 		<result property="bformName" column="bform_name"/>
 	</resultMap>
 
-	<select id="login" resultMap="memberVo">
+	<select id="login" resultType="string" parameterType="string">
 		select mpw from member where mid=#{mid} and mtype=1
 	</select>
 	
-	<select id="businessLogin" resultMap="memberVo">
+	<select id="businessLogin" resultType="string" parameterType="string">
 		select mpw from member where mid=#{mid} and mtype=2
 	</select>
 	
