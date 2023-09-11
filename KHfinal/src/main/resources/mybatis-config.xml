@@ -4,10 +4,6 @@
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL"/> 
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
-        <!-- 예외 발생 시 로그를 출력 -->
-        <setting name="logImpl" value="STDOUT_LOGGING"/>
-        <!-- 예외 발생 시 무시하도록 설정 -->
-        <setting name="defaultExecutorType" value="REUSE"/>
 	</settings>
 	
 	<typeAliases>
