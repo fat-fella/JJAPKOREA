@@ -42,11 +42,11 @@ public class AligoSMSExample {
 //            sms.put("receiver", "01111111111,01111111112"); // 수신번호
 //            sms.put("destination", "01111111111|담당자,01111111112|홍길동"); // 수신인 %고객명% 치환
             sms.put("receiver", "01086204484"); // 수신번호
-            sms.put("destination", "바보"); // 수신인 %고객명% 치환
+            sms.put("destination", "01086204484|바보"); // 수신인 %고객명% 치환
             sms.put("sender", "01055948861"); // 발신번호
-            sms.put("rdate", "20230912"); // 예약일자 - 20161004 : 2016-10-04일기준
-            sms.put("rtime", "12:00"); // 예약시간 - 1930 : 오후 7시30분
-            sms.put("testmode_yn", "Y"); // Y 인경우 실제문자 전송X , 자동취소(환불) 처리
+//            sms.put("rdate", "20230912"); // 예약일자 - 20161004 : 2016-10-04일기준
+//            sms.put("rtime", "1300"); // 예약시간 - 1930 : 오후 7시30분
+            sms.put("testmode_yn", "N"); // Y 인경우 실제문자 전송X , 자동취소(환불) 처리
             sms.put("title", "제목입력"); // LMS, MMS 제목 (미입력시 본문중 44Byte 또는 엔터 구분자 첫라인)
 
             String image = "";
