@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.worknetapi;
+package kh.lclass.jjapkorea.api;
 
 import java.io.BufferedReader;
 import java.io.IOException;

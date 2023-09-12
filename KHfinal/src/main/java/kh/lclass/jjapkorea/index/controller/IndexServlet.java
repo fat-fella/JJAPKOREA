@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
 import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
-import kh.lclass.jjapkorea.worknetapi.WorknetApi;
+import kh.lclass.jjapkorea.api.WorknetApi;
 
 @WebServlet("/index")
 public class IndexServlet extends HttpServlet {
