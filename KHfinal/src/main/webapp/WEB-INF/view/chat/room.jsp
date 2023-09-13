@@ -37,7 +37,7 @@
 
             console.log(roomName + ", " + roomId + ", " + username);
 
-            var sockJs = new SockJS("/stomp/chat");
+            var sockJs = new SockJS("/jjapkorea/stomp/chat");
             var stomp = Stomp.over(sockJs);
 
             stomp.connect({}, function (){
