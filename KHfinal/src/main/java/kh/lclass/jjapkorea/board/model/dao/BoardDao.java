@@ -21,7 +21,7 @@ public class BoardDao {
 	}
 	// insert 시 selectKey를 이용해 PK 값이 추가되어있는 자료형
 	public BoardDto insert(BoardDto dto) throws Exception{
-		int result = sqlSession.insert("board.insert", dto);
+		sqlSession.insert("board.insert", dto);
 		return dto;
 	}
 	//답글
