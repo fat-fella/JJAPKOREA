@@ -37,5 +37,35 @@
 	</bean>
 	
 <!-- @Transactional 사용되는 코드를 AOP를 통해서 설정함 //TODO -->
-	<tx:annotation-driven/>	
+	<tx:annotation-driven/>
+
+<!-- 이메일 알림 관련 bean 등록 -->
+	<!-- set메서드로 의존성 주입 -->
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<!-- smtp.naver.com -->
+		<!-- 기업회원에게 메일을 보내는 메일 주소의 플랫폼 -->
+		<property name="host" value="smtp.naver.com" />
+
+		<!-- 메일 주소 플랫폼의 포트 번호 -->
+		<property name="port" value="587" />
+
+		<!-- 보낼 사용자 계정의 아이디 -->
+		<property name="username" value="${email.account}" />
+		<!-- 보낼 사용자 계정의 비밀번호 -->
+		<!-- properties 파일을 사용해서 value에 넣어줌 위치는 properties에 있음 -->
+		<property name="password" value="${email.password}" />
+
+		<!-- 네이버 -->
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.auth">true </prop>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtps.ssl.trust">*</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+			</props>
+		</property>
+	</bean>
 </beans>
