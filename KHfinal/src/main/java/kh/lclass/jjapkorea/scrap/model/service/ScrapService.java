@@ -128,7 +128,7 @@ public class ScrapService {
 //	}
 	
 	@Transactional
-	public int scrapCancle(ScrapDto vo) throws Exception{
+	public int scrapCancel(ScrapDto vo) throws Exception{
 		return scrapDao.scrapCancle(vo);
 	}
 	
