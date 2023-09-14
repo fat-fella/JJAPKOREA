@@ -1,17 +1,23 @@
 package kh.lclass.jjapkorea.Jobposting.model.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
+//import java.sql.Connection;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
+//import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
 
+@Repository
 public class JobPostingDao {
+	@Autowired
+	private SqlSession sqlSession;
+	
 //	public int insert(Connection conn, JobpostingDto vo) {
 //		int result = 0;
 //		String checkQuery = "SELECT COUNT(*) FROM info";
@@ -49,14 +55,16 @@ public class JobPostingDao {
 //		}
 //		return result;
 //	}
-	public int insert(SqlSession session, JobpostingDto vo) {
-		int result = 0;
-		try {
-			result = session.insert("jobposting.insert", vo);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return result;
+//	public int insert(SqlSession session, JobpostingDto vo) {
+//		int result = 0;
+//		try {
+//			result = session.insert("jobposting.insert", vo);
+//		} catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		return result;
+	public int insert(JobpostingDto vo) throws Exception{
+		return sqlSession.insert("jobposting.insert", vo);
 	}
 	
 //	public List<JobpostingDto> list(Connection conn){
@@ -96,13 +104,16 @@ public class JobPostingDao {
 //		}
 //		return result;
 //	}
-	public List<JobpostingDto> list(SqlSession session){
-		List<JobpostingDto> result = null;
-		try {
-			result = session.selectList("jobposting.list");
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return result;
+//	public List<JobpostingDto> list(SqlSession session){
+//		List<JobpostingDto> result = null;
+//		try {
+//			result = session.selectList("jobposting.list");
+//		} catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		return result;
+//	}
+	public List<JobpostingDto> list() throws Exception{
+		return sqlSession.selectList("jobposting.list");
 	}
 }

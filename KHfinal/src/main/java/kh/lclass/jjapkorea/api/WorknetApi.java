@@ -2,7 +2,6 @@ package kh.lclass.jjapkorea.api;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
@@ -21,6 +20,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -31,12 +32,16 @@ import org.xml.sax.SAXException;
 import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
 import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
 
+@Component
 public class WorknetApi {
+	@Autowired
+	private JobpostingService jobpostingService;
+	
 	private List<JobpostingDto> list;
 	
-    public static void main(String[] args) {
-    	WorknetApi worknetApi = new WorknetApi();
-        worknetApi.getJobPostings();
+    public static void main(String[] args){
+//    	WorknetApi worknetApi = new WorknetApi();
+//    	worknetApi.getJobPostings();
     }
     
     public List<JobpostingDto> getJobPostings() {
@@ -134,17 +139,23 @@ public class WorknetApi {
 
                list.add(dto);
             }
-            JobpostingService service = new JobpostingService();
+//            JobpostingService service = new JobpostingService();
 
             // 출력 또는 다른 처리 작업
             for (JobpostingDto dto : list) {
                 //System.out.println(dto);
-            	int result = service.insert(dto); // insert 메서드 호출하여 데이터 삽입
+//            	int result = service.insert(dto); // insert 메서드 호출하여 데이터 삽입
 //                if (result > 0) {
 //                    System.out.println("Data inserted successfully: " + dto);
 //                } else {
 //                    System.out.println("Failed to insert data: " + dto);
 //                }
+            	if (jobpostingService != null) {
+            		jobpostingService.insert(dto);
+            	} else {
+            	    // service가 null인 경우 처리할 내용을 여기에 추가
+            		System.out.println("null");
+            	}
             }
 
         } catch (Exception e) {
