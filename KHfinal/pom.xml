@@ -33,6 +33,32 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 				
+	<!-- stomp-websocket -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>stomp-websocket</artifactId>
+		    <version>2.3.3-1</version>
+		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-websocket</artifactId>
+		    <version>5.3.29</version>
+		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-messaging -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-messaging</artifactId>
+		    <version>5.3.18</version>
+		</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+		<dependency>
+		    <groupId>javax.annotation</groupId>
+		    <artifactId>javax.annotation-api</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+				
+				
 	<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -175,6 +201,7 @@
 		    <version>1.18.28</version>
 		    <scope>provided</scope>
 		</dependency>
+	<!--  -->
 		
 <!-- File Upload -->
 	<!-- commons-fileupload -->
@@ -223,6 +250,52 @@
 		</dependency>
 	
 <!-- ===================================== -->
+
+	
+<!-- ========== [mj] API login ========== -->
+	<!-- oauth2 login -->
+	    <dependency>
+              <groupId>com.github.scribejava</groupId>
+              <artifactId>scribejava-apis</artifactId>
+              <version>5.6.0</version>
+        </dependency>
+
+        <dependency>
+              <groupId>com.github.scribejava</groupId>
+              <artifactId>scribejava-core</artifactId>
+              <version>5.6.0</version>
+        </dependency>
+
+        <dependency>
+              <groupId>org.springframework.social</groupId>
+              <artifactId>spring-social-google</artifactId>
+              <version>1.0.0.RELEASE</version>
+        </dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.9</version>
+		</dependency>
+        
+<!-- 기업 알림 mailing 관련 -->
+	<!-- java mailing -->
+	<dependency>
+		<groupId>javax.mail</groupId>
+		<artifactId>mail</artifactId>
+		<version>1.4.7</version>
+	</dependency>
+
+	<!-- Spring Context Support -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${org.springframework-version}</version>
+	</dependency>
+        
+        
+<!-- ====================================== -->
 				
 	</dependencies>
     <build>
