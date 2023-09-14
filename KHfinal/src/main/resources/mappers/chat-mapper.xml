@@ -8,10 +8,10 @@
 	<select id="selectOne" resultType="ChatRoomDto" parameterType="string">
 		select * from chat where roomId=#{roomId}
 	</select>
-	<insert id="insert" parameterType="ChatRoomRepository">
+	<!-- <insert id="insert" parameterType="ChatRoomRepository">
 		<selectKey keyProperty="roomid" resultType="string" order="BEFORE">
-		<!-- select SEQ_BOARD_BNO.nextval nextval from dual -->
+		select SEQ_BOARD_BNO.nextval nextval from dual
 		</selectKey>
 		insert into CHAT values ()
-	</insert>
+	</insert> -->
 </mapper>
