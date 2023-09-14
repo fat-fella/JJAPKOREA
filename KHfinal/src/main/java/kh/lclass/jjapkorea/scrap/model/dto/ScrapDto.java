@@ -2,8 +2,13 @@ package kh.lclass.jjapkorea.scrap.model.dto;
 
 import java.util.List;
 
-import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
+import org.springframework.stereotype.Component;
 
+import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
+import lombok.Data;
+
+@Data
+@Component
 public class ScrapDto {
 //	--- -------- ------------ 
 //	MID NOT NULL VARCHAR2(20) 
