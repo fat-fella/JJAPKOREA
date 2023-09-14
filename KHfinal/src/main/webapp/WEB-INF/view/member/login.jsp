@@ -142,7 +142,7 @@
                                     <li><a href="javascript:;" id="btnFbLogin" class="facebook"
                                             onclick="facebookLogin(); _LA.EVT('4285')" style="display: block;">페이스북
                                             로그인</a></li>
-                                    <li><a href="javascript:;" id="btnGlLogin" class="" onclick="_LA.EVT('4288')"
+                                    <li><a href="javascript:;" id="btnGlLogin" class="google" onclick="_LA.EVT('4288')"
                                             style="display: block;">
                                             <div class="S9gUrf-YoZ4jf" style="position: relative;">
                                                 <div></div><iframe
