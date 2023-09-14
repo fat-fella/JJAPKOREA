@@ -8,7 +8,7 @@ import kh.lclass.jjapkorea.scrap.model.dto.ScrapDto;
 public interface ScrapService { // public class를 interface로
 
 	public int scrap(ScrapDto vo);	
-	public List<ScrapDto> scrapList(String mid) throws Exception;
+	public List<ScrapDto> scrapList(String mid);
 	public int scrapCancle(ScrapDto vo);
 	
 }
