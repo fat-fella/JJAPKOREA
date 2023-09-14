@@ -35,11 +35,12 @@ public class ScrapServiceImpl implements ScrapService {
 		return result;
 	}
 	@Override
-	public List<ScrapDto> scrapList(String mid) {
+	public List<ScrapDto> scrapList(String mid) throws Exception {
 		List<ScrapDto> result = null;
 		SqlSession session = MybatisTemplate.getSqlSession();
 		result = dao.scrapList(session, mid);
-		// 사용자가 스크랩한 채용 정보에 해당하는 JobpostingDto 객체들을 가져와서 ScrapDto에 추가		
+		// 사용자가 스크랩한 채용 정보에 해당하는 JobpostingDto 객체들을 가져와서 ScrapDto에 추가	
+		JobpostingService service = new JobpostingService();
 		for (ScrapDto scrapDto : result) {
 			List<JobpostingDto> jobPostingList = service.list();
 			List<JobpostingDto> matchedJobPostingList = new ArrayList<>();
