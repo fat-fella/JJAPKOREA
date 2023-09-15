@@ -1,3 +1,4 @@
+package kh.lclass.jjapkorea.swp.interceptor;
 //package kh.lclass.jjapkorea.swp.interceptor;
 //
 //public interface SessionNames {

@@ -1,3 +1,4 @@
+package kh.lclass.jjapkorea.swp.dto;
 //package kh.lclass.jjapkorea.swp.dto;
 //
 //import lombok.Data;

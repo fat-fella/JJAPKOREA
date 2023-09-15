@@ -1,3 +1,4 @@
+package kh.lclass.jjapkorea.swp.domain;
 //package kh.lclass.jjapkorea.swp.domain;
 //
 //import java.util.Date;
