@@ -26,7 +26,7 @@ public class MailSendController {
 			MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
 
 			helper.setFrom("jjapkorea@naver.com");
-			helper.setTo("ej.kh.kim@gmail.com");
+			helper.setTo("netps0201@gmail.com");
 			helper.setSubject("sb mail title test");
 			
 			helper.setText("sb mail content test", true);
