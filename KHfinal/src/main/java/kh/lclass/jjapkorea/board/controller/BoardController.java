@@ -54,7 +54,7 @@ public class BoardController {
 	@PostMapping("/insert")
 	@ResponseBody
 	public Integer insertDo(BoardDto dto) {
-		dto.setMid("jiin0960");
+//		dto.setMid("jiin0960");
 	    Integer result = 0;
 	    try {
 	        result = boardService.insert(dto);
