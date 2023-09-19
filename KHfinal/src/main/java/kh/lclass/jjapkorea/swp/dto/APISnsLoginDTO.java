@@ -1,10 +1,9 @@
 package kh.lclass.jjapkorea.swp.dto;
-//package kh.lclass.jjapkorea.swp.dto;
-//
-//import lombok.Data;
-//
-//@Data
-//public class LoginDTO {
-//	private String uid;
-//	private String upw;
-//}
+
+import lombok.Data;
+
+@Data
+public class APISnsLoginDTO {
+	private String apimid;
+	private String apimpw;
+}
