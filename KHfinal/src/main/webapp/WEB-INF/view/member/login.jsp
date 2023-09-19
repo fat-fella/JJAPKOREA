@@ -132,20 +132,20 @@
                             <p class="alarmMsg"></p>
 
 
-
+							<!--	API SNS Login   -->
                             <div class="list-social">
                                 <ul>
-                                    <li><a href="javascript:;" id="btnNvLogin" class="naver" onclick="_LA.EVT('4287')"
+                                    <li><a href="${ naver_url }" id="btnNvLogin" class="naver" onclick="_LA.EVT('4287')"
                                             style="display: block;">네이버 로그인</a></li>
-                                    <li><a href="javascript:;" id="btnKaLogin" class="kakao" onclick="_LA.EVT('4286')"
+                                    <li><a href="${ kakao_url }" id="btnKaLogin" class="kakao" onclick="_LA.EVT('4286')"
                                             style="display: block;">카카오 로그인</a></li>
                                     <li><a href="javascript:;" id="btnFbLogin" class="facebook"
                                             onclick="facebookLogin(); _LA.EVT('4285')" style="display: block;">페이스북
                                             로그인</a></li>
-                                    <li><a href="javascript:;" id="btnGlLogin" class="google" onclick="_LA.EVT('4288')"
+                                    <li><a href="${ google_url }" id="btnGlLogin" class="google" onclick="_LA.EVT('4288')"
                                             style="display: block;">
                                             <div class="S9gUrf-YoZ4jf" style="position: relative;">
-                                                <div></div><iframe
+                                                <iframe
                                                     src="https://accounts.google.com/gsi/button?type=icon&amp;shape=circle&amp;theme=outline&amp;size=large&amp;client_id=751392317978-jjc5ov9kf0tgnr4anlbe2crbfjk3it1c.apps.googleusercontent.com&amp;iframe_id=gsi_321638_364132&amp;as=QivupH6JgdUz%2BZAgwyr2aA"
                                                     id="gsi_321638_364132" title="Google 계정으로 로그인 버튼"
                                                     style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 64px; border: 0px; margin: -2px -12px;"></iframe>
