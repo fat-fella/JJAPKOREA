@@ -14,7 +14,6 @@ import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
 
 import kh.lclass.jjapkorea.swp.domain.APISnsMember;
-import kh.project.dml.member.model.vo.FpMemberVo;
 
 public class SNSLogin {
 	private OAuth20Service oauthService;
