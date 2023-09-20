@@ -32,5 +32,83 @@
 		<beans:property name="defaultEncoding" value="UTF-8"/>
 		<beans:property name="maxUploadSize" value="10485760"/>
 	</beans:bean>
+
+<!--  ================== [minji] API SNS Login ==================  -->
+
+<!--[minji] API SNS Login (Naver)  -->
+
+	<beans:bean id="naverClientID" class="java.lang.String">
+		<beans:constructor-arg value="xcK_50EiwaJkx42wJD6G" />
+	</beans:bean>
+	<beans:bean id="naverClientSecret" class="java.lang.String">
+		<beans:constructor-arg value="t8lEyWybft" />
+	</beans:bean>
+	<beans:bean id="naverRedirectUrl" class="java.lang.String">
+		<beans:constructor-arg value="http://127.0.0.1:8090/jjapkorea/auth/naver/callback" />
+	</beans:bean>
+
+	<beans:bean id="naverSns" class="kh.lclass.jjapkorea.swp.auth.SnsValue">
+		<beans:constructor-arg value="naver" />
+		<beans:constructor-arg ref="naverClientID" />
+		<beans:constructor-arg ref="naverClientSecret" />
+		<beans:constructor-arg ref="naverRedirectUrl" />
+	</beans:bean>
+
+<!--[minji] API SNS Login (Google)  -->
+
+	<beans:bean id="googleClientID" class="java.lang.String">
+		<beans:constructor-arg value="1062996110459-m42hg0920d3pgqo37oq3r78i4dmr6jmd.apps.googleusercontent.com" />
+	</beans:bean>
+	<beans:bean id="googleClientSecret" class="java.lang.String">
+		<beans:constructor-arg value="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" />
+	</beans:bean>
+	<beans:bean id="googleRedirectUrl" class="java.lang.String">
+		<beans:constructor-arg value="http://127.0.0.1:8090/jjapkorea/auth/google/callback" />
+	</beans:bean>
+
+	<beans:bean id="googleSns" class="kh.lclass.jjapkorea.swp.auth.SnsValue">
+		<beans:constructor-arg value="google" />
+		<beans:constructor-arg ref="googleClientID" />
+		<beans:constructor-arg ref="googleClientSecret" />
+		<beans:constructor-arg ref="googleRedirectUrl" />
+	</beans:bean>
+
+	<beans:bean id="googleConnectionFactory"
+		class="org.springframework.social.google.connect.GoogleConnectionFactory">
+		<beans:constructor-arg value="1062996110459-m42hg0920d3pgqo37oq3r78i4dmr6jmd.apps.googleusercontent.com" />
+		<beans:constructor-arg value="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" />
+	</beans:bean>
+
+	<beans:bean id="googleOAuth2Parameters"
+		class="org.springframework.social.oauth2.OAuth2Parameters">
+		<beans:property name="scope" value="https://www.googleapis.com/auth/userinfo.email" />
+		<!-- <beans:property name="scope" value="https://www.googleapis.com/auth/plus.login" 
+			/> -->
+		<beans:property name="redirectUri" value="http://127.0.0.1:8090/jjapkorea/auth/google/callback" />
+	</beans:bean>	
+	
+<!--[minji] API SNS Login (Kakao)  -->
+
+	<beans:bean id="kakaoClientID" class="java.lang.String">
+		<beans:constructor-arg value="90071a798022b8340bcd2a7388b58384" />
+	</beans:bean>
+	<beans:bean id="kakaoClientSecret" class="java.lang.String">
+		<beans:constructor-arg value="lcnnGCkXFk12Ub7FL86JOrEPHKGRoh5A" />
+	</beans:bean>
+	<beans:bean id="kakaoRedirectUrl" class="java.lang.String">
+		<beans:constructor-arg value="http://127.0.0.1:8090/jjapkorea/auth/kakao/callback" />
+	</beans:bean>
+
+	<beans:bean id="kakaoSns" class="kh.lclass.jjapkorea.swp.auth.SnsValue">
+		<beans:constructor-arg value="kakao" />
+		<beans:constructor-arg ref="kakaoClientID" />
+		<beans:constructor-arg ref="kakaoClientSecret" />
+		<beans:constructor-arg ref="kakaoRedirectUrl" />
+	</beans:bean>
+	
+<!-- =================================================== -->
+
+
+
 	
 </beans:beans>

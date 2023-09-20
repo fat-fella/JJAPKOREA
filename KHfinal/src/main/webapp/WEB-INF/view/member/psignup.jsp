@@ -62,13 +62,13 @@
 						<h4>소셜로 간편하게 로그인하세요</h4>
 						<div class="list-social">
 							<ul>
-								<li><a href="javascript:;" id="btnNvLogin" class="naver"
+								<li><a href="${ naver_url }" id="btnNvLogin" class="naver"
 									onclick="_LA.EVT('4287')">네이버 로그인</a></li>
-								<li><a href="javascript:;" id="btnKaLogin" class="kakao"
+								<li><a href="${ kakao_url }" id="btnKaLogin" class="kakao"
 									onclick="_LA.EVT('4286')">카카오 로그인</a></li>
 								<li><a href="javascript:;" id="btnFbLogin" class="facebook"
 									onclick="facebookLogin(); _LA.EVT('4285')">페이스북 로그인</a></li>
-								<li><a href="javascript:;" id="btnGlLogin" class="google"
+								<li><a href="${ google_url }" id="btnGlLogin" class="google"
 									onclick="_LA.EVT('4288')">
 										<div class="S9gUrf-YoZ4jf" style="position: relative;">
 											<div></div>

@@ -278,6 +278,21 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.9</version>
 		</dependency>
+		
+		<!-- oauth2 login -->
+	    <dependency>
+              <groupId>com.github.scribejava</groupId>
+              <artifactId>scribejava-apis</artifactId>
+              <version>8.3.1</version>
+        </dependency>
+
+        <dependency>
+              <groupId>com.github.scribejava</groupId>
+              <artifactId>scribejava-core</artifactId>
+              <version>8.3.1</version>
+        </dependency>
+<!-- ================[ Api SNS Login end ]====================== -->
+	
         
 <!-- 기업 알림 mailing 관련 -->
 	<!-- java mailing -->
@@ -295,7 +310,6 @@
 	</dependency>
         
         
-<!-- ====================================== -->
 				
 	</dependencies>
     <build>
