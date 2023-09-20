@@ -32,12 +32,22 @@
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <jsp:include page="../member/header.jsp"></jsp:include>
+<jsp:include page="resumeMgrSide.jsp"></jsp:include>
+<style>
+.test {
+background: blue;
+}
+</style>
 </head>
 <body>
 	<div class="wrap header">
 		<!-- header.html 파일 불러오기 -->
 	</div>
+	
+	<div class="test">
 	resumeMgr
+		
+	</div>
 	
 </body>
 </html>
