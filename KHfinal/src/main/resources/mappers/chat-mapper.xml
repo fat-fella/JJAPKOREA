@@ -2,32 +2,35 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="chat">
 
-<!-- 	<select id="selectList" resultType="chatRoomDto">
-		select * from chat
-	</select>
-	<select id="selectOne" resultType="chatRoomDto" parameterType="string">
-		select * from chat where roomId=#{roomId}
-	</select> -->
-	<!-- <insert id="insert" parameterType="ChatRoomRepository">
-		<selectKey keyProperty="roomid" resultType="string" order="BEFORE">
-		select SEQ_BOARD_BNO.nextval nextval from dual
-		</selectKey>
-		insert into CHAT values ()
-	</insert> -->
-	<!-- <insert id="insert" parameterType="chatRoomDto">
-		insert into chat () values ()
-	</insert> -->
-    <insert id="insert" parameterType="kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto">
-        INSERT INTO CHAT (ROOM_ID, ROOM_NAME) VALUES (#{roomId}, #{roomName})
-    </insert>
-    
-    <select id="findAllRooms" resultType="kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto">
-        SELECT * FROM CHAT
-    </select>
-    
-    <select id="findRoomById" resultType="kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto" parameterType="String">
-        SELECT * FROM CHAT WHERE ROOM_ID = #{id}
-    </select>
+	<resultMap id="chatRoomResultMap"
+		type="kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto">
+		<id property="roomId" column="room_id" />
+		<result property="writer" column="writer" />
+		<result property="name" column="room_name" />
+		<!-- 다른 필드에 대한 결과 매핑 -->
+	</resultMap>
+	
+	<insert id="insert"
+		parameterType="chatRoomDto">
+		INSERT INTO CHAT (ROOM_ID, ROOM_NAME, WRITER) VALUES
+		(#{roomId}, #{name}, #{writer})
+	</insert>
 
+	<select id="findAllRooms"
+		resultMap="chatRoomResultMap">
+		SELECT * FROM CHAT
+	</select>
+
+	<select id="findRoomById"
+		resultMap="chatRoomResultMap">
+		SELECT * FROM CHAT WHERE ROOM_ID = #{roomId}
+	</select>
+	<insert id="insertMessage"
+		parameterType="chatMessageDto">
+		INSERT INTO CHAT_MESSAGE (MESSAGE_ID, ROOM_ID, WRITER,
+		MESSAGE, TIMESTAMP)
+		VALUES (#{messageId}, #{roomId}, #{writer},
+		#{message}, SYSTIMESTAMP)
+	</insert>
 
 </mapper>

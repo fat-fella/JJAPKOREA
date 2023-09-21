@@ -48,6 +48,7 @@
 
 package kh.lclass.jjapkorea.chat.model.repository;
 
+import kh.lclass.jjapkorea.chat.model.dto.ChatMessageDto;
 import kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,12 +74,13 @@ public class ChatRoomRepository {
         return sqlSession.selectOne("chat.findRoomById", id);
     }
 
-    public ChatRoomDto createChatRoomDto(String name) {
-        ChatRoomDto room = ChatRoomDto.create(name);
+    public int createChatRoomDto(String name, String writer) {
+        ChatRoomDto room = ChatRoomDto.create(name, writer);
 
-        // MyBatis를 통해 오라클 데이터베이스에 방 정보를 저장
-        sqlSession.insert("chat.insert", room);
-
-        return room;
+        return  sqlSession.insert("chat.insert", room);
     }
+    public int insertChatMessage(ChatMessageDto messageDto) {
+        return sqlSession.insert("chat.insertMessage", messageDto);
+    }
+    
 }

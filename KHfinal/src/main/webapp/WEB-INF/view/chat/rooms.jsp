@@ -15,13 +15,14 @@
         <div>
             <ul>
                 <c:forEach var="room" items="${list}">
-                    <li><a href="<c:url value="room"><c:param name='roomId' value='${room.roomId}'/></c:url>">${room.name}</a></li>
-                </c:forEach>
+    				<li><a href="<c:url value='/room'><c:param name='roomId' value='${room.roomId}'/></c:url>">${room.name}</a></li>
+				</c:forEach>
             </ul>
         </div>
     </div>
     <form action="/jjapkorea/room" method="post">
-        <input type="text" name="name" class="form-control">
+        <input type="text" name="name" class="form-control" placeholder="Room Name">
+        <input type="text" name="writer" class="form-control" placeholder="Writer Name"> <!-- 추가된 부분 -->
         <button class="btn btn-secondary">개설하기</button>
     </form>
 
@@ -36,9 +37,10 @@
                 e.preventDefault();
 
                 var name = $("input[name='name']").val();
+                var writer = $("input[name='writer']").val(); // 추가된 부분
 
-                if(name == "")
-                    alert("Please write the name.");
+                if(name == "" || writer == "") // writer가 비어있는지도 확인
+                    alert("Please write both the room name and writer name.");
                 else
                     $("form").submit();
             });

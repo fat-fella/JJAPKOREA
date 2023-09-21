@@ -60,7 +60,7 @@ public class ChatRoomService {
         return chatRoomRepository.findRoomById(id);
     }
 
-    public ChatRoomDto createChatRoomDto(String name) {
-        return chatRoomRepository.createChatRoomDto(name);
+    public int createChatRoomDto(String name, String writer) {
+        return chatRoomRepository.createChatRoomDto(name, writer);
     }
 }

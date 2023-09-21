@@ -3,6 +3,8 @@ package kh.lclass.jjapkorea.chat.model.dto;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.WebSocketSession;
@@ -13,17 +15,22 @@ import java.util.UUID;
 
 @Data
 @Component
+@Getter
+@Setter
 public class ChatRoomDto {
 
     private String roomId;
     private String name;
+    private String writer;
     private List<WebSocketSession> sessions = new ArrayList<>();
     
-    public static ChatRoomDto create(String name){
+    
+    public static ChatRoomDto create(String name, String writer){
         ChatRoomDto room = new ChatRoomDto();
 
         room.roomId = UUID.randomUUID().toString();
         room.name = name;
+        room.writer = writer;
         return room;
     }
 }

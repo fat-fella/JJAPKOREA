@@ -18,10 +18,12 @@
             <div id="msgArea" class="col"></div>
             <div class="col-6">
                 <div class="input-group mb-3">
-                    <input type="text" id="msg" class="form-control">
+                <form action="/jjapkorea/chat" method="post">
+                	<input type="text" id="msg" class="form-control">
                     <div class="input-group-append">
                         <button class="btn btn-outline-secondary" type="button" id="button-send">전송</button>
                     </div>
+                </form>
                 </div>
             </div>
         </div>
@@ -33,7 +35,7 @@
 
             var roomName = "${room.name}";
             var roomId = "${room.roomId}";
-            var username = "${pageContext.request.userPrincipal.name}";
+            var username = "${room.name}";
 
             console.log(roomName + ", " + roomId + ", " + username);
 
