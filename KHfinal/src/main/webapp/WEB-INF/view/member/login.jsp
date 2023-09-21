@@ -145,10 +145,7 @@
                                     <li><a href="${ google_url }" id="btnGlLogin" class="google" onclick="_LA.EVT('4288')"
                                             style="display: block;">
                                             <div class="S9gUrf-YoZ4jf" style="position: relative;">
-                                                <iframe
-                                                    src="https://accounts.google.com/gsi/button?type=icon&amp;shape=circle&amp;theme=outline&amp;size=large&amp;client_id=751392317978-jjc5ov9kf0tgnr4anlbe2crbfjk3it1c.apps.googleusercontent.com&amp;iframe_id=gsi_321638_364132&amp;as=QivupH6JgdUz%2BZAgwyr2aA"
-                                                    id="gsi_321638_364132" title="Google 계정으로 로그인 버튼"
-                                                    style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 64px; border: 0px; margin: -2px -12px;"></iframe>
+                                              <img src="resources/images/google_logo.png" width="40" height="40"  alt="Google 로고">
                                             </div>
                                         </a></li>
                                     <li><a href="javascript:;" id="btnApLogin" class="apple" style="display: block;">애플

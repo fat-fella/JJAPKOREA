@@ -68,16 +68,12 @@
 									onclick="_LA.EVT('4286')">카카오 로그인</a></li>
 								<li><a href="javascript:;" id="btnFbLogin" class="facebook"
 									onclick="facebookLogin(); _LA.EVT('4285')">페이스북 로그인</a></li>
-								<li><a href="${ google_url }" id="btnGlLogin" class="google"
-									onclick="_LA.EVT('4288')">
-										<div class="S9gUrf-YoZ4jf" style="position: relative;">
-											<div></div>
-											<iframe
-												src="https://accounts.google.com/gsi/button?type=icon&amp;shape=circle&amp;theme=outline&amp;size=large&amp;client_id=751392317978-jjc5ov9kf0tgnr4anlbe2crbfjk3it1c.apps.googleusercontent.com&amp;iframe_id=gsi_473968_623004&amp;as=ifo6DocCTOVPDX%2B5rjLHFg"
-												id="gsi_473968_623004" title="Sign in with Google Button"
-												style="display: block; position: relative; top: 0px; left: 0px; height: 44px; width: 64px; border: 0px; margin: -2px -12px;"></iframe>
-										</div>
-								</a></li>
+                                    <li><a href="${ google_url }" id="btnGlLogin" class="google" onclick="_LA.EVT('4288')"
+                                            style="display: block;">
+                                            <div class="S9gUrf-YoZ4jf" style="position: relative;">
+                                              <img src="resources/images/google_logo.png" width="40" height="40"  alt="Google 로고">
+                                            </div>
+                                        </a></li>
 								<li><a href="javascript:;" id="btnApLogin" class="apple">애플
 										로그인</a></li>
 							</ul>
