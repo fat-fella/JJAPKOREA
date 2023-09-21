@@ -16,63 +16,92 @@ import com.github.scribejava.core.oauth.OAuth20Service;
 import kh.lclass.jjapkorea.swp.domain.APISnsMember;
 
 public class SNSLogin {
-	private OAuth20Service oauthService;
-	private SnsValue sns;
-	
-	public SNSLogin(SnsValue sns) {
-		this.oauthService = new ServiceBuilder(sns.getClientId())
-				.apiSecret(sns.getClientSecret())
-				.callback(sns.getRedirectUrl())
-//				.scope("profile")
-				.build(sns.getApi20Instance());
-		
-		this.sns = sns;
-	}
-	
-	public String getNaverAuthURL() {
-		return this.oauthService.getAuthorizationUrl();
-	}
-	
-	public String getKakaoAuthURL() {
-	    return this.oauthService.getAuthorizationUrl();
-	}
+    private OAuth20Service oauthService;
+    private SnsValue sns;
 
-	public APISnsMember getUserProfile(String code) throws Exception {
-		OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
-		
-		OAuthRequest request = new OAuthRequest(Verb.GET, this.sns.getProfileUrl());
-		oauthService.signRequest(accessToken, request);
-		
-		Response response = oauthService.execute(request);
-		return parseJson(response.getBody());
-	}
+    public SNSLogin(SnsValue sns) {
+        this.oauthService = new ServiceBuilder(sns.getClientId())
+                .apiSecret(sns.getClientSecret())
+                .callback(sns.getRedirectUrl())
+//                .scope("profile")
+                .build(sns.getApi20Instance());
 
-	private APISnsMember parseJson(String body) throws Exception {
-		APISnsMember apiSnsMember = new APISnsMember();
-		
-		ObjectMapper mapper = new ObjectMapper();
-		JsonNode rootNode = mapper.readTree(body);
-		
-		if (this.sns.isGoogle()) {
-			String id = rootNode.get("id").asText();
-			if (sns.isGoogle())
-			apiSnsMember.setGoogleid(id);
-			apiSnsMember.setEmail(rootNode.get("email").asText());
-			apiSnsMember.setMname(rootNode.get("name").asText());
-			
-		} else if (this.sns.isNaver()) {
-			JsonNode resNode = rootNode.get("response");
-			apiSnsMember.setEmail(resNode.get("email").asText());
-			apiSnsMember.setNickname(resNode.get("nickname").asText());
-			apiSnsMember.setNaverid(resNode.get("id").asText());
-			
-		} else if (this.sns.isKakao()) {
-			apiSnsMember.setKakaoid(rootNode.get("id").asText());
-			JsonNode kakaoAccountNode = rootNode.get("kakao_account");
-			apiSnsMember.setEmail(kakaoAccountNode.get("email").asText());
-			apiSnsMember.setMname(kakaoAccountNode.get("profile").get("nickname").asText());
-		}
-		return apiSnsMember;
-	}
-	
+        this.sns = sns;
+    }
+
+    public String getNaverAuthURL() {
+        return this.oauthService.getAuthorizationUrl();
+    }
+
+    public String getKakaoAuthURL() {
+        return this.oauthService.getAuthorizationUrl();
+    }
+
+    public APISnsMember getUserProfile(String code) throws Exception {
+        OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
+
+        OAuthRequest request = new OAuthRequest(Verb.GET, this.sns.getProfileUrl());
+        oauthService.signRequest(accessToken, request);
+
+        Response response = oauthService.execute(request);
+        return parseJson(response.getBody());
+    }
+
+    private APISnsMember parseJson(String body) throws Exception {
+        APISnsMember apiSnsMember = new APISnsMember();
+
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode rootNode = mapper.readTree(body);
+
+        if (rootNode != null) {
+            if (this.sns.isGoogle()) {
+                JsonNode idNode = rootNode.get("id");
+                if (idNode != null && !idNode.isNull()) {
+                    String id = idNode.asText();
+                    apiSnsMember.setGoogleid(id);
+                }
+                JsonNode emailNode = rootNode.get("email");
+                if (emailNode != null && !emailNode.isNull()) {
+                    apiSnsMember.setEmail(emailNode.asText());
+                }
+                JsonNode nameNode = rootNode.get("name");
+                if (nameNode != null && !nameNode.isNull()) {
+                    apiSnsMember.setMname(nameNode.asText());
+                }
+            } else if (this.sns.isNaver()) {
+                JsonNode resNode = rootNode.get("response");
+                if (resNode != null) {
+                    JsonNode emailNode = resNode.get("email");
+                    if (emailNode != null && !emailNode.isNull()) {
+                        apiSnsMember.setEmail(emailNode.asText());
+                    }
+                    JsonNode nicknameNode = resNode.get("nickname");
+                    if (nicknameNode != null && !nicknameNode.isNull()) {
+                        apiSnsMember.setNickname(nicknameNode.asText());
+                    }
+                    JsonNode idNode = resNode.get("id");
+                    if (idNode != null && !idNode.isNull()) {
+                        apiSnsMember.setNaverid(idNode.asText());
+                    }
+                }
+            } else if (this.sns.isKakao()) {
+                JsonNode idNode = rootNode.get("id");
+                if (idNode != null && !idNode.isNull()) {
+                    apiSnsMember.setKakaoid(idNode.asText());
+                }
+                JsonNode kakaoAccountNode = rootNode.get("kakao_account");
+                if (kakaoAccountNode != null) {
+                    JsonNode emailNode = kakaoAccountNode.get("email");
+                    if (emailNode != null && !emailNode.isNull()) {
+                        apiSnsMember.setEmail(emailNode.asText());
+                    }
+                    JsonNode nicknameNode = kakaoAccountNode.get("profile").get("nickname");
+                    if (nicknameNode != null && !nicknameNode.isNull()) {
+                        apiSnsMember.setMname(nicknameNode.asText());
+                    }
+                }
+            }
+        }
+        return apiSnsMember;
+    }
 }
