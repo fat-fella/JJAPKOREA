@@ -35,7 +35,7 @@
 <jsp:include page="resumeMgrSide.jsp"></jsp:include>
 <style>
 .test {
-background: #172bff;
+background: blue;
 }
 </style>
 </head>

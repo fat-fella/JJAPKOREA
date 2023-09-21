@@ -6,41 +6,33 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-
-article { /* 전체 아티클 크기 설정 */
+/* 전체 크기 설정 */
+article {
 	padding-top: 25px;
 	background-color: yellow;
-	width: 300px;
+	height: 690px;
+	width: 200px;
+	background-color: yellow;
 }
 
-
-table { /* 테이블 크기 설정 */
+/* 테이블 크기 설정 */
+table {
 	background-color: cyan;
 	padding-left: 50px;
 	border: 1px solid black;
 	border-spacing: 10px;
-	width: 235px;
 }
 
-
-tr { /* 테이블 내부 선 설정 */
+/* 테이블 내부 선 설정 */
+tr {
 	border: 1px solid black;
-	font-size: 15px;
 }
 
-td { /* 테이블 셀 내부 간격 설정 */
-	padding: 20px;
+td {
+	padding: 17px;
 }
 
-li { /* 리스트 항목 내 설정 */
-	padding-left: -20px;
-	font-size: 14px;
-}
-
-li:hover { /* 리스트 항목에 마우스 위로 올리면 동작되는 설정 */
-	color: #8C8C8C; /* 글씨 색을 회색으로 설정 */
-	font-weight: bold; /* 글자 진하게 설정 */
-	text-decoration: underline; /* 글자 밑줄 설정 */
+.title {
 	
 }
 </style>
@@ -55,7 +47,6 @@ li:hover { /* 리스트 항목에 마우스 위로 올리면 동작되는 설정
 				<tr>
 					<td><strong>이력서 관리</strong>
 						<ul>
-						<li><br></li>
 							<li>이력서 등록</li>
 							<li>이력서 현황</li>
 							<li>첨부파일 관리</li>
