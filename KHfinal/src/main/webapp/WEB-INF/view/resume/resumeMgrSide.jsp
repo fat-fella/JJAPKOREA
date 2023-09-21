@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 <style>
 article { /* 아티클 크기 설정 */
-	position: relative; 
-	padding-top : 25px; /* 테이블을 해당 길이만큼 아래 위치에서 생성되도록 설정 */
+	position: relative;
+	padding-top: 25px; /* 테이블을 해당 길이만큼 아래 위치에서 생성되도록 설정 */
 	width: 235px; /* 아티클 너비 설정 */
 	font-family: 'Pretendard Variable', 'Pretendard', '-apple-system',
 		'BlinkMacSystemFont', 'system-ui', 'Roboto', 'Helvetica Neue',
 		'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'sans-serif'; /* 글자체 설정 */
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'sans-serif';
+	/* 글자체 설정 */
 }
 
 table { /* 테이블 크기 설정 */
@@ -58,51 +59,55 @@ li:active {
 		<article>
 			<table>
 				<tr>
-					<td><strong>개인회원 홈</strong></td>
 				</tr>
 				<tr>
-					<td><strong>이력서 관리</strong>
+					<td><strong><a>이력서 관리</a></strong>
 						<ul>
-							<li><br>이력서 등록</li>
-							<li>이력서 현황</li>
-							<li>첨부파일 관리</li>
-							<li>이력서 열람제한 설정</li>
-							<li>강조노출 상품신청</li>
+							<li><br>
+							<a>이력서 등록</a></li>
+							<li><a>이력서 현황</a></li>
+							<li><a>첨부파일 관리</a></li>
+							<li><a>이력서 열람제한 설정</a></li>
+							<li><a>강조노출 상품신청</a></li>
 						</ul></td>
 				</tr>
 				<tr>
-					<td><strong>입사지원·제안 관리</strong>
+					<td><strong><a>입사지원·제안 관리</a></strong>
 						<ul>
-							<li><br>입사지원 현황</li>
-							<li>취업활동 증명서</li>
-							<li>받은 포지션 제안</li>
-							<li>헤드헌팅 채용상담</li>
+							<li><br>
+							<a>입사지원 현황</a></li>
+							<li><a>취업활동 증명서</a></li>
+							<li><a>받은 포지션 제안</a></li>
+							<li><a>헤드헌팅 채용상담</a></li>
 						</ul></td>
 				</tr>
 				<tr>
-					<td><strong>역량테스트(MICT)</strong></td>
+					<td><strong><a>역량테스트(MICT)</a></strong></td>
 				</tr>
 				<tr>
-					<td><strong>스크랩/관심기업</strong>
+					<td><strong><a>스크랩/관심기업</a></strong>
 						<ul>
-							<li><br>스크랩 공고</li>
-							<li>관심기업/헤드헌터</li>
-							<li>MY 알림</li>
+							<li><br>
+							<a>스크랩 공고</a></li>
+							<li><a>관심기업/헤드헌터</a></li>
+							<li><a>MY 알림</a></li>
 						</ul></td>
 				</tr>
 				<tr>
-					<td><strong>콘텐츠 관리</strong>
+					<td><strong><a>콘텐츠 관리</a></strong>
 						<ul>
-							<li><br>MY 기업리뷰</li>
-							<li>인적성 검사</li>
+							<li><br>
+							<a>MY 기업리뷰</a></li>
+							<li><a>인적성 검사</a></li>
 						</ul></td>
 				</tr>
 				<tr>
-					<td><strong>회원정보 관리</strong>
+					<td><strong><a>회원정보 관리</a></strong>
 						<ul>
-							<li><br>회원정보 수정</li>
-							<li>비밀번호 변경</li>
-							<li>메일·문자 설정</li>
+							<li><br>
+							<a>회원정보 수정</a></li>
+							<li><a>비밀번호 변경</a></li>
+							<li><a>메일·문자 설정</a></li>
 						</ul></td>
 				</tr>
 			</table>
