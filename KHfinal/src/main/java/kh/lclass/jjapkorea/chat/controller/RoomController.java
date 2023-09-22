@@ -67,14 +67,14 @@ public class RoomController {
         return mv;
     }
     
-    @PostMapping("/insertChat")
-    public String chat(ChatMessageDto messageDto) {
-    	try {
-    		chatRoomService.insertChatMessage(messageDto);
-    		return "success"; // 성공한 경우 응답을 보냄
-    	} catch(Exception e) {
-    		e.printStackTrace();
-    		return "error"; // 실패한 경우 응답을 보냄
-    	}
-    }
+//    @PostMapping("/insertChat")
+//    public String chat(ChatMessageDto messageDto) {
+//    	try {
+//    		chatRoomService.insertChatMessage(messageDto);
+//    		return "success"; // 성공한 경우 응답을 보냄
+//    	} catch(Exception e) {
+//    		e.printStackTrace();
+//    		return "error"; // 실패한 경우 응답을 보냄
+//    	}
+//    }
 }
