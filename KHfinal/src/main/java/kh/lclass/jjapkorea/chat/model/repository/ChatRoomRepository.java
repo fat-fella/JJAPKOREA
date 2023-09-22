@@ -66,7 +66,7 @@ public class ChatRoomRepository {
 
     public List<ChatRoomDto> findAllRooms() {
         // MyBatis를 통해 오라클 데이터베이스에서 방 목록을 조회
-        return sqlSession.selectList("chat.findAllRooms");
+    	return sqlSession.selectList("chat.findAllRooms");        
     }
 
     public ChatRoomDto findRoomById(String id) {
@@ -77,6 +77,7 @@ public class ChatRoomRepository {
     public int createChatRoomDto(String name, String writer) {
         ChatRoomDto room = ChatRoomDto.create(name, writer);
 
+        
         return  sqlSession.insert("chat.insert", room);
     }
     public int insertChatMessage(ChatMessageDto messageDto) {

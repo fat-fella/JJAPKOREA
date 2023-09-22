@@ -21,7 +21,7 @@
                 <form action="/jjapkorea/chat" method="post">
                 	<input type="text" id="msg" class="form-control">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="button-send">전송</button>
+                        <button class="btn btn-outline-secondary" id="button-send">전송</button>
                     </div>
                 </form>
                 </div>
@@ -35,7 +35,7 @@
 
             var roomName = "${room.name}";
             var roomId = "${room.roomId}";
-            var username = "${room.name}";
+            var username = "${room.writer}";
 
             console.log(roomName + ", " + roomId + ", " + username);
 

@@ -7,6 +7,8 @@ import kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto;
 import kh.lclass.jjapkorea.chat.model.repository.ChatRoomRepository;
 import kh.lclass.jjapkorea.chat.model.service.ChatRoomService;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +26,6 @@ public class RoomController {
 	@Autowired
     private ChatRoomService chatRoomService;
 	
-	@Autowired
-	private ChatRoomRepository chatRoomRepository;
-
     //채팅방 목록 조회
     @GetMapping("/rooms")
     public ModelAndView rooms(ModelAndView mv) throws Exception{
@@ -58,23 +57,26 @@ public class RoomController {
 
     //채팅방 조회
     @GetMapping("/room")
-    public ModelAndView getRoom(String roomId, Model model, ModelAndView mv){
+    public ModelAndView getRoom(HttpSession session, String roomId, Model model, ModelAndView mv){
 
         log.info("# get Chat Room, roomID : " + roomId);
 
         model.addAttribute("room", chatRoomService.findRoomById(roomId));
         mv.setViewName("chat/room");
+        session.setAttribute("currentRoom", "room?roomId=" + roomId);
         
         return mv;
     }
     
-    @PostMapping("/chat")
-    public String chat(ChatMessageDto messageDto) {
-    	String viewPage = "redirect:/";
-    	try {
-    		chatRoomRepository.insertChatMessage(messageDto);
-    	} catch(Exception e) {
-    	}
-    	return viewPage;
-    }
+//    @PostMapping("/chat")
+//    public String chat(HttpSession session, ChatMessageDto messageDto) {
+//    	String viewPage = "redirect:/";
+//    	String currrentRoom = (String) session.getAttribute("currentRoom");
+//    	try {
+//    		chatRoomService.insertChatMessage(messageDto);
+//    	} catch(Exception e) {
+//    		e.printStackTrace();
+//    	}
+//    	return viewPage + currrentRoom;
+//    }
 }

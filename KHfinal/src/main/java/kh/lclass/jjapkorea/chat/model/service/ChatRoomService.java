@@ -35,6 +35,7 @@
 
 package kh.lclass.jjapkorea.chat.model.service;
 
+import kh.lclass.jjapkorea.chat.model.dto.ChatMessageDto;
 import kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto;
 import kh.lclass.jjapkorea.chat.model.repository.ChatRoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,5 +63,8 @@ public class ChatRoomService {
 
     public int createChatRoomDto(String name, String writer) {
         return chatRoomRepository.createChatRoomDto(name, writer);
+    }
+    public int insertChatMessage(ChatMessageDto messageDto) {
+    	return chatRoomRepository.insertChatMessage(messageDto);
     }
 }

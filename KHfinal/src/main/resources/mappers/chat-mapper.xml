@@ -5,8 +5,8 @@
 	<resultMap id="chatRoomResultMap"
 		type="kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto">
 		<id property="roomId" column="room_id" />
-		<result property="writer" column="writer" />
 		<result property="name" column="room_name" />
+		<result property="writer" column="writer" />
 		<!-- 다른 필드에 대한 결과 매핑 -->
 	</resultMap>
 	
