@@ -17,3 +17,5 @@ public class ResumeMgrServlet extends HttpServlet {
 	}
 
 }
+
+// 임시로 작성된 페이지이고 추후 삭제될 수 있음
