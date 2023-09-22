@@ -1,20 +1,15 @@
 package kh.lclass.jjapkorea.resume.mgr.controller;
 
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-//@Controller
-//@RequestMapping("/view/resume/resumeMgr.jsp")
-//public class ResumeMgrController {
-//	
-//	@GetMapping("/resume/mgr")
-//	public String resumeMgr() {
-//		
-//		
-//		
-//		
-//		return null;
-//		
-//	}
-//}
+@Controller
+public class ResumeMgrController {
+
+	@GetMapping("resume")
+	public String resumeMgr() {
+
+		return "/resume/resumeMgr";
+
+	}
+}
