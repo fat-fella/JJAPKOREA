@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>resumeMgrSide</title>
 <style>
+
 #resumeMgrMain { /* 아티클 크기 설정 */
 	position: relative;
 	padding-top: 25px; /* 테이블을 해당 길이만큼 아래 위치에서 생성되도록 설정 */
@@ -37,25 +38,26 @@
 	text-decoration: underline; /* 글자 밑줄 설정 */
 }
 
-ul {
+.resumeMgrUl {
 	margin-left: 0px; /* 초기 li 들여쓰기 없애는 설정 */
 	padding-left: 15px; /* li 들여쓰기 너비 설정 */
 }
 
-li { /* 리스트 항목 내 설정 */
+.resumeMgrLi { /* 리스트 항목 내 설정 */
 	color: #5D5D5D; /* 글자 색 설정 */
 	font-size: 14px; /* 글자 크기 설정 */
 }
 
-li:hover { /* 리스트 항목에 마우스 위로 올리면 동작되는 설정 */
+.resumeMgrLi:hover { /* 리스트 항목에 마우스 위로 올리면 동작되는 설정 */
 	font-weight: bold; /* 글자 진하게 설정 */
 	text-decoration: underline; /* 글자 밑줄 설정 */
 }
 
-li:active {
+.resumeMgrLi:active {
 	font-weight: bold; /* 글자 진하게 설정 */
 	color: #172bff; /* 글자 색 설정 */
 }
+
 </style>
 </head>
 <body>
@@ -63,51 +65,59 @@ li:active {
 		<article id="resumeMgrMain">
 			<table id="resumeMgrTable">
 				<tr class="resumeMgrTr">
-					<td class="resumeMgrTd"><div class="resumeMgrMenu"><strong><a>개인회원 홈</a></strong></div></td>
+					<td class="resumeMgrTd"><div class="resumeMgrMenu">
+							<strong><a>개인회원 홈</a></strong>
+						</div></td>
 				</tr>
 				<tr class="resumeMgrTr">
 					<td class="resumeMgrTd"><strong><a>이력서 관리</a></strong>
-						<ul>
-							<li><br> <a>이력서 등록</a></li>
-							<li><a>이력서 현황</a></li>
-							<li><a>첨부파일 관리</a></li>
-							<li><a>이력서 열람제한 설정</a></li>
-							<li><a>강조노출 상품신청</a></li>
+						<ul class="resumeMgrUl">
+							<li class="resumeMgrLi"><br> <a>이력서 등록</a></li>
+							<li class="resumeMgrLi"><a>이력서 현황</a></li>
+							<li class="resumeMgrLi"><a>첨부파일 관리</a></li>
+							<li class="resumeMgrLi"><a>이력서 열람제한 설정</a></li>
+							<li class="resumeMgrLi"><a>강조노출 상품신청</a></li>
 						</ul></td>
 				</tr>
 				<tr class="resumeMgrTr">
 					<td class="resumeMgrTd"><strong>입사지원·제안 관리</strong>
-						<ul>
-							<li><br> <a>입사지원 현황</a></li>
-							<li><a>취업활동 증명서</a></li>
-							<li><a>받은 포지션 제안</a></li>
-							<li><a>헤드헌팅 채용상담</a></li>
+						<ul class="resumeMgrUl">
+							<li class="resumeMgrLi"><br>
+							<a>입사지원 현황</a></li>
+							<li class="resumeMgrLi"><a>취업활동 증명서</a></li>
+							<li class="resumeMgrLi"><a>받은 포지션 제안</a></li>
+							<li class="resumeMgrLi"><a>헤드헌팅 채용상담</a></li>
 						</ul></td>
 				</tr>
 				<tr class="resumeMgrTr">
-					<td class="resumeMgrTd"><div class="resumeMgrMenu"><strong><a>역량테스트(MICT)</a></strong></div></td>
+					<td class="resumeMgrTd"><div class="resumeMgrMenu">
+							<strong><a>역량테스트(MICT)</a></strong>
+						</div></td>
 				</tr>
 				<tr class="resumeMgrTr">
 					<td class="resumeMgrTd"><strong>스크랩/관심기업</strong>
-						<ul>
-							<li><br> <a>스크랩 공고</a></li>
-							<li><a>관심기업/헤드헌터</a></li>
-							<li><a>MY 알림</a></li>
+						<ul class="resumeMgrUl">
+							<li class="resumeMgrLi"><br>
+							<a>스크랩 공고</a></li>
+							<li class="resumeMgrLi"><a>관심기업/헤드헌터</a></li>
+							<li class="resumeMgrLi"><a>MY 알림</a></li>
 						</ul></td>
 				</tr>
 				<tr class="resumeMgrTr">
 					<td class="resumeMgrTd"><strong>콘텐츠 관리</strong>
-						<ul>
-							<li><br> <a>MY 기업리뷰</a></li>
-							<li><a>인적성 검사</a></li>
+						<ul class="resumeMgrUl">
+							<li class="resumeMgrLi"><br>
+							<a>MY 기업리뷰</a></li>
+							<li class="resumeMgrLi"><a>인적성 검사</a></li>
 						</ul></td>
 				</tr>
 				<tr class="resumeMgrTr">
 					<td class="resumeMgrTd"><strong>회원정보 관리</strong>
-						<ul>
-							<li><br> <a>회원정보 수정</a></li>
-							<li><a>비밀번호 변경</a></li>
-							<li><a>메일·문자 설정</a></li>
+						<ul class="resumeMgrUl">
+							<li class="resumeMgrLi"><br>
+							<a>회원정보 수정</a></li>
+							<li class="resumeMgrLi"><a>비밀번호 변경</a></li>
+							<li class="resumeMgrLi"><a>메일·문자 설정</a></li>
 						</ul></td>
 				</tr>
 			</table>
