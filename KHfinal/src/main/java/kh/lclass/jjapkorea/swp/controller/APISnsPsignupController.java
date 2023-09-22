@@ -32,7 +32,7 @@ import kh.lclass.jjapkorea.swp.auth.SnsValue;
 import kh.lclass.jjapkorea.swp.domain.APISnsMember;
 import kh.lclass.jjapkorea.swp.dto.APISnsLoginDTO;
 import kh.lclass.jjapkorea.swp.interceptor.APISnsSessionNames;
-import kh.lclass.jjapkorea.swp.service.APISnsUserService;
+import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 
 
 @Controller
@@ -41,7 +41,7 @@ public class APISnsPsignupController {
 	private static final Logger logger = LoggerFactory.getLogger(APISnsPsignupController.class);
 	
 	@Inject
-	private APISnsUserService service;
+	private APISnsMemberService service;
 	
 	@Inject
 	private SnsValue naverSns;

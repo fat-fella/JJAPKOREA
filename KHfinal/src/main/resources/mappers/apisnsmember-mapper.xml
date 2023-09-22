@@ -29,7 +29,7 @@
     </select>
     
     <select id="getBySnsKakao" resultType="kh.lclass.jjapkorea.swp.domain.APISnsMember">
-        select * from MEMBER where kakoid = #{ kakaoid }
+        select * from MEMBER where kakaoid = #{ kakaoid }
     </select>
     
 </mapper>

@@ -1,9 +1,9 @@
 package kh.lclass.jjapkorea.swp.auth;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.stereotype.Component;
 
 import com.github.scribejava.apis.GoogleApi20;
+import com.github.scribejava.apis.KakaoApi;
 import com.github.scribejava.core.builder.api.DefaultApi20;
 
 import lombok.Data;
@@ -40,7 +40,7 @@ public class SnsValue implements SnsUrls {
 			this.profileUrl = GOOGLE_PROFILE_URL;
 			
 		} else if (isKakao) {
-			this.api20Instance = KakaoAPI20.instance();
+			this.api20Instance = KakaoApi.instance();
 			this.profileUrl = KAKAO_PROFILE_URL;
 		}
 	}

@@ -23,7 +23,6 @@ public class SNSLogin {
         this.oauthService = new ServiceBuilder(sns.getClientId())
                 .apiSecret(sns.getClientSecret())
                 .callback(sns.getRedirectUrl())
-//                .scope("profile")
                 .build(sns.getApi20Instance());
 
         this.sns = sns;
@@ -38,12 +37,24 @@ public class SNSLogin {
     }
 
     public APISnsMember getUserProfile(String code) throws Exception {
+        // 사용자 인증 코드로 액세스 토큰을 가져옴
         OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
 
+        // OAuth2 요청 생성
         OAuthRequest request = new OAuthRequest(Verb.GET, this.sns.getProfileUrl());
         oauthService.signRequest(accessToken, request);
 
+        // OAuth 요청 로깅
+        System.out.println("OAuth Request: " + request.toString());
+
+        // OAuth 응답 받아오기
         Response response = oauthService.execute(request);
+
+        // OAuth 응답 로깅
+        System.out.println("OAuth Response Code: " + response.getCode());
+        System.out.println("OAuth Response Body: " + response.getBody());
+
+        // JSON 응답 파싱하여 사용자 정보 추출
         return parseJson(response.getBody());
     }
 
