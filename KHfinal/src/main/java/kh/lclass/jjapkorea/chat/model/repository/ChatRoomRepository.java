@@ -74,8 +74,8 @@ public class ChatRoomRepository {
         return sqlSession.selectOne("chat.findRoomById", id);
     }
 
-    public int createChatRoomDto(String roomId, String name, String writer) {
-        ChatRoomDto room = ChatRoomDto.create(roomId, name, writer);
+    public int createChatRoomDto(String name, String writer) {
+        ChatRoomDto room = ChatRoomDto.create(name, writer);
         return  sqlSession.insert("chat.insert", room);
     }
     

@@ -47,9 +47,9 @@ public class RoomController {
 //        return "redirect:/rooms";
 //    }
     @PostMapping("/room")
-    public String create(@RequestParam String roomId, String name, @RequestParam String writer, RedirectAttributes rttr) {
+    public String create(@RequestParam String name, @RequestParam String writer, RedirectAttributes rttr) {
         log.info("# Create Chat Room, name: " + name + ", writer: " + writer);
-        chatRoomService.createChatRoomDto(roomId, name, writer); // 방 생성 및 DB에 저장
+        chatRoomService.createChatRoomDto(name, writer); // 방 생성 및 DB에 저장
         rttr.addFlashAttribute("roomName", name);
         return "redirect:/rooms";
     }

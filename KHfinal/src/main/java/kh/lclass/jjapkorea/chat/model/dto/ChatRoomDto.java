@@ -25,7 +25,7 @@ public class ChatRoomDto {
     private List<WebSocketSession> sessions = new ArrayList<>();
     
     
-    public static ChatRoomDto create(String roomId, String name, String writer){
+    public static ChatRoomDto create(String name, String writer){
         ChatRoomDto room = new ChatRoomDto();
 
         room.roomId = UUID.randomUUID().toString();
