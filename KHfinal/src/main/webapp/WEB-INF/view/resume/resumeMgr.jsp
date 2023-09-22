@@ -46,14 +46,12 @@
 <jsp:include page="resumeMgrSide.jsp"></jsp:include>
 
 <style>
-
 #resumeMgrSide {
 	background: yellow;
 	position: absolute;
 	top: 168px;
 	left: 210px;
 }
-
 </style>
 
 </head>
@@ -64,6 +62,7 @@
 
 	<div id="resumeMgrSide">
 		<!-- resumeMgr 안쪽 페이지 -->
+
 		resumeMgr
 
 	</div>
