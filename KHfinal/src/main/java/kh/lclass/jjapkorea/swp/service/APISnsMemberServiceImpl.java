@@ -11,7 +11,7 @@ import kh.lclass.jjapkorea.swp.dto.APISnsLoginDTO;
 import kh.lclass.jjapkorea.swp.persistence.APISnsUserDAO;
 
 @Service
-public class APISnsUserServiceImpl implements APISnsUserService {
+public class APISnsMemberServiceImpl implements APISnsMemberService {
 	
 	@Inject
 	private APISnsUserDAO dao;
