@@ -11,10 +11,8 @@ import lombok.Setter;
 //@Getter
 //@Setter
 public class ChatMessageDto {
-
     private String roomId;
     private String writer;
-    private String messageId;
     private String message;
     private String timestamp;
 }

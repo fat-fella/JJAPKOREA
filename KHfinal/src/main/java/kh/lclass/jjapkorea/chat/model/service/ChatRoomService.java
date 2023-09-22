@@ -61,8 +61,8 @@ public class ChatRoomService {
         return chatRoomRepository.findRoomById(id);
     }
 
-    public int createChatRoomDto(String name, String writer) {
-        return chatRoomRepository.createChatRoomDto(name, writer);
+    public int createChatRoomDto(String roomId, String name, String writer) {
+        return chatRoomRepository.createChatRoomDto(roomId, name, writer);
     }
     public int insertChatMessage(ChatMessageDto messageDto) {
     	return chatRoomRepository.insertChatMessage(messageDto);

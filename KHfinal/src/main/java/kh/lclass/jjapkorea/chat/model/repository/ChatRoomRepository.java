@@ -74,14 +74,12 @@ public class ChatRoomRepository {
         return sqlSession.selectOne("chat.findRoomById", id);
     }
 
-    public int createChatRoomDto(String name, String writer) {
-        ChatRoomDto room = ChatRoomDto.create(name, writer);
-
-        
+    public int createChatRoomDto(String roomId, String name, String writer) {
+        ChatRoomDto room = ChatRoomDto.create(roomId, name, writer);
         return  sqlSession.insert("chat.insert", room);
     }
+    
     public int insertChatMessage(ChatMessageDto messageDto) {
         return sqlSession.insert("chat.insertMessage", messageDto);
     }
-    
 }

@@ -47,9 +47,9 @@ public class RoomController {
 //        return "redirect:/rooms";
 //    }
     @PostMapping("/room")
-    public String create(@RequestParam String name, @RequestParam String writer, RedirectAttributes rttr) {
+    public String create(@RequestParam String roomId, String name, @RequestParam String writer, RedirectAttributes rttr) {
         log.info("# Create Chat Room, name: " + name + ", writer: " + writer);
-        chatRoomService.createChatRoomDto(name, writer); // 방 생성 및 DB에 저장
+        chatRoomService.createChatRoomDto(roomId, name, writer); // 방 생성 및 DB에 저장
         rttr.addFlashAttribute("roomName", name);
         return "redirect:/rooms";
     }
@@ -57,26 +57,24 @@ public class RoomController {
 
     //채팅방 조회
     @GetMapping("/room")
-    public ModelAndView getRoom(HttpSession session, String roomId, Model model, ModelAndView mv){
+    public ModelAndView getRoom(String roomId, Model model, ModelAndView mv){
 
         log.info("# get Chat Room, roomID : " + roomId);
 
         model.addAttribute("room", chatRoomService.findRoomById(roomId));
         mv.setViewName("chat/room");
-        session.setAttribute("currentRoom", "room?roomId=" + roomId);
         
         return mv;
     }
     
-//    @PostMapping("/chat")
-//    public String chat(HttpSession session, ChatMessageDto messageDto) {
-//    	String viewPage = "redirect:/";
-//    	String currrentRoom = (String) session.getAttribute("currentRoom");
-//    	try {
-//    		chatRoomService.insertChatMessage(messageDto);
-//    	} catch(Exception e) {
-//    		e.printStackTrace();
-//    	}
-//    	return viewPage + currrentRoom;
-//    }
+    @PostMapping("/insertChat")
+    public String chat(ChatMessageDto messageDto) {
+    	try {
+    		chatRoomService.insertChatMessage(messageDto);
+    		return "success"; // 성공한 경우 응답을 보냄
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    		return "error"; // 실패한 경우 응답을 보냄
+    	}
+    }
 }

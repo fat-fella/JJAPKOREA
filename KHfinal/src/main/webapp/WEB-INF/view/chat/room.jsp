@@ -18,12 +18,10 @@
             <div id="msgArea" class="col"></div>
             <div class="col-6">
                 <div class="input-group mb-3">
-                <form action="/jjapkorea/chat" method="post">
-                	<input type="text" id="msg" class="form-control">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="button-send">전송</button>
+               		<input type="text" id="msg" class="form-control">
+               		<div class="input-group-append">
+                    	<button class="btn btn-outline-secondary" id="button-send">전송</button>
                     </div>
-                </form>
                 </div>
             </div>
         </div>
@@ -77,6 +75,31 @@
                 });
 
                 stomp.send('/pub/chat/enter', {}, JSON.stringify({roomId: roomId, writer: username}));
+            });
+        });
+        $(document).ready(function() {
+            $("#button-send").click(function() {
+                // 입력된 채팅 메시지 가져오기
+                var chatMessage = $("#msg").val();
+
+                // Ajax 요청 보내기
+                $.ajax({
+                    type: "POST",
+                    url: "/jjapkorea/insertChat", // Spring Controller의 URL로 변경
+                    data: {
+                        message: chatMessage // 채팅 메시지 데이터 전송
+                    },
+                    success: function(response) {
+                        // Ajax 요청이 성공했을 때의 처리
+                        console.log("채팅 메시지가 성공적으로 전송되었습니다.");
+                        // 이후 필요한 작업을 수행할 수 있습니다.
+                    },
+                    error: function(xhr, status, error) {
+                        // Ajax 요청이 실패했을 때의 처리
+                        console.error("채팅 메시지 전송 중 오류가 발생했습니다.");
+                        console.error(xhr.responseText);
+                    }
+                });
             });
         });
     </script>
