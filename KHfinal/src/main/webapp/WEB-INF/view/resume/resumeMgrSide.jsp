@@ -19,7 +19,7 @@
 				<tr class="resumeMgrTr">
 					<td class="resumeMgrTd"><strong>이력서 관리</strong>
 						<ul class="resumeMgrUl">
-							<li class="resumeMgrLi"><br> <a>이력서 등록</a></li>
+							<li class="resumeMgrLi"><br><a href="<%=request.getContextPath() %>/resume/write">이력서 등록</a></li>
 							<li class="resumeMgrLi"><a>이력서 현황</a></li>
 							<li class="resumeMgrLi"><a>첨부파일 관리</a></li>
 							<li class="resumeMgrLi"><a>이력서 열람제한 설정</a></li>
