@@ -77,7 +77,7 @@
                 stomp.send('/pub/chat/enter', {}, JSON.stringify({roomId: roomId, writer: username}));
             });
         });
-        
+
     </script>
 </body>
 </html>
