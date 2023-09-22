@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/resumeMgr_side.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,60 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>resumeMgrSide</title>
-<style>
-
-#resumeMgrMain { /* 아티클 크기 설정 */
-	position: relative;
-	padding-top: 25px; /* 테이블을 해당 길이만큼 아래 위치에서 생성되도록 설정 */
-	width: 235px; /* 아티클 너비 설정 */
-	font-family: 'Pretendard Variable', 'Pretendard', '-apple-system',
-		'BlinkMacSystemFont', 'system-ui', 'Roboto', 'Helvetica Neue',
-		'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'sans-serif';
-	/* 글자체 설정 */
-}
-
-#resumeMgrTable { /* 테이블 크기 설정 */
-	background-color: white; /* 테이블 배경 색 설정 */
-	padding-left: 50px; /* 테이블 안쪽 왼쪽 너비 */
-	border: 1px solid #EAEAEA; /* 테두리 설정: 크기, 테두리 모양, 테두리 색 */
-	width: 200px; /* 테이블 너비 */
-}
-
-.resumeMgrTr { /* 테이블 내부 선 설정 */
-	border: 1px solid #EAEAEA; /* 테두리 설정: 크기, 테두리 모양, 테두리 색 */
-	font-size: 17px; /* 글자 크기 설정*/
-}
-
-.resumeMgrTd { /* 테이블 셀 내부 간격 설정 */
-	padding: 20px;
-}
-
-.resumeMgrMenu:hover { /* 항목에 마우스 위로 올리면 동작되는 설정 */
-	text-decoration: underline; /* 글자 밑줄 설정 */
-}
-
-.resumeMgrUl {
-	margin-left: 0px; /* 초기 li 들여쓰기 없애는 설정 */
-	padding-left: 15px; /* li 들여쓰기 너비 설정 */
-}
-
-.resumeMgrLi { /* 리스트 항목 내 설정 */
-	color: #5D5D5D; /* 글자 색 설정 */
-	font-size: 14px; /* 글자 크기 설정 */
-}
-
-.resumeMgrLi:hover { /* 리스트 항목에 마우스 위로 올리면 동작되는 설정 */
-	font-weight: bold; /* 글자 진하게 설정 */
-	text-decoration: underline; /* 글자 밑줄 설정 */
-}
-
-.resumeMgrLi:active {
-	font-weight: bold; /* 글자 진하게 설정 */
-	color: #172bff; /* 글자 색 설정 */
-}
-
-</style>
 </head>
 <body>
 	<div>
