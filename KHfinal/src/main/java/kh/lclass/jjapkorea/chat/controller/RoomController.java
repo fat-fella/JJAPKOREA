@@ -64,8 +64,13 @@ public class RoomController {
         model.addAttribute("room", chatRoomService.findRoomById(roomId));
         mv.setViewName("chat/room");
         
+        model.addAttribute("showChat", chatRoomService.showChat());
+        System.out.println("~!@!~!@!~@~@!~@!~Q@~!@~!@!~@"+chatRoomService.showChat());
+        
         return mv;
     }
+    
+    
     
 //    @PostMapping("/insertChat")
 //    public String chat(ChatMessageDto messageDto) {

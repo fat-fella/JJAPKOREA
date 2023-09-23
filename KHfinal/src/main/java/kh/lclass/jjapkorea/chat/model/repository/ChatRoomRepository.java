@@ -82,4 +82,9 @@ public class ChatRoomRepository {
     public int insertChatMessage(ChatMessageDto messageDto) {
         return sqlSession.insert("chat.insertMessage", messageDto);
     }
+    
+    public List<ChatMessageDto> showChat() {
+    	System.out.println("!!!!!!!!!!!!!!!!!!!!"+sqlSession.selectList("chat.showChat"));
+    	return sqlSession.selectList("chat.showChat");
+    }
 }

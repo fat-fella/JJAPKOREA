@@ -1,83 +1,102 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>JSP Page</title>
-    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+<meta charset="UTF-8">
+<title>JSP Page</title>
+<script
+	src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
-    <div class="container">
-        <div class="col-6">
-            <h1>${room.name}</h1>
-        </div>
-        <div>
-            <div id="msgArea" class="col"></div>
-            <div class="col-6">
-                <div class="input-group mb-3">
-               		<input type="text" id="msg" class="form-control">
-               		<div class="input-group-append">
-                    	<button class="btn btn-outline-secondary" id="button-send">전송</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6"></div>
-    </div>
+	<div class="container">
+		<div class="col-6">
+			<h1>${room.name}</h1>
+		</div>
+		<div>
+			<div id="msgArea" class="col"></div>
+			<div class="col-6">
+				<c:if test="${!empty showChat}">
+					<c:forEach items="${showChat}" var="item">
+						<div class='alert alert-secondary'>
+							<ul>
+								<li><b> ${item.writer}: ${item.message} </b></li>
+							</ul>
+						</div>
+					</c:forEach>
+				</c:if>
+				<div class="input-group mb-3">
+					<input type="text" id="msg" class="form-control">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" id="button-send">전송</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-6"></div>
+	</div>
 
-    <script>
-        $(document).ready(function(){
+	<script>
+		$(document).ready(function() {
 
-            var roomName = "${room.name}";
-            var roomId = "${room.roomId}";
-            var username = "${room.writer}";
+			var roomName = "${room.name}";
+			var roomId = "${room.roomId}";
+			var username = "${room.writer}";
 
-            console.log(roomName + ", " + roomId + ", " + username);
+			console.log(roomName + ", " + roomId + ", " + username);
 
-            var sockJs = new SockJS("/jjapkorea/stomp/chat");
-            var stomp = Stomp.over(sockJs);
+			var sockJs = new SockJS("/jjapkorea/stomp/chat");
+			var stomp = Stomp.over(sockJs);
 
-            stomp.connect({}, function (){
-                console.log("STOMP Connection");
+			stomp.connect({}, function() {
+				console.log("STOMP Connection");
 
-                stomp.subscribe("/sub/chat/room/" + roomId, function (chat) {
-                    var content = JSON.parse(chat.body);
+				stomp.subscribe("/sub/chat/room/" + roomId, function(chat) {
+					var content = JSON.parse(chat.body);
 
-                    var writer = content.writer;
-                    var message = content.message;
-                    var str = '';
+					var writer = content.writer;
+					var message = content.message;
+					var str = '';
 
-                    if(writer === username){
-                        str = "<div class='col-6'>";
-                        str += "<div class='alert alert-secondary'>";
-                        str += "<b>" + writer + " : " + message + "</b>";
-                        str += "</div></div>";
-                        $("#msgArea").append(str);
-                    }
-                    else{
-                        str = "<div class='col-6'>";
-                        str += "<div class='alert alert-warning'>";
-                        str += "<b>" + writer + " : " + message + "</b>";
-                        str += "</div></div>";
-                        $("#msgArea").append(str);
-                    }
-                });
+					if (writer === username) {
+						str = "<div class='col-6'>";
+						str += "<div class='alert alert-secondary'>";
+						str += "<b>" + writer + " : " + message + "</b>";
+						str += "</div></div>";
+						$("#msgArea").append(str);
+					} else {
+						str = "<div class='col-6'>";
+						str += "<div class='alert alert-warning'>";
+						str += "<b>" + writer + " : " + message + "</b>";
+						str += "</div></div>";
+						$("#msgArea").append(str);
+					}
+				});
 
-                $("#button-send").on("click", function(e){
-                    var msg = document.getElementById("msg");
+				$("#button-send").on("click", function(e) {
+					var msg = document.getElementById("msg");
 
-                    console.log(username + ":" + msg.value);
-                    stomp.send('/pub/chat/message', {}, JSON.stringify({roomId: roomId, message: msg.value, writer: username}));
-                    msg.value = '';
-                });
+					console.log(username + ":" + msg.value);
+					stomp.send('/pub/chat/message', {}, JSON.stringify({
+						roomId : roomId,
+						message : msg.value,
+						writer : username
+					}));
+					msg.value = '';
+				});
 
-                stomp.send('/pub/chat/enter', {}, JSON.stringify({roomId: roomId, writer: username}));
-            });
-        });
-
-    </script>
+				stomp.send('/pub/chat/enter', {}, JSON.stringify({
+					roomId : roomId,
+					writer : username
+				}));
+			});
+		});
+	</script>
 </body>
 </html>

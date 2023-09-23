@@ -7,7 +7,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <meta charset="UTF-8">
-    <title>Your Title Here</title>
+    <title>고객센터 채팅</title>
     <!-- 여기에 필요한 CSS 및 JavaScript 파일을 포함할 수 있습니다. -->
 </head>
 <body>

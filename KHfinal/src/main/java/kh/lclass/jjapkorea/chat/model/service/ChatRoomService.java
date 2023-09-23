@@ -67,4 +67,8 @@ public class ChatRoomService {
     public int insertChatMessage(ChatMessageDto messageDto) {
     	return chatRoomRepository.insertChatMessage(messageDto);
     }
+    
+    public List<ChatMessageDto> showChat(){
+    	return chatRoomRepository.showChat();
+    }
 }
