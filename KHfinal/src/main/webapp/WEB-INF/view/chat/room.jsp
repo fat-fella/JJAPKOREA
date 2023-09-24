@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-	
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,25 +21,24 @@
 			<h1>${room.name}</h1>
 		</div>
 		<div>
-			<div id="msgArea" class="col"></div>
-			<div class="col-6">
+			<!-- 			<div id="msgArea" class="col"></div>
+ -->
+			<div class="col-6" id="msgArea">
 				<c:if test="${!empty showChat}">
 					<c:forEach items="${showChat}" var="item">
 						<div class='alert alert-secondary'>
-							<ul>
-								<li><b> ${item.writer}: ${item.message} </b></li>
-							</ul>
+							<b> ${item.writer}: ${item.message} </b>
 						</div>
 					</c:forEach>
 				</c:if>
-				<div class="input-group mb-3">
-					<input type="text" id="msg" class="form-control">
-					<div class="input-group-append">
-						<button class="btn btn-outline-secondary" id="button-send">전송</button>
-					</div>
+			</div>
+			<div class="input-group mb-3">
+				<input type="text" id="msg" class="form-control">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" id="button-send">전송</button>
 				</div>
 			</div>
-		</div>
+		</sdiv>
 		<div class="col-6"></div>
 	</div>
 
@@ -63,18 +63,25 @@
 					var writer = content.writer;
 					var message = content.message;
 					var str = '';
-
 					if (writer === username) {
-						str = "<div class='col-6'>";
+						/* str = "<div class='col-6'>";
 						str += "<div class='alert alert-secondary'>";
 						str += "<b>" + writer + " : " + message + "</b>";
 						str += "</div></div>";
+						$("#msgArea").append(str); */
+						str = "<div class='alert alert-secondary'>";
+						str += "<b>" + writer + " : " + message + "</b>";
+						str += "</div>";
 						$("#msgArea").append(str);
 					} else {
-						str = "<div class='col-6'>";
+						/* str = "<div class='col-6'>";
 						str += "<div class='alert alert-warning'>";
 						str += "<b>" + writer + " : " + message + "</b>";
 						str += "</div></div>";
+						$("#msgArea").append(str); */
+						str += "<div class='alert alert-warning'>";
+						str += "<b>" + writer + " : " + message + "</b>";
+						str += "</div>";
 						$("#msgArea").append(str);
 					}
 				});
@@ -90,6 +97,11 @@
 					}));
 					msg.value = '';
 				});
+			
+
+				
+
+				
 
 				stomp.send('/pub/chat/enter', {}, JSON.stringify({
 					roomId : roomId,

@@ -10,9 +10,9 @@
 	</resultMap>
 	<resultMap id="chatMessageResultMap" type="chatMessageDto">
 		<id property="roomId" column="room_id" />
-		<result property= "writer" column = "writer"/>
-		<result property= "message" column = "message"/>
-		<result property= "timestamp" column = "timestamp"/>
+		<result property="writer" column = "writer"/>
+		<result property="message" column = "message"/>
+		<result property="timestamp" column = "timestamp"/>
 	</resultMap>
 	
 	<insert id="insert"
@@ -38,7 +38,7 @@
 		#{message}, SYSTIMESTAMP)
 	</insert>
 	<select id="showChat" resultMap="chatMessageResultMap">
-		SELECT * FROM CHAT_MESSAGE WHERE ROOM_ID = #{roomId}
+		SELECT * FROM CHAT_MESSAGE WHERE ROOM_ID = #{roomId} ORDER BY TIMESTAMP ASC
 	</select>
 
 </mapper>
