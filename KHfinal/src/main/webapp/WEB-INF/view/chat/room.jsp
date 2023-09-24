@@ -97,7 +97,18 @@
 					}));
 					msg.value = '';
 				});
-			
+				
+				$("#msg").on("keyup", function(e){
+					if(event.keyCode === 13){
+						console.log(username + ":" + msg.value);
+						stomp.send('/pub/chat/message', {}, JSON.stringify({
+							roomId : roomId,
+							message : msg.value,
+							writer : username
+						}));
+						msg.value = '';
+					}
+				});
 
 				
 
