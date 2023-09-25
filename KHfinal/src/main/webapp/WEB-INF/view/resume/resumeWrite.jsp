@@ -12,6 +12,7 @@
 </head>
 <body>
 
+	<!-- 이력서 최상단 메뉴 부분 -->
 	<header>
 		<div>
 			<h1 id="jkLogo">
@@ -23,6 +24,11 @@
 			<span id="resumeMgr"><a href="">이력서 관리</a></span>
 		</div>
 	</header>
+	
+	<!-- 이력서 제목 작성 부분 -->
+	<div><input id="titleWrite" placeholder="기업에게 나에 대해 알려줍시다. 강점, 목표, 관심분야도 좋아요."></div>
+		
+		
 	
 	
 
