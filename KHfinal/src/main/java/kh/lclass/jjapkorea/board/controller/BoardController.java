@@ -54,12 +54,13 @@ public class BoardController {
 	@PostMapping("/insert")
 	@ResponseBody
 	public Integer insertDo(BoardDto dto) {
-//		dto.setMid("jiin0960");
-	    Integer result = 0;
+		dto.setMid("admin");
+	    Integer result;
 	    try {
 	        result = boardService.insert(dto);
 	    } catch (Exception e) {
 	    	e.printStackTrace();
+	    	result = -1;
 	    }
 	    return result;
 	}
@@ -71,23 +72,15 @@ public class BoardController {
 	    return "board/update";
 	}
 	@PostMapping("/update")
-	public String updateDo(RedirectAttributes redirectAttr, BoardDto dto){
-		String viewPage = "redirect:/";
-		int result;
+	@ResponseBody
+	public Integer updateDo(BoardDto dto){
+		Integer result;
 	    try {
 	        result = boardService.update(dto);
-	        if (result < 1) {
-	            redirectAttr.addFlashAttribute("msg2", "글 수정에 실패했습니다. 다시 시도해주세요.");
-	            viewPage = "redirect:/board/get?bno="+dto.getBno();
-	        } else {
-	            redirectAttr.addFlashAttribute("msg2", "글 수정되었습니다.");
-	            viewPage = "redirect:/board/get?bno="+dto.getBno();
-	        }
 	    } catch (Exception e) {
-	        redirectAttr.addFlashAttribute("msg2", "예기치 못한 오류로 글 수정에 실패했습니다.");
 	        e.printStackTrace();
-	        viewPage = "redirect:/board/list";
+	        result = -1;
 	    }
-	    return viewPage;
-	}	
+	    return result;
+	}
 }

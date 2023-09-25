@@ -11,7 +11,7 @@ import kh.lclass.jjapkorea.board.model.dto.BoardDto;
 @Repository
 public class BoardDao {
 	@Autowired
-	private SqlSession sqlSession; //root-context.xml에 bean SqlSession객체에 적혀있는 아이디
+	private SqlSession sqlSession;
 	
 	public List<BoardDto> selectList() throws Exception{ 
 		return sqlSession.selectList("board.selectList");

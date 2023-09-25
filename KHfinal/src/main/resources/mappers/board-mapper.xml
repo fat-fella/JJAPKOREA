@@ -3,29 +3,29 @@
 <mapper namespace="board">
 <!-- 전체 게시글 -->
 	<select id="selectList" resultType="boardDto">
-		select * from board
+		select * from BOARD
 	</select>
 	
 <!-- 상세 게시글 -->	
-	<select id="selectOne" resultType="boardDto" parameterType="boardDto">
-		select * from board where bno=#{bno} order by BREF desc
+	<select id="selectOne" resultType="BoardDto" parameterType="_int">
+		SELECT n.*, (SELECT mid FROM member m WHERE m.mid = n.mid) name FROM board n WHERE bno=#{bno }
 	</select>
 	
 <!-- 게시글 등록 -->	
-	<insert id="insert" parameterType="boardDto">
-		<selectKey keyProperty="bno" resultType="boardDto" order="BEFORE">
+	<insert id="insert" parameterType="BoardDto">
+		<selectKey keyProperty="bno" resultType="_int" order="BEFORE">
 		select SEQ_BOARD_BNO.nextval nextval from dual
 		</selectKey>
-		insert into BOARD values (#{bno}, #{btitle}, #{bcontent}, default, #{mid},#{bno}, 0,0)
-	</insert>
+		INSERT INTO board VALUES (#{bno}, #{btitle }, #{bcontent }, #{mid }, default, default, #{filename, jdbcType=VARCHAR }, #{filepath, jdbcType=VARCHAR }, #{bno }, 0, 0)
+ 	</insert>
 
 <!-- 글 수정 -->	
-	<update id="update" parameterType="boardDto">
+	<update id="update" parameterType="BoardDto">
 		update BOARD set btitle=#{btitle}, bcontent=#{bcontent} where bno=#{bno}
 	</update>
 	
 <!-- 글 삭제 -->	
-	<delete id="delete" parameterType="boardDto">
+	<delete id="delete" parameterType="_int">
 		delete from board where bno=#{bno}
 	</delete>
 </mapper>

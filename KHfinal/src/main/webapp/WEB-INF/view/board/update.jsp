@@ -74,6 +74,24 @@ ${dto }
 	$("#btn-board-list").click(function(){
 	    location.href="${pageContext.request.contextPath}/board/list";
 	});    
+	$("#btn-board-update").click(function(){
+			    if(confirm("글 수정하시겠습니까?")){
+			        $.ajax({
+			            type: "post",
+			            url: "${pageContext.request.contextPath}/board/update",
+			            data: $("#frmBoard").serialize(),
+			            success: function(response){
+			            	console.log(response);
+			                if(response > 0){
+			                    alert("글 수정되었습니다.");
+			                    location.href = "${pageContext.request.contextPath}/board/list";
+			                }else{
+			                    alert("글 수정에 실패했습니다.");
+			                }
+			            }
+			        });
+		   		}
+			});
 </script>
 </body>
 </html>
