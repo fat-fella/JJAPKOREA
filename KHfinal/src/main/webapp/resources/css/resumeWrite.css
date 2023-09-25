@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/*=========resumeWrite=이력서 등록 페이지=============*/
+
+/* 로고 마진 0 */
+#jkLogo {
+    margin: 0;
+}
+
+/* 로고 안 a 옵션 설정 */
+#jkLogo a {
+    display: block;
+    font-size: 0;
+    width: 143px;
+    height: 25px;
+    margin-right: 19px;
+}
+
+/* a after로 이미지 호출 */
+#jkLogo a:after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-image: url(../images/짭코리아_반전.png);
+    background-size: 100%;
+}
+
+/* ? */
+.headerRight {
+	text-decoration: none;
+}
+
+/* 상단 메뉴 : 개인회원 홈  */
+#personalHome {
+	position: absolute;
+	top : 20px;
+	left: 200px;
+}
+
+/* 상단 메뉴 : 이력서 관리  */
+#resumeMgr {
+	position: absolute;
+	top : 20px;
+	left: 400px;
+}
