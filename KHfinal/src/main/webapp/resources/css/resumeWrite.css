@@ -26,7 +26,7 @@
     background-size: 100%;
 }
 
-/* ? */
+/* 오른쪽 위 상단 메뉴 전체 */
 .headerRight {
 	text-decoration: none;
 }
@@ -43,4 +43,12 @@
 	position: absolute;
 	top : 20px;
 	left: 400px;
+}
+
+/*  */
+#titleWrite {
+	position: absolute;
+	top : 60px;
+	left : 20px;
+	width : 500px;
 }
