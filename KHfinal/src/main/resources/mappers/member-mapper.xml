@@ -21,11 +21,11 @@
 	</select>
 	
 	<insert id="pSignup" parameterType="memberVo">
-		insert into member values (#{mid}, #{mpw}, 1)
+		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, 1)
 	</insert>
 
 	<insert id="bSignUp" parameterType="memberVo">
-		insert into member values (#{mid}, #{mpw}, 2)
+		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, 2)
 	</insert>
 	
     <select id="check" resultType="int">
