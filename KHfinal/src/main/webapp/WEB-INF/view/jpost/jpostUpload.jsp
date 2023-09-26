@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,19 +36,16 @@
                 <div class="recruitfieldinputBox">
                     <label for="firstRecruitField">채용분야 1차 분류<span>*</span></label>
                     <select name="firstRecruitField" id="firstRecruitField" required>
-                        <option value="건설·채굴">건설·채굴</option>
-                        <option value="경영·사무·금융·보험">경영·사무·금융·보험</option>
-                        <option value="교육·법률·사회복지·경찰·소방 및 군인">교육·법률·사회복지·경찰·소방 및 군인</option>
-                        <option value="디자인">농림어업직</option>
-                        <option value="미용·여행·숙박·음식·경비·돌봄·청소">미용·여행·숙박·음식·경비·돌봄·청소</option>
-                        <option value="고객상담·TM">보건·의료</option>
-                        <option value="설치·정비·생산-기계·금속·재료</">설치·정비·생산-기계·금속·재료</option>
-                        <option value="설치·정비·생산-인쇄·목재·공예 및 제조 단순">설치·정비·생산-인쇄·목재·공예 및 제조 단순</option>
-                        <option value="설치·정비·생산-전기·전자·정보통신">설치·정비·생산-전기·전자·정보통신</option>
-                        <option value="설치·정비·생산-화학·환경·섬유·의복·식품가공">설치·정비·생산-화학·환경·섬유·의복·식품가공</option>
-                        <option value="연구 및 공학기술</">연구 및 공학기술</option>
-                        <option value="영업·판매·운전·운송">영업·판매·운전·운송</option>
-                        <option value="예술·디자인·방송·스포츠</">예술·디자인·방송·스포츠</option>
+                        <option value="0">경영·사무·금융·보험직</option>
+                        <option value="1">연구직 및 공학 기술직</option>
+                        <option value="2">교육·법률·사회복지·경찰·소방직 및 군인</option>
+                        <option value="3">보건·의료직</option>
+                        <option value="4">예술·디자인·방송·스포츠직</option>
+                        <option value="5">미용·여행·숙박·음식·경비·청소직</option>
+                        <option value="6">영업·판매·운전·운송직</option>
+                        <option value="7">건설·채굴직</option>
+                        <option value="8">설치·정비·생산직</option>
+                        <option value="9">농림어업직</option>
                     </select>
                     <label style=font-size:12px;color:red;>1차 세부채용분야<span>*</span></label>
                     <select name="secondRecruitField" id="secondRecruitField">
@@ -122,6 +121,21 @@
         }).then(editor => {
             window.editor = editor;
         });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </script>
 
 </body>
