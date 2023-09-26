@@ -45,7 +45,7 @@
                             <input type="hidden" name="DB_Name" id="DB_Name" value="GG">
                             <input type="hidden" name="ignoreSession" id="ignoreSession" value="">
 
-                            <input type="hidden" name="m_type" id="m_type" value="">
+                            <input type="hidden" name="mtype" id="mtype" value="">
                             <!-- 회원선택-->
                             <div class="select_row">
                                 <ul id="devMemTab">
@@ -68,10 +68,10 @@
 
                             <div class="input_row">
                                 <label for="M_ID" id="lb_id" class="blind">아이디</label>
-                                <input type="text" class="inpTxt inpID off" name="M_ID" id="M_ID" size="16"
+                                <input type="text" class="inpTxt inpID off" name="mid" id="M_ID" size="16"
                                     maxlength="20" title="아이디 입력" style="ime-mode:inactive;" autocomplete="off">
                                 <label for="M_PWD" id="lb_pw" class="blind">비밀번호</label>
-                                <input type="password" class="inpTxt inpPW devCapsLock off" name="M_PWD" id="M_PWD"
+                                <input type="password" class="inpTxt inpPW devCapsLock off" name="mpw" id="M_PWD"
                                     size="16" title="비밀번호 입력" autocomplete="off">
                                 <button type="submit" class="btLoin">로그인</button>
                                 <div class="lyCapsLock" id="ipNotice">
@@ -82,10 +82,10 @@
 
                             <div class="input_row">
                                 <label for="M_ID" id="lb_id" class="blind">아이디</label>
-                                <input type="text" class="inpTxt inpID off" name="M_ID2" id="M_ID" size="16"
+                                <input type="text" class="inpTxt inpID off" name="mid" id="M_ID" size="16"
                                     maxlength="20" title="아이디 입력" style="ime-mode:inactive;" autocomplete="off">
                                 <label for="M_PWD" id="lb_pw" class="blind">비밀번호</label>
-                                <input type="password" class="inpTxt inpPW devCapsLock off" name="M_PWD2" id="M_PWD"
+                                <input type="password" class="inpTxt inpPW devCapsLock off" name="mpw" id="M_PWD"
                                     size="16" title="비밀번호 입력" autocomplete="off">
                                 <button type="submit" class="btLoin">로그인</button>
                                 <div class="lyCapsLock" id="ipNotice">
@@ -93,13 +93,6 @@
                                 </div>
                                 
                             </div>
-
-
-
-
-
-
-
 
                             <div class="check_row">
                                 <input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y"> <label
@@ -345,7 +338,7 @@
 	    inputRows[1].style.display = "none";
 	    
 	    tabs[0].addEventListener("click", function() {
-	    	$("#m_type").val("P");
+	    	$("#mtype").val("P");
 	        tabs[0].classList.add("on");
 	        tabs[1].classList.remove("on");
 	        document.querySelector("#M_Alert").style.display = "block";
@@ -355,7 +348,7 @@
 	    });
 
 	    tabs[1].addEventListener("click", function() {
-	    	$("#m_type").val("B");
+	    	$("#mtype").val("B");
 	        tabs[0].classList.remove("on");
 	        tabs[1].classList.add("on");
 	        document.querySelector("#M_Alert").style.display = "none";

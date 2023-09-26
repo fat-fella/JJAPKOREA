@@ -48,7 +48,6 @@
 			<h3 class="skip">기업 회원가입 정보</h3>
 			<fieldset>
 				<legend>기업 회원가입</legend>
-				<!-- <form action="<%=request.getContextPath()%>/signup.do" method="POST" id="form" name="form" enctype="multipart/form-data"> -->
 				<form action="<%=request.getContextPath()%>/signup.do" method="POST" id="form" name="form">
 					<input type="hidden" id="Mem_Type" value="GI">
 					<input data-val="true" data-val-required="CertifyType 필드가 필요합니다." id="CertifyType" name="CertifyType" type="hidden"
@@ -88,7 +87,7 @@
 							</div>
 							<div class="col_2">
 								<div class="select_wrap dev-corp-type">
-									<select id="Corp_Type" name="Corp_Type">
+									<select id="Corp_Type" name="bform">
 										<option value=""></option>
 										<option value="3">대기업</option>
 										<option value="4">대기업 계열사·자회사</option>
@@ -153,7 +152,7 @@
 								</label>
 							</div>
 							<div class="col_2">
-								<input type="text" name="Corp_RegNum" id="Corp_RegNum"
+								<input type="text" name="brno" id="Corp_RegNum"
 									class="mbr_name dev-corp-num" maxlength="12" value="">
 								<div class="notice_msg" id="notice_msg_regnum"></div>
 							</div>
@@ -196,7 +195,7 @@
 										data-val-maxlength="필드 Corp_Name은(는) 최대 길이가 '50'인 문자열 또는 배열 형식이어야 합니다."
 										data-val-maxlength-max="50"
 										data-val-required="Corp_Name 필드가 필요합니다." id="Corp_Name"
-										maxlength="50" name="Corp_Name" type="text" value="">
+										maxlength="50" name="bizname" type="text" value="">
 									<div class="notice_msg" id="notice_msg_corp_name"></div>
 								</div>
 							</div>
@@ -211,7 +210,7 @@
 										data-val-maxlength="필드 Boss_Name은(는) 최대 길이가 '20'인 문자열 또는 배열 형식이어야 합니다."
 										data-val-maxlength-max="20"
 										data-val-required="Boss_Name 필드가 필요합니다." id="Boss_Name"
-										maxlength="20" name="Boss_Name" type="text" value="">
+										maxlength="20" name="brepName" type="text" value="">
 									<div class="notice_msg" id="notice_msg_ceo_name"></div>
 								</div>
 							</div>
@@ -246,7 +245,7 @@
 									data-val-maxlength="필드 Boss_Name은(는) 최대 길이가 '20'인 문자열 또는 배열 형식이어야 합니다."
 									data-val-maxlength-max="20"
 									data-val-required="Zip_Code 필드가 필요합니다." id="Boss_Name"
-									maxlength="20" name="Zip_Code" type="text" value="">
+									maxlength="20" name="baddress" type="text" value="">
 								<div class="notice_msg" id="notice_msg_ceo_name"></div>
 							</div>
 						</div>
@@ -417,7 +416,7 @@
 								</label>
 							</div>
 							<div class="col_2">
-								<input class="mbr_name dev-name" id="Mem_Name" maxlength="12" name="Mem_Name" type="text" value="">
+								<input class="mbr_name dev-name" id="Mem_Name" maxlength="12" name="bname" type="text" value="">
 								<div class="notice_msg" id="notice_msg_name"></div>
 							</div>
 						</div>
@@ -429,7 +428,7 @@
 							</div>
 							<div class="col_2">
 								<input class="mbr_phone dev-phone" data-val="true"
-									id="Corp_Phone" maxlength="13" name="Corp_Phone" title="전화번호"
+									id="Corp_Phone" maxlength="13" name="btel" title="전화번호"
 									type="text" value="">
 								<div class="notice_msg" id="notice_msg_phone">
 									<p class="failure">필수 정보입니다.</p>
@@ -447,7 +446,7 @@
 								</label>
 							</div>
 							<div class="col_2">
-								<input type="text" id="email" name="email" class="mbr_email_id dev-mail" size="8" maxlength="100" value="">
+								<input type="text" id="email" name="bemail" class="mbr_email_id dev-mail" size="8" maxlength="100" value="">
 								<div class="notice_msg" id="notice_msg_mail"></div>
 								<input type="hidden" id="Email_ID" name="Email_ID">
 								<input type="hidden" id="Email_Addr" name="Email_Addr">
