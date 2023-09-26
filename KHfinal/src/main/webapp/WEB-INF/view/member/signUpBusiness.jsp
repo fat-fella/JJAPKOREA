@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources//member/css/jobkh_signup.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +7,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회원가입 | KH</title>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources//member/css/jobkh_signup.css">
 <link rel="icon" href="resources/favicon.ico">
 <link rel="SHORTCUT ICON" href="/favicon.ico?202307261400">
 </head>
@@ -17,13 +18,15 @@
 
 		<div id="header">
 			<h1>
-				<a href="<%=request.getContextPath()%>/index"><img
-					src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
-					alt="JOBKOREA x albamon"></a>
+				<a href="<%=request.getContextPath()%>/index">
+					<img
+						src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
+						alt="JOBKOREA x albamon">
+				</a>
 			</h1>
 			<div class="joinTop">
 				<h2>
-					<span class="slogun_1">JOBKOREA x albamon</span>
+					<span class="slogun_1">JJOBKOREA</span>
 				</h2>
 			</div>
 
@@ -35,8 +38,8 @@
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person "><a href="<%=request.getContextPath()%>/psignup">개인회원</a></li>
-				<li class="corp on"><a href="<%=request.getContextPath()%>/signup">기업회원</a></li>
+				<li class="person "><a href="signUpPerson">개인회원</a></li>
+				<li class="corp on"><a href="signUpBusiness">기업회원</a></li>
 			</ul>
 		</div>
 
@@ -45,7 +48,7 @@
 			<h3 class="skip">기업 회원가입 정보</h3>
 			<fieldset>
 				<legend>기업 회원가입</legend>
-				<form action="<%=request.getContextPath()%>/signup.do" method="POST" id="form" name="form">
+				<form action="signUpBusiness" method="POST" id="form" name="form">
 					<!-- 기업 정보 -->
 					<div class="row row_group">
 						<h4>기업정보</h4>
@@ -56,15 +59,16 @@
 						<!-- 기업회원 탭 메뉴 -->
 
 						<div class="tabs tabsGiCateogry" role="tablist">
-							<a href="<%=request.getContextPath()%>/signup" class="tab tabGi active">기업회원</a>
+							<a href="<%=request.getContextPath()%>/signup"
+								class="tab tabGi active">기업회원</a>
 							<a href="#" class="tab tabGi ">서치펌회원</a>
 						</div>
 
 						<div class="row mbr_name mbr_co_type">
 							<input id="mtype" name="mtype" type="hidden" value="2">
 							<div class="col_1">
-								<label class="mbr_name" for="Corp_Type">기업형태
-									<i class="icon required" aria-hidden="hidde">*</i>
+								<label class="mbr_name" for="Corp_Type">기업형태 <i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
@@ -87,10 +91,12 @@
 							</div>
 						</div>
 						<div class="rows">
-							<div class="row mbr_name mbr_foreign_type mbr_foreign_type1 devNationView" style="display: none">
+							<div
+								class="row mbr_name mbr_foreign_type mbr_foreign_type1 devNationView"
+								style="display: none">
 								<div class="col_1">
-									<label for="Contn_Code" class="mbr_name">대륙선택
-										<i class="icon required" aria-hidden="hidde">*</i>
+									<label for="Contn_Code" class="mbr_name">대륙선택 <i
+										class="icon required" aria-hidden="hidde">*</i>
 									</label>
 								</div>
 								<div class="col_2">
@@ -112,8 +118,8 @@
 								class="row mbr_name mbr_foreign_type mbr_foreign_type2 devNationView"
 								style="display: none">
 								<div class="col_1">
-									<label for="Nation_Code" class="mbr_name">국가선택
-										<i class="icon required" aria-hidden="hidde">*</i>
+									<label for="Nation_Code" class="mbr_name">국가선택 <i
+										class="icon required" aria-hidden="hidde">*</i>
 									</label>
 								</div>
 								<div class="col_2">
@@ -129,8 +135,8 @@
 
 						<div class="row company_num">
 							<div class="col_1">
-								<label for="Corp_RegNum">사업자등록번호
-									<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="Corp_RegNum">사업자등록번호 <i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
@@ -168,8 +174,8 @@
 						<div class="rows">
 							<div class="row company_name">
 								<div class="col_1">
-									<label class="mbr_name" for="Corp_Name">회사명
-										<i class="icon required" aria-hidden="hidde">*</i>
+									<label class="mbr_name" for="Corp_Name">회사명 <i
+										class="icon required" aria-hidden="hidde">*</i>
 									</label>
 								</div>
 								<div class="col_2">
@@ -183,8 +189,8 @@
 							</div>
 							<div class="row company_bossname">
 								<div class="col_1">
-									<label class="mbr_name" for="Boss_Name">대표자명
-										<i class="icon required" aria-hidden="hidde">*</i>
+									<label class="mbr_name" for="Boss_Name">대표자명 <i
+										class="icon required" aria-hidden="hidde">*</i>
 									</label>
 								</div>
 								<div class="col_2">
@@ -218,8 +224,8 @@
 								type="hidden" name="X_Position"> <input type="hidden"
 								name="Y_Position"> -->
 							<div class="col_1">
-								<label class="mbr_name" for="Zip_Code">회사주소
-									<i class="icon required" aria-hidden="hidde">*</i>
+								<label class="mbr_name" for="Zip_Code">회사주소 <i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
@@ -244,7 +250,8 @@
 							</div>
 						</div>
 						<div class="row mbr_agree mbr_agree_hh">
-							<input type="checkbox" name="CoDG_Agree" id="lbl_join_agree" class="skip">
+							<input type="checkbox" name="CoDG_Agree" id="lbl_join_agree"
+								class="skip">
 							<label for="lbl_join_agree">파견·도급·채용대행 기업입니다.</label>
 						</div>
 					</div>
@@ -253,11 +260,13 @@
 						<h4>기업인증</h4>
 						<div class="row certificate_num">
 							<div class="col_1">
-								<label for="CRTFCT_Issue_No">사업자등록증명원 발급번호
-								<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="CRTFCT_Issue_No">사업자등록증명원 발급번호 <i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
-							<button type="button" class="button layer-popup-button devCorpCertInfo">사업자등록번호 입력가이드</button>
+							<button type="button"
+								class="button layer-popup-button devCorpCertInfo">사업자등록번호
+								입력가이드</button>
 							<div class="layer-popup devCorpCertInfoPopup">
 								<div class="layer-popup-dim"></div>
 								<div class="layer-popup-content">
@@ -298,7 +307,8 @@
 							<div class="col_2">
 								<input type="text" name="CRTFCT_Issue_No" id="CRTFCT_Issue_No"
 									class="mbr_name dev-corp-cert CRTFCT_Issue_No" maxlength="20"
-									value=""> <input type="hidden" id="CRTFCT_Issue_No1"
+									value="">
+								<input type="hidden" id="CRTFCT_Issue_No1"
 									name="CRTFCT_Issue_No1" class="CRTFCT_Issue_No" value="">
 								<input type="hidden" id="CRTFCT_Issue_No2"
 									name="CRTFCT_Issue_No2" class="CRTFCT_Issue_No" value="">
@@ -317,7 +327,8 @@
 					<div class="row_group line_bottom mbr_info">
 						<h4>인사담당자 정보</h4>
 						<div class="headingButtons">
-							<a href="http://globalemployer.jobkorea.co.kr/" target="_blank" class="button">Overseas Corporate Help</a>
+							<a href="http://globalemployer.jobkorea.co.kr/" target="_blank"
+								class="button">Overseas Corporate Help</a>
 						</div>
 						<!-- 인사담당자 정보 -->
 						<!-- 인증 -->
@@ -345,19 +356,20 @@
 						<div class="rows">
 							<div class="row mbr_id">
 								<div class="col_1">
-									<label for="U_ID">아이디
-										<i class="icon required" aria-hidden="hidde">*</i>
+									<label for="U_ID">아이디 <i class="icon required"
+										aria-hidden="hidde">*</i>
 									</label>
 								</div>
 								<div class="col_2">
-									<input data-val="true" id="U_ID" maxlength="16" name="U_ID" class="dev-id" type="text" value="">
+									<input data-val="true" id="U_ID" maxlength="16" name="U_ID"
+										class="dev-id" type="text" value="">
 									<div class="notice_msg" id="notice_msg_id"></div>
 								</div>
 							</div>
 							<div class="row mbr_passwd">
 								<div class="col_1">
-									<label for="U_PWD">비밀번호
-										<i class="icon required" aria-hidden="hidde">*</i>
+									<label for="U_PWD">비밀번호 <i class="icon required"
+										aria-hidden="hidde">*</i>
 									</label>
 								</div>
 								<div class="col_2">
@@ -393,19 +405,20 @@
 						</div>
 						<div class="row mbr_name">
 							<div class="col_1">
-								<label class="mbr_name" for="Mem_Name">가입자명
-									<i class="icon required" aria-hidden="hidde">*</i>
+								<label class="mbr_name" for="Mem_Name">가입자명 <i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
-								<input class="mbr_name dev-name" id="Mem_Name" maxlength="12" name="bname" type="text" value="">
+								<input class="mbr_name dev-name" id="Mem_Name" maxlength="12"
+									name="bname" type="text" value="">
 								<div class="notice_msg" id="notice_msg_name"></div>
 							</div>
 						</div>
 						<div class="row mbr_phone">
 							<div class="col_1">
-								<label class="mbr_phone" for="Corp_Phone">전화번호
-									<i class="icon required" aria-hidden="hidde">*</i>
+								<label class="mbr_phone" for="Corp_Phone">전화번호 <i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
@@ -415,20 +428,25 @@
 								<div class="notice_msg" id="notice_msg_phone">
 									<p class="failure">필수 정보입니다.</p>
 								</div>
-								<input type="hidden" id="Corp_Phone1" name="Corp_Phone1" value="">
-								<input type="hidden" id="Corp_Phone2" name="Corp_Phone2" value="">
-								<input type="hidden" id="Corp_Phone3" name="Corp_Phone3" value="">
-								<input type="hidden" id="Corp_Phone_Etc" name="Corp_Phone_Etc" value="">
+								<input type="hidden" id="Corp_Phone1" name="Corp_Phone1"
+									value="">
+								<input type="hidden" id="Corp_Phone2" name="Corp_Phone2"
+									value="">
+								<input type="hidden" id="Corp_Phone3" name="Corp_Phone3"
+									value="">
+								<input type="hidden" id="Corp_Phone_Etc" name="Corp_Phone_Etc"
+									value="">
 							</div>
 						</div>
 						<div class="row mbr_email">
 							<div class="col_1">
-								<label for="Email_ID" class="mbr_email_id">이메일
-									<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="Email_ID" class="mbr_email_id">이메일 <i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
-								<input type="text" id="email" name="bemail" class="mbr_email_id dev-mail" size="8" maxlength="100" value="">
+								<input type="text" id="email" name="bemail"
+									class="mbr_email_id dev-mail" size="8" maxlength="100" value="">
 								<div class="notice_msg" id="notice_msg_mail"></div>
 								<input type="hidden" id="Email_ID" name="Email_ID">
 								<input type="hidden" id="Email_Addr" name="Email_Addr">
@@ -442,17 +460,19 @@
 					<div class="row_group line_all policy">
 						<div class="row policy_check_all">
 							<input type="checkbox" id="lb_chk_all" class="mbrCheckOff">
-							<label for="lb_chk_all" class="chk_all">
-								<span class="txt">필수동의 항목 및 개인정보 수집 및 이용 동의(선택), 광고성 정보 수신 <br>동의(선택)에 일괄 동의합니다.</span>
+							<label for="lb_chk_all" class="chk_all"> <span
+								class="txt">필수동의 항목 및 개인정보 수집 및 이용 동의(선택), 광고성 정보 수신 <br>동의(선택)에
+									일괄 동의합니다.
+							</span>
 							</label>
 						</div>
 
 						<div class="row policy_check_service required">
 							<input type="checkbox" id="lb_chk_service" name="Service_Agree"
-								class="mbrCheckOn devAgreeCheck" value="1"> <label
-								for="lb_chk_service" class="chk_service"><strong>[필수]</strong>
+								class="mbrCheckOn devAgreeCheck" value="1">
+							<label for="lb_chk_service" class="chk_service"><strong>[필수]</strong>
 								이용약관 동의 <a href="#DevPolicyService"
-								class="mbrBtnPolicy devPolicyService">내용보기</a></label>
+									class="mbrBtnPolicy devPolicyService">내용보기</a></label>
 							<div id="DevPolicyService" class="policyTplBox"
 								style="display: none;">
 								<div class="pvsSec pvsCntTp">
@@ -460,7 +480,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg01" id="gg01"></a><strong>제 1 조 (목적) </strong>
+													<a name="gg01" id="gg01"></a>
+													<strong>제 1 조 (목적) </strong>
 												</dt>
 												<dd>본 약관은 잡코리아 유한책임회사(이하 "회사")가 운영하는 "서비스"를 이용함에 있어
 													"회사"와 회원간의 이용 조건 및 제반 절차, 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을
@@ -470,7 +491,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg02" id="gg02"></a><strong>제 2 조 (용어의 정의) </strong>
+													<a name="gg02" id="gg02"></a>
+													<strong>제 2 조 (용어의 정의) </strong>
 												</dt>
 												<dd>
 													<p>이 약관에서 사용하는 용어의 정의는 아래와 같다.</p>
@@ -506,7 +528,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg03" id="gg03"></a><strong>제 3 조 (약관의 명시와 개정) </strong>
+													<a name="gg03" id="gg03"></a>
+													<strong>제 3 조 (약관의 명시와 개정) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -531,7 +554,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg04" id="gg04"></a><strong>제 4 조 (약관의 해석) </strong>
+													<a name="gg04" id="gg04"></a>
+													<strong>제 4 조 (약관의 해석) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -547,7 +571,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg05" id="gg05"></a><strong>제 5 조 (이용계약의 성립) </strong>
+													<a name="gg05" id="gg05"></a>
+													<strong>제 5 조 (이용계약의 성립) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -570,7 +595,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg06" id="gg06"></a><strong>제 6 조 (이용신청의 승낙과 제한) </strong>
+													<a name="gg06" id="gg06"></a>
+													<strong>제 6 조 (이용신청의 승낙과 제한) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -600,7 +626,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg07" id="gg07"></a><strong>제 7 조 (서비스의 내용) </strong>
+													<a name="gg07" id="gg07"></a>
+													<strong>제 7 조 (서비스의 내용) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -626,7 +653,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg08" id="gg08"></a><strong>제 8 조 ("회원"정보, 채용공고 등록, 채용의뢰, 이력서검색) </strong>
+													<a name="gg08" id="gg08"></a>
+													<strong>제 8 조 ("회원"정보, 채용공고 등록, 채용의뢰, 이력서검색) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -671,7 +699,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg9" id="gg9"></a><strong>제 9 조 (제휴를 통한 서비스) </strong>
+													<a name="gg9" id="gg9"></a>
+													<strong>제 9 조 (제휴를 통한 서비스) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -686,7 +715,7 @@
 															있음을 고지해야 하며, ‘타 사이트 및 매체’의 변동사항 발생 시에도 공지사항을 통해 고지 후
 															진행한다.</li>
 														<li>④ "회사"는 제휴 관계에 있는 ‘타 사이트 및 매체’의 <a
-															href="javascript:openPrMediaPopup();" class="popup-link">[전체
+																href="javascript:openPrMediaPopup();" class="popup-link">[전체
 																리스트]</a> 를 ‘회원’이 열람할 수 있도록 한다.
 														</li>
 													</ol>
@@ -696,7 +725,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg10" id="gg10"></a><strong>제 10 조 (서비스의 요금) </strong>
+													<a name="gg10" id="gg10"></a>
+													<strong>제 10 조 (서비스의 요금) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -713,7 +743,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg11" id="gg11"></a><strong>제 11 조 (서비스 요금의 환불) </strong>
+													<a name="gg11" id="gg11"></a>
+													<strong>제 11 조 (서비스 요금의 환불) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -736,7 +767,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg12" id="gg12"></a><strong>제 12 조 (충전금 규정) </strong>
+													<a name="gg12" id="gg12"></a>
+													<strong>제 12 조 (충전금 규정) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -758,7 +790,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg13" id="gg13"></a><strong>제 13 조 (서비스 이용시간) </strong>
+													<a name="gg13" id="gg13"></a>
+													<strong>제 13 조 (서비스 이용시간) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -776,7 +809,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg14" id="gg14"></a><strong>제 14 조 (서비스 제공의 중지) </strong>
+													<a name="gg14" id="gg14"></a>
+													<strong>제 14 조 (서비스 제공의 중지) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -798,7 +832,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg15" id="gg15"></a><strong>제 15 조 (정보의 제공 및 광고의 게재) </strong>
+													<a name="gg15" id="gg15"></a>
+													<strong>제 15 조 (정보의 제공 및 광고의 게재) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -819,7 +854,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg16" id="gg16"></a><strong>제 16 조 (자료내용의 책임과 "회사"의 정보 수정 권한) </strong>
+													<a name="gg16" id="gg16"></a>
+													<strong>제 16 조 (자료내용의 책임과 "회사"의 정보 수정 권한) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -844,7 +880,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg17" id="gg17"></a><strong>제 17 조 (자료 내용의 활용 및 취급) </strong>
+													<a name="gg17" id="gg17"></a>
+													<strong>제 17 조 (자료 내용의 활용 및 취급) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -862,7 +899,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg18" id="gg18"></a><strong>제 18 조 ("회사"의 의무) </strong>
+													<a name="gg18" id="gg18"></a>
+													<strong>제 18 조 ("회사"의 의무) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -888,7 +926,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg19" id="gg19"></a><strong>제 19 조 ("회원"의 의무) </strong>
+													<a name="gg19" id="gg19"></a>
+													<strong>제 19 조 ("회원"의 의무) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -924,7 +963,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg20" id="gg20"></a><strong>제 20 조 ("회원"의 가입해지/서비스중지/자료삭제) </strong>
+													<a name="gg20" id="gg20"></a>
+													<strong>제 20 조 ("회원"의 가입해지/서비스중지/자료삭제) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -1009,7 +1049,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg21" id="gg21"></a><strong>제 21 조 (허위 구인광고 경고) </strong>
+													<a name="gg21" id="gg21"></a>
+													<strong>제 21 조 (허위 구인광고 경고) </strong>
 												</dt>
 												<dd>
 													<p>허위 구인광고로 인해 발생된 문제에 따른 법적인 책임은 모두 작성자에게 있으며, 구인광고
@@ -1021,7 +1062,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg22" id="gg22"></a><strong>제 22 조 (손해배상)</strong>
+													<a name="gg22" id="gg22"></a>
+													<strong>제 22 조 (손해배상)</strong>
 												</dt>
 												<dd>
 													<ol>
@@ -1042,8 +1084,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg23" id="gg23"></a><strong>제 23 조 (양도
-														금지) </strong>
+													<a name="gg23" id="gg23"></a>
+													<strong>제 23 조 (양도 금지) </strong>
 												</dt>
 												<dd>
 													<p>"회원"의 서비스 받을 권리는 제3자에게 양도, 대여, 증여 등으로 사용할 수 없다.</p>
@@ -1053,7 +1095,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg24" id="gg24"></a><strong>제 24 조 (이용요금 오류의 조정) </strong>
+													<a name="gg24" id="gg24"></a>
+													<strong>제 24 조 (이용요금 오류의 조정) </strong>
 												</dt>
 												<dd>
 													<p>"회사"는 이용요금과 관련하여 오류가 있는 경우에 "회원"의 요청, 또는 "회사"의 사전
@@ -1071,7 +1114,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg25" id="gg25"></a><strong>제 25 조 ("회원"의 개인정보보호) </strong>
+													<a name="gg25" id="gg25"></a>
+													<strong>제 25 조 ("회원"의 개인정보보호) </strong>
 												</dt>
 												<dd>"회사"는 "회원"의 개인정보보호를 위하여 노력해야 한다. "회원"의 개인정보보호에 관해서는
 													정보통신망이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법에 따르고, "사이트"에 "개인정보처리방침"을
@@ -1081,7 +1125,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg26" id="gg26"></a><strong>제 26 조 (신용정보의 제공 활용 동의) </strong>
+													<a name="gg26" id="gg26"></a>
+													<strong>제 26 조 (신용정보의 제공 활용 동의) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -1099,7 +1144,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg27" id="gg27"></a><strong>제 27 조 (분쟁의 해결) </strong>
+													<a name="gg27" id="gg27"></a>
+													<strong>제 27 조 (분쟁의 해결) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -1129,11 +1175,13 @@
 						</div>
 
 						<div class="row policy_check_privacy required">
-							<input type="checkbox" id="lb_chk_privacy" name="Priacy_Agree" class="mbrCheckOn devAgreeCheck" value="1">
-							<label for="lb_chk_privacy" class="chk_privacy"><strong>[필수]</strong> 개인정보 수집 및 이용 동의
-								<a href="#DevPolicyPrivacy" class="mbrBtnPolicy devPolicyService">내용보기</a>
-							</label>
-							<div id="DevPolicyPrivacy" class="policyTplBox" style="display: none;">
+							<input type="checkbox" id="lb_chk_privacy" name="Priacy_Agree"
+								class="mbrCheckOn devAgreeCheck" value="1">
+							<label for="lb_chk_privacy" class="chk_privacy"><strong>[필수]</strong>
+								개인정보 수집 및 이용 동의 <a href="#DevPolicyPrivacy"
+									class="mbrBtnPolicy devPolicyService">내용보기</a> </label>
+							<div id="DevPolicyPrivacy" class="policyTplBox"
+								style="display: none;">
 								<div class="pvsSec pvsTpList">
 									<!-- 7.0 변경 -->
 									<p>
@@ -1175,9 +1223,9 @@
 						<div class="row policy_check_privacy required">
 							<input type="checkbox" id="lb_chk_sms" name="SMS_Agreee"
 								class="mbrCheckOn devAgreeCheck" value="1">
-							<label for="lb_chk_sms" class="chk_sms"><strong>[필수]</strong> 문자서비스 이용약관 동의
-								<a href="#DevPolicySMS" class="mbrBtnPolicy devPolicyService">내용보기</a>
-							</label>
+							<label for="lb_chk_sms" class="chk_sms"><strong>[필수]</strong>
+								문자서비스 이용약관 동의 <a href="#DevPolicySMS"
+									class="mbrBtnPolicy devPolicyService">내용보기</a> </label>
 							<div id="DevPolicySMS" class="policyTplBox"
 								style="display: none;">
 								<div class="pvsSec pvsTpList">
@@ -1563,12 +1611,15 @@
 							</div>
 						</div>
 						<div class="row policy_check_privacyOptional optional">
-							<input type="checkbox" id="lb_chk_privacyOptional" name="PriacyOptional_Agree" class="mbrCheckOn devAgreeCheck"
-							value="31">
-							<label for="lb_chk_privacyOptional" class="chk_privacyOptional">[선택] 개인정보 수집 및 이용 동의
-								<a href="#DevPolicyPrivacyOptional" class="mbrBtnPolicy devPolicyService">내용보기</a>
+							<input type="checkbox" id="lb_chk_privacyOptional"
+								name="PriacyOptional_Agree" class="mbrCheckOn devAgreeCheck"
+								value="31">
+							<label for="lb_chk_privacyOptional" class="chk_privacyOptional">[선택]
+								개인정보 수집 및 이용 동의 <a href="#DevPolicyPrivacyOptional"
+									class="mbrBtnPolicy devPolicyService">내용보기</a>
 							</label>
-							<div id="DevPolicyPrivacyOptional" class="policyTplBox" style="display: none;">
+							<div id="DevPolicyPrivacyOptional" class="policyTplBox"
+								style="display: none;">
 								<div class="pvsSec pvsTpList">
 									<h2 class="pvsHeading2">
 										<strong>1. 수집 이용 목적</strong>
@@ -1598,11 +1649,14 @@
 							</div>
 						</div>
 						<div class="row policy_check_privacyOptional optional">
-							<input type="checkbox" id="lb_chk_ad_info" name="Email_Agree" class="mbrCheckOn devAgreeCheck">
-							<label for="lb_chk_ad_info" class="chk_privacyOptional">[선택] 광고성 정보 수신 동의
-								<a href="#DevPolicyPrivacyOptional" class="mbrBtnPolicy devPolicyService">내용보기</a>
+							<input type="checkbox" id="lb_chk_ad_info" name="Email_Agree"
+								class="mbrCheckOn devAgreeCheck">
+							<label for="lb_chk_ad_info" class="chk_privacyOptional">[선택]
+								광고성 정보 수신 동의 <a href="#DevPolicyPrivacyOptional"
+									class="mbrBtnPolicy devPolicyService">내용보기</a>
 							</label>
-							<div id="DevPolicyPrivacyOptional" class="policyTplBox" style="display: none;">
+							<div id="DevPolicyPrivacyOptional" class="policyTplBox"
+								style="display: none;">
 								<div class="pvsSec pvsTpList">
 									<h2 class="pvsHeading2">
 										회원이 수집 및 이용에 동의한 개인정보를 잡코리아, 알바몬에서 활용하는 것에 동의하며, 해당 개인정보를 활용하여
@@ -1616,7 +1670,8 @@
 						</div>
 
 
-						<div class="notice_msg" id="notice_msg_agree" style="display: none;">
+						<div class="notice_msg" id="notice_msg_agree"
+							style="display: none;">
 							<p class="failure">잡코리아 이용약관과 개인정보 수집 및 이용(필수)에 모두 동의해주세요.</p>
 						</div>
 					</div>
@@ -1639,7 +1694,8 @@
 						</div>
 						<div class="list">
 							<div class="item">
-								<input type="radio" name="Validity" id="validity_leave" class="skip" value="0" onclick="tooltipClose();">
+								<input type="radio" name="Validity" id="validity_leave"
+									class="skip" value="0" onclick="tooltipClose();">
 								<label for="validity_leave" onclick="tooltipClose();">회원탈퇴시</label>
 								<div class="tooltip-dormant-account">
 									<button type="button" class="button-tooltip-close">
@@ -1652,11 +1708,13 @@
 							</div>
 							<div class="item">
 								<input type="radio" name="Validity" id="validity_year1"
-									class="skip " value="1"> <label for="validity_year1">1년</label>
+									class="skip " value="1">
+								<label for="validity_year1">1년</label>
 							</div>
 							<div class="item">
 								<input type="radio" name="Validity" id="validity_year3"
-									class="skip" value="3"> <label for="validity_year3">3년</label>
+									class="skip" value="3">
+								<label for="validity_year3">3년</label>
 							</div>
 						</div>
 					</div>
@@ -1673,7 +1731,8 @@
 							$(".tooltip-dormant-account").hide();
 						}
 					</script>
-					<div class="row_group line_none regist_complete" style="position: relative;">
+					<div class="row_group line_none regist_complete"
+						style="position: relative;">
 						<div class="row">
 							<button type="submit" class="mbrBtnRegist dev-submit">가입하기</button>
 						</div>
@@ -1686,7 +1745,7 @@
 				<p class="text">잡코리아 ID하나로 알바몬 서비스도 이용가능합니다.</p>
 				<ul class="f_clear">
 					<li class="albamon"><a href="https://www.albamon.com"
-						target="_blank" title="albamon - 아르바이트 전문">albamon - 아르바이트 전문</a></li>
+							target="_blank" title="albamon - 아르바이트 전문">albamon - 아르바이트 전문</a></li>
 				</ul>
 			</div>
 

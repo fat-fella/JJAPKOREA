@@ -44,7 +44,7 @@ public class IndexController {
 
             return "index";
         } catch (Exception e) {
-        	return "error";
+        	return "comm/error";
         }
     }
     
