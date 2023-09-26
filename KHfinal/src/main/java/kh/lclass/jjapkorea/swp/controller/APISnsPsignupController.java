@@ -151,7 +151,7 @@ public class APISnsPsignupController {
 		logger.info("psignupPost...LoginDTO={}", dto); 
 		
 		try {
-			APISnsMember apiSnsMember = service.login(dto);
+			APISnsMember apiSnsMember = service.psignup(dto);
 			if (apiSnsMember != null) {
 				Date expire = new Date(System.currentTimeMillis() + APISnsSessionNames.EXPIRE * 1000);
 				service.keepLogin(apiSnsMember.getMid(), session.getId(), expire);
