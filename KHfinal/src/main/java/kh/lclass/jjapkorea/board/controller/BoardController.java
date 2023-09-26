@@ -7,17 +7,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.ui.Model;
 
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
+import kh.lclass.jjapkorea.board.model.dto.LikeDto;
 import kh.lclass.jjapkorea.board.model.service.BoardService;
+import kh.lclass.jjapkorea.board.model.service.LikeService;
 
 @Controller
 @RequestMapping("/board")
 public class BoardController {
-	@Autowired
-	private BoardService boardService;
+	@Autowired private BoardService boardService;
+	@Autowired private LikeService likeService;
 	
 	@GetMapping("/list")
 	public ModelAndView list(ModelAndView mv) throws Exception{
@@ -28,6 +29,19 @@ public class BoardController {
 	
 	@GetMapping("/get")
 	public ModelAndView get(ModelAndView mv, int bno) throws Exception{ //jsp에서 controller로 데이터 전달
+		LikeDto dto = new LikeDto();
+		dto.setBno(bno);
+		dto.setMid("admin"); // set이면 저장되어있는 아이디 가져와야함.
+		
+		int like_no = 0;
+		int check = likeService.likeCount(dto);
+	
+		if(check == 0) {
+			likeService.likeInsert(dto);
+		}else if(check == 1) {
+			like_no = likeService.likeGet(dto);
+		}
+		mv.addObject("like_no", like_no);	
 		mv.addObject("bvo", boardService.selectOne(bno));
 		mv.setViewName("board/get"); // http://localhost:8090/jjap/board/get?bno=3
 		return mv;
