@@ -44,7 +44,6 @@
 				<legend>개인회원 가입</legend>
 				<form action="<%=request.getContextPath()%>/psignup.do" id="frm" method="post" name="frm">
 					<!-- 소셜 로그인 -->
-					<input id="mtype" name="mtype" type="hidden" value="1">
 					<div class="row_group row_group_social">
 						<h4>소셜로 간편하게 로그인하세요</h4>
 						<div class="list-social">
@@ -71,6 +70,7 @@
 						<p class="subTx">
 							<strong>*</strong> 필수 입력 정보입니다.
 						</p>
+						<input id="mtype" name="mtype" type="hidden" value="1">
 						<div class="row mbr_name">
 							<div class="col_1">
 								<label for="M_Name" class="mbr_name">이름(실명)<i

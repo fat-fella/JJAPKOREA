@@ -47,7 +47,6 @@
 				<legend>기업 회원가입</legend>
 				<form action="<%=request.getContextPath()%>/signup.do" method="POST" id="form" name="form">
 					<!-- 기업 정보 -->
-					<input id="mtype" name="mtype" type="hidden" value="2">
 					<div class="row row_group">
 						<h4>기업정보</h4>
 						<div class="headingGuide">
@@ -56,13 +55,13 @@
 
 						<!-- 기업회원 탭 메뉴 -->
 
-
 						<div class="tabs tabsGiCateogry" role="tablist">
 							<a href="<%=request.getContextPath()%>/signup" class="tab tabGi active">기업회원</a>
 							<a href="#" class="tab tabGi ">서치펌회원</a>
 						</div>
 
 						<div class="row mbr_name mbr_co_type">
+							<input id="mtype" name="mtype" type="hidden" value="2">
 							<div class="col_1">
 								<label class="mbr_name" for="Corp_Type">기업형태
 									<i class="icon required" aria-hidden="hidde">*</i>
