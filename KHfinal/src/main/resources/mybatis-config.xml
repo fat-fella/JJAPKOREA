@@ -16,7 +16,6 @@
 		<typeAlias type="kh.lclass.jjapkorea.board.model.dto.BoardDto" alias="boardDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto" alias="chatRoomDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.chat.model.dto.ChatMessageDto" alias="chatMessageDto"/>
- 	    <typeAlias type="kh.lclass.jjapkorea.member.model.vo.BusinessFormVo" alias="businessFormVo"/>
 	</typeAliases>
 	
 	<mappers>
