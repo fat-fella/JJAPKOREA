@@ -6,11 +6,6 @@
 		<result property="mpw" column="mpw"/>
 		<result property="mtype" column="mtype"/>
 	</resultMap>
-	
-	<resultMap type="businessFormVo" id="businessFormVo">
-		<id property="bform" column="bform"/>
-		<result property="bformName" column="bform_name"/>
-	</resultMap>
 
 	<select id="loginPerson" resultType="memberDto">
 		select mpw from member where mid=#{mid} and mtype=1
