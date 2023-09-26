@@ -36,28 +36,15 @@
 				<li class="corp "><a class= "babo" href="<%=request.getContextPath()%>/signup">기업회원</a></li>
 			</ul>
 		</div>
-
-
-
+		
 		<input type="hidden" id="hdnEduId" value="">
 		<div id="container" class="mbrRegist">
 			<h3 class="skip">개인회원 가입 정보</h3>
 			<fieldset>
 				<legend>개인회원 가입</legend>
 				<form action="<%=request.getContextPath()%>/psignup.do" id="frm" method="post" name="frm">
-					<!-- 약관 동의 -->
-					<input data-val="true" data-val-required="<p class=&quot;failure&quot;>필수 정보입니다.</p>" id="M_Id" name="M_Id"
-					type="hidden" value="">
-					<input id="OEM_No" name="OEM_No" type="hidden" value="1">
-					<input id="DI_Code" name="DI_Code" type="hidden" value="">
-					<input id="getCertifynum" name="getCertifynum" type="hidden" value="">
-					<input id="CertifyReCall" name="CertifyReCall" type="hidden" value="">
-					<input id="ReSubmit" name="ReSubmit" type="hidden" value="">
-					<input id="CertifyCode" name="CertifyCode" type="hidden" value="">
-					<input id="Aptitute_Stat" name="Aptitute_Stat" type="hidden" value="">
-					<input id="CheckParamString" name="CheckParamString" type="hidden" value="8d3bc0d8e98202294a311db74c5eb05d">
-					<input id="Re_Url" name="Re_Url" type="hidden" value="">
 					<!-- 소셜 로그인 -->
+					<input id="mtype" name="mtype" type="hidden" value="1">
 					<div class="row_group row_group_social">
 						<h4>소셜로 간편하게 로그인하세요</h4>
 						<div class="list-social">

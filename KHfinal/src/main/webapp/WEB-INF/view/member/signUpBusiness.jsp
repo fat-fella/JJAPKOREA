@@ -40,31 +40,14 @@
 			</ul>
 		</div>
 
-
 		<div id="container" class="mbrRegist">
-
-
 
 			<h3 class="skip">기업 회원가입 정보</h3>
 			<fieldset>
 				<legend>기업 회원가입</legend>
 				<form action="<%=request.getContextPath()%>/signup.do" method="POST" id="form" name="form">
-					<input type="hidden" id="Mem_Type" value="GI">
-					<input data-val="true" data-val-required="CertifyType 필드가 필요합니다." id="CertifyType" name="CertifyType" type="hidden"
-					value="phone">
-					<input id="CertifyCode" name="CertifyCode" type="hidden" value="">
-					<input id="CertifyReCall" name="CertifyReCall" type="hidden" value="">
-					<input id="DI_Code" name="DI_Code" type="hidden" value="">
-					<input id="getCertifynum" name="getCertifynum" type="hidden" value="">
-					<input id="ReSubmit" name="ReSubmit" type="hidden" value="">
-					<input id="Mobile_Encrypt" name="Mobile_Encrypt" type="hidden" value="">
-					<input data-val="true" data-val-number="OEM_No 필드는 숫자여야 합니다." data-val-required="OEM_No 필드가 필요합니다." id="OEM_No"
-					name="OEM_No" type="hidden" value="1">
-					<input id="CorpAuthStat" name="CorpAuthStat" type="hidden" value="">
-					<input id="Mem_HPhone" name="Mem_HPhone" type="hidden" value="">
-					<input data-val="true" data-val-maxlength="필드 Mem_Ident은(는) 최대 길이가 '8'인 문자열 또는 배열 형식이어야 합니다."
-					data-val-maxlength-max="8" id="Mem_Ident" name="Mem_Ident" type="hidden" value="">
 					<!-- 기업 정보 -->
+					<input id="mtype" name="mtype" type="hidden" value="2">
 					<div class="row row_group">
 						<h4>기업정보</h4>
 						<div class="headingGuide">
