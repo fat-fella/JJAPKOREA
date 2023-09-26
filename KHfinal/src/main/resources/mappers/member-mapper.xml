@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="member">
-	<resultMap type="memberVo" id="memberVo">
+	<resultMap type="memberDto" id="memberDto">
 		<id property="mid" column="mid"/>
 		<result property="mpw" column="mpw"/>
 		<result property="mtype" column="mtype"/>
@@ -12,32 +12,19 @@
 		<result property="bformName" column="bform_name"/>
 	</resultMap>
 
-	<select id="login" resultType="string" parameterType="string">
+	<select id="loginPerson" resultType="memberDto">
 		select mpw from member where mid=#{mid} and mtype=1
 	</select>
 	
-	<select id="businessLogin" resultType="string" parameterType="string">
+	<select id="loginBusiness" resultType="memberDto">
 		select mpw from member where mid=#{mid} and mtype=2
 	</select>
 	
-	<insert id="pSignup" parameterType="memberVo">
-		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, 1)
-	</insert>
-
-	<insert id="bSignUp" parameterType="memberVo">
-		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, 2)
+	<insert id="signUpMember" parameterType="memberDto">
+		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, #{mtype})
 	</insert>
 	
-    <select id="check" resultType="int">
-        SELECT COUNT(*) FROM businessform
-    </select>
-    
-    <insert id="insert" parameterType="businessFormVo">
-		<!-- 쿼리문이 두개? -->
-        INSERT INTO businessform VALUES (#{bform}, #{bformName})
-    </insert>
-	
-	<delete id="delete" parameterType="memberVo">
+	<delete id="deleteMember" parameterType="memberDto">
 		delete from member where mid = #{mid}
 	</delete>
 </mapper>
