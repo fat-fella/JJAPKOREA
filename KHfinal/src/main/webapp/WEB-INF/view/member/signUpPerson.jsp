@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<%=request.getContextPath()%>/resources//member/css/jobkh_psignup.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,15 +7,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회원가입 | KH</title>
 <link rel="icon" href="resources/favicon.ico">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources//member/css/jobkh_psignup.css">
 </head>
 <body class="jkJoin" style="">
 	<div id="wrap">
 
 		<div id="header">
 			<h1>
-				<a href="https://www.jobkorea.co.kr"><img
-					src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
-					alt="JOBKOREA x albamon"></a>
+				<a href="https://www.jobkorea.co.kr">
+					<img
+						src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
+						alt="JOBKOREA x albamon">
+				</a>
 			</h1>
 			<div class="joinTop">
 				<h2>
@@ -32,36 +35,29 @@
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person on"><a href="<%=request.getContextPath()%>/psignup">개인회원</a></li>
-				<li class="corp "><a class= "babo" href="<%=request.getContextPath()%>/signup">기업회원</a></li>
+				<li class="person on"><a href="signUpPerson">개인회원</a></li>
+				<li class="corp "><a href="signUpBusiness">기업회원</a></li>
 			</ul>
 		</div>
-		
+
 		<input type="hidden" id="hdnEduId" value="">
 		<div id="container" class="mbrRegist">
 			<h3 class="skip">개인회원 가입 정보</h3>
 			<fieldset>
 				<legend>개인회원 가입</legend>
-				<form action="<%=request.getContextPath()%>/psignup.do" id="frm" method="post" name="frm">
+				<form action="signUpPerson" id="frm" method="post" name="frm">
 					<!-- 소셜 로그인 -->
 					<div class="row_group row_group_social">
 						<h4>소셜로 간편하게 로그인하세요</h4>
 						<div class="list-social">
 							<ul>
 								<li><a href="${ naver_url }" id="btnNvLogin" class="naver"
-									onclick="_LA.EVT('4287')">네이버 로그인</a></li>
+										onclick="_LA.EVT('4287')">네이버 로그인</a></li>
 								<li><a href="${ kakao_url }" id="btnKaLogin" class="kakao"
-									onclick="_LA.EVT('4286')">카카오 로그인</a></li>
-								<li><a href="javascript:;" id="btnFbLogin" class="facebook"
-									onclick="facebookLogin(); _LA.EVT('4285')">페이스북 로그인</a></li>
-                                    <li><a href="${ google_url }" id="btnGlLogin" class="google" onclick="_LA.EVT('4288')"
-                                            style="display: block;">
-                                            <div class="S9gUrf-YoZ4jf" style="position: relative;">
-                                              <img src="resources/images/google_logo.png" width="40" height="40"  alt="Google 로고">
-                                            </div>
-                                        </a></li>
-								<li><a href="javascript:;" id="btnApLogin" class="apple">애플
-										로그인</a></li>
+										onclick="_LA.EVT('4286')">카카오 로그인</a></li>
+								<li><a href="${ google_url }" id="btnGlLogin"
+										class="google" onclick="_LA.EVT('4288')"
+										style="display: block;"> 구글 로그인</a></li>
 							</ul>
 						</div>
 					</div>
@@ -73,8 +69,9 @@
 						<input id="mtype" name="mtype" type="hidden" value="1">
 						<div class="row mbr_name">
 							<div class="col_1">
-								<label for="M_Name" class="mbr_name">이름(실명)<i
-									class="icon required" aria-hidden="hidde">*</i></label>
+								<label for="M_Name" class="mbr_name">
+									이름(실명)<i class="icon required" aria-hidden="hidde">*</i>
+								</label>
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Name" name="mname"
@@ -84,8 +81,10 @@
 						</div>
 						<div class="row mbr_id">
 							<div class="col_1">
-								<label for="idcheck">아이디(잡코리아, 알바몬 통합 ID)<i
-									class="icon required" aria-hidden="hidde">*</i></label>
+								<label for="idcheck">
+									아이디(잡코리아, 알바몬 통합 ID)<i class="icon required"
+										aria-hidden="hidde">*</i>
+								</label>
 							</div>
 							<div class="col_2">
 								<input type="text" id="idcheck" name="mid" maxlength="16"
@@ -95,8 +94,10 @@
 						</div>
 						<div class="row mbr_passwd">
 							<div class="col_1">
-								<label for="M_Pwd">비밀번호(8~16자의 영문, 숫자, 특수기호)<i
-									class="icon required" aria-hidden="hidde">*</i></label>
+								<label for="M_Pwd">
+									비밀번호(8~16자의 영문, 숫자, 특수기호)<i class="icon required"
+										aria-hidden="hidde">*</i>
+								</label>
 							</div>
 							<div class="col_2">
 								<input type="password" id="M_Pwd" name="mpw"
@@ -127,21 +128,23 @@
 						<div class="row mbr_email">
 							<!-- <p class="emailTxt">개인 맞춤 채용정보/정기 뉴스레터/이벤트 메일이 발송됩니다.</p>  -->
 							<div class="col_1">
-								<label for="M_Email" class="mbr_email_id">이메일<i
-									class="icon required" aria-hidden="hidde">*</i></label>
+								<label for="M_Email" class="mbr_email_id">
+									이메일<i class="icon required" aria-hidden="hidde">*</i>
+								</label>
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Email" name="pemail"
 									class="mbr_email_id dev-mail" size="8" maxlength="30">
 								<div class="notice_msg" id="notice_msg_mail"></div>
-								<input type="hidden" id="Email_ID" name="Email_ID"> <input
-									type="hidden" id="Email_Addr" name="Email_Addr">
+								<input type="hidden" id="Email_ID" name="Email_ID">
+								<input type="hidden" id="Email_Addr" name="Email_Addr">
 							</div>
 						</div>
 						<div class="row mbr_phone">
 							<div class="col_1">
-								<label for="M_Phone">휴대폰번호<i class="icon required"
-									aria-hidden="hidde">*</i></label>
+								<label for="M_Phone">
+									휴대폰번호<i class="icon required" aria-hidden="hidde">*</i>
+								</label>
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Phone" name="pphone" size="4"
@@ -151,20 +154,20 @@
 									<span>인증번호 전송</span>
 								</button>
 								<div class="notice_msg" id="notice_msg_phone"></div>
-								<input type="hidden" id="M_Phone1" name="M_Phone1"> <input
-									type="hidden" id="M_Phone2" name="M_Phone2"> <input
-									type="hidden" id="M_Phone3" name="M_Phone3">
+								<input type="hidden" id="M_Phone1" name="M_Phone1">
+								<input type="hidden" id="M_Phone2" name="M_Phone2">
+								<input type="hidden" id="M_Phone3" name="M_Phone3">
 							</div>
 						</div>
 						<div class="row authentication_check">
 							<div class="col_1">
-								<label for="Certify_Num" class="authentication_number">인증번호
-									입력<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="Certify_Num" class="authentication_number">
+									인증번호 입력<i class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
-								<input type="hidden" name="lb_certifytype" value="2"> <input
-									type="text" id="Certify_Num" name="Certify_Num"
+								<input type="hidden" name="lb_certifytype" value="2">
+								<input type="text" id="Certify_Num" name="Certify_Num"
 									class="authentication_number" maxlength="6">
 								<div>
 									<button type="button" class="btnConfirm" id="btnCheckCert">
@@ -184,27 +187,34 @@
 					<div class="row_group line_all policy">
 						<div class="row policy_check_all">
 							<input type="checkbox" id="lb_chk_all" class="mbrCheckOff">
-							<label for="lb_chk_all" class="chk_all"><span class="txt">필수동의
-									항목 및 개인정보 수집 및 이용 동의(선택), 광고성 정보 수신<br>(선택)에 모두 동의합니다.
-							</span></label>
+							<label for="lb_chk_all" class="chk_all">
+								<span class="txt">필수동의 항목 및 개인정보 수집 및 이용 동의(선택), 광고성 정보
+									수신<br>(선택)에 모두 동의합니다.
+								</span>
+							</label>
 						</div>
 						<div class="row policy_check_service required">
 							<input type="checkbox" id="lb_chk_age" name="Y15_Older_Agree"
-								class="mbrCheckOn" value="1"> <label for="lb_chk_age"
-								class="chk_age"><strong>[필수]</strong> 만 15세 이상입니다 </label>
+								class="mbrCheckOn" value="1">
+							<label for="lb_chk_age" class="chk_age">
+								<strong>[필수]</strong> 만 15세 이상입니다
+							</label>
 						</div>
 						<div class="row policy_check_service required">
 							<input type="checkbox" id="lb_chk_service" name="Service_Agree"
-								class="mbrCheckOn" value="1"> <label
-								for="lb_chk_service" class="chk_service"><strong>[필수]</strong>
-								이용약관 동의 <a href="#DevPolicyService" class="mbrBtnPolicy">내용보기</a></label>
+								class="mbrCheckOn" value="1">
+							<label for="lb_chk_service" class="chk_service">
+								<strong>[필수]</strong> 이용약관 동의
+								<a href="#DevPolicyService" class="mbrBtnPolicy">내용보기</a>
+							</label>
 							<div id="DevPolicyService" class="policyTplBox">
 								<div class="pvsSec pvsCntTp">
 									<ol>
 										<li>
 											<dl>
 												<dt>
-													<a name="gg01" id="gg01"></a><strong>제 1 조 (목적) </strong>
+													<a name="gg01" id="gg01"></a>
+													<strong>제 1 조 (목적) </strong>
 												</dt>
 												<dd>본 약관은 잡코리아(이하 "회사")가 운영하는 "서비스"를 이용함에 있어 "회사"와 회원간의
 													이용 조건 및 제반 절차, 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 한다.</dd>
@@ -213,8 +223,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg02" id="gg02"></a><strong>제 2 조 (용어의
-														정의) </strong>
+													<a name="gg02" id="gg02"></a>
+													<strong>제 2 조 (용어의 정의) </strong>
 												</dt>
 												<dd>
 													<p>이 약관에서 사용하는 용어의 정의는 아래와 같다.</p>
@@ -252,8 +262,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg03" id="gg03"></a><strong>제 3 조 (약관의
-														명시와 개정) </strong>
+													<a name="gg03" id="gg03"></a>
+													<strong>제 3 조 (약관의 명시와 개정) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -277,8 +287,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg04" id="gg04"></a><strong>제 4 조 (약관의
-														해석) </strong>
+													<a name="gg04" id="gg04"></a>
+													<strong>제 4 조 (약관의 해석) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -294,8 +304,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg05" id="gg05"></a><strong>제 5 조 (이용계약의
-														성립) </strong>
+													<a name="gg05" id="gg05"></a>
+													<strong>제 5 조 (이용계약의 성립) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -318,8 +328,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg06" id="gg06"></a><strong>제 6 조 (이용신청의
-														승낙과 제한) </strong>
+													<a name="gg06" id="gg06"></a>
+													<strong>제 6 조 (이용신청의 승낙과 제한) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -351,8 +361,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg07" id="gg07"></a><strong>제 7 조 (서비스의
-														내용) </strong>
+													<a name="gg07" id="gg07"></a>
+													<strong>제 7 조 (서비스의 내용) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -380,8 +390,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg08" id="gg08"></a><strong>제 8 조 (회원,
-														이력서 및 게시물 등의 정보) </strong>
+													<a name="gg08" id="gg08"></a>
+													<strong>제 8 조 (회원, 이력서 및 게시물 등의 정보) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -405,8 +415,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg9" id="gg9"></a><strong>제 9 조 (제휴를 통한
-														서비스) </strong>
+													<a name="gg9" id="gg9"></a>
+													<strong>제 9 조 (제휴를 통한 서비스) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -429,8 +439,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg10" id="gg10"></a><strong>제 10 조 (서비스의
-														요금) </strong>
+													<a name="gg10" id="gg10"></a>
+													<strong>제 10 조 (서비스의 요금) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -448,8 +458,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg11" id="gg11"></a><strong>제 11 조 (서비스
-														요금의 환불)</strong>
+													<a name="gg11" id="gg11"></a>
+													<strong>제 11 조 (서비스 요금의 환불)</strong>
 												</dt>
 												<dd>
 													<ol>
@@ -473,8 +483,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg12" id="gg12"></a><strong>제 12 조 (서비스
-														이용시간) </strong>
+													<a name="gg12" id="gg12"></a>
+													<strong>제 12 조 (서비스 이용시간) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -492,8 +502,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg13" id="gg13"></a><strong>제 13 조 (서비스
-														제공의 중지) </strong>
+													<a name="gg13" id="gg13"></a>
+													<strong>제 13 조 (서비스 제공의 중지) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -513,8 +523,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg14" id="gg14"></a><strong>제 14 조 (정보의
-														제공 및 광고의 게재) </strong>
+													<a name="gg14" id="gg14"></a>
+													<strong>제 14 조 (정보의 제공 및 광고의 게재) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -535,8 +545,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg15" id="gg15"></a><strong>제 15 조 (자료내용의
-														책임과 "회사"의 정보 수정 권한) </strong>
+													<a name="gg15" id="gg15"></a>
+													<strong>제 15 조 (자료내용의 책임과 "회사"의 정보 수정 권한) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -560,8 +570,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg16" id="gg16"></a><strong>제 16 조 (자료
-														내용의 활용 및 취급) </strong>
+													<a name="gg16" id="gg16"></a>
+													<strong>제 16 조 (자료 내용의 활용 및 취급) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -580,8 +590,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg17" id="gg17"></a><strong>제 17 조 ("회사"의
-														의무) </strong>
+													<a name="gg17" id="gg17"></a>
+													<strong>제 17 조 ("회사"의 의무) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -604,8 +614,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg18" id="gg18"></a><strong>제 18 조 ("회원"의
-														의무) </strong>
+													<a name="gg18" id="gg18"></a>
+													<strong>제 18 조 ("회원"의 의무) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -639,8 +649,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg19" id="gg19"></a><strong>제 19 조 ("회원"의
-														가입해지/서비스중지/자료삭제) </strong>
+													<a name="gg19" id="gg19"></a>
+													<strong>제 19 조 ("회원"의 가입해지/서비스중지/자료삭제) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -678,8 +688,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg20" id="gg20"></a><strong>제 20 조 (손해배상)
-													</strong>
+													<a name="gg20" id="gg20"></a>
+													<strong>제 20 조 (손해배상) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -700,8 +710,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg21" id="gg21"></a><strong>제 21 조 (양도
-														금지) </strong>
+													<a name="gg21" id="gg21"></a>
+													<strong>제 21 조 (양도 금지) </strong>
 												</dt>
 												<dd>
 													<p>“회원”의 서비스 받을 권리는 제3자에게 양도, 대여, 증여 등으로 사용할 수 없다.</p>
@@ -711,8 +721,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg22" id="gg22"></a><strong>제 22 조 (이용요금
-														오류의 조정) </strong>
+													<a name="gg22" id="gg22"></a>
+													<strong>제 22 조 (이용요금 오류의 조정) </strong>
 												</dt>
 												<dd>
 													<p>"회사"는 이용요금과 관련하여 오류가 있는 경우에 "회원"의 요청, 또는 "회사"의 사전
@@ -730,8 +740,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg23" id="gg23"></a><strong>제 23 조 ("회원"의
-														개인정보보호) </strong>
+													<a name="gg23" id="gg23"></a>
+													<strong>제 23 조 ("회원"의 개인정보보호) </strong>
 												</dt>
 												<dd>"회사"는 "회원"의 개인정보보호를 위하여 노력해야 한다. "회원"의 개인정보보호에 관해서는
 													정보통신망이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법에 따르고, "사이트"에 "개인정보처리방침"을
@@ -741,8 +751,8 @@
 										<li>
 											<dl>
 												<dt>
-													<a name="gg24" id="gg24"></a><strong>제 24 조 (신용정보의
-														제공 활용 동의) </strong>
+													<a name="gg24" id="gg24"></a>
+													<strong>제 24 조 (신용정보의 제공 활용 동의) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -760,8 +770,8 @@
 										<li>
 											<dl class="nobg">
 												<dt>
-													<a name="gg25" id="gg25"></a><strong>제 25 조 (분쟁의
-														해결) </strong>
+													<a name="gg25" id="gg25"></a>
+													<strong>제 25 조 (분쟁의 해결) </strong>
 												</dt>
 												<dd>
 													<ol>
@@ -791,9 +801,11 @@
 						</div>
 						<div class="row policy_check_privacy required">
 							<input type="checkbox" id="lb_chk_privacy" name="Priacy_Agree"
-								class="mbrCheckOn" value="1"> <label
-								for="lb_chk_privacy" class="chk_privacy"><strong>[필수]</strong>
-								개인정보 수집 및 이용 동의 <a href="#DevPolicyPrivacy" class="mbrBtnPolicy">내용보기</a></label>
+								class="mbrCheckOn" value="1">
+							<label for="lb_chk_privacy" class="chk_privacy">
+								<strong>[필수]</strong> 개인정보 수집 및 이용 동의
+								<a href="#DevPolicyPrivacy" class="mbrBtnPolicy">내용보기</a>
+							</label>
 							<div id="DevPolicyPrivacy" class="policyTplBox">
 								<div class="pvsSec pvsCntTp">
 									<!-- 7.0 변경 -->
@@ -835,9 +847,9 @@
 						<div class="row policy_check_privacyOptional optional">
 							<input type="checkbox" id="lb_chk_privacyOptional"
 								name="PriacyOptional_Agree" class="mbrCheckOn" value="1">
-							<label for="lb_chk_privacyOptional" class="chk_privacyOptional">[선택]
-								개인정보 수집 및 이용 동의 <a href="#DevPolicyPrivacyOptional"
-								class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_privacyOptional" class="chk_privacyOptional">
+								[선택] 개인정보 수집 및 이용 동의
+								<a href="#DevPolicyPrivacyOptional" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyPrivacyOptional" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
@@ -870,9 +882,11 @@
 						</div>
 						<div class="row check_email optional">
 							<input type="checkbox" id="lb_chk_email" name="Event_Agree_Stat"
-								class="mbrCheckOn" value="1"> <label for="lb_chk_email"
-								class="chk_privacy">[선택] 광고성 정보 이메일 수신 동의 <a
-								href="#DevPolicyEMail" class="mbrBtnPolicy">내용보기</a></label>
+								class="mbrCheckOn" value="1">
+							<label for="lb_chk_email" class="chk_privacy">
+								[선택] 광고성 정보 이메일 수신 동의
+								<a href="#DevPolicyEMail" class="mbrBtnPolicy">내용보기</a>
+							</label>
 							<div id="DevPolicyEMail" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
 									<h2 class="pvsHeading2">
@@ -907,9 +921,11 @@
 						</div>
 						<div class="row check_sms optional">
 							<input type="checkbox" id="lb_chk_sms" name="SMS_Agree_Stat"
-								class="mbrCheckOn" value="1"> <label for="lb_chk_sms"
-								class="chk_privacy">[선택] 광고성 정보 SMS 수신 동의 <a
-								href="#DevPolicySMS" class="mbrBtnPolicy">내용보기</a></label>
+								class="mbrCheckOn" value="1">
+							<label for="lb_chk_sms" class="chk_privacy">
+								[선택] 광고성 정보 SMS 수신 동의
+								<a href="#DevPolicySMS" class="mbrBtnPolicy">내용보기</a>
+							</label>
 							<div id="DevPolicySMS" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
 									<h2 class="pvsHeading2">
@@ -964,8 +980,8 @@
 						<div class="list">
 							<div class="item">
 								<input type="radio" name="Validity" id="validity_leave"
-									class="skip" value="0" onclick="tooltipClose();"> <label
-									for="validity_leave" onclick="tooltipClose();">회원탈퇴시</label>
+									class="skip" value="0" onclick="tooltipClose();">
+								<label for="validity_leave" onclick="tooltipClose();">회원탈퇴시</label>
 								<div class="tooltip-dormant-account">
 									<button type="button" class="button-tooltip-close">
 										<span class="tooltip-close-text">닫기</span>
@@ -977,11 +993,13 @@
 							</div>
 							<div class="item">
 								<input type="radio" name="Validity" id="validity_year1"
-									class="skip " value="1"> <label for="validity_year1">1년</label>
+									class="skip " value="1">
+								<label for="validity_year1">1년</label>
 							</div>
 							<div class="item">
 								<input type="radio" name="Validity" id="validity_year3"
-									class="skip" value="3"> <label for="validity_year3">3년</label>
+									class="skip" value="3">
+								<label for="validity_year3">3년</label>
 							</div>
 						</div>
 					</div>
@@ -999,7 +1017,8 @@
 						}
 					</script>
 					<!-- 회원 가입 버튼 -->
-					<div class="row_group line_none regist_complete" style="position: relative;">
+					<div class="row_group line_none regist_complete"
+						style="position: relative;">
 						<div class="row">
 							<button type="submit" class="mbrBtnRegist">
 								<span>가입하기</span>
@@ -1014,7 +1033,7 @@
 				<p class="text">잡코리아 ID하나로 알바몬 서비스도 이용가능합니다.</p>
 				<ul class="f_clear">
 					<li class="albamon"><a href="https://www.albamon.com"
-						target="_blank" title="albamon - 아르바이트 전문">albamon - 아르바이트 전문</a></li>
+							target="_blank" title="albamon - 아르바이트 전문">albamon - 아르바이트 전문</a></li>
 				</ul>
 			</div>
 
@@ -1044,7 +1063,8 @@
 
 
 
-	<div style="position: absolute; left: -5000px; overflow: hidden; display: none;">
+	<div
+		style="position: absolute; left: -5000px; overflow: hidden; display: none;">
 
 
 
@@ -1535,51 +1555,88 @@
 		style="display: none;"></iframe>
 	<script>
 		var col_1List = document.getElementsByClassName("col_1");
-		document.querySelector(".mbrRegist .dev-name").addEventListener("focus", function() {
-			col_1List[0].style.cssText = "top: 9px";
-			document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 11px";
-		})
-		document.querySelector(".mbrRegist .dev-name").addEventListener("blur", function() {
-		    // 포커스가 해제될 때 원래 스타일로 복구
-		    col_1List[0].style.cssText = ""; // 빈 문자열로 스타일 초기화
-		    document.querySelector(".col_1>.mbr_name").style.cssText = ""; // 빈 문자열로 스타일 초기화
-		});
-		document.querySelector(".mbrRegist .dev-id").addEventListener("focus", function() {
-			col_1List[1].style.cssText = "top: 9px";
-			document.querySelector(".mbr_id label").style.cssText = "font-size: 11px";
-		})
-		document.querySelector(".mbrRegist .dev-id").addEventListener("blur", function() {
-		    // 포커스가 해제될 때 원래 스타일로 복구
-		    col_1List[1].style.cssText = ""; // 빈 문자열로 스타일 초기화
-		    document.querySelector(".mbr_id label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-		});
-		document.querySelector(".mbrRegist .dev-password").addEventListener("focus", function() {
-			col_1List[2].style.cssText = "top: 9px";
-			document.querySelector(".mbr_passwd label").style.cssText = "font-size: 11px";
-		})
-		document.querySelector(".mbrRegist .dev-password").addEventListener("blur", function() {
-		    // 포커스가 해제될 때 원래 스타일로 복구
-		    col_1List[2].style.cssText = ""; // 빈 문자열로 스타일 초기화
-		    document.querySelector(".mbr_passwd label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-		});
-		document.querySelector(".mbrRegist .dev-mail").addEventListener("focus", function() {
-			col_1List[3].style.cssText = "top: 9px";
-			document.querySelector(".mbr_email label").style.cssText = "font-size: 11px";
-		})
-		document.querySelector(".mbrRegist .dev-mail").addEventListener("blur", function() {
-		    // 포커스가 해제될 때 원래 스타일로 복구
-		    col_1List[3].style.cssText = ""; // 빈 문자열로 스타일 초기화
-		    document.querySelector(".mbr_email label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-		});
-		document.querySelector(".mbrRegist .dev-phone").addEventListener("focus", function() {
-			col_1List[4].style.cssText = "top: 9px";
-			document.querySelector(".mbr_phone label").style.cssText = "font-size: 11px";
-		})
-		document.querySelector(".mbrRegist .dev-phone").addEventListener("blur", function() {
-		    // 포커스가 해제될 때 원래 스타일로 복구
-		    col_1List[4].style.cssText = ""; // 빈 문자열로 스타일 초기화
-		    document.querySelector(".mbr_phone label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-		});
+		document
+				.querySelector(".mbrRegist .dev-name")
+				.addEventListener(
+						"focus",
+						function() {
+							col_1List[0].style.cssText = "top: 9px";
+							document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 11px";
+						})
+		document
+				.querySelector(".mbrRegist .dev-name")
+				.addEventListener(
+						"blur",
+						function() {
+							// 포커스가 해제될 때 원래 스타일로 복구
+							col_1List[0].style.cssText = ""; // 빈 문자열로 스타일 초기화
+							document.querySelector(".col_1>.mbr_name").style.cssText = ""; // 빈 문자열로 스타일 초기화
+						});
+		document
+				.querySelector(".mbrRegist .dev-id")
+				.addEventListener(
+						"focus",
+						function() {
+							col_1List[1].style.cssText = "top: 9px";
+							document.querySelector(".mbr_id label").style.cssText = "font-size: 11px";
+						})
+		document.querySelector(".mbrRegist .dev-id").addEventListener("blur",
+				function() {
+					// 포커스가 해제될 때 원래 스타일로 복구
+					col_1List[1].style.cssText = ""; // 빈 문자열로 스타일 초기화
+					document.querySelector(".mbr_id label").style.cssText = ""; // 빈 문자열로 스타일 초기화
+				});
+		document
+				.querySelector(".mbrRegist .dev-password")
+				.addEventListener(
+						"focus",
+						function() {
+							col_1List[2].style.cssText = "top: 9px";
+							document.querySelector(".mbr_passwd label").style.cssText = "font-size: 11px";
+						})
+		document
+				.querySelector(".mbrRegist .dev-password")
+				.addEventListener(
+						"blur",
+						function() {
+							// 포커스가 해제될 때 원래 스타일로 복구
+							col_1List[2].style.cssText = ""; // 빈 문자열로 스타일 초기화
+							document.querySelector(".mbr_passwd label").style.cssText = ""; // 빈 문자열로 스타일 초기화
+						});
+		document
+				.querySelector(".mbrRegist .dev-mail")
+				.addEventListener(
+						"focus",
+						function() {
+							col_1List[3].style.cssText = "top: 9px";
+							document.querySelector(".mbr_email label").style.cssText = "font-size: 11px";
+						})
+		document
+				.querySelector(".mbrRegist .dev-mail")
+				.addEventListener(
+						"blur",
+						function() {
+							// 포커스가 해제될 때 원래 스타일로 복구
+							col_1List[3].style.cssText = ""; // 빈 문자열로 스타일 초기화
+							document.querySelector(".mbr_email label").style.cssText = ""; // 빈 문자열로 스타일 초기화
+						});
+		document
+				.querySelector(".mbrRegist .dev-phone")
+				.addEventListener(
+						"focus",
+						function() {
+							col_1List[4].style.cssText = "top: 9px";
+							document.querySelector(".mbr_phone label").style.cssText = "font-size: 11px";
+						})
+		document
+				.querySelector(".mbrRegist .dev-phone")
+				.addEventListener(
+						"blur",
+						function() {
+							// 포커스가 해제될 때 원래 스타일로 복구
+							col_1List[4].style.cssText = ""; // 빈 문자열로 스타일 초기화
+							document.querySelector(".mbr_phone label").style.cssText = ""; // 빈 문자열로 스타일 초기화
+						});
 	</script>
 </body>
 </html>

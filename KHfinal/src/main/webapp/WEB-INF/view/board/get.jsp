@@ -73,6 +73,18 @@ button:hover {
 					<textarea id="bcontent" rows="10" cols="50" name="bcontent"
 						readonly>${bvo.bcontent}</textarea>
 					<br>
+					
+					<c:choose>
+						<c:when test="${like_no == 0}">
+							<button type="button" class="btn btn-light" id="likebtn">좋아요</button>
+							<input type="hidden" id="likecheck" value="${like_no }">
+						</c:when>
+						<c:when test="${like_no == 1}">
+							<button type="button" class="btn btn-danger" id="likebtn">좋아요</button>
+							<input type="hidden" id="likecheck" value="${like_no }">
+						</c:when>
+					</c:choose>	
+					
 					<a href="${pageContext.request.contextPath}/board/list">
 					<button type="submit" id="btn-board-update">글 수정</button>
 					</a>
@@ -82,33 +94,8 @@ button:hover {
 					</a>				
 				</form>
 			</div>
-			
-			<ul>
-				<c:forEach items="${bct }" var="commentList">
-					<li>
-						<div>
-							<p>${bct.mid } / ${bct.bwriteDate }</p> 
-							<p>${bct.bcontent }</p>
-						</div>
-					</li>
-				</c:forEach>
-			</ul>
-			
-		<!-- Comments Form -->
-			<div class="card my-4">
-				<h5 class="card-header">Leave a Comment:</h5>
-				<div class="card-body">
-					<form action="${pageContext.request.contextPath}/board/insertReply" method="post" >
-						<div class="form-group">
-							<input type="hidden" name="bno" value="${bvo.bno}"/>
-							<textarea name="content" class="form-control" rows="3"></textarea>
-						</div>
-						<button type="submit" class="btn-board-comment">댓글 등록</button>
-					</form>
-				</div>
-			</div>
 		</div>
-	</div>
+	</div>		
 	<script>
     $("#btn-board-delete").click(function () {
         var bno = '${bvo.bno}';
@@ -129,32 +116,42 @@ button:hover {
 			});
 		}
 	});
+    $('#likebtn').click(function(){
+		likeUpdate();
+	});
+	
+ function likeUpdate() {
+	    var mid = $('#mid').val();
+	    var bno = $('#bno').val();
+	    var count = $('#likecheck').val();
+	    var data = {
+	        "mid": mid,
+	        "bno": bno,
+	        "count": count
+	    };
 
-    $("#btn-board-comment").click(function() {
-    	var btitle = '${bvo.btitle}';
-    	var bcontent = '${bvo.bcontent}';
-        if (confirm("댓글을 등록하시겠습니까?")) {
-            $.ajax({
-                type: "POST",
-                url: "${pageContext.request.contextPath}/board/insertReply",
-                dataType: "json",
-                data: { 
-                    btitle: btitle,
-                    bcontent: bcontent
-                },
-                success: function(response) {
-                    if (response > 0) {
-                        alert("댓글 등록되었습니다.");
-                        location.href = "${pageContext.request.contextPath}/board/list;
-                    } else {
-                        alert("댓글 등록에 실패했습니다.");
-        				location.href = "${pageContext.request.contextPath}/board/list";
-
-                    }
-                }
-            });
-        }
-    });
+	    $.ajax({
+	        type: 'POST',
+	        url: "${pageContext.request.contextPath}/like/likeUpdate",
+	        contentType: 'application/json',
+	        data: JSON.stringify(data),
+	        success: function (result) {
+	            console.log("수정: " + result.result);
+	            if (count == 1) {
+	                console.log("좋아요 취소");
+	                $('#likecheck').val(0);
+	                $('#likebtn').attr('class', 'btn btn-light');
+	            } else if (count == 0) {
+	                console.log("좋아요");
+	                $('#likecheck').val(1);
+	                $('#likebtn').attr('class', 'btn btn-danger');
+	            }
+	        },
+	        error: function (xhr, status, error) {
+	            console.error("에러: " + error);
+	        }
+	    });
+	};
 </script>
 </body>
 </html>
