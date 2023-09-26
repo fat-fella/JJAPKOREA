@@ -20,15 +20,18 @@
 			</h1>
 		</div>
 		<div class="headerRight">
-			<span id="personalHome"><a href="">개인회원 홈</a></span>
-			<span id="resumeMgr"><a href="">이력서 관리</a></span>
+			<span id="personalHome"><a href="<%=request.getContextPath()%>/myPage">개인회원 홈</a></span>
+			<span id="resumeMgr"><a href="<%=request.getContextPath()%>/resume">이력서 관리</a></span>
 		</div>
 	</header>
 	
 	<!-- 이력서 제목 작성 부분 -->
 	<div><input id="titleWrite" placeholder="기업에게 나에 대해 알려줍시다. 강점, 목표, 관심분야도 좋아요."></div>
 		
-		
+	<!-- 인적사항 부분 -->
+	<div>
+	<h1>인적사항</h1>
+	</div>
 	
 	
 
