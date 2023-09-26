@@ -12,6 +12,7 @@
 		<typeAlias type="kh.lclass.jjapkorea.member.model.dto.BusinessDto" alias="businessDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.member.model.dto.BusinessFormDto" alias="businessFormDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto" alias="jobpostingDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.Jobposting.model.dto.JobPostingCategoryDto" alias="jobPostingCategoryDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.scrap.model.dto.ScrapDto" alias="scrapDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.board.model.dto.BoardDto" alias="boardDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto" alias="chatRoomDto"/>
@@ -31,3 +32,8 @@
 		<mapper resource="mappers/apisnsmember-mapper.xml"/>
 	</mappers>
 </configuration>
+
+
+
+
+
