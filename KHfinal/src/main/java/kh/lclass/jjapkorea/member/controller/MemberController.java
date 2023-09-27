@@ -45,7 +45,7 @@ public class MemberController {
 		MemberDto loginBusiness = memberService.loginBusiness(memberDto);
 		if(loginBusiness != null) {
 			session.setAttribute("loginBusiness", loginBusiness);
-			return ResponseEntity.ok("/index");
+			return ResponseEntity.ok("/jjapkorea/index");
 		} else {
 			return ResponseEntity.badRequest().body("로그인 실패");
 		}
