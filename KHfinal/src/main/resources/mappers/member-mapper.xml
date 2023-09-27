@@ -16,7 +16,7 @@
 	</select>
 	
 	<insert id="signUpMember" parameterType="memberDto">
-		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, #{mtype})
+		insert into member (mid, mpw, mtype, authority) values (#{mid}, #{mpw}, #{mtype}, 'R_M')
 	</insert>
 </mapper>
 
