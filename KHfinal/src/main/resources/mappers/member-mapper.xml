@@ -6,13 +6,13 @@
 		<result property="mpw" column="mpw"/>
 		<result property="mtype" column="mtype"/>
 	</resultMap>
-
+	
 	<select id="loginPerson" resultType="memberDto">
-		select mpw from member where mid=#{mid} and mtype=1
+		select * from member where mid=#{mid} and mpw=#{mpw} and mtype=1
 	</select>
 	
 	<select id="loginBusiness" resultType="memberDto">
-		select mpw from member where mid=#{mid} and mtype=2
+		select * from member where mid=#{mid} and mpw=#{mpw} and mtype=2
 	</select>
 	
 	<insert id="signUpMember" parameterType="memberDto">

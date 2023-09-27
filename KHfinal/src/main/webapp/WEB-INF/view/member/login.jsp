@@ -62,22 +62,6 @@
 							</div>
 						</div>
 
-						<div class="input_row">
-							<label for="M_ID" id="lb_id" class="blind">아이디</label>
-							<input type="text" class="inpTxt inpID off" name="mid" id="M_ID"
-								size="16" maxlength="20" title="아이디 입력"
-								style="ime-mode: inactive;" autocomplete="off">
-							<label for="M_PWD" id="lb_pw" class="blind">비밀번호</label>
-							<input type="password" class="inpTxt inpPW devCapsLock off"
-								name="mpw" id="M_PWD" size="16" title="비밀번호 입력"
-								autocomplete="off">
-							<button type="submit" class="btLoin">로그인</button>
-							<div class="lyCapsLock" id="ipNotice">
-								<em>Caps Lock</em>이 켜져 있습니다.<span class="mainIcn mainIcnArrUp"></span>
-							</div>
-
-						</div>
-
 						<div class="check_row">
 							<input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y">
 							<label for="lb_idSave">로그인 상태 유지</label> <span class="txtBar">
@@ -276,10 +260,7 @@
 			}
 
 			// 개인회원, 기업회원 탭 클릭 시 내용 변경
-			var devMemTab = document.querySelector("#devMemTab");
 			var tabs = devMemTab.querySelectorAll("li");
-			var inputRows = document.querySelectorAll(".input_row");
-			inputRows[1].style.display = "none";
 
 			tabs[0].addEventListener("click", function() {
 				$("#mtype").val("P");
@@ -287,8 +268,8 @@
 				tabs[1].classList.remove("on");
 				document.querySelector("#M_Alert").style.display = "block";
 				document.querySelector("#Co_Alert").style.display = "none";
-				inputRows[0].style.display = "block";
-				inputRows[1].style.display = "none";
+				$("#M_ID").val("");
+				$("#M_PWD").val("");
 			});
 
 			tabs[1].addEventListener("click", function() {
@@ -297,8 +278,8 @@
 				tabs[1].classList.add("on");
 				document.querySelector("#M_Alert").style.display = "none";
 				document.querySelector("#Co_Alert").style.display = "block";
-				inputRows[0].style.display = "none";
-				inputRows[1].style.display = "block";
+				$("#M_ID").val("");
+				$("#M_PWD").val("");
 			});
 		});
 		
@@ -333,14 +314,15 @@
 		        },
 		        success: function(response) {
 		            // 서버로부터의 응답 처리
-		            if (response.success) {
-		                // 로그인 성공 시 실행할 코드
-		                alert("로그인 성공!");
-		                // 필요한 리다이렉션 등을 수행
-		            } else {
-		                // 로그인 실패 시 실행할 코드
-		                alert("로그인 실패!");
-		            }
+		            if (response.indexOf("로그인 실패") !== -1) {
+				        // 로그인 실패 시 실행할 코드
+				        alert("로그인 실패");
+				    } else {
+				        // 로그인 성공 시 실행할 코드
+				        alert("로그인 성공");
+				        /* // 리다이렉트 URL을 확인하고, JavaScript로 리다이렉트 수행
+				        window.location.href = response; */
+				    }
 		        },
 		        error: function() {
 		            // AJAX 요청 실패 시 실행할 코드
