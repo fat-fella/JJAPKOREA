@@ -314,15 +314,14 @@
 		        },
 		        success: function(response) {
 		            // 서버로부터의 응답 처리
-		            if (response.indexOf("로그인 실패") !== -1) {
-				        // 로그인 실패 시 실행할 코드
-				        alert("로그인 실패");
-				    } else {
-				        // 로그인 성공 시 실행할 코드
-				        alert("로그인 성공");
-				        /* // 리다이렉트 URL을 확인하고, JavaScript로 리다이렉트 수행
-				        window.location.href = response; */
-				    }
+		            if (response === "/jjapkorea/index") {
+		                // 로그인 성공 시, 서버가 리다이렉션할 URL을 반환하면 이를 사용하여 리다이렉션 수행
+		                window.location.href = response;
+		                alert("로그인 성공");
+		            } else {
+		                // 로그인 실패 시, 실패 메시지 표시
+		                alert("로그인 실패");
+		            }
 		        },
 		        error: function() {
 		            // AJAX 요청 실패 시 실행할 코드

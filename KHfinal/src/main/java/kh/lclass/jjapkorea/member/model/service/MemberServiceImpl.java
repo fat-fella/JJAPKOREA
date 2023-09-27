@@ -16,13 +16,13 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDao memberDao;
 	
 	@Override
-	public MemberDto loginPerson(String mid, String mpw) throws Exception {
-		return memberDao.loginPerson(mid, mpw);
+	public MemberDto loginPerson(MemberDto memberDto) throws Exception {
+		return memberDao.loginPerson(memberDto);
 	}
 	
 	@Override
-	public MemberDto loginBusiness(String mid, String mpw) throws Exception {
-		return memberDao.loginBusiness(mid, mpw);
+	public MemberDto loginBusiness(MemberDto memberDto) throws Exception {
+		return memberDao.loginBusiness(memberDto);
 	}
 	
 	@Override

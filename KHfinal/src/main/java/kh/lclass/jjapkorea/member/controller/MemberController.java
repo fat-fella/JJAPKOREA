@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,32 +28,27 @@ public class MemberController {
 	}
 	
 	@PostMapping("/loginPerson")
-	public String loginPerson(String mid, String mpw, HttpServletRequest request, RedirectAttributes redirectAttr) throws Exception {
-		String viewPage;
+	public ResponseEntity<String> loginPerson(MemberDto memberDto, HttpServletRequest request, RedirectAttributes redirectAttr) throws Exception {
 		HttpSession session = request.getSession();
-		MemberDto loginPerson = memberService.loginPerson(mid, mpw);
+		MemberDto loginPerson = memberService.loginPerson(memberDto);
 		if(loginPerson != null) {
-			viewPage = "redirect:/index";
 			session.setAttribute("loginPerson", loginPerson);
+			return ResponseEntity.ok("/jjapkorea/index");
 		} else {
-			viewPage = "redirect:/member/login";
-			redirectAttr.addFlashAttribute("error", "로그인 실패");
+			return ResponseEntity.badRequest().body("로그인 실패");
 		}
-		return viewPage;
 	}
 	
 	@PostMapping("/loginBusiness")
-	public String loginBusiness(String mid, String mpw, HttpServletRequest request) throws Exception {
-		String viewPage;
+	public ResponseEntity<String> loginBusiness(MemberDto memberDto, HttpServletRequest request) throws Exception {
 		HttpSession session = request.getSession();
-		MemberDto loginBusiness = memberService.loginBusiness(mid, mpw);
+		MemberDto loginBusiness = memberService.loginBusiness(memberDto);
 		if(loginBusiness != null) {
-			viewPage = "redirect:/index";
 			session.setAttribute("loginBusiness", loginBusiness);
+			return ResponseEntity.ok("/index");
 		} else {
-			viewPage = "redirect:/member/login";
+			return ResponseEntity.badRequest().body("로그인 실패");
 		}
-		return viewPage;
 	}
 	
 	@GetMapping("/signUpPerson")

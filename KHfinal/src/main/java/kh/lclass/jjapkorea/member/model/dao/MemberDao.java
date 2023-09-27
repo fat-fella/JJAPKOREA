@@ -17,12 +17,12 @@ public class MemberDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public MemberDto loginPerson(String mid, String mpw) throws Exception {
-		return sqlSession.selectOne("member.loginPerson", mid);
+	public MemberDto loginPerson(MemberDto memberDto) throws Exception {
+		return sqlSession.selectOne("member.loginPerson", memberDto);
 	}
 	
-	public MemberDto loginBusiness(String mid, String mpw) throws Exception {
-		return sqlSession.selectOne("member.loginBusiness", mid);
+	public MemberDto loginBusiness(MemberDto memberDto) throws Exception {
+		return sqlSession.selectOne("member.loginBusiness", memberDto);
 	}
 	
 	public int signUpMember(MemberDto memberDto) throws Exception {
