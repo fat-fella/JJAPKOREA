@@ -317,9 +317,9 @@
 		    var loginUrl = "";
 
 		    // mtype 값에 따라 다른 URL로 설정
-		    if (mtype === "P") {
+		    if (mtype !== "B") {
 		        loginUrl = "/jjapkorea/member/loginPerson"; // 개인회원 로그인 URL
-		    } else if (mtype === "B") {
+		    } else {
 		        loginUrl = "/jjapkorea/member/loginBusiness"; // 기업회원 로그인 URL
 		    }
 

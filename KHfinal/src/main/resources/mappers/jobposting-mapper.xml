@@ -3,8 +3,8 @@
 <mapper namespace="jobposting">
 	<resultMap type="jobpostingDto" id="jobpostingDto">
 		<id property="jid" column="jid"/>
+		<result property="mid" column="mid"/>
 		<result property="recruitField" column="RECRUIT_FIELD"/>
-		<result property="companyName" column="COMPANY_NAME"/>
 		<result property="userEducation" column="USER_EDUCATION"/>
 		<result property="salary" column="salary"/>
 		<result property="minSalary" column="MIN_SALARY"/>
@@ -21,7 +21,7 @@
 	
 	<insert id="insert" parameterType="jobpostingDto"> 
 		<!-- 쿼리문이 두개? -->
-		INSERT INTO info (jid, RECRUIT_FIELD, COMPANY_NAME, USER_EDUCATION, salary, MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, career, WORK_TYPE, EMP_TYPE_CODE, today, dday) VALUES (#{jid}, #{recruitField}, #{companyName}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
+		INSERT INTO info (jid, mid, RECRUIT_FIELD, USER_EDUCATION, salary, MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, career, WORK_TYPE, EMP_TYPE_CODE, today, dday) VALUES (#{jid}, #{mid}, #{recruitField}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
     </insert>
 	
 	<select id="list" resultMap="jobpostingDto">

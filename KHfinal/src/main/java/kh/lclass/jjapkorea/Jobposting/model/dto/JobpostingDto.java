@@ -1,13 +1,11 @@
 package kh.lclass.jjapkorea.Jobposting.model.dto;
 
-import org.springframework.stereotype.Component;
-
 import lombok.Data;
 
 @Data
-@Component
 public class JobpostingDto {
 	private String jid;
+	private String mid;
 	private String recruitField;
 	private String companyName;
 	private String busino;
