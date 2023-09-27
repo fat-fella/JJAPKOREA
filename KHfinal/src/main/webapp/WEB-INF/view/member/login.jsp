@@ -60,7 +60,6 @@
 							<div class="lyCapsLock" id="ipNotice">
 								<em>Caps Lock</em>이 켜져 있습니다.<span class="mainIcn mainIcnArrUp"></span>
 							</div>
-
 						</div>
 
 						<div class="input_row">
@@ -290,20 +289,6 @@
 				document.querySelector("#Co_Alert").style.display = "none";
 				inputRows[0].style.display = "block";
 				inputRows[1].style.display = "none";
-
-				$.ajax({
-					type : "POST",
-					url : "member/loginPerson",
-					data : { /* 여기에 데이터를 추가하세요 */},
-					success : function(response) {
-						// 서버 응답 처리
-						console.log(response);
-					},
-					error : function(error) {
-						// 오류 처리
-						console.error(error);
-					}
-				});
 			});
 
 			tabs[1].addEventListener("click", function() {
@@ -314,21 +299,54 @@
 				document.querySelector("#Co_Alert").style.display = "block";
 				inputRows[0].style.display = "none";
 				inputRows[1].style.display = "block";
-
-				$.ajax({
-					type : "POST",
-					url : "member/loginBusiness",
-					data : { /* 여기에 데이터를 추가하세요 */},
-					success : function(response) {
-						// 서버 응답 처리
-						console.log(response);
-					},
-					error : function(error) {
-						// 오류 처리
-						console.error(error);
-					}
-				});
 			});
+		});
+		
+		// 로그인 버튼 클릭 이벤트 핸들러
+		document.querySelector(".btLoin").addEventListener("click", function(e) {
+		    e.preventDefault(); // 기본 동작(페이지 새로고침) 막기
+
+		    // mtype 값을 가져옴
+		    var mtype = $("#mtype").val();
+
+		    // 아이디와 비밀번호 값을 가져옴
+		    var mid = $("#M_ID").val();
+		    var mpw = $("#M_PWD").val();
+
+		    // AJAX 요청을 보낼 URL
+		    var loginUrl = "";
+
+		    // mtype 값에 따라 다른 URL로 설정
+		    if (mtype === "P") {
+		        loginUrl = "/jjapkorea/member/loginPerson"; // 개인회원 로그인 URL
+		    } else if (mtype === "B") {
+		        loginUrl = "/jjapkorea/member/loginBusiness"; // 기업회원 로그인 URL
+		    }
+
+		    // AJAX를 사용하여 로그인 요청을 서버에 보냄
+		    $.ajax({
+		        url: loginUrl,
+		        method: "POST",
+		        data: {
+		            mid: mid,
+		            mpw: mpw
+		        },
+		        success: function(response) {
+		            // 서버로부터의 응답 처리
+		            if (response.success) {
+		                // 로그인 성공 시 실행할 코드
+		                alert("로그인 성공!");
+		                // 필요한 리다이렉션 등을 수행
+		            } else {
+		                // 로그인 실패 시 실행할 코드
+		                alert("로그인 실패!");
+		            }
+		        },
+		        error: function() {
+		            // AJAX 요청 실패 시 실행할 코드
+		            alert("서버 요청 실패!");
+		        }
+		    });
 		});
 	</script>
 </body>

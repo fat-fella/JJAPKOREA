@@ -11,6 +11,13 @@
 		<result property="bname" column="bname"/>
 		<result property="btel" column="btel"/>
 		<result property="bemail" column="bemail"/>
+		<result property="bind" column="bind"/>
+		<result property="bemp" column="bemp"/>
+		<result property="bestd" column="bestd"/>
+		<result property="bcap" column="bcap"/>
+		<result property="bsales" column="bsales"/>
+		<result property="bgrad_salary" column="bgradSalary"/>
+		<result property="bind_detail" column="bindDetail"/>
 	</resultMap>
 
 	<insert id="signUpBusiness" parameterType="businessDto">

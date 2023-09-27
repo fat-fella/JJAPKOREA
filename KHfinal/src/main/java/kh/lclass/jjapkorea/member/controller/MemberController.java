@@ -32,7 +32,7 @@ public class MemberController {
 	
 	@PostMapping("/loginBusiness")
 	public ModelAndView loginBusiness(ModelAndView mv, String mid) throws Exception {
-		mv.addObject("loginBusiness", memberService.loginPerson(mid));
+		mv.addObject("loginBusiness", memberService.loginBusiness(mid));
 		mv.setViewName("redirect:/index");
 		return mv;
 	}

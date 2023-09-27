@@ -13,4 +13,11 @@ public class BusinessDto {
 	private String bname;
 	private String btel;
 	private String bemail;
+	private String bind;
+	private String bemp;
+	private String bestd;
+	private String bcap;
+	private String bsales;
+	private String bgradSalary;
+	private String bindDetail;
 }
