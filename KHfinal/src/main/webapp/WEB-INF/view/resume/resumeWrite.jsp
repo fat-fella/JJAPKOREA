@@ -20,20 +20,87 @@
 			</h1>
 		</div>
 		<div class="headerRight">
-			<span id="personalHome"><a href="<%=request.getContextPath()%>/myPage">개인회원 홈</a></span>
-			<span id="resumeMgr"><a href="<%=request.getContextPath()%>/resume">이력서 관리</a></span>
+			<span id="personalHome"><a
+				href="<%=request.getContextPath()%>/myPage">개인회원 홈</a></span> <span
+				id="resumeMgr"><a href="<%=request.getContextPath()%>/resume">이력서
+					관리</a></span>
 		</div>
 	</header>
-	
+
 	<!-- 이력서 제목 작성 부분 -->
-	<div><input id="titleWrite" placeholder="기업에게 나에 대해 알려줍시다. 강점, 목표, 관심분야도 좋아요."></div>
-		
-	<!-- 인적사항 부분 -->
 	<div>
-	<h1>인적사항</h1>
+		<input id="titleWrite"
+			placeholder="기업에게 나에 대해 알려줍시다. 강점, 목표, 관심분야도 좋아요.">
 	</div>
-	
-	
+
+	<br>
+	<br>
+
+	<!-- 인적사항 부분 -->
+	<div id="personalData">
+		<h2>인적사항</h2>
+
+		<table border="1">
+			<tr>
+				<td>
+					<div>
+						<input type="text" name="name" class="question" id="nme" required
+							autocomplete="off" /> <label for="nme"><span>이름 *</span></label>
+					</div>
+				</td>
+				<td>
+					<div>
+						<input type="text" name="name" class="question" id="birth"
+							required autocomplete="off" placeholder="1995.03.20" /> <label
+							for="birth"><span>생년월일 *</span></label>
+					</div>
+				</td>
+				<td>
+					<div>
+						<span>성별 *</span> <select name="" id="sexChoice">
+							<option value="woman">여자</option>
+							<option value="man">남자</option>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div>
+						<input type="text" name="name" class="question" id="email"
+							required autocomplete="off" /> <label for="email"><span>이메일 *</span></label>
+					</div>
+				</td>
+				<td rowspan="2">
+					<div>사진</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div>
+						<input type="text" name="name" class="question" id="tel"
+							required autocomplete="off" placeholder="02-1234-1234"/> <label for="tel"><span>전화번호</span></label>
+					</div>
+
+				</td>
+				<td>
+				<input type="text" name="name" class="question" id="phone"
+							required autocomplete="off" placeholder="010-1234-1234"/> <label for="phone"><span>휴대폰번호 *</span></label>
+					
+					
+				</td>
+				<td colspan="2">
+					<div>
+					<input type="text" name="name" class="question" id="address"
+							required autocomplete="off" /> <label for="address"><span>주소</span></label>
+					
+
+					</div>
+				</td>
+
+			</tr>
+		</table>
+
+	</div>
+
 
 
 

@@ -52,3 +52,113 @@
 	left : 20px;
 	width : 500px;
 }
+
+/* 인적사항*/
+#personalData {
+	position: relative;
+	top : 200px;
+}
+
+
+
+/*=================================================*/
+/* 임시 */
+
+
+
+input,
+span,
+label {
+  font-family: 'Ubuntu', sans-serif;
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  font-size: 18px;
+}
+
+input:focus {
+  outline: 0;
+}
+/* Question */
+
+input.question {
+  font-size: 30px;
+  font-weight: 300;
+  border-radius: 4px;
+  margin: 0;
+  border: none;
+  width: 200px;
+  background: rgba(0, 0, 0, 0);
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+/* Underline and Placeholder */
+
+input.question + label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 10%;
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  height: 0px;
+}
+
+input.question:focus + label {
+  width: 200px;
+}
+
+input.question:focus,
+input.question:valid {
+  padding-top: 45px;
+}
+
+input.question:focus + label > span,
+input.question:valid + label > span {
+  top: -100px;
+  font-size: 18px;
+  color: #333;
+}
+
+input.question:valid + label {
+  border-color: green;
+}
+
+input.question:invalid {
+  box-shadow: none;
+}
+
+input.question + label > span {
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  color: #000000;
+  font-size: 22px;
+  top: -55px;
+  left: 0px;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
