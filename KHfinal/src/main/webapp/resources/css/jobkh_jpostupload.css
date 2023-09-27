@@ -7,9 +7,10 @@
     }
 
     header {
-        background-color: #0077b6;
+        background-color: #007bff;
         color: white;
         padding: 10px 0;
+        margin: 0 auto;
     }
 
     .container {

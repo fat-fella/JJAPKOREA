@@ -6,12 +6,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>채용공고 상세페이지</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jpostinfo.css">
 
 </head>
 <body>
+    <header class="jobkorea-header">
+        <div class="jobkorea-logo">
+            <a href="#">JJAPKorea</a>
+        </div>
+        <div class="jobkorea-menu">
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">채용정보</a></li>
+                <li><a href="#">기업정보</a></li>
+                <li><a href="#">스카우트</a></li>
+            </ul>
+        </div>
+    </header>
 	<section class="secReadSummary   ">
 		<div class="readSumWrap clear">
 			<article class="artReadJobSum">
@@ -137,6 +150,10 @@
 					</div>
 				</div>
 			</article>
+			<div class="jpostdetail">
+				<img src="">
+					
+			</div>
 		</div>
 
 
