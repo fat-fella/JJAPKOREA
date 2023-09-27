@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -701,38 +703,136 @@
 						</ul>
 						<!-- my 홈일경우 클래스 myPage -->
 						<ul id="devMyPage" class="userNav">
-							<ul class="userNav">
-								<li class="userNav-item login"><a
-									href="<%=request.getContextPath()%>/login"
-									class="txt-button login-button">로그인</a></li>
-								<li class="userNav-item join"><a
-									href="<%=request.getContextPath() %>/psignup"
-									class="txt-button join-button">회원가입</a></li>
-								<li class="userNav-item corp"><a
-									href="https://www.jobkorea.co.kr/Corp/Index" target="_blank"><span
-										class="spGnb">기업서비스</span></a>
+							<c:if test="${empty loginPerson}">
+								<li class="userNav-item login">
+									<a href="member/login"
+										class="txt-button login-button">로그인</a>
+								</li>
+								<li class="userNav-item join">
+									<a href="member/signUpPerson"
+										class="txt-button join-button">회원가입</a>
+								</li>
+								<li class="userNav-item corp">
+									<a href="https://www.jobkorea.co.kr/Corp/Index" target="_blank">
+										<span class="spGnb">기업서비스</span>
+									</a>
 									<div class="lyMyArea">
 										<div class="myInner">
 											<div class="lyRow">
 												<div class="btnRowWrap">
-													<a href="#">기업회원 로그인</a>
+													<a
+														href="https://www.jobkorea.co.kr/Login/Login_Tot.asp?rDBName=GI">기업회원
+														로그인</a>
 												</div>
 											</div>
 											<div class="myLists">
 												<ul>
-													<li><a href="#"><span class="tx">기업회원 홈</span></a></li>
-													<li><a href="#"><span class="tx">채용공고 등록</span></a></li>
-													<li><a href="#"><span class="tx">공고·지원자 관리</span></a></li>
-													<li><a href="#"><span class="tx">인재검색 관리</span></a></li>
-													<li><a href="#"><span class="tx">원픽 서비스 이용</span></a></li>
-													<li><a href="#"><span class="tx">기업회원 서비스 안내</span></a></li>
-													<li><a href="#"><span class="tx">서치펌 서비스 안내</span></a></li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/Corp/Main">
+															<span class="tx">기업회원 홈</span>
+														</a>
+													</li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/Yocruit/Mng/GI_Reg">
+															<span class="tx">채용공고 등록</span>
+														</a>
+													</li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/Corp/GiMng/List">
+															<span class="tx">공고·지원자 관리</span>
+														</a>
+													</li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/Corp/Person/Find">
+															<span class="tx">인재검색 관리</span>
+														</a>
+													</li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/OnePick/Intro">
+															<span class="tx">원픽 서비스 이용</span>
+														</a>
+													</li>
+													<li>
+														<a
+															href="https://www.jobkorea.co.kr/service/company/option">
+															<span class="tx">기업회원 서비스 안내</span>
+														</a>
+													</li>
+													<li>
+														<a
+															href="https://www.jobkorea.co.kr/service/headhunting/platinum">
+															<span class="tx">서치펌 서비스 안내</span>
+														</a>
+													</li>
 												</ul>
 											</div>
 										</div>
 										<span class="icnArr spGnb"></span>
-									</div></li>
-							</ul>
+									</div>
+								</li>
+							</c:if>
+							<c:if test="${!empty loginPerson}">
+								<li class="userNav-item my member">
+									<a href="<%=request.getContextPath()%>/mypage"
+										class="btnMyOpen txt-button ico-cp"
+										onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');">
+										<span class="spGnb"></span><span class="user-name">${pname}</span><span
+											class="skip">열기</span>
+									</a>
+									<div class="lyMyArea">
+										<div class="myInner">
+											<div class="myLists">
+												<ul>
+													<li>
+														<a href="https://www.jobkorea.co.kr/User/ResumeMng"
+															onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">
+															<span class="tx">이력서 관리</span>
+														</a>
+													</li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/User/ApplyMng"
+															onclick="GA_Event('공통_PC', 'gnb', '입사지원 현황');">
+															<span class="tx">입사지원 현황</span>
+														</a>
+													</li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/User/PositionOffer"
+															onclick="GA_Event('공통_PC', 'gnb', '이력서 열람기업');">
+															<span class="tx">이력서열람 기업</span>
+														</a>
+													</li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/User/Smartmatch"
+															onclick="GA_Event('공통_PC', 'gnb', '스마트매치');">
+															<span class="tx">스마트매치</span>
+														</a>
+													</li>
+													<li>
+														<a href="https://www.jobkorea.co.kr/User/Scrap"
+															onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
+															<span class="tx">스크랩</span>
+														</a>
+													</li>
+													<li>
+														<a
+															href="https://www.jobkorea.co.kr/Text_User/User_Pwd.asp"
+															onclick="GA_Event('공통_PC', 'gnb', '개인정보 수정');">
+															<span class="tx">개인정보 수정</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+											<div class="lyRow">
+												<div class="btnRowWrap">
+													<a href="/Login/Logout.asp" class="btnLogOut"
+														onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
+												</div>
+											</div>
+										</div>
+										<span class="icnArr spGnb"></span>
+									</div>
+								</li>
+							</c:if>
 						</ul>
 					</div>
 				</div>
