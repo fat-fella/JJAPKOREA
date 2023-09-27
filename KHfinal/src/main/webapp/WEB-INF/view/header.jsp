@@ -703,7 +703,7 @@
 						</ul>
 						<!-- my 홈일경우 클래스 myPage -->
 						<ul id="devMyPage" class="userNav">
-							<c:if test="${empty loginPerson}">
+							<c:if test="${!empty loginPerson}">
 								<li class="userNav-item login">
 									<a href="member/login"
 										class="txt-button login-button">로그인</a>

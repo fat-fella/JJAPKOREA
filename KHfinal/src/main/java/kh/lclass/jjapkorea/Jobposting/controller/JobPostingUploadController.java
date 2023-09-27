@@ -31,13 +31,13 @@ public class JobPostingUploadController {
 	@PostMapping()
 	public String jobUpload(JobpostingDto dto) {
 		try {
-//			int result = jobPostingUploadService.insert(dto);
-//			if(result<1) {
+			int result = jobPostingUploadService.insert(dto);
+			if(result<1) {
 //				
-//			}
-//			else{
+			}
+			else{
 //				
-//			}
+			}
 			return "redirect:/jobpostingupload";
 		} catch (Exception e){
 			e.printStackTrace();
