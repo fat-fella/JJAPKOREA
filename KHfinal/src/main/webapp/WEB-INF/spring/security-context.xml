@@ -23,7 +23,11 @@
 		
 		<security:intercept-url pattern="/index" access="permitAll" />
 		<security:intercept-url pattern="/member/**" access="permitAll" />
+		<security:intercept-url pattern="/board/**" access="permitAll" />
 		<security:intercept-url pattern="/myPage/**" access="hasRole('R_M')" />
+		<security:intercept-url pattern="/jobpostingupload/**" access="hasRole('R_M')" />
+		<security:intercept-url pattern="/rooms/**" access="hasRole('R_M')" />
+		<security:intercept-url pattern="/room/**" access="hasRole('R_M')" />
 		<security:intercept-url pattern="/admin/**" access="hasRole('R_A')" />
 		<security:form-login login-page="/member/login" 
 							authentication-success-handler-ref="customLoginSuccess"
