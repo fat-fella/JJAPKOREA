@@ -45,21 +45,11 @@ public class MemberController {
 	@PostMapping("/signUpPerson")
 	public String signUpPerson(Model model, MemberDto memberDto, PersonDto personDto, String mid) throws Exception {
 		String viewPage = "redirect:/";
-		int signUpMember = memberService.signUpMember(memberDto);
-		if(signUpMember < 1) {
-			viewPage = "member/signUpPerson";
-		} else {
-			int signUpPerson = memberService.signUpPerson(personDto);
-			if(signUpPerson < 1) {
-				int deleteMember = memberService.deleteMember(mid);
-				if(deleteMember < 1) {
-					viewPage = "comm/errorPage";
-				} else {
-					viewPage = "redirect:/signUpPerson";
-				}
-			} else {
-				viewPage = "redirect:/login";
-			}
+		try {
+			memberService.signUpMemberPerson(memberDto, personDto);
+			viewPage = "redirect:/member/login";
+		} catch (Exception e) {
+			viewPage = "redirect:/member/signUpPerson";
 		}
 		return viewPage;
 	}
@@ -79,21 +69,12 @@ public class MemberController {
 	@PostMapping("/signUpBusiness")
 	public String signUpBusiness(Model model, MemberDto memberDto, BusinessDto businessDto, String mid) throws Exception {
 		String viewPage = "redirect:/";
-		int signUpMember = memberService.signUpMember(memberDto);
-		if(signUpMember < 1) {
-			viewPage = "redirect:/signUpBusiness";
-		} else {
-			int signUpBusiness = memberService.signUpBusiness(businessDto);
-			if(signUpBusiness < 1) {
-				int deleteMember = memberService.deleteMember(mid);
-				if(deleteMember < 1) {
-					viewPage = "comm/errorPage";
-				} else {
-					viewPage = "redirect:/signUpBusiness";
-				}
-			} else {
-				viewPage = "redirect:/login";
-			}
+		try {
+			memberService.signUpMemberBusiness(memberDto, businessDto);
+			viewPage = "redirect:/member/login";
+		} catch (Exception e) {
+			e.printStackTrace();
+			viewPage = "redirect:/member/signUpBusiness";
 		}
 		return viewPage;
 	}

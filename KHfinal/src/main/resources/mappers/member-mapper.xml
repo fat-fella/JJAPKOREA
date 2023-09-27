@@ -18,9 +18,5 @@
 	<insert id="signUpMember" parameterType="memberDto">
 		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, #{mtype})
 	</insert>
-	
-	<delete id="deleteMember" parameterType="memberDto">
-		delete from member where mid = #{mid}
-	</delete>
 </mapper>
 

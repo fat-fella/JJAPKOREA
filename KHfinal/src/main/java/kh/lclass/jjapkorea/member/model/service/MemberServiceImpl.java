@@ -2,6 +2,7 @@ package kh.lclass.jjapkorea.member.model.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.member.model.dao.MemberDao;
 import kh.lclass.jjapkorea.member.model.dto.BusinessDto;
@@ -9,42 +10,35 @@ import kh.lclass.jjapkorea.member.model.dto.MemberDto;
 import kh.lclass.jjapkorea.member.model.dto.PersonDto;
 
 @Service
+@Transactional
 public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberDao memberDao;
 	
 	@Override
-	public MemberDto loginPerson(String mid) {
+	public MemberDto loginPerson(String mid) throws Exception {
 		return memberDao.loginPerson(mid);
 	}
 	
 	@Override
-	public MemberDto loginBusiness(String mid) {
+	public MemberDto loginBusiness(String mid) throws Exception {
 		return memberDao.loginBusiness(mid);
 	}
 	
 	@Override
-	public int signUpMember(MemberDto memberDto) {
-		return memberDao.signUpMember(memberDto);
+	public void signUpMemberPerson(MemberDto memberDto, PersonDto personDto) throws Exception {
+		memberDao.signUpMember(memberDto);
+		memberDao.signUpPerson(personDto);
 	}
 	
 	@Override
-	public int signUpPerson(PersonDto personDto) {
-		return memberDao.signUpPerson(personDto);
+	public void signUpMemberBusiness(MemberDto memberDto, BusinessDto businessDto) throws Exception {
+		memberDao.signUpMember(memberDto);
+		memberDao.signUpBusiness(businessDto);
 	}
 	
 	@Override
-	public int signUpBusiness(BusinessDto businessDto) {
-		return memberDao.signUpBusiness(businessDto);
-	}
-	
-	@Override
-	public int deleteMember(String mid) {
-		return memberDao.deleteMember(mid);
-	}
-	
-	@Override
-	public int checkInsertBusinessForm() {
+	public int checkInsertBusinessForm() throws Exception {
 		return memberDao.checkInsertBusinessForm();
 	}
 	

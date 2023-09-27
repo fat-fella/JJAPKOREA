@@ -17,31 +17,31 @@ public class MemberDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public MemberDto loginPerson(String mid) {
+	public MemberDto loginPerson(String mid) throws Exception {
 		return sqlSession.selectOne("member.loginPerson", mid);
 	}
 	
-	public MemberDto loginBusiness(String mid) {
+	public MemberDto loginBusiness(String mid) throws Exception {
 		return sqlSession.selectOne("member.loginBusiness", mid);
 	}
 	
-	public int signUpMember(MemberDto memberDto) {
+	public int signUpMember(MemberDto memberDto) throws Exception {
 		return sqlSession.insert("member.signUpMember", memberDto);
 	}
 	
-	public int signUpPerson(PersonDto personDto) {
+	public int signUpPerson(PersonDto personDto) throws Exception {
 		return sqlSession.insert("person.signUpPerson", personDto);
 	}
 	
-	public int signUpBusiness(BusinessDto businessDto) {
+	public int signUpBusiness(BusinessDto businessDto) throws Exception {
 		return sqlSession.insert("business.signUpBusiness", businessDto);
 	}
 	
-	public int deleteMember(String mid) {
-		return sqlSession.delete("member.deleteMember", mid);
-	}
+//	public int deleteMember(String mid) throws Exception {
+//		return sqlSession.delete("member.deleteMember", mid);
+//	}
 
-	public int checkInsertBusinessForm() {
+	public int checkInsertBusinessForm() throws Exception {
 		String namespace = "businessForm";
         String checkQuery = namespace + ".checkBusinessForm";
         int count = sqlSession.selectOne(checkQuery);

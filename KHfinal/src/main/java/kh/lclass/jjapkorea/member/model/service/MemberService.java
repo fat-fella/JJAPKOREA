@@ -7,9 +7,7 @@ import kh.lclass.jjapkorea.member.model.dto.PersonDto;
 public interface MemberService {
 	MemberDto loginPerson(String mid) throws Exception;
 	MemberDto loginBusiness(String mid) throws Exception;
-	int signUpMember(MemberDto memberDto) throws Exception;
-	int signUpPerson(PersonDto personDto) throws Exception;
-	int signUpBusiness(BusinessDto businessDto) throws Exception;
-	int deleteMember(String mid) throws Exception;
+	void signUpMemberPerson(MemberDto memberDto, PersonDto personDto) throws Exception;
+	void signUpMemberBusiness(MemberDto memberDto, BusinessDto businessDto) throws Exception;
 	int checkInsertBusinessForm() throws Exception;
 }

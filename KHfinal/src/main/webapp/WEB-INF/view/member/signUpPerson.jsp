@@ -29,7 +29,7 @@
 
 			<h3 class="skip">글로벌 메뉴</h3>
 			<ul class="gnb f_clear">
-				<li><a href="<%=request.getContextPath()%>/index">홈</a></li>
+				<li><a href="index">홈</a></li>
 				<li><a href="/help/">고객센터</a></li>
 			</ul>
 
@@ -66,7 +66,7 @@
 						<p class="subTx">
 							<strong>*</strong> 필수 입력 정보입니다.
 						</p>
-						<input id="mtype" name="mtype" type="hidden" value="1">
+						<input type="hidden" id="mtype" name="mtype" value="1">
 						<div class="row mbr_name">
 							<div class="col_1">
 								<label for="M_Name" class="mbr_name">
@@ -74,7 +74,7 @@
 								</label>
 							</div>
 							<div class="col_2">
-								<input type="text" id="M_Name" name="mname"
+								<input type="text" id="M_Name" name="pname"
 									class="mbr_name devReadOnly dev-name" maxlength="12">
 								<div class="notice_msg" id="notice_msg_name"></div>
 							</div>

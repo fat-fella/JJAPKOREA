@@ -32,7 +32,7 @@
 
 			<h3 class="skip">글로벌 메뉴</h3>
 			<ul class="gnb f_clear">
-				<li><a href="<%=request.getContextPath()%>/index">홈</a></li>
+				<li><a href="index">홈</a></li>
 				<li><a href="/help/">고객센터</a></li>
 			</ul>
 
@@ -59,13 +59,13 @@
 						<!-- 기업회원 탭 메뉴 -->
 
 						<div class="tabs tabsGiCateogry" role="tablist">
-							<a href="<%=request.getContextPath()%>/signup"
+							<a href="signUpBusiness"
 								class="tab tabGi active">기업회원</a>
 							<a href="#" class="tab tabGi ">서치펌회원</a>
 						</div>
 
 						<div class="row mbr_name mbr_co_type">
-							<input id="mtype" name="mtype" type="hidden" value="2">
+							<input type="hidden" id="mtype" name="mtype" value="2">
 							<div class="col_1">
 								<label class="mbr_name" for="Corp_Type">기업형태 <i
 									class="icon required" aria-hidden="hidde">*</i>
@@ -86,49 +86,6 @@
 										<option value="9">비영리단체·협회·교육재단</option>
 										<option value="10">외국 기관·비영리기구·단체</option>
 									</select>
-								</div>
-								<div class="notice_msg" style="display: none;"></div>
-							</div>
-						</div>
-						<div class="rows">
-							<div
-								class="row mbr_name mbr_foreign_type mbr_foreign_type1 devNationView"
-								style="display: none">
-								<div class="col_1">
-									<label for="Contn_Code" class="mbr_name">대륙선택 <i
-										class="icon required" aria-hidden="hidde">*</i>
-									</label>
-								</div>
-								<div class="col_2">
-									<div class="select_wrap dev-land">
-										<select id="Contn_Code" name="Contn_Code">
-											<option value=""></option>
-											<option value="R">아시아</option>
-											<option value="U">유럽</option>
-											<option value="S">북아메리카</option>
-											<option value="T">남아메리카</option>
-											<option value="W">아프리카</option>
-											<option value="V">오세아니아</option>
-										</select>
-									</div>
-									<div class="notice_msg"></div>
-								</div>
-							</div>
-							<div
-								class="row mbr_name mbr_foreign_type mbr_foreign_type2 devNationView"
-								style="display: none">
-								<div class="col_1">
-									<label for="Nation_Code" class="mbr_name">국가선택 <i
-										class="icon required" aria-hidden="hidde">*</i>
-									</label>
-								</div>
-								<div class="col_2">
-									<div class="select_wrap dev-nation">
-										<select id="Nation_Code" name="Nation_Code">
-											<option value=""></option>
-										</select>
-									</div>
-									<div class="notice_msg"></div>
 								</div>
 							</div>
 						</div>
@@ -206,23 +163,6 @@
 								고객센터 (1588-9350) 로 문의 해 주세요.</p>
 						</div>
 						<div class="row mbr_zipcode">
-							<!-- <a
-								href="https://www.jobkorea.co.kr/Address/Index?callback=join.corp.cb_address"
-								onclick="window.open(this.href, 'popupAddress', 'left=0, top=0, width=550,height=300, scrollbar=no, statusbar=no, resize=no'); return false;"
-								class="input is-label input-profile-addr">
-								<div class="label">
-									회사주소<i class="icon required" aria-hidden="hidde">*</i>
-								</div>
-								<div class="value"></div> <i class="icon icon-search"
-								aria-hidden="true"></i>
-								<div class="notice_msg" id="msg_addr"></div>
-							</a> <input type="hidden" id="Zip_Code" name="Zip_Code"> <input
-								type="hidden" id="Add_Addr" name="Add_Addr"> <input
-								type="hidden" id="Addr_Type" name="Addr_Type"> <input
-								type="hidden" id="Addr_Text" name="Addr_Text"> <input
-								type="hidden" id="Addr_Text1" name="Addr_Text1"> <input
-								type="hidden" name="X_Position"> <input type="hidden"
-								name="Y_Position"> -->
 							<div class="col_1">
 								<label class="mbr_name" for="Zip_Code">회사주소 <i
 									class="icon required" aria-hidden="hidde">*</i>
@@ -361,7 +301,7 @@
 									</label>
 								</div>
 								<div class="col_2">
-									<input data-val="true" id="U_ID" maxlength="16" name="U_ID"
+									<input data-val="true" id="U_ID" maxlength="16" name="mid"
 										class="dev-id" type="text" value="">
 									<div class="notice_msg" id="notice_msg_id"></div>
 								</div>
@@ -374,7 +314,7 @@
 								</div>
 								<div class="col_2">
 									<input id="U_PWD" class="dev-password" maxlength="16"
-										name="U_PWD" type="password" style="ime-mode: disabled;"
+										name="mpw" type="password" style="ime-mode: disabled;"
 										value="">
 									<button type="button" class="btnHelp devPwdHelpBtn"
 										title="안전한 비밀번호 작성법">?</button>
