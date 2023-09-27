@@ -1,0 +1,146 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.readSumWrap {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일링 */
+.hd_3 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* .header 클래스 수정 */
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.coName {
+    font-size: 18px;
+    color: #007bff;
+    margin-right: 10px; /* 텍스트와 버튼 사이의 간격 조절 */
+}
+
+.girBtnFav {
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+
+.girBtnFav:hover {
+    background-color: #0056b3; /* 버튼 호버 시 색상 변경 */
+}
+
+.tbcolrow {
+	display: flex;
+	box-sizing: border-box;
+}
+/* 칸 스타일링 */
+.tbCol {
+    width: 50%; /* 칸의 너비를 50%로 조정하여 두 칸이 한 줄에 나오도록 함 */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-sizing: border-box; /* 여백 포함해서 너비 계산 */
+    height: 236.27; /* 높이를 100%로 설정하여 두 칸의 높이를 동일하게 유지 */
+}
+.tbCoInfo {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+
+/* 제목 스타일링 */
+.hd_4 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 0;
+}
+
+/* 세부 칸 스타일링 */
+.subCol {
+    background-color: #fff; /* 세부 칸 배경색 */
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+/* 항목 스타일링 */
+.tbList dt {
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 3px; /* 항목간 간격 축소 */
+}
+
+.tbList dd {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 14px; /* 항목 텍스트 크기 축소 */
+}
+
+/* 추가된 스타일 */
+.sumBtn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tplBtn {
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.tplBtnBlue {
+    background-color: #007bff;
+}
+
+.girBtnScr {
+    font-size: 14px;
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.girBtnScr:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.deadlineInfo {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}

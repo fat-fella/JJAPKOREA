@@ -47,4 +47,9 @@ public class JobPostingUploadController {
 		
 	}
 	
+	@GetMapping("/list")
+	public String jobPostingUploadSubmit(JobpostingDto dto) {
+		return "/jpost/jpostUploadList";
+	}
+	
 }

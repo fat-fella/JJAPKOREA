@@ -22,7 +22,7 @@
             </div>
         </div>
     </header>
-    <form action="/경로" method="POST" class="jpostform">
+    <form action="/jjapkorea/jobpostingupload/list" method="POST" class="jpostform">
         <div class="jposthead">
             <h2>채용공고 등록</h2>
             <h6>양식에 맞게 채용공고를 등록해주세요.</h6>
@@ -121,21 +121,9 @@
         }).then(editor => {
             window.editor = editor;
         });
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    </script>
+    <script>
+    
     </script>
 
 </body>

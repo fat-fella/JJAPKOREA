@@ -38,7 +38,7 @@
 					<button class="btn btn-outline-secondary" id="button-send">전송</button>
 				</div>
 			</div>
-		</sdiv>
+		</div>
 		<div class="col-6"></div>
 	</div>
 
