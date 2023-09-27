@@ -17,7 +17,7 @@ import kh.lclass.jjapkorea.scrap.model.dto.ScrapDto;
 import kh.lclass.jjapkorea.scrap.model.service.ScrapService;
 
 @Controller
-@RequestMapping("/mypage")
+@RequestMapping("/myPage")
 public class MyPageController {
 	@Autowired
 	private ScrapService scrapService;
