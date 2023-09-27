@@ -36,4 +36,9 @@ public class APISnsMemberServiceImpl implements APISnsMemberService {
 		return dao.getBySns(snsUser);
 	}
 
+	@Override
+	public APISnsMember psignup(APISnsLoginDTO dto) throws Exception {
+		return dao.login(dto);
+	}
+	
 }

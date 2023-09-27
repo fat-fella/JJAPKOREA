@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.board.model.dao.BoardDao;
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
@@ -17,9 +19,11 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardDto> selectList() throws Exception{
 		 return boardDao.selectList();
 	}
-
+	
+	@Transactional(isolation = Isolation.READ_COMMITTED)
 	@Override
 	public BoardDto selectOne(int bno) throws Exception{
+		boardDao.boardReadCnt(bno);
 		 return boardDao.selectOne(bno);
 	}
 

@@ -32,4 +32,8 @@ public class BoardDao {
 	public int delete(int bno) throws Exception{
 		return sqlSession.delete("board.delete", bno);
 	}
+	// 게시판 조회수
+	public int boardReadCnt(int bno) throws Exception{
+		return sqlSession.update("board.boardReadCnt", bno);
+	}
 }
