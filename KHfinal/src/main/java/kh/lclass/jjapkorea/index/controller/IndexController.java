@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
 import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
 import kh.lclass.jjapkorea.api.WorknetApi;
+import kh.lclass.jjapkorea.member.model.dto.MemberDto;
 
 @Controller
 public class IndexController {
@@ -24,7 +25,7 @@ public class IndexController {
 	private JobpostingService jobpostingService;
     
     @GetMapping("/index")
-    public String index(Model model) {
+    public String index(Model model, HttpSession session) {
         try {
 //            // WorknetApi를 통해 DTO 리스트를 가져옵니다.
 //            worknetApi.getJobPostings();
@@ -40,7 +41,8 @@ public class IndexController {
 //                String attributeName = "list" + (startIndex / chunkSize + 1); // 새로운 속성 이름 생성 (list1, list2, ...)
 //                model.addAttribute(attributeName, subList);
 //            }
-
+        	String loginPerson = "someValue";
+        	model.addAttribute("loginPerson", loginPerson);
             return "index";
         } catch (Exception e) {
         	return "comm/error";
