@@ -13,13 +13,8 @@ public class LoginInterceptor implements HandlerInterceptor{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		Object obj1 = request.getSession().getAttribute("loginPerson");
-		if(obj1 == null) {  // 로그인 되어있지 않은 상태
-			response.sendRedirect(request.getContextPath()+"/member/login");
-			// 타겟 URL요청으로 가지 않음.
-			return false;
-		}
 		Object obj2 = request.getSession().getAttribute("loginBusiness");
-		if(obj2 == null) {  // 로그인 되어있지 않은 상태
+		if(obj1 == null || obj2 == null) {  // 로그인 되어있지 않은 상태
 			response.sendRedirect(request.getContextPath()+"/member/login");
 			// 타겟 URL요청으로 가지 않음.
 			return false;
