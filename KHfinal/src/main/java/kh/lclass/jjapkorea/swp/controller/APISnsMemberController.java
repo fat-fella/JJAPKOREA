@@ -66,7 +66,6 @@ public class APISnsMemberController {
 	public String snsLoginCallback(@PathVariable String snsService,
 			Model model, @RequestParam String code, HttpSession session) throws Exception {
 		
-		logger.info("snsLoginCallback: service={}", snsService);
 		SnsValue sns = null;
 	    if (StringUtils.equals("naver", snsService))
 	        sns = naverSns;
@@ -86,18 +85,20 @@ public class APISnsMemberController {
 		APISnsMember apiSnsMember = service.getBySns(snsUser);
 		if (apiSnsMember == null) {
 			model.addAttribute("result", "존재하지 않는 사용자입니다. 가입해 주세요.");
+			model.addAttribute("snsprofile", snsUser);
 			
 			//미존재시 가입페이지로!!
-			
+			return "apiSnsLoginResult";
 		} else {
 			model.addAttribute("result", apiSnsMember.getMname() + "님 반갑습니다.");
 			
 			// 4. 존재시 강제로그인
 			session.setAttribute(APISnsSessionNames.LOGIN, apiSnsMember);
+			return "redirect:/index";
 		}
 		
 		
-		return "apiSnsLoginResult";
+		//return "apiSnsLoginResult";
 	}
 	
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)

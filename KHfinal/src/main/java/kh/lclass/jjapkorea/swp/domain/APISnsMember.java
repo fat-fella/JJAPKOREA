@@ -12,6 +12,8 @@ public class APISnsMember {
 	private Integer mpoint;
 
 	private String email;
+	private String id;
+	
 	private String googleid;
 	private String naverid;
 	private String kakaoid;
@@ -19,6 +21,7 @@ public class APISnsMember {
 
 	private String loginip;
 	private Date lastlogin;
+	
 	
 	
 	

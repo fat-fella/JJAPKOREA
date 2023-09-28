@@ -6,30 +6,30 @@
 <mapper namespace="kh.lclass.jjapkorea.swp.persistence.apisnsmember-mapper">
 
     <select id="login" resultType="kh.lclass.jjapkorea.swp.domain.APISnsMember">
-        select * from MEMBER where mid = #{mid} and mpw = password(#{mpw});
+		SELECT * FROM MEMBER_APISNS WHERE apimid = SUBSTRING_INDEX(#{email}, '@', 1) AND apiid = password(#{id});
     </select>
     
     <update id="keepLogin">
-        update MEMBER set sessionkey = #{sessionkey}, sessionlimit = #{sessionlimit}
-         where mid = #{mid}
+        update MEMBER_APISNS set sessionkey = #{sessionkey}, sessionlimit = #{sessionlimit}
+    	WHERE apiid = SUBSTRING_INDEX(#{email}, '@', 1)
     </update>
     
     <select id="checkLoginBefore" resultType="kh.lclass.jjapkorea.swp.domain.APISnsMember">
-        select * from MEMBER
+        select * from MEMBER_APISNS
          where sessionkey = #{loginCookie}
            and sessionlimit > now()
     </select>
     
     <select id="getBySnsNaver" resultType="kh.lclass.jjapkorea.swp.domain.APISnsMember">
-        select * from MEMBER where naverid = #{ naverid }
+        select * from MEMBER_APISNS where naverid = #{ naverid }
     </select>
     
     <select id="getBySnsGoogle" resultType="kh.lclass.jjapkorea.swp.domain.APISnsMember">
-        select * from MEMBER where googleid = #{ googleid }
+        select * from MEMBER_APISNS where googleid = #{ googleid }
     </select>
     
     <select id="getBySnsKakao" resultType="kh.lclass.jjapkorea.swp.domain.APISnsMember">
-        select * from MEMBER where kakaoid = #{ kakaoid }
+        select * from MEMBER_APISNS where kakaoid = #{ kakaoid }
     </select>
     
 </mapper>

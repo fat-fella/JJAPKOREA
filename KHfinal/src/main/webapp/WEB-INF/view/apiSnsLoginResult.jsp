@@ -88,23 +88,23 @@
 						</div>
 						<div class="row mbr_id">
 							<div class="col_1">
-								<label for="idcheck">아이디(잡코리아, 알바몬 통합 ID)<i
+								<label for="idcheck">ID<i
 									class="icon required" aria-hidden="hidde">*</i></label>
 							</div>
 							<div class="col_2">
 								<input type="text" id="idcheck" name="idcheck" maxlength="16"
-									class="dev-id" value="" style="ime-mode: disabled;">
+									class="dev-id" value="${snsprofile.email}" style="ime-mode: disabled;">
 								<div class="notice_msg" id="notice_msg_id"></div>
 							</div>
 						</div>
 						<div class="row mbr_passwd">
-							<div class="col_1">
+							<!-- <div class="col_1">
 								<label for="M_Pwd">비밀번호(8~16자의 영문, 숫자, 특수기호)<i
 									class="icon required" aria-hidden="hidde">*</i></label>
-							</div>
+							</div> -->
 							<div class="col_2">
 								<input type="password" id="M_Pwd" name="M_Pwd"
-									class="dev-password" maxlength="16" style="ime-mode: disabled;">
+									class="dev-password" value="${snsprofile.id} maxlength="16" style="ime-mode: disabled;">
 								<button type="button" class="btnHelp" title="안전한 비밀번호 작성법">?</button>
 								<div class="lyHelp">
 									<dl>
@@ -136,30 +136,30 @@
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Email" name="M_Email"
-									class="mbr_email_id dev-mail" size="8" maxlength="30">
+									class="mbr_email_id dev-mail"  value="${snsprofile.email}" size="8" maxlength="30">
 								<div class="notice_msg" id="notice_msg_mail"></div>
 								<input type="hidden" id="Email_ID" name="Email_ID"> <input
 									type="hidden" id="Email_Addr" name="Email_Addr">
 							</div>
 						</div>
-						<div class="row mbr_phone">
-							<div class="col_1">
-								<label for="M_Phone">휴대폰번호<i class="icon required"
-									aria-hidden="hidde">*</i></label>
+						<!-- 	<div class="row mbr_phone">
+								<div class="col_1">
+									<label for="M_Phone">휴대폰번호<i class="icon required"
+										aria-hidden="hidde">*</i></label>
+								</div>
+								<div class="col_2">
+									<input type="text" id="M_Phone" name="M_Phone" size="4"
+										maxlength="13" class="dev-phone">
+									<button type="button" class="button buttonSendCertification"
+										id="btnSendCert">
+										<span>인증번호 전송</span>
+									</button>
+									<div class="notice_msg" id="notice_msg_phone"></div>
+									<input type="hidden" id="M_Phone1" name="M_Phone1"> <input
+										type="hidden" id="M_Phone2" name="M_Phone2"> <input
+										type="hidden" id="M_Phone3" name="M_Phone3">
+								</div>
 							</div>
-							<div class="col_2">
-								<input type="text" id="M_Phone" name="M_Phone" size="4"
-									maxlength="13" class="dev-phone">
-								<button type="button" class="button buttonSendCertification"
-									id="btnSendCert">
-									<span>인증번호 전송</span>
-								</button>
-								<div class="notice_msg" id="notice_msg_phone"></div>
-								<input type="hidden" id="M_Phone1" name="M_Phone1"> <input
-									type="hidden" id="M_Phone2" name="M_Phone2"> <input
-									type="hidden" id="M_Phone3" name="M_Phone3">
-							</div>
-						</div>
 						<div class="row authentication_check">
 							<div class="col_1">
 								<label for="Certify_Num" class="authentication_number">인증번호
@@ -182,7 +182,7 @@
 								<div class="notice_msg" id="notice_msg_certify"></div>
 							</div>
 
-						</div>
+						</div> -->
 					</div>
 					<h4 class="skip">약관 동의</h4>
 					<div class="row_group line_all policy">

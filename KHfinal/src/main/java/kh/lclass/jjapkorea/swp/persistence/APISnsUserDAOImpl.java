@@ -33,10 +33,12 @@ public class APISnsUserDAOImpl implements APISnsUserDAO {
 		return session.selectOne(LOGIN, dto);
 	}
 
+	// SNSAPI 로그인 유지하는 작업 수행
+    // sqlSession을 사용하여 데이터베이스 업데이트 작업을 수행
 	@Override
-	public void keepLogin(String apimid, String sessionId, Date expire) {
+	public void keepLogin(String apiMid, String sessionId, Date expire) {
 		Map<String, Object> paramMap = new HashMap<>();
-		paramMap.put("apimid", apimid);
+		paramMap.put("apimid", apiMid);
 		paramMap.put("sessionkey", sessionId);
 		paramMap.put("sessionlimit", expire);
 		session.update(KEEP_LOGIN, paramMap);

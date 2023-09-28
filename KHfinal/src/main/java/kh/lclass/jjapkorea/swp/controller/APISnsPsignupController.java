@@ -19,6 +19,7 @@ import org.springframework.social.oauth2.OAuth2Operations;
 import org.springframework.social.oauth2.OAuth2Parameters;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,6 +52,9 @@ public class APISnsPsignupController {
 	
 	@Inject
 	private SnsValue kakaoSns;
+	
+	@Inject
+	private APISnsMemberService saveMember;
 	
 	@Inject
 	private GoogleConnectionFactory googleConnectionFactory;
@@ -218,4 +222,11 @@ public class APISnsPsignupController {
 		}
 	}
 	
+    // 회원 가입 폼 제출 시 데이터 처리
+	/*
+	 * @RequestMapping(value = "/psignup.do", method = RequestMethod.POST) public
+	 * String psignupSubmit(@ModelAttribute APISnsMember member) { // 폼에서 전송된 데이터를
+	 * APISnsMember 객체로 바인딩하고, 서비스를 사용하여 데이터베이스에 저장합니다. service.saveMember(member);
+	 * return "redirect:/psignupSuccess"; // 회원 가입 성공 페이지로 리다이렉트 }
+	 */
 }
