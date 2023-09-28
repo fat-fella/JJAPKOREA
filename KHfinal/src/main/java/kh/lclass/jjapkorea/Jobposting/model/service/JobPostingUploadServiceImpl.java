@@ -1,5 +1,7 @@
 package kh.lclass.jjapkorea.Jobposting.model.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,4 +20,8 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 		return jobpostinguploadDao.insert(dto);
 	}
 	
+	public List<JobpostingDto> selectList(String mid) throws Exception{
+		return jobpostinguploadDao.selectList(mid);
+		
+	}
 }

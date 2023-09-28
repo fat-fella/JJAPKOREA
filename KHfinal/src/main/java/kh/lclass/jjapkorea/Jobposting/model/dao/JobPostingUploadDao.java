@@ -1,5 +1,7 @@
 package kh.lclass.jjapkorea.Jobposting.model.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,6 +16,10 @@ public class JobPostingUploadDao {
 	public int insert(JobpostingDto dto) throws Exception{
 		int result = sqlSession.insert("jobPostingUpload.insert", dto);
 		return result;
+	}
+	
+	public List<JobpostingDto> selectList(String mid) throws Exception{
+		return sqlSession.selectList("jobPostingUpload.selectList", mid);
 	}
 	
 	

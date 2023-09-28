@@ -3,21 +3,22 @@
 <mapper namespace="jobpostingUpload">
 	<resultMap type="jobpostingDto" id="jobpostingDtoResultMap">
 		<id property="jid" column="jid"/>
+		<result property="mid" column="MID"/>
 		<result property="recruitField" column="RECRUIT_FIELD"/>
 		<result property="companyName" column="COMPANY_NAME"/>
-		<result property="busino" column="busino"/>
+		<result property="busino" column="BUISNO"/>
 		<result property="userEducation" column="USER_EDUCATION"/>
-		<result property="salary" column="salary"/>
+		<result property="salary" column="SALARY"/>
 		<result property="minSalary" column="MIN_SALARY"/>
 		<result property="maxSalary" column="MAX_SALARY"/>
 		<result property="registDate" column="REGIST_DATE"/>
 		<result property="closeDate" column="CLOSE_DATE"/>
 		<result property="reTitle" column="RE_TITLE"/>
-		<result property="career" column="career"/>
+		<result property="career" column="CAREER"/>
 		<result property="workType" column="WORK_TYPE"/>
 		<result property="empTypeCode" column="EMP_TYPE_CODE"/>
-		<result property="today" column="today"/>
-		<result property="dday" column="dday"/>
+		<result property="today" column="TODAY"/>
+		<result property="dday" column="DDAY"/>
 	</resultMap>
 	<resultMap id="jobPostingCategoryDtoResultMap" type="jobPostingCategoryDto">
 		<id property="recruitField" column="RECRUIT_FIELD"/>
@@ -32,11 +33,13 @@
 	
 	<insert id="insert" parameterType="jobpostingDto"> 
 		<!-- 쿼리문이 두개? -->
-		INSERT INTO INFO VALUES (#{jid}, #{recruitField}, #{companyName}, #{busino}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
+		INSERT INTO INFO (JID, MID, RECRUIT_FIELD, COMPANY_NAME, BUSINO, USER_EDUCATION, SALARY, MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, CAREER, WORK_TYPE, EMP_TYPE_CODE, TODAY, DDAY) VALUES (#{jid}, #{mid}, #{recruitField}, #{companyName}, #{busino}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
     </insert>
     <select id="selectFirst" resultMap="jobPostingCategoryDtoResultMap">
     	SELECT JOBSMCAT FROM RSField 
     </select>
-	
+	<select id="selectList" resultMap="jobpostingDtoResultMap">
+		SELECT * FROM INFO WHERE MID =#{mid}
+	</select>
 	
 </mapper>
