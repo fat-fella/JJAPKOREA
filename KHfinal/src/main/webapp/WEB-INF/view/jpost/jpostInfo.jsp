@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>채용공고 상세페이지</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jpostinfo.css">
 

@@ -23,25 +23,24 @@ public class JobPostingUploadController {
 	@Autowired
 	private JobPostingUploadService jobPostingUploadService;
 	
-	@GetMapping()
+	@GetMapping("/register")
 	public String jobUpload(){
 		return "jpost/jpostUpload";
 	}
 	
-	@PostMapping()
+	@PostMapping("/register")
 	public String jobUpload(JobpostingDto dto) {
 		try {
 			int result = jobPostingUploadService.insert(dto);
 			if(result<1) {
-//				
+				return "redirect:/register";
 			}
 			else{
-//				
+				return "redirect:/list";
 			}
-			return "redirect:/jobpostingupload";
 		} catch (Exception e){
 			e.printStackTrace();
-			return "redirect:/jobpostingupload";
+			return "redirect:/register";
 			
 		}
 		
@@ -52,4 +51,17 @@ public class JobPostingUploadController {
 		return "/jpost/jpostInfo";
 	}
 	
+
+	
+	@GetMapping("/list")
+	public ModelAndView jobPostingUploadList(ModelAndView mv, String mid) {
+		try {
+			mv.addObject("jpostlist", jobPostingUploadService.selectList(mid));
+			mv.setViewName("jpost/jpostList");
+		} catch (Exception e) {
+			e.printStackTrace();
+			mv.setViewName("jpost/jpostList");
+		}
+		return mv;
+	}
 }
