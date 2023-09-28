@@ -8,7 +8,9 @@
 <meta charset="UTF-8">
 <title>짭코리아 취업공고</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_jpostupload.css">
+
 </head>
 <body>
     <header>
@@ -22,7 +24,7 @@
             </div>
         </div>
     </header>
-    <form action="/jjapkorea/jobpostingupload/list" method="POST" class="jpostform">
+    <form action="register" method="POST" class="jpostform">
         <div class="jposthead">
             <h2>채용공고 등록</h2>
             <h6>양식에 맞게 채용공고를 등록해주세요.</h6>
@@ -49,6 +51,7 @@
                     </select>
                     <label style=font-size:12px;color:red;>1차 세부채용분야<span>*</span></label>
                     <select name="secondRecruitField" id="secondRecruitField">
+                    
                     	<option>TODO</option>
                     </select>
                      <label style=font-size:12px;color:red;>2차 세부채용분야<span>*</span></label>
@@ -123,7 +126,7 @@
         });
     </script>
     <script>
-    
+
     </script>
 
 </body>

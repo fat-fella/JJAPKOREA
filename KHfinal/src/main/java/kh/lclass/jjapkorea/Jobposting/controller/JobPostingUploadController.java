@@ -23,12 +23,12 @@ public class JobPostingUploadController {
 	@Autowired
 	private JobPostingUploadService jobPostingUploadService;
 	
-	@GetMapping()
+	@GetMapping("/register")
 	public String jobUpload(){
 		return "jpost/jpostUpload";
 	}
 	
-	@PostMapping()
+	@PostMapping("/register")
 	public String jobUpload(JobpostingDto dto) {
 		try {
 			int result = jobPostingUploadService.insert(dto);
@@ -38,10 +38,10 @@ public class JobPostingUploadController {
 			else{
 //				
 			}
-			return "redirect:/jobpostingupload";
+			return "redirect:/register";
 		} catch (Exception e){
 			e.printStackTrace();
-			return "redirect:/jobpostingupload";
+			return "redirect:/register";
 			
 		}
 		
