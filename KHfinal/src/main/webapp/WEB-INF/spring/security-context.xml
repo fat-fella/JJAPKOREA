@@ -22,7 +22,7 @@
 		<security:intercept-url pattern="/resources/**" access="permitAll" />
 		<security:intercept-url pattern="/error/**" access="permitAll" />
 		
-		<security:intercept-url pattern="/index" access="isAuthenticated()" />
+		<security:intercept-url pattern="/index" access="permitAll" />
 		<security:intercept-url pattern="/member/login" access="permitAll" />
 		<security:intercept-url pattern="/member/signUpPerson" access="permitAll" />
 		<security:intercept-url pattern="/member/signUpBusiness" access="permitAll" />
@@ -98,5 +98,4 @@
     <bean id="customAccessFailure" class="kim.spring.ej.security.CustomAccessFailureHandler"></bean>
      -->
     <bean id="customLoginSuccess" class="kh.lclass.jjapkorea.common.CustomLoginSuccessHandler"></bean>
-    <!-- <bean id="memberService" class="kh.lclass.jjapkorea.member.model.service.MemberService"></bean> -->
 </beans>
