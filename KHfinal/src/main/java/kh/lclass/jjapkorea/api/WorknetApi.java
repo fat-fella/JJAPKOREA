@@ -151,7 +151,7 @@ public class WorknetApi {
 //                    System.out.println("Failed to insert data: " + dto);
 //                }
             	if (jobpostingService != null) {
-            		jobpostingService.insert(dto);
+            		jobpostingService.insertJobPosting(dto);
             	} else {
             	    // service가 null인 경우 처리할 내용을 여기에 추가
             		System.out.println("null");

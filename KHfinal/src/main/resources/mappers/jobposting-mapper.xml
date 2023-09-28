@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="jobposting">
-	<resultMap type="jobpostingDto" id="jobpostingDto">
+<mapper namespace="jobPosting">
+	<resultMap type="jobPostingDto" id="jobPostingDto">
 		<id property="jid" column="jid"/>
 		<result property="mid" column="mid"/>
-		<result property="recruitField" column="RECRUIT_FIELD"/>
-		<result property="userEducation" column="USER_EDUCATION"/>
+		<result property="recruitField" column="recruit_field"/>
+		<result property="userEducation" column="user_education"/>
 		<result property="salary" column="salary"/>
-		<result property="minSalary" column="MIN_SALARY"/>
-		<result property="maxSalary" column="MAX_SALARY"/>
-		<result property="registDate" column="REGIST_DATE"/>
-		<result property="closeDate" column="CLOSE_DATE"/>
-		<result property="reTitle" column="RE_TITLE"/>
+		<result property="minSalary" column="min_salary"/>
+		<result property="maxSalary" column="max_salary"/>
+		<result property="registDate" column="regist_date"/>
+		<result property="closeDate" column="close_date"/>
+		<result property="reTitle" column="re_title"/>
 		<result property="career" column="career"/>
-		<result property="workType" column="WORK_TYPE"/>
-		<result property="empTypeCode" column="EMP_TYPE_CODE"/>
+		<result property="workType" column="work_type"/>
+		<result property="empTypeCode" column="emp_type_code"/>
 		<result property="today" column="today"/>
 		<result property="dday" column="dday"/>
 	</resultMap>
 	
-	<insert id="insert" parameterType="jobpostingDto"> 
+	<insert id="insertJobPosting" parameterType="jobPostingDto"> 
 		<!-- 쿼리문이 두개? -->
-		INSERT INTO info (jid, mid, RECRUIT_FIELD, USER_EDUCATION, salary, MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, career, WORK_TYPE, EMP_TYPE_CODE, today, dday) VALUES (#{jid}, #{mid}, #{recruitField}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
+		insert into info (jid, mid, recruit_field, user_education, salary, min_salary, max_salary, regist_date, close_date, re_title, career, work_type, emp_type_code, today, dday) VALUES (#{jid}, #{mid}, #{recruitField}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
     </insert>
 	
-	<select id="list" resultMap="jobpostingDto">
+	<select id="listJobPosting" resultMap="jobPostingDto">
 		select * from info
 	</select>
 	

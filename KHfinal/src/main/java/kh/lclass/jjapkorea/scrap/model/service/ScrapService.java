@@ -94,7 +94,7 @@ public class ScrapService {
 	public List<ScrapDto> scrapList(String mid) throws Exception{
 		List<ScrapDto> result = scrapDao.scrapList(mid);
 		for (ScrapDto scrapDto : result) {
-			List<JobpostingDto> jobPostingList = jobpostingService.list();
+			List<JobpostingDto> jobPostingList = jobpostingService.listJobPosting();
 			List<JobpostingDto> matchedJobPostingList = new ArrayList<>();
 			for (JobpostingDto jobPostingDto : jobPostingList) {
 				if (scrapDto.getJid().equals(jobPostingDto.getJid())) {

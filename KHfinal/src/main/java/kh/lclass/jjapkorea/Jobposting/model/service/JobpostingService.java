@@ -30,8 +30,8 @@ public class JobpostingService {
 //		return result;
 //	}
 	@Transactional
-	public int insert(JobpostingDto vo) throws Exception{
-		return jobPotingDao.insert(vo);
+	public int insertJobPosting(JobpostingDto jobPostinDto) throws Exception{
+		return jobPotingDao.insertJobPosting(jobPostinDto);
 	}
 	
 //	public List<JobpostingDto> list(){
@@ -41,7 +41,7 @@ public class JobpostingService {
 //		session.close();
 //		return result;
 //	}
-	public List<JobpostingDto> list() throws Exception{
-		return jobPotingDao.list();
+	public List<JobpostingDto> listJobPosting() throws Exception{
+		return jobPotingDao.listJobPosting();
 	}
 }

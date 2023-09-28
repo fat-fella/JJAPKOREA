@@ -63,8 +63,8 @@ public class JobPostingDao {
 //			e.printStackTrace();
 //		}
 //		return result;
-	public int insert(JobpostingDto vo) throws Exception{
-		return sqlSession.insert("jobposting.insert", vo);
+	public int insertJobPosting(JobpostingDto jobPostinDto) throws Exception{
+		return sqlSession.insert("jobPosting.insertJobPosting", jobPostinDto);
 	}
 	
 //	public List<JobpostingDto> list(Connection conn){
@@ -113,7 +113,7 @@ public class JobPostingDao {
 //		}
 //		return result;
 //	}
-	public List<JobpostingDto> list() throws Exception{
-		return sqlSession.selectList("jobposting.list");
+	public List<JobpostingDto> listJobPosting() throws Exception{
+		return sqlSession.selectList("jobPosting.listJobPosting");
 	}
 }
