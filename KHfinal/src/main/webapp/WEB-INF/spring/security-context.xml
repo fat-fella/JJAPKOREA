@@ -35,8 +35,9 @@
 		<security:intercept-url pattern="/room/**" access="isAuthenticated()" />
 		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 		<security:form-login login-page="/login/"
+							authentication-success-handler-ref="customLoginSuccess"
 							authentication-failure-url="/login/"
-							login-processing-url="/login/person"
+							login-processing-url="/login"
 							username-parameter="mid"
 							password-parameter="mpw"
 		/>
@@ -99,4 +100,5 @@
     <bean id="customUserDetailsService" class="kim.spring.ej.security.CustomUserDetailsServiceImpl"></bean>
     <bean id="customAccessFailure" class="kim.spring.ej.security.CustomAccessFailureHandler"></bean>
      -->
+    <bean id="customLoginSuccess" class="kh.lclass.jjapkorea.common.CustomLoginSuccessHandler"></bean>
 </beans>

@@ -27,9 +27,9 @@ public class SignUpController {
 		String viewPage = "redirect:/";
 		try {
 			memberService.signUpMemberPerson(memberDto, personDto);
-			viewPage = "redirect:/member/login";
+			viewPage = "redirect:/login/";
 		} catch (Exception e) {
-			viewPage = "redirect:/member/signUpPerson";
+			viewPage = "redirect:/signUp/person";
 		}
 		return viewPage;
 	}
@@ -51,10 +51,10 @@ public class SignUpController {
 		String viewPage = "redirect:/";
 		try {
 			memberService.signUpMemberBusiness(memberDto, businessDto);
-			viewPage = "redirect:/member/login";
+			viewPage = "redirect:/login/";
 		} catch (Exception e) {
 			e.printStackTrace();
-			viewPage = "redirect:/member/signUpBusiness";
+			viewPage = "redirect:/signUp/business";
 		}
 		return viewPage;
 	}

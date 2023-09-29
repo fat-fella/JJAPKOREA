@@ -35,8 +35,8 @@
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person on"><a href="signUpPerson">개인회원</a></li>
-				<li class="corp "><a href="signUpBusiness">기업회원</a></li>
+				<li class="person on"><a href="person">개인회원</a></li>
+				<li class="corp "><a href="business">기업회원</a></li>
 			</ul>
 		</div>
 
@@ -45,7 +45,7 @@
 			<h3 class="skip">개인회원 가입 정보</h3>
 			<fieldset>
 				<legend>개인회원 가입</legend>
-				<form action="signUpPerson" id="frm" method="post" name="frm">
+				<form action="person" id="frm" method="post" name="frm">
 					<!-- 소셜 로그인 -->
 					<div class="row_group row_group_social">
 						<h4>소셜로 간편하게 로그인하세요</h4>
