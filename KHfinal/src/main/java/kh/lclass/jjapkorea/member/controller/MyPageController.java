@@ -22,7 +22,7 @@ public class MyPageController {
 	@Autowired
 	private ScrapService scrapService;
 	
-	@GetMapping
+	@GetMapping("/")
     public String showMyPage(HttpSession session, Model model) throws Exception{
         String pname = (String) session.getAttribute("pname");
         String pname2 = (String) session.getAttribute("pname2");
@@ -43,7 +43,7 @@ public class MyPageController {
         return "member/mypage"; // mypage.jsp 파일 경로
     }
 
-    @PostMapping
+    @PostMapping("/")
     public void addScrap(HttpServletRequest request) throws Exception{
         String jid = request.getParameter("jid");
 

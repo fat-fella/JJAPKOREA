@@ -299,9 +299,9 @@
 
 		    // mtype 값에 따라 다른 URL로 설정
 		    if (mtype !== "ROLE_BUSINESS") {
-		        loginUrl = "/jjapkorea/member/loginPerson"; // 개인회원 로그인 URL
+		        loginUrl = "/jjapkorea/login/person"; // 개인회원 로그인 URL
 		    } else {
-		        loginUrl = "/jjapkorea/member/loginBusiness"; // 기업회원 로그인 URL
+		        loginUrl = "/jjapkorea/login/business"; // 기업회원 로그인 URL
 		    }
 
 		    // AJAX를 사용하여 로그인 요청을 서버에 보냄

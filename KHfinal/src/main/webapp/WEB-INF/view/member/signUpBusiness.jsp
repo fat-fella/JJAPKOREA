@@ -18,7 +18,7 @@
 
 		<div id="header">
 			<h1>
-				<a href="<%=request.getContextPath()%>/index">
+				<a href="index">
 					<img
 						src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
 						alt="JOBKOREA x albamon">

@@ -18,25 +18,27 @@
 		1. http://localhost:8090/db1/board/insert - 진입가능
 		2. http://localhost:8090/db1/member/list -진입불가 -login페이지 보이지
 		 -->
-		 <security:csrf disabled="true" />
+		<security:csrf disabled="true" />
 		<security:intercept-url pattern="/resources/**" access="permitAll" />
 		<security:intercept-url pattern="/error/**" access="permitAll" />
 		
 		<security:intercept-url pattern="/index" access="permitAll" />
-		<security:intercept-url pattern="/member/login" access="permitAll" />
-		<security:intercept-url pattern="/member/signUpPerson" access="permitAll" />
-		<security:intercept-url pattern="/member/signUpBusiness" access="permitAll" />
+		<security:intercept-url pattern="/login/" access="permitAll" />
+		<security:intercept-url pattern="/login/person" access="denyAll" />
+		<security:intercept-url pattern="/login/business" access="denyAll" />
+		<security:intercept-url pattern="/signUp/person" access="permitAll" />
+		<security:intercept-url pattern="/signUp/business" access="permitAll" />
 		<security:intercept-url pattern="/board/**" access="permitAll" />
-		<security:intercept-url pattern="/member/mypage" access="permitAll" />
+		<security:intercept-url pattern="/myPage/" access="permitAll" />
 		<security:intercept-url pattern="/jobpostingupload/**" access="permitAll" />
-		<security:intercept-url pattern="/rooms/**" access="hasRole('ROLE_PERSON')" />
+		<security:intercept-url pattern="/rooms/**" access="hasAnyRole('ROLE_PERSON', 'ROLE_ADMIN')" />
 		<security:intercept-url pattern="/room/**" access="isAuthenticated()" />
 		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-		<security:form-login login-page="/member/login" 
+		<security:form-login login-page="/login/"
+							authentication-failure-url="/login/"
+							login-processing-url="/login/person"
 							username-parameter="mid"
 							password-parameter="mpw"
-							authentication-success-handler-ref="customLoginSuccess"
-							authentication-failure-url="/member/login"
 		/>
 		
 		<security:logout logout-url="/index"
@@ -97,5 +99,4 @@
     <bean id="customUserDetailsService" class="kim.spring.ej.security.CustomUserDetailsServiceImpl"></bean>
     <bean id="customAccessFailure" class="kim.spring.ej.security.CustomAccessFailureHandler"></bean>
      -->
-    <bean id="customLoginSuccess" class="kh.lclass.jjapkorea.common.CustomLoginSuccessHandler"></bean>
 </beans>

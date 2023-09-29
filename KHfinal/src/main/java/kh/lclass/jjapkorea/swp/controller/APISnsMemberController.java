@@ -94,7 +94,7 @@ public class APISnsMemberController {
 			
 			// 4. 존재시 강제로그인
 			session.setAttribute(APISnsSessionNames.LOGIN, apiSnsMember);
-			return "redirect:/index";
+			return "redirect:/";
 		}
 		
 		
@@ -121,10 +121,10 @@ public class APISnsMemberController {
 			service.keepLogin(apiSnsMember.getMid(), session.getId(), new Date());
 		}
 		
-		return "/login";
+		return "/loginn";
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/loginn", method = RequestMethod.GET)
 	public String login(Model model) throws Exception {
 		logger.info("login GET .....");
 		
@@ -144,7 +144,7 @@ public class APISnsMemberController {
 	    model.addAttribute("kakao_url", kakaoLogin.getKakaoAuthURL());
 		
 		
-		return "member/login";
+		return "/loginn";
 	}
 	
 	@RequestMapping(value = "/loginPost", method = RequestMethod.POST)

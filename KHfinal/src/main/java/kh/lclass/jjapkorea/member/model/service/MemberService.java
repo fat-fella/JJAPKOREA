@@ -5,6 +5,7 @@ import kh.lclass.jjapkorea.member.model.dto.MemberDto;
 import kh.lclass.jjapkorea.member.model.dto.PersonDto;
 
 public interface MemberService {
+	MemberDto loginAdmin(MemberDto memberDto) throws Exception;
 	MemberDto loginPerson(MemberDto memberDto) throws Exception;
 	MemberDto loginBusiness(MemberDto memberDto) throws Exception;
 	void signUpMemberPerson(MemberDto memberDto, PersonDto personDto) throws Exception;

@@ -15,7 +15,7 @@
 
 		<div id="header">
 			<h1>
-				<a href="https://www.jobkorea.co.kr">
+				<a href="index">
 					<img
 						src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
 						alt="JOBKOREA x albamon">

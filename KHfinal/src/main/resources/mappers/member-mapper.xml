@@ -7,6 +7,10 @@
 		<result property="mtype" column="mtype"/>
 	</resultMap>
 	
+	<select id="loginAdmin" resultType="memberDto">
+		select * from member where mid=#{mid} and mpw=#{mpw} and mtype='ROLE_ADMIN'
+	</select>
+	
 	<select id="loginPerson" resultType="memberDto">
 		select * from member where mid=#{mid} and mpw=#{mpw} and mtype='ROLE_PERSON'
 	</select>
