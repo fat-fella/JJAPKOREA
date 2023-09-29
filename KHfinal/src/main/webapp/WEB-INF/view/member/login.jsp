@@ -38,7 +38,7 @@
 					<fieldset class="login_form">
 						<legend class="blind">로그인 입력폼</legend>
 
-						<input type="hidden" name="mtype" id="mtype" value="">
+						<input type="hidden" name="mtype" id="mtype" value="ROLE_PERSON">
 						<!-- 회원선택-->
 						<div class="select_row">
 							<ul id="devMemTab">
@@ -263,7 +263,7 @@
 			var tabs = devMemTab.querySelectorAll("li");
 
 			tabs[0].addEventListener("click", function() {
-				$("#mtype").val("P");
+				$("#mtype").val("ROLE_PERSON");
 				tabs[0].classList.add("on");
 				tabs[1].classList.remove("on");
 				document.querySelector("#M_Alert").style.display = "block";
@@ -273,7 +273,7 @@
 			});
 
 			tabs[1].addEventListener("click", function() {
-				$("#mtype").val("B");
+				$("#mtype").val("ROLE_BUSINESS");
 				tabs[0].classList.remove("on");
 				tabs[1].classList.add("on");
 				document.querySelector("#M_Alert").style.display = "none";
@@ -298,7 +298,7 @@
 		    var loginUrl = "";
 
 		    // mtype 값에 따라 다른 URL로 설정
-		    if (mtype !== "B") {
+		    if (mtype !== "ROLE_BUSINESS") {
 		        loginUrl = "/jjapkorea/member/loginPerson"; // 개인회원 로그인 URL
 		    } else {
 		        loginUrl = "/jjapkorea/member/loginBusiness"; // 기업회원 로그인 URL

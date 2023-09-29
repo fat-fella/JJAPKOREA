@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회원가입 | KH</title>
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources//member/css/jobkh_signup.css">
+	href="<%=request.getContextPath()%>/resources/member/css/jobkh_signup.css">
 <link rel="icon" href="resources/favicon.ico">
 <link rel="SHORTCUT ICON" href="/favicon.ico?202307261400">
 </head>

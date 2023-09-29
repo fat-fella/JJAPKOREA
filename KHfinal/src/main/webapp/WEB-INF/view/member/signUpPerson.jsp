@@ -8,7 +8,7 @@
 <title>회원가입 | KH</title>
 <link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources//member/css/jobkh_psignup.css">
+	href="<%=request.getContextPath()%>/resources/member/css/jobkh_psignup.css">
 </head>
 <body class="jkJoin" style="">
 	<div id="wrap">

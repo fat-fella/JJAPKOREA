@@ -8,11 +8,11 @@
 	</resultMap>
 	
 	<select id="loginPerson" resultType="memberDto">
-		select * from member where mid=#{mid} and mpw=#{mpw} and mtype=1
+		select * from member where mid=#{mid} and mpw=#{mpw} and mtype='ROLE_PERSON'
 	</select>
 	
 	<select id="loginBusiness" resultType="memberDto">
-		select * from member where mid=#{mid} and mpw=#{mpw} and mtype=2
+		select * from member where mid=#{mid} and mpw=#{mpw} and mtype='ROLE_BUSINESS'
 	</select>
 	
 	<insert id="signUpMember" parameterType="memberDto">
