@@ -35,9 +35,21 @@
 		<!-- 쿼리문이 두개? -->
 		INSERT INTO INFO (JID, MID, RECRUIT_FIELD, COMPANY_NAME, BUSINO, USER_EDUCATION, SALARY, MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, CAREER, WORK_TYPE, EMP_TYPE_CODE, TODAY, DDAY) VALUES (#{jid}, #{mid}, #{recruitField}, #{companyName}, #{busino}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
     </insert>
+    <!-- 1차 세부 채용분야 -->
     <select id="selectFirst" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT JOBSMCAT FROM RSField 
+    	SELECT JOBSMCAT FROM RSField WHERE JOBSMCD LIKE '#{JOBSCD}%'
     </select>
+  
+    
+    <!-- 2차 세부 채용분야 -->
+    <select id="selectSecond" resultMap="jobPostingCategoryDtoResultMap">
+    	SELECT JOBSSCAT FROM RTField WHERE JOBSMCD LIKE '#{JOBSMCD}%'
+    </select>
+    
+    
+    
+    
+    
 	<select id="selectList" resultMap="jobpostingDtoResultMap">
 		SELECT * FROM INFO WHERE MID =#{mid}
 	</select>
