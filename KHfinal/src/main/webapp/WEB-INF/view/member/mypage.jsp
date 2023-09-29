@@ -171,7 +171,7 @@
 			</ul>
 		</div>
 		<div class="btnMoreBlock">
-			<a class=" mtuSpImgAfter" href="/user/scrap/index"
+			<a class=" mtuSpImgAfter" href="myPage"
 				onclick="GA_Event('마이페이지_PC', '나의소식', '스크랩공고 더보기')">스크랩공고 더보기</a>
 		</div>
 	</div>

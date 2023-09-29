@@ -22,7 +22,7 @@
 		<security:intercept-url pattern="/resources/**" access="permitAll" />
 		<security:intercept-url pattern="/error/**" access="permitAll" />
 		
-		<security:intercept-url pattern="/index" access="permitAll" />
+		<security:intercept-url pattern="/main" access="permitAll" />
 		<security:intercept-url pattern="/login" access="permitAll" />
 		<security:intercept-url pattern="/login/person" access="denyAll" />
 		<security:intercept-url pattern="/login/business" access="denyAll" />
@@ -42,8 +42,8 @@
 							password-parameter="mpw"
 		/>
 		
-		<security:logout logout-url="/index"
-							logout-success-url="/index"
+		<security:logout logout-url="/main"
+							logout-success-url="/main"
 							invalidate-session="true"
 							delete-cookies="true"
 		/>

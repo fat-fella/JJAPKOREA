@@ -16,13 +16,13 @@
 	<header>
 		<div>
 			<h1 id="jkLogo">
-				<a href="<%=request.getContextPath()%>/index"></a>
+				<a href="index"></a>
 			</h1>
 		</div>
 		<div class="headerRight">
 			<span id="personalHome"><a
-				href="<%=request.getContextPath()%>/myPage">개인회원 홈</a></span> <span
-				id="resumeMgr"><a href="<%=request.getContextPath()%>/resume">이력서
+				href="myPage">개인회원 홈</a></span> <span
+				id="resumeMgr"><a href="resume">이력서
 					관리</a></span>
 		</div>
 	</header>
