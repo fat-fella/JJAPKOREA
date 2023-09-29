@@ -24,8 +24,6 @@
 		
 		<security:intercept-url pattern="/index" access="permitAll" />
 		<security:intercept-url pattern="/login" access="permitAll" />
-		<security:intercept-url pattern="/login/person" access="denyAll" />
-		<security:intercept-url pattern="/login/business" access="denyAll" />
 		<security:intercept-url pattern="/signUp/person" access="permitAll" />
 		<security:intercept-url pattern="/signUp/business" access="permitAll" />
 		<security:intercept-url pattern="/board/**" access="permitAll" />
