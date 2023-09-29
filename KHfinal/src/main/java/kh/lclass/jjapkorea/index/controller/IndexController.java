@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
 import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
 import kh.lclass.jjapkorea.api.WorknetApi;
-import kh.lclass.jjapkorea.member.model.dto.MemberDto;
 
 @Controller
 public class IndexController {
@@ -41,11 +40,9 @@ public class IndexController {
 //                String attributeName = "list" + (startIndex / chunkSize + 1); // 새로운 속성 이름 생성 (list1, list2, ...)
 //                model.addAttribute(attributeName, subList);
 //            }
-        	String loginPerson = "someValue";
-        	model.addAttribute("loginPerson", loginPerson);
             return "index";
         } catch (Exception e) {
-        	return "comm/error";
+        	return "index";
         }
     }
     
