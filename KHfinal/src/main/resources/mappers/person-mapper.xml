@@ -5,7 +5,7 @@
 		insert into person (mid, pname, pemail, pphone) values (#{mid}, #{pname}, #{pemail}, #{pphone})
 	</insert>
 	
-	<select id="indexLogin" resultType="string" parameterType="string">
+	<select id="indexLogin" resultType="string">
 		select pname from person where mid=#{mid}
 	</select>
 </mapper>

@@ -57,7 +57,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("/signUpPerson")
-	public String signUpPerson(Model model, MemberDto memberDto, PersonDto personDto, String mid) throws Exception {
+	public String signUpPerson(Model model, MemberDto memberDto, PersonDto personDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
 			memberService.signUpMemberPerson(memberDto, personDto);
@@ -81,7 +81,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("/signUpBusiness")
-	public String signUpBusiness(Model model, MemberDto memberDto, BusinessDto businessDto, String mid) throws Exception {
+	public String signUpBusiness(Model model, MemberDto memberDto, BusinessDto businessDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
 			memberService.signUpMemberBusiness(memberDto, businessDto);

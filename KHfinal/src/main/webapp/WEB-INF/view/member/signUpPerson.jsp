@@ -66,7 +66,7 @@
 						<p class="subTx">
 							<strong>*</strong> 필수 입력 정보입니다.
 						</p>
-						<input type="hidden" id="mtype" name="mtype" value="1">
+						<input type="hidden" id="mtype" name="mtype" value="ROLE_PERSON">
 						<div class="row mbr_name">
 							<div class="col_1">
 								<label for="M_Name" class="mbr_name">

@@ -6,5 +6,5 @@ import lombok.Data;
 public class MemberDto {
 	private String mid;
 	private String mpw;
-	private int mtype;
+	private String mtype;
 }

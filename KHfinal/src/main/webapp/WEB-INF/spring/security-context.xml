@@ -29,7 +29,7 @@
 		<security:intercept-url pattern="/board/**" access="permitAll" />
 		<security:intercept-url pattern="/member/mypage" access="permitAll" />
 		<security:intercept-url pattern="/jobpostingupload/**" access="permitAll" />
-		<security:intercept-url pattern="/rooms/**" access="isAuthenticated()" />
+		<security:intercept-url pattern="/rooms/**" access="hasRole('ROLE_PERSON')" />
 		<security:intercept-url pattern="/room/**" access="isAuthenticated()" />
 		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 		<security:form-login login-page="/member/login" 

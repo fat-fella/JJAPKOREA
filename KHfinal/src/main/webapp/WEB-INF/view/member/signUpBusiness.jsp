@@ -65,7 +65,7 @@
 						</div>
 
 						<div class="row mbr_name mbr_co_type">
-							<input type="hidden" id="mtype" name="mtype" value="2">
+							<input type="hidden" id="mtype" name="mtype" value="ROLE_BUSINESS">
 							<div class="col_1">
 								<label class="mbr_name" for="Corp_Type">기업형태 <i
 									class="icon required" aria-hidden="hidde">*</i>
