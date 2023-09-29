@@ -36,7 +36,7 @@
                     <input type="text" id="jobTitle" name="jobTitle" required>
                 </div>
                 <div class="recruitfieldinputBox">
-                    <label for="firstRecruitField">채용분야 1차 분류<span>*</span></label>
+                    <label for="firstRecruitField">채용분야 분류<span>*</span></label>
                     <select name="firstRecruitField" id="firstRecruitField" required>
                         <option value="0">경영·사무·금융·보험직</option>
                         <option value="1">연구직 및 공학 기술직</option>
