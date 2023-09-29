@@ -13,13 +13,13 @@ import kh.lclass.jjapkorea.member.model.dto.PersonDto;
 import kh.lclass.jjapkorea.member.model.service.MemberService;
 
 @Controller
-@RequestMapping("/signUp")
-public class SignUpController {
+@RequestMapping("/signup")
+public class SignupController {
 	@Autowired MemberService memberService;
 	
 	@GetMapping("/person")
 	public String signUpPerson() {
-		return "member/signUpPerson";
+		return "member/signupPerson";
 	}
 	
 	@PostMapping("/person")
@@ -29,7 +29,7 @@ public class SignUpController {
 			memberService.signUpMemberAndPerson(memberDto, personDto);
 			viewPage = "redirect:/login/";
 		} catch (Exception e) {
-			viewPage = "redirect:/signUp/person";
+			viewPage = "redirect:/signup/person";
 		}
 		return viewPage;
 	}
@@ -41,7 +41,7 @@ public class SignUpController {
 		if(checkInsertBusinessForm < 1) {
 			viewPage = "comm/errorPage";
 		} else {
-			viewPage = "member/signUpBusiness";
+			viewPage = "member/signupBusiness";
 		}
 		return viewPage;
 	}
@@ -54,7 +54,7 @@ public class SignUpController {
 			viewPage = "redirect:/login/";
 		} catch (Exception e) {
 			e.printStackTrace();
-			viewPage = "redirect:/signUp/business";
+			viewPage = "redirect:/signup/business";
 		}
 		return viewPage;
 	}

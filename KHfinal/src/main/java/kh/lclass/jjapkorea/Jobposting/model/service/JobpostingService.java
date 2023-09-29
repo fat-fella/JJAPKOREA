@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.Jobposting.model.dao.JobPostingDao;
 import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
-import kh.lclass.jjapkorea.common.MybatisTemplate;
 
 @Service
 public class JobpostingService {

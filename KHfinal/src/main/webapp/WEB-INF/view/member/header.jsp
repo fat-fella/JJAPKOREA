@@ -630,13 +630,13 @@
                             </li>
                         </ul>
                         <!-- my 홈일경우 클래스 myPage -->
-                        <ul id="devMyPage" class="userNav">
+                        <div id="devMyPage" class="userNav">
                             <ul class="userNav">
                                 <li class="userNav-item login">
-                                    <a href="<%=request.getContextPath()%>/login" class="txt-button login-button">로그인</a>
+                                    <a href="login" class="txt-button login-button">로그인</a>
                                 </li>
                                 <li class="userNav-item join">
-                                    <a href="<%=request.getContextPath() %>/psignup" class="txt-button join-button">회원가입</a>
+                                    <a href="signup/person" class="txt-button join-button">회원가입</a>
                                 </li>
                                 <li class="userNav-item corp">
                                     <a href="https://www.jobkorea.co.kr/Corp/Index" target="_blank"><span class="spGnb">기업서비스</span></a>
@@ -663,7 +663,7 @@
                                     </div>
                                 </li>
                             </ul>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>

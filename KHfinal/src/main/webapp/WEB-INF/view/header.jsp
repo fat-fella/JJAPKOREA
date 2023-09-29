@@ -1015,7 +1015,7 @@
 							<a href="login" class="txt-button login-button">로그인</a>
 						</li>
 						<li class="userNav-item join">
-							<a href="signUp/person" class="txt-button join-button">회원가입</a>
+							<a href="signup/person" class="txt-button join-button">회원가입</a>
 						</li>
 						<li class="userNav-item corp">
 							<a href="https://www.jobkorea.co.kr/Corp/Index" target="_blank">
@@ -1124,7 +1124,7 @@
 									</div>
 									<div class="lyRow">
 										<div class="btnRowWrap">
-											<form action="../index" method="post">
+											<form action="logout" method="post">
 												<a href="/Login/Logout.asp" class="btnLogOut"
 													onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 											</form>

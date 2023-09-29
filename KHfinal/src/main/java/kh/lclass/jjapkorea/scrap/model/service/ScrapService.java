@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
 import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
-import kh.lclass.jjapkorea.common.MybatisTemplate;
 import kh.lclass.jjapkorea.scrap.model.dao.ScrapDao;
 import kh.lclass.jjapkorea.scrap.model.dto.ScrapDto;
 

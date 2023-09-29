@@ -59,7 +59,7 @@
 						<!-- 기업회원 탭 메뉴 -->
 
 						<div class="tabs tabsGiCateogry" role="tablist">
-							<a href="signUpBusiness"
+							<a href="signup/business"
 								class="tab tabGi active">기업회원</a>
 							<a href="#" class="tab tabGi ">서치펌회원</a>
 						</div>

@@ -42,7 +42,7 @@
 							password-parameter="mpw"
 		/>
 		
-		<security:logout logout-url="/indexx"
+		<security:logout logout-url="/logout"
 							logout-success-url="/index"
 							invalidate-session="true"
 							delete-cookies="true"
