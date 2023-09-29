@@ -8,7 +8,7 @@ public interface MemberService {
 	MemberDto loginAdmin(MemberDto memberDto) throws Exception;
 	MemberDto loginPerson(MemberDto memberDto) throws Exception;
 	MemberDto loginBusiness(MemberDto memberDto) throws Exception;
-	void signUpMemberPerson(MemberDto memberDto, PersonDto personDto) throws Exception;
-	void signUpMemberBusiness(MemberDto memberDto, BusinessDto businessDto) throws Exception;
-	int checkInsertBusinessForm() throws Exception;
+	void signUpMemberAndPerson(MemberDto memberDto, PersonDto personDto) throws Exception;
+	void signUpMemberAndBusiness(MemberDto memberDto, BusinessDto businessDto) throws Exception;
+	int checkAndInsertBusinessForm() throws Exception;
 }

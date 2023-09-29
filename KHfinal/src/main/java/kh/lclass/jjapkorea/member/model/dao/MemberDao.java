@@ -45,7 +45,7 @@ public class MemberDao {
 //		return sqlSession.delete("member.deleteMember", mid);
 //	}
 
-	public int checkInsertBusinessForm() throws Exception {
+	public int checkAndInsertBusinessForm() throws Exception {
 		String namespace = "businessForm";
         String checkQuery = namespace + ".checkBusinessForm";
         int count = sqlSession.selectOne(checkQuery);

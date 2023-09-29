@@ -26,7 +26,7 @@ public class SignUpController {
 	public String signUpPerson(Model model, MemberDto memberDto, PersonDto personDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
-			memberService.signUpMemberPerson(memberDto, personDto);
+			memberService.signUpMemberAndPerson(memberDto, personDto);
 			viewPage = "redirect:/login/";
 		} catch (Exception e) {
 			viewPage = "redirect:/signUp/person";
@@ -37,7 +37,7 @@ public class SignUpController {
 	@GetMapping("/business")
 	public String checkInsertBusinessForm() throws Exception {
 		String viewPage;
-		int checkInsertBusinessForm = memberService.checkInsertBusinessForm();
+		int checkInsertBusinessForm = memberService.checkAndInsertBusinessForm();
 		if(checkInsertBusinessForm < 1) {
 			viewPage = "comm/errorPage";
 		} else {
@@ -50,7 +50,7 @@ public class SignUpController {
 	public String signUpBusiness(Model model, MemberDto memberDto, BusinessDto businessDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
-			memberService.signUpMemberBusiness(memberDto, businessDto);
+			memberService.signUpMemberAndBusiness(memberDto, businessDto);
 			viewPage = "redirect:/login/";
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -31,20 +31,20 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public void signUpMemberPerson(MemberDto memberDto, PersonDto personDto) throws Exception {
+	public void signUpMemberAndPerson(MemberDto memberDto, PersonDto personDto) throws Exception {
 		memberDao.signUpMember(memberDto);
 		memberDao.signUpPerson(personDto);
 	}
 	
 	@Override
-	public void signUpMemberBusiness(MemberDto memberDto, BusinessDto businessDto) throws Exception {
+	public void signUpMemberAndBusiness(MemberDto memberDto, BusinessDto businessDto) throws Exception {
 		memberDao.signUpMember(memberDto);
 		memberDao.signUpBusiness(businessDto);
 	}
 	
 	@Override
-	public int checkInsertBusinessForm() throws Exception {
-		return memberDao.checkInsertBusinessForm();
+	public int checkAndInsertBusinessForm() throws Exception {
+		return memberDao.checkAndInsertBusinessForm();
 	}
 	
 //	public String indexLogin(String mid) {
