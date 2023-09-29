@@ -1075,8 +1075,7 @@
 							</div>
 						</li>
 						<li class="userNav-item my member">
-							<a href="myPage"
-								class="btnMyOpen txt-button ico-cp"
+							<a href="myPage" class="btnMyOpen txt-button ico-cp"
 								onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');">
 								<span class="spGnb"></span><span class="user-name">${pname}</span><span
 									class="skip">열기</span>
@@ -1125,8 +1124,10 @@
 									</div>
 									<div class="lyRow">
 										<div class="btnRowWrap">
-											<a href="/Login/Logout.asp" class="btnLogOut"
-												onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
+											<form action="../index" method="post">
+												<a href="/Login/Logout.asp" class="btnLogOut"
+													onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
+											</form>
 										</div>
 									</div>
 								</div>
@@ -1211,5 +1212,12 @@
 		},
 		observer : true,
 		observeParents : true,
+	});
+	
+	document.addEventListener("DOMContentLoaded", function() {
+		// 링크 클릭 시 기본 동작(페이지 새로고침) 막기
+		document.querySelectorAll(".btnLogOut").addEventListener("click", function(e) {
+			e.preventDefault();
+		});
 	});
 </script>
