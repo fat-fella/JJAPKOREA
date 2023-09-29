@@ -23,7 +23,7 @@
 		<security:intercept-url pattern="/error/**" access="permitAll" />
 		
 		<security:intercept-url pattern="/index" access="permitAll" />
-		<security:intercept-url pattern="/login/" access="permitAll" />
+		<security:intercept-url pattern="/login" access="permitAll" />
 		<security:intercept-url pattern="/login/person" access="denyAll" />
 		<security:intercept-url pattern="/login/business" access="denyAll" />
 		<security:intercept-url pattern="/signUp/person" access="permitAll" />
@@ -34,9 +34,9 @@
 		<security:intercept-url pattern="/rooms/**" access="hasAnyRole('ROLE_PERSON', 'ROLE_ADMIN')" />
 		<security:intercept-url pattern="/room/**" access="isAuthenticated()" />
 		<security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
-		<security:form-login login-page="/login/"
+		<security:form-login login-page="/login"
 							authentication-success-handler-ref="customLoginSuccess"
-							authentication-failure-url="/login/"
+							authentication-failure-url="/login"
 							login-processing-url="/login"
 							username-parameter="mid"
 							password-parameter="mpw"
@@ -77,7 +77,7 @@
             <security:password-encoder hash="bcrypt" />
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				users-by-username-query="SELECT mid username, mpw password, enabled FROM MEMBER WHERE mid=?"
+				users-by-username-query="SELECT mid username, mpw password, mtype as authority, enabled FROM MEMBER WHERE mid=? AND mtype=?"
 				authorities-by-username-query="SELECT mid username, mtype as authority FROM MEMBER WHERE mid=?" 
 				/>
 		</security:authentication-provider>

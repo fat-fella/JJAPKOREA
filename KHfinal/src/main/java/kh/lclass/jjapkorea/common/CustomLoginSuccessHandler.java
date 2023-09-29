@@ -15,7 +15,7 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
 		//TODO
-		response.sendRedirect(request.getContextPath()+"/index");
+		response.sendRedirect(request.getContextPath()+"/rooms");
 		
 	}
 

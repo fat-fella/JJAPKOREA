@@ -25,7 +25,7 @@
 					<span class="logo"></span>짭코리아에 오신 것을 환영합니다.
 				</h1>
 				<p class="lnb">
-					<a href="index">잡코리아홈</a>
+					<a href="../../jjapkorea/index">잡코리아홈</a>
 					<span class="txtBar">|</span>
 					<a href="http://www.jobkorea.co.kr/Customer_C/CC_Main.asp">고객센터</a>
 				</p>
@@ -36,7 +36,7 @@
 					<h2 class="blind">로그인</h2>
 
 					<form name="form" id="form" method="post"
-						action="../login"
+						action="../../jjapkorea/login"
 						onsubmit="return login_send();">
 						<fieldset class="login_form">
 							<legend class="blind">로그인 입력폼</legend>
@@ -120,11 +120,11 @@
 							<div class="join">
 								<div id="M_Alert" style="display: block;">
 									좋은 일을 찾으시나요? 회원가입하시고 다양한 혜택을 누리세요!
-									<a href="../signUp/person" target="_new">회원가입</a>
+									<a href="../../jjapkorea/signUp/person" target="_new">회원가입</a>
 								</div>
 								<div id="Co_Alert" style="display: none;">
 									좋은 인재를 구하시나요? 회원가입하시고 다양한 혜택을 누리세요!
-									<a href="../signUp/business" target="_new">회원가입</a>
+									<a href="../../jjapkorea/signUp/business" target="_new">회원가입</a>
 									<div class="text-balloon" style="display: none;">
 										신규가입 <span>3종</span> 쿠폰 제공!
 									</div>

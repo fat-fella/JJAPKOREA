@@ -12,7 +12,7 @@ import kh.lclass.jjapkorea.member.model.service.MemberService;
 public class LoginController {
 	@Autowired MemberService memberService;
 	
-	@GetMapping("/")
+	@GetMapping({"","/"})
 	public String login() throws Exception {
 		return "member/login";
 	}
