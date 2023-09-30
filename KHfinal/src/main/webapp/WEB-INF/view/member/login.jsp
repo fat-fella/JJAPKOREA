@@ -64,7 +64,7 @@
 								</div>
 							</div>
 							<div class="check_row">
-								<input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y">
+								<input type="checkbox" name="remember-me" id="lb_idSave" value="Y">
 								<label for="lb_idSave">로그인 상태 유지</label> <span class="txtBar">
 									| </span>
 								<a href="javascript:void(0)" class="devSecPop">IP보안</a>

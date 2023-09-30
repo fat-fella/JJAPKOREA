@@ -62,6 +62,30 @@
 				$('.jkNavDimm-hover5').toggleClass("on");
 			}
 		})
+		
+		$(document).ready(function() {
+		    $('.userNav-item.my.member').hover(function() {
+		        $('.userNav-item.my.member .lyMyArea').css({
+		        	display: 'block'
+		        })
+		    }, function() {
+		        $('.userNav-item.my.member .lyMyArea').css({
+		        	display: 'none'
+		        })
+		    });
+		});
+		
+		$(document).ready(function() {
+		    $('.userNav-item.corp').hover(function() {
+		        $('.userNav-item.corp .lyMyArea').css({
+		        	display: 'block'
+		        })
+		    }, function() {
+		        $('.userNav-item.corp .lyMyArea').css({
+		        	display: 'none'
+		        })
+		    });
+		});
 	});
 </script>
 <div class="wrap">
