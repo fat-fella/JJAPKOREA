@@ -11,8 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
-import kh.lclass.jjapkorea.business.model.service.JobpostingService;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
+import kh.lclass.jjapkorea.business.model.service.JobPostingService;
 import kh.lclass.jjapkorea.api.WorknetApi;
 
 @Controller
@@ -21,7 +21,7 @@ public class IndexController {
 	private WorknetApi worknetApi;
     
     @Autowired
-	private JobpostingService jobpostingService;
+	private JobPostingService jobpostingService;
     
     @GetMapping("/index")
     public String index(Model model, HttpSession session) {

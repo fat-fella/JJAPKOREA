@@ -29,22 +29,22 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
-import kh.lclass.jjapkorea.business.model.service.JobpostingService;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
+import kh.lclass.jjapkorea.business.model.service.JobPostingService;
 
 @Component
 public class WorknetApi {
 	@Autowired
-	private JobpostingService jobpostingService;
+	private JobPostingService jobpostingService;
 	
-	private List<JobpostingDto> list;
+	private List<JobPostingDto> list;
 	
     public static void main(String[] args){
 //    	WorknetApi worknetApi = new WorknetApi();
 //    	worknetApi.getJobPostings();
     }
     
-    public List<JobpostingDto> getJobPostings() {
+    public List<JobPostingDto> getJobPostings() {
     	try {
             StringBuilder urlBuilder = new StringBuilder("http://openapi.work.go.kr/opi/opi/opia/wantedApi.do"); /* URL */
             urlBuilder.append("?" + URLEncoder.encode("authKey", "UTF-8") + "=WNLBET6R0WPQK95R8VLU02VR1HJ"); /* Service Key */
@@ -85,7 +85,7 @@ public class WorknetApi {
 
             list = new ArrayList<>();
             for (int i = 0; i < wantedList.getLength(); i++) {
-                JobpostingDto dto = new JobpostingDto();
+                JobPostingDto dto = new JobPostingDto();
                 Node wanted = wantedList.item(i);
                 Element ele = (Element) wanted;
                 // 고유한 값
@@ -142,7 +142,7 @@ public class WorknetApi {
 //            JobpostingService service = new JobpostingService();
 
             // 출력 또는 다른 처리 작업
-            for (JobpostingDto dto : list) {
+            for (JobPostingDto dto : list) {
                 //System.out.println(dto);
 //            	int result = service.insert(dto); // insert 메서드 호출하여 데이터 삽입
 //                if (result > 0) {

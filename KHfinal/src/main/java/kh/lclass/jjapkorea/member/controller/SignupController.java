@@ -1,6 +1,7 @@
 package kh.lclass.jjapkorea.member.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import kh.lclass.jjapkorea.member.model.service.MemberService;
 @RequestMapping("/signup")
 public class SignupController {
 	@Autowired MemberService memberService;
+	@Autowired BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@GetMapping("/person")
 	public String signUpPerson() {
@@ -26,6 +28,7 @@ public class SignupController {
 	public String signUpPerson(Model model, MemberDto memberDto, PersonDto personDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
+			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
 			memberService.signUpMemberAndPerson(memberDto, personDto);
 			viewPage = "redirect:/login/";
 		} catch (Exception e) {
@@ -50,6 +53,7 @@ public class SignupController {
 	public String signUpBusiness(Model model, MemberDto memberDto, BusinessDto businessDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
+			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
 			memberService.signUpMemberAndBusiness(memberDto, businessDto);
 			viewPage = "redirect:/login/";
 		} catch (Exception e) {

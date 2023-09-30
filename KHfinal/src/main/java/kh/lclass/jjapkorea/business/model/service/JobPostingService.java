@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.business.model.dao.JobPostingDao;
-import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 
 @Service
-public class JobpostingService {
+public class JobPostingService {
 	@Autowired
 	private JobPostingDao jobPotingDao;
 	
@@ -29,7 +29,7 @@ public class JobpostingService {
 //		return result;
 //	}
 	@Transactional
-	public int insertJobPosting(JobpostingDto jobPostinDto) throws Exception{
+	public int insertJobPosting(JobPostingDto jobPostinDto) throws Exception{
 		return jobPotingDao.insertJobPosting(jobPostinDto);
 	}
 	
@@ -40,7 +40,7 @@ public class JobpostingService {
 //		session.close();
 //		return result;
 //	}
-	public List<JobpostingDto> listJobPosting() throws Exception{
+	public List<JobPostingDto> listJobPosting() throws Exception{
 		return jobPotingDao.listJobPosting();
 	}
 }

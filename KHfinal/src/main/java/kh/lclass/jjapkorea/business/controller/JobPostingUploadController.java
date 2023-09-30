@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 import kh.lclass.jjapkorea.business.model.service.JobPostingUploadService;
 import kh.lclass.jjapkorea.business.model.service.JobPostingUploadServiceImpl;
-import kh.lclass.jjapkorea.business.model.service.JobpostingService;
+import kh.lclass.jjapkorea.business.model.service.JobPostingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,7 +29,7 @@ public class JobPostingUploadController {
 	}
 	
 	@PostMapping("/register")
-	public String jobUpload(JobpostingDto dto) {
+	public String jobUpload(JobPostingDto dto) {
 		try {
 			int result = jobPostingUploadService.insert(dto);
 			if(result<1) {
@@ -47,7 +47,7 @@ public class JobPostingUploadController {
 	}
 	
 	@GetMapping("/info")
-	public String jobPostingUploadSubmit(JobpostingDto dto) {
+	public String jobPostingUploadSubmit(JobPostingDto dto) {
 		return "/jpost/jpostInfo";
 	}
 	

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.business.model.dao.JobPostingUploadDao;
-import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 
 @Service
 public class JobPostingUploadServiceImpl implements JobPostingUploadService{
@@ -16,11 +16,11 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 	
 	@Override
 	@Transactional
-	public int insert(JobpostingDto dto) throws Exception{
+	public int insert(JobPostingDto dto) throws Exception{
 		return jobpostinguploadDao.insert(dto);
 	}
 	
-	public List<JobpostingDto> selectList(String mid) throws Exception{
+	public List<JobPostingDto> selectList(String mid) throws Exception{
 		return jobpostinguploadDao.selectList(mid);
 		
 	}

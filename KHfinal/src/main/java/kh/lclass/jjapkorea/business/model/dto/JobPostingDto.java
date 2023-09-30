@@ -3,7 +3,7 @@ package kh.lclass.jjapkorea.business.model.dto;
 import lombok.Data;
 
 @Data
-public class JobpostingDto {
+public class JobPostingDto {
 	private String jid;
 	private String mid;
 	private String recruitField;
@@ -22,10 +22,10 @@ public class JobpostingDto {
 	private int today;
 	private int dday;
 	
-	public JobpostingDto() {
+	public JobPostingDto() {
 	}
 	
-	public JobpostingDto(String jid, String recruitField, String companyName, String busino, String userEducation,
+	public JobPostingDto(String jid, String recruitField, String companyName, String busino, String userEducation,
 			String salary, String minSalary, String maxSalary, String registDate, String closeDate, String reTitle,
 			String career, String workType, String empTypeCode) {
 		super();

@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
-import kh.lclass.jjapkorea.business.model.service.JobpostingService;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
+import kh.lclass.jjapkorea.business.model.service.JobPostingService;
 import kh.lclass.jjapkorea.person.model.dao.ScrapDao;
 import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
 
@@ -22,7 +22,7 @@ public class ScrapService {
 	private ScrapDao scrapDao;
 	
 	@Autowired
-	private JobpostingService jobpostingService;
+	private JobPostingService jobpostingService;
 	
 //	public int scrap(ScrapDto vo) {
 //		int result = 0;
@@ -93,9 +93,9 @@ public class ScrapService {
 	public List<ScrapDto> scrapList(String mid) throws Exception{
 		List<ScrapDto> result = scrapDao.scrapList(mid);
 		for (ScrapDto scrapDto : result) {
-			List<JobpostingDto> jobPostingList = jobpostingService.listJobPosting();
-			List<JobpostingDto> matchedJobPostingList = new ArrayList<>();
-			for (JobpostingDto jobPostingDto : jobPostingList) {
+			List<JobPostingDto> jobPostingList = jobpostingService.listJobPosting();
+			List<JobPostingDto> matchedJobPostingList = new ArrayList<>();
+			for (JobPostingDto jobPostingDto : jobPostingList) {
 				if (scrapDto.getJid().equals(jobPostingDto.getJid())) {
 					matchedJobPostingList.add(jobPostingDto);
 				}

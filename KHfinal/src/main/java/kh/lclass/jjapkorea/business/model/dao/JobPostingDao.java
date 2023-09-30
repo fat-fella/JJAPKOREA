@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 
 @Repository
 public class JobPostingDao {
@@ -63,7 +63,7 @@ public class JobPostingDao {
 //			e.printStackTrace();
 //		}
 //		return result;
-	public int insertJobPosting(JobpostingDto jobPostinDto) throws Exception{
+	public int insertJobPosting(JobPostingDto jobPostinDto) throws Exception{
 		return sqlSession.insert("jobPosting.insertJobPosting", jobPostinDto);
 	}
 	
@@ -113,7 +113,7 @@ public class JobPostingDao {
 //		}
 //		return result;
 //	}
-	public List<JobpostingDto> listJobPosting() throws Exception{
+	public List<JobPostingDto> listJobPosting() throws Exception{
 		return sqlSession.selectList("jobPosting.listJobPosting");
 	}
 }

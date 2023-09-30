@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 import lombok.Data;
 
 @Data
@@ -16,7 +16,7 @@ public class ScrapDto {
 
 	private String mid;
 	private String jid;
-	private List<JobpostingDto> jobPostingList;
+	private List<JobPostingDto> jobPostingList;
 	
 	@Override
 	public String toString() {
@@ -48,10 +48,10 @@ public class ScrapDto {
 	public void setJid(String jid) {
 		this.jid = jid;
 	}
-	public List<JobpostingDto> getJobPostingList() {
+	public List<JobPostingDto> getJobPostingList() {
         return jobPostingList;
     }
-    public void setJobPostingList(List<JobpostingDto> jobPostingList) {
+    public void setJobPostingList(List<JobPostingDto> jobPostingList) {
         this.jobPostingList = jobPostingList;
     }
 }
