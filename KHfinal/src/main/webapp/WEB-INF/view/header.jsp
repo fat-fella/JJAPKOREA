@@ -1022,62 +1022,11 @@
 								<a href="signup/person" class="txt-button join-button">회원가입</a>
 							</li>
 						</sec:authorize>
-						<li class="userNav-item corp">
-							<a href="login" target="_blank">
-								<span class="spGnb">기업서비스</span>
-							</a>
-							<div class="lyMyArea">
-								<div class="myInner">
-									<div class="lyRow">
-										<div class="btnRowWrap">
-											<a href="login">기업회원 로그인</a>
-										</div>
-									</div>
-									<div class="myLists">
-										<ul>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Corp/Main">
-													<span class="tx">기업회원 홈</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Yocruit/Mng/GI_Reg">
-													<span class="tx">채용공고 등록</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Corp/GiMng/List">
-													<span class="tx">공고·지원자 관리</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Corp/Person/Find">
-													<span class="tx">인재검색 관리</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/OnePick/Intro">
-													<span class="tx">원픽 서비스 이용</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/service/company/option">
-													<span class="tx">기업회원 서비스 안내</span>
-												</a>
-											</li>
-											<li>
-												<a
-													href="https://www.jobkorea.co.kr/service/headhunting/platinum">
-													<span class="tx">서치펌 서비스 안내</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<span class="icnArr spGnb"></span>
-							</div>
-						</li>
 						<sec:authorize access="hasRole('ROLE_PERSON')">
+							<li class="userNav-item resume">
+								<a href="#" class="txt-button ico-mng"
+									onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">이력서 관리</a>
+							</li>
 							<li class="userNav-item my member">
 								<a href="myPage" class="btnMyOpen txt-button ico-cp"
 									onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');">
@@ -1133,6 +1082,61 @@
 														onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 												</form>
 											</div>
+										</div>
+									</div>
+									<span class="icnArr spGnb"></span>
+								</div>
+							</li>
+							<li class="userNav-item corp">
+								<a href="login" target="_blank">
+									<span class="spGnb">기업서비스</span>
+								</a>
+								<div class="lyMyArea">
+									<div class="myInner">
+										<div class="lyRow">
+											<div class="btnRowWrap">
+												<a href="login">기업회원 로그인</a>
+											</div>
+										</div>
+										<div class="myLists">
+											<ul>
+												<li>
+													<a href="https://www.jobkorea.co.kr/Corp/Main">
+														<span class="tx">기업회원 홈</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://www.jobkorea.co.kr/Yocruit/Mng/GI_Reg">
+														<span class="tx">채용공고 등록</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://www.jobkorea.co.kr/Corp/GiMng/List">
+														<span class="tx">공고·지원자 관리</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://www.jobkorea.co.kr/Corp/Person/Find">
+														<span class="tx">인재검색 관리</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://www.jobkorea.co.kr/OnePick/Intro">
+														<span class="tx">원픽 서비스 이용</span>
+													</a>
+												</li>
+												<li>
+													<a href="https://www.jobkorea.co.kr/service/company/option">
+														<span class="tx">기업회원 서비스 안내</span>
+													</a>
+												</li>
+												<li>
+													<a
+														href="https://www.jobkorea.co.kr/service/headhunting/platinum">
+														<span class="tx">서치펌 서비스 안내</span>
+													</a>
+												</li>
+											</ul>
 										</div>
 									</div>
 									<span class="icnArr spGnb"></span>
@@ -1218,14 +1222,14 @@
 		observer : true,
 		observeParents : true,
 	});
-	
+
 	document.addEventListener("DOMContentLoaded", function() {
-	    // DOMContentLoaded 이벤트가 발생하면 실행될 코드
-	    var btnLogOut = document.querySelector(".btnLogOut");
-	    if (btnLogOut) {
-	        btnLogOut.addEventListener("click", function(e) {
-	            e.preventDefault();
-	        });
-	    }
+		// DOMContentLoaded 이벤트가 발생하면 실행될 코드
+		var btnLogOut = document.querySelector(".btnLogOut");
+		if (btnLogOut) {
+			btnLogOut.addEventListener("click", function(e) {
+				e.preventDefault();
+			});
+		}
 	});
 </script>
