@@ -5,6 +5,7 @@
 		<id property="mid" column="mid"/>
 		<result property="mpw" column="mpw"/>
 		<result property="mtype" column="mtype"/>
+		<result property="enabled" column="enabled"/>
 	</resultMap>
 	
 	<select id="loginAdmin" resultType="memberDto">
