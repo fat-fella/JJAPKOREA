@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobPostingCategoryDto;
 
 @Repository("jobPostinguploadDao")
 public class JobPostingUploadDao {
@@ -22,7 +23,9 @@ public class JobPostingUploadDao {
 		return sqlSession.selectList("jobPostingUpload.selectList", mid);
 	}
 	
-	
+	public List<JobPostingCategoryDto> selectFirst() throws Exception{
+		return sqlSession.selectList("jobPostingUpload.selectFirst");
+	}
 	
 	
 }

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
@@ -23,11 +25,27 @@ public class JobPostingUploadController {
 	@Autowired
 	private JobPostingUploadService jobPostingUploadService;
 	
+//	@GetMapping("/register")
+//	public String jobUpload(){
+//		return "jpost/jpostUpload";
+//	}
 	@GetMapping("/register")
-	public String jobUpload(){
-		return "jpost/jpostUpload";
+	public ModelAndView jobUpload(ModelAndView mv) throws Exception {
+		mv.addObject("jlist", jobPostingUploadService.selectFirst());
+		mv.setViewName("jpost/jpostUpload");
+		
+		return mv;
 	}
 	
+	
+	
+//	@GetMapping("/getSecondRecruitField")
+//	@ResponseBody
+//	public String getSecondRecruitField(@RequestParam("firstRecruitField") String firstRecruitField) {
+//		String secondRecruitFieldOptions ="";
+//		return secondRecruitFieldOptions;
+//	}
+//	
 	@PostMapping("/register")
 	public String jobUpload(JobPostingDto dto) {
 		try {
@@ -45,6 +63,8 @@ public class JobPostingUploadController {
 		}
 		
 	}
+	
+	
 	
 	@GetMapping("/info")
 	public String jobPostingUploadSubmit(JobPostingDto dto) {
