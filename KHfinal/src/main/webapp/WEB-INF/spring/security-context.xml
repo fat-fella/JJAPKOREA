@@ -23,13 +23,13 @@
 							authentication-success-handler-ref="customLoginSuccess"
 							authentication-failure-url="/login"
 							username-parameter="mid"
-							password-parameter="mpw"
+							password-parameter="mpw" 
 		/>
 		
 		<logout logout-url="/logout"
 							logout-success-url="/index"
 							invalidate-session="true"
-							delete-cookies="true"
+							delete-cookies="true" 
 		/>
 	</http>
 	
