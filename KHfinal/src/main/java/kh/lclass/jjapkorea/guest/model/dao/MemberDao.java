@@ -41,10 +41,6 @@ public class MemberDao {
 		return sqlSession.insert("business.signUpBusiness", businessDto);
 	}
 	
-//	public int deleteMember(String mid) throws Exception {
-//		return sqlSession.delete("member.deleteMember", mid);
-//	}
-
 	public int checkAndInsertBusinessForm() throws Exception {
 		String namespace = "businessForm";
         String checkQuery = namespace + ".checkBusinessForm";
@@ -66,13 +62,7 @@ public class MemberDao {
         }
 	}
 
-//	public String indexLogin(SqlSession session, String mid) {
-//		String result = null;
-//		try {
-//			result = session.selectOne("person.indexLogin", mid);
-//		} catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		return result;
-//	}
+	public String selectOnePerson(String mid) throws Exception {
+		return sqlSession.selectOne("person.selectOnePerson", mid);
+	}
 }

@@ -47,11 +47,8 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.checkAndInsertBusinessForm();
 	}
 	
-//	public String indexLogin(String mid) {
-//		String result = null;
-//		SqlSession session = MybatisTemplate.getSqlSession();
-//		result = dao.indexLogin(session, mid);
-//		session.close();
-//		return result;
-//	}
+	@Override
+	public String selectOnePerson(String mid) throws Exception {
+		return memberDao.selectOnePerson(mid);
+	}
 }

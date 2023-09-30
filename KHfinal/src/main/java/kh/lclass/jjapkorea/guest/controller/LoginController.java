@@ -10,7 +10,8 @@ import kh.lclass.jjapkorea.guest.model.service.MemberService;
 @Controller
 @RequestMapping("/login")
 public class LoginController {
-	@Autowired MemberService memberService;
+	@Autowired
+	MemberService memberService;
 	
 	@GetMapping({"","/"})
 	public String login() throws Exception {

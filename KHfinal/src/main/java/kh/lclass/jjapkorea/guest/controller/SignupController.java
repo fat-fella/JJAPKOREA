@@ -16,8 +16,11 @@ import kh.lclass.jjapkorea.guest.model.service.MemberService;
 @Controller
 @RequestMapping("/signup")
 public class SignupController {
-	@Autowired MemberService memberService;
-	@Autowired BCryptPasswordEncoder bCryptPasswordEncoder;
+	@Autowired
+	MemberService memberService;
+	
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@GetMapping("/person")
 	public String signUpPerson() {

@@ -11,4 +11,5 @@ public interface MemberService {
 	void signUpMemberAndPerson(MemberDto memberDto, PersonDto personDto) throws Exception;
 	void signUpMemberAndBusiness(MemberDto memberDto, BusinessDto businessDto) throws Exception;
 	int checkAndInsertBusinessForm() throws Exception;
+	String selectOnePerson(String mid) throws Exception;
 }
