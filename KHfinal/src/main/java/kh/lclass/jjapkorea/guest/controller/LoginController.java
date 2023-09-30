@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.member.controller;
+package kh.lclass.jjapkorea.guest.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

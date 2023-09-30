@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.index.controller;
+package kh.lclass.jjapkorea.guest.controller;
 
 import java.util.List;
 
