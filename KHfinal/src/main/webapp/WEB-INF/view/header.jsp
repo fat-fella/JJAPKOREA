@@ -550,7 +550,7 @@
 														<ul>
 															<li class="top100">
 																<a href="#">
-																	<span \lass="spGnb icnList"></span>TOP100
+																	<span class="spGnb icnList"></span>TOP100
 																</a>
 															</li>
 															<li class="my-recommend">
@@ -644,7 +644,7 @@
 																<a href="#">공채달력</a>
 															</li>
 															<li>
-																<a href="#"정');">공공기관 채용일정</a>
+																<a href="#">공공기관 채용일정</a>
 															</li>
 															<li>
 																<a href="#">기업공채전략</a>
@@ -675,8 +675,9 @@
 																</a>
 															</li>
 															<li class="pass">
-																<ahref="#"> <spanclass="spGnbicnList">
-																</span>합격자소서</a>
+																<a href="#">
+																<span class="spGnbicnList"></span>합격자소서
+																</a>
 															</li>
 															<li class="career">
 																<a href="#" target="_blank" title="새창 열림">
