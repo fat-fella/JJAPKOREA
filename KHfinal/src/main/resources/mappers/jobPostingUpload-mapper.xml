@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="jobpostingUpload">
-	<resultMap type="jobpostingDto" id="jobpostingDtoResultMap">
+	<resultMap type="jobPostingDto" id="jobpostingDtoResultMap">
 		<id property="jid" column="jid"/>
 		<result property="mid" column="MID"/>
 		<result property="recruitField" column="RECRUIT_FIELD"/>
@@ -36,13 +36,13 @@
     </insert>
     <!-- 1차 세부 채용분야 -->
     <select id="selectFirst" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT JOBSMCAT FROM "RSField" WHERE JOBSMCD LIKE '#{JOBSCD}%'
+    	SELECT JOBSMCAT FROM "RSField" WHERE JOBSMCD LIKE '01%'
     </select>
   
     
     <!-- 2차 세부 채용분야 -->
     <select id="selectSecond" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT JOBSSCAT FROM "RTField"" WHERE JOBSMCD LIKE '#{JOBSMCD}%'
+    	SELECT JOBSSCAT FROM "RTField" WHERE JOBSMCD LIKE '#{JOBSMCD}%'
     </select>
     
     
