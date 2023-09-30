@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -146,30 +148,14 @@
 												</a></strong>
 											<div class="listBx">
 												<ul>
-													<li>
-														<a href="#">상세검색</a>
-													</li>
-													<li>
-														<a href="#">지역별</a>
-													</li>
-													<li>
-														<a href="#">직무별</a>
-													</li>
-													<li>
-														<a href="#">산업별</a>
-													</li>
-													<li>
-														<a href="#">기업별</a>
-													</li>
-													<li>
-														<a href="#">TOP100</a>
-													</li>
-													<li>
-														<a href="#">슈퍼기업관</a>
-													</li>
-													<li>
-														<a href="#">전문채용관</a>
-													</li>
+													<li><a href="#">상세검색</a></li>
+													<li><a href="#">지역별</a></li>
+													<li><a href="#">직무별</a></li>
+													<li><a href="#">산업별</a></li>
+													<li><a href="#">기업별</a></li>
+													<li><a href="#">TOP100</a></li>
+													<li><a href="#">슈퍼기업관</a></li>
+													<li><a href="#">전문채용관</a></li>
 												</ul>
 											</div>
 										</div>
@@ -183,18 +169,10 @@
 
 											<div class="listBx">
 												<ul>
-													<li>
-														<a href="#">1000대기업 공채</a>
-													</li>
-													<li>
-														<a href="#">공채달력</a>
-													</li>
-													<li>
-														<a href="#">공공기관 채용일정</a>
-													</li>
-													<li>
-														<a href="#">기업공채전략</a>
-													</li>
+													<li><a href="#">1000대기업 공채</a></li>
+													<li><a href="#">공채달력</a></li>
+													<li><a href="#">공공기관 채용일정</a></li>
+													<li><a href="#">기업공채전략</a></li>
 												</ul>
 											</div>
 										</div>
@@ -207,15 +185,9 @@
 
 											<div class="listBx">
 												<ul>
-													<li>
-														<a href="#">헤드헌팅 채용정보</a>
-													</li>
-													<li>
-														<a href="#">헤드헌터 찾기</a>
-													</li>
-													<li>
-														<a href="#">헤드헌팅 채용상담</a>
-													</li>
+													<li><a href="#">헤드헌팅 채용정보</a></li>
+													<li><a href="#">헤드헌터 찾기</a></li>
+													<li><a href="#">헤드헌팅 채용상담</a></li>
 												</ul>
 											</div>
 											<div class="navWrapBanner">
@@ -235,55 +207,25 @@
 
 											<div class="listBx">
 												<ul>
-													<li class="home">
-														<a href="#">퓨처랩 홈</a>
-													</li>
-													<li>
-														<a href="#">취업뉴스</a>
-													</li>
-													<li>
-														<a href="#">잡코리아 TV</a>
-													</li>
-													<li>
-														<a href="#">취업톡톡</a>
-													</li>
-													<li>
-														<a href="#">직무인터뷰</a>
-													</li>
+													<li class="home"><a href="#">퓨처랩 홈</a></li>
+													<li><a href="#">취업뉴스</a></li>
+													<li><a href="#">잡코리아 TV</a></li>
+													<li><a href="#">취업톡톡</a></li>
+													<li><a href="#">직무인터뷰</a></li>
 												</ul>
 												<ul>
-													<li>
-														<a href="#">공기업 모의고사</a>
-													</li>
-													<li>
-														<a href="#">인성역량검사</a>
-													</li>
-													<li>
-														<a href="#">AI면접</a>
-													</li>
-													<li>
-														<a href="#">취업성공툴</a>
-													</li>
-													<li>
-														<a href="#">문서서식 자료</a>
-													</li>
-													<li>
-														<a href="#">역량테스트(MICT)</a>
-													</li>
+													<li><a href="#">공기업 모의고사</a></li>
+													<li><a href="#">인성역량검사</a></li>
+													<li><a href="#">AI면접</a></li>
+													<li><a href="#">취업성공툴</a></li>
+													<li><a href="#">문서서식 자료</a></li>
+													<li><a href="#">역량테스트(MICT)</a></li>
 												</ul>
 												<ul>
-													<li>
-														<a href="#">합격자소서</a>
-													</li>
-													<li>
-														<a href="#">합격스펙</a>
-													</li>
-													<li>
-														<a href="#">인적성∙면접후기</a>
-													</li>
-													<li>
-														<a href="#">취업특강</a>
-													</li>
+													<li><a href="#">합격자소서</a></li>
+													<li><a href="#">합격스펙</a></li>
+													<li><a href="#">인적성∙면접후기</a></li>
+													<li><a href="#">취업특강</a></li>
 												</ul>
 											</div>
 										</div>
@@ -297,15 +239,9 @@
 
 											<div class="listBx">
 												<ul>
-													<li>
-														<a href="#">기업리뷰</a>
-													</li>
-													<li>
-														<a href="#">연봉</a>
-													</li>
-													<li>
-														<a href="#">기업분석보고서</a>
-													</li>
+													<li><a href="#">기업리뷰</a></li>
+													<li><a href="#">연봉</a></li>
+													<li><a href="#">기업분석보고서</a></li>
 												</ul>
 											</div>
 										</div>
@@ -320,11 +256,10 @@
 					<h2 class="skip">주요서비스</h2>
 					<ul class="serviceNav">
 						<!-- 메뉴 활성화 클래스 navFixed 마우스 오버시 active 클래스 추가 -->
-						<li id="gnbGi" class="navItem gi">
-							<a href="#" class="linkItem">
+						<li id="gnbGi" class="navItem gi"><a href="#"
+								class="linkItem">
 								<span class="spNav"><span class="txIr">채용정보</span></span>
-							</a>
-							<!-- // 채용정보 레이어 -->
+							</a> <!-- // 채용정보 레이어 -->
 							<div class="lyNavArea">
 								<h3 class="skip">채용정보 세부메뉴</h3>
 								<div class="lyNavWrap">
@@ -338,71 +273,29 @@
 													</strong>
 													<div class="listBx listBx-col">
 														<ul class="list-col">
-															<li>
-																<a href="#">기획·전략</a>
-															</li>
-															<li>
-																<a href="#">인사·HR</a>
-															</li>
-															<li>
-																<a href="#">마케팅·광고·MD</a>
-															</li>
-															<li>
-																<a href="#">디자인</a>
-															</li>
-															<li>
-																<a href="#">운전·운송·배송</a>
-															</li>
-															<li>
-																<a href="#">고객상담·TM</a>
-															</li>
-															<li>
-																<a href="#">식·음료</a>
-															</li>
-															<li>
-																<a href="#">엔지니어링·설계</a>
-															</li>
-															<li>
-																<a href="#">교육</a>
-															</li>
-															<li>
-																<a href="#">의료·바이오</a>
-															</li>
-															<li>
-																<a href="#">공공·복지</a>
-															</li>
+															<li><a href="#">기획·전략</a></li>
+															<li><a href="#">인사·HR</a></li>
+															<li><a href="#">마케팅·광고·MD</a></li>
+															<li><a href="#">디자인</a></li>
+															<li><a href="#">운전·운송·배송</a></li>
+															<li><a href="#">고객상담·TM</a></li>
+															<li><a href="#">식·음료</a></li>
+															<li><a href="#">엔지니어링·설계</a></li>
+															<li><a href="#">교육</a></li>
+															<li><a href="#">의료·바이오</a></li>
+															<li><a href="#">공공·복지</a></li>
 														</ul>
 														<ul class="list-col">
-															<li>
-																<a href="#">법무·사무·총무</a>
-															</li>
-															<li>
-																<a href="#">회계·세무</a>
-															</li>
-															<li>
-																<a href="#">개발·데이터</a>
-															</li>
-															<li>
-																<a href="#">물류·무역</a>
-															</li>
-															<li>
-																<a href="#">영업</a>
-															</li>
-															<li>
-																<a href="#">금융·보험</a>
-															</li>
-															<li>
-																<a href="#">고객서비스·리테일</a>
-															</li>
-															<li>
-																<a href="#">제조·생산</a>
-															</li>
-															<li>
-																<a href="#">건축·시설</a>
-															</li>
-															<li>
-																<a href="#">미디어·문화·스포츠</a>
-															</li>
+															<li><a href="#">법무·사무·총무</a></li>
+															<li><a href="#">회계·세무</a></li>
+															<li><a href="#">개발·데이터</a></li>
+															<li><a href="#">물류·무역</a></li>
+															<li><a href="#">영업</a></li>
+															<li><a href="#">금융·보험</a></li>
+															<li><a href="#">고객서비스·리테일</a></li>
+															<li><a href="#">제조·생산</a></li>
+															<li><a href="#">건축·시설</a></li>
+															<li><a href="#">미디어·문화·스포츠</a></li>
 														</ul>
 													</div>
 												</div>
@@ -414,39 +307,17 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">서비스업</a>
-															</li>
-															<li>
-																<a href="#">금융·은행업</a>
-															</li>
-															<li>
-																<a href="#">IT·정보통신업</a>
-															</li>
-															<li>
-																<a href="#">판매·유통업</a>
-															</li>
-															<li>
-																<a href="#">제조·생산·화학업</a>
-															</li>
-															<li>
-																<a href="#">교육업</a>
-															</li>
-															<li>
-																<a href="#">건설업</a>
-															</li>
-															<li>
-																<a href="#">의료·제약업</a>
-															</li>
-															<li>
-																<a href="#">미디어·광고업</a>
-															</li>
-															<li>
-																<a href="#">문화·예술·디자인업</a>
-															</li>
-															<li>
-																<a href="#">기관·협회</a>
-															</li>
+															<li><a href="#">서비스업</a></li>
+															<li><a href="#">금융·은행업</a></li>
+															<li><a href="#">IT·정보통신업</a></li>
+															<li><a href="#">판매·유통업</a></li>
+															<li><a href="#">제조·생산·화학업</a></li>
+															<li><a href="#">교육업</a></li>
+															<li><a href="#">건설업</a></li>
+															<li><a href="#">의료·제약업</a></li>
+															<li><a href="#">미디어·광고업</a></li>
+															<li><a href="#">문화·예술·디자인업</a></li>
+															<li><a href="#">기관·협회</a></li>
 														</ul>
 													</div>
 												</div>
@@ -458,60 +329,24 @@
 														</a></strong>
 													<div class="listBx">
 														<ul class="colList joblistArea">
-															<li class="begin">
-																<a href="#">서울</a>
-															</li>
-															<li class="">
-																<a href="#">경기</a>
-															</li>
-															<li class="">
-																<a href="#">인천</a>
-															</li>
-															<li class="begin">
-																<a href="#">대전</a>
-															</li>
-															<li class="">
-																<a href="#">세종</a>
-															</li>
-															<li class="">
-																<a href="#">충남</a>
-															</li>
-															<li class="begin">
-																<a href="#">충북</a>
-															</li>
-															<li class="">
-																<a href="#">광주</a>
-															</li>
-															<li class="">
-																<a href="#">전남</a>
-															</li>
-															<li class="begin">
-																<a href="#">전북</a>
-															</li>
-															<li class="">
-																<a href="#">대구</a>
-															</li>
-															<li class="">
-																<a href="#">경북</a>
-															</li>
-															<li class="begin">
-																<a href="#">부산</a>
-															</li>
-															<li class="">
-																<a href="#">울산</a>
-															</li>
-															<li class="">
-																<a href="#">경남</a>
-															</li>
-															<li class="begin">
-																<a href="#">강원</a>
-															</li>
-															<li class="">
-																<a href="#">제주</a>
-															</li>
-															<li class="">
-																<a href="#">전국</a>
-															</li>
+															<li class="begin"><a href="#">서울</a></li>
+															<li class=""><a href="#">경기</a></li>
+															<li class=""><a href="#">인천</a></li>
+															<li class="begin"><a href="#">대전</a></li>
+															<li class=""><a href="#">세종</a></li>
+															<li class=""><a href="#">충남</a></li>
+															<li class="begin"><a href="#">충북</a></li>
+															<li class=""><a href="#">광주</a></li>
+															<li class=""><a href="#">전남</a></li>
+															<li class="begin"><a href="#">전북</a></li>
+															<li class=""><a href="#">대구</a></li>
+															<li class=""><a href="#">경북</a></li>
+															<li class="begin"><a href="#">부산</a></li>
+															<li class=""><a href="#">울산</a></li>
+															<li class=""><a href="#">경남</a></li>
+															<li class="begin"><a href="#">강원</a></li>
+															<li class=""><a href="#">제주</a></li>
+															<li class=""><a href="#">전국</a></li>
 														</ul>
 													</div>
 												</div>
@@ -523,21 +358,11 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">대기업</a>
-															</li>
-															<li>
-																<a href="#">중견·강소기업</a>
-															</li>
-															<li>
-																<a href="#">외국계기업</a>
-															</li>
-															<li>
-																<a href="#">공기업·공사</a>
-															</li>
-															<li>
-																<a href="#">상장기업</a>
-															</li>
+															<li><a href="#">대기업</a></li>
+															<li><a href="#">중견·강소기업</a></li>
+															<li><a href="#">외국계기업</a></li>
+															<li><a href="#">공기업·공사</a></li>
+															<li><a href="#">상장기업</a></li>
 														</ul>
 													</div>
 												</div>
@@ -548,46 +373,32 @@
 												<div class="row01">
 													<div class="sideList">
 														<ul>
-															<li class="top100">
-																<a href="#">
+															<li class="top100"><a href="#">
 																	<span class="spGnb icnList"></span>TOP100
-																</a>
-															</li>
-															<li class="my-recommend">
-																<a href="#">
+																</a></li>
+															<li class="my-recommend"><a href="#">
 																	<span class="spGnb icnList"></span>스마트매치
-																</a>
-															</li>
-															<li class="recruit-detail-search">
-																<a href="#">
+																</a></li>
+															<li class="recruit-detail-search"><a href="#">
 																	<span class="spGnb icnList"></span>채용공고 상세검색
-																</a>
-															</li>
+																</a></li>
 														</ul>
 													</div>
 													<strong class="titArea"><a href="#">공채</a></strong>
 													<div class="sideList">
 														<ul>
-															<li class="best1000">
-																<a href="#">
+															<li class="best1000"><a href="#">
 																	<span class="spGnb icnList"></span>1000대기업 공채
-																</a>
-															</li>
-															<li class="ort">
-																<a href="#">
+																</a></li>
+															<li class="ort"><a href="#">
 																	<span class="spGnb icnList"></span>공채예상일정
-																</a>
-															</li>
-															<li class="intern">
-																<a href="#">
+																</a></li>
+															<li class="intern"><a href="#">
 																	<span class="spGnb icnList"></span>인턴채용
-																</a>
-															</li>
-															<li class="cal">
-																<a href="#">
+																</a></li>
+															<li class="cal"><a href="#">
 																	<span class="spGnb icnList"></span>공채달력
-																</a>
-															</li>
+																</a></li>
 														</ul>
 													</div>
 													<!-- row01 영역으로 이동 -->
@@ -616,14 +427,11 @@
 											메뉴 닫기</button>
 									</div>
 								</div>
-							</div>
-							<!-- 채용정보 레이어 // -->
-						</li>
-						<li id="gnbStart" class="navItem start">
-							<a href="#" class="linkItem">
+							</div> <!-- 채용정보 레이어 // --></li>
+						<li id="gnbStart" class="navItem start"><a href="#"
+								class="linkItem">
 								<span class="spNav"><span class="txIr">공채정보</span></span>
-							</a>
-							<!-- // 신입공채 레이어 -->
+							</a> <!-- // 신입공채 레이어 -->
 							<div class="lyNavArea">
 								<h3 class="skip">신입공채 세부메뉴</h3>
 								<div class="lyNavWrap">
@@ -637,18 +445,10 @@
 													</strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">1000대기업 공채</a>
-															</li>
-															<li>
-																<a href="#">공채달력</a>
-															</li>
-															<li>
-																<a href="#">공공기관 채용일정</a>
-															</li>
-															<li>
-																<a href="#">기업공채전략</a>
-															</li>
+															<li><a href="#">1000대기업 공채</a></li>
+															<li><a href="#">공채달력</a></li>
+															<li><a href="#">공공기관 채용일정</a></li>
+															<li><a href="#">기업공채전략</a></li>
 														</ul>
 													</div>
 												</div>
@@ -659,36 +459,25 @@
 												<div class="row01">
 													<div class="sideList">
 														<ul>
-															<li class="review">
-																<a href="#">
+															<li class="review"><a href="#">
 																	<span class="spGnb icnList"></span>기업리뷰
-																</a>
-															</li>
-															<li class="inside">
-																<a href="#">
+																</a></li>
+															<li class="inside"><a href="#">
 																	<span class="spGnb icnList"></span>기업분석보고서
-																</a>
-															</li>
-															<li class="interview">
-																<a href="#">
+																</a></li>
+															<li class="interview"><a href="#">
 																	<span class="spGnb icnList"></span>직무인터뷰
-																</a>
-															</li>
-															<li class="pass">
-																<a href="#">
-																<span class="spGnbicnList"></span>합격자소서
-																</a>
-															</li>
-															<li class="career">
-																<a href="#" target="_blank" title="새창 열림">
+																</a></li>
+															<li class="pass"><a href="#">
+																	<span class="spGnbicnList"></span>합격자소서
+																</a></li>
+															<li class="career"><a href="#" target="_blank"
+																	title="새창 열림">
 																	<span class="spGnb icnList"></span>커리어패스
-																</a>
-															</li>
-															<li class="tool">
-																<a href="#">
+																</a></li>
+															<li class="tool"><a href="#">
 																	<span class="spGnb icnList"></span>취업성공툴
-																</a>
-															</li>
+																</a></li>
 														</ul>
 													</div>
 												</div>
@@ -698,19 +487,15 @@
 											닫기</button>
 									</div>
 								</div>
-							</div>
-							<!-- 신입공채 레이어 // -->
-						</li>
-						<li class="navItem lyNull theme" id="theme">
-							<a href="<%=request.getContextPath()%>/onpick" class="linkItem">
+							</div> <!-- 신입공채 레이어 // --></li>
+						<li class="navItem lyNull theme" id="theme"><a
+								href="<%=request.getContextPath()%>/onpick" class="linkItem">
 								<span class="spNav"><span class="txIr">원픽</span></span>
-							</a>
-						</li>
-						<li id="gnbHh" class="navItem hh">
-							<a href="#" class="linkItem">
+							</a></li>
+						<li id="gnbHh" class="navItem hh"><a href="#"
+								class="linkItem">
 								<span class="spNav"><span class="txIr">헤드헌팅</span></span>
-							</a>
-							<!-- // 헤드헌팅 레이어 -->
+							</a> <!-- // 헤드헌팅 레이어 -->
 							<div class="lyNavArea">
 								<h3 class="skip">헤드헌팅 세부메뉴</h3>
 								<div class="lyNavWrap">
@@ -723,24 +508,12 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">과장·차장급</a>
-															</li>
-															<li>
-																<a href="#">부장급</a>
-															</li>
-															<li>
-																<a href="#">임원·CEO</a>
-															</li>
-															<li>
-																<a href="#">주임·대리급</a>
-															</li>
-															<li>
-																<a href="#">팀장·실장</a>
-															</li>
-															<li>
-																<a href="#">본부장</a>
-															</li>
+															<li><a href="#">과장·차장급</a></li>
+															<li><a href="#">부장급</a></li>
+															<li><a href="#">임원·CEO</a></li>
+															<li><a href="#">주임·대리급</a></li>
+															<li><a href="#">팀장·실장</a></li>
+															<li><a href="#">본부장</a></li>
 														</ul>
 													</div>
 												</div>
@@ -794,9 +567,7 @@
 											메뉴 닫기</button>
 									</div>
 								</div>
-							</div>
-							<!-- 헤드헌팅 레이어 // -->
-							<!-- // 헤드헌팅 신청 레이어 -->
+							</div> <!-- 헤드헌팅 레이어 // --> <!-- // 헤드헌팅 신청 레이어 -->
 							<div id="devHHReqLyArea" class="hhReqLyArea"
 								style="display: none">
 								<iframe id="devHHReqLyAreaFrame" width="522" height="444"
@@ -806,13 +577,11 @@
 									style="width: 980px; height: 850px;"></iframe>
 							</div>
 							<div id="devTplDim" class="tplDim" style="display: none;"></div>
-							<!-- 헤드헌팅 신청 레이어 // -->
-						</li>
-						<li id="gnbSalary" class="navItem salary">
-							<a href="#" class="linkItem">
+							<!-- 헤드헌팅 신청 레이어 // --></li>
+						<li id="gnbSalary" class="navItem salary"><a href="#"
+								class="linkItem">
 								<span class="spNav"><span class="txIr">기업·연봉</span></span>
-							</a>
-							<!-- // 연봉 레이어 -->
+							</a> <!-- // 연봉 레이어 -->
 							<div class="lyNavArea">
 								<h3 class="skip">기업·연봉 세부메뉴</h3>
 								<div class="lyNavWrap">
@@ -826,17 +595,11 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">기업리뷰 홈</a>
-															</li>
-															<li>
-																<a href="#">리뷰 비교</a>
-															</li>
-															<li>
-																<a
+															<li><a href="#">기업리뷰 홈</a></li>
+															<li><a href="#">리뷰 비교</a></li>
+															<li><a
 																	href="javascript:if('' != '' &amp;&amp; '' != 'M'){alert('기업리뷰는 개인회원만 작성이 가능합니다.');}else{location.href='/Review/MyReview';}">MY
-																	기업리뷰</a>
-															</li>
+																	기업리뷰</a></li>
 														</ul>
 													</div>
 												</div>
@@ -848,18 +611,10 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">기업별</a>
-															</li>
-															<li>
-																<a href="#">분야별</a>
-															</li>
-															<li>
-																<a href="#">직원별</a>
-															</li>
-															<li>
-																<a href="#" class="tit">연봉뉴스</a>
-															</li>
+															<li><a href="#">기업별</a></li>
+															<li><a href="#">분야별</a></li>
+															<li><a href="#">직원별</a></li>
+															<li><a href="#" class="tit">연봉뉴스</a></li>
 
 														</ul>
 													</div>
@@ -872,9 +627,7 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">기업분석보고서</a>
-															</li>
+															<li><a href="#">기업분석보고서</a></li>
 														</ul>
 													</div>
 												</div>
@@ -885,14 +638,11 @@
 
 									</div>
 								</div>
-							</div>
-							<!-- 연봉 레이어 // -->
-						</li>
-						<li id="futurelab" class="navItem futurelab">
-							<a href="#" class="linkItem">
+							</div> <!-- 연봉 레이어 // --></li>
+						<li id="futurelab" class="navItem futurelab"><a href="#"
+								class="linkItem">
 								<span class="spNav"><span class="txIr">퓨처랩</span></span>
-							</a>
-							<!-- // 콘텐츠 레이어 -->
+							</a> <!-- // 콘텐츠 레이어 -->
 							<div class="lyNavArea">
 								<h3 class="skip">퓨처랩 세부메뉴</h3>
 								<div class="lyNavWrap">
@@ -908,15 +658,9 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">취업뉴스</a>
-															</li>
-															<li>
-																<a href="#">잡코리아 TV</a>
-															</li>
-															<li>
-																<a href="#">취업톡톡</a>
-															</li>
+															<li><a href="#">취업뉴스</a></li>
+															<li><a href="#">잡코리아 TV</a></li>
+															<li><a href="#">취업톡톡</a></li>
 
 														</ul>
 													</div>
@@ -929,12 +673,8 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">기업분석보고서</a>
-															</li>
-															<li>
-																<a href="#">직무인터뷰</a>
-															</li>
+															<li><a href="#">기업분석보고서</a></li>
+															<li><a href="#">직무인터뷰</a></li>
 														</ul>
 													</div>
 												</div>
@@ -946,18 +686,10 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">합격자소서</a>
-															</li>
-															<li>
-																<a href="#">합격스펙</a>
-															</li>
-															<li>
-																<a href="#">인적성∙면접후기</a>
-															</li>
-															<li>
-																<a href="#">취업특강</a>
-															</li>
+															<li><a href="#">합격자소서</a></li>
+															<li><a href="#">합격스펙</a></li>
+															<li><a href="#">인적성∙면접후기</a></li>
+															<li><a href="#">취업특강</a></li>
 														</ul>
 													</div>
 												</div>
@@ -969,23 +701,12 @@
 														</a></strong>
 													<div class="listBx">
 														<ul>
-															<li>
-																<a href="#">취업성공툴</a>
-															</li>
-															<li>
-																<a href="#">공기업 모의고사</a>
-															</li>
-															<li>
-																<a href="#">인성역량검사</a>
-															</li>
-															<li>
-																<a href="#">AI면접</a>
-															</li>
-															<li>
-																<a href="#">문서서식 자료</a>
-															</li>
-															<li class="mict_nav">
-																<a href="javascript:void(0);">역량테스트(MICT)</a>
+															<li><a href="#">취업성공툴</a></li>
+															<li><a href="#">공기업 모의고사</a></li>
+															<li><a href="#">인성역량검사</a></li>
+															<li><a href="#">AI면접</a></li>
+															<li><a href="#">문서서식 자료</a></li>
+															<li class="mict_nav"><a href="javascript:void(0);">역량테스트(MICT)</a>
 															</li>
 														</ul>
 													</div>
@@ -996,145 +717,122 @@
 											메뉴 닫기</button>
 									</div>
 								</div>
-							</div>
-							<!-- 콘텐츠 레이어 // -->
-						</li>
-						<li id="gnbQna" class="navItem qna lyNull">
-							<a href="#" class="linkItem">
+							</div> <!-- 콘텐츠 레이어 // --></li>
+						<li id="gnbQna" class="navItem qna lyNull"><a href="#"
+								class="linkItem">
 								<span class="spNav"><span class="txIr">취업톡톡</span></span>
-							</a>
-						</li>
-						<li class="navItem careerpath lyNull" id="careerpath">
-							<a href="#" class="linkItem" target="_black">
+							</a></li>
+						<li class="navItem careerpath lyNull" id="careerpath"><a
+								href="#" class="linkItem" target="_black">
 								<span class="spNav"><span class="txIr">커리어패스</span></span>
-							</a>
-						</li>
+							</a></li>
 					</ul>
 					<!-- my 홈일경우 클래스 myPage -->
 					<ul id="devMyPage" class="userNav">
-						<li class="userNav-item login">
-							<a href="login" class="txt-button login-button">로그인</a>
-						</li>
-						<li class="userNav-item join">
-							<a href="signup/person" class="txt-button join-button">회원가입</a>
-						</li>
-						<li class="userNav-item corp">
-							<a href="https://www.jobkorea.co.kr/Corp/Index" target="_blank">
-								<span class="spGnb">기업서비스</span>
-							</a>
-							<div class="lyMyArea">
-								<div class="myInner">
-									<div class="lyRow">
-										<div class="btnRowWrap">
-											<a
-												href="https://www.jobkorea.co.kr/Login/Login_Tot.asp?rDBName=GI">기업회원
-												로그인</a>
-										</div>
-									</div>
-									<div class="myLists">
-										<ul>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Corp/Main">
-													<span class="tx">기업회원 홈</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Yocruit/Mng/GI_Reg">
-													<span class="tx">채용공고 등록</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Corp/GiMng/List">
-													<span class="tx">공고·지원자 관리</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Corp/Person/Find">
-													<span class="tx">인재검색 관리</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/OnePick/Intro">
-													<span class="tx">원픽 서비스 이용</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/service/company/option">
-													<span class="tx">기업회원 서비스 안내</span>
-												</a>
-											</li>
-											<li>
+						<sec:authorize access="isAnonymous()">
+							<li class="userNav-item login"><a href="login"
+									class="txt-button login-button">로그인</a></li>
+							<li class="userNav-item join"><a href="signup/person"
+									class="txt-button join-button">회원가입</a></li>
+							<li class="userNav-item corp"><a
+									href="login" target="_blank">
+									<span class="spGnb">기업서비스</span>
+								</a>
+								<div class="lyMyArea">
+									<div class="myInner">
+										<div class="lyRow">
+											<div class="btnRowWrap">
 												<a
-													href="https://www.jobkorea.co.kr/service/headhunting/platinum">
-													<span class="tx">서치펌 서비스 안내</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<span class="icnArr spGnb"></span>
-							</div>
-						</li>
-						<li class="userNav-item my member">
-							<a href="myPage" class="btnMyOpen txt-button ico-cp"
-								onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');">
-								<span class="spGnb"></span><span class="user-name">${pname}</span><span
-									class="skip">열기</span>
-							</a>
-							<div class="lyMyArea">
-								<div class="myInner">
-									<div class="myLists">
-										<ul>
-											<li>
-												<a href="https://www.jobkorea.co.kr/User/ResumeMng"
-													onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">
-													<span class="tx">이력서 관리</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/User/ApplyMng"
-													onclick="GA_Event('공통_PC', 'gnb', '입사지원 현황');">
-													<span class="tx">입사지원 현황</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/User/PositionOffer"
-													onclick="GA_Event('공통_PC', 'gnb', '이력서 열람기업');">
-													<span class="tx">이력서열람 기업</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/User/Smartmatch"
-													onclick="GA_Event('공통_PC', 'gnb', '스마트매치');">
-													<span class="tx">스마트매치</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/User/Scrap"
-													onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
-													<span class="tx">스크랩</span>
-												</a>
-											</li>
-											<li>
-												<a href="https://www.jobkorea.co.kr/Text_User/User_Pwd.asp"
-													onclick="GA_Event('공통_PC', 'gnb', '개인정보 수정');">
-													<span class="tx">개인정보 수정</span>
-												</a>
-											</li>
-										</ul>
-									</div>
-									<div class="lyRow">
-										<div class="btnRowWrap">
-											<form action="logout" method="post">
-												<a href="/Login/Logout.asp" class="btnLogOut"
-													onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
-											</form>
+													href="login">기업회원
+													로그인</a>
+											</div>
+										</div>
+										<div class="myLists">
+											<ul>
+												<li><a href="https://www.jobkorea.co.kr/Corp/Main">
+														<span class="tx">기업회원 홈</span>
+													</a></li>
+												<li><a
+														href="https://www.jobkorea.co.kr/Yocruit/Mng/GI_Reg">
+														<span class="tx">채용공고 등록</span>
+													</a></li>
+												<li><a
+														href="https://www.jobkorea.co.kr/Corp/GiMng/List">
+														<span class="tx">공고·지원자 관리</span>
+													</a></li>
+												<li><a
+														href="https://www.jobkorea.co.kr/Corp/Person/Find">
+														<span class="tx">인재검색 관리</span>
+													</a></li>
+												<li><a href="https://www.jobkorea.co.kr/OnePick/Intro">
+														<span class="tx">원픽 서비스 이용</span>
+													</a></li>
+												<li><a
+														href="https://www.jobkorea.co.kr/service/company/option">
+														<span class="tx">기업회원 서비스 안내</span>
+													</a></li>
+												<li><a
+														href="https://www.jobkorea.co.kr/service/headhunting/platinum">
+														<span class="tx">서치펌 서비스 안내</span>
+													</a></li>
+											</ul>
 										</div>
 									</div>
-								</div>
-								<span class="icnArr spGnb"></span>
-							</div>
-						</li>
+									<span class="icnArr spGnb"></span>
+								</div></li>
+						</sec:authorize>
+						<sec:authorize access="hasRole('ROLE_PERSON')">
+							<li class="userNav-item my member"><a href="myPage"
+									class="btnMyOpen txt-button ico-cp"
+									onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');">
+									<span class="spGnb"></span><span class="user-name">${pname}</span><span
+										class="skip">열기</span>
+								</a>
+								<div class="lyMyArea">
+									<div class="myInner">
+										<div class="myLists">
+											<ul>
+												<li><a href="https://www.jobkorea.co.kr/User/ResumeMng"
+														onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">
+														<span class="tx">이력서 관리</span>
+													</a></li>
+												<li><a href="https://www.jobkorea.co.kr/User/ApplyMng"
+														onclick="GA_Event('공통_PC', 'gnb', '입사지원 현황');">
+														<span class="tx">입사지원 현황</span>
+													</a></li>
+												<li><a
+														href="https://www.jobkorea.co.kr/User/PositionOffer"
+														onclick="GA_Event('공통_PC', 'gnb', '이력서 열람기업');">
+														<span class="tx">이력서열람 기업</span>
+													</a></li>
+												<li><a
+														href="https://www.jobkorea.co.kr/User/Smartmatch"
+														onclick="GA_Event('공통_PC', 'gnb', '스마트매치');">
+														<span class="tx">스마트매치</span>
+													</a></li>
+												<li><a href="https://www.jobkorea.co.kr/User/Scrap"
+														onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
+														<span class="tx">스크랩</span>
+													</a></li>
+												<li><a
+														href="https://www.jobkorea.co.kr/Text_User/User_Pwd.asp"
+														onclick="GA_Event('공통_PC', 'gnb', '개인정보 수정');">
+														<span class="tx">개인정보 수정</span>
+													</a></li>
+											</ul>
+										</div>
+										<div class="lyRow">
+											<div class="btnRowWrap">
+												<form action="logout" method="post">
+													<a href="/Login/Logout.asp" class="btnLogOut"
+														onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
+												</form>
+											</div>
+										</div>
+									</div>
+									<span class="icnArr spGnb"></span>
+								</div></li>
+						</sec:authorize>
 					</ul>
 				</div>
 			</div>
@@ -1149,29 +847,25 @@
 				<div class="swiper-container bnr-swiper">
 					<ul class="swiper-wrapper">
 						<li class="swiper-slide" data-swiper-slide-index="2"
-							style="width: 214px;">
-							<a href="/top100" target="_blank">
+							style="width: 214px;"><a href="/top100" target="_blank">
 								<img
 									src="//i.jobkorea.kr/content/images/personal/main/sv-banner1.png"
 									alt="">
-							</a>
-						</li>
+							</a></li>
 						<li class="swiper-slide" data-swiper-slide-index="1"
-							style="width: 214px;">
-							<a href="/User/Qstn/Index" target="_blank">
+							style="width: 214px;"><a href="/User/Qstn/Index"
+								target="_blank">
 								<img
 									src="//i.jobkorea.kr/content/images/personal/main/sv-banner2.png"
 									alt="">
-							</a>
-						</li>
+							</a></li>
 						<li class="swiper-slide" data-swiper-slide-index="0"
-							style="width: 214px;">
-							<a href="/Review/MyReview" target="_blank">
+							style="width: 214px;"><a href="/Review/MyReview"
+								target="_blank">
 								<img
 									src="//i.jobkorea.kr/content/images/personal/main/sv-banner3.png"
 									alt="">
-							</a>
-						</li>
+							</a></li>
 					</ul>
 					<span class="swiper-notification" aria-live="assertive"
 						aria-atomic="true"></span>
