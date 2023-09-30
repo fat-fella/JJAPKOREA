@@ -51,11 +51,12 @@
                     </select>
                     <label style=font-size:12px;color:red;>1차 세부채용분야<span>*</span></label>
                     <select name="secondRecruitField" id="secondRecruitField">
-                    
-                    	<option>TODO</option>
+                    	<c:forEach var="secondRecruitFieldOption" items="${jlist}">
+                    		<option value='${secondRecruitFieldOption.jobscd}'>${secondRecruitFieldOption.jobscat}</option>
+                    	</c:forEach>
                     </select>
                      <label style=font-size:12px;color:red;>2차 세부채용분야<span>*</span></label>
-                    <select name="recruitFiled" id="recruitField">
+                    <select name="recruitField" id="recruitField">
                     	<option>TODO</option>
                     </select>
                 </div>
@@ -126,7 +127,39 @@
         });
     </script>
     <script>
-
+/* 		function updateSecondField(){
+			var firstField = document.getElementById("firstRecruitField");
+			var secondField = document.getElementById("secondRecruitField");
+			
+			var selectedValue = firstField.value;
+			
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/getSecondRecruitField?firstRecruitField=" + selectedValue, true);
+			
+			xhr.onreadystatechange = function (){
+				if (xhr.readyState === 4 && xhr.status ===200){
+					var secondRecruitFieldOptions = JSON.parse(xhr.responseText);
+					
+					secondField.innerHTML = secondRecruitFieldOptions;
+				}
+			};
+			xhr.send(); */
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
     </script>
 
 </body>
