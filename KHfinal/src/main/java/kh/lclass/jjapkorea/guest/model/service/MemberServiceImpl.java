@@ -1,13 +1,13 @@
-package kh.lclass.jjapkorea.member.model.service;
+package kh.lclass.jjapkorea.guest.model.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import kh.lclass.jjapkorea.member.model.dao.MemberDao;
-import kh.lclass.jjapkorea.member.model.dto.BusinessDto;
-import kh.lclass.jjapkorea.member.model.dto.MemberDto;
-import kh.lclass.jjapkorea.member.model.dto.PersonDto;
+import kh.lclass.jjapkorea.guest.model.dao.MemberDao;
+import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
+import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
+import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 
 @Service
 @Transactional

@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kh.lclass.jjapkorea.member.model.dto.BusinessDto;
-import kh.lclass.jjapkorea.member.model.dto.MemberDto;
-import kh.lclass.jjapkorea.member.model.dto.PersonDto;
-import kh.lclass.jjapkorea.member.model.service.MemberService;
+import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
+import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
+import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
+import kh.lclass.jjapkorea.guest.model.service.MemberService;
 
 @Controller
 @RequestMapping("/signup")

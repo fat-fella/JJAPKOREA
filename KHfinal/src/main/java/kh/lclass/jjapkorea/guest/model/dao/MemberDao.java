@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.member.model.dao;
+package kh.lclass.jjapkorea.guest.model.dao;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,10 +7,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kh.lclass.jjapkorea.member.model.dto.BusinessDto;
-import kh.lclass.jjapkorea.member.model.dto.BusinessFormDto;
-import kh.lclass.jjapkorea.member.model.dto.MemberDto;
-import kh.lclass.jjapkorea.member.model.dto.PersonDto;
+import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
+import kh.lclass.jjapkorea.guest.model.dto.BusinessFormDto;
+import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
+import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 
 @Repository
 public class MemberDao {

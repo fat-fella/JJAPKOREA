@@ -1,8 +1,8 @@
-package kh.lclass.jjapkorea.member.model.service;
+package kh.lclass.jjapkorea.guest.model.service;
 
-import kh.lclass.jjapkorea.member.model.dto.BusinessDto;
-import kh.lclass.jjapkorea.member.model.dto.MemberDto;
-import kh.lclass.jjapkorea.member.model.dto.PersonDto;
+import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
+import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
+import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 
 public interface MemberService {
 	MemberDto loginAdmin(MemberDto memberDto) throws Exception;

@@ -7,10 +7,10 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="kh.lclass.jjapkorea.member.model.dto.MemberDto" alias="memberDto"/>
-		<typeAlias type="kh.lclass.jjapkorea.member.model.dto.PersonDto" alias="personDto"/>
-		<typeAlias type="kh.lclass.jjapkorea.member.model.dto.BusinessDto" alias="businessDto"/>
-		<typeAlias type="kh.lclass.jjapkorea.member.model.dto.BusinessFormDto" alias="businessFormDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.guest.model.dto.MemberDto" alias="memberDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.guest.model.dto.PersonDto" alias="personDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.guest.model.dto.BusinessDto" alias="businessDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.guest.model.dto.BusinessFormDto" alias="businessFormDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.business.model.dto.JobPostingDto" alias="jobPostingDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.business.model.dto.JobPostingCategoryDto" alias="jobPostingCategoryDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.person.model.dto.ScrapDto" alias="scrapDto"/>

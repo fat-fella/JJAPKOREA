@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kh.lclass.jjapkorea.member.model.service.MemberService;
+import kh.lclass.jjapkorea.guest.model.service.MemberService;
 
 @Controller
 @RequestMapping("/login")
