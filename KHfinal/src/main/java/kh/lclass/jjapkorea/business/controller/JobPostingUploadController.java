@@ -25,17 +25,17 @@ public class JobPostingUploadController {
 	@Autowired
 	private JobPostingUploadService jobPostingUploadService;
 	
-//	@GetMapping("/register")
-//	public String jobUpload(){
-//		return "jpost/jpostUpload";
-//	}
 	@GetMapping("/register")
-	public ModelAndView jobUpload(ModelAndView mv) throws Exception {
-		mv.addObject("jlist", jobPostingUploadService.selectFirst());
-		mv.setViewName("jpost/jpostUpload");
-		
-		return mv;
+	public String jobUpload(){
+		return "jpost/jpostUpload";
 	}
+//	@GetMapping("/register")
+//	public ModelAndView jobUpload(ModelAndView mv) throws Exception {
+//		mv.addObject("jlist", jobPostingUploadService.selectFirst());
+//		mv.setViewName("jpost/jpostUpload");
+//		
+//		return mv;
+//	}
 	
 	
 	
