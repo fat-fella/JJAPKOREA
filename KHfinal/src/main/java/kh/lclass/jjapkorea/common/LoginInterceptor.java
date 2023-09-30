@@ -13,7 +13,7 @@ public class LoginInterceptor implements HandlerInterceptor{
 		Object obj1 = request.getSession().getAttribute("loginPerson");
 		Object obj2 = request.getSession().getAttribute("loginBusiness");
 		if(obj1 == null || obj2 == null) {  // 로그인 되어있지 않은 상태
-			response.sendRedirect(request.getContextPath()+"/member/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 			// 타겟 URL요청으로 가지 않음.
 			return false;
 		}
