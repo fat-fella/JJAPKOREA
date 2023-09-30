@@ -1217,7 +1217,7 @@
 	
 	document.addEventListener("DOMContentLoaded", function() {
 		// 링크 클릭 시 기본 동작(페이지 새로고침) 막기
-		document.querySelectorAll(".btnLogOut").addEventListener("click", function(e) {
+		document.querySelector(".btnLogOut").addEventListener("click", function(e) {
 			e.preventDefault();
 		});
 	});
