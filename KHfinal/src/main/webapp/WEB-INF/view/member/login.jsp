@@ -63,25 +63,26 @@
 									<em>Caps Lock</em>이 켜져 있습니다.<span class="mainIcn mainIcnArrUp"></span>
 								</div>
 							</div>
+							<div class="check_row">
+								<input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y">
+								<label for="lb_idSave">로그인 상태 유지</label> <span class="txtBar">
+									| </span>
+								<a href="javascript:void(0)" class="devSecPop">IP보안</a>
+								<button type="button" class="btnSecurity btnSecurity_on"
+									onclick="ipCheckSetting();">
+									<span class="setOn">ON</span>
+								</button>
+								<!--<span id="ipNotice" class="devHide"><img src="https://i.jobkorea.kr/content/images/login/ver_1/ip_layer_bg.png" alt="개인정보 보호를 위해 IP보완을 ON으로 변경해주세요"></span>-->
+								<p class="sch">
+									<a href="https://www.jobkorea.co.kr/Login/Search/search_id.asp"
+										target="_new">아이디 찾기</a>
+									<span class="txtBar"> | </span>
+									<a
+										href="https://www.jobkorea.co.kr/Login/Search/search_pwd.asp"
+										target="_new">비밀번호 찾기</a>
+								</p>
+							</div>
 						</form>
-						<div class="check_row">
-							<input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y">
-							<label for="lb_idSave">로그인 상태 유지</label> <span class="txtBar">
-								| </span>
-							<a href="javascript:void(0)" class="devSecPop">IP보안</a>
-							<button type="button" class="btnSecurity btnSecurity_on"
-								onclick="ipCheckSetting();">
-								<span class="setOn">ON</span>
-							</button>
-							<!--<span id="ipNotice" class="devHide"><img src="https://i.jobkorea.kr/content/images/login/ver_1/ip_layer_bg.png" alt="개인정보 보호를 위해 IP보완을 ON으로 변경해주세요"></span>-->
-							<p class="sch">
-								<a href="https://www.jobkorea.co.kr/Login/Search/search_id.asp"
-									target="_new">아이디 찾기</a>
-								<span class="txtBar"> | </span>
-								<a href="https://www.jobkorea.co.kr/Login/Search/search_pwd.asp"
-									target="_new">비밀번호 찾기</a>
-							</p>
-						</div>
 
 						<!--	API SNS Login   -->
 						<div class="list-social">
