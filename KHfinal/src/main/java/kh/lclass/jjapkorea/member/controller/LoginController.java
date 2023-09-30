@@ -17,6 +17,11 @@ public class LoginController {
 		return "member/login";
 	}
 	
+	@GetMapping("/admin")
+	public String loginAdmin() throws Exception {
+		return "member/loginAdmin";
+	}
+	
 //	@PostMapping("/admin")
 //	public ResponseEntity<String> loginAdmin(MemberDto memberDto, HttpServletRequest request, RedirectAttributes redirectAttr) throws Exception {
 //		HttpSession session = request.getSession();
