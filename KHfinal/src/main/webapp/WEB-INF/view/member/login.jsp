@@ -39,7 +39,7 @@
 						<legend class="blind">로그인 입력폼</legend>
 
 						<form name="form" id="form" method="post"
-							action="../../jjapkorea/login" onsubmit="return login_send();">
+							action="../../jjapkorea/login">
 							<input type="hidden" name="mtype" id="mtype" value="ROLE_PERSON">
 							<!-- 회원선택-->
 							<div class="select_row">
