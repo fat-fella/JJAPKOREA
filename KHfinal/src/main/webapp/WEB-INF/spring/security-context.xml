@@ -25,10 +25,12 @@
 							password-parameter="mpw" 
 		/>
 		
+		<remember-me data-source-ref="dataSource" token-validity-seconds="604800" />
+		
 		<logout logout-url="/logout"
 							logout-success-url="/index"
 							invalidate-session="true"
-							delete-cookies="true" 
+							delete-cookies="remember-me,JSESSION_ID" 
 		/>
 	</http>
 	
