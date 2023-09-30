@@ -85,25 +85,6 @@
 								</p>
 							</div>
 
-							<!--// 그림문자 입력폼 -->
-							<div class="capck_row loginImgTxt devHide">
-								<label for="gtxt" class="blind">그림문자</label>
-								<input type="text" class="inpTxt inpCap" name="gtxt" id="gtxt"
-									size="16" title="그림문자 입력" autocomplete="off">
-								<!--[개발] end 추가하면 배경텍스트 사라짐 -->
-								<div class="captcha">
-									<span class="img"><img id="imgCaptcha"
-										src="/login/captcha.asp" width="198" height="40" alt="그림문자"></span>
-									<a href="javascript:void(0)" class="changeImg"
-										onclick="RefreshImage('imgCaptcha')">
-										<span class="skip">새로고침</span>
-									</a>
-								</div>
-							</div>
-							<!-- 그림문자 입력폼 //-->
-
-							<p class="alarmMsg"></p>
-
 							<!--	API SNS Login   -->
 							<div class="list-social">
 								<ul>
