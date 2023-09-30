@@ -35,12 +35,11 @@
 				<div class="logWrap" id="loginFormWrite">
 					<h2 class="blind">로그인</h2>
 
-					<form name="form" id="form" method="post"
-						action="../../jjapkorea/login"
-						onsubmit="return login_send();">
-						<fieldset class="login_form">
-							<legend class="blind">로그인 입력폼</legend>
+					<fieldset class="login_form">
+						<legend class="blind">로그인 입력폼</legend>
 
+						<form name="form" id="form" method="post"
+							action="../../jjapkorea/login" onsubmit="return login_send();">
 							<input type="hidden" name="mtype" id="mtype" value="ROLE_PERSON">
 							<!-- 회원선택-->
 							<div class="select_row">
@@ -64,55 +63,53 @@
 									<em>Caps Lock</em>이 켜져 있습니다.<span class="mainIcn mainIcnArrUp"></span>
 								</div>
 							</div>
+						</form>
+						<div class="check_row">
+							<input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y">
+							<label for="lb_idSave">로그인 상태 유지</label> <span class="txtBar">
+								| </span>
+							<a href="javascript:void(0)" class="devSecPop">IP보안</a>
+							<button type="button" class="btnSecurity btnSecurity_on"
+								onclick="ipCheckSetting();">
+								<span class="setOn">ON</span>
+							</button>
+							<!--<span id="ipNotice" class="devHide"><img src="https://i.jobkorea.kr/content/images/login/ver_1/ip_layer_bg.png" alt="개인정보 보호를 위해 IP보완을 ON으로 변경해주세요"></span>-->
+							<p class="sch">
+								<a href="https://www.jobkorea.co.kr/Login/Search/search_id.asp"
+									target="_new">아이디 찾기</a>
+								<span class="txtBar"> | </span>
+								<a href="https://www.jobkorea.co.kr/Login/Search/search_pwd.asp"
+									target="_new">비밀번호 찾기</a>
+							</p>
+						</div>
 
-							<div class="check_row">
-								<input type="checkbox" name="lb_idSave" id="lb_idSave" value="Y">
-								<label for="lb_idSave">로그인 상태 유지</label> <span class="txtBar">
-									| </span>
-								<a href="javascript:void(0)" class="devSecPop">IP보안</a>
-								<button type="button" class="btnSecurity btnSecurity_on"
-									onclick="ipCheckSetting();">
-									<span class="setOn">ON</span>
-								</button>
-								<!--<span id="ipNotice" class="devHide"><img src="https://i.jobkorea.kr/content/images/login/ver_1/ip_layer_bg.png" alt="개인정보 보호를 위해 IP보완을 ON으로 변경해주세요"></span>-->
-								<p class="sch">
-									<a href="https://www.jobkorea.co.kr/Login/Search/search_id.asp"
-										target="_new">아이디 찾기</a>
-									<span class="txtBar"> | </span>
-									<a
-										href="https://www.jobkorea.co.kr/Login/Search/search_pwd.asp"
-										target="_new">비밀번호 찾기</a>
-								</p>
+						<!--	API SNS Login   -->
+						<div class="list-social">
+							<ul>
+								<li><a href="${ naver_url }" id="btnNvLogin" class="naver"
+										onclick="_LA.EVT('4287')" style="display: block;">네이버 로그인</a></li>
+								<li><a href="${ kakao_url }" id="btnKaLogin" class="kakao"
+										onclick="_LA.EVT('4286')" style="display: block;">카카오 로그인</a></li>
+								<li><a href="${ google_url }" id="btnGlLogin"
+										class="google" onclick="_LA.EVT('4288')"
+										style="display: block;"> 구글 로그인</a></li>
+							</ul>
+						</div>
+
+						<div class="join">
+							<div id="M_Alert" style="display: block;">
+								좋은 일을 찾으시나요? 회원가입하시고 다양한 혜택을 누리세요!
+								<a href="../../jjapkorea/signup/person" target="_new">회원가입</a>
 							</div>
-
-							<!--	API SNS Login   -->
-							<div class="list-social">
-								<ul>
-									<li><a href="${ naver_url }" id="btnNvLogin" class="naver"
-											onclick="_LA.EVT('4287')" style="display: block;">네이버 로그인</a></li>
-									<li><a href="${ kakao_url }" id="btnKaLogin" class="kakao"
-											onclick="_LA.EVT('4286')" style="display: block;">카카오 로그인</a></li>
-									<li><a href="${ google_url }" id="btnGlLogin"
-											class="google" onclick="_LA.EVT('4288')"
-											style="display: block;"> 구글 로그인</a></li>
-								</ul>
-							</div>
-
-							<div class="join">
-								<div id="M_Alert" style="display: block;">
-									좋은 일을 찾으시나요? 회원가입하시고 다양한 혜택을 누리세요!
-									<a href="../../jjapkorea/signup/person" target="_new">회원가입</a>
-								</div>
-								<div id="Co_Alert" style="display: none;">
-									좋은 인재를 구하시나요? 회원가입하시고 다양한 혜택을 누리세요!
-									<a href="../../jjapkorea/signup/business" target="_new">회원가입</a>
-									<div class="text-balloon" style="display: none;">
-										신규가입 <span>3종</span> 쿠폰 제공!
-									</div>
+							<div id="Co_Alert" style="display: none;">
+								좋은 인재를 구하시나요? 회원가입하시고 다양한 혜택을 누리세요!
+								<a href="../../jjapkorea/signup/business" target="_new">회원가입</a>
+								<div class="text-balloon" style="display: none;">
+									신규가입 <span>3종</span> 쿠폰 제공!
 								</div>
 							</div>
-						</fieldset>
-					</form>
+						</div>
+					</fieldset>
 				</div>
 				<div class="adBan">
 					<h2 class="skip">광고</h2>
@@ -182,8 +179,7 @@
 					</div>
 				</div>
 				<div class="btn-fixed-right">
-					<a href="signup/person"
-						class="btn-join-right">가입하기</a>
+					<a href="signup/person" class="btn-join-right">가입하기</a>
 					<a href="javascript:;"
 						onclick="$('html, body').animate({scrollTop: 0}, 800);"
 						class="btn-top btn-top-scroll">
