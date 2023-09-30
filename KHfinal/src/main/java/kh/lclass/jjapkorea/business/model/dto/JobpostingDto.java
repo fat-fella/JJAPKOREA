@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.Jobposting.model.dto;
+package kh.lclass.jjapkorea.business.model.dto;
 
 import lombok.Data;
 

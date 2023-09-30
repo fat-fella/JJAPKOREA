@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.scrap.model.service;
+package kh.lclass.jjapkorea.person.model.service;
 
 
 import java.sql.Connection;
@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
-import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
-import kh.lclass.jjapkorea.scrap.model.dao.ScrapDao;
-import kh.lclass.jjapkorea.scrap.model.dto.ScrapDto;
+import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.service.JobpostingService;
+import kh.lclass.jjapkorea.person.model.dao.ScrapDao;
+import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
 
 @Service
 public class ScrapService {

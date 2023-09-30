@@ -1,7 +1,7 @@
-package kh.lclass.jjapkorea.Jobposting.model.service;
+package kh.lclass.jjapkorea.business.model.service;
 
 import java.util.List;
-import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
 
 
 public interface JobPostingUploadService {

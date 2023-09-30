@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.Jobposting.model.dao;
+package kh.lclass.jjapkorea.business.model.dao;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
 
 @Repository("jobPostinguploadDao")
 public class JobPostingUploadDao {

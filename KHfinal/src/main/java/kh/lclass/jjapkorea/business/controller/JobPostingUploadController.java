@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.Jobposting.controller;
+package kh.lclass.jjapkorea.business.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
-import kh.lclass.jjapkorea.Jobposting.model.service.JobPostingUploadService;
-import kh.lclass.jjapkorea.Jobposting.model.service.JobPostingUploadServiceImpl;
-import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
+import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.service.JobPostingUploadService;
+import kh.lclass.jjapkorea.business.model.service.JobPostingUploadServiceImpl;
+import kh.lclass.jjapkorea.business.model.service.JobpostingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

@@ -11,8 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
-import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
+import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.service.JobpostingService;
 import kh.lclass.jjapkorea.api.WorknetApi;
 
 @Controller

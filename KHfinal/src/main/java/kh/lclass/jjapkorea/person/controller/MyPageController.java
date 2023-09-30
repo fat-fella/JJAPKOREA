@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.member.controller;
+package kh.lclass.jjapkorea.person.controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import kh.lclass.jjapkorea.scrap.model.dto.ScrapDto;
-import kh.lclass.jjapkorea.scrap.model.service.ScrapService;
+import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
+import kh.lclass.jjapkorea.person.model.service.ScrapService;
 
 @Controller
 @RequestMapping("/myPage")

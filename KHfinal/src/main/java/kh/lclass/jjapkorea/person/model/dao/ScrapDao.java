@@ -1,4 +1,4 @@
-package kh.lclass.jjapkorea.scrap.model.dao;
+package kh.lclass.jjapkorea.person.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +14,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kh.lclass.jjapkorea.scrap.model.dto.ScrapDto;
+import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
 
 @Repository
 public class ScrapDao {

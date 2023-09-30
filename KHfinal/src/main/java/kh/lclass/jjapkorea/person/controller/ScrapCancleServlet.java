@@ -1,3 +1,4 @@
+package kh.lclass.jjapkorea.person.controller;
 //package kh.lclass.jjapkorea.member.controller;
 //
 //import java.io.IOException;

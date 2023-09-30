@@ -1,10 +1,10 @@
-package kh.lclass.jjapkorea.scrap.model.dto;
+package kh.lclass.jjapkorea.person.model.dto;
 
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
 import lombok.Data;
 
 @Data

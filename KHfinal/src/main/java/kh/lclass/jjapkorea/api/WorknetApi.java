@@ -29,8 +29,8 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import kh.lclass.jjapkorea.Jobposting.model.dto.JobpostingDto;
-import kh.lclass.jjapkorea.Jobposting.model.service.JobpostingService;
+import kh.lclass.jjapkorea.business.model.dto.JobpostingDto;
+import kh.lclass.jjapkorea.business.model.service.JobpostingService;
 
 @Component
 public class WorknetApi {
