@@ -20,7 +20,6 @@
 		<intercept-url pattern="/**" access="permitAll" />
 		<form-login login-page="/login"
 							default-target-url="/index"
-							authentication-success-handler-ref="customLoginSuccess"
 							authentication-failure-url="/login"
 							username-parameter="mid"
 							password-parameter="mpw" 
@@ -48,5 +47,4 @@
 	</authentication-manager>
      
     <beans:bean id="bCryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
-    <beans:bean id="customLoginSuccess" class="kh.lclass.jjapkorea.common.CustomLoginSuccessHandler" />
 </beans:beans>
