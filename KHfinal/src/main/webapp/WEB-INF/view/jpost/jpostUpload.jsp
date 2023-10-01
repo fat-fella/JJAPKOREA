@@ -128,7 +128,9 @@
     </script>
 	<script>
 
-		$(#.)			
+		$(#.firstRecruitField).select(function(){
+			
+		})			
 			
 			
 		}
