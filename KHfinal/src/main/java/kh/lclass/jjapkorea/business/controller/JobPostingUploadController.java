@@ -2,6 +2,7 @@ package kh.lclass.jjapkorea.business.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,17 +26,19 @@ public class JobPostingUploadController {
 	@Autowired
 	private JobPostingUploadService jobPostingUploadService;
 	
-	@GetMapping("/register")
-	public String jobUpload(){
-		return "jpost/jpostUpload";
-	}
 //	@GetMapping("/register")
-//	public ModelAndView jobUpload(ModelAndView mv) throws Exception {
-//		mv.addObject("jlist", jobPostingUploadService.selectFirst());
-//		mv.setViewName("jpost/jpostUpload");
-//		
-//		return mv;
+//	public String jobUpload(){
+//		return "jpost/jpostUpload";
 //	}
+	@GetMapping("/register")
+	public ModelAndView jobUpload(ModelAndView mv, Model model, String firstRecruitField) throws Exception {
+		model.addAttribute("jlist", jobPostingUploadService.selectFirst(firstRecruitField));
+		mv.setViewName("jpost/jpostUpload");
+		
+		return mv;
+	}
+	@GetMapping("/getSecondRecruitField")
+	
 	
 	
 	
