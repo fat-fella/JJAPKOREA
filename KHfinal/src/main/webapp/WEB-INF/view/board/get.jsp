@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -89,10 +88,24 @@ button:hover {
 					</a>
 					<button type="button" id="btn-board-like">좋아요</button>
 				</form>
+				<!-- 댓글 입력 폼 -->
+				<div class="card">
+					<form method="post"
+						action="${pageContext.request.contextPath}/replyboard/insert">
+						<div class="card-body addaddreply contenttextarea">
+							<label>댓글 작성자(로그인한 아이디로 변경) : ${bvo.mid}</label>
+							<textarea rows="3" class="col-xl-12" name="replyContent"
+								class="replyContent"></textarea>
+							<button class="submitreply" type="button">댓글 작성</button>
+						</div>
+					</form>
+				</div>
+				<!-- 댓글 리스트 -->
+				<div class="testappend"></div>
 			</div>
 		</div>
 	</div>
-	<script>
+<script>
 /* 댓글 삭제 */
    $("#btn-board-delete").click(function () {
        var bno = '${bvo.bno}';
@@ -146,7 +159,142 @@ button:hover {
            }
        });
    });
+   
+/* Reply */
+   let replyreplyleftpadding = "";
+   window.onload = function () {
+       var moreReply = "";
+       $.ajax({
+           type: "get",
+           url: "${pageContext.request.contextPath}/replyboard/list",
+           data: { bno:${bvo.bno}},
+           success: function (result) {
+               for (var i = 0; i < result.length; i++) {
+                   if (result[i].rref == 0) {
+                       var  htmlVal =  '<div class="card replyCard" data-replyno="'+result[i].replyNo+'" data-writer="'+ result[i].memberId+'"><div class="firstReply card"><div class="updatewriter">작성자 : '+ result[i].memberId+'</div><div class="updatereplyContent">내용 : '+result[i].replyContent+'</div><div class="updatereplyDate">입력날짜 : '+result[i].replyDate+'</div>'
+                           +'<div class="groupbtn"><button class="updatereply">수정</button><button class="deletereply">삭제</button><button class="insertreplyreply">댓글 삽입</button></div></div>';
+                       $(".testappend").append(htmlVal);
+                   } else {
+                       moreReply = `<button class="moreReply">댓글 더보기</button>`;
+                       $(".replyCard").append(moreReply); 
+                       console.log("더보기");
+                   } 
+               };
+               $(".deletereply").click(deletereplyHandler);
+               $(".updatereply").click(updatereplyHandler);
+               $(".insertreplyreply").click(insertreplyreplyHandler);
+           },
+           error: function (result) {
+               console.log("error");
+           },
+           dataType: "json"
+       });
 
+   }
+   
+   $(".submitreply").click(submitreplyHandler);
+   function submitreplyHandler() {
+       var replyContent = $("[name=replyContent]").val();
+       $.ajax({
+           type: "post",
+           url: "${pageContext.request.contextPath}/replyboard/insert",
+           data: {
+               memberId: "${bvo.mid}",
+               replyContent: replyContent,
+               boardNo: $("#boardNo").val(),
+               rstep: ${bvo.rstep} + 1,
+               rlevel: ${bvo.rlevel} + 1
+           },
+           success: function (result) {
+               refreshCommentList(result);
+               $("[name=replyContent]").val("");
+           },
+           error: function () {
+               console.log("error");
+           },
+           dataType: "json"
+       });
+   }
+
+   function refreshCommentList(comments) {
+       $(".testappend").html("");
+       for (var i = 0; i < comments.length; i++) {
+           var htmlVal = '<div class="card replyCard" data-replyno="' + comments[i].replyNo + '" data-writer="' + comments[i].memberId + '"><div class="firstReply card"><div class="updatewriter">작성자 : ' + comments[i].memberId + '</div><div class="updatereplyContent">내용 : ' + comments[i].replyContent + '</div><div class="updatereplyDate">입력날짜 : ' + comments[i].replyDate + '</div>'
+               + '<div class="groupbtn"><button class="updatereply">수정</button><button class="deletereply">삭제</button><button class="insertreplyreply">댓글 삽입</button></div></div>';
+           $(".testappend").append(htmlVal);
+       }
+       $(".deletereply").click(deletereplyHandler);
+       $(".updatereply").click(updatereplyHandler);
+       $(".insertreplyreply").click(insertreplyreplyHandler);
+   }
+   
+	function deletereplyHandler(){
+		console.log($(this).parents(".replyCard").data("replyno"));
+		 $.ajax({
+	       type: "post",
+	       url: "${pageContext.request.contextPath}/replyboard/delete",
+	       data: {replyNo : $(this).parents(".replyCard").data("replyno")},
+	       success: function (result) {
+	    	   location.reload(true);
+    	   },
+		   error : function (){
+		   		console.log("error");
+				},dataType:"json"
+		});
+	}
+	
+	function updatereplyHandler(){
+		console.log("test123");
+		$(this).parents(".replyCard").find(".updatereplyContent").html("");
+		$(this).parents(".replyCard").find(".updatereplyDate").hide();
+		var updateContent ='<textarea rows="3" class="col-xl-12 replyContent" name="replyContent1"></textarea>'
+			
+		$(this).parents(".replyCard").find(".updatereplyContent").html(updateContent);	
+		var updateDoBtn ='<button type="button" class="updateDoBtn">댓글 수정</button>'
+		$(this).parents(".groupbtn").html(updateDoBtn); 
+		$(".updateDoBtn").click(updateDoBtnHandler);
+	}
+	
+	function updateDoBtnHandler(){
+		var replyContent1= $("[name=replyContent1]").val();
+		 $.ajax({
+		       type: "post",
+		       url: "${pageContext.request.contextPath}/replyboard/update",
+		       data: {replyNo : $(this).parents(".replyCard").data("replyno"), replyContent : replyContent1},
+		       success: function (result) {
+		    	   console.log("success");
+		    	   location.reload(true);
+		    	   },
+				error : function (){
+					 console.log("error");
+					},dataType:"json"
+			});
+	}
+	
+	function insertreplyreplyHandler(){
+		var replyreplywriter=$(this).parents(".replyCard").data("writer");
+		var addreplyreply ='<div class="contenttextarea card replyreplycard" style="padding-left :'+replyreplyleftpadding+'px" data-writer="${bvo.mid}"><div>↳작성자 : ${bvo.mid}</div><div><textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent">@'+replyreplywriter+'</textarea></div><div><button class="submitreplyreply">답글 저장</button></div></div>'
+		$(".contenttextarea").remove();
+		$(this).parents(".replyCard ").append(addreplyreply);
+		$(".submitreplyreply").click(submitreplyreplyHandler);
+	}
+	
+	function submitreplyreplyHandler(){
+		console.log("submitreplyreplyHandler");
+		var replyreplyContent= $("[name=replyreplyContent]").val();
+		console.log(replyreplyContent);
+	  	$.ajax({
+	       type: "post",
+	       url: "${pageContext.request.contextPath}/replyboard/replyinsert",
+	       data: {memberId:"${bvo.mid}",  replyContent : replyreplyContent, boardNo:${bvo.bno},rref : $(this).parents(".replyCard").data("replyno") },
+	       success: function (result) {
+	    	   console.log("success");
+	    	   },
+			error : function (){
+				 console.log("error");
+				},dataType:"json"
+		});
+	}
 </script>
 </body>
 </html>
