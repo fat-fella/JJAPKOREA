@@ -41,10 +41,6 @@ public class MemberDao {
 		return sqlSession.insert("business.signUpBusiness", businessDto);
 	}
 	
-	public Integer findMaxBusinessId() {
-        return sqlSession.selectOne("member.findMaxBusinessId");
-    }
-	
 	public int checkAndInsertBusinessForm() throws Exception {
 		String namespace = "businessForm";
         String checkQuery = namespace + ".checkBusinessForm";

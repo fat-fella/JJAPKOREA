@@ -4,18 +4,28 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.business.model.dao.JobPostingDao;
 import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
+import kh.lclass.jjapkorea.guest.model.dao.MemberDao;
+import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
+import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 
 @Service
+@Transactional
 public class JobPostingServiceImpl implements JobPostingService {
+	@Autowired
+	private MemberDao memberDao;
+	
 	@Autowired
 	private JobPostingDao jobPostingDao;
 	
 	@Override
-	public int insertJobPosting(JobPostingDto jobPostingDto) throws Exception{
-		return jobPostingDao.insertJobPosting(jobPostingDto);
+	public void signUpMemberAndBusinessAndInsertJobPosting(MemberDto memberDto, BusinessDto businessDto, JobPostingDto jobPostingDto) throws Exception {
+		memberDao.signUpMember(memberDto);
+		memberDao.signUpBusiness(businessDto);
+		jobPostingDao.insertJobPosting(jobPostingDto);
 	}
 	
 	@Override

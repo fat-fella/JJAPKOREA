@@ -34,13 +34,9 @@ import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 import kh.lclass.jjapkorea.business.model.service.JobPostingService;
 import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
 import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
-import kh.lclass.jjapkorea.guest.model.service.MemberService;
 
 @Component
 public class WorknetApi {
-	@Autowired
-	private MemberService memberService;
-	
 	@Autowired
 	private JobPostingService jobPostingService;
 	
@@ -107,15 +103,7 @@ public class WorknetApi {
                 String jid = UUID.randomUUID().toString();
                 jobPotingdto.setJid(jid);
 	            // 아이디
-                // 중복되지 않는 아이디 생성을 위한 SQL 쿼리 실행
-                String mid;
-                Integer maxBusinessId = memberService.findMaxBusinessId();
-                if(maxBusinessId != null) {
-                	// maxBusinessId에서 1을 더한 값을 사용하여 새로운 아이디 생성
-                    mid = "business" + (maxBusinessId + 1);
-                } else {
-                	mid = "business1";
-                }
+                String mid = jid.replace("-", "").substring(0, 20);
                 memberDto.setMid(mid);
                 // 비밀번호
                 String password = "Password1234!";
@@ -177,13 +165,14 @@ public class WorknetApi {
                 jobPostingList.add(jobPotingdto);
             }
             
-            // 출력 또는 다른 처리 작업
-            for (MemberDto memberDto : memberList) {
-            	for (BusinessDto businessDto : businessList) {
-            		for (JobPostingDto jobPostingDto : jobPostingList) {
-	                	memberService.signUpMemberAndBusiness(memberDto, businessDto);
-	                	jobPostingService.insertJobPosting(jobPostingDto);
-                    }
+            for (int i = 0; i < jobPostingList.size(); i++) {
+                MemberDto memberDto = memberList.get(i);
+                BusinessDto businessDto = businessList.get(i);
+                JobPostingDto jobPostingDto = jobPostingList.get(i);
+
+                try {
+                    jobPostingService.signUpMemberAndBusinessAndInsertJobPosting(memberDto, businessDto, jobPostingDto);
+                } catch (Exception e) {
                 }
             }
         } catch (Exception e) {

@@ -10,7 +10,6 @@ public interface MemberService {
 	MemberDto loginBusiness(MemberDto memberDto) throws Exception;
 	void signUpMemberAndPerson(MemberDto memberDto, PersonDto personDto) throws Exception;
 	void signUpMemberAndBusiness(MemberDto memberDto, BusinessDto businessDto) throws Exception;
-	Integer findMaxBusinessId() throws Exception;
 	int checkAndInsertBusinessForm() throws Exception;
 	String selectOnePerson(String mid) throws Exception;
 }

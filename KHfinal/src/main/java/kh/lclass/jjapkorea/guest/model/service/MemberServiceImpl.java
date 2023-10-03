@@ -43,11 +43,6 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public Integer findMaxBusinessId() {
-        return memberDao.findMaxBusinessId();
-    }
-	
-	@Override
 	public int checkAndInsertBusinessForm() throws Exception {
 		return memberDao.checkAndInsertBusinessForm();
 	}
