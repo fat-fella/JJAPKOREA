@@ -164,7 +164,6 @@ public class WorknetApi {
                 businessList.add(businessDto);
                 jobPostingList.add(jobPotingdto);
             }
-            
             for (int i = 0; i < jobPostingList.size(); i++) {
                 MemberDto memberDto = memberList.get(i);
                 BusinessDto businessDto = businessList.get(i);
@@ -173,6 +172,9 @@ public class WorknetApi {
                 try {
                     jobPostingService.signUpMemberAndBusinessAndInsertJobPosting(memberDto, businessDto, jobPostingDto);
                 } catch (Exception e) {
+                	memberList.remove(i);
+                    businessList.remove(i);
+                    jobPostingList.remove(i);
                 }
             }
         } catch (Exception e) {
