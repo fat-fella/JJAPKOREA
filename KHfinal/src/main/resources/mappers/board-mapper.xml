@@ -7,12 +7,12 @@
 	</select>
 	
 <!-- 상세 게시글 -->	
-	<select id="selectOne" resultType="BoardDto" parameterType="_int">
+	<select id="selectOne" resultType="boardDto" parameterType="_int">
 		SELECT n.*, (SELECT mid FROM member m WHERE m.mid = n.mid) name FROM board n WHERE bno=#{bno }
 	</select>
 	
 <!-- 게시글 등록 -->	
-	<insert id="insert" parameterType="BoardDto">
+	<insert id="insert" parameterType="boardDto">
 		<selectKey keyProperty="bno" resultType="_int" order="BEFORE">
 		select SEQ_BOARD_BNO.nextval nextval from dual
 		</selectKey>
@@ -20,12 +20,40 @@
  	</insert>
 
 <!-- 글 수정 -->	
-	<update id="update" parameterType="BoardDto">
+	<update id="update" parameterType="boardDto">
 		update BOARD set btitle=#{btitle}, bcontent=#{bcontent} where bno=#{bno}
 	</update>
 	
 <!-- 글 삭제 -->	
 	<delete id="delete" parameterType="_int">
 		delete from board where bno=#{bno}
+	</delete>
+	
+<!-- 게시판 조회수 -->
+	<update id="boardReadCnt" parameterType="_int">
+		update board set readcnt = readcnt + 1 where bno = #{bno}
+	</update>
+
+<!-- 좋아요 유무 1 : 좋아요 누른 상태 -->
+	<select id="getMyLikeCount" resultType="_int">
+		select count(*) from
+		board_like where bno = #{bno} and mid = #{mid}
+	</select>
+
+<!-- 좋아요 -->
+	<insert id="doLike">
+		INSERT INTO board_like (like_no, bno, mid)
+		VALUES ((SELECT NVL(MAX(like_no), 0) + 1 as like_no FROM board_like),
+		#{bno}, #{mid})
+	</insert>
+	
+<!-- 좋아요 총 갯수 -->
+	<select id="getTotalLikeCount" resultType="_int">
+		select count(*) from board_like where bno = #{bno}
+	</select>
+
+<!-- 좋아요 취소 -->
+	<delete id="deleteLike">
+		delete from board_like where bno = #{bno} and mid = #{mid}
 	</delete>
 </mapper>
