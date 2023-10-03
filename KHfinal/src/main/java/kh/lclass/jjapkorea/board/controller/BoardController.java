@@ -120,7 +120,7 @@ public class BoardController {
 	@PostMapping("/getMyLikeStatus")
 	public HashMap<String, Object> getMyLikeStatus(LikeDto lDto) throws Exception{
 		HashMap<String, Object> data = new HashMap<>();
-		lDto.setMid("jiin0960");
+		lDto.setMid("admin");
 
 		int myLikeCount = boardService.getMyLikeCount(lDto);
 
