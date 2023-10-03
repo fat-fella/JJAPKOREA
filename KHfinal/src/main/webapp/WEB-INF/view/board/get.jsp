@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -61,9 +62,14 @@ button:hover {
 </style>
 </head>
 <body>
+	<c:out value="${like_no}" />
 	<div class="container">
 		<div class="content">
 			<div>
+				<div class="mb-3 mt-3">
+					<input type="hidden" class="form-control" id="boardNo"
+						name="boardNo" value="${bvo.bno}" disabled>
+				</div>
 				<form action="${pageContext.request.contextPath }/board/update"
 					method="get">
 					<input type="hidden" name="bno" value="${bvo.bno}"> <label
@@ -72,86 +78,75 @@ button:hover {
 						for="bcontent">내용:</label>
 					<textarea id="bcontent" rows="10" cols="50" name="bcontent"
 						readonly>${bvo.bcontent}</textarea>
-					<br>
-					
-					<c:choose>
-						<c:when test="${like_no == 0}">
-							<button type="button" class="btn btn-light" id="likebtn">좋아요</button>
-							<input type="hidden" id="likecheck" value="${like_no }">
-						</c:when>
-						<c:when test="${like_no == 1}">
-							<button type="button" class="btn btn-danger" id="likebtn">좋아요</button>
-							<input type="hidden" id="likecheck" value="${like_no }">
-						</c:when>
-					</c:choose>	
-					
-					<a href="${pageContext.request.contextPath}/board/list">
-					<button type="submit" id="btn-board-update">글 수정</button>
+					<br> <a href="#" id="likeCount">좋아요수:
+						(${data.totalLikeCount })</a> <a
+						href="${pageContext.request.contextPath}/board/list">
+						<button type="submit" id="btn-board-update">글 수정</button>
 					</a>
 					<button type="button" id="btn-board-delete">글 삭제</button>
 					<a href="${pageContext.request.contextPath}/board/list">
-					  <button type="button">글 목록으로 이동</button>
-					</a>				
+						<button type="button">글 목록으로 이동</button>
+					</a>
+					<button type="button" id="btn-board-like">좋아요</button>
 				</form>
 			</div>
 		</div>
-	</div>		
+	</div>
 	<script>
-    $("#btn-board-delete").click(function () {
-        var bno = '${bvo.bno}';
-        if (confirm("글 삭제하시겠습니까?")) {
-          $.ajax({
-            type: "post",
-            url: "${pageContext.request.contextPath}/board/delete",
-            data: { bno: bno },
-            success: function (response) {
-            	console.log(response);
-	            if(response > 0){
-	            	alert("삭제되었습니다.");
-	            }else {
-	            	alert("삭제 실패했습니다");
-	            }
-				location.href = "${pageContext.request.contextPath}/board/list";
-				}
-			});
-		}
-	});
-    $('#likebtn').click(function(){
-		likeUpdate();
-	});
-	
- function likeUpdate() {
-	    var mid = $('#mid').val();
-	    var bno = $('#bno').val();
-	    var count = $('#likecheck').val();
-	    var data = {
-	        "mid": mid,
-	        "bno": bno,
-	        "count": count
-	    };
+/* 댓글 삭제 */
+   $("#btn-board-delete").click(function () {
+       var bno = '${bvo.bno}';
+       if (confirm("글 삭제하시겠습니까?")==true) {
+         $.ajax({
+           type: "post",
+           url: "${pageContext.request.contextPath}/board/delete",
+           data: { bno: bno },
+           success: function (response) {
+           	console.log(response);
+            if(response > 0){
+            	alert("삭제되었습니다.");
+            }else {
+            	alert("삭제 실패했습니다");
+            }
+			location.href = "${pageContext.request.contextPath}/board/list";
+			}
+		});
+	}
+});
+   
+// 좋아요 버튼 클릭 이벤트 핸들러
+   $("#btn-board-like").click(function() {
+       var bno = "${bvo.bno}"; // 게시물 번호
+       var mid = "${bvo.mid}"; // 사용자 아이디
+       // 데이터를 JSON 형식으로 구성
+       var requestData = {
+           bno: bno,
+           mid: mid
+       };
+       $.ajax({
+           type: "POST",
+           url: "${pageContext.request.contextPath}/board/doLike",
+           data: JSON.stringify(requestData),
+           contentType: "application/json",
+           success: function(data) {
+               if (data.result === "success") {
+                   if (data.status === "like") {
+                	   console.log("좋아요 성공");
+                       // 좋아요 상태이면 좋아요 취소로 변경
+                       $("#btn-board-like").text("좋아요 취소");
+                   } else {
+                	   console.log("좋아요 취소 성공");
+                	   // 좋아요 취소 상태이면 좋아요로 변경
+                       $("#btn-board-like").text("좋아요");
+                   }
+               }
+           },
+           error: function() {
+               console.error("좋아요 처리 중 오류 발생");
+           }
+       });
+   });
 
-	    $.ajax({
-	        type: 'POST',
-	        url: "${pageContext.request.contextPath}/like/likeUpdate",
-	        contentType: 'application/json',
-	        data: JSON.stringify(data),
-	        success: function (result) {
-	            console.log("수정: " + result.result);
-	            if (count == 1) {
-	                console.log("좋아요 취소");
-	                $('#likecheck').val(0);
-	                $('#likebtn').attr('class', 'btn btn-light');
-	            } else if (count == 0) {
-	                console.log("좋아요");
-	                $('#likecheck').val(1);
-	                $('#likebtn').attr('class', 'btn btn-danger');
-	            }
-	        },
-	        error: function (xhr, status, error) {
-	            console.error("에러: " + error);
-	        }
-	    });
-	};
 </script>
 </body>
 </html>
