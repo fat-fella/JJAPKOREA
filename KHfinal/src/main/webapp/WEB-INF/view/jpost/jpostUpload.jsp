@@ -49,12 +49,11 @@
 						<option value="7">건설·채굴직</option>
 						<option value="8">설치·정비·생산직</option>
 						<option value="9">농림어업직</option>
-					</select> <label style="font-size: 12px; color: red;">1차 세부채용분야<span>*</span></label>
+					</select>
+					<label style="font-size: 12px; color: red;">1차 세부채용분야<span>*</span></label>
 					<select name="secondRecruitField" id="secondRecruitField">
-						<c:forEach var="secondRecruitFieldOption" items="${jlist}">
-							<option value='${secondRecruitFieldOption.jobscd}'>${secondRecruitFieldOption.jobscat}</option>
-						</c:forEach>
-					</select> <label style="font-size: 12px; color: red;">2차 세부채용분야<span>*</span></label>
+					</select>
+					<label style="font-size: 12px; color: red;">2차 세부채용분야<span>*</span></label>
 					<select name="recruitField" id="recruitField">
 						<option>TODO</option>
 					</select>
@@ -138,15 +137,10 @@
                 data: {
                     selectedOption: selectedOption
                 },
-                dataType: "json", // 데이터 형식을 JSON으로 지정
+                dataType: "json", 
                 success: function (response) {
-                    // 서버에서 받은 JSON 데이터를 파싱합니다.
-                    // response 변수는 이미 JSON 형식이므로 파싱이 필요 없습니다.
-                    
-                    // 두 번째 드롭다운 목록 초기화
                     secondRecruitField.innerHTML = "";
 
-                    // 응답에서 불러온 옵션들을 추가
                     for (var i = 0; i < response.length; i++) {
                         var option = document.createElement("option");
                         option.text = response[i].jobsmcat;
@@ -155,7 +149,6 @@
                     }
                 },
                 error: function (xhr, status, error) {
-                    // 오류 처리
                     console.error("Error: " + error);
                 }
             });

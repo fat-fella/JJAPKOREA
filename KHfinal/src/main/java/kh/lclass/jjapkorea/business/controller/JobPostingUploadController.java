@@ -52,7 +52,8 @@ public class JobPostingUploadController {
     @PostMapping("/getSecondRecruitField")
     @ResponseBody
     public List<JobPostingCategoryDto> getSecondRecruitFields(@RequestParam String selectedOption) throws Exception {
-        return jobPostingUploadService.selectFirst(selectedOption);
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+ selectedOption);
+    	return jobPostingUploadService.selectFirst(selectedOption);
     }
 	
 	

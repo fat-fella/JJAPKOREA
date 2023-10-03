@@ -35,7 +35,7 @@
     </insert>
     <!-- 1차 세부 채용분야 -->
     <select id="selectFirst" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT * FROM "RSField" WHERE SUBSTR(JOBSMCD, 1, 1) = '#{selectedOption}'
+    	SELECT * FROM "RSField" WHERE SUBSTR(JOBSMCD, 1, 1) = #{selectedOption}
     </select>
   
     

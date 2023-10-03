@@ -27,6 +27,7 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 	}
 	
 	public List<JobPostingCategoryDto> selectFirst(String selectedOption) throws Exception{
+	       System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"+ selectedOption);
 		return jobpostinguploadDao.selectFirst(selectedOption);
 	}
 }
