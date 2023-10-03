@@ -23,7 +23,7 @@ public class JobPostingUploadDao {
 		return sqlSession.selectList("jobpostingUpload.selectList", mid);
 	}
 	
-	public List<JobPostingCategoryDto> selectFirst(String firstRecruitField) throws Exception{
+	public List<JobPostingCategoryDto> selectFirst(String selectedOption) throws Exception{
 		return sqlSession.selectList("jobpostingUpload.selectFirst");
 	}
 	

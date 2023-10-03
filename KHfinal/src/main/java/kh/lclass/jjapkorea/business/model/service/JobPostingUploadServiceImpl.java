@@ -26,7 +26,7 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 		
 	}
 	
-	public List<JobPostingCategoryDto> selectFirst(String firstRecruitField) throws Exception{
-		return jobpostinguploadDao.selectFirst(firstRecruitField);
+	public List<JobPostingCategoryDto> selectFirst(String selectedOption) throws Exception{
+		return jobpostinguploadDao.selectFirst(selectedOption);
 	}
 }

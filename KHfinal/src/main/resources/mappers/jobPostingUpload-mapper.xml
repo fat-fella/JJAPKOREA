@@ -36,13 +36,13 @@
     </insert>
     <!-- 1차 세부 채용분야 -->
     <select id="selectFirst" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT JOBSMCAT FROM "RSField" WHERE JOBSMCD LIKE '01%'
+    	SELECT * FROM "RSField" WHERE SUBSTR(JOBSMCD, 1, 1) = #{selectedOption} 
     </select>
   
     
     <!-- 2차 세부 채용분야 -->
     <select id="selectSecond" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT JOBSSCAT FROM "RTField" WHERE JOBSMCD LIKE '#{JOBSMCD}%'
+    	SELECT * FROM "RTField" WHERE SUBSTR(JOBSSCD, 1, 2) = #{selectedOption}
     </select>
     
     

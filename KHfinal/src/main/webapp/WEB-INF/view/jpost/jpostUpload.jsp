@@ -38,7 +38,7 @@
 				</div>
 				<div class="recruitfieldinputBox">
 					<label for="firstRecruitField">채용분야 분류<span>*</span></label>
-					<select name="firstRecruitField" id="firstRecruitField" required>
+					<select name="firstRecruitField" id="firstRecruitField" onchange="loadOptions()" required>
 						<option value="0">경영·사무·금융·보험직</option>
 						<option value="1">연구직 및 공학 기술직</option>
 						<option value="2">교육·법률·사회복지·경찰·소방직 및 군인</option>
@@ -127,12 +127,39 @@
         });
     </script>
 	<script>
+		function loadOptions(){
+			var firstRecruitField = document.getElementById("firstRecruitField");
+            var secondRecruitField = document.getElementById("secondRecruitField");
+            var selectedOption = firstRecruitField.options[firstRecruitField.selectedIndex].value;
 
-		$(#.firstRecruitField).select(function(){
-			
-		})			
-			
-			
+            $.ajax({
+                url: "/jjapkorea/jobpostingupload/getSecondRecruitField",
+                method: "POST",
+                data: {
+                    selectedOption: selectedOption
+                },
+                dataType: "json", // 데이터 형식을 JSON으로 지정
+                success: function (response) {
+                    // 서버에서 받은 JSON 데이터를 파싱합니다.
+                    // response 변수는 이미 JSON 형식이므로 파싱이 필요 없습니다.
+                    
+                    // 두 번째 드롭다운 목록 초기화
+                    secondRecruitField.innerHTML = "";
+
+                    // 응답에서 불러온 옵션들을 추가
+                    for (var i = 0; i < response.length; i++) {
+                        var option = document.createElement("option");
+                        option.text = response[i].jobsmcat;
+                        option.value = response[i].jobsmcd;
+                        secondRecruitField.appendChild(option);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // 오류 처리
+                    console.error("Error: " + error);
+                }
+            });
+
 		}
     </script>
 

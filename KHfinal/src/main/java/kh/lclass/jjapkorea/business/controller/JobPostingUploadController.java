@@ -1,5 +1,8 @@
 package kh.lclass.jjapkorea.business.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,8 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import kh.lclass.jjapkorea.business.model.dto.JobPostingCategoryDto;
 import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 import kh.lclass.jjapkorea.business.model.service.JobPostingUploadService;
 import kh.lclass.jjapkorea.business.model.service.JobPostingUploadServiceImpl;
@@ -37,8 +42,18 @@ public class JobPostingUploadController {
 		
 		return mv;
 	}
-	@GetMapping("/getSecondRecruitField")
-	
+//	@PostMapping("/getSecondRecruitField")
+//	public ModelAndView getSecondRecruitFields(ModelAndView mv, Model model, @RequestParam String selectedOption) throws Exception{
+//		mv.addObject("selectFirst", jobPostingUploadService.selectFirst(selectedOption));
+//		mv.setViewName("redirect:/jobpostingupload/register");
+//		return mv;
+//	}
+
+    @PostMapping("/getSecondRecruitField")
+    @ResponseBody
+    public List<JobPostingCategoryDto> getSecondRecruitFields(@RequestParam String selectedOption) throws Exception {
+        return jobPostingUploadService.selectFirst(selectedOption);
+    }
 	
 	
 	
