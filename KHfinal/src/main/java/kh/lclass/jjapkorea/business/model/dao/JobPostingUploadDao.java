@@ -27,5 +27,7 @@ public class JobPostingUploadDao {
 		return sqlSession.selectList("jobpostingUpload.selectFirst", selectedOption);
 	}
 	
-	
+	public List<JobPostingCategoryDto> selectSecond(String selectedOption) throws Exception{
+		return sqlSession.selectList("jobpostingUpload.selectSecond", selectedOption);
+	}
 }
