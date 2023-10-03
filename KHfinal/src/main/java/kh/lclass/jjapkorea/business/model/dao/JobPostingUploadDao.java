@@ -15,16 +15,16 @@ public class JobPostingUploadDao {
 	private SqlSession sqlSession;
 	
 	public int insert(JobPostingDto dto) throws Exception{
-		int result = sqlSession.insert("jobPostingUpload.insert", dto);
+		int result = sqlSession.insert("jobpostingUpload.insert", dto);
 		return result;
 	}
 	
 	public List<JobPostingDto> selectList(String mid) throws Exception{
-		return sqlSession.selectList("jobPostingUpload.selectList", mid);
+		return sqlSession.selectList("jobpostingUpload.selectList", mid);
 	}
 	
-	public List<JobPostingCategoryDto> selectFirst() throws Exception{
-		return sqlSession.selectList("jobPostingUpload.selectFirst");
+	public List<JobPostingCategoryDto> selectFirst(String firstRecruitField) throws Exception{
+		return sqlSession.selectList("jobpostingUpload.selectFirst");
 	}
 	
 	
