@@ -23,5 +23,8 @@
 	<insert id="signUpMember" parameterType="memberDto">
 		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, #{mtype})
 	</insert>
+	
+	<select id="findMaxBusinessId" resultType="int">
+        select max(to_number(substr(mid, 9))) from member where mid like 'business%'
+    </select>
 </mapper>
-

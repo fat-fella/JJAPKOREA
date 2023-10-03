@@ -54,7 +54,7 @@
 									%>
 									<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 								</div>
-								<div class="compName">${item.companyName}</div>
+								<div class="compName">${item.bizname}</div>
 								<div class="recruitInfo">
 									${item.reTitle}<br> <br>
 								</div>
@@ -77,9 +77,9 @@
 									<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
 									<input type="hidden" name="jid" value="${item.jid}"> <input
 										type="hidden" name="recruitField" value="${item.recruitField}">
-									<input type="hidden" name="companyName"
-										value="${item.companyName}"> <input type="hidden"
-										name="busino" value="${item.busino}"> <input
+									<input type="hidden" name="bizname"
+										value="${item.bizname}"> <input type="hidden"
+										name="brno" value="${item.brno}"> <input
 										type="hidden" name="userEducation"
 										value="${item.userEducation}"> <input type="hidden"
 										name="salary" value="${item.salary}"> <input
@@ -346,7 +346,7 @@
 								%>
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
-							<div class="compName">${item.companyName}</div>
+							<div class="compName">${item.bizname}</div>
 							<div class="recruitInfo">
 								${item.reTitle}<br> <br>
 							</div>
@@ -428,7 +428,7 @@
 								%>
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
-							<div class="compName">${item.companyName}</div>
+							<div class="compName">${item.bizname}</div>
 							<div class="recruitInfo">
 								${item.reTitle}<br> <br>
 							</div>

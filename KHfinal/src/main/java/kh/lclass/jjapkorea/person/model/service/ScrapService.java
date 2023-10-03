@@ -22,7 +22,7 @@ public class ScrapService {
 	private ScrapDao scrapDao;
 	
 	@Autowired
-	private JobPostingService jobpostingService;
+	private JobPostingService jobPostingService;
 	
 //	public int scrap(ScrapDto vo) {
 //		int result = 0;
@@ -93,7 +93,7 @@ public class ScrapService {
 	public List<ScrapDto> scrapList(String mid) throws Exception{
 		List<ScrapDto> result = scrapDao.scrapList(mid);
 		for (ScrapDto scrapDto : result) {
-			List<JobPostingDto> jobPostingList = jobpostingService.listJobPosting();
+			List<JobPostingDto> jobPostingList = jobPostingService.selectListJobPosting();
 			List<JobPostingDto> matchedJobPostingList = new ArrayList<>();
 			for (JobPostingDto jobPostingDto : jobPostingList) {
 				if (scrapDto.getJid().equals(jobPostingDto.getJid())) {
@@ -130,19 +130,4 @@ public class ScrapService {
 	public int scrapCancel(ScrapDto vo) throws Exception{
 		return scrapDao.scrapCancle(vo);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

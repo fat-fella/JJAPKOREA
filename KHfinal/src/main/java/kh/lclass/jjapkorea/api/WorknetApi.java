@@ -21,6 +21,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -31,17 +32,26 @@ import org.xml.sax.SAXException;
 
 import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 import kh.lclass.jjapkorea.business.model.service.JobPostingService;
+import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
+import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
+import kh.lclass.jjapkorea.guest.model.service.MemberService;
 
 @Component
 public class WorknetApi {
 	@Autowired
-	private JobPostingService jobpostingService;
+	private MemberService memberService;
 	
-	private List<JobPostingDto> list;
+	@Autowired
+	private JobPostingService jobPostingService;
+	
+	@Autowired
+	BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	private List<MemberDto> memberList;
+	private List<BusinessDto> businessList;
+	private List<JobPostingDto> jobPostingList;
 	
     public static void main(String[] args){
-//    	WorknetApi worknetApi = new WorknetApi();
-//    	worknetApi.getJobPostings();
     }
     
     public List<JobPostingDto> getJobPostings() {
@@ -83,85 +93,103 @@ public class WorknetApi {
             NodeList wantedList = doc.getElementsByTagName("wanted");
             System.out.println("Total items: " + wantedList.getLength());
 
-            list = new ArrayList<>();
+            memberList = new ArrayList<>();
+            businessList = new ArrayList<>();
+            jobPostingList = new ArrayList<>();
+            
             for (int i = 0; i < wantedList.getLength(); i++) {
-                JobPostingDto dto = new JobPostingDto();
+            	MemberDto memberDto = new MemberDto();
+            	BusinessDto businessDto = new BusinessDto();
+                JobPostingDto jobPotingdto = new JobPostingDto();
                 Node wanted = wantedList.item(i);
                 Element ele = (Element) wanted;
-                // 고유한 값
-                String uniqueId = UUID.randomUUID().toString();
-                dto.setJid(uniqueId);
+                // 채용 정보
+                String jid = UUID.randomUUID().toString();
+                jobPotingdto.setJid(jid);
+	            // 아이디
+                // 중복되지 않는 아이디 생성을 위한 SQL 쿼리 실행
+                String mid;
+                Integer maxBusinessId = memberService.findMaxBusinessId();
+                if(maxBusinessId != null) {
+                	// maxBusinessId에서 1을 더한 값을 사용하여 새로운 아이디 생성
+                    mid = "business" + (maxBusinessId + 1);
+                } else {
+                	mid = "business1";
+                }
+                memberDto.setMid(mid);
+                // 비밀번호
+                String password = "Password1234!";
+                memberDto.setMpw(bCryptPasswordEncoder.encode(password));
+                // 권한
+                memberDto.setMtype("ROLE_BUSINESS");
+                businessDto.setMid(mid);
+	            jobPotingdto.setMid(mid);
                 // 모집분야
-                dto.setRecruitField(getTextContentByTagName(ele, "jobsCd"));
+                jobPotingdto.setRecruitField(getTextContentByTagName(ele, "jobsCd"));
                 // 회사명
-                dto.setCompanyName(getTextContentByTagName(ele, "company"));
+                businessDto.setBizname(getTextContentByTagName(ele, "company"));
+                jobPotingdto.setBizname(getTextContentByTagName(ele, "company"));
                 // 사업자번호
-                dto.setBusino(getTextContentByTagName(ele, "busino"));
+                businessDto.setBrno(getTextContentByTagName(ele, "busino"));
+                jobPotingdto.setBrno(getTextContentByTagName(ele, "busino"));
                 // 지원자학력
-                dto.setUserEducation(getTextContentByTagName(ele, "maxEdubg"));
+                jobPotingdto.setUserEducation(getTextContentByTagName(ele, "maxEdubg"));
                 // 연봉
-                dto.setSalary(getTextContentByTagName(ele, "sal"));
+                jobPotingdto.setSalary(getTextContentByTagName(ele, "sal"));
                 // 연봉 최저치
-                dto.setMinSalary(getTextContentByTagName(ele, "minSal"));
+                jobPotingdto.setMinSalary(getTextContentByTagName(ele, "minSal"));
                 // 연봉 최대치
-                dto.setMaxSalary(getTextContentByTagName(ele, "maxSal"));
+                jobPotingdto.setMaxSalary(getTextContentByTagName(ele, "maxSal"));
                 // 지원등록기간
                 String resistDateStr = getTextContentByTagName(ele, "regDt");
                 Date resistDate = parseDateString(resistDateStr);
                 if (resistDate != null) {
                     String formattedResistDate = formatDateToString(resistDate);
-                    dto.setRegistDate(formattedResistDate);
+                    jobPotingdto.setRegistDate(formattedResistDate);
                     LocalDate currentDate = LocalDate.now();
                     LocalDate resistDateLocal = LocalDate.parse(formattedResistDate, DateTimeFormatter.ofPattern("yy-MM-dd"));
                     long daysRemaining = resistDateLocal.toEpochDay() - currentDate.toEpochDay();
-                    dto.setToday((int)daysRemaining);
+                    jobPotingdto.setToday((int)daysRemaining);
                 }
                 // 지원마감일 - '채용시까지 23-05-28' 에서 띄워쓰기로 분리하지 않고 d-day표기시 분리하기
                 String closeDateStr = getTextContentByTagName(ele, "closeDt");
                 Date closeDate = parseDateString(closeDateStr);
                 if (closeDate != null) {
                     String formattedCloseDate = formatDateToString(closeDate);
-                    dto.setCloseDate(formattedCloseDate);
+                    jobPotingdto.setCloseDate(formattedCloseDate);
                     // D-Day 계산
                     LocalDate currentDate = LocalDate.now();
                     LocalDate closeDateLocal = LocalDate.parse(formattedCloseDate, DateTimeFormatter.ofPattern("yy-MM-dd"));
                     long daysRemaining = closeDateLocal.toEpochDay() - currentDate.toEpochDay();
-                    dto.setDday((int)daysRemaining);
+                    jobPotingdto.setDday((int)daysRemaining);
                 }
                 // 채용제목
-                dto.setReTitle(getTextContentByTagName(ele, "title"));
+                jobPotingdto.setReTitle(getTextContentByTagName(ele, "title"));
                 // 경력
-                dto.setCareer(getTextContentByTagName(ele, "career"));
+                jobPotingdto.setCareer(getTextContentByTagName(ele, "career"));
                 // 근무형태
-                dto.setWorkType(getTextContentByTagName(ele, "holidayTpNm"));
+                jobPotingdto.setWorkType(getTextContentByTagName(ele, "holidayTpNm"));
                 // 고용형태
-                dto.setEmpTypeCode(getTextContentByTagName(ele, "empTp"));
-
-               list.add(dto);
+                jobPotingdto.setEmpTypeCode(getTextContentByTagName(ele, "empTp"));
+                
+                memberList.add(memberDto);
+                businessList.add(businessDto);
+                jobPostingList.add(jobPotingdto);
             }
-//            JobpostingService service = new JobpostingService();
-
+            
             // 출력 또는 다른 처리 작업
-            for (JobPostingDto dto : list) {
-                //System.out.println(dto);
-//            	int result = service.insert(dto); // insert 메서드 호출하여 데이터 삽입
-//                if (result > 0) {
-//                    System.out.println("Data inserted successfully: " + dto);
-//                } else {
-//                    System.out.println("Failed to insert data: " + dto);
-//                }
-            	if (jobpostingService != null) {
-            		jobpostingService.insertJobPosting(dto);
-            	} else {
-            	    // service가 null인 경우 처리할 내용을 여기에 추가
-            		System.out.println("null");
-            	}
+            for (MemberDto memberDto : memberList) {
+            	for (BusinessDto businessDto : businessList) {
+            		for (JobPostingDto jobPostingDto : jobPostingList) {
+	                	memberService.signUpMemberAndBusiness(memberDto, businessDto);
+	                	jobPostingService.insertJobPosting(jobPostingDto);
+                    }
+                }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-    	return list;
+    	return jobPostingList;
     }
 
     private static String getTextContentByTagName(Element element, String tagName) {
@@ -200,4 +228,3 @@ public class WorknetApi {
         return sdf.format(date);
     }
 }
-
