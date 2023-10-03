@@ -5,7 +5,6 @@
 		<id property="jid" column="jid"/>
 		<result property="mid" column="MID"/>
 		<result property="recruitField" column="RECRUIT_FIELD"/>
-		<result property="companyName" column="COMPANY_NAME"/>
 		<result property="busino" column="BUISNO"/>
 		<result property="userEducation" column="USER_EDUCATION"/>
 		<result property="salary" column="SALARY"/>
@@ -32,11 +31,11 @@
 	</resultMap>
 	
 	<insert id="insert" parameterType="jobpostingDto"> 
-		INSERT INTO INFO (JID, MID, RECRUIT_FIELD, COMPANY_NAME, BUSINO, USER_EDUCATION, SALARY, MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, CAREER, WORK_TYPE, EMP_TYPE_CODE, TODAY, DDAY) VALUES (#{jid}, #{mid}, #{recruitField}, #{companyName}, #{busino}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
+		INSERT INTO INFO (JID, MID, RECRUIT_FIELD, BUSINO, USER_EDUCATION, SALARY, MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, CAREER, WORK_TYPE, EMP_TYPE_CODE, TODAY, DDAY) VALUES (#{jid}, #{mid}, #{recruitField}, #{busino}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
     </insert>
     <!-- 1차 세부 채용분야 -->
     <select id="selectFirst" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT * FROM "RSField" WHERE SUBSTR(JOBSMCD, 1, 1) = #{selectedOption} 
+    	SELECT * FROM "RSField" WHERE SUBSTR(JOBSMCD, 1, 1) = '#{selectedOption}'
     </select>
   
     
