@@ -52,7 +52,14 @@ public class JobPostingUploadController {
     @PostMapping("/getSecondRecruitField")
     @ResponseBody
     public List<JobPostingCategoryDto> getSecondRecruitFields(@RequestParam String selectedOption) throws Exception {
-        return jobPostingUploadService.selectFirst(selectedOption);
+ 
+    	return jobPostingUploadService.selectFirst(selectedOption);
+    }
+    @PostMapping("/getThirdRecruitField")
+    @ResponseBody
+    public List<JobPostingCategoryDto> getThirdRecruitFields(@RequestParam String selectedOption) throws Exception {
+ 
+    	return jobPostingUploadService.selectSecond(selectedOption);
     }
 	
 	

@@ -39,6 +39,7 @@
 				<div class="recruitfieldinputBox">
 					<label for="firstRecruitField">채용분야 분류<span>*</span></label>
 					<select name="firstRecruitField" id="firstRecruitField" onchange="loadOptions()" required>
+						<option>선택해주세요</option>
 						<option value="0">경영·사무·금융·보험직</option>
 						<option value="1">연구직 및 공학 기술직</option>
 						<option value="2">교육·법률·사회복지·경찰·소방직 및 군인</option>
@@ -49,14 +50,18 @@
 						<option value="7">건설·채굴직</option>
 						<option value="8">설치·정비·생산직</option>
 						<option value="9">농림어업직</option>
-					</select> <label style="font-size: 12px; color: red;">1차 세부채용분야<span>*</span></label>
-					<select name="secondRecruitField" id="secondRecruitField">
-						<c:forEach var="secondRecruitFieldOption" items="${jlist}">
-							<option value='${secondRecruitFieldOption.jobscd}'>${secondRecruitFieldOption.jobscat}</option>
-						</c:forEach>
-					</select> <label style="font-size: 12px; color: red;">2차 세부채용분야<span>*</span></label>
+					</select>
+					<label style="font-size: 12px; color: red;">1차 세부채용분야<span>*</span></label>
+					<select name="secondRecruitField" id="secondRecruitField" onchange="loadSecondOptions()">
+						<option>선택해주세요</option>
+					</select>
+					<label style="font-size: 12px; color: red;">2차 세부채용분야<span>*</span></label>
+					<select name="thirdrecruitField" id="thirdrecruitField">
+						<option>선택해주세요</option>
+					</select>
+					<label style="font-size: 12px; color: red;">3차 세부채용분야<span>*</span></label>
 					<select name="recruitField" id="recruitField">
-						<option>TODO</option>
+						<option>선택해주세요</option>
 					</select>
 				</div>
 				<h4>모집조건</h4>
@@ -138,15 +143,10 @@
                 data: {
                     selectedOption: selectedOption
                 },
-                dataType: "json", // 데이터 형식을 JSON으로 지정
+                dataType: "json", 
                 success: function (response) {
-                    // 서버에서 받은 JSON 데이터를 파싱합니다.
-                    // response 변수는 이미 JSON 형식이므로 파싱이 필요 없습니다.
-                    
-                    // 두 번째 드롭다운 목록 초기화
                     secondRecruitField.innerHTML = "";
 
-                    // 응답에서 불러온 옵션들을 추가
                     for (var i = 0; i < response.length; i++) {
                         var option = document.createElement("option");
                         option.text = response[i].jobsmcat;
@@ -155,7 +155,34 @@
                     }
                 },
                 error: function (xhr, status, error) {
-                    // 오류 처리
+                    console.error("Error: " + error);
+                }
+            });
+
+		}
+		function loadSecondOptions(){
+            var secondRecruitField = document.getElementById("secondRecruitField");
+            var thirdRecruitField = document.getElementById("thirdRecruitField");
+            var selectedOption = secondRecruitField.options[secondRecruitField.selectedIndex].value;
+
+            $.ajax({
+                url: "/jjapkorea/jobpostingupload/getThirdRecruitField",
+                method: "POST",
+                data: {
+                    selectedOption: selectedOption
+                },
+                dataType: "json", 
+                success: function (response) {
+                    thirdRecruitField.innerHTML = "";
+
+                    for (var i = 0; i < response.length; i++) {
+                        var option = document.createElement("option");
+                        option.text = response[i].jobsscat;
+                        option.value = response[i].jobsscd;
+                        thirdRecruitField.appendChild(option);
+                    }
+                },
+                error: function (xhr, status, error) {
                     console.error("Error: " + error);
                 }
             });
