@@ -96,12 +96,12 @@ public class WorknetApi {
             for (int i = 0; i < wantedList.getLength(); i++) {
             	MemberDto memberDto = new MemberDto();
             	BusinessDto businessDto = new BusinessDto();
-                JobPostingDto jobPotingdto = new JobPostingDto();
+                JobPostingDto jobPostingDto = new JobPostingDto();
                 Node wanted = wantedList.item(i);
                 Element ele = (Element) wanted;
                 // 채용 정보
                 String jid = UUID.randomUUID().toString();
-                jobPotingdto.setJid(jid);
+                jobPostingDto.setJid(jid);
 	            // 아이디
                 String mid = jid.replace("-", "").substring(0, 20);
                 memberDto.setMid(mid);
@@ -111,58 +111,58 @@ public class WorknetApi {
                 // 권한
                 memberDto.setMtype("ROLE_BUSINESS");
                 businessDto.setMid(mid);
-	            jobPotingdto.setMid(mid);
+	            jobPostingDto.setMid(mid);
                 // 모집분야
-                jobPotingdto.setRecruitField(getTextContentByTagName(ele, "jobsCd"));
+                jobPostingDto.setRecruitField(getTextContentByTagName(ele, "jobsCd"));
                 // 회사명
                 businessDto.setBizname(getTextContentByTagName(ele, "company"));
-                jobPotingdto.setBizname(getTextContentByTagName(ele, "company"));
+                jobPostingDto.setBizname(businessDto.getBizname());
                 // 사업자번호
                 businessDto.setBrno(getTextContentByTagName(ele, "busino"));
-                jobPotingdto.setBrno(getTextContentByTagName(ele, "busino"));
+                jobPostingDto.setBrno(businessDto.getBrno());
                 // 지원자학력
-                jobPotingdto.setUserEducation(getTextContentByTagName(ele, "maxEdubg"));
+                jobPostingDto.setUserEducation(getTextContentByTagName(ele, "maxEdubg"));
                 // 연봉
-                jobPotingdto.setSalary(getTextContentByTagName(ele, "sal"));
+                jobPostingDto.setSalary(getTextContentByTagName(ele, "sal"));
                 // 연봉 최저치
-                jobPotingdto.setMinSalary(getTextContentByTagName(ele, "minSal"));
+                jobPostingDto.setMinSalary(getTextContentByTagName(ele, "minSal"));
                 // 연봉 최대치
-                jobPotingdto.setMaxSalary(getTextContentByTagName(ele, "maxSal"));
+                jobPostingDto.setMaxSalary(getTextContentByTagName(ele, "maxSal"));
                 // 지원등록기간
                 String resistDateStr = getTextContentByTagName(ele, "regDt");
                 Date resistDate = parseDateString(resistDateStr);
                 if (resistDate != null) {
                     String formattedResistDate = formatDateToString(resistDate);
-                    jobPotingdto.setRegistDate(formattedResistDate);
+                    jobPostingDto.setRegistDate(formattedResistDate);
                     LocalDate currentDate = LocalDate.now();
                     LocalDate resistDateLocal = LocalDate.parse(formattedResistDate, DateTimeFormatter.ofPattern("yy-MM-dd"));
                     long daysRemaining = resistDateLocal.toEpochDay() - currentDate.toEpochDay();
-                    jobPotingdto.setToday((int)daysRemaining);
+                    jobPostingDto.setToday((int)daysRemaining);
                 }
                 // 지원마감일 - '채용시까지 23-05-28' 에서 띄워쓰기로 분리하지 않고 d-day표기시 분리하기
                 String closeDateStr = getTextContentByTagName(ele, "closeDt");
                 Date closeDate = parseDateString(closeDateStr);
                 if (closeDate != null) {
                     String formattedCloseDate = formatDateToString(closeDate);
-                    jobPotingdto.setCloseDate(formattedCloseDate);
+                    jobPostingDto.setCloseDate(formattedCloseDate);
                     // D-Day 계산
                     LocalDate currentDate = LocalDate.now();
                     LocalDate closeDateLocal = LocalDate.parse(formattedCloseDate, DateTimeFormatter.ofPattern("yy-MM-dd"));
                     long daysRemaining = closeDateLocal.toEpochDay() - currentDate.toEpochDay();
-                    jobPotingdto.setDday((int)daysRemaining);
+                    jobPostingDto.setDday((int)daysRemaining);
                 }
                 // 채용제목
-                jobPotingdto.setReTitle(getTextContentByTagName(ele, "title"));
+                jobPostingDto.setReTitle(getTextContentByTagName(ele, "title"));
                 // 경력
-                jobPotingdto.setCareer(getTextContentByTagName(ele, "career"));
+                jobPostingDto.setCareer(getTextContentByTagName(ele, "career"));
                 // 근무형태
-                jobPotingdto.setWorkType(getTextContentByTagName(ele, "holidayTpNm"));
+                jobPostingDto.setWorkType(getTextContentByTagName(ele, "holidayTpNm"));
                 // 고용형태
-                jobPotingdto.setEmpTypeCode(getTextContentByTagName(ele, "empTp"));
+                jobPostingDto.setEmpTypeCode(getTextContentByTagName(ele, "empTp"));
                 
                 memberList.add(memberDto);
                 businessList.add(businessDto);
-                jobPostingList.add(jobPotingdto);
+                jobPostingList.add(jobPostingDto);
             }
             
             for (int i = 0; i < jobPostingList.size(); i++) {
