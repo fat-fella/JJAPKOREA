@@ -10,5 +10,6 @@ public interface JobPostingUploadService {
 	public List<JobPostingDto> selectList(String mid) throws Exception;
 	List<JobPostingCategoryDto> selectFirst(String selectedOption) throws Exception;
 	public List<JobPostingCategoryDto> selectSecond(String selectedOption) throws Exception;
+	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception;
 }
 

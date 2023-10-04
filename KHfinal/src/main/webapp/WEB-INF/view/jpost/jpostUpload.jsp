@@ -56,7 +56,7 @@
 						<option>선택해주세요</option>
 					</select>
 					<label style="font-size: 12px; color: red;">2차 세부채용분야<span>*</span></label>
-					<select name="thirdrecruitField" id="thirdrecruitField">
+					<select name="thirdRecruitField" id="thirdRecruitField" onchange="loadThirdOptions()">
 						<option>선택해주세요</option>
 					</select>
 					<label style="font-size: 12px; color: red;">3차 세부채용분야<span>*</span></label>
@@ -136,7 +136,9 @@
 			var firstRecruitField = document.getElementById("firstRecruitField");
             var secondRecruitField = document.getElementById("secondRecruitField");
             var selectedOption = firstRecruitField.options[firstRecruitField.selectedIndex].value;
-
+			if(selectedOption == "선택해주세요"){
+				return;
+			}
             $.ajax({
                 url: "/jjapkorea/jobpostingupload/getSecondRecruitField",
                 method: "POST",
@@ -145,6 +147,7 @@
                 },
                 dataType: "json", 
                 success: function (response) {
+                	console.log(response)
                     secondRecruitField.innerHTML = "";
 
                     for (var i = 0; i < response.length; i++) {
@@ -164,7 +167,9 @@
             var secondRecruitField = document.getElementById("secondRecruitField");
             var thirdRecruitField = document.getElementById("thirdRecruitField");
             var selectedOption = secondRecruitField.options[secondRecruitField.selectedIndex].value;
-
+            if(selectedOption == "선택해주세요"){
+				return;
+			}
             $.ajax({
                 url: "/jjapkorea/jobpostingupload/getThirdRecruitField",
                 method: "POST",
@@ -188,6 +193,37 @@
             });
 
 		}
+		function loadThirdOptions(){
+            var thirdRecruitField = document.getElementById("thirdRecruitField");
+            var recruitField = document.getElementById("recruitField");
+            var selectedOption = thirdRecruitField.options[thirdRecruitField.selectedIndex].value;
+            if(selectedOption == "선택해주세요"){
+				return;
+			}
+            $.ajax({
+                url: "/jjapkorea/jobpostingupload/getFourthRecruitField",
+                method: "POST",
+                data: {
+                    selectedOption: selectedOption
+                },
+                dataType: "json", 
+                success: function (response) {
+                    recruitField.innerHTML = "";
+
+                    for (var i = 0; i < response.length; i++) {
+                        var option = document.createElement("option");
+                        option.text = response[i].fieldTitle;
+                        option.value = response[i].recruitField;
+                        recruitField.appendChild(option);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error: " + error);
+                }
+            });
+
+		}
+
     </script>
 
 </body>

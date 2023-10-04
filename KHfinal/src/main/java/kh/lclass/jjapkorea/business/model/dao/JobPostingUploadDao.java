@@ -30,4 +30,8 @@ public class JobPostingUploadDao {
 	public List<JobPostingCategoryDto> selectSecond(String selectedOption) throws Exception{
 		return sqlSession.selectList("jobpostingUpload.selectSecond", selectedOption);
 	}
+	
+	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception{
+		return sqlSession.selectList("jobpostingUpload.selectThird", selectedOption);
+	}
 }
