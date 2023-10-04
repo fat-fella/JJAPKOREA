@@ -25,7 +25,7 @@
 			</div>
 		</div>
 	</header>
-	<form action="register" method="POST" class="jpostform">
+	<form action="../jobpostingupload/register" method="POST" class="jpostform">
 		<div class="jposthead">
 			<h2>채용공고 등록</h2>
 			<h6>양식에 맞게 채용공고를 등록해주세요.</h6>
@@ -33,8 +33,8 @@
 		<div class="jpostcontent">
 			<fieldset class="jpostfieldset">
 				<div class="retitleinputBox">
-					<label for="jobTitle">채용제목 <span>*</span></label> <input
-						type="text" id="jobTitle" name="jobTitle" required>
+					<label for="reTitle">채용제목 <span>*</span></label> <input
+						type="text" id="reTitle" name="reTitle" required>
 				</div>
 				<div class="recruitfieldinputBox">
 					<label for="firstRecruitField">채용분야 분류<span>*</span></label>
@@ -85,13 +85,6 @@
 					<label for="workType">근무형태 <span>*</span></label> <input
 						type="text" id="workType" name="workType" required>
 				</div>
-				<div class="emptypecodeinputBox">
-					<label for="empTypeCode">고용형태코드 <span>*</span></label> <select
-						name="empTypeCode" id="empTypeCode" required>
-						<option value=".">옵션 1</option>
-						<!-- Add more options here -->
-					</select>
-				</div>
 				<div class="salaryinputBox">
 					<label for="salary">연봉 <span>*</span></label> <input type="text"
 						id="salary" name="salary" required>
@@ -104,15 +97,15 @@
 					<label for="maxSalary">최대연봉 <span>*</span></label> <input
 						type="text" id="maxSalary" name="maxSalary" required>
 				</div>
-				<div class="jpostdetails">
+				<!-- <div class="jpostdetails">
 					<h4>상세정보</h4>
 					<textarea name="content" id="content" required></textarea>
 					<button type="button" class="submitBtn">등록</button>
-				</div>
+				</div> -->
 			</fieldset>
 			<div class="jpostdateset">
 				<label for="regDate">채용공고 등록일</label> <input type="date"
-					id="regDate" name="regDate"> <label for="closeDate">채용공고
+					id="registDate" name="registDate"> <label for="closeDate">채용공고
 					마감일</label> <input type="date" id="closeDate" name="closeDate">
 			</div>
 			<div class="jpostsubmitbtn">
@@ -120,7 +113,7 @@
 			</div>
 		</div>
 	</form>
-	<script
+	<!-- <script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
 	<script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/translations/ko.js"></script>
@@ -130,7 +123,7 @@
         }).then(editor => {
             window.editor = editor;
         });
-    </script>
+    </script> -->
 	<script>
 		function loadOptions(){
 			var firstRecruitField = document.getElementById("firstRecruitField");
@@ -140,7 +133,7 @@
 				return;
 			}
             $.ajax({
-                url: "/jjapkorea/jobpostingupload/getSecondRecruitField",
+                url: "/jjapkorea/business/jobpostingupload/getSecondRecruitField",
                 method: "POST",
                 data: {
                     selectedOption: selectedOption
@@ -171,7 +164,7 @@
 				return;
 			}
             $.ajax({
-                url: "/jjapkorea/jobpostingupload/getThirdRecruitField",
+                url: "/jjapkorea/business/jobpostingupload/getThirdRecruitField",
                 method: "POST",
                 data: {
                     selectedOption: selectedOption
@@ -201,7 +194,7 @@
 				return;
 			}
             $.ajax({
-                url: "/jjapkorea/jobpostingupload/getFourthRecruitField",
+                url: "/jjapkorea/business/jobpostingupload/getFourthRecruitField",
                 method: "POST",
                 data: {
                     selectedOption: selectedOption

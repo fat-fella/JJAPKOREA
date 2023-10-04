@@ -2,59 +2,68 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="jobpostingUpload">
 	<resultMap type="jobPostingDto" id="jobpostingDtoResultMap">
-		<id property="jid" column="jid"/>
-		<result property="mid" column="MID"/>
-		<result property="recruitField" column="RECRUIT_FIELD"/>
-		<result property="busino" column="BUISNO"/>
-		<result property="userEducation" column="USER_EDUCATION"/>
-		<result property="salary" column="SALARY"/>
-		<result property="minSalary" column="MIN_SALARY"/>
-		<result property="maxSalary" column="MAX_SALARY"/>
-		<result property="registDate" column="REGIST_DATE"/>
-		<result property="closeDate" column="CLOSE_DATE"/>
-		<result property="reTitle" column="RE_TITLE"/>
-		<result property="career" column="CAREER"/>
-		<result property="workType" column="WORK_TYPE"/>
-		<result property="empTypeCode" column="EMP_TYPE_CODE"/>
-		<result property="today" column="TODAY"/>
-		<result property="dday" column="DDAY"/>
+		<id property="jid" column="JID" />
+		<result property="mid" column="MID" />
+		<result property="recruitField" column="RECRUIT_FIELD" />
+		<result property="userEducation" column="USER_EDUCATION" />
+		<result property="salary" column="SALARY" />
+		<result property="minSalary" column="MIN_SALARY" />
+		<result property="maxSalary" column="MAX_SALARY" />
+		<result property="registDate" column="REGIST_DATE" />
+		<result property="closeDate" column="CLOSE_DATE" />
+		<result property="reTitle" column="RE_TITLE" />
+		<result property="career" column="CAREER" />
+		<result property="workType" column="WORK_TYPE" />
+		<result property="empTypeCode" column="EMP_TYPE_CODE" />
+		<result property="today" column="TODAY" />
+		<result property="dday" column="DDAY" />
 	</resultMap>
-	<resultMap id="jobPostingCategoryDtoResultMap" type="jobPostingCategoryDto">
-		<id property="recruitField" column="RECRUIT_FIELD"/>
-		<result property="jobscd" column="JOBSCD"/>
-		<result property="jobscat" column="JOBSCAT"/>
-		<result property="jobsmcd" column="JOBSMCD"/>
-		<result property="jobsmcat" column="JOBSMCAT"/>
-		<result property="jobsscd" column="JOBSSCD"/>
-		<result property="jobsscat" column="JOBSSCAT"/>
-		<result property="fieldTitle" column="FIELD_TITLE"/>
+	<resultMap id="jobPostingCategoryDtoResultMap"
+		type="jobPostingCategoryDto">
+		<id property="recruitField" column="RECRUIT_FIELD" />
+		<result property="jobscd" column="JOBSCD" />
+		<result property="jobscat" column="JOBSCAT" />
+		<result property="jobsmcd" column="JOBSMCD" />
+		<result property="jobsmcat" column="JOBSMCAT" />
+		<result property="jobsscd" column="JOBSSCD" />
+		<result property="jobsscat" column="JOBSSCAT" />
+		<result property="fieldTitle" column="FIELD_TITLE" />
 	</resultMap>
-	
-	<insert id="insert" parameterType="jobpostingDto"> 
-		INSERT INTO INFO (JID, MID, RECRUIT_FIELD, BUSINO, USER_EDUCATION, SALARY, MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, CAREER, WORK_TYPE, EMP_TYPE_CODE, TODAY, DDAY) VALUES (#{jid}, #{mid}, #{recruitField}, #{busino}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
-    </insert>
-    <!-- 1차 세부 채용분야 -->
-    <select id="selectFirst" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT * FROM "RSField" WHERE SUBSTR(JOBSMCD, 1, 1) = #{selectedOption}
-    </select>
-  
-    
-    <!-- 2차 세부 채용분야 -->
-    <select id="selectSecond" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT * FROM "RTField" WHERE SUBSTR(JOBSSCD, 1, 2) = #{selectedOption}
-    </select>
-    <!-- 3차 세부 채용분 -->
-    <select id="selectThird" resultMap="jobPostingCategoryDtoResultMap">
-    	SELECT * FROM "RFIELD" WHERE SUBSTR(RECRUIT_FIELD, 1, 3) = #{selectedOption}
-    </select>
-    
-    
-    
-    
-     
-	<select id="selectList" resultMap="jobpostingDtoResultMap">
-		SELECT * FROM INFO WHERE MID =#{mid}     
-		
+
+	<insert id="insert" parameterType="jobpostingDto">
+		INSERT INTO INFO (JID, MID, RECRUIT_FIELD, USER_EDUCATION, SALARY,
+		MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, CAREER,
+		WORK_TYPE, TODAY, DDAY) VALUES (#{jid}, #{mid},
+		#{recruitField}, #{userEducation}, #{salary}, #{minSalary},
+		#{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career},
+		#{workType}, #{today}, #{dday})
+	</insert>
+	<!-- 1차 세부 채용분야 -->
+	<select id="selectFirst"
+		resultMap="jobPostingCategoryDtoResultMap">
+		SELECT * FROM "RSField" WHERE SUBSTR(JOBSMCD, 1, 1) = #{selectedOption}
 	</select>
-	
+
+
+	<!-- 2차 세부 채용분야 -->
+	<select id="selectSecond"
+		resultMap="jobPostingCategoryDtoResultMap">
+		SELECT * FROM "RTField" WHERE SUBSTR(JOBSSCD, 1, 2) = #{selectedOption}
+	</select>
+	<!-- 3차 세부 채용분 -->
+	<select id="selectThird"
+		resultMap="jobPostingCategoryDtoResultMap">
+		SELECT * FROM "RFIELD" WHERE SUBSTR(RECRUIT_FIELD, 1, 3) = #{selectedOption}
+	</select>
+
+
+
+
+
+	<select id="selectList" resultMap="jobpostingDtoResultMap">
+		SELECT * FROM INFO WHERE MID
+		=#{mid}
+
+	</select>
+
 </mapper>
