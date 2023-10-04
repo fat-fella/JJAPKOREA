@@ -16,7 +16,7 @@
 	<header>
 		<div>
 			<h1 id="jkLogo">
-				<a href="index"></a>
+				<a href="../index"></a>
 			</h1>
 		</div>
 		<div class="headerRight">
@@ -50,7 +50,7 @@
 				</td>
 				<td>
 					<div>
-						<input type="text" name="name" class="question" id="birth"
+						<input type="text" name="name" class="question qholder" id="birth"
 							required autocomplete="off" placeholder="1995.03.20" /> <label
 							for="birth"><span>생년월일 *</span></label>
 					</div>
@@ -76,13 +76,13 @@
 			<tr>
 				<td>
 					<div>
-						<input type="text" name="name" class="question" id="tel"
+						<input type="text" name="name" class="question qholder" id="tel"
 							required autocomplete="off" placeholder="02-1234-1234"/> <label for="tel"><span>전화번호</span></label>
 					</div>
 
 				</td>
 				<td>
-				<input type="text" name="name" class="question" id="phone"
+				<input type="text" name="name" class="question qholder" id="phone"
 							required autocomplete="off" placeholder="010-1234-1234"/> <label for="phone"><span>휴대폰번호 *</span></label>
 					
 					
