@@ -23,11 +23,11 @@
 		insert into info (jid, mid, recruit_field, user_education, salary, min_salary, max_salary, regist_date, close_date, re_title, career, work_type, emp_type_code, today, dday) VALUES (#{jid}, #{mid}, #{recruitField}, #{userEducation}, #{salary}, #{minSalary}, #{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career}, #{workType}, #{empTypeCode}, #{today}, #{dday})
     </insert>
     
-	<select id="selectListJobPosting" resultMap="jobPostingDto">
-		select * from info
-	</select>
-	
 	<select id="getJobPostingsWithBusinessInfo" resultType="java.util.Map">
 	    select b.bizname, b.brno, i.* from info i join business b on i.mid = b.mid order by b.mid
+	</select>
+	
+	<select id="selectListJobPosting" resultMap="jobPostingDto">
+		select * from info
 	</select>
 </mapper>
