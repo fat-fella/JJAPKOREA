@@ -164,6 +164,7 @@ public class WorknetApi {
                 businessList.add(businessDto);
                 jobPostingList.add(jobPotingdto);
             }
+            
             for (int i = 0; i < jobPostingList.size(); i++) {
                 MemberDto memberDto = memberList.get(i);
                 BusinessDto businessDto = businessList.get(i);
