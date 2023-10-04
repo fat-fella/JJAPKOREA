@@ -6,8 +6,6 @@ import lombok.Data;
 public class JobPostingDto {
 	private String jid;
 	private String mid;
-	private String brno;
-	private String bizname;
 	private String recruitField;
 	private String userEducation;
 	private String salary;

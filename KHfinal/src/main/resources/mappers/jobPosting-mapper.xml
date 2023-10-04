@@ -26,4 +26,8 @@
 	<select id="selectListJobPosting" resultMap="jobPostingDto">
 		select * from info
 	</select>
+	
+	<select id="getJobPostingsWithBusinessInfo" resultType="java.util.Map">
+	    select b.bizname, b.brno, i.* from info i join business b on i.mid = b.mid order by b.mid
+	</select>
 </mapper>

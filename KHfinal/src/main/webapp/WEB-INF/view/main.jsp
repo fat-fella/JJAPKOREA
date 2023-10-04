@@ -54,46 +54,49 @@
 									%>
 									<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 								</div>
-								<div class="compName">${item.bizname}</div>
+								<div class="compName">${item['bizname']}</div>
 								<div class="recruitInfo">
-									${item.reTitle}<br> <br>
+									${item['reTitle']}<br> <br>
 								</div>
 								<div id="applyscrap">
 									<c:choose>
-										<c:when test="${item.today == 0}">
+										<c:when test="${item[today] == 0}">
 											<div class="applydateWithApply">오늘시작</div>
 										</c:when>
-										<c:when test="${item.dday == 0}">
+										<c:when test="${item[dday] == 0}">
 											<div class="applydateWithApply">오늘마감</div>
 										</c:when>
-										<c:when test="${item.dday <= 7}">
+										<c:when test="${item[dday] <= 7}">
 											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item.dday}</div>
+											<div class="applydateWithApply">D-${item[dday]}</div>
 										</c:when>
 										<c:otherwise>
-											<div class="applydateWithApply">D-${item.dday}</div>
+											<div class="applydateWithApply">D-${item[dday]}</div>
 										</c:otherwise>
 									</c:choose>
 									<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
-									<input type="hidden" name="jid" value="${item.jid}"> <input
-										type="hidden" name="recruitField" value="${item.recruitField}">
-									<input type="hidden" name="bizname"
-										value="${item.bizname}"> <input type="hidden"
-										name="brno" value="${item.brno}"> <input
-										type="hidden" name="userEducation"
-										value="${item.userEducation}"> <input type="hidden"
-										name="salary" value="${item.salary}"> <input
-										type="hidden" name="minSalary" value="${item.minSalary}">
-									<input type="hidden" name="maxSalary" value="${item.maxSalary}">
+									<input type="hidden" name="jid" value="${item[jid]}">
+									<input type="hidden" name="recruitField"
+										value="${item[recruitField]}">
+									<input type="hidden" name="bizname" value="${item[bizname]}">
+									<input type="hidden" name="brno" value="${item[brno]}">
+									<input type="hidden" name="userEducation"
+										value="${item.userEducation}">
+									<input type="hidden" name="salary" value="${item[salary]}">
+									<input type="hidden" name="minSalary"
+										value="${item[minSalary]}">
+									<input type="hidden" name="maxSalary"
+										value="${item[maxSalary]}">
 									<input type="hidden" name="registDate"
-										value="${item.registDate}"> <input type="hidden"
-										name="closeDate" value="${item.closeDate}"> <input
-										type="hidden" name="reTitle" value="${item.reTitle}">
-									<input type="hidden" name="career" value="${item.career}">
-									<input type="hidden" name="workType" value="${item.workType}">
+										value="${item[registDate]}">
+									<input type="hidden" name="closeDate"
+										value="${item[closeDate]}">
+									<input type="hidden" name="reTitle" value="${item[reTitle]}">
+									<input type="hidden" name="career" value="${item[career]}">
+									<input type="hidden" name="workType" value="${item[workType]}">
 									<input type="hidden" name="empTypeCode"
-										value="${item.empTypeCode}">
-									<button type="button" onclick="" data-jid="${item.jid}"
+										value="${item[empTypeCode]}">
+									<button type="button" onclick="" data-jid="${item[jid]}"
 										class="scrap">채용정보 스크랩</button>
 								</div>
 							</form>
@@ -346,26 +349,26 @@
 								%>
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
-							<div class="compName">${item.bizname}</div>
+							<div class="compName">${item[bizname]}</div>
 							<div class="recruitInfo">
-								${item.reTitle}<br> <br>
+								${item[reTitle]}<br> <br>
 							</div>
 							<div id="applyscrap">
 								<c:choose>
-									<c:when test="${item.today == 0}">
-										<div class="applydateWithApply">오늘시작</div>
-									</c:when>
-									<c:when test="${item.dday == 0}">
-										<div class="applydateWithApply">오늘마감</div>
-									</c:when>
-									<c:when test="${item.dday <= 7}">
-										<button onclick="" class="applynow">즉시지원</button>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:when>
-									<c:otherwise>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:otherwise>
-								</c:choose>
+										<c:when test="${item[today] == 0}">
+											<div class="applydateWithApply">오늘시작</div>
+										</c:when>
+										<c:when test="${item[dday] == 0}">
+											<div class="applydateWithApply">오늘마감</div>
+										</c:when>
+										<c:when test="${item[dday] <= 7}">
+											<button onclick="" class="applynow">즉시지원</button>
+											<div class="applydateWithApply">D-${item[dday]}</div>
+										</c:when>
+										<c:otherwise>
+											<div class="applydateWithApply">D-${item[dday]}</div>
+										</c:otherwise>
+									</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
@@ -428,26 +431,26 @@
 								%>
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
-							<div class="compName">${item.bizname}</div>
+							<div class="compName">${item[bizname]}</div>
 							<div class="recruitInfo">
-								${item.reTitle}<br> <br>
+								${item[reTitle]}<br> <br>
 							</div>
 							<div id="applyscrap">
 								<c:choose>
-									<c:when test="${item.today == 0}">
-										<div class="applydateWithApply">오늘시작</div>
-									</c:when>
-									<c:when test="${item.dday == 0}">
-										<div class="applydateWithApply">오늘마감</div>
-									</c:when>
-									<c:when test="${item.dday <= 7}">
-										<button onclick="" class="applynow">즉시지원</button>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:when>
-									<c:otherwise>
-										<div class="applydateWithApply">D-${item.dday}</div>
-									</c:otherwise>
-								</c:choose>
+										<c:when test="${item[today] == 0}">
+											<div class="applydateWithApply">오늘시작</div>
+										</c:when>
+										<c:when test="${item[dday] == 0}">
+											<div class="applydateWithApply">오늘마감</div>
+										</c:when>
+										<c:when test="${item[dday] <= 7}">
+											<button onclick="" class="applynow">즉시지원</button>
+											<div class="applydateWithApply">D-${item[dday]}</div>
+										</c:when>
+										<c:otherwise>
+											<div class="applydateWithApply">D-${item[dday]}</div>
+										</c:otherwise>
+									</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
@@ -471,13 +474,13 @@
 								</div>
 								<ul>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[아우터플레인] 서버 프로그래머');">[아우터플레인]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[아우터플레인] 서버 프로그래머');">[아우터플레인]
 											서버 프로그래머</a></li>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[아우터플레인] 전 직군 인재채용');">[아우터플레인]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[아우터플레인] 전 직군 인재채용');">[아우터플레인]
 											전 직군 인재채용</a></li>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[레트로홀릭스튜디오] 도트 디자이너 모집');">[레트로홀릭스튜디오]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[레트로홀릭스튜디오] 도트 디자이너 모집');">[레트로홀릭스튜디오]
 											도트 디자이너 모집</a></li>
 								</ul>
 								<div class="extra">
@@ -485,8 +488,9 @@
 										진행중인 채용공고 <span>13</span>건
 									</div>
 									<a href="#" target="_blank" class="btn_more"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_더보기');">더보기<i
-										class="icon-more-arrow-right" aria-hidden="true"></i></a>
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_더보기');">
+										더보기<i class="icon-more-arrow-right" aria-hidden="true"></i>
+									</a>
 								</div>
 							</li>
 							<li class="item">
@@ -502,13 +506,13 @@
 								</div>
 								<ul>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[111퍼센트]마케팅 영상 콘텐츠 디자이너');">[111퍼센트]마케팅
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[111퍼센트]마케팅 영상 콘텐츠 디자이너');">[111퍼센트]마케팅
 											영상 콘텐츠 디자이너</a></li>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[111퍼센트] 로블록스 개발자 모집');">[111퍼센트]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[111퍼센트] 로블록스 개발자 모집');">[111퍼센트]
 											로블록스 개발자 모집</a></li>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[곰블]게임 클라이언트 개발자');">[곰블]게임
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[곰블]게임 클라이언트 개발자');">[곰블]게임
 											클라이언트 개발자</a></li>
 								</ul>
 								<div class="extra">
@@ -516,8 +520,9 @@
 										진행중인 채용공고 <span>12</span>건
 									</div>
 									<a href="#" target="_blank" class="btn_more"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_더보기');">더보기<i
-										class="icon-more-arrow-right" aria-hidden="true"></i></a>
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_더보기');">
+										더보기<i class="icon-more-arrow-right" aria-hidden="true"></i>
+									</a>
 								</div>
 							</li>
 							<li class="item">
@@ -532,13 +537,13 @@
 								</div>
 								<ul>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] 유니티 클라이언트 개발자 모집');">[경력]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] 유니티 클라이언트 개발자 모집');">[경력]
 											유니티 클라이언트 개발자 모집</a></li>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] 퍼포먼스 마케터 모집');">[경력]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] 퍼포먼스 마케터 모집');">[경력]
 											퍼포먼스 마케터 모집</a></li>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] QA 엔지니어 모집');">[경력]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] QA 엔지니어 모집');">[경력]
 											QA 엔지니어 모집</a></li>
 								</ul>
 								<div class="extra">
@@ -546,8 +551,9 @@
 										진행중인 채용공고 <span>19</span>건
 									</div>
 									<a href="#" target="_blank" class="btn_more"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_더보기');">더보기<i
-										class="icon-more-arrow-right" aria-hidden="true"></i></a>
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_더보기');">
+										더보기<i class="icon-more-arrow-right" aria-hidden="true"></i>
+									</a>
 								</div>
 							</li>
 							<li class="item">
@@ -562,14 +568,14 @@
 								</div>
 								<ul>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] GameBI DW/DM 엔지니어');">[NHN]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] GameBI DW/DM 엔지니어');">[NHN]
 											GameBI DW/DM 엔지니어</a></li>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] 글로벌 신규 소셜 카지노 게임사업 PM');">[NHN]
-											글로벌 신규 소셜 카지노 게임<br>사업 PM
-									</a></li>
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] 글로벌 신규 소셜 카지노 게임사업 PM');">
+											[NHN] 글로벌 신규 소셜 카지노 게임<br>사업 PM
+										</a></li>
 									<li><a href="#" target="_blank"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] 글로벌 신규 소셜 카지노 게임 서버 개발');">[NHN]
+											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] 글로벌 신규 소셜 카지노 게임 서버 개발');">[NHN]
 											글로벌 신규 소셜 카지노 게임 서버 개발</a></li>
 								</ul>
 								<div class="extra">
@@ -577,14 +583,15 @@
 										진행중인 채용공고 <span>17</span>건
 									</div>
 									<a href="#" target="_blank" class="btn_more"
-										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_더보기');">더보기<i
-										class="icon-more-arrow-right" aria-hidden="true"></i></a>
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_더보기');">
+										더보기<i class="icon-more-arrow-right" aria-hidden="true"></i>
+									</a>
 								</div>
 							</li>
 						</ul>
 						<a href="#" class="btn_more_header" target="_blank"
-							onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_채용광고더보기');">채용광고
-							더보기<i class="icon-more-arrow-right" aria-hidden="true"></i>
+							onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_채용광고더보기');">
+							채용광고 더보기<i class="icon-more-arrow-right" aria-hidden="true"></i>
 						</a>
 					</div>
 				</div>

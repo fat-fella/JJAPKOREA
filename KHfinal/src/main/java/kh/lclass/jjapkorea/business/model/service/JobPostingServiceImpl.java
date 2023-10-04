@@ -1,6 +1,7 @@
 package kh.lclass.jjapkorea.business.model.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,11 @@ public class JobPostingServiceImpl implements JobPostingService {
 		memberDao.signUpBusiness(businessDto);
 		jobPostingDao.insertJobPosting(jobPostingDto);
 	}
+	
+	@Override
+    public List<Map<String, Object>> getJobPostingsWithBusinessInfo() throws Exception {
+        return jobPostingDao.getJobPostingsWithBusinessInfo();
+    }
 	
 	@Override
 	public List<JobPostingDto> selectListJobPosting() throws Exception{

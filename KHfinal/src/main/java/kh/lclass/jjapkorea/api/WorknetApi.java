@@ -47,10 +47,14 @@ public class WorknetApi {
 	private List<BusinessDto> businessList;
 	private List<JobPostingDto> jobPostingList;
 	
+	private List<MemberDto> membersToRemove;
+	private List<BusinessDto> businessesToRemove;
+	private List<JobPostingDto> jobPostingsToRemove;
+	
     public static void main(String[] args){
     }
     
-    public List<JobPostingDto> getJobPostings() {
+    public void getJobPostings() {
     	try {
             StringBuilder urlBuilder = new StringBuilder("http://openapi.work.go.kr/opi/opi/opia/wantedApi.do"); /* URL */
             urlBuilder.append("?" + URLEncoder.encode("authKey", "UTF-8") + "=WNLBET6R0WPQK95R8VLU02VR1HJ"); /* Service Key */
@@ -93,6 +97,10 @@ public class WorknetApi {
             businessList = new ArrayList<>();
             jobPostingList = new ArrayList<>();
             
+            membersToRemove = new ArrayList<>();
+            businessesToRemove = new ArrayList<>();
+            jobPostingsToRemove = new ArrayList<>();
+            
             for (int i = 0; i < wantedList.getLength(); i++) {
             	MemberDto memberDto = new MemberDto();
             	BusinessDto businessDto = new BusinessDto();
@@ -116,10 +124,8 @@ public class WorknetApi {
                 jobPostingDto.setRecruitField(getTextContentByTagName(ele, "jobsCd"));
                 // 회사명
                 businessDto.setBizname(getTextContentByTagName(ele, "company"));
-                jobPostingDto.setBizname(businessDto.getBizname());
                 // 사업자번호
                 businessDto.setBrno(getTextContentByTagName(ele, "busino"));
-                jobPostingDto.setBrno(businessDto.getBrno());
                 // 지원자학력
                 jobPostingDto.setUserEducation(getTextContentByTagName(ele, "maxEdubg"));
                 // 연봉
@@ -173,16 +179,19 @@ public class WorknetApi {
                 try {
                     jobPostingService.signUpMemberAndBusinessAndInsertJobPosting(memberDto, businessDto, jobPostingDto);
                 } catch (Exception e) {
-                	memberList.remove(i);
-                    businessList.remove(i);
-                    jobPostingList.remove(i);
-                    i--;
+                	// 제약 조건 위반 예외가 발생한 경우, 삭제할 요소를 리스트에 추가
+                    membersToRemove.add(memberDto);
+                    businessesToRemove.add(businessDto);
+                    jobPostingsToRemove.add(jobPostingDto);
                 }
             }
+            // 루프가 종료된 후, 일괄적으로 요소를 제거
+            memberList.removeAll(membersToRemove);
+            businessList.removeAll(businessesToRemove);
+            jobPostingList.removeAll(jobPostingsToRemove);
         } catch (Exception e) {
             e.printStackTrace();
         }
-    	return jobPostingList;
     }
 
     private static String getTextContentByTagName(Element element, String tagName) {
