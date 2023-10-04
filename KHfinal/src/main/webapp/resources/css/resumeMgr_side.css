@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* ===== resumeMgr_side.css 시작 =====*/
-
 #resumeMgrMain { /* 아티클 크기 설정 */
 	position: relative;
 	padding-top: 25px; /* 테이블을 해당 길이만큼 아래 위치에서 생성되도록 설정 */
@@ -51,4 +50,3 @@
 	font-weight: bold; /* 글자 진하게 설정 */
 	color: #172bff; /* 글자 색 설정 */
 }
-
