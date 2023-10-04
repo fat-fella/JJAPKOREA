@@ -176,6 +176,7 @@ public class WorknetApi {
                 	memberList.remove(i);
                     businessList.remove(i);
                     jobPostingList.remove(i);
+                    i--;
                 }
             }
         } catch (Exception e) {
