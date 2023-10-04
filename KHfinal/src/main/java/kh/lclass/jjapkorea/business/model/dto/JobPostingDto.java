@@ -19,7 +19,4 @@ public class JobPostingDto {
 	private String empTypeCode;
 	private int today;
 	private int dday;
-	
-	
-	
 }
