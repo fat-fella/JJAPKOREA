@@ -114,8 +114,8 @@ public class WorknetApi {
                 String mid = jid.replace("-", "").substring(0, 20);
                 memberDto.setMid(mid);
                 // 비밀번호
-                String password = "Password1234!";
-                memberDto.setMpw(bCryptPasswordEncoder.encode(password));
+                String mpw = "Password1234!";
+                memberDto.setMpw(bCryptPasswordEncoder.encode(mpw));
                 // 권한
                 memberDto.setMtype("ROLE_BUSINESS");
                 businessDto.setMid(mid);
