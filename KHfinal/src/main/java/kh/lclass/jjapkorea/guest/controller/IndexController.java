@@ -1,5 +1,6 @@
 package kh.lclass.jjapkorea.guest.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -25,16 +26,19 @@ public class IndexController {
     @Autowired
     private WorknetApi worknetApi;
     
-    private List<JobPostingDto> updatedJobPostings; // 업데이트된 데이터를 저장할 변수
+    // 기존 데이터를 보관하는 리스트
+    private List<JobPostingDto> existingJobPostings = new ArrayList<>();
 
-    @PostConstruct // 스프링 빈 초기화 시 한 번 호출
+    // 업데이트된 데이터를 보관하는 리스트
+    private List<JobPostingDto> updatedJobPostings = new ArrayList<>();
+
+    @PostConstruct
     public void init() {
-        // 초기 데이터 업데이트
-        updateJobPostings();
+        // 빈 초기화 시 기존 데이터를 초기화
+        existingJobPostings = worknetApi.getJobPostings();
     }
 
-    // 주기적으로 데이터를 업데이트하는 메소드
-    @Scheduled(cron = "0 0 0 * * ?") // 매일 자정에 실행 (cron 표현식)
+    @Scheduled(cron = "0 0 0 * * ?")
     public void updateJobPostings() {
         updatedJobPostings = worknetApi.getJobPostings();
     }
@@ -46,15 +50,21 @@ public class IndexController {
         String pname = memberService.selectOnePerson(mid);
         model.addAttribute("pname", pname);
         
-        // 업데이트된 데이터 사용
+        // 기존 데이터를 함께 표시
+        List<JobPostingDto> combinedList = new ArrayList<>(existingJobPostings);
+        combinedList.addAll(updatedJobPostings);
+        
         int chunkSize = 8; // 묶을 요소 개수
-        int totalItems = updatedJobPostings.size();
+        int totalItems = combinedList.size();
         for (int startIndex = 0; startIndex < totalItems; startIndex += chunkSize) {
             int endIndex = Math.min(startIndex + chunkSize, totalItems);
-            List<JobPostingDto> subList = updatedJobPostings.subList(startIndex, endIndex);
-            String attributeName = "list" + (startIndex / chunkSize + 1); // 새로운 속성 이름 생성 (list1, list2, ...)
+            List<JobPostingDto> subList = combinedList.subList(startIndex, endIndex);
+            String attributeName = "list" + (startIndex / chunkSize + 1);
             model.addAttribute(attributeName, subList);
         }
+        
+        // 기존 데이터 갱신
+        existingJobPostings = updatedJobPostings;
         
         return "index";
     }
