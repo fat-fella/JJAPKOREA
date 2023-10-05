@@ -129,7 +129,7 @@ body {
 <body>
 <div class="title">
 	<h2> 취업 talkTalk! </h2>
-	<h4>API Key: <spring:eval expression="@api['api.key']" /></h4>
+<%-- 	<h4>API Key: <spring:eval expression="@api['api.key']" /></h4> --%>
 </div>
 <c:if test="${not empty boardList }">
     <p>총 <c:out value="${fn:length(boardList)}" />개의 게시물이 있습니다</p>
