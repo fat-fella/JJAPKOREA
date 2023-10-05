@@ -9,8 +9,9 @@
 <title>TalkTalk</title>
 
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<spring:eval expression="@api['api.key']" />" ></script>
-
+<%-- 
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<spring:eval expression="@api['api.key']" />" ></script>
+ --%>
 <style>
 body {
     background-color: #f9f9f9;
@@ -162,22 +163,24 @@ body {
 	<a href="<c:url value='/board/insert'/>">
 	    <button>글 등록</button>
 	</a>
-	<button type="button" id="openModalBtn">지도 보기</button>
+	<!-- <button type="button" id="openModalBtn">지도 보기</button> -->
 </div> 
 <hr>
 
 <!-- 모달 창 -->
+<!-- 
 <div id="mapModal" class="modal">
     <div class="modal-content">
-        <!-- 지도 컨테이너 -->
+        지도 컨테이너
       <div id="map"></div>
-      <!-- 모달 닫기 버튼 -->
+      모달 닫기 버튼
         <button id="closeModalBtn" class="close-button">&times;</button>
     </div>
-</div>
+</div> 
+-->
 
 <script>
-//지도 모달
+/* //지도 모달
 document.getElementById('openModalBtn').addEventListener('click', function() {
     var modal = document.getElementById('mapModal');
     modal.style.display = 'block';
@@ -212,7 +215,7 @@ document.getElementById('openModalBtn').addEventListener('click', function() {
         }
     });
 });
-
+ */
 
 </script>
 
