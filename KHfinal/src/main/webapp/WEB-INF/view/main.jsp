@@ -20,40 +20,22 @@
 			}, 0);
 			return false;
 		});
-		
-		$(document).ready(function() {
-	         $('.scrap').on('click', function() {
-	             $(this).toggleClass('scraped');
-	             if ($(this).hasClass('scraped')) {
-	                 $(this).text('스크랩됨');
-	                 $(this).removeClass('scrap');
-	             } else {
-	                 $(this).text('채용정보 스크랩');
-	                 $(this).addClass('scrap');
-	             }
-	         });
-	     });
 	});
 	
 	function setScrap(jid) {
-	    var mid = "${SsLoginId}";
-	    var mid2 = "${SsLoginId2}";
+	    var mid = "${mid}";
 	    var scrapButton = $('[data-jid="' + jid + '"]');
 	 	// 현재 스크랩 상태 가져오기
 	    var isScraped = scrapButton.hasClass('scrap');
-	 	console.log(isScraped);
-	    var url = isScraped ? "${pageContext.request.contextPath}/mypage" : "${pageContext.request.contextPath}/cancle";
-	    console.log(url);
+		var url = isScraped ? "${pageContext.request.contextPath}/myPage/scrap" : "${pageContext.request.contextPath}/myPage/scrapCancel";
 	    $.ajax({
 	        url: url,
 	        type: "post",
 	        data: {
 	            jid: jid,
 	            mid: mid,
-	            mid2: mid2
 	        },
 	        success: function(result) {
-	            console.log("success");
 	            if (result == 0) {
 	                // 스크랩 되었을 때 처리
 	                // 예: 스크랩 버튼 텍스트 변경 및 클래스 추가/제거
@@ -65,8 +47,6 @@
 	                    scrapButton.text('채용정보 스크랩');
 	                    scrapButton.addClass('scrap');
 	                }
-	            } else {
-	                // 실패 시 처리
 	            }
 	        }
 	    });
@@ -146,7 +126,7 @@
 									<input type="hidden" name="workType" value="${item.WORK_TYPE}">
 									<input type="hidden" name="empTypeCode"
 										value="${item.EMP_TYPE_CODE}">
-									<button type="button" onclick="" data-jid="${item.JID}"
+									<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
 										class="scrap">채용정보 스크랩</button>
 								</div>
 							</form>
@@ -419,7 +399,8 @@
 											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:otherwise>
 									</c:choose>
-								<button onclick="" class="scrap">채용정보 스크랩</button>
+								<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
+										class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
 					</c:forEach>
@@ -501,7 +482,8 @@
 											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:otherwise>
 									</c:choose>
-								<button onclick="" class="scrap">채용정보 스크랩</button>
+								<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
+										class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
 					</c:forEach>

@@ -25,11 +25,6 @@ public class ScrapServiceImpl implements ScrapService {
 	}
 	
 	@Override
-	public boolean isScrapped(String mid, String jid) throws Exception {
-        return scrapDao.isScrapped(mid, jid);
-    }
-	
-	@Override
 	public List<Map<String, Object>> scrapList(String mid) throws Exception {
 		return scrapDao.selectListScrap(mid);
 	}

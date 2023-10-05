@@ -33,7 +33,7 @@ public class SignupController {
 		try {
 			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
 			memberService.signUpMemberAndPerson(memberDto, personDto);
-			viewPage = "redirect:/login/";
+			viewPage = "redirect:/login";
 		} catch (Exception e) {
 			viewPage = "redirect:/signup/person";
 		}
@@ -58,7 +58,7 @@ public class SignupController {
 		try {
 			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
 			memberService.signUpMemberAndBusiness(memberDto, businessDto);
-			viewPage = "redirect:/login/";
+			viewPage = "redirect:/login";
 		} catch (Exception e) {
 			e.printStackTrace();
 			viewPage = "redirect:/signup/business";

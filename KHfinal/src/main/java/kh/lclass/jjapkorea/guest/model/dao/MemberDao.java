@@ -17,18 +17,6 @@ public class MemberDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public MemberDto loginAdmin(MemberDto memberDto) throws Exception {
-		return sqlSession.selectOne("member.loginAdmin", memberDto);
-	}
-	
-	public MemberDto loginPerson(MemberDto memberDto) throws Exception {
-		return sqlSession.selectOne("member.loginPerson", memberDto);
-	}
-	
-	public MemberDto loginBusiness(MemberDto memberDto) throws Exception {
-		return sqlSession.selectOne("member.loginBusiness", memberDto);
-	}
-	
 	public int signUpMember(MemberDto memberDto) throws Exception {
 		return sqlSession.insert("member.signUpMember", memberDto);
 	}

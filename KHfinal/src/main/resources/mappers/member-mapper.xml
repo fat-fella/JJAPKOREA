@@ -8,18 +8,6 @@
 		<result property="enabled" column="enabled"/>
 	</resultMap>
 	
-	<select id="loginAdmin" resultType="memberDto">
-		select * from member where mid=#{mid} and mpw=#{mpw} and mtype='ROLE_ADMIN'
-	</select>
-	
-	<select id="loginPerson" resultType="memberDto">
-		select * from member where mid=#{mid} and mpw=#{mpw} and mtype='ROLE_PERSON'
-	</select>
-	
-	<select id="loginBusiness" resultType="memberDto">
-		select * from member where mid=#{mid} and mpw=#{mpw} and mtype='ROLE_BUSINESS'
-	</select>
-	
 	<insert id="signUpMember" parameterType="memberDto">
 		insert into member (mid, mpw, mtype) values (#{mid}, #{mpw}, #{mtype})
 	</insert>

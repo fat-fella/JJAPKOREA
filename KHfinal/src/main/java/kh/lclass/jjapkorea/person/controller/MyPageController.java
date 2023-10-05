@@ -1,7 +1,7 @@
 package kh.lclass.jjapkorea.person.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
 import kh.lclass.jjapkorea.person.model.service.ScrapService;
 
 @Controller
@@ -20,43 +21,34 @@ public class MyPageController {
 	private ScrapService scrapService;
 	
 	@GetMapping("/scrap")
-    public String showMyPage(Model model) throws Exception{
-        return "member/myPage";
+    public String scrap(Model model, String mid) throws Exception{
+		String viewPage = "member/myPage";
+		List<Map<String, Object>> scrapList = scrapService.scrapList(mid);
+		model.addAttribute("scrapList", scrapList);
+        return viewPage;
     }
 
     @PostMapping("/scrap")
-    public void addScrap(Model model) throws Exception{
-
-//        ScrapDto dto = new ScrapDto(mid, jid);
-//        ScrapDto dto2 = new ScrapDto(mid2, jid);
-//
-//        if (mid != null && mid2 == null) {
-//            scrapService.scrap(dto);
-//        } else if (mid == null && mid2 != null) {
-//            scrapService.scrap(dto2);
-//        }
+    public String scrap(Model model, RedirectAttributes redirectAttr, ScrapDto scrapDto) throws Exception{
+    	String viewPage = "redirect:/index";
+		try {
+			scrapService.scrap(scrapDto);
+			redirectAttr.addFlashAttribute("msg", "스크랩 성공");
+		} catch (Exception e) {
+			redirectAttr.addFlashAttribute("msg", "스크랩 실패");
+		}
+		return viewPage;
     }
     
     @PostMapping("/scrapCancel")
-    public String scrapCancel(Model model, HttpSession session, @RequestParam("jid") String jid) throws Exception {
-        String mid = (String) session.getAttribute("SsLoginId");
-        String mid2 = (String) session.getAttribute("SsLoginId2");
-
-//        ScrapDto dto = new ScrapDto(mid, jid);
-//        ScrapDto dto2 = new ScrapDto(mid2, jid);
-//
-//        if (mid != null && mid2 == null) {
-//            scrapService.scrapCancel(dto);
-//        } else if (mid == null && mid2 != null) {
-//            scrapService.scrapCancel(dto2);
-//        }
-
-//        List<ScrapDto> list = scrapService.scrapList(mid);
-//        List<ScrapDto> list2 = scrapService.scrapList(mid2);
-
-//        model.addAttribute("list", list);
-//        model.addAttribute("list2", list2);
-
-        return "redirect:/index";
+    public String scrapCancel(Model model, RedirectAttributes redirectAttr, ScrapDto scrapDto) throws Exception {
+    	String viewPage = "redirect:/index";
+		try {
+			scrapService.scrapCancel(scrapDto);
+			redirectAttr.addFlashAttribute("msg", "스크랩 해제 성공");
+		} catch (Exception e) {
+			redirectAttr.addFlashAttribute("msg", "스크랩 해제 실패");
+		}
+		return viewPage;
     }
 }
