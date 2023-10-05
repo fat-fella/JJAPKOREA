@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>boardList</title>
+<title>TalkTalk</title>
 
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<spring:eval expression="@api['api.key']" />" ></script>
@@ -127,7 +127,7 @@ body {
 </head>
 <body>
 <div class="title">
-	<h2> 쿵's 게시판 </h2>
+	<h2> 취업 talkTalk! </h2>
 	<h4>API Key: <spring:eval expression="@api['api.key']" /></h4>
 </div>
 <c:if test="${not empty boardList }">
@@ -157,9 +157,7 @@ body {
         </c:forEach>
     </table>
 </c:if>
-<%-- <div class="btnSet">
-	<jsp:include page="/WEB-INF/views/board/page.jsp"/>
-</div> --%>
+
 <div class="btn-container">
 	<a href="<c:url value='/board/insert'/>">
 	    <button>글 등록</button>
