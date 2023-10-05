@@ -36,18 +36,23 @@
 	            mid: mid,
 	        },
 	        success: function(result) {
-	            if (result == 0) {
-	                // 스크랩 되었을 때 처리
+	            if (result === "success") {
+	                // 스크랩 또는 스크랩 해제 처리
 	                // 예: 스크랩 버튼 텍스트 변경 및 클래스 추가/제거
 	                scrapButton.toggleClass('scraped');
 	                if (scrapButton.hasClass('scraped')) {
 	                    scrapButton.text('스크랩됨');
 	                    scrapButton.removeClass('scrap');
+	                    alert("스크랩");
 	                } else {
 	                    scrapButton.text('채용정보 스크랩');
 	                    scrapButton.addClass('scrap');
+	                    alert("스크랩 해제");
 	                }
-	            }
+	            } else {
+                    // 에러 처리
+                    alert("failure");
+                }
 	        }
 	    });
 	}

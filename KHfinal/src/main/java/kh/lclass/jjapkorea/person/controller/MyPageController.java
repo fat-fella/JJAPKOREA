@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
 import kh.lclass.jjapkorea.person.model.service.ScrapService;
@@ -22,33 +23,43 @@ public class MyPageController {
 	
 	@GetMapping("/scrap")
     public String scrap(Model model, String mid) throws Exception{
-		String viewPage = "member/myPage";
 		List<Map<String, Object>> scrapList = scrapService.scrapList(mid);
 		model.addAttribute("scrapList", scrapList);
-        return viewPage;
+        return "member/myPage";
     }
 
     @PostMapping("/scrap")
-    public String scrap(Model model, RedirectAttributes redirectAttr, ScrapDto scrapDto) throws Exception{
-    	String viewPage = "redirect:/index";
+    public ResponseEntity<String> scrap(ScrapDto scrapDto) throws Exception{
+    	int scrap;
 		try {
-			scrapService.scrap(scrapDto);
-			redirectAttr.addFlashAttribute("msg", "스크랩 성공");
+			scrap = scrapService.scrap(scrapDto);
+			if(scrap < 1) {
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("failure");
+			} else {
+				return ResponseEntity.ok("success");
+			}
 		} catch (Exception e) {
-			redirectAttr.addFlashAttribute("msg", "스크랩 실패");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("failure");
 		}
-		return viewPage;
+    }
+    
+    @GetMapping("/scrapCancel")
+    public String scrapCancel() throws Exception {
+    	return "";
     }
     
     @PostMapping("/scrapCancel")
-    public String scrapCancel(Model model, RedirectAttributes redirectAttr, ScrapDto scrapDto) throws Exception {
-    	String viewPage = "redirect:/index";
+    public ResponseEntity<String> scrapCancel(ScrapDto scrapDto) throws Exception {
+    	int scrap;
 		try {
-			scrapService.scrapCancel(scrapDto);
-			redirectAttr.addFlashAttribute("msg", "스크랩 해제 성공");
+			scrap = scrapService.scrapCancel(scrapDto);
+			if(scrap < 1) {
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("failure");
+			} else {
+				return ResponseEntity.ok("success");
+			}
 		} catch (Exception e) {
-			redirectAttr.addFlashAttribute("msg", "스크랩 해제 실패");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("failure");
 		}
-		return viewPage;
     }
 }
