@@ -4,15 +4,18 @@
    xmlns:context="http://www.springframework.org/schema/context"
    xmlns:tx="http://www.springframework.org/schema/tx"
    xmlns:aop="http://www.springframework.org/schema/aop"
+   xmlns:util="http://www.springframework.org/schema/util"
    xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
-      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+      http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
 	<!-- properties 이용 -->
 	<context:property-placeholder location="classpath:properties/jjap.properties"/>
-	
+	<!-- <util:properties id="api" location="classpath:/properties/api.properties" /> -->
 <!-- DB관련 -->
 	<!-- DBCP 생성 -->
 	<!-- 빈에 등록. 필요한 순간 spring이 만들어서 운용해줌 -->
@@ -37,7 +40,7 @@
 	</bean>
 	
 <!-- @Transactional 사용되는 코드를 AOP를 통해서 설정함 //TODO -->
-	<tx:annotation-driven/>
+	<tx:annotation-driven transaction-manager="transactionManager"/>
 
 <!-- 이메일 알림 관련 bean 등록 -->
 	<!-- set메서드로 의존성 주입 -->

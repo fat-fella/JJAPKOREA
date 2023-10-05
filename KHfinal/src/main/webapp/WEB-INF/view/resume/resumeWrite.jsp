@@ -20,10 +20,8 @@
 			</h1>
 		</div>
 		<div class="headerRight">
-			<span id="personalHome"><a
-				href="myPage">개인회원 홈</a></span> <span
-				id="resumeMgr"><a href="resume">이력서
-					관리</a></span>
+			<span id="personalHome"><a href="myPage">개인회원 홈</a></span> <span
+				id="resumeMgr"><a href="resume">이력서 관리</a></span>
 		</div>
 	</header>
 
@@ -32,9 +30,6 @@
 		<input id="titleWrite"
 			placeholder="기업에게 나에 대해 알려줍시다. 강점, 목표, 관심분야도 좋아요.">
 	</div>
-
-	<br>
-	<br>
 
 	<!-- 인적사항 부분 -->
 	<div id="personalData">
@@ -66,40 +61,102 @@
 				<td>
 					<div>
 						<input type="text" name="name" class="question" id="email"
-							required autocomplete="off" /> <label for="email"><span>이메일 *</span></label>
+							required autocomplete="off" /> <label for="email"><span>이메일
+								*</span></label>
 					</div>
 				</td>
-				<td rowspan="2">
+				<!-- <td rowspan="2">
 					<div>사진</div>
-				</td>
+				</td> -->
 			</tr>
 			<tr>
 				<td>
 					<div>
-						<input type="text" name="name" class="question qholder" id="tel"
-							required autocomplete="off" placeholder="02-1234-1234"/> <label for="tel"><span>전화번호</span></label>
+						<input type="text" name="name" class="question" id="tel" required
+							autocomplete="off" placeholder="02-1234-1234" /> <label
+							for="tel"><span>전화번호</span></label>
 					</div>
 
 				</td>
-				<td>
-				<input type="text" name="name" class="question qholder" id="phone"
-							required autocomplete="off" placeholder="010-1234-1234"/> <label for="phone"><span>휴대폰번호 *</span></label>
-					
-					
-				</td>
+				<td><div>
+						<input type="text" name="name" class="question" id="phone"
+							required autocomplete="off" placeholder="010-1234-1234" /> <label
+							for="phone"><span>휴대폰번호 *</span></label>
+					</div></td>
 				<td colspan="2">
 					<div>
-					<input type="text" name="name" class="question" id="address"
+						<input type="text" name="name" class="question" id="address"
 							required autocomplete="off" /> <label for="address"><span>주소</span></label>
-					
-
 					</div>
 				</td>
+			</tr>
+		</table>
+	</div>
 
+	<!-- 희망직무 부분 -->
+	<div id="desiredJob">
+		<h2>희망직무</h2>
+
+		<div>
+			<table border="1">
+				<tbody>
+					<tr>
+						<td colspan="4">
+							<div>
+								<div>
+									<span><a href="">추가하기</a></span>
+								</div>
+								<div>
+									<span>희망직무 키워드 *</span>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- 스킬 부분 -->
+	<div id="skill">
+		<h2>스킬</h2>
+
+
+		<table>
+			<tr>
+				<td></td>
 			</tr>
 		</table>
 
+
+
+
+
+
+
+
+
 	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

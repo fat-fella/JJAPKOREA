@@ -57,41 +57,41 @@
 </head>
 <body>
 <h2>글 수정</h2>
-<form action="${pageContext.request.contextPath }/board/update" method="post">
+<form id="frmBoard">
 	<input type="hidden" name="bno" value="${dto.bno}">
-    제목: <input type="text" name="btitle" value="${dto.btitle}">
+    제목: <input type="text" name="btitle" value="${dto.btitle}" readonly>
     <br>
     내용: <textarea rows="10" cols="50" name="bcontent">${dto.bcontent}</textarea>
     <br>
-    <input type="submit" value="수정">
+    <button type="button" id="btn-board-update">수정</button> <!-- submit -> button  -->
     <button type="button" id="btn-board-list">메인으로</button>
 </form>
-[[
-${dto }
-]] 
 
 <script>   
 	$("#btn-board-list").click(function(){
-	    location.href="${pageContext.request.contextPath}/board/list";
-	});    
+	    location.href = "${pageContext.request.contextPath}/board/list";
+	});
+	
 	$("#btn-board-update").click(function(){
-			    if(confirm("글 수정하시겠습니까?")){
-			        $.ajax({
-			            type: "post",
-			            url: "${pageContext.request.contextPath}/board/update",
-			            data: $("#frmBoard").serialize(),
-			            success: function(response){
-			            	console.log(response);
-			                if(response > 0){
-			                    alert("글 수정되었습니다.");
-			                    location.href = "${pageContext.request.contextPath}/board/list";
-			                }else{
-			                    alert("글 수정에 실패했습니다.");
-			                }
-			            }
-			        });
-		   		}
-			});
+	    if(confirm("글 수정하시겠습니까?")){
+	        $.ajax({
+	            type: "post",
+	            url: "${pageContext.request.contextPath}/board/update",
+	            data: $("#frmBoard").serialize(),
+	            //dataType: "json",
+	            success: function(response){
+	            	console.log(response);
+	                if(response > 0){
+	                    alert("글 수정되었습니다.");
+	                    location.href = "${pageContext.request.contextPath}/board/list";
+	                }else{
+	                    alert("글 수정에 실패했습니다.");
+	                }
+	            }
+	        });
+   		}
+	});
+
 </script>
 </body>
 </html>

@@ -1026,7 +1026,7 @@
 							<!-- 콘텐츠 레이어 // -->
 						</li>
 						<li id="gnbQna" class="navItem qna lyNull">
-							<a href="#" class="linkItem">
+							<a href="${pageContext.request.contextPath}/board/list" class="linkItem">
 								<span class="spNav"><span class="txIr">취업톡톡</span></span>
 							</a>
 						</li>
