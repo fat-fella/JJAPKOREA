@@ -22,7 +22,7 @@ public class MyPageController {
 	@Autowired
 	private ScrapService scrapService;
 	
-	@GetMapping("/")
+	@GetMapping("/scrap")
     public String showMyPage(HttpSession session, Model model) throws Exception{
         String pname = (String) session.getAttribute("pname");
         String pname2 = (String) session.getAttribute("pname2");
@@ -40,10 +40,10 @@ public class MyPageController {
         model.addAttribute("list", list);
         model.addAttribute("list2", list2);
 
-        return "member/mypage"; // mypage.jsp 파일 경로
+        return "index"; // mypage.jsp 파일 경로
     }
 
-    @PostMapping("/")
+    @PostMapping("/scrap")
     public void addScrap(HttpServletRequest request) throws Exception{
         String jid = request.getParameter("jid");
 
@@ -60,7 +60,7 @@ public class MyPageController {
         }
     }
     
-    @PostMapping("/cancel")
+    @PostMapping("/scrapCancel")
     public String scrapCancel(@RequestParam("jid") String jid, HttpSession session, Model model) throws Exception {
         String mid = (String) session.getAttribute("SsLoginId");
         String mid2 = (String) session.getAttribute("SsLoginId2");
@@ -80,6 +80,6 @@ public class MyPageController {
         model.addAttribute("list", list);
         model.addAttribute("list2", list2);
 
-        return "redirect:/mypage"; // 스크랩 취소 후 마이페이지로 리다이렉트
+        return "redirect:/index";
     }
 }

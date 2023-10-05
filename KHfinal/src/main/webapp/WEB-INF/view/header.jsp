@@ -62,29 +62,29 @@
 				$('.jkNavDimm-hover5').toggleClass("on");
 			}
 		})
-		
+
 		$(document).ready(function() {
-		    $('.userNav-item.my.member').hover(function() {
-		        $('.userNav-item.my.member .lyMyArea').css({
-		        	display: 'block'
-		        })
-		    }, function() {
-		        $('.userNav-item.my.member .lyMyArea').css({
-		        	display: 'none'
-		        })
-		    });
+			$('.userNav-item.my.member').hover(function() {
+				$('.userNav-item.my.member .lyMyArea').css({
+					display : 'block'
+				})
+			}, function() {
+				$('.userNav-item.my.member .lyMyArea').css({
+					display : 'none'
+				})
+			});
 		});
-		
+
 		$(document).ready(function() {
-		    $('.userNav-item.corp').hover(function() {
-		        $('.userNav-item.corp .lyMyArea').css({
-		        	display: 'block'
-		        })
-		    }, function() {
-		        $('.userNav-item.corp .lyMyArea').css({
-		        	display: 'none'
-		        })
-		    });
+			$('.userNav-item.corp').hover(function() {
+				$('.userNav-item.corp .lyMyArea').css({
+					display : 'block'
+				})
+			}, function() {
+				$('.userNav-item.corp .lyMyArea').css({
+					display : 'none'
+				})
+			});
 		});
 	});
 </script>
@@ -1111,6 +1111,8 @@
 									<span class="icnArr spGnb"></span>
 								</div>
 							</li>
+						</sec:authorize>
+						<sec:authorize access="hasRole('ROLE_BUSINESS')">
 							<li class="userNav-item corp">
 								<a href="login" target="_blank">
 									<span class="spGnb">기업서비스</span>
@@ -1161,10 +1163,26 @@
 													</a>
 												</li>
 											</ul>
+											<div class="lyRow">
+												<div class="btnRowWrap">
+													<form action="logout" method="post">
+														<a href="/Login/Logout.asp" class="btnLogOut"
+															onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
+													</form>
+												</div>
+											</div>
 										</div>
 									</div>
 									<span class="icnArr spGnb"></span>
 								</div>
+							</li>
+						</sec:authorize>
+						<sec:authorize access="hasRole('ROLE_ADMIN')">
+							<li class="userNav-item admin">
+								<form action="logout" method="post">
+									<a href="/Login/Logout.asp" class="btnLogOut"
+										onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
+								</form>
 							</li>
 						</sec:authorize>
 					</ul>
@@ -1234,30 +1252,30 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script>
 	var swiper = new Swiper('.bnr-swiper', {
-		direction : 'horizontal',
-		centeredSlides : true,
-		watchOverflow : true,
-		slidesPerView : 1,
-		loop : true,
-		navigation : {
-			nextEl : ".bnrs-next",
-			prevEl : ".bnrs-prev",
-		},
-		observer : true,
-		observeParents : true,
+	direction : 'horizontal',
+	centeredSlides : true,
+	watchOverflow : true,
+	slidesPerView : 1,
+	loop : true,
+	navigation : {
+	nextEl : ".bnrs-next",
+	prevEl : ".bnrs-prev",
+	},
+	observer : true,
+	observeParents : true,
 	});
 
 	document.addEventListener("DOMContentLoaded", function() {
-	    // DOMContentLoaded 이벤트가 발생하면 실행될 코드
-	    var btnLogOut = document.querySelector(".btnLogOut");
-	    if (btnLogOut) {
-	        btnLogOut.addEventListener("click", function(e) {
-	            e.preventDefault(); // 버튼 클릭 시 기본 동작을 중단
-	            var form = btnLogOut.closest("form"); // 가장 가까운 form 요소 찾기
-	            if (form) {
-	                form.submit(); // form 요소의 submit 호출
-	            }
-	        });
-	    }
+		// DOMContentLoaded 이벤트가 발생하면 실행될 코드
+		var btnLogOut = document.querySelector(".btnLogOut");
+		if (btnLogOut) {
+			btnLogOut.addEventListener("click", function(e) {
+				e.preventDefault(); // 버튼 클릭 시 기본 동작을 중단
+				var form = btnLogOut.closest("form"); // 가장 가까운 form 요소 찾기
+				if (form) {
+					form.submit(); // form 요소의 submit 호출
+				}
+			});
+		}
 	});
 </script>
