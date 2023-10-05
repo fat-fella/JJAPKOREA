@@ -7,7 +7,7 @@
 	</resultMap>
 	
 	<insert id="scrap" parameterType="scrapDto">
-		insert into scrap values (#{mid},#{jid})
+		insert into scrap (mid, jid) values (#{mid}, #{jid})
 	</insert>
 	
 	<delete id="scrapCancle" parameterType="scrapDto">
@@ -15,10 +15,10 @@
 	</delete>
 	
 	<select id="isScrapped" parameterType="scrapDto" resultMap="scrapDto">
-		select count(*) from scrap where mid=#{mid} and jid=#{jid}
+		select count(*) from scrap where mid = #{mid} and jid = #{jid}
 	</select>
 	
 	<select id="selectListScrap" resultType="java.util.Map">
-		select b.bizname, b.brno, i.* from scrap s join info i on s.jid = i.jid join business b on i.mid = b.mid where s.mid=#{mid}
+		select b.bizname, b.brno, i.* from scrap s join info i on s.jid = i.jid join business b on i.mid = b.mid where s.mid = #{mid}
 	</select>
 </mapper>
