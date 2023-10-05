@@ -63,7 +63,26 @@
 	<div id="resumeMgrSide">
 		<!-- resumeMgr 안쪽 페이지 -->
 
-		resumeMgr
+		<div>resumeMgr</div>
+		<table border="1">
+			<tr>
+				<td><span>이력서 제목</span></td>
+				<td><span>이력서 관리</span></td>
+			</tr>
+			<tr>
+				<td><span>이력서 제목</span></td>
+				<td><span>이력서 관리</span></td>
+			</tr>
+			<tr>
+				<td><span>이력서 제목</span></td>
+				<td><span>이력서 관리</span></td>
+			</tr>
+			<tr>
+				<td><span>이력서 제목</span></td>
+				<td><span>이력서 관리</span></td>
+			</tr>
+		</table>
+
 
 	</div>
 

@@ -46,12 +46,13 @@
 }
 
 /* 이력서 제목 */
-#titleWrite {
+#titleWrite.input {
 	position: absolute;
 	top : 60px;
 	left : 20px;
-	width : 500px;
 }
+
+/*=================================================*/
 
 /* 인적사항*/
 #personalData {
@@ -59,10 +60,6 @@
 	top : 200px;
 }
 
-
-
-/*=================================================*/
-/* 임시 */
 
 
 
@@ -77,9 +74,10 @@ label {
   font-size: 18px;
 }
 
-input:focus {
+input.question:focus {
   outline: 0;
 }
+
 /* Question */
 
 input.question {
@@ -148,12 +146,24 @@ input.question + label > span {
 
 
 
+/*=================================================*/
+
+#desiredJob{
+	position: absolute;
+	top:680px;
+}
 
 
+/*=================================================*/
 
 
+#skill {
+	position: absolute;
+	top: 880px;
+}
 
 
+/*=================================================*/
 
 
 
