@@ -18,12 +18,14 @@
 		new daum.Postcode(
 				{
 					oncomplete : function(data) {
+						console.log("asdfsdfsdfsdfsddsf");
 						// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
 						// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
 						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
 						var roadAddr = data.roadAddress; // 도로명 주소 변수
 						var extraRoadAddr = ''; // 참고 항목 변수
+
 						var sido = data.sido; // 시도 항목 변수
 						var sigungu = data.sigungu; // 시군구 항목 변수
 						var bname = data.bname; // 법정동 항목 변수
@@ -45,9 +47,9 @@
 						}
 
 						// 시도/시군구/법정동 데이터를 해당 필드에 넣는다.
-						document.getElementById("sido").value = data.sido;
-						document.getElementById("sigungu").value = data.sigungu;
-						document.getElementById("bname").value = data.bname;
+						//document.getElementById("sido").value = data.sido;
+						//document.getElementById("sigungu").value = data.sigungu;
+						//document.getElementById("bname").value = data.bname;
 						document.getElementById("sido_sigungu_bname").value = data.sido
 								+ " " + data.sigungu + " " + data.bname;
 
@@ -116,9 +118,9 @@
 				</td>
 				<td>
 					<div>
-						<input type="text" name="birth" class="question qholder" id="birth"
-							required autocomplete="off" placeholder="1995.03.20" /> <label
-							for="birth"><span>생년월일 *</span></label>
+						<input type="text" name="birth" class="question qholder"
+							id="birth" required autocomplete="off" placeholder="1995.03.20" />
+						<label for="birth"><span>생년월일 *</span></label>
 					</div>
 				</td>
 				<td>
@@ -151,14 +153,14 @@
 				</td>
 				<td><div>
 						<input type="text" name="phone" class="question" id="phone"
-							required autocomplete="off" placeholder="010-1234-1234" />
-							<label for="phone"><span>휴대폰번호 *</span></label>
+							required autocomplete="off" placeholder="010-1234-1234" /> <label
+							for="phone"><span>휴대폰번호 *</span></label>
 					</div></td>
 				<td colspan="2">
-					<div onclick="searchAddress_daumPostcode()" >
-						<input type="text" name="address" class="question" id="sido_sigungu_bname"
-							required autocomplete="off" readonly />
-							<label for="sido_sigungu_bname"><span>주소</span></label>
+					<div onclick="searchAddress_daumPostcode()">
+						<input type="text" name="address" class="question"
+							id="sido_sigungu_bname" required autocomplete="off" readonly />
+						<label for="sido_sigungu_bname"><span>주소</span></label>
 					</div>
 				</td>
 			</tr>
