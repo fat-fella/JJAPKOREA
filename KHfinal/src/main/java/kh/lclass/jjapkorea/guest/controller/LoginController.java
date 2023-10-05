@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
@@ -28,6 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.WebUtils;
 
+import kh.lclass.jjapkorea.guest.model.service.MemberService;
 import kh.lclass.jjapkorea.swp.auth.SNSLogin;
 import kh.lclass.jjapkorea.swp.auth.SnsValue;
 import kh.lclass.jjapkorea.swp.domain.APISnsMember;
@@ -36,7 +38,11 @@ import kh.lclass.jjapkorea.swp.interceptor.APISnsSessionNames;
 import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 
 
+@Controller
+@RequestMapping("/login")
 public class LoginController {
+
+	@Autowired MemberService memberService;
 	@Controller
 	public static class APISnsMemberController {
 
@@ -227,7 +233,7 @@ public class LoginController {
 //	@Controller
 //	@RequestMapping("/login")
 //	public class LoginController {
-	
+//	
 //		@Autowired
 //		MemberService memberService;
 //		
