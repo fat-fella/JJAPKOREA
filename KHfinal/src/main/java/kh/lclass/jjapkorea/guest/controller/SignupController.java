@@ -1,9 +1,10 @@
 package kh.lclass.jjapkorea.guest.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +29,7 @@ public class SignupController {
 	}
 	
 	@PostMapping("/person")
-	public String signUpPerson(Model model, MemberDto memberDto, PersonDto personDto) throws Exception {
+	public String signUpPerson(@Valid MemberDto memberDto, @Valid PersonDto personDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
 			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
@@ -53,14 +54,13 @@ public class SignupController {
 	}
 	
 	@PostMapping("/business")
-	public String signUpBusiness(Model model, MemberDto memberDto, BusinessDto businessDto) throws Exception {
+	public String signUpBusiness(@Valid MemberDto memberDto, @Valid BusinessDto businessDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
 			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
 			memberService.signUpMemberAndBusiness(memberDto, businessDto);
 			viewPage = "redirect:/login";
 		} catch (Exception e) {
-			e.printStackTrace();
 			viewPage = "redirect:/signup/business";
 		}
 		return viewPage;
