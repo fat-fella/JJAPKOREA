@@ -6,14 +6,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Component
-@ToString
 public class BoardDto {
 
 	private int bno;
@@ -22,11 +20,13 @@ public class BoardDto {
 	private String mid;
 	private String bwriteDate;
 	private int readcnt;
-	private String filename;
-	private String filepath;
 	private int ref;
 	private int rstep;
 	private int rlevel;
 
-	
+	@Override
+	public String toString() {
+		return "BoardDto [bno=" + bno + ", btitle=" + btitle + ", mid=" + mid + ", bwriteDate=" + bwriteDate
+				+ ", readcnt=" + readcnt + ", ref=" + ref + ", rstep=" + rstep + ", rlevel=" + rlevel + "]";
+	}
 }
