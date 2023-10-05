@@ -1,6 +1,5 @@
 package kh.lclass.jjapkorea.person.model.dao;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,15 +20,6 @@ public class ScrapDao {
 
 	public int scrapCancle(ScrapDto scrapDto) throws Exception{
 		return sqlSession.delete("scrap.scrapCancle", scrapDto);
-	}
-	
-	public boolean isScrapped(String mid, String jid) throws Exception{
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("mid", mid);
-		map.put("jid", jid);
-		int count = 0;
-		count = sqlSession.selectOne("scrap.isScrapped", map);
-		return count > 0;
 	}
 	
 	public List<Map<String, Object>> selectListScrap(String mid) throws Exception{

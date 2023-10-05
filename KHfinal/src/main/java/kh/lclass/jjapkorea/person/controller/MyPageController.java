@@ -1,5 +1,8 @@
 package kh.lclass.jjapkorea.person.controller;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +21,11 @@ public class MyPageController {
 	private ScrapService scrapService;
 	
 	@GetMapping("/scrap")
-    public String scrap(Model model) throws Exception{
-        return "member/myPage";
+    public String scrap(Model model, String mid) throws Exception{
+		String viewPage = "member/myPage";
+		List<Map<String, Object>> scrapList = scrapService.scrapList(mid);
+		model.addAttribute("scrapList", scrapList);
+        return viewPage;
     }
 
     @PostMapping("/scrap")

@@ -27,9 +27,7 @@
 	    var scrapButton = $('[data-jid="' + jid + '"]');
 	 	// 현재 스크랩 상태 가져오기
 	    var isScraped = scrapButton.hasClass('scrap');
-	 	console.log(isScraped);
-	    var url = isScraped ? "${pageContext.request.contextPath}/mypage/scrap" : "${pageContext.request.contextPath}/mypage/scrapCancle";
-	    console.log(url);
+		var url = isScraped ? "${pageContext.request.contextPath}/myPage/scrap" : "${pageContext.request.contextPath}/myPage/scrapCancel";
 	    $.ajax({
 	        url: url,
 	        type: "post",
@@ -38,8 +36,9 @@
 	            mid: mid,
 	        },
 	        success: function(result) {
-	            console.log("success");
 	            if (result == 0) {
+	                // 스크랩 되었을 때 처리
+	                // 예: 스크랩 버튼 텍스트 변경 및 클래스 추가/제거
 	                scrapButton.toggleClass('scraped');
 	                if (scrapButton.hasClass('scraped')) {
 	                    scrapButton.text('스크랩됨');
@@ -127,7 +126,7 @@
 									<input type="hidden" name="workType" value="${item.WORK_TYPE}">
 									<input type="hidden" name="empTypeCode"
 										value="${item.EMP_TYPE_CODE}">
-									<button type="button" onclick="" data-jid="${item.JID}"
+									<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
 										class="scrap">채용정보 스크랩</button>
 								</div>
 							</form>
@@ -400,7 +399,8 @@
 											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:otherwise>
 									</c:choose>
-								<button onclick="" class="scrap">채용정보 스크랩</button>
+								<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
+										class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
 					</c:forEach>
@@ -482,7 +482,8 @@
 											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:otherwise>
 									</c:choose>
-								<button onclick="" class="scrap">채용정보 스크랩</button>
+								<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
+										class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
 					</c:forEach>

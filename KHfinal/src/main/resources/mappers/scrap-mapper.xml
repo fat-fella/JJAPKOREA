@@ -19,6 +19,6 @@
 	</select>
 	
 	<select id="selectListScrap" resultType="java.util.Map">
-		select i.* from scrap s join info i on s.jid = i.jid where s.mid=#{mid}
+		select b.bizname, b.brno, i.* from scrap s join info i on s.jid = i.jid join business b on i.mid = b.mid where s.mid=#{mid}
 	</select>
 </mapper>
