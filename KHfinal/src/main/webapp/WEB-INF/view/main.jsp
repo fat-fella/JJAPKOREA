@@ -37,7 +37,7 @@
 	        },
 	        success: function(result) {
 	            if (result === "success") {
-	                // 스크랩 성공 또는 스크랩 해제 성공 처리
+	                // 스크랩 또는 스크랩 해제 처리
 	                // 예: 스크랩 버튼 텍스트 변경 및 클래스 추가/제거
 	                scrapButton.toggleClass('scraped');
 	                if (scrapButton.hasClass('scraped')) {
@@ -50,7 +50,7 @@
 	                    alert("스크랩 해제");
 	                }
 	            } else {
-                    // 스크랩 실패 또는 스크랩 해제 실패 처리
+                    // 에러 처리
                     alert("failure");
                 }
 	        }
