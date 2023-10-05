@@ -20,29 +20,15 @@
 			}, 0);
 			return false;
 		});
-		
-		$(document).ready(function() {
-	         $('.scrap').on('click', function() {
-	             $(this).toggleClass('scraped');
-	             if ($(this).hasClass('scraped')) {
-	                 $(this).text('스크랩됨');
-	                 $(this).removeClass('scrap');
-	             } else {
-	                 $(this).text('채용정보 스크랩');
-	                 $(this).addClass('scrap');
-	             }
-	         });
-	     });
 	});
 	
 	function setScrap(jid) {
-	    var mid = "${SsLoginId}";
-	    var mid2 = "${SsLoginId2}";
+	    var mid = "${mid}";
 	    var scrapButton = $('[data-jid="' + jid + '"]');
 	 	// 현재 스크랩 상태 가져오기
 	    var isScraped = scrapButton.hasClass('scrap');
 	 	console.log(isScraped);
-	    var url = isScraped ? "${pageContext.request.contextPath}/mypage" : "${pageContext.request.contextPath}/cancle";
+	    var url = isScraped ? "${pageContext.request.contextPath}/mypage/scrap" : "${pageContext.request.contextPath}/mypage/scrapCancle";
 	    console.log(url);
 	    $.ajax({
 	        url: url,
@@ -50,13 +36,10 @@
 	        data: {
 	            jid: jid,
 	            mid: mid,
-	            mid2: mid2
 	        },
 	        success: function(result) {
 	            console.log("success");
 	            if (result == 0) {
-	                // 스크랩 되었을 때 처리
-	                // 예: 스크랩 버튼 텍스트 변경 및 클래스 추가/제거
 	                scrapButton.toggleClass('scraped');
 	                if (scrapButton.hasClass('scraped')) {
 	                    scrapButton.text('스크랩됨');
@@ -65,8 +48,6 @@
 	                    scrapButton.text('채용정보 스크랩');
 	                    scrapButton.addClass('scrap');
 	                }
-	            } else {
-	                // 실패 시 처리
 	            }
 	        }
 	    });

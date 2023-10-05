@@ -16,21 +16,6 @@ public class MemberServiceImpl implements MemberService {
 	private MemberDao memberDao;
 	
 	@Override
-	public MemberDto loginAdmin(MemberDto memberDto) throws Exception {
-		return memberDao.loginAdmin(memberDto);
-	}
-	
-	@Override
-	public MemberDto loginPerson(MemberDto memberDto) throws Exception {
-		return memberDao.loginPerson(memberDto);
-	}
-	
-	@Override
-	public MemberDto loginBusiness(MemberDto memberDto) throws Exception {
-		return memberDao.loginBusiness(memberDto);
-	}
-	
-	@Override
 	public void signUpMemberAndPerson(MemberDto memberDto, PersonDto personDto) throws Exception {
 		memberDao.signUpMember(memberDto);
 		memberDao.signUpPerson(personDto);
