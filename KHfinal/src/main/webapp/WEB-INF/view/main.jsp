@@ -27,7 +27,7 @@
 	    var scrapButton = $('[data-jid="' + jid + '"]');
 	 	// 현재 스크랩 상태 가져오기
 	    var isScraped = scrapButton.hasClass('scrap');
-		var url = isScraped ? "${pageContext.request.contextPath}/myPage/scrap" : "${pageContext.request.contextPath}/myPage/scrapCancel";
+		var url = isScraped ? "${pageContext.request.contextPath}/person/scrap" : "${pageContext.request.contextPath}/person/scrapCancel";
 	    $.ajax({
 	        url: url,
 	        type: "post",

@@ -29,7 +29,7 @@
 	href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
 <!-- 스크랩부 -->
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources//member/css/jobkh_mypage.css">
+	href="<%=request.getContextPath()%>/resources/member/css/jobkh_mypage.css">
 <!-- swiper css -->
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -139,7 +139,7 @@
 							<div class="company">
 								<a class="company"
 									href="/Recruit/Co_Read/C/univtomorrow?Oem_Code=C1&amp;sc=10"
-									target="_blank">${scrapList.COMPANY_NAME}</a>
+									target="_blank">${item.COMPANY_NAME}</a>
 								<button type="button" class="tplBtnTy tplBtnFavOff js-tplBtn"
 									data-mem-sys="13401121">
 									<span class="blind">관심기업</span>
@@ -147,16 +147,16 @@
 							</div>
 							<div class="tit">
 								<a class="devLinkRecruit"
-									href="/Recruit/GI_Read/${scrapList.JID}?Oem_Code=C1"
-									target="_blank">${scrapList.RE_TITLE}</a>
+									href="/Recruit/GI_Read/${item.JID}?Oem_Code=C1"
+									target="_blank">${item.RE_TITLE}</a>
 							</div>
 							<div class="desc">
 								<a class="devLinkRecruit"
-									href="/Recruit/GI_Read/${scrapList.JID}?Oem_Code=C1"
+									href="/Recruit/GI_Read/${item.JID}?Oem_Code=C1"
 									target="_blank">
-									<span class="cell">${scrapList.CAREER}</span> <span
-										class="cell">${scrapList.USER_EDUCATION}</span> <span
-										class="cell">${scrapList.SALARY}</span> <span class="cell">${scrapList.WORK_TYPE}</span>
+									<span class="cell">${item.CAREER}</span> <span
+										class="cell">${item.USER_EDUCATION}</span> <span
+										class="cell">${item.SALARY}</span> <span class="cell">${item.WORK_TYPE}</span>
 								</a>
 							</div>
 						</div>
@@ -166,7 +166,7 @@
 								onclick="_LA.EVT('5283')">
 								<span>홈페이지 지원</span>
 							</button>
-							<em class="deadline date"><span class="tahoma">~${scrapList.CLOSE_DATE}</span>(화)</em>
+							<em class="deadline date"><span class="tahoma">~${item.CLOSE_DATE}</span>(화)</em>
 						</div>
 					</li>
 				</c:forEach>

@@ -23,6 +23,6 @@ public class ScrapDao {
 	}
 	
 	public List<Map<String, Object>> selectListScrap(String mid) throws Exception{
-		return sqlSession.selectList("scrap.selectListScrap");
+		return sqlSession.selectList("scrap.selectListScrap", mid);
 	}
 }
