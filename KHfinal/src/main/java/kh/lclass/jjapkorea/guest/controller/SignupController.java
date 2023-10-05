@@ -54,7 +54,7 @@ public class SignupController {
 	}
 	
 	@PostMapping("/business")
-	public String signUpBusiness(@Valid MemberDto memberDto, @Valid BusinessDto businessDto) throws Exception {
+	public String signUpBusiness(@Valid MemberDto memberDto, BusinessDto businessDto) throws Exception {
 		String viewPage = "redirect:/";
 		try {
 			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
