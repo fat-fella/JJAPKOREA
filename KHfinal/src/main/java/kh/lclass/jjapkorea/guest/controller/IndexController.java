@@ -3,39 +3,20 @@ package kh.lclass.jjapkorea.guest.controller;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import kh.lclass.jjapkorea.business.model.service.JobPostingService;
-import kh.lclass.jjapkorea.guest.model.service.MemberService;
-import kh.lclass.jjapkorea.api.WorknetApi;
 
 @Controller
 public class IndexController {
     @Autowired
-    private MemberService memberService;
-    
-    @Autowired
     private JobPostingService jobPostingService;
     
-    @Autowired
-    private WorknetApi worknetApi;
-    
     @GetMapping("/index")
-    public String index(Model model, HttpSession session) throws Exception {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String mid = authentication.getName();
-        String pname = memberService.selectOnePerson(mid);
-        model.addAttribute("pname", pname);
-        
-//        worknetApi.getJobPostings();
-        
+    public String index(Model model) throws Exception {
         List<Map<String, Object>> jobPostingData = jobPostingService.getJobPostingsWithBusinessInfo();
         
         int chunkSize = 8; // 묶을 요소 개수
@@ -50,7 +31,13 @@ public class IndexController {
             model.addAttribute(attributeName, subList);
             
         }
-        
         return "index";
+    }
+    
+    @GetMapping("/indexPyr")
+    public String indexPyr(Model model) throws Exception {
+    	jobPostingService.dailyJob();
+    	
+    	return "index";
     }
 }

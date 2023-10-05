@@ -110,43 +110,43 @@
 								</div>
 								<div id="applyscrap">
 									<c:choose>
-										<c:when test="${item[TODAY] == 0}">
+										<c:when test="${item.TODAY == 0}">
 											<div class="applydateWithApply">오늘시작</div>
 										</c:when>
-										<c:when test="${item[DDAY] == 0}">
+										<c:when test="${item.DDAY == 0}">
 											<div class="applydateWithApply">오늘마감</div>
 										</c:when>
-										<c:when test="${item[DDAY] <= 7}">
+										<c:when test="${item.DDAY <= 7}">
 											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item[DDAY]}</div>
+											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:when>
 										<c:otherwise>
-											<div class="applydateWithApply">D-${item[DDAY]}</div>
+											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:otherwise>
 									</c:choose>
 									<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
-									<input type="hidden" name="jid" value="${item[JID]}">
+									<input type="hidden" name="jid" value="${item.JID}">
 									<input type="hidden" name="recruitField"
-										value="${item[RECRUIT_FIELD]}">
-									<input type="hidden" name="bizname" value="${item[BIZNAME]}">
-									<input type="hidden" name="brno" value="${item[BRNO]}">
+										value="${item.RECRUIT_FIELD}">
+									<input type="hidden" name="bizname" value="${item.BIZNAME}">
+									<input type="hidden" name="brno" value="${item.BRNO}">
 									<input type="hidden" name="userEducation"
 										value="${item.USER_EDUCATION}">
-									<input type="hidden" name="salary" value="${item[SALARY]}">
+									<input type="hidden" name="salary" value="${item.SALARY}">
 									<input type="hidden" name="minSalary"
-										value="${item[MIN_SALARY]}">
+										value="${item.MIN_SALARY}">
 									<input type="hidden" name="maxSalary"
-										value="${item[MAX_SALARY]}">
+										value="${item.MAX_SALARY}">
 									<input type="hidden" name="registDate"
-										value="${item[REGIST_DATE]}">
+										value="${item.REGIST_DATE}">
 									<input type="hidden" name="closeDate"
-										value="${item[CLOSE_DATE]}">
-									<input type="hidden" name="reTitle" value="${item[RE_TITLE]}">
-									<input type="hidden" name="career" value="${item[CAREER]}">
-									<input type="hidden" name="workType" value="${item[WORK_TYPE]}">
+										value="${item.CLOSE_DATE}">
+									<input type="hidden" name="reTitle" value="${item.RE_TITLE}">
+									<input type="hidden" name="career" value="${item.CAREER}">
+									<input type="hidden" name="workType" value="${item.WORK_TYPE}">
 									<input type="hidden" name="empTypeCode"
-										value="${item[EMP_TYPE_CODE]}">
-									<button type="button" onclick="" data-jid="${item[JID]}"
+										value="${item.EMP_TYPE_CODE}">
+									<button type="button" onclick="" data-jid="${item.JID}"
 										class="scrap">채용정보 스크랩</button>
 								</div>
 							</form>
@@ -405,18 +405,18 @@
 								</div>
 								<div id="applyscrap">
 									<c:choose>
-										<c:when test="${item[TODAY] == 0}">
+										<c:when test="${item.TODAY == 0}">
 											<div class="applydateWithApply">오늘시작</div>
 										</c:when>
-										<c:when test="${item[DDAY] == 0}">
+										<c:when test="${item.DDAY == 0}">
 											<div class="applydateWithApply">오늘마감</div>
 										</c:when>
-										<c:when test="${item[DDAY] <= 7}">
+										<c:when test="${item.DDAY <= 7}">
 											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item[DDAY]}</div>
+											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:when>
 										<c:otherwise>
-											<div class="applydateWithApply">D-${item[DDAY]}</div>
+											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:otherwise>
 									</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
@@ -487,18 +487,18 @@
 								</div>
 								<div id="applyscrap">
 									<c:choose>
-										<c:when test="${item[TODAY] == 0}">
+										<c:when test="${item.TODAY == 0}">
 											<div class="applydateWithApply">오늘시작</div>
 										</c:when>
-										<c:when test="${item[DDAY] == 0}">
+										<c:when test="${item.DDAY == 0}">
 											<div class="applydateWithApply">오늘마감</div>
 										</c:when>
-										<c:when test="${item[DDAY] <= 7}">
+										<c:when test="${item.DDAY <= 7}">
 											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item[DDAY]}</div>
+											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:when>
 										<c:otherwise>
-											<div class="applydateWithApply">D-${item[DDAY]}</div>
+											<div class="applydateWithApply">D-${item.DDAY}</div>
 										</c:otherwise>
 									</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>

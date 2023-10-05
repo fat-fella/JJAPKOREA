@@ -6,11 +6,7 @@
 		<id property="jid" column="jid"/>
 	</resultMap>
 	
-	<select id="scrapList" resultMap="scrapDto" parameterType="scrapDto">
-		select * from scrap join info using (jid) where mid=#{mid}
-	</select>
-	
-	<insert id="insertScrap" parameterType="scrapDto">
+	<insert id="scrap" parameterType="scrapDto">
 		insert into scrap values (#{mid},#{jid})
 	</insert>
 	
@@ -22,4 +18,7 @@
 		select count(*) from scrap where mid=#{mid} and jid=#{jid}
 	</select>
 	
+	<select id="selectListScrap" resultType="java.util.Map">
+		select i.* from scrap s join info i on s.jid = i.jid where s.mid=#{mid}
+	</select>
 </mapper>
