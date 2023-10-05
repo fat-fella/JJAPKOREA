@@ -8,10 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import kh.lclass.jjapkorea.api.WorknetApi;
 import kh.lclass.jjapkorea.business.model.service.JobPostingService;
 
 @Controller
 public class IndexController {
+	@Autowired
+	private WorknetApi worknetApi;
+	
     @Autowired
     private JobPostingService jobPostingService;
     
@@ -31,8 +35,8 @@ public class IndexController {
     }
     
     @GetMapping("/indexPyr")
-    public String indexPyr(Model model) throws Exception {
-    	jobPostingService.dailyJob();
+    public String indexPyr() throws Exception {
+    	worknetApi.getJobPostings();
     	return "index";
     }
 }
