@@ -20,7 +20,57 @@
 			}, 0);
 			return false;
 		});
+		
+		$(document).ready(function() {
+	         $('.scrap').on('click', function() {
+	             $(this).toggleClass('scraped');
+	             if ($(this).hasClass('scraped')) {
+	                 $(this).text('스크랩됨');
+	                 $(this).removeClass('scrap');
+	             } else {
+	                 $(this).text('채용정보 스크랩');
+	                 $(this).addClass('scrap');
+	             }
+	         });
+	     });
 	});
+	
+	function setScrap(jid) {
+	    var mid = "${SsLoginId}";
+	    var mid2 = "${SsLoginId2}";
+	    var scrapButton = $('[data-jid="' + jid + '"]');
+	 	// 현재 스크랩 상태 가져오기
+	    var isScraped = scrapButton.hasClass('scrap');
+	 	console.log(isScraped);
+	    var url = isScraped ? "${pageContext.request.contextPath}/mypage" : "${pageContext.request.contextPath}/cancle";
+	    console.log(url);
+	    $.ajax({
+	        url: url,
+	        type: "post",
+	        data: {
+	            jid: jid,
+	            mid: mid,
+	            mid2: mid2
+	        },
+	        success: function(result) {
+	            console.log("success");
+	            if (result == 0) {
+	                // 스크랩 되었을 때 처리
+	                // 예: 스크랩 버튼 텍스트 변경 및 클래스 추가/제거
+	                scrapButton.toggleClass('scraped');
+	                if (scrapButton.hasClass('scraped')) {
+	                    scrapButton.text('스크랩됨');
+	                    scrapButton.removeClass('scrap');
+	                } else {
+	                    scrapButton.text('채용정보 스크랩');
+	                    scrapButton.addClass('scrap');
+	                }
+	            } else {
+	                // 실패 시 처리
+	            }
+	        }
+	    });
+	}
 </script>
 <div class="wrap">
 	<main>
@@ -54,49 +104,49 @@
 									%>
 									<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 								</div>
-								<div class="compName">${item['bizname']}</div>
+								<div class="compName">${item.BIZNAME}</div>
 								<div class="recruitInfo">
-									${item['reTitle']}<br> <br>
+									${item.RE_TITLE}<br> <br>
 								</div>
 								<div id="applyscrap">
 									<c:choose>
-										<c:when test="${item[today] == 0}">
+										<c:when test="${item[TODAY] == 0}">
 											<div class="applydateWithApply">오늘시작</div>
 										</c:when>
-										<c:when test="${item[dday] == 0}">
+										<c:when test="${item[DDAY] == 0}">
 											<div class="applydateWithApply">오늘마감</div>
 										</c:when>
-										<c:when test="${item[dday] <= 7}">
+										<c:when test="${item[DDAY] <= 7}">
 											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item[dday]}</div>
+											<div class="applydateWithApply">D-${item[DDAY]}</div>
 										</c:when>
 										<c:otherwise>
-											<div class="applydateWithApply">D-${item[dday]}</div>
+											<div class="applydateWithApply">D-${item[DDAY]}</div>
 										</c:otherwise>
 									</c:choose>
 									<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
-									<input type="hidden" name="jid" value="${item[jid]}">
+									<input type="hidden" name="jid" value="${item[JID]}">
 									<input type="hidden" name="recruitField"
-										value="${item[recruitField]}">
-									<input type="hidden" name="bizname" value="${item[bizname]}">
-									<input type="hidden" name="brno" value="${item[brno]}">
+										value="${item[RECRUIT_FIELD]}">
+									<input type="hidden" name="bizname" value="${item[BIZNAME]}">
+									<input type="hidden" name="brno" value="${item[BRNO]}">
 									<input type="hidden" name="userEducation"
-										value="${item.userEducation}">
-									<input type="hidden" name="salary" value="${item[salary]}">
+										value="${item.USER_EDUCATION}">
+									<input type="hidden" name="salary" value="${item[SALARY]}">
 									<input type="hidden" name="minSalary"
-										value="${item[minSalary]}">
+										value="${item[MIN_SALARY]}">
 									<input type="hidden" name="maxSalary"
-										value="${item[maxSalary]}">
+										value="${item[MAX_SALARY]}">
 									<input type="hidden" name="registDate"
-										value="${item[registDate]}">
+										value="${item[REGIST_DATE]}">
 									<input type="hidden" name="closeDate"
-										value="${item[closeDate]}">
-									<input type="hidden" name="reTitle" value="${item[reTitle]}">
-									<input type="hidden" name="career" value="${item[career]}">
-									<input type="hidden" name="workType" value="${item[workType]}">
+										value="${item[CLOSE_DATE]}">
+									<input type="hidden" name="reTitle" value="${item[RE_TITLE]}">
+									<input type="hidden" name="career" value="${item[CAREER]}">
+									<input type="hidden" name="workType" value="${item[WORK_TYPE]}">
 									<input type="hidden" name="empTypeCode"
-										value="${item[empTypeCode]}">
-									<button type="button" onclick="" data-jid="${item[jid]}"
+										value="${item[EMP_TYPE_CODE]}">
+									<button type="button" onclick="" data-jid="${item[JID]}"
 										class="scrap">채용정보 스크랩</button>
 								</div>
 							</form>
@@ -349,24 +399,24 @@
 								%>
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
-							<div class="compName">${item[bizname]}</div>
-							<div class="recruitInfo">
-								${item[reTitle]}<br> <br>
-							</div>
-							<div id="applyscrap">
-								<c:choose>
-										<c:when test="${item[today] == 0}">
+							<div class="compName">${item.BIZNAME}</div>
+								<div class="recruitInfo">
+									${item.RE_TITLE}<br> <br>
+								</div>
+								<div id="applyscrap">
+									<c:choose>
+										<c:when test="${item[TODAY] == 0}">
 											<div class="applydateWithApply">오늘시작</div>
 										</c:when>
-										<c:when test="${item[dday] == 0}">
+										<c:when test="${item[DDAY] == 0}">
 											<div class="applydateWithApply">오늘마감</div>
 										</c:when>
-										<c:when test="${item[dday] <= 7}">
+										<c:when test="${item[DDAY] <= 7}">
 											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item[dday]}</div>
+											<div class="applydateWithApply">D-${item[DDAY]}</div>
 										</c:when>
 										<c:otherwise>
-											<div class="applydateWithApply">D-${item[dday]}</div>
+											<div class="applydateWithApply">D-${item[DDAY]}</div>
 										</c:otherwise>
 									</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>
@@ -431,24 +481,24 @@
 								%>
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
-							<div class="compName">${item[bizname]}</div>
-							<div class="recruitInfo">
-								${item[reTitle]}<br> <br>
-							</div>
-							<div id="applyscrap">
-								<c:choose>
-										<c:when test="${item[today] == 0}">
+							<div class="compName">${item.BIZNAME}</div>
+								<div class="recruitInfo">
+									${item.RE_TITLE}<br> <br>
+								</div>
+								<div id="applyscrap">
+									<c:choose>
+										<c:when test="${item[TODAY] == 0}">
 											<div class="applydateWithApply">오늘시작</div>
 										</c:when>
-										<c:when test="${item[dday] == 0}">
+										<c:when test="${item[DDAY] == 0}">
 											<div class="applydateWithApply">오늘마감</div>
 										</c:when>
-										<c:when test="${item[dday] <= 7}">
+										<c:when test="${item[DDAY] <= 7}">
 											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item[dday]}</div>
+											<div class="applydateWithApply">D-${item[DDAY]}</div>
 										</c:when>
 										<c:otherwise>
-											<div class="applydateWithApply">D-${item[dday]}</div>
+											<div class="applydateWithApply">D-${item[DDAY]}</div>
 										</c:otherwise>
 									</c:choose>
 								<button onclick="" class="scrap">채용정보 스크랩</button>

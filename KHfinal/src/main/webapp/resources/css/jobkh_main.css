@@ -2,25 +2,10 @@
 #content {
     overflow: hidden;
   }
-  /*스크랩 버튼*/
-  /*채용정보 스크랩(별모양 버튼) 사이즈,색*/
-  /* .scrap {
-    color: rgba(128, 128, 128, 0);
-    border: 1;
-    border-color: rgba(255, 235, 205, 0.5);
-    background-color: rgba(255, 235, 204, 0);
-    overflow: hidden;
-    width: 25px;
-    height: 25px;
-    
-  } */
-
-
 
  #applyscrap {
  	margin-left: 30px;
  }
-
 
   #applyscrap .scraped {
     background: url(../images/tpl_bg_icn.png) no-repeat;
