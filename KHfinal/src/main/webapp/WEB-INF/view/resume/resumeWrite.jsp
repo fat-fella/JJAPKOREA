@@ -9,7 +9,7 @@
 <title>resumeWrite</title>
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- 카카오 API : 주소 검색 -->
+<!-- 인적사항 >> 카카오 API : 주소 검색 -->
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -36,6 +36,16 @@
 					}
 				}).open();
 	}
+</script>
+<!-- 희망직무 >> 추가하기 팝업 -->
+<script type="text/javascript">
+	function desiredJop_popup() {
+/* 		var popUrl = "resumeWrite_desiredJob.jsp"; */
+		var popUrl = "<%=request.getContextPath() %>/resume/resumeWrite_desiredJob.jsp";
+		var popOption = "top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no";
+		window.open(popUrl, popOption);
+	}
+
 </script>
 </head>
 <body>
@@ -88,8 +98,8 @@
 				</td>
 				<td>
 					<div>
-						<input type="text" name="email" class="question" id="email"
-							required autocomplete="off" /> <label for="email"><span>이메일
+						<input type="text" name="email" class="question" id="email" required autocomplete="off" /> 
+						<label for="email"><span>이메일
 								*</span></label>
 					</div>
 				</td>
@@ -133,7 +143,7 @@
 						<td colspan="4">
 							<div>
 								<div>
-									<span><a href="">추가하기</a></span>
+									<span><a onclick="desiredJop_popup();">추가하기</a></span>
 								</div>
 								<div>
 									<span>희망직무 키워드 *</span>
