@@ -23,6 +23,11 @@ public class MyPageController {
 	@Autowired
 	private ScrapService scrapService;
 	
+	@GetMapping("/myPage")
+	public String myPage() throws Exception{
+		return "member/myPage";
+	}
+	
 	@GetMapping("/scrap")
     public String scrap(Model model) throws Exception{
 		String mid = (String) model.getAttribute("mid");
