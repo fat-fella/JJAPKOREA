@@ -63,26 +63,37 @@
 </head>
 <body>
 <div>
-    <form action="${pageContext.request.contextPath }/board/insert" method="post" enctype="multipart/form-data" >
+   <form id="frmBoard">
         제목: <input type="text" name="btitle">
         <br>
         내용: <textarea rows="10" cols="50" name="bcontent"></textarea>
         <br>         
 		<input type="file" name="uploadFile1">
         <input type="checkbox" name="hobby" value="a">삼겹살?<br>
-        <button type="submit" id="btn-board-insert">글 등록</button>
+        <button type="button" id="btn-board-insert">글 등록</button> <!-- submit -> button  -->
 		<a href="${pageContext.request.contextPath}/board/list">
 			<button type="button">글 목록으로 이동</button>
 		</a>	
     </form>
 </div>
 <script>
-$("#btn-board-insert").click(function() {
+$("#btn-board-insert").click(function() {	
+    const btitle = $("input[name='btitle']").val().trim();
+    const bcontent = $("textarea[name='bcontent']").val().trim();
+    if(btitle ===''){
+    	alert("제목을 입력해주세요");
+    	return;
+    }
+    if(bcontent ===''){
+    	alert("내용을 입력해주세요");
+    	return;
+    }
     if (confirm("글을 등록하시겠습니까?")) {
+    	/* $("#btn-board-insert").prop("disabled", true); */
         $.ajax({
             type: "POST",
             url: "${pageContext.request.contextPath}/board/insert",
-            dataType: "json",
+            //dataType: "json",
             data: { 
                 btitle: btitle,
                 bcontent: bcontent
@@ -93,7 +104,6 @@ $("#btn-board-insert").click(function() {
                     location.href = "${pageContext.request.contextPath}/board/list";
                 } else {
                     alert("글 등록에 실패했습니다.");
-                    location.href = "${pageContext.request.contextPath}/board/list";
                 }
             }
         });

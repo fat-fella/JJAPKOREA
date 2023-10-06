@@ -69,24 +69,24 @@ button:hover {
 					<input type="hidden" class="form-control" id="boardNo"
 						name="boardNo" value="${bvo.bno}" disabled>
 				</div>
-				<form action="${pageContext.request.contextPath }/board/update"
-					method="get">
-					<input type="hidden" name="bno" value="${bvo.bno}"> <label
-						for="btitle">제목:</label> <input type="text" id="btitle"
-						name="btitle" value="${bvo.btitle}" readonly> <br> <label
-						for="bcontent">내용:</label>
-					<textarea id="bcontent" rows="10" cols="50" name="bcontent"
-						readonly>${bvo.bcontent}</textarea>
-					<br> <a href="#" id="likeCount">좋아요수:
-						(${data.totalLikeCount })</a> <a
-						href="${pageContext.request.contextPath}/board/list">
+				<form action="${pageContext.request.contextPath }/board/update" method="get">
+				<h3><c:out value="${bvo.bno}"/>번글</h3>
+					<input type="hidden" name="bno" value="${bvo.bno}"> 
+					<label for="btitle">제목:</label> 
+					<input type="text" id="btitle" name="btitle" value="${bvo.btitle}" readonly> 
+					<br> 
+					<label for="bcontent">내용:</label>
+					<textarea id="bcontent" rows="10" cols="50" name="bcontent" readonly>${bvo.bcontent}</textarea>
+					<br> 
+					<label for="likehit">좋아요수: (${bvo.likehit })</label>
+					<a href="${pageContext.request.contextPath}/board/list">
 						<button type="submit" id="btn-board-update">글 수정</button>
 					</a>
 					<button type="button" id="btn-board-delete">글 삭제</button>
 					<a href="${pageContext.request.contextPath}/board/list">
 						<button type="button">글 목록으로 이동</button>
 					</a>
-					<button type="button" id="btn-board-like">좋아요</button>
+					<button type="button" id="btn-board-like" onclick="updateLike(); return false;">좋아요</button>
 				</form>
 				<!-- 댓글 입력 폼 -->
 				<div class="card">
@@ -127,38 +127,31 @@ button:hover {
 	}
 });
    
-// 좋아요 버튼 클릭 이벤트 핸들러
-   $("#btn-board-like").click(function() {
-       var bno = "${bvo.bno}"; // 게시물 번호
-       var mid = "${bvo.mid}"; // 사용자 아이디
-       // 데이터를 JSON 형식으로 구성
-       var requestData = {
-           bno: bno,
-           mid: mid
-       };
-       $.ajax({
-           type: "POST",
-           url: "${pageContext.request.contextPath}/board/doLike",
-           data: JSON.stringify(requestData),
-           contentType: "application/json",
-           success: function(data) {
-               if (data.result === "success") {
-                   if (data.status === "like") {
-                	   console.log("좋아요 성공");
-                       // 좋아요 상태이면 좋아요 취소로 변경
-                       $("#btn-board-like").text("좋아요 취소");
-                   } else {
-                	   console.log("좋아요 취소 성공");
-                	   // 좋아요 취소 상태이면 좋아요로 변경
-                       $("#btn-board-like").text("좋아요");
-                   }
-               }
-           },
-           error: function() {
-               console.error("좋아요 처리 중 오류 발생");
-           }
-       });
-   });
+	var bno = '${bvo.bno}';
+	var mid = '${bvo.mid}';
+	function updateLike(){ 
+	     $.ajax({
+	            type : "POST",  
+	            url : "${pageContext.request.contextPath}/board/updateLike",       
+	            dataType : "json",   
+	            data : {'bno' : bno, 'mid' : mid },
+	            error : function(){
+	               alert("통신 에러");
+	            },
+	            success : function(likeCheck) {	                
+	                    if(likeCheck == 0){
+	                    	alert("좋아요");
+	                    	$("#btn-board-like").html("좋아요 취소");
+	                    	location.reload();
+	                    }
+	                    else if (likeCheck == 1){
+	                     	alert("좋아요 취소");
+	                    	$("#btn-board-like").html("좋아요");
+	                    	location.reload();
+	                    }
+	            	}
+	        	});
+			} 
    
 /* Reply */
    let replyreplyleftpadding = "";
