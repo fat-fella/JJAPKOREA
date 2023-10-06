@@ -48,7 +48,7 @@
 	                }
 	            },
 	            error: function(xhr, status, error) {
-	                alert("오류");
+	                console.log("오류");
 	            }
 	        });
 	    });
