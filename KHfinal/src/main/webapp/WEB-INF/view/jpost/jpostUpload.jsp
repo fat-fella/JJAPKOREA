@@ -97,11 +97,11 @@
 					<label for="maxSalary">최대연봉 <span>*</span></label> <input
 						type="text" id="maxSalary" name="maxSalary" required>
 				</div>
-				<div class="jpostdetails">
+				<!-- <div class="jpostdetails">
 					<h4>상세정보</h4>
 					<textarea name="content" id="content" required></textarea>
 					<button type="button" class="submitBtn">등록</button>
-				</div>
+				</div> -->
 			</fieldset>
 			<div class="jpostdateset">
 				<label for="regDate">채용공고 등록일</label> <input type="date"
