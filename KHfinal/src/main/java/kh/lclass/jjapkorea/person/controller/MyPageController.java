@@ -31,7 +31,7 @@ public class MyPageController {
         return "member/scrap";
     }
 	
-	@RequestMapping(value="/scrap", method = RequestMethod.POST, produces = "application/text; charset=UTF-8" )
+	@RequestMapping(value="/scrap", method = RequestMethod.POST, produces = "application/text; charset=UTF-8")
 	@ResponseBody
 	public ResponseEntity<String> scrap(@RequestBody ScrapDto scrapDto) throws Exception {
 	    int scrap;
