@@ -6,4 +6,5 @@ import lombok.Data;
 public class ScrapDto {
 	private String mid;
 	private String jid;
+	private String isScrapAction;
 }
