@@ -128,7 +128,7 @@ body {
 </head>
 <body>
 <div class="title">
-	<h2> 취업 talkTalk! </h2>
+	<h2> 취업 TalkTalk! </h2>
 <%-- 	<h4>API Key: <spring:eval expression="@api['api.key']" /></h4> --%>
 </div>
 <c:if test="${not empty boardList }">
@@ -157,6 +157,24 @@ body {
             </tr>
         </c:forEach>
     </table>
+    <div style="display: block; text-align: center;">		
+		<c:if test="${page.startPage != 1 }">
+			<span>[ <a href="${pageContext.request.contextPath}/board/list?nowPage=${page.startPage - 1 }&cntPerPage=${page.cntPerPage}">이전</a> ]</span>
+		</c:if>
+		<c:forEach begin="${page.startPage }" end="${page.endPage }" var="p">
+			<c:choose>
+				<c:when test="${p == page.nowPage }">
+					<b>${p }</b>
+				</c:when>
+				<c:when test="${p != page.nowPage }">
+					<a href="${pageContext.request.contextPath}/board/list?nowPage=${p }&cntPerPage=${page.cntPerPage}">${p }</a>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${page.endPage != page.lastPage}">
+			<span>[ <a href="${pageContext.request.contextPath}/board/list?nowPage=${page.endPage+1 }&cntPerPage=${page.cntPerPage}">다음</a> ]</span>
+		</c:if>
+	</div>
 </c:if>
 
 <div class="btn-container">
@@ -216,7 +234,6 @@ document.getElementById('openModalBtn').addEventListener('click', function() {
     });
 });
  */
-
 </script>
 
 </body>
