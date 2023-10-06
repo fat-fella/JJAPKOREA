@@ -22,6 +22,38 @@
 		});
 	});
 	
+	$(document).ready(function() {
+	    $("[data-jid]").each(function() {
+	        var jid = $(this).data("jid");
+	        var scrapButton = $(this); // 현재 요소에 대한 참조 저장
+	        
+	        $.ajax({
+	            type: "POST", // POST 요청으로 변경
+	            url: "${pageContext.request.contextPath}/index", // 요청을 처리할 컨트롤러 URL
+	            data: { jid: jid }, // 전송할 데이터
+	            success: function(response) {
+	                var isScrapAction = response.isScrapAction;
+
+	                // 스크랩 상태 설정
+	                if (isScrapAction === true) {
+	                    // 스크랩 상태일 때 버튼 스타일 및 텍스트 변경
+	                    scrapButton.addClass('scraped');
+	                    scrapButton.text('스크랩됨');
+	                    scrapButton.removeClass('scrap');
+	                } else {
+	                    // 스크랩 상태가 아닐 때 버튼 스타일 및 텍스트 변경
+	                    scrapButton.removeClass('scraped');
+	                    scrapButton.text('채용정보 스크랩');
+	                    scrapButton.addClass('scrap');
+	                }
+	            },
+	            error: function(xhr, status, error) {
+	                alert("오류");
+	            }
+	        });
+	    });
+	});
+	
 	// 스크랩 버튼 클릭 시
 	function setScrap(jid) {
 	    var mid = "${mid}";
