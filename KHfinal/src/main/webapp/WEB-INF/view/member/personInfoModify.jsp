@@ -19,15 +19,15 @@
 					alt="JJAPKOREA" class="logoimg">
 			</a>
 			<div class="links">
-				<a href="myPage" class="link linkHome">기업회원 홈</a>
-				<a href="#" class="link linkManage">채용공고 관리</a>
+				<a href="myPage" class="link linkHome">마이페이지</a>
+				<a href="scrap" class="link linkManage">스크랩</a>
 			</div>
 		</div>
 	</header>
 	<form action="../jobpostingupload/register" method="POST"
 		class="jpostform">
 		<div class="jposthead">
-			<h2>채용공고 등록</h2>
+			<h2>회원 정보 수정</h2>
 			<h6>양식에 맞게 채용공고를 등록해주세요.</h6>
 		</div>
 		<div class="jpostcontent">
