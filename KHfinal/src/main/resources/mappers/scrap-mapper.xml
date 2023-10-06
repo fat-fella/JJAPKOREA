@@ -4,6 +4,7 @@
 	<resultMap type="scrapDto" id="scrapDto">
 		<id property="mid" column="mid"/>
 		<id property="jid" column="jid"/>
+		<result property="isScrapAction" column="is_scrap_action"/>
 	</resultMap>
 	
 	<insert id="scrap" parameterType="scrapDto">
@@ -14,11 +15,11 @@
 		delete from scrap where jid = #{jid}
 	</delete>
 	
-	<select id="isScrapped" parameterType="scrapDto" resultMap="scrapDto">
-		select count(*) from scrap where mid = #{mid} and jid = #{jid}
-	</select>
-	
 	<select id="selectListScrap" resultType="java.util.Map">
 		select b.bizname, b.brno, i.* from scrap s join info i on s.jid = i.jid join business b on i.mid = b.mid where s.mid = #{mid}
+	</select>
+	
+	<select id="selectOneScrap" resultType="string">
+		select is_scrap_action from scrap where mid = #{mid} and jid = #{jid}
 	</select>
 </mapper>

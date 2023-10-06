@@ -25,4 +25,8 @@ public class ScrapDao {
 	public List<Map<String, Object>> selectListScrap(String mid) throws Exception{
 		return sqlSession.selectList("scrap.selectListScrap", mid);
 	}
+	
+	public String selectOneScrap(ScrapDto scrapDto) throws Exception{
+		return sqlSession.selectOne("scrap.selectOneScrap", scrapDto);
+	}
 }

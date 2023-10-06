@@ -9,4 +9,5 @@ public interface ScrapService {
 	int scrap(ScrapDto scrapDto) throws Exception;
 	int scrapCancel(ScrapDto scrapDto) throws Exception;
 	List<Map<String, Object>> scrapList(String mid) throws Exception;
+	String selectOneScrap(ScrapDto scrapDto) throws Exception;
 }
