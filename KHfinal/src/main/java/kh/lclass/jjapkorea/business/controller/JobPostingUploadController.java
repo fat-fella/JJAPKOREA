@@ -1,5 +1,6 @@
 package kh.lclass.jjapkorea.business.controller;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import kh.lclass.jjapkorea.business.model.dto.JobPostingCategoryDto;
@@ -73,20 +76,34 @@ public class JobPostingUploadController {
 		try {
 			int result = jobPostingUploadService.insert(dto);
 			if(result<1) {
-				System.out.println("#!$$$$$$$$$$$$$$$$$$$$$$성공이야################");
 				return "redirect:/business/jobpostingupload/register";
 			}
 			else{
-				System.out.println("#!$$$$$$$$$$$$$$$$$$$$$$실패################");
 				return "redirect:/business/jobpostingupload/list";
 			}
 		} catch (Exception e){
 			e.printStackTrace();
-			System.out.println("!!!!!!!!!!!!!!!!!!!!캐치캐치캐치!!!!!!!!!!!!!!!!!");
 			return "redirect:/business/jobpostingupload/register";
 			
 		}
 		
+	}
+	
+	@PostMapping("/image/upload")
+	public ModelAndView image(MultipartHttpServletRequest request) throws Exception{
+		ModelAndView mv = new ModelAndView("jsonView");
+		MultipartFile uploadFile = request.getFile("upload");
+		String originalFileName = uploadFile.getOriginalFilename();
+		String ext = originalFileName.substring(originalFileName.indexOf("."));
+		String newFileName = UUID.randomUUID() + ext;
+		String realPath = request.getServletContext().getRealPath("/");
+		String savePath = realPath + "upload/" + newFileName;
+		String uploadPath = "./upload/" + newFileName; 
+		File file = new File(savePath);
+		uploadFile.transferTo(file);
+		mv.addObject("uploaded", true); // 업로드 완료
+		mv.addObject("url", uploadPath); // 업로드 파일의 경로
+		return mv;
 	}
 	
 	

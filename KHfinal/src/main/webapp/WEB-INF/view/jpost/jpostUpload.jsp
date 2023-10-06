@@ -97,11 +97,11 @@
 					<label for="maxSalary">최대연봉 <span>*</span></label> <input
 						type="text" id="maxSalary" name="maxSalary" required>
 				</div>
-				<!-- <div class="jpostdetails">
+				<div class="jpostdetails">
 					<h4>상세정보</h4>
 					<textarea name="content" id="content" required></textarea>
 					<button type="button" class="submitBtn">등록</button>
-				</div> -->
+				</div>
 			</fieldset>
 			<div class="jpostdateset">
 				<label for="regDate">채용공고 등록일</label> <input type="date"
@@ -113,17 +113,22 @@
 			</div>
 		</div>
 	</form>
-	<!-- <script
+	<script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
 	<script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/translations/ko.js"></script>
+	<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
 	<script>
+	
         ClassicEditor.create(document.querySelector('#content'), {
-            language: "ko"
+            ckfinder:{
+            	uploadUrl:'../image/upload'
+            },
+        	language: "ko"
         }).then(editor => {
             window.editor = editor;
         });
-    </script> -->
+    </script>
 	<script>
 		function loadOptions(){
 			var firstRecruitField = document.getElementById("firstRecruitField");
