@@ -115,7 +115,7 @@
     <!-- swiper 스크립트 -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- swiper 기능 스크립트 -->
-     <script>
+    <!-- <script>
         var swiper = new Swiper('.bnr-swiper', {
             direction: 'horizontal',
             centeredSlides: true,
@@ -132,10 +132,10 @@
 
         var swiper = new Swiper('.sw-container', {
             direction: 'horizontal',
-            spaceBetween: 50,
+            // spaceBetween: 50,
             centeredSlides: true,
             watchOverflow : true,
-            slidesPerView: 1,
+            // slidesPerView: 1,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
@@ -153,6 +153,6 @@
                 disableOnInteraction: false
             }
         });
-    </script>
+    </script> -->
 </body>
 </html>
