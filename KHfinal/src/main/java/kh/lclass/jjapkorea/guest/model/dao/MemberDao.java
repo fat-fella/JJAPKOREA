@@ -53,4 +53,24 @@ public class MemberDao {
 	public String selectOnePerson(String mid) throws Exception {
 		return sqlSession.selectOne("person.selectOnePerson", mid);
 	}
+	
+	public int infoModifyMember(MemberDto memberDto) throws Exception {
+		return sqlSession.update("member.infoModifyMember", memberDto);
+	}
+	
+	public int infoModifyPerson(PersonDto personDto) throws Exception {
+		return sqlSession.update("person.infoModifyPerson", personDto);
+	}
+	
+	public int cancelMember(String mid) throws Exception {
+		return sqlSession.delete("member.cancelMember", mid);
+	}
+	
+	public int cancelPerson(String mid) throws Exception {
+		return sqlSession.delete("person.cancelPerson", mid);
+	}
+	
+	public int cancelBusiness(String mid) throws Exception {
+		return sqlSession.delete("business.cancelBusiness", mid);
+	}
 }

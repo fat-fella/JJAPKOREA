@@ -36,4 +36,22 @@ public class MemberServiceImpl implements MemberService {
 	public String selectOnePerson(String mid) throws Exception {
 		return memberDao.selectOnePerson(mid);
 	}
+	
+	@Override
+	public void infoModifyMemberAndPerson(MemberDto memberDto, PersonDto personDto) throws Exception {
+		memberDao.infoModifyMember(memberDto);
+		memberDao.infoModifyPerson(personDto);
+	}
+	
+	@Override
+	public void cancelMemberAndPerson(String mid) throws Exception {
+		memberDao.cancelMember(mid);
+		memberDao.cancelPerson(mid);
+	}
+	
+	@Override
+	public void cancelMemberAndBusiness(String mid) throws Exception {
+		memberDao.cancelMember(mid);
+		memberDao.cancelBusiness(mid);
+	}
 }

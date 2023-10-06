@@ -23,4 +23,8 @@
 	<insert id="signUpBusiness" parameterType="businessDto">
 		insert into business (mid, bform, brno, bizname, brep_name, baddress, bname, btel, bemail) values (#{mid}, #{bform}, #{brno}, #{bizname}, #{brepName}, #{baddress}, #{bname}, #{btel}, #{bemail})
 	</insert>
+	
+	<delete id="cancelBusiness" parameterType="string">
+		delete from business where mid = #{mid}
+	</delete>
 </mapper>

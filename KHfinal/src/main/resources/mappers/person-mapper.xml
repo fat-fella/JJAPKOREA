@@ -8,4 +8,12 @@
 	<select id="selectOnePerson" resultType="string">
 		select pname from person where mid=#{mid}
 	</select>
+	
+	<update id="infoModifyPerson" parameterType="personDto">
+		update person set pname = #{pname}, pemail = #{pemail}, pphone = #{pphone} where mid = #{mid}
+	</update>
+	
+	<delete id="cancelPerson" parameterType="string">
+		delete from person where mid = #{mid}
+	</delete>
 </mapper>

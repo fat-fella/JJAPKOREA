@@ -3,17 +3,23 @@ package kh.lclass.jjapkorea.person.controller;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
+import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
+import kh.lclass.jjapkorea.guest.model.service.MemberService;
 import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
 import kh.lclass.jjapkorea.person.model.service.ScrapService;
 
@@ -21,11 +27,32 @@ import kh.lclass.jjapkorea.person.model.service.ScrapService;
 @RequestMapping("/person")
 public class MyPageController {
 	@Autowired
+	private MemberService memberService;
+	
+	@Autowired
 	private ScrapService scrapService;
 	
 	@GetMapping("/myPage")
 	public String myPage() throws Exception{
 		return "member/myPage";
+	}
+	
+	@PostMapping("/myPage")
+	public String myPage(String mid) throws Exception{
+		return "redirect:/person/myPage";
+	}
+	
+	@GetMapping("/infoModifyPerson")
+	public String infoModifyPerson() throws Exception{
+		return "member/infoModifyPerson";
+	}
+	
+	@PostMapping("/infoModifyPerson")
+	public String infoModifyPerson(@ModelAttribute MemberDto memberDto, @ModelAttribute PersonDto personDto) throws Exception{
+		if (!StringUtils.isEmpty(memberDto.getMpw())) {
+			memberService.infoModifyMemberAndPerson(memberDto, personDto);
+		}
+		return "redirect:/person/infoModifyPerson";
 	}
 	
 	@GetMapping("/scrap")
