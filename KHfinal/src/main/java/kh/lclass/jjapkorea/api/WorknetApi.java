@@ -195,14 +195,17 @@ public class WorknetApi {
     }
 
     private static String getTextContentByTagName(Element element, String tagName) {
-        String textContent = null;
-        NodeList nodeList = element.getElementsByTagName(tagName);
-        if (nodeList != null && nodeList.getLength() > 0) {
-            nodeList = nodeList.item(0).getChildNodes();
-            textContent = nodeList.item(0).getTextContent();
-        }
-        return textContent;
-    }
+//        System.out.println("!!!!"+tagName);
+         String textContent = null;
+         NodeList nodeList = element.getElementsByTagName(tagName);
+         if (nodeList != null && nodeList.getLength() > 0) {
+             nodeList = nodeList.item(0).getChildNodes();
+             if (nodeList != null && nodeList.getLength() > 0) {
+                textContent = nodeList.item(0).getTextContent();
+             }
+         }
+         return textContent;
+     }
 
     private static Document parseXML(String xmlString) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory objDocumentBuilderFactory = DocumentBuilderFactory.newInstance();
