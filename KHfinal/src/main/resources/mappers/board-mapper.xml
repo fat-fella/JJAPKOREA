@@ -47,4 +47,18 @@
 		LIKEHIT = LIKEHIT - 1
 		where BNO = #{bno}
 	</update>
+	
+<!-- 페이징 -->
+	<select id="count" resultType="_int">
+		select count(bno) from board
+	</select>
+		
+	<select id="listPage" parameterType="hashMap" resultType="BoardDto">
+    	SELECT *
+			FROM ( 
+				SELECT a.*, ROWNUM AS rnum
+			    FROM ( SELECT * FROM board ORDER BY bno DESC) a
+				)
+			WHERE rnum BETWEEN #{start} AND #{end}
+	</select>	
 </mapper>

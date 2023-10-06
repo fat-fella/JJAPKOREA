@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
 
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
+import kh.lclass.jjapkorea.board.model.dto.PageDto;
 import kh.lclass.jjapkorea.board.model.service.BoardService;
 import kh.lclass.jjapkorea.board.model.service.LikeService;
 
@@ -22,8 +24,23 @@ public class BoardController {
 	@Autowired private LikeService likeService;	
 	
 	@GetMapping("/list")
-	public ModelAndView list(ModelAndView mv) throws Exception{
-		mv.addObject("boardList", boardService.selectList());
+	public ModelAndView list(ModelAndView mv
+			, @RequestParam(value="nowPage", required=false)String nowPage
+			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) throws Exception{
+		
+		int total = boardService.count();
+		if (nowPage == null && cntPerPage == null) {
+			nowPage = "1";
+			cntPerPage = "5"; // 보여질 게시물 수
+		} else if (nowPage == null) {
+			nowPage = "1";
+		} else if (cntPerPage == null) { 
+			cntPerPage = "5";
+		}
+		PageDto page = new PageDto(total,Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		mv.addObject("page", page);
+		mv.addObject("boardList", boardService.listPage(page));
+		mv.addObject("totalListCount", boardService.count());
 		mv.setViewName("board/list");
 		return mv;
 	}
