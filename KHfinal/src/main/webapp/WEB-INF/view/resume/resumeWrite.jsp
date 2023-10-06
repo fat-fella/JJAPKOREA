@@ -21,9 +21,9 @@
 
 						// 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
 						// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-						var sido = data.sido; // 시도 항목 변수
-						var sigungu = data.sigungu; // 시군구 항목 변수
-						var bname = data.bname; // 법정동 항목 변수
+						// var sido = data.sido; // 시도 항목 변수
+						// var sigungu = data.sigungu; // 시군구 항목 변수
+						// var bname = data.bname; // 법정동 항목 변수
 						var sido_sigungu_bname = ''; // 시도_시군구_법정동 항목 변수
 
 						// 시도/시군구/법정동 데이터를 해당 필드에 넣는다.
