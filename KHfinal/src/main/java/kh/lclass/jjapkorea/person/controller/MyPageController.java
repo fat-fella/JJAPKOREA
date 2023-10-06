@@ -26,7 +26,7 @@ public class MyPageController {
 		String mid = (String) model.getAttribute("mid");
 		List<Map<String, Object>> scrapList = scrapService.scrapList(mid);
 		model.addAttribute("scrapList", scrapList);
-        return "member/myPage";
+        return "member/scrap";
     }
 	
     @PostMapping("/scrap")
@@ -46,7 +46,7 @@ public class MyPageController {
     
     @GetMapping("/scrapCancel")
     public String scrapCancel() throws Exception {
-    	return "member/myPage";
+    	return "member/scrap";
     }
     
     @PostMapping("/scrapCancel")
