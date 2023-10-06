@@ -142,18 +142,18 @@ body {
             <th>조회수</th>
             <th>좋아요수</th>
         </tr>
-        <c:forEach items="${boardList }" var="vo">
+        <c:forEach items="${boardList }" var="dto">
             <tr>
-                <td>${vo.bno }</td>
+                <td>${dto.bno }</td>
                 <td>
-                   <a href="<c:url value='/board/get'/>?bno=${vo.bno }">
-                        ${vo.btitle }
+                   <a href="<c:url value='/board/get'/>?bno=${dto.bno }">
+                        ${dto.btitle }
                    </a>
                 </td>
-                <td>${vo.mid }</td>
-                <td>${vo.bwriteDate }</td>
-                <td>${vo.readcnt }</td>
-                <td>${likeCount }</td>
+                <td>${dto.mid }</td>
+                <td>${dto.bwriteDate }</td>
+                <td>${dto.readcnt }</td>
+                <td>${dto.likehit }</td>
             </tr>
         </c:forEach>
     </table>

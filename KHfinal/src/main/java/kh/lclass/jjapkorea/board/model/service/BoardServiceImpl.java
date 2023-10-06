@@ -46,29 +46,14 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void doLike(LikeDto lDto) throws Exception {
-		int myLikeCount = boardDao.getMyLikeCount(lDto);
-		if(myLikeCount < 1) {
-			boardDao.doLike(lDto);
-		}else {
-			boardDao.deleteLike(lDto);
-		}		
+	public int totalLike(int bno) throws Exception {
+		return boardDao.totalLike(bno);
 	}
 
 	@Override
-	public int getMyLikeCount(LikeDto lDto) throws Exception {
-		return boardDao.getMyLikeCount(lDto);
-
+	public int totalLikeCancel(int bno) throws Exception {
+		return boardDao.totalLikeCancel(bno);
 	}
 
-	@Override
-	public int getTotalLikeCount(int bno) throws Exception {
-		return boardDao.getTotalLikeCount(bno);
-	}
-
-	@Override
-	public void deleteLike(LikeDto lDto) throws Exception {
-		boardDao.deleteLike(lDto);
-	}
 
 }

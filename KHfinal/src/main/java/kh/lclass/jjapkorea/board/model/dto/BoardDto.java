@@ -23,7 +23,8 @@ public class BoardDto {
 	private int ref;
 	private int rstep;
 	private int rlevel;
-
+	private int likehit;
+	
 	@Override
 	public String toString() {
 		return "BoardDto [bno=" + bno + ", btitle=" + btitle + ", mid=" + mid + ", bwriteDate=" + bwriteDate
