@@ -39,9 +39,7 @@
 	            mid: mid,
 	            isScrapAction: isScrapAction.toString() // 문자열로 변환하여 보냄
 	        }),
-//	        dataType:"json",
 	        success: function(result) {
-	        	console.log(result);
 	        	if (result === "스크랩 성공") {
 	                // 스크랩 성공 처리
 	                scrapButton.toggleClass('scraped');
