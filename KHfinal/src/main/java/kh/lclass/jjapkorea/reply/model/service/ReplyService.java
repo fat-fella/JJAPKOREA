@@ -11,5 +11,6 @@ public interface ReplyService {
 	public List<ReplyDto> insert(ReplyDto rdto) throws Exception;
 	public List<ReplyDto> insertreplyreply(ReplyDto rdto) throws Exception;
 	public ReplyDto update(ReplyDto rdto) throws Exception;
+	public List<ReplyDto> selectMoreList(int rref) throws Exception;
 	public List<ReplyDto> delete(int replyNo) throws Exception;
 }

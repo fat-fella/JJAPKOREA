@@ -7,7 +7,7 @@
 	</select> 
 
 	<select id="selectReply" resultType="replyDto">
-		select * from reply where rref=#{rref} and rstep !=1 order by RSTEP asc,reply_Date 
+		select * from reply where rref=#{rref} and rstep !=1 order by RSTEP asc,reply_Date desc
 	</select> 
 	
 	<select id="selectOne" resultType="replyDto" parameterType="_int">
@@ -19,8 +19,9 @@
 	</insert>
 	
 	<insert id="insertreplyreply">
-		insert into reply values(SEQ_REPLY_REPLY_NO.nextval,#{memberId},#{replyContent},default,#{boardNo},
-		#{rref},(select rstep from (select * from reply where board_no=#{boardNo} order by rstep ) where rownum =1)+1,2)
+		insert into reply values(SEQ_REPLY_REPLY_NO.nextval,#{memberId},#{replyContent},default,#{boardNo}, #{rref}
+		, (select rstep from (select * from reply where board_no=#{boardNo} order by rstep ) 
+		where rownum =1)+1,2)
 	</insert>
 	
 	<update id="update" parameterType="replyDto">

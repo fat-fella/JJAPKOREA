@@ -36,4 +36,7 @@ public class ReplyDao {
 	public int delete(int replyNo) throws Exception{
 		return sqlSession.delete("reply.delete", replyNo);
 	}
+	public List<ReplyDto> selectMoreList(int rref) throws Exception{
+		return sqlSession.selectList("reply.selectReply" ,rref);
+	}
 }

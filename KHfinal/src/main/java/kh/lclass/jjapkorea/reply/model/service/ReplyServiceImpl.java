@@ -58,5 +58,10 @@ public class ReplyServiceImpl implements ReplyService {
 		return replyList;
 	}
 
+	@Override
+	public List<ReplyDto> selectMoreList(int rref) throws Exception {
+		return replyDao.selectMoreList(rref);
+	}
+
 	
 }
