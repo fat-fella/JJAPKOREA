@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.board.model.dao.BoardDao;
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
-import kh.lclass.jjapkorea.board.model.dto.LikeDto;
+import kh.lclass.jjapkorea.board.model.dto.PageDto;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -46,29 +46,24 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void doLike(LikeDto lDto) throws Exception {
-		int myLikeCount = boardDao.getMyLikeCount(lDto);
-		if(myLikeCount < 1) {
-			boardDao.doLike(lDto);
-		}else {
-			boardDao.deleteLike(lDto);
-		}		
+	public int count() throws Exception{
+		return boardDao.count();
 	}
 
 	@Override
-	public int getMyLikeCount(LikeDto lDto) throws Exception {
-		return boardDao.getMyLikeCount(lDto);
-
+	public List<BoardDto> listPage(PageDto page) throws Exception {
+	 return boardDao.listPage(page);
+	}	
+	
+	@Override
+	public int totalLike(int bno) throws Exception {
+		return boardDao.totalLike(bno);
 	}
 
 	@Override
-	public int getTotalLikeCount(int bno) throws Exception {
-		return boardDao.getTotalLikeCount(bno);
+	public int totalLikeCancel(int bno) throws Exception {
+		return boardDao.totalLikeCancel(bno);
 	}
 
-	@Override
-	public void deleteLike(LikeDto lDto) throws Exception {
-		boardDao.deleteLike(lDto);
-	}
 
 }

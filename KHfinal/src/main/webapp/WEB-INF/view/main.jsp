@@ -4,6 +4,11 @@
 
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"
+    ></script>
 <script>
 	$(function() {
 		$(window).scroll(function() {
@@ -22,37 +27,81 @@
 		});
 	});
 	
+	$(document).ready(function() {
+	    $("[data-jid]").each(function() {
+	        var jid = $(this).data("jid");
+	        var scrapButton = $(this); // 현재 요소에 대한 참조 저장
+	        
+	        $.ajax({
+	            type: "POST", // POST 요청으로 변경
+	            url: "${pageContext.request.contextPath}/index", // 요청을 처리할 컨트롤러 URL
+	            data: { jid: jid }, // 전송할 데이터
+	            success: function(response) {
+	                var isScrapAction = response.isScrapAction;
+
+	                // 스크랩 상태 설정
+	                if (isScrapAction === true) {
+	                    // 스크랩 상태일 때 버튼 스타일 및 텍스트 변경
+	                    scrapButton.addClass('scraped');
+	                    scrapButton.text('스크랩됨');
+	                    scrapButton.removeClass('scrap');
+	                } else {
+	                    // 스크랩 상태가 아닐 때 버튼 스타일 및 텍스트 변경
+	                    scrapButton.removeClass('scraped');
+	                    scrapButton.text('채용정보 스크랩');
+	                    scrapButton.addClass('scrap');
+	                }
+	            },
+	            error: function(xhr, status, error) {
+	                console.log("오류");
+	            }
+	        });
+	    });
+	});
+	
+	// 스크랩 버튼 클릭 시
 	function setScrap(jid) {
 	    var mid = "${mid}";
 	    var scrapButton = $('[data-jid="' + jid + '"]');
-	 	// 현재 스크랩 상태 가져오기
-	    var isScraped = scrapButton.hasClass('scrap');
-		var url = isScraped ? "${pageContext.request.contextPath}/person/scrap" : "${pageContext.request.contextPath}/person/scrapCancel";
+	    
+	    // 현재 스크랩 상태 가져오기
+	    var isScrapAction = scrapButton.hasClass('scrap'); // 스크랩 버튼이 'scrap' 클래스를 가지고 있는지 여부에 따라 설정
+	    
 	    $.ajax({
-	        url: url,
+	        url: "${pageContext.request.contextPath}/person/scrap",
 	        type: "post",
-	        data: {
+	        contentType: "application/json", // JSON 형식으로 데이터 전송
+	        data: JSON.stringify({
 	            jid: jid,
 	            mid: mid,
-	        },
+	            isScrapAction: isScrapAction.toString() // 문자열로 변환하여 보냄
+	        }),
 	        success: function(result) {
-	            if (result === "success") {
-	                // 스크랩 또는 스크랩 해제 처리
-	                // 예: 스크랩 버튼 텍스트 변경 및 클래스 추가/제거
+	        	if (result === "스크랩 성공") {
+	                // 스크랩 성공 처리
 	                scrapButton.toggleClass('scraped');
-	                if (scrapButton.hasClass('scraped')) {
-	                    scrapButton.text('스크랩됨');
-	                    scrapButton.removeClass('scrap');
-	                    alert("스크랩");
-	                } else {
-	                    scrapButton.text('채용정보 스크랩');
-	                    scrapButton.addClass('scrap');
-	                    alert("스크랩 해제");
-	                }
+	                scrapButton.text('스크랩됨');
+	                scrapButton.removeClass('scrap');
+	                alert("스크랩 성공");
+	            } else if (result === "스크랩 해제 성공") {
+	                // 스크랩 해제 성공 처리
+	                scrapButton.toggleClass('scraped');
+	                scrapButton.text('채용정보 스크랩');
+	                scrapButton.addClass('scrap');
+	                alert("스크랩 해제 성공");
 	            } else {
-                    // 에러 처리
-                    alert("failure");
-                }
+	            	// 스크랩 실패 처리
+	                alert("스크랩 실패");
+	            }
+	        },
+	        error: function(xhr, status, error) {
+	            if (xhr.status === 400) {
+	                alert("클라이언트 오류"); // 클라이언트 오류
+	            } else if (xhr.status === 500) {
+	                alert("서버 오류"); // 서버 오류
+	            } else {
+	                alert("알 수 없는 오류: " + xhr.status); // 기타 오류
+	            }
 	        }
 	    });
 	}

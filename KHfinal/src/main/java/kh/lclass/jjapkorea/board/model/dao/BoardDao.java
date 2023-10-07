@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
-import kh.lclass.jjapkorea.board.model.dto.LikeDto;
+import kh.lclass.jjapkorea.board.model.dto.PageDto;
 
 @Repository
 public class BoardDao {
@@ -45,23 +45,21 @@ public class BoardDao {
 			return sqlSession.update("board.boardReadCnt", bno);
 		}
 		
-	// 좋아요
-		public void doLike(LikeDto lDto) throws Exception{
-			sqlSession.insert("board.doLike", lDto);
-		}
-		
-	// 좋아요 상태
-		public int getMyLikeCount(LikeDto lDto) throws Exception{
-			return sqlSession.selectOne("board.getMyLikeCount", lDto);
-		}
-		
-	// 좋아요 취소
-		public void deleteLike(LikeDto lDto) throws Exception{
-			sqlSession.delete("board.deleteLike", lDto);
-		}
-		
 	// 좋아요 갯수
-		public int getTotalLikeCount(int bno) throws Exception{
-			return sqlSession.selectOne("board.getTotalLikeCount", bno);
+		public int totalLike(int bno) throws Exception{
+			return sqlSession.update("board.updateLike", bno);
+		}
+		
+		public int totalLikeCancel(int bno) throws Exception{
+			return sqlSession.update("board.updateLikeCancel", bno);
+		}
+		
+	// 페이징
+		public int count() throws Exception{
+			return sqlSession.selectOne("board.count");
+		}
+		
+		public List<BoardDto> listPage(PageDto page) throws Exception {
+			 return sqlSession.selectList("board.listPage", page);
 		}
 }

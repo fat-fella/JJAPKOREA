@@ -1143,7 +1143,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="https://www.jobkorea.co.kr/Yocruit/Mng/GI_Reg">
+													<a href="business/jobpostingupload/register">
 														<span class="tx">채용공고 등록</span>
 													</a>
 												</li>

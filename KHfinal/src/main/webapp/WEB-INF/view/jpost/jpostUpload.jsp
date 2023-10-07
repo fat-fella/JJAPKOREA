@@ -113,17 +113,22 @@
 			</div>
 		</div>
 	</form>
-	<!-- <script
+	<script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
 	<script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/translations/ko.js"></script>
+	<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
 	<script>
+	
         ClassicEditor.create(document.querySelector('#content'), {
-            language: "ko"
+            ckfinder:{
+            	uploadUrl:'../image/upload'
+            },
+        	language: "ko"
         }).then(editor => {
             window.editor = editor;
         });
-    </script> -->
+    </script>
 	<script>
 		function loadOptions(){
 			var firstRecruitField = document.getElementById("firstRecruitField");
