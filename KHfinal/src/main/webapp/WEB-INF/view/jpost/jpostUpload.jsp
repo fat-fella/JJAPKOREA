@@ -8,10 +8,22 @@
 <meta charset="UTF-8">
 <title>짭코리아 취업공고</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="icon" href="resources/favicon.ico">
+<link rel="icon"
+	href="<%=request.getContextPath()%>/resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jobkh_jpostupload.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/smarteditor/css/smart_editor2_in.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/smarteditor/css/smart_editor2_items.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/smarteditor/css/smart_editor2_out.css">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/smarteditor/css/smart_editor2.css">
 
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/smarteditor/js/HuskyEZCreator.js"
+	charset="utf-8"></script>
 </head>
 <body>
 	<header>
@@ -25,7 +37,8 @@
 			</div>
 		</div>
 	</header>
-	<form action="../jobpostingupload/register" method="POST" class="jpostform">
+	<form action="../jobpostingupload/register" method="POST"
+		class="jpostform">
 		<div class="jposthead">
 			<h2>채용공고 등록</h2>
 			<h6>양식에 맞게 채용공고를 등록해주세요.</h6>
@@ -33,12 +46,13 @@
 		<div class="jpostcontent">
 			<fieldset class="jpostfieldset">
 				<div class="retitleinputBox">
-					<label for="reTitle">채용제목 <span>*</span></label> <input
-						type="text" id="reTitle" name="reTitle" required>
+					<label for="reTitle">채용제목 <span>*</span></label> <input type="text"
+						id="reTitle" name="reTitle" required>
 				</div>
 				<div class="recruitfieldinputBox">
-					<label for="firstRecruitField">채용분야 분류<span>*</span></label>
-					<select name="firstRecruitField" id="firstRecruitField" onchange="loadOptions()" required>
+					<label for="firstRecruitField">채용분야 분류<span>*</span></label> <select
+						name="firstRecruitField" id="firstRecruitField"
+						onchange="loadOptions()" required>
 						<option>선택해주세요</option>
 						<option value="0">경영·사무·금융·보험직</option>
 						<option value="1">연구직 및 공학 기술직</option>
@@ -50,16 +64,15 @@
 						<option value="7">건설·채굴직</option>
 						<option value="8">설치·정비·생산직</option>
 						<option value="9">농림어업직</option>
-					</select>
-					<label style="font-size: 12px; color: red;">1차 세부채용분야<span>*</span></label>
-					<select name="secondRecruitField" id="secondRecruitField" onchange="loadSecondOptions()">
+					</select> <label style="font-size: 12px; color: red;">1차 세부채용분야<span>*</span></label>
+					<select name="secondRecruitField" id="secondRecruitField"
+						onchange="loadSecondOptions()">
 						<option>선택해주세요</option>
-					</select>
-					<label style="font-size: 12px; color: red;">2차 세부채용분야<span>*</span></label>
-					<select name="thirdRecruitField" id="thirdRecruitField" onchange="loadThirdOptions()">
+					</select> <label style="font-size: 12px; color: red;">2차 세부채용분야<span>*</span></label>
+					<select name="thirdRecruitField" id="thirdRecruitField"
+						onchange="loadThirdOptions()">
 						<option>선택해주세요</option>
-					</select>
-					<label style="font-size: 12px; color: red;">3차 세부채용분야<span>*</span></label>
+					</select> <label style="font-size: 12px; color: red;">3차 세부채용분야<span>*</span></label>
 					<select name="recruitField" id="recruitField">
 						<option>선택해주세요</option>
 					</select>
@@ -97,11 +110,11 @@
 					<label for="maxSalary">최대연봉 <span>*</span></label> <input
 						type="text" id="maxSalary" name="maxSalary" required>
 				</div>
-				<!-- <div class="jpostdetails">
+				<div id="smarteditor">
 					<h4>상세정보</h4>
-					<textarea name="content" id="content" required></textarea>
-					<button type="button" class="submitBtn">등록</button>
-				</div> -->
+					<textarea name="ir1" id="ir1"placeholder="이미지 파일을 첨부해주세요."></textarea>
+					
+				</div>
 			</fieldset>
 			<div class="jpostdateset">
 				<label for="regDate">채용공고 등록일</label> <input type="date"
@@ -113,116 +126,191 @@
 			</div>
 		</div>
 	</form>
-	<script
+	<!-- <script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
 	<script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/translations/ko.js"></script>
-	<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
-	<script>
-	
-        ClassicEditor.create(document.querySelector('#content'), {
-            ckfinder:{
-            	uploadUrl:'../image/upload'
-            },
-        	language: "ko"
-        }).then(editor => {
-            window.editor = editor;
-        });
+	<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script> -->
+
+	<!-- ckeditor 생성 -->
+	<!-- 	<script>
+		ClassicEditor.create(document.querySelector('#content'), {
+			language:'ko'
+		}).then(editor => {
+		    window.editor = editor;
+		}).catch( error => {
+		    console.error( error );
+		});
+	</script> -->
+
+	<script type="text/javascript">
+	var oEditors = [];
+	nhn.husky.EZCreator.createInIFrame({
+		oAppRef: oEditors,
+		elPlaceHolder: "ir1",
+		sSkinURI: "<%=request.getContextPath()%>/resources/smarteditor/SmartEditor2Skin.html",
+		fCreator: "createSEditor2"
+	});
+	</script>
+	<!-- 이미지 업로드  -->
+	<!--     <script>
+    class UploadAdapter {
+        constructor(loader) {
+            this.loader =loader;
+        }
+
+        upload() {
+            return this.loader.file.then( file => new Promise(((resolve, reject) => {
+                this._initRequest();
+                this._initListeners( resolve, reject, file );
+                this._sendRequest( file );
+            })))
+        }
+
+        _initRequest() {
+            const xhr = this.xhr = new XMLHttpRequest();
+            xhr.open('POST', 'business/common/fms/ckeditor5Upload.do', true);
+            xhr.responseType = 'json';
+        }
+
+        _initListeners(resolve, reject, file) {
+            const xhr = this.xhr;
+            const loader = this.loader;
+            const genericErrorText = '파일을 업로드 할 수 없습니다.'
+
+            xhr.addEventListener('error', () => {reject(genericErrorText)})
+            xhr.addEventListener('abort', () => reject())
+            xhr.addEventListener('load', () => {
+                const response = xhr.response
+                if(!response || response.error) {
+                    return reject( response && response.error ? response.error.message : genericErrorText );
+                }
+
+                resolve({
+                    default: response.url
+                })
+            })
+        }
+
+        _sendRequest(file) {
+            const data = new FormData()
+            data.append('upload',file)
+            this.xhr.send(data)
+        }
+    }
     </script>
+ -->
+
+
+
+
+
+
+
+
+
+
 	<script>
-		function loadOptions(){
-			var firstRecruitField = document.getElementById("firstRecruitField");
-            var secondRecruitField = document.getElementById("secondRecruitField");
-            var selectedOption = firstRecruitField.options[firstRecruitField.selectedIndex].value;
-			if(selectedOption == "선택해주세요"){
+		function loadOptions() {
+			var firstRecruitField = document
+					.getElementById("firstRecruitField");
+			var secondRecruitField = document
+					.getElementById("secondRecruitField");
+			var selectedOption = firstRecruitField.options[firstRecruitField.selectedIndex].value;
+			if (selectedOption == "선택해주세요") {
 				return;
 			}
-            $.ajax({
-                url: "/jjapkorea/business/jobpostingupload/getSecondRecruitField",
-                method: "POST",
-                data: {
-                    selectedOption: selectedOption
-                },
-                dataType: "json", 
-                success: function (response) {
-                	console.log(response)
-                    secondRecruitField.innerHTML = "";
+			$
+					.ajax({
+						url : "/jjapkorea/business/jobpostingupload/getSecondRecruitField",
+						method : "POST",
+						data : {
+							selectedOption : selectedOption
+						},
+						dataType : "json",
+						success : function(response) {
+							console.log(response)
+							secondRecruitField.innerHTML = "";
 
-                    for (var i = 0; i < response.length; i++) {
-                        var option = document.createElement("option");
-                        option.text = response[i].jobsmcat;
-                        option.value = response[i].jobsmcd;
-                        secondRecruitField.appendChild(option);
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error: " + error);
-                }
-            });
+							for (var i = 0; i < response.length; i++) {
+								var option = document.createElement("option");
+								option.text = response[i].jobsmcat;
+								option.value = response[i].jobsmcd;
+								secondRecruitField.appendChild(option);
+							}
+						},
+						error : function(xhr, status, error) {
+							console.error("Error: " + error);
+						}
+					});
 
 		}
-		function loadSecondOptions(){
-            var secondRecruitField = document.getElementById("secondRecruitField");
-            var thirdRecruitField = document.getElementById("thirdRecruitField");
-            var selectedOption = secondRecruitField.options[secondRecruitField.selectedIndex].value;
-            if(selectedOption == "선택해주세요"){
+		function loadSecondOptions() {
+			var secondRecruitField = document
+					.getElementById("secondRecruitField");
+			var thirdRecruitField = document
+					.getElementById("thirdRecruitField");
+			var selectedOption = secondRecruitField.options[secondRecruitField.selectedIndex].value;
+			if (selectedOption == "선택해주세요") {
 				return;
 			}
-            $.ajax({
-                url: "/jjapkorea/business/jobpostingupload/getThirdRecruitField",
-                method: "POST",
-                data: {
-                    selectedOption: selectedOption
-                },
-                dataType: "json", 
-                success: function (response) {
-                    thirdRecruitField.innerHTML = "";
+			$
+					.ajax({
+						url : "/jjapkorea/business/jobpostingupload/getThirdRecruitField",
+						method : "POST",
+						data : {
+							selectedOption : selectedOption
+						},
+						dataType : "json",
+						success : function(response) {
+							thirdRecruitField.innerHTML = "";
 
-                    for (var i = 0; i < response.length; i++) {
-                        var option = document.createElement("option");
-                        option.text = response[i].jobsscat;
-                        option.value = response[i].jobsscd;
-                        thirdRecruitField.appendChild(option);
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error: " + error);
-                }
-            });
+							for (var i = 0; i < response.length; i++) {
+								var option = document.createElement("option");
+								option.text = response[i].jobsscat;
+								option.value = response[i].jobsscd;
+								thirdRecruitField.appendChild(option);
+							}
+						},
+						error : function(xhr, status, error) {
+							console.error("Error: " + error);
+						}
+					});
 
 		}
-		function loadThirdOptions(){
-            var thirdRecruitField = document.getElementById("thirdRecruitField");
-            var recruitField = document.getElementById("recruitField");
-            var selectedOption = thirdRecruitField.options[thirdRecruitField.selectedIndex].value;
-            if(selectedOption == "선택해주세요"){
+		function loadThirdOptions() {
+			var thirdRecruitField = document
+					.getElementById("thirdRecruitField");
+			var recruitField = document.getElementById("recruitField");
+			var selectedOption = thirdRecruitField.options[thirdRecruitField.selectedIndex].value;
+			if (selectedOption == "선택해주세요") {
 				return;
 			}
-            $.ajax({
-                url: "/jjapkorea/business/jobpostingupload/getFourthRecruitField",
-                method: "POST",
-                data: {
-                    selectedOption: selectedOption
-                },
-                dataType: "json", 
-                success: function (response) {
-                    recruitField.innerHTML = "";
+			$
+					.ajax({
+						url : "/jjapkorea/business/jobpostingupload/getFourthRecruitField",
+						method : "POST",
+						data : {
+							selectedOption : selectedOption
+						},
+						dataType : "json",
+						success : function(response) {
+							recruitField.innerHTML = "";
 
-                    for (var i = 0; i < response.length; i++) {
-                        var option = document.createElement("option");
-                        option.text = response[i].fieldTitle;
-                        option.value = response[i].recruitField;
-                        recruitField.appendChild(option);
-                    }
-                },
-                error: function (xhr, status, error) {
-                    console.error("Error: " + error);
-                }
-            });
+							for (var i = 0; i < response.length; i++) {
+								var option = document.createElement("option");
+								option.text = response[i].fieldTitle;
+								option.value = response[i].recruitField;
+								recruitField.appendChild(option);
+							}
+						},
+						error : function(xhr, status, error) {
+							console.error("Error: " + error);
+						}
+					});
 
 		}
-
-    </script>
+	</script>
 
 </body>
 </html>
