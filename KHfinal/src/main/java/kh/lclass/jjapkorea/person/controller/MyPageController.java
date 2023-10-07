@@ -3,6 +3,8 @@ package kh.lclass.jjapkorea.person.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,9 +43,17 @@ public class MyPageController {
 	}
 	
 	@PostMapping("/myPage")
-	public String myPage(String mid) throws Exception{
-		return "redirect:/person/myPage";
-	}
+	@ResponseBody
+    public ResponseEntity<String> myPage(Model model, HttpSession session) {
+		String mid = (String) model.getAttribute("mid");
+		try {
+            memberService.cancelMemberAndPerson(mid);
+            return ResponseEntity.ok("success"); // 성공 시 200 OK 응답 반환
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error"); // 실패 시 500 Internal Server Error 응답 반환
+        }
+    }
 	
 	@GetMapping("/infoModifyPerson")
 	public String infoModifyPerson() throws Exception{

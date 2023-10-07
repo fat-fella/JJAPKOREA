@@ -45,13 +45,13 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public void cancelMemberAndPerson(String mid) throws Exception {
-		memberDao.cancelMember(mid);
 		memberDao.cancelPerson(mid);
+		memberDao.cancelMember(mid);
 	}
 	
 	@Override
 	public void cancelMemberAndBusiness(String mid) throws Exception {
-		memberDao.cancelMember(mid);
 		memberDao.cancelBusiness(mid);
+		memberDao.cancelMember(mid);
 	}
 }
