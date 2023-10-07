@@ -5,8 +5,8 @@
 		insert into person (mid, pname, pemail, pphone) values (#{mid}, #{pname}, #{pemail}, #{pphone})
 	</insert>
 	
-	<select id="selectOnePerson" resultType="string">
-		select pname from person where mid=#{mid}
+	<select id="selectOnePerson" resultType="personDto">
+		select * from person where mid=#{mid}
 	</select>
 	
 	<update id="infoModifyPerson" parameterType="personDto">

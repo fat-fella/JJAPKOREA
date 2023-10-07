@@ -33,7 +33,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public String selectOnePerson(String mid) throws Exception {
+	public PersonDto selectOnePerson(String mid) throws Exception {
 		return memberDao.selectOnePerson(mid);
 	}
 	

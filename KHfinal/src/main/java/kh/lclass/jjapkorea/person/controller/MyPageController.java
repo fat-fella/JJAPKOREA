@@ -3,19 +3,19 @@ package kh.lclass.jjapkorea.person.controller;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
@@ -31,6 +31,9 @@ public class MyPageController {
 	
 	@Autowired
 	private ScrapService scrapService;
+	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	@GetMapping("/myPage")
 	public String myPage() throws Exception{
@@ -48,11 +51,18 @@ public class MyPageController {
 	}
 	
 	@PostMapping("/infoModifyPerson")
-	public String infoModifyPerson(@ModelAttribute MemberDto memberDto, @ModelAttribute PersonDto personDto) throws Exception{
-		if (!StringUtils.isEmpty(memberDto.getMpw())) {
+	public String infoModifyPerson(MemberDto memberDto, PersonDto personDto, RedirectAttributes redirectAttr) throws Exception{
+		String viewPage = "redirect:/";
+		try {
+			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
 			memberService.infoModifyMemberAndPerson(memberDto, personDto);
+			redirectAttr.addFlashAttribute("message", "회원 정보 수정 성공");
+			viewPage = "redirect:/person/myPage";
+		} catch (Exception e) {
+			redirectAttr.addFlashAttribute("message", "회원 정보 수정 실패");
+			viewPage = "redirect:/person/infoModifyPerson";
 		}
-		return "redirect:/person/infoModifyPerson";
+		return viewPage;
 	}
 	
 	@GetMapping("/scrap")

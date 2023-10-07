@@ -62,6 +62,14 @@ public class IndexController {
             String attributeName = "list" + (startIndex / chunkSize + 1); // 새로운 속성 이름 생성 (list1, list2, ...)
             model.addAttribute(attributeName, subList);
         }
+        String mid = (String) model.getAttribute("mid");
+        List<ScrapDto> selectListScrap = scrapService.selectListScrap(mid);
+        if (selectListScrap != null) {
+            // 스크랩 데이터를 JSON 형식으로 변환하여 모델에 추가
+            ObjectMapper objectMapper = new ObjectMapper();
+            String selectListScrapJson = objectMapper.writeValueAsString(selectListScrap);
+            model.addAttribute("selectListScrapJson", selectListScrapJson);
+        }
     	return "index";
     }
 }

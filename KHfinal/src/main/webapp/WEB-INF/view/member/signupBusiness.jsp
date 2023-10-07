@@ -303,7 +303,7 @@
 								</div>
 								<div class="col_2">
 									<input data-val="true" id="U_ID" maxlength="16" name="mid"
-										class="dev-id" type="text" value="">
+										class="dev-id" type="text" value="" pattern="(?=.*[a-z])[a-z\d]+" required>
 									<div class="notice_msg" id="notice_msg_id"></div>
 								</div>
 							</div>
@@ -316,7 +316,7 @@
 								<div class="col_2">
 									<input id="U_PWD" class="dev-password" maxlength="16"
 										name="mpw" type="password" style="ime-mode: disabled;"
-										value="">
+										value="" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!.]).{8,16}" required>
 									<button type="button" class="btnHelp devPwdHelpBtn"
 										title="안전한 비밀번호 작성법">?</button>
 									<div class="lyHelp">

@@ -76,7 +76,7 @@
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Name" name="pname"
-									class="mbr_name devReadOnly dev-name" maxlength="12">
+									class="mbr_name devReadOnly dev-name" maxlength="12" required>
 								<div class="notice_msg" id="notice_msg_name"></div>
 							</div>
 						</div>
@@ -89,7 +89,7 @@
 							</div>
 							<div class="col_2">
 								<input type="text" id="idcheck" name="mid" maxlength="16"
-									class="dev-id" value="" style="ime-mode: disabled;">
+									class="dev-id" value="" style="ime-mode: disabled;" pattern="(?=.*[a-z])[a-z\d]+" required>
 								<div class="notice_msg" id="notice_msg_id"></div>
 							</div>
 						</div>
@@ -102,7 +102,7 @@
 							</div>
 							<div class="col_2">
 								<input type="password" id="M_Pwd" name="mpw"
-									class="dev-password" maxlength="16" style="ime-mode: disabled;">
+									class="dev-password" maxlength="16" style="ime-mode: disabled;" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!.]).{8,16}" required>
 								<button type="button" class="btnHelp" title="안전한 비밀번호 작성법">?</button>
 								<div class="lyHelp">
 									<dl>
@@ -135,7 +135,7 @@
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Email" name="pemail"
-									class="mbr_email_id dev-mail" size="8" maxlength="30">
+									class="mbr_email_id dev-mail" size="8" maxlength="30" required>
 								<div class="notice_msg" id="notice_msg_mail"></div>
 								<input type="hidden" id="Email_ID" name="Email_ID">
 								<input type="hidden" id="Email_Addr" name="Email_Addr">
@@ -149,7 +149,7 @@
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Phone" name="pphone" size="4"
-									maxlength="13" class="dev-phone">
+									maxlength="13" class="dev-phone" required>
 								<button type="button" class="button buttonSendCertification"
 									id="btnSendCert">
 									<span>인증번호 전송</span>

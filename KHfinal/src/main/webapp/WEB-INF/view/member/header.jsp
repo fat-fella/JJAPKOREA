@@ -1179,9 +1179,9 @@
 										onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">이력서 관리</a>
 								</li>
 								<li class="userNav-item my member">
-									<a href="myPage" class="btnMyOpen txt-button ico-cp"
+									<a href="person/myPage" class="btnMyOpen txt-button ico-cp"
 										onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');">
-										<span class="spGnb"></span><span class="user-name">${pname}</span><span
+										<span class="spGnb"></span><span class="user-name">${selectOnePerson.pname}</span><span
 											class="skip">열기</span>
 									</a>
 									<div class="lyMyArea">
@@ -1213,14 +1213,14 @@
 														</a>
 													</li>
 													<li>
-														<a href="https://www.jobkorea.co.kr/User/Scrap"
+														<a href="person/scrap"
 															onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
 															<span class="tx">스크랩</span>
 														</a>
 													</li>
 													<li>
 														<a
-															href="https://www.jobkorea.co.kr/Text_User/User_Pwd.asp"
+															href="person/infoModifyPerson"
 															onclick="GA_Event('공통_PC', 'gnb', '개인정보 수정');">
 															<span class="tx">개인정보 수정</span>
 														</a>

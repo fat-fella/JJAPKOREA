@@ -50,7 +50,7 @@ public class MemberDao {
         }
 	}
 
-	public String selectOnePerson(String mid) throws Exception {
+	public PersonDto selectOnePerson(String mid) throws Exception {
 		return sqlSession.selectOne("person.selectOnePerson", mid);
 	}
 	
