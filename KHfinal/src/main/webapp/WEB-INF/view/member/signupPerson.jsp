@@ -182,7 +182,6 @@
 
 								<div class="notice_msg" id="notice_msg_certify"></div>
 							</div>
-
 						</div>
 					</div>
 					<h4 class="skip">약관 동의</h4>
@@ -1556,89 +1555,37 @@
 	<iframe height="0" width="0" title="Criteo DIS iframe"
 		style="display: none;"></iframe>
 	<script>
-		var col_1List = document.getElementsByClassName("col_1");
-		document
-				.querySelector(".mbrRegist .dev-name")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[0].style.cssText = "top: 9px";
-							document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 11px";
-						})
-		document
-				.querySelector(".mbrRegist .dev-name")
-				.addEventListener(
-						"blur",
-						function() {
-							// 포커스가 해제될 때 원래 스타일로 복구
-							col_1List[0].style.cssText = ""; // 빈 문자열로 스타일 초기화
-							document.querySelector(".col_1>.mbr_name").style.cssText = ""; // 빈 문자열로 스타일 초기화
-						});
-		document
-				.querySelector(".mbrRegist .dev-id")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[1].style.cssText = "top: 9px";
-							document.querySelector(".mbr_id label").style.cssText = "font-size: 11px";
-						})
-		document.querySelector(".mbrRegist .dev-id").addEventListener("blur",
-				function() {
-					// 포커스가 해제될 때 원래 스타일로 복구
-					col_1List[1].style.cssText = ""; // 빈 문자열로 스타일 초기화
-					document.querySelector(".mbr_id label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-				});
-		document
-				.querySelector(".mbrRegist .dev-password")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[2].style.cssText = "top: 9px";
-							document.querySelector(".mbr_passwd label").style.cssText = "font-size: 11px";
-						})
-		document
-				.querySelector(".mbrRegist .dev-password")
-				.addEventListener(
-						"blur",
-						function() {
-							// 포커스가 해제될 때 원래 스타일로 복구
-							col_1List[2].style.cssText = ""; // 빈 문자열로 스타일 초기화
-							document.querySelector(".mbr_passwd label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-						});
-		document
-				.querySelector(".mbrRegist .dev-mail")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[3].style.cssText = "top: 9px";
-							document.querySelector(".mbr_email label").style.cssText = "font-size: 11px";
-						})
-		document
-				.querySelector(".mbrRegist .dev-mail")
-				.addEventListener(
-						"blur",
-						function() {
-							// 포커스가 해제될 때 원래 스타일로 복구
-							col_1List[3].style.cssText = ""; // 빈 문자열로 스타일 초기화
-							document.querySelector(".mbr_email label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-						});
-		document
-				.querySelector(".mbrRegist .dev-phone")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[4].style.cssText = "top: 9px";
-							document.querySelector(".mbr_phone label").style.cssText = "font-size: 11px";
-						})
-		document
-				.querySelector(".mbrRegist .dev-phone")
-				.addEventListener(
-						"blur",
-						function() {
-							// 포커스가 해제될 때 원래 스타일로 복구
-							col_1List[4].style.cssText = ""; // 빈 문자열로 스타일 초기화
-							document.querySelector(".mbr_phone label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-						});
+		// 모든 입력 필드 요소를 선택
+		var inputFields = document.querySelectorAll('.row input');
+	
+		// 입력 필드에 포커스 시 스타일을 적용하는 함수
+		function applyFocusStyle(event) {
+		    var parentRow = event.target.closest('.row');
+		    if (event.target.value === '') {
+		        parentRow.querySelector('.col_1').style.cssText = 'top: 9px';
+		        parentRow.querySelector('label').style.cssText = 'font-size: 11px';
+		    }
+		}
+	
+		// 입력 필드에서 포커스가 벗어났을 때 스타일을 초기화하는 함수
+		function resetStyle(event) {
+		    var parentRow = event.target.closest('.row');
+		    if (event.target.value === '') {
+		        parentRow.querySelector('.col_1').style.cssText = '';
+		        parentRow.querySelector('label').style.cssText = '';
+		    }
+		}
+	
+		// 입력 필드에 포커스 및 블러 이벤트 리스너 등록
+		inputFields.forEach(function(inputField) {
+		    inputField.addEventListener('focus', applyFocusStyle);
+		    inputField.addEventListener('blur', resetStyle);
+	
+		    // 초기 로드 시 입력 값이 있는 경우에도 스타일 적용
+		    if (inputField.value !== '') {
+		        applyFocusStyle({ target: inputField });
+		    }
+		});
 	</script>
 </body>
 </html>

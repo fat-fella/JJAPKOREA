@@ -1693,6 +1693,39 @@
 
 		</div>
 	</div>
+	<script>
+		// 모든 입력 필드 요소를 선택
+		var inputFields = document.querySelectorAll('.row input');
+	
+		// 입력 필드에 포커스 시 스타일을 적용하는 함수
+		function applyFocusStyle(event) {
+		    var parentRow = event.target.closest('.row');
+		    if (event.target.value === '') {
+		        parentRow.querySelector('.col_1').style.cssText = 'top: 9px';
+		        parentRow.querySelector('label').style.cssText = 'font-size: 11px';
+		    }
+		}
+	
+		// 입력 필드에서 포커스가 벗어났을 때 스타일을 초기화하는 함수
+		function resetStyle(event) {
+		    var parentRow = event.target.closest('.row');
+		    if (event.target.value === '') {
+		        parentRow.querySelector('.col_1').style.cssText = '';
+		        parentRow.querySelector('label').style.cssText = '';
+		    }
+		}
+	
+		// 입력 필드에 포커스 및 블러 이벤트 리스너 등록
+		inputFields.forEach(function(inputField) {
+		    inputField.addEventListener('focus', applyFocusStyle);
+		    inputField.addEventListener('blur', resetStyle);
+	
+		    // 초기 로드 시 입력 값이 있는 경우에도 스타일 적용
+		    if (inputField.value !== '') {
+		        applyFocusStyle({ target: inputField });
+		    }
+		});
+	</script>
 </body>
 
 </html>
