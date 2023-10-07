@@ -6,9 +6,4 @@
     if (msg && msg.length > 0) {
         alert(msg.join("\n"));
     }
-    
-    var message = '${message}';
-    if(message){
-    	alert(message);
-    }
 </script>
