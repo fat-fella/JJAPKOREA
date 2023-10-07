@@ -29,7 +29,6 @@
 		<h2>마이페이지</h2>
 	</div>
 	<button onclick="deleteAccount()">회원 탈퇴</button>
-	<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
 <script>
 	function deleteAccount() {
 	    var mid = "${mid}";
