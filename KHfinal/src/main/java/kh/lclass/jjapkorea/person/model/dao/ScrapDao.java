@@ -22,11 +22,11 @@ public class ScrapDao {
 		return sqlSession.delete("scrap.scrapCancle", scrapDto);
 	}
 	
-	public List<Map<String, Object>> selectListScrap(String mid) throws Exception{
-		return sqlSession.selectList("scrap.selectListScrap", mid);
+	public List<Map<String, Object>> getJobPostingsWithScrapBusinessInfo(String mid) throws Exception{
+		return sqlSession.selectList("scrap.getJobPostingsWithScrapBusinessInfo", mid);
 	}
 	
-	public String selectOneScrap(ScrapDto scrapDto) throws Exception{
-		return sqlSession.selectOne("scrap.selectOneScrap", scrapDto);
+	public List<ScrapDto> selectListScrap(String mid) throws Exception{
+		return sqlSession.selectList("scrap.selectListScrap", mid);
 	}
 }

@@ -25,12 +25,12 @@ public class ScrapServiceImpl implements ScrapService {
 	}
 	
 	@Override
-	public List<Map<String, Object>> scrapList(String mid) throws Exception {
-		return scrapDao.selectListScrap(mid);
+	public List<Map<String, Object>> getJobPostingsWithScrapBusinessInfo(String mid) throws Exception {
+		return scrapDao.getJobPostingsWithScrapBusinessInfo(mid);
 	}
 	
 	@Override
-	public String selectOneScrap(ScrapDto scrapDto) throws Exception{
-		return scrapDao.selectOneScrap(scrapDto);
+	public List<ScrapDto> selectListScrap(String mid) throws Exception{
+		return scrapDao.selectListScrap(mid);
 	}
 }

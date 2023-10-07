@@ -58,7 +58,7 @@ public class MyPageController {
 	@GetMapping("/scrap")
     public String scrap(Model model) throws Exception{
 		String mid = (String) model.getAttribute("mid");
-		List<Map<String, Object>> scrapList = scrapService.scrapList(mid);
+		List<Map<String, Object>> scrapList = scrapService.getJobPostingsWithScrapBusinessInfo(mid);
 		model.addAttribute("scrapList", scrapList);
         return "member/scrap";
     }

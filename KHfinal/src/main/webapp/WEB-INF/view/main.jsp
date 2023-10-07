@@ -4,11 +4,10 @@
 
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"
-    ></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+	crossorigin="anonymous"></script>
 <script>
 	$(function() {
 		$(window).scroll(function() {
@@ -30,32 +29,34 @@
 	$(document).ready(function() {
 	    $("[data-jid]").each(function() {
 	        var jid = $(this).data("jid");
-	        var scrapButton = $(this); // 현재 요소에 대한 참조 저장
-	        
-	        $.ajax({
-	            type: "POST", // POST 요청으로 변경
-	            url: "${pageContext.request.contextPath}/index", // 요청을 처리할 컨트롤러 URL
-	            data: { jid: jid }, // 전송할 데이터
-	            success: function(response) {
-	                var isScrapAction = response.isScrapAction;
+	        var scrapButton = $(this);
 
-	                // 스크랩 상태 설정
-	                if (isScrapAction === true) {
-	                    // 스크랩 상태일 때 버튼 스타일 및 텍스트 변경
-	                    scrapButton.addClass('scraped');
-	                    scrapButton.text('스크랩됨');
-	                    scrapButton.removeClass('scrap');
-	                } else {
-	                    // 스크랩 상태가 아닐 때 버튼 스타일 및 텍스트 변경
-	                    scrapButton.removeClass('scraped');
-	                    scrapButton.text('채용정보 스크랩');
-	                    scrapButton.addClass('scrap');
+	        // 서버에서 JSON 데이터 가져오기
+	        var selectListScrapJson = '${selectListScrapJson}';
+	        
+	        if (selectListScrapJson) {
+	            var selectListScrap = JSON.parse(selectListScrapJson);
+
+	            if (Array.isArray(selectListScrap)) {
+	                var selectOneScrap = selectListScrap.find(function(item) {
+	                    return item.jid === jid;
+	                });
+
+	                if (selectOneScrap) {
+	                    var isScrapAction = JSON.parse(selectOneScrap.isScrapAction);
+
+	                    if (isScrapAction) {
+	                        scrapButton.addClass('scraped');
+	                        scrapButton.text('스크랩됨');
+	                        scrapButton.removeClass('scrap');
+	                    } else {
+	                        scrapButton.removeClass('scraped');
+	                        scrapButton.text('채용정보 스크랩');
+	                        scrapButton.addClass('scrap');
+	                    }
 	                }
-	            },
-	            error: function(xhr, status, error) {
-	                console.log("오류");
 	            }
-	        });
+	        }
 	    });
 	});
 	
@@ -180,8 +181,8 @@
 									<input type="hidden" name="workType" value="${item.WORK_TYPE}">
 									<input type="hidden" name="empTypeCode"
 										value="${item.EMP_TYPE_CODE}">
-									<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
-										class="scrap">채용정보 스크랩</button>
+									<button type="button" onclick="setScrap('${item.JID}')"
+										data-jid="${item.JID}" class="scrap">채용정보 스크랩</button>
 								</div>
 							</form>
 						</li>
@@ -434,27 +435,27 @@
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
 							<div class="compName">${item.BIZNAME}</div>
-								<div class="recruitInfo">
-									${item.RE_TITLE}<br> <br>
-								</div>
-								<div id="applyscrap">
-									<c:choose>
-										<c:when test="${item.TODAY == 0}">
-											<div class="applydateWithApply">오늘시작</div>
-										</c:when>
-										<c:when test="${item.DDAY == 0}">
-											<div class="applydateWithApply">오늘마감</div>
-										</c:when>
-										<c:when test="${item.DDAY <= 7}">
-											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item.DDAY}</div>
-										</c:when>
-										<c:otherwise>
-											<div class="applydateWithApply">D-${item.DDAY}</div>
-										</c:otherwise>
-									</c:choose>
-								<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
-										class="scrap">채용정보 스크랩</button>
+							<div class="recruitInfo">
+								${item.RE_TITLE}<br> <br>
+							</div>
+							<div id="applyscrap">
+								<c:choose>
+									<c:when test="${item.TODAY == 0}">
+										<div class="applydateWithApply">오늘시작</div>
+									</c:when>
+									<c:when test="${item.DDAY == 0}">
+										<div class="applydateWithApply">오늘마감</div>
+									</c:when>
+									<c:when test="${item.DDAY <= 7}">
+										<button onclick="" class="applynow">즉시지원</button>
+										<div class="applydateWithApply">D-${item.DDAY}</div>
+									</c:when>
+									<c:otherwise>
+										<div class="applydateWithApply">D-${item.DDAY}</div>
+									</c:otherwise>
+								</c:choose>
+								<button type="button" onclick="setScrap('${item.JID}')"
+									data-jid="${item.JID}" class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
 					</c:forEach>
@@ -517,27 +518,27 @@
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
 							<div class="compName">${item.BIZNAME}</div>
-								<div class="recruitInfo">
-									${item.RE_TITLE}<br> <br>
-								</div>
-								<div id="applyscrap">
-									<c:choose>
-										<c:when test="${item.TODAY == 0}">
-											<div class="applydateWithApply">오늘시작</div>
-										</c:when>
-										<c:when test="${item.DDAY == 0}">
-											<div class="applydateWithApply">오늘마감</div>
-										</c:when>
-										<c:when test="${item.DDAY <= 7}">
-											<button onclick="" class="applynow">즉시지원</button>
-											<div class="applydateWithApply">D-${item.DDAY}</div>
-										</c:when>
-										<c:otherwise>
-											<div class="applydateWithApply">D-${item.DDAY}</div>
-										</c:otherwise>
-									</c:choose>
-								<button type="button" onclick="setScrap('${item.JID}')" data-jid="${item.JID}"
-										class="scrap">채용정보 스크랩</button>
+							<div class="recruitInfo">
+								${item.RE_TITLE}<br> <br>
+							</div>
+							<div id="applyscrap">
+								<c:choose>
+									<c:when test="${item.TODAY == 0}">
+										<div class="applydateWithApply">오늘시작</div>
+									</c:when>
+									<c:when test="${item.DDAY == 0}">
+										<div class="applydateWithApply">오늘마감</div>
+									</c:when>
+									<c:when test="${item.DDAY <= 7}">
+										<button onclick="" class="applynow">즉시지원</button>
+										<div class="applydateWithApply">D-${item.DDAY}</div>
+									</c:when>
+									<c:otherwise>
+										<div class="applydateWithApply">D-${item.DDAY}</div>
+									</c:otherwise>
+								</c:choose>
+								<button type="button" onclick="setScrap('${item.JID}')"
+									data-jid="${item.JID}" class="scrap">채용정보 스크랩</button>
 							</div>
 						</li>
 					</c:forEach>

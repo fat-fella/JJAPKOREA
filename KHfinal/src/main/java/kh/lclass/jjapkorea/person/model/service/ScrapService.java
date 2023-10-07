@@ -8,6 +8,6 @@ import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
 public interface ScrapService {
 	int scrap(ScrapDto scrapDto) throws Exception;
 	int scrapCancel(ScrapDto scrapDto) throws Exception;
-	List<Map<String, Object>> scrapList(String mid) throws Exception;
-	String selectOneScrap(ScrapDto scrapDto) throws Exception;
+	List<Map<String, Object>> getJobPostingsWithScrapBusinessInfo(String mid) throws Exception;
+	List<ScrapDto> selectListScrap(String mid) throws Exception;
 }
