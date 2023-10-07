@@ -1038,25 +1038,14 @@
 					</ul>
 					<!-- my 홈일경우 클래스 myPage -->
 					<ul id="devMyPage" class="userNav">
-						<%-- 사용자가 로그인되어 있지 않은 경우 --%>
-						<c:if test="${empty sessionScope.loginUser}">
+						<sec:authorize access="isAnonymous()">
 							<li class="userNav-item login">
 								<a href="login" class="txt-button login-button">로그인</a>
 							</li>
 							<li class="userNav-item join">
 								<a href="signup/person" class="txt-button join-button">회원가입</a>
 							</li>
-						</c:if>
-	
-						<%-- 사용자가 로그인된 경우 --%>
-						<c:if test="${not empty sessionScope.loginUser}">
-							<li class="userNav-item login">
-								<a href="mypage" class="txt-button login-button">마이페이지</a>
-							</li>
-							<li class="userNav-item join">
-								<a href="logout" class="txt-button join-button">로그아웃</a>
-							</li>
-						</c:if>
+						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_PERSON')">
 							<li class="userNav-item resume">
 								<a href="#" class="txt-button ico-mng"
