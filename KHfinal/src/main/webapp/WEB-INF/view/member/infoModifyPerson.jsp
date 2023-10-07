@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
 <meta charset="UTF-8">
 <title>회원 정보 수정</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

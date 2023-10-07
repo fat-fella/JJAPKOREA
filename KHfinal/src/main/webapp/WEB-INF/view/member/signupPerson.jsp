@@ -11,6 +11,7 @@
 	href="<%=request.getContextPath()%>/resources/member/css/jobkh_psignup.css">
 </head>
 <jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
 <body class="jkJoin" style="">
 	<div id="wrap">
 
