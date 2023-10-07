@@ -1694,6 +1694,27 @@
 		</div>
 	</div>
 	<script>
+		// select 요소를 선택합니다.
+		var selectElement = document.getElementById('Corp_Type');
+	
+		// select 요소의 선택이 변경될 때 스타일을 적용하는 함수
+		function applySelectStyle(event) {
+		    var parentRow = event.target.closest('.row');
+		    if (event.target.value !== '') {
+		        parentRow.querySelector('.col_1').style.cssText = 'top: 9px';
+		        parentRow.querySelector('label').style.cssText = 'font-size: 11px';
+		    } else {
+		        parentRow.querySelector('.col_1').style.cssText = '';
+		        parentRow.querySelector('label').style.cssText = '';
+		    }
+		}
+	
+		// select 요소에 change 이벤트 리스너 등록
+		selectElement.addEventListener('change', applySelectStyle);
+	
+		// 페이지 로드 시 초기 상태에 따라 스타일 적용
+		applySelectStyle({ target: selectElement });
+	
 		// 모든 입력 필드 요소를 선택
 		var inputFields = document.querySelectorAll('.row input');
 	
