@@ -44,6 +44,13 @@ public class BoardServiceImpl implements BoardService {
 	public int delete(int bno) throws Exception {
 		return boardDao.delete(bno);
 	}
+	
+
+	@Override
+	public int boardReadCnt(int bno) throws Exception {
+		return boardDao.boardReadCnt(bno);
+	}
+
 
 	@Override
 	public int count() throws Exception{
@@ -64,6 +71,5 @@ public class BoardServiceImpl implements BoardService {
 	public int totalLikeCancel(int bno) throws Exception {
 		return boardDao.totalLikeCancel(bno);
 	}
-
 
 }

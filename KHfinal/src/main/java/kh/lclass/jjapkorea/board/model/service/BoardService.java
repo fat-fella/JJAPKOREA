@@ -12,7 +12,8 @@ public interface BoardService {
 	public int insert(BoardDto dto)throws Exception;
 	public int update(BoardDto dto)throws Exception;
 	public int delete(int bno)throws Exception;	
-
+	public int boardReadCnt(int bno)throws Exception;
+	
 // 좋아요 갯수 증감
 	public int totalLike(int bno) throws Exception;
 	public int totalLikeCancel(int bno) throws Exception;

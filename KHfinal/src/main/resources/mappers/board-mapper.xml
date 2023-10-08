@@ -3,7 +3,7 @@
 <mapper namespace="board">
 <!-- 전체 게시글 -->
 	<select id="selectList" resultType="boardDto">
-		select * from BOARD ORDER BY ref desc, rstep asc
+		select * from BOARD ORDER BY bno desc
 	</select>
 	
 <!-- 상세 게시글 -->	

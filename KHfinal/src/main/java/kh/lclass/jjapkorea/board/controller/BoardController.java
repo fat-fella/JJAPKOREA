@@ -47,7 +47,7 @@ public class BoardController {
 	
 	@GetMapping("/get")
 	public ModelAndView get(ModelAndView mv, int bno) throws Exception{
-		mv.addObject("bvo", boardService.selectOne(bno));
+		mv.addObject("detail", boardService.selectOne(bno));
 		mv.setViewName("board/get"); // http://localhost:8090/jjap/board/get?bno=3
 		return mv;
 	}
@@ -82,6 +82,12 @@ public class BoardController {
 	    	result = -1;
 	    }
 	    return result;
+	}
+	
+	@GetMapping("/boardReadCnt")
+	@ResponseBody
+	public Integer boardReadCount(int bno) throws Exception{
+		return boardService.boardReadCnt(bno);
 	}
 	
 	@GetMapping("/update")
