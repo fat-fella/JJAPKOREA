@@ -12,18 +12,6 @@
 	href="<%=request.getContextPath()%>/resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jobkh_jpostupload.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/smarteditor/css/smart_editor2_in.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/smarteditor/css/smart_editor2_items.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/smarteditor/css/smart_editor2_out.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/smarteditor/css/smart_editor2.css">
-
-<script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/smarteditor/js/HuskyEZCreator.js"
-	charset="utf-8"></script>
 </head>
 <body>
 	<header>
@@ -110,9 +98,9 @@
 					<label for="maxSalary">최대연봉 <span>*</span></label> <input
 						type="text" id="maxSalary" name="maxSalary" required>
 				</div>
-				<div id="smarteditor">
+				<div id="jobpostingdetails">
 					<h4>상세정보</h4>
-					<textarea name="ir1" id="ir1"placeholder="이미지 파일을 첨부해주세요."></textarea>
+					<textarea name="detailcontent" id="detailcontent"></textarea>
 					
 				</div>
 			</fieldset>
@@ -126,32 +114,23 @@
 			</div>
 		</div>
 	</form>
-	<!-- <script
+	 <script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
 	<script
 		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/translations/ko.js"></script>
-	<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script> -->
+	<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
 
 	<!-- ckeditor 생성 -->
-	<!-- 	<script>
-		ClassicEditor.create(document.querySelector('#content'), {
+ 	<script>
+		ClassicEditor.create(document.querySelector('#detailcontent'), {
 			language:'ko'
 		}).then(editor => {
 		    window.editor = editor;
 		}).catch( error => {
 		    console.error( error );
 		});
-	</script> -->
+	</script> 
 
-	<script type="text/javascript">
-	var oEditors = [];
-	nhn.husky.EZCreator.createInIFrame({
-		oAppRef: oEditors,
-		elPlaceHolder: "ir1",
-		sSkinURI: "<%=request.getContextPath()%>/resources/smarteditor/SmartEditor2Skin.html",
-		fCreator: "createSEditor2"
-	});
-	</script>
 	<!-- 이미지 업로드  -->
 	<!--     <script>
     class UploadAdapter {
