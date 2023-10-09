@@ -1244,7 +1244,7 @@
 													</li>
 													<li>
 														<a
-															href="person/infoModifyPerson"
+															href="infoModifyPerson"
 															onclick="GA_Event('공통_PC', 'gnb', '개인정보 수정');">
 															<span class="tx">개인정보 수정</span>
 														</a>
