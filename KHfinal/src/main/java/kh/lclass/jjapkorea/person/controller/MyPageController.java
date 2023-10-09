@@ -30,38 +30,66 @@ import kh.lclass.jjapkorea.person.model.service.ScrapService;
 public class MyPageController {
 	@Autowired
 	private MemberService memberService;
-	
+
 	@Autowired
 	private ScrapService scrapService;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
+
 	@GetMapping("/myPage")
-	public String myPage() throws Exception{
+	public String myPage(Model model) throws Exception {
+		String mid = (String) model.getAttribute("mid");
+		List<Map<String, Object>> scrapList = scrapService.getJobPostingsWithScrapBusinessInfo(mid);
+		model.addAttribute("scrapList", scrapList);
 		return "member/myPage";
 	}
-	
-	@PostMapping("/myPage")
+
+	@RequestMapping(value = "/myPage", method = RequestMethod.POST, produces = "application/text; charset=UTF-8")
 	@ResponseBody
-    public ResponseEntity<String> myPage(Model model, HttpSession session) {
-		String mid = (String) model.getAttribute("mid");
-		try {
-            memberService.cancelMemberAndPerson(mid);
-            return ResponseEntity.ok("success"); // 성공 시 200 OK 응답 반환
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error"); // 실패 시 500 Internal Server Error 응답 반환
-        }
-    }
-	
+	public ResponseEntity<String> scrap(Model model, @RequestBody ScrapDto scrapDto) throws Exception {
+		if (scrapDto != null && scrapDto.getIsScrapAction() != null) {
+			int scrap;
+			try {
+				boolean isScrapAction = Boolean.parseBoolean(scrapDto.getIsScrapAction());
+				if (isScrapAction) {
+					scrap = scrapService.scrap(scrapDto); // 스크랩 요청 처리
+				} else {
+					scrap = scrapService.scrapCancel(scrapDto); // 스크랩 해제 요청 처리
+				}
+				if (scrap < 1) {
+					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("클라이언트 오류");
+				} else {
+					if (isScrapAction) {
+						return ResponseEntity.ok("스크랩 성공");
+					} else {
+						return ResponseEntity.ok("스크랩 해제 성공");
+					}
+				}
+			} catch (Exception e) {
+				return ResponseEntity.ok("서버 오류");
+			}
+		} else {
+			String mid = (String) model.getAttribute("mid");
+			try {
+				memberService.cancelMemberAndPerson(mid);
+				return ResponseEntity.ok("success"); // 성공 시 200 OK 응답 반환
+			} catch (Exception e) {
+				e.printStackTrace();
+				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error"); // 실패 시 500 Internal
+																								// Server Error 응답 반환
+			}
+		}
+	}
+
 	@GetMapping("/infoModifyPerson")
-	public String infoModifyPerson() throws Exception{
+	public String infoModifyPerson() throws Exception {
 		return "member/infoModifyPerson";
 	}
-	
+
 	@PostMapping("/infoModifyPerson")
-	public String infoModifyPerson(MemberDto memberDto, PersonDto personDto, RedirectAttributes redirectAttr) throws Exception{
+	public String infoModifyPerson(MemberDto memberDto, PersonDto personDto, RedirectAttributes redirectAttr)
+			throws Exception {
 		String viewPage = "redirect:/";
 		try {
 			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
@@ -73,38 +101,5 @@ public class MyPageController {
 			viewPage = "redirect:/person/infoModifyPerson";
 		}
 		return viewPage;
-	}
-	
-	@GetMapping("/scrap")
-    public String scrap(Model model) throws Exception{
-		String mid = (String) model.getAttribute("mid");
-		List<Map<String, Object>> scrapList = scrapService.getJobPostingsWithScrapBusinessInfo(mid);
-		model.addAttribute("scrapList", scrapList);
-        return "member/scrap";
-    }
-	
-	@RequestMapping(value="/scrap", method = RequestMethod.POST, produces = "application/text; charset=UTF-8")
-	@ResponseBody
-	public ResponseEntity<String> scrap(@RequestBody ScrapDto scrapDto) throws Exception {
-	    int scrap;
-	    try {
-	    	boolean isScrapAction = Boolean.parseBoolean(scrapDto.getIsScrapAction());
-	        if (isScrapAction) {
-	            scrap = scrapService.scrap(scrapDto); // 스크랩 요청 처리
-	        } else {
-	            scrap = scrapService.scrapCancel(scrapDto); // 스크랩 해제 요청 처리
-	        }
-	        if (scrap < 1) {
-	            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("클라이언트 오류");
-	        } else {
-	            if (isScrapAction) {
-	                return ResponseEntity.ok("스크랩 성공");
-	            } else {
-	            	return ResponseEntity.ok("스크랩 해제 성공");
-	            }
-	        }
-	    } catch (Exception e) {
-	    	return ResponseEntity.ok("서버 오류");
-	    }
 	}
 }

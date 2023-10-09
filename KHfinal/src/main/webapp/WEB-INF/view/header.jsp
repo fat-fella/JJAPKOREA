@@ -1086,7 +1086,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="person/scrap"
+													<a href="person/myPage"
 														onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
 														<span class="tx">스크랩</span>
 													</a>

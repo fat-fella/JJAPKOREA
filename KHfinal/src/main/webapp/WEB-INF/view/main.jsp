@@ -69,7 +69,7 @@
 	    var isScrapAction = scrapButton.hasClass('scrap'); // 스크랩 버튼이 'scrap' 클래스를 가지고 있는지 여부에 따라 설정
 	    
 	    $.ajax({
-	        url: "${pageContext.request.contextPath}/person/scrap",
+	        url: "${pageContext.request.contextPath}/person/myPage",
 	        type: "post",
 	        contentType: "application/json", // JSON 형식으로 데이터 전송
 	        data: JSON.stringify({

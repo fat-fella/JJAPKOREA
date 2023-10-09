@@ -67,6 +67,30 @@
 				$('.jkNavDimm-hover5').toggleClass("on");
 			}
 		})
+		
+		$(document).ready(function() {
+			$('.userNav-item.my.member').hover(function() {
+				$('.userNav-item.my.member .lyMyArea').css({
+					display : 'block'
+				})
+			}, function() {
+				$('.userNav-item.my.member .lyMyArea').css({
+					display : 'none'
+				})
+			});
+		});
+		
+		$(document).ready(function() {
+			$('.userNav-item.corp').hover(function() {
+				$('.userNav-item.corp .lyMyArea').css({
+					display : 'block'
+				})
+			}, function() {
+				$('.userNav-item.corp .lyMyArea').css({
+					display : 'none'
+				})
+			});
+		});
 	});
 </script>
 </head>
@@ -76,7 +100,7 @@
 			<!-- // headerInner -->
 			<div class="headInner">
 				<h1 class="jkLogo">
-					<a href="index"></a>
+					<a href="../index"></a>
 				</h1>
 				<!-- // search -->
 				<div class="search">
@@ -1213,7 +1237,7 @@
 														</a>
 													</li>
 													<li>
-														<a href="person/scrap"
+														<a href="myPage"
 															onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
 															<span class="tx">스크랩</span>
 														</a>
@@ -1230,7 +1254,7 @@
 											<div class="lyRow">
 												<div class="btnRowWrap">
 													<form action="../logout" method="post">
-														<a href="/Login/Logout.asp" class="btnLogOut"
+														<a href="../logout" class="btnLogOut"
 															onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 													</form>
 												</div>

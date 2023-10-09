@@ -29,7 +29,6 @@
 			</a>
 			<div class="links">
 				<a href="myPage" class="link linkHome">마이페이지</a>
-				<a href="scrap" class="link linkManage">스크랩</a>
 			</div>
 		</div>
 	</header>
