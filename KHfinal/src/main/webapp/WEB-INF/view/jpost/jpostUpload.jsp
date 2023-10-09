@@ -123,7 +123,10 @@
 	<!-- ckeditor 생성 -->
  	<script>
 		ClassicEditor.create(document.querySelector('#detailcontent'), {
-			language:'ko'
+			language:'ko',
+			ckfinder: {
+				uploadUrl : '/image/upload'
+			}
 		}).then(editor => {
 		    window.editor = editor;
 		}).catch( error => {
