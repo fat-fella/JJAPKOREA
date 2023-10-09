@@ -61,10 +61,10 @@
 						공고</a>
 				</li>
 				<li>
-					 <a href="#" onclick="deleteAccount(event); return false;">회원 탈퇴</a>
+					<a href="infoModifyPerson" onclick="GA_Event('마이페이지_PC', '나의소식', '스크랩 공고')">회원 정보 수정</a>
 				</li>
 				<li>
-					<a href="infoModifyPerson" onclick="GA_Event('마이페이지_PC', '나의소식', '스크랩 공고')">회원 정보 수정</a>
+					 <a href="#" onclick="deleteAccount(event); return false;">회원 탈퇴</a>
 				</li>
 			</ul>
 		</div>
