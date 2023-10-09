@@ -1,5 +1,7 @@
 package kh.lclass.jjapkorea.business.model.dto;
 
+import java.sql.Date;
+
 import lombok.Data;
 
 @Data
@@ -19,4 +21,6 @@ public class JobPostingDto {
 	private String empTypeCode;
 	private int today;
 	private int dday;
+	private String jpostdetail;
+	private Date postTime;
 }

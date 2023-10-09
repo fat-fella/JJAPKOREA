@@ -100,7 +100,7 @@
 				</div>
 				<div id="jobpostingdetails">
 					<h4>상세정보</h4>
-					<textarea name="detailcontent" id="detailcontent"></textarea>
+					<textarea name="detaildetail" id="detaildetail"></textarea>
 					
 				</div>
 			</fieldset>
@@ -122,7 +122,7 @@
 
 	<!-- ckeditor 생성 -->
  	<script>
-		ClassicEditor.create(document.querySelector('#detailcontent'), {
+		ClassicEditor.create(document.querySelector('#detaildetail'), {
 			language:'ko',
 			ckfinder: {
 				uploadUrl : '/image/upload'

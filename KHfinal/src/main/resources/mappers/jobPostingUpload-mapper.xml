@@ -17,6 +17,8 @@
 		<result property="empTypeCode" column="EMP_TYPE_CODE" />
 		<result property="today" column="TODAY" />
 		<result property="dday" column="DDAY" />
+		<result property="jpostdetail" column="JPOSTDETAIL" />
+		<result property="postTime" column="POST_TIME" />
 	</resultMap>
 	<resultMap id="jobPostingCategoryDtoResultMap"
 		type="jobPostingCategoryDto">
@@ -33,10 +35,10 @@
 	<insert id="insert" parameterType="jobpostingDto">
 		INSERT INTO INFO (JID, MID, RECRUIT_FIELD, USER_EDUCATION, SALARY,
 		MIN_SALARY, MAX_SALARY, REGIST_DATE, CLOSE_DATE, RE_TITLE, CAREER,
-		WORK_TYPE, TODAY, DDAY) VALUES (#{jid}, #{mid},
+		WORK_TYPE, TODAY, DDAY, JPOSTDETAIL) VALUES (#{jid}, #{mid},
 		#{recruitField}, #{userEducation}, #{salary}, #{minSalary},
 		#{maxSalary}, #{registDate}, #{closeDate}, #{reTitle}, #{career},
-		#{workType}, #{today}, #{dday})
+		#{workType}, #{today}, #{dday}, #{jpostdetail})
 	</insert>
 	<!-- 1차 세부 채용분야 -->
 	<select id="selectFirst"
