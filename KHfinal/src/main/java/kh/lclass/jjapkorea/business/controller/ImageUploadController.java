@@ -42,20 +42,29 @@ public class ImageUploadController {
 	   private String cloud_name;
 	   @Value("${cloudinary.api-key}")
 	   private String api_key;
-	   @Value("${cloudinary.api_secret}")
+	   @Value("${cloudinary.api-secret}")
 	   private String api_secret;
 	   
-	   // cloudinary 사용을 위해 등록(properties 파일 이용)
-      Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap("cloud_name", cloud_name, "api_key", api_key,
-            "api_secret", api_secret, "secure", true));
-	  	
 	
 	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String, String> imageUpload(MultipartFile upload, HttpServletRequest request,
 			HttpServletResponse response) {	
+		
+		System.out.println(cloud_name);
+		System.out.println(api_key);
+		System.out.println(api_secret);
+		
+		// cloudinary 사용을 위해 등록(properties 파일 이용)
+		Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap("cloud_name", cloud_name, "api_key", api_key,
+				"api_secret", api_secret, "secure", true));
+		
+		
 		Map<String, String> result = new HashMap<String, String>();
 		OutputStream out = null;
+		
+		
+		
 		// 파일이 비어있지 않고(비어 있다면 null 반환)
 		MultipartFile file = upload;
 		if (file != null) {
