@@ -62,7 +62,8 @@ public class SignupController {
         // 인증 번호를 생성하고 휴대폰 번호로 전송 로직 구현
         // 전송 성공/실패 여부에 따라 success와 message를 설정하여 응답
         Map<String, Object> response = new HashMap<>();
-        boolean success = sendVerificationCodeLogic(name, phoneNumber);
+        String cleanedPhoneNumber = phoneNumber.replaceAll("-", "");
+        boolean success = sendVerificationCodeLogic(name, cleanedPhoneNumber);
         response.put("success", success);
         if (success) {
             response.put("message", "인증 번호가 전송되었습니다.");
