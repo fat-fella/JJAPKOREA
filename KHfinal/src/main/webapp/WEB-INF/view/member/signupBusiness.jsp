@@ -13,6 +13,8 @@
 	href="<%=request.getContextPath()%>/resources/member/css/jobkh_signup.css">
 <link rel="icon" href="resources/favicon.ico">
 <link rel="SHORTCUT ICON" href="/favicon.ico?202307261400">
+<!-- jQuery 스크립트 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
