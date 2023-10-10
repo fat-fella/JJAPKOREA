@@ -18,7 +18,7 @@ import java.util.Map;
 import java.net.URLEncoder;
 
 public class AligoSMSExample {
-    public static void sendSms(String name, String phoneNumber) throws Exception {
+    public static void sendSms(String name, String phoneNumber, String verificationCode) throws Exception {
         try {
             final String encodingType = "utf-8";
             final String boundary = "____boundary____";
@@ -38,15 +38,15 @@ public class AligoSMSExample {
             /******************** 인증정보 ********************/
 
             /******************** 전송정보 ********************/
-            sms.put("msg", "인증번호 " + "[]를 입력하세요."); // 메세지 내용
+            sms.put("msg", "인증번호 " + "[" + verificationCode + "]를 입력하세요."); // 메세지 내용
 //            sms.put("receiver", "01111111111,01111111112"); // 수신번호
 //            sms.put("destination", "01111111111|담당자,01111111112|홍길동"); // 수신인 %고객명% 치환
             sms.put("receiver", phoneNumber); // 수신번호
             sms.put("destination", phoneNumber + "|" + name); // 수신인 %고객명% 치환
             sms.put("sender", "01055948861"); // 발신번호
-//            sms.put("rdate", "20230912"); // 예약일자 - 20161004 : 2016-10-04일기준
-//            sms.put("rtime", "1300"); // 예약시간 - 1930 : 오후 7시30분
-            sms.put("testmode_yn", "Y"); // Y 인경우 실제문자 전송X , 자동취소(환불) 처리
+            sms.put("rdate", ""); // 예약일자 - 20161004 : 2016-10-04일기준
+            sms.put("rtime", ""); // 예약시간 - 1930 : 오후 7시30분
+            sms.put("testmode_yn", "N"); // Y 인경우 실제문자 전송X , 자동취소(환불) 처리
             sms.put("title", "제목입력"); // LMS, MMS 제목 (미입력시 본문중 44Byte 또는 엔터 구분자 첫라인)
 
             String image = "";

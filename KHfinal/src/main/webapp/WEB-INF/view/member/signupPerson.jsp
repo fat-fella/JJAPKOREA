@@ -9,6 +9,8 @@
 <link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/member/css/jobkh_psignup.css">
+<!-- jQuery 스크립트 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
@@ -71,8 +73,8 @@
 						<input type="hidden" id="mtype" name="mtype" value="ROLE_PERSON">
 						<div class="row mbr_name">
 							<div class="col_1">
-								<label for="M_Name" class="mbr_name">
-									이름(실명)<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="M_Name" class="mbr_name"> 이름(실명)<i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
@@ -83,27 +85,28 @@
 						</div>
 						<div class="row mbr_id">
 							<div class="col_1">
-								<label for="idcheck">
-									아이디(잡코리아, 알바몬 통합 ID)<i class="icon required"
-										aria-hidden="hidde">*</i>
+								<label for="idcheck"> 아이디(잡코리아, 알바몬 통합 ID)<i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
 								<input type="text" id="idcheck" name="mid" maxlength="16"
-									class="dev-id" value="" style="ime-mode: disabled;" pattern="(?=.*[a-z])[a-z\d]+" required>
+									class="dev-id" value="" style="ime-mode: disabled;"
+									pattern="(?=.*[a-z])[a-z\d]+" required>
 								<div class="notice_msg" id="notice_msg_id"></div>
 							</div>
 						</div>
 						<div class="row mbr_passwd">
 							<div class="col_1">
-								<label for="M_Pwd">
-									비밀번호(8~16자의 영문, 숫자, 특수기호)<i class="icon required"
-										aria-hidden="hidde">*</i>
+								<label for="M_Pwd"> 비밀번호(8~16자의 영문, 숫자, 특수기호)<i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
 								<input type="password" id="M_Pwd" name="mpw"
-									class="dev-password" maxlength="16" style="ime-mode: disabled;" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!.]).{8,16}" required>
+									class="dev-password" maxlength="16" style="ime-mode: disabled;"
+									pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!.]).{8,16}"
+									required>
 								<button type="button" class="btnHelp" title="안전한 비밀번호 작성법">?</button>
 								<div class="lyHelp">
 									<dl>
@@ -130,8 +133,8 @@
 						<div class="row mbr_email">
 							<!-- <p class="emailTxt">개인 맞춤 채용정보/정기 뉴스레터/이벤트 메일이 발송됩니다.</p>  -->
 							<div class="col_1">
-								<label for="M_Email" class="mbr_email_id">
-									이메일<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="M_Email" class="mbr_email_id"> 이메일<i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
@@ -144,8 +147,8 @@
 						</div>
 						<div class="row mbr_phone">
 							<div class="col_1">
-								<label for="M_Phone">
-									휴대폰번호<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="M_Phone"> 휴대폰번호<i class="icon required"
+									aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
@@ -188,25 +191,24 @@
 					<div class="row_group line_all policy">
 						<div class="row policy_check_all">
 							<input type="checkbox" id="lb_chk_all" class="mbrCheckOff">
-							<label for="lb_chk_all" class="chk_all">
-								<span class="txt">필수동의 항목 및 개인정보 수집 및 이용 동의(선택), 광고성 정보
-									수신<br>(선택)에 모두 동의합니다.
-								</span>
+							<label for="lb_chk_all" class="chk_all"> <span
+								class="txt">필수동의 항목 및 개인정보 수집 및 이용 동의(선택), 광고성 정보 수신<br>(선택)에
+									모두 동의합니다.
+							</span>
 							</label>
 						</div>
 						<div class="row policy_check_service required">
 							<input type="checkbox" id="lb_chk_age" name="Y15_Older_Agree"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_age" class="chk_age">
-								<strong>[필수]</strong> 만 15세 이상입니다
+							<label for="lb_chk_age" class="chk_age"> <strong>[필수]</strong>
+								만 15세 이상입니다
 							</label>
 						</div>
 						<div class="row policy_check_service required">
 							<input type="checkbox" id="lb_chk_service" name="Service_Agree"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_service" class="chk_service">
-								<strong>[필수]</strong> 이용약관 동의
-								<a href="#DevPolicyService" class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_service" class="chk_service"> <strong>[필수]</strong>
+								이용약관 동의 <a href="#DevPolicyService" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyService" class="policyTplBox">
 								<div class="pvsSec pvsCntTp">
@@ -803,9 +805,8 @@
 						<div class="row policy_check_privacy required">
 							<input type="checkbox" id="lb_chk_privacy" name="Priacy_Agree"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_privacy" class="chk_privacy">
-								<strong>[필수]</strong> 개인정보 수집 및 이용 동의
-								<a href="#DevPolicyPrivacy" class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_privacy" class="chk_privacy"> <strong>[필수]</strong>
+								개인정보 수집 및 이용 동의 <a href="#DevPolicyPrivacy" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyPrivacy" class="policyTplBox">
 								<div class="pvsSec pvsCntTp">
@@ -849,8 +850,8 @@
 							<input type="checkbox" id="lb_chk_privacyOptional"
 								name="PriacyOptional_Agree" class="mbrCheckOn" value="1">
 							<label for="lb_chk_privacyOptional" class="chk_privacyOptional">
-								[선택] 개인정보 수집 및 이용 동의
-								<a href="#DevPolicyPrivacyOptional" class="mbrBtnPolicy">내용보기</a>
+								[선택] 개인정보 수집 및 이용 동의 <a href="#DevPolicyPrivacyOptional"
+									class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyPrivacyOptional" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
@@ -884,9 +885,8 @@
 						<div class="row check_email optional">
 							<input type="checkbox" id="lb_chk_email" name="Event_Agree_Stat"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_email" class="chk_privacy">
-								[선택] 광고성 정보 이메일 수신 동의
-								<a href="#DevPolicyEMail" class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_email" class="chk_privacy"> [선택] 광고성
+								정보 이메일 수신 동의 <a href="#DevPolicyEMail" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyEMail" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
@@ -923,9 +923,8 @@
 						<div class="row check_sms optional">
 							<input type="checkbox" id="lb_chk_sms" name="SMS_Agree_Stat"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_sms" class="chk_privacy">
-								[선택] 광고성 정보 SMS 수신 동의
-								<a href="#DevPolicySMS" class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_sms" class="chk_privacy"> [선택] 광고성 정보
+								SMS 수신 동의 <a href="#DevPolicySMS" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicySMS" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
@@ -1004,24 +1003,11 @@
 							</div>
 						</div>
 					</div>
-					<script type="text/javascript">
-						$(document).on(
-								"click",
-								".button-tooltip-close",
-								function() {
-									$(this).parent(".tooltip-dormant-account")
-											.hide();
-								});
-
-						function tooltipClose() {
-							$(".tooltip-dormant-account").hide();
-						}
-					</script>
 					<!-- 회원 가입 버튼 -->
 					<div class="row_group line_none regist_complete"
 						style="position: relative;">
 						<div class="row">
-							<button type="submit" class="mbrBtnRegist">
+							<button type="submit" class="mbrBtnRegist" id="registButton" disabled>
 								<span>가입하기</span>
 							</button>
 						</div>
@@ -1039,15 +1025,6 @@
 			</div>
 
 		</div>
-		<script type="text/javascript">
-			!(function($) {
-				if (join) {
-					join.common.init();
-					join.account.init();
-					join.account.only_gg();
-				}
-			}(jQuery));
-		</script>
 		<div id="footer">
 			<p id="copyright">
 				<img
@@ -1061,484 +1038,12 @@
 		</div>
 	</div>
 
-
-
-
 	<div
 		style="position: absolute; left: -5000px; overflow: hidden; display: none;">
-
-
-
-
-
-
-		<!-- Google Tag Manager (noscript) -->
-		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WL56D3L"
-				height="0" width="0" style="display: none; visibility: hidden"></iframe>
-		</noscript>
-		<!-- End Google Tag Manager (noscript) -->
-
-		<!-- End Adobe Marketing Cloud Tag Management code -->
 	</div>
 	<div
 		style="position: absolute; left: -5000px; overflow: hidden; display: none;">
-
-
-		<script>
-			/* usage */
-			(function($) {
-				$(window)
-						.load(
-								function() {
-									(function(i, s, o, g, r, a, m) {
-										i['GoogleAnalyticsObject'] = r;
-										i[r] = i[r]
-												|| function() {
-													(i[r].q = i[r].q || [])
-															.push(arguments)
-												}, i[r].l = 1 * new Date();
-										a = s.createElement(o), m = s
-												.getElementsByTagName(o)[0];
-										a.async = 1;
-										a.src = g;
-										m.parentNode.insertBefore(a, m)
-									})
-											(
-													window,
-													document,
-													'script',
-													'https://www.google-analytics.com/analytics.js',
-													'ga');
-
-									ga('create', 'UA-75522609-1',
-											'jobkorea.co.kr', {
-												'allowLinker' : true,
-												'name' : 'trackerOne2'
-											});
-									ga('require', 'linker');
-									ga('linker:autoLink', [ 'jobbusan.co.kr' ]);
-									ga('trackerOne2.send', 'pageview');
-
-								});
-			})(jQuery);
-		</script>
-		<script type="text/javascript">
-		<!--
-			function loadScriptFn(url, callback) {
-				var scriptEle = document.createElement('script');
-				scriptEle.type = 'text/javascript';
-				var loaded = false;
-				scriptEle.onreadystatechange = function() {
-					// 서버에서 읽어올 경우 loaded, 캐쉬에서 가져올 경우 complete 이기에 둘 모두 처리
-					if (this.readyState == 'loaded'
-							|| this.readyState == 'complete') {
-						if (loaded)
-							return;
-						loaded = true;
-						callback();
-					}
-				}
-				scriptEle.onload = function() {
-					callback();
-				};
-				scriptEle.src = url;
-				document.getElementsByTagName('head')[0].appendChild(scriptEle);
-			}
-		//-->
-		</script>
 	</div>
-	<script type="text/javascript">
-		var DS_UID_Value = ''
-		var DSID_Value = ''
-		if (window._dslog) {
-			if (DS_UID_Value != "" && DSID_Value != "") {
-				window._dslog.setDSID(DSID_Value);
-			} else {
-				window._dslog.setUID(DS_UID_Value);
-			}
-			window._dslog.dispatch();
-		} else {
-			var dslog_tag = document.getElementById('dslog_tag');
-			if (dslog_tag != null && dslog_tag != undefined) {
-				dslog_tag.onload = dslog_tag.onreadystatechange = function() {
-					dslog_tag.onload = dslog_tag.onreadystatechange = null;
-					window._dslog.setUIDCookie('');
-					window._dslog.dispatch()
-				}
-			}
-		}
-	</script>
-
-
-	<!-- Facebook Pixel Code -->
-	<script>
-		(function($) {
-			$(window)
-					.load(
-							function() {
-								!function(f, b, e, v, n, t, s) {
-									if (f.fbq)
-										return;
-									n = f.fbq = function() {
-										n.callMethod ? n.callMethod.apply(n,
-												arguments) : n.queue
-												.push(arguments)
-									};
-									if (!f._fbq)
-										f._fbq = n;
-									n.push = n;
-									n.loaded = !0;
-									n.version = '2.0';
-									n.queue = [];
-									t = b.createElement(e);
-									t.async = !0;
-									t.src = v;
-									s = b.getElementsByTagName(e)[0];
-									s.parentNode.insertBefore(t, s)
-								}
-										(window, document, 'script',
-												'https://connect.facebook.net/en_US/fbevents.js');
-								fbq('set', 'autoConfig', 'false',
-										'1166416616740867');
-								fbq('init', '1166416616740867'); // Insert your pixel ID here.
-								fbq('track', 'PageView');
-								fbq('track', 'Search');
-							});
-		})(jQuery);
-	</script>
-	<noscript>
-		<img height="1" width="1" style="display: none"
-			src="https://www.facebook.com/tr?id=1166416616740867&ev=PageView&noscript=1" />
-	</noscript>
-	<!-- DO NOT MODIFY -->
-	<!-- End Facebook Pixel Code -->
-	<!-- 공통 호출 하단 스크립트 : 모든페이지 하단 설치 -->
-	<!-- PlayD TERA Log Script v1.2 -->
-	<script>
-		window.onload = function() {
-			var _nSA = (function(_g, _s, _p, _d, _i, _h) {
-				if (_i.wgc != _g) {
-					_i.wgc = _g;
-					_i.wrd = (new Date().getTime());
-					var _sc = _d.createElement('script');
-					_sc.src = _p + '//sas.nsm-corp.com/' + _s + 'gc=' + _g
-							+ '&rd=' + _i.wrd;
-					var _sm = _d.getElementsByTagName('script')[0];
-					_sm.parentNode.insertBefore(_sc, _sm);
-				}
-				return _i;
-			})('TR10148105490', 'sa-w.js?', location.protocol, document,
-					window._nSA || {}, location.hostname);
-		}
-	</script>
-	<!-- LogAnalytics Script Install -->
-
-
-
-	<script type="text/javascript">
-		"use strict"
-		var kakaoPixelTag = {
-			key : "397545586629917514",
-			url : "//t1.daumcdn.net/adfit/static/kp.js",
-			load : function() {
-				var self = this;
-
-				self.method().lazyload(self.method().loadPixel);
-			},
-			method : function() {
-				var self = this;
-				return {
-					lazyload : function(callback) {
-						var scriptEle = document.createElement('script');
-						scriptEle.type = 'text/javascript';
-						var loaded = false;
-						scriptEle.onreadystatechange = function() {
-							// 서버에서 읽어올 경우 loaded, 캐쉬에서 가져올 경우 complete 이기에 둘 모두 처리
-							if (this.readyState == 'loaded'
-									|| this.readyState == 'complete') {
-								if (loaded)
-									return;
-								loaded = true;
-								if (typeof callback === 'function') {
-									callback();
-								}
-							}
-						}
-						scriptEle.onload = function() {
-							if (typeof callback === 'function') {
-								callback();
-							}
-						};
-						scriptEle.src = self.url;
-						document.getElementsByTagName('head')[0]
-								.appendChild(scriptEle);
-					},
-					loadPixel : function() {
-						self.method().pageView();
-					},
-					check : function() {
-						if (typeof kakaoPixel === 'undefined') {
-							console.log("kakaoPixel is not defined")
-							return false;
-						} else {
-							return true;
-						}
-					},
-					pageView : function() {
-						if (self.method().check()) {
-							self.method().console('pageView');
-							kakaoPixel(self.key).pageView();
-						}
-					},
-					completeRegistration : function() {
-						if (self.method().check()) {
-							self.method().console('completeRegistration');
-							kakaoPixel(self.key).completeRegistration();
-						}
-					},
-					participation : function() {
-						if (self.method().check()) {
-							self.method().console('participation');
-							kakaoPixel(self.key).participation();
-						}
-					},
-					purchase : function() {
-						if (self.method().check()) {
-							self.method().console('purchase');
-							kakaoPixel(self.key).purchase();
-						}
-					},
-					addToWishList : function() {
-						if (self.method().check()) {
-							self.method().console('addToWishList');
-							kakaoPixel(self.key).addToWishList();
-						}
-					},
-					addToCart : function() {
-						if (self.method().check()) {
-							self.method().console('addToCart');
-							kakaoPixel(self.key).addToCart();
-						}
-					},
-					console : function(eventStr) {
-						//console.log('%c KakaoPixel %c load %c ' + eventStr, 'background: #4C5667;font-size: 12px;color: #FFF;padding: 6px;', 'background: #3474E8;font-size: 12px;color: #FFF;padding: 6px;', 'background: #027a00;font-size: 12px;color: #FFF;padding: 6px;');
-					}
-				}
-			}
-		};
-
-		if (window.addEventListener) {
-			window.addEventListener('load', function() {
-				if (kakaoPixelTag !== 'undefined') {
-					kakaoPixelTag.load();
-				}
-			});
-		}
-	</script>
-
-
-
-	<script>
-		var jkcriteoEvt = {
-			el : $(document),
-			Criteo_Event : 'viewPage',
-			CriteoMail : '',
-			gno : '',
-			gnolist : [],
-			isload : false,
-			load : function() {
-				var self = this;
-				if (self.isload) {
-					self.event();
-				} else {
-					self.method().lazyloadScriptFn(
-							'//dynamic.criteo.com/js/ld/ld.js?a=87221',
-							function() {
-								self.isload = true;
-								self.event();
-							});
-				}
-			},
-
-			event : function() {
-				var self = this;
-				//console.log(self.Criteo_Event);
-				if (self.Criteo_Event == "viewHome") {
-					self.method().viewhome();
-				} else if (self.Criteo_Event == "trackTransaction") {
-					self.method().trackTransaction();
-				} else if (self.Criteo_Event == "viewList") {
-					self.method().criteo_viewlist();
-
-				} else if (self.Criteo_Event == "viewPage") {
-					self.method().viewPage();
-				} else if (self.Criteo_Event == "viewItem") {
-					self.method().viewItem();
-				}
-			},
-			method : function() {
-				var self = this;
-
-				return {
-
-					lazyloadScriptFn : function(url, callback) {
-						var scriptEle = document.createElement('script');
-						scriptEle.type = 'text/javascript';
-						var loaded = false;
-						scriptEle.onreadystatechange = function() {
-							// 서버에서 읽어올 경우 loaded, 캐쉬에서 가져올 경우 complete 이기에 둘 모두 처리
-							if (this.readyState == 'loaded'
-									|| this.readyState == 'complete') {
-								if (loaded)
-									return;
-								loaded = true;
-								callback();
-							}
-						}
-						scriptEle.onload = function() {
-							callback();
-						};
-						scriptEle.src = url;
-						document.getElementsByTagName('head')[0]
-								.appendChild(scriptEle);
-					},
-
-					joblistevt : function(className) {
-						if (self.el.find(className).length == 0) {
-							return;
-						}
-						var _len = self.el.find(className).length < 3 ? self.el
-								.find(className).length : 3;
-						self.gnolist = self.el.find(className).slice(0, _len)
-								.map(function() {
-									return $(this).data('gno');
-								}).get();
-						self.method().criteo_viewlist(self.Criteo_Event);
-					},
-
-					criteo_viewlist : function(pagetype) {
-						window.criteo_q = window.criteo_q || [];
-						if (self.gnolist.length > 0) {
-							//console.log("%c criteo %c viewList " + self.gnolist + " gnoCount : " + self.gnolist.length, "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-							window.criteo_q.push({
-								event : "setAccount",
-								account : 87221
-							}, {
-								event : "setSiteType",
-								type : "d"
-							}, {
-								event : "viewList",
-								item : self.gnolist
-							});
-							self.gnolist = [];
-						}
-					},
-
-					viewhome : function() {
-						//console.log("%c criteo %c load Event = viewhome", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-						window.criteo_q = window.criteo_q || [];
-						window.criteo_q.push({
-							event : "setAccount",
-							account : 87221
-						}, {
-							event : "setSiteType",
-							type : "d"
-						}, {
-							event : "viewhome"
-						});
-					},
-
-					trackTransaction : function() {
-
-						if (self.gno != '') {
-							//console.log("%c criteo %c load Event = trackTransaction", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-							window.criteo_q = window.criteo_q || [];
-							window.criteo_q.push({
-								event : "setAccount",
-								account : 87221
-							}, {
-								event : "setSiteType",
-								type : "d"
-							}, {
-								event : "trackTransaction",
-								id : '1690798729',
-								deduplication : 1,
-								item : [ {
-									id : self.gno,
-									price : 1,
-									quantity : 1
-								} ]
-							});
-							self.gno = '';
-						}
-					},
-
-					viewPage : function() {
-						//console.log("%c criteo %c load Event = viewPage", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-						window.criteo_q = window.criteo_q || [];
-						window.criteo_q.push({
-							event : "setAccount",
-							account : 87221
-						}, {
-							event : "setSiteType",
-							type : "d"
-						}, {
-							event : "viewPage"
-						});
-					},
-
-					viewItem : function() {
-						//console.log("%c criteo %c load Event = viewItem", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-						if (self.gno != "") {
-							//console.log("%c criteo %c viewList " + self.gno, "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-							window.criteo_q = window.criteo_q || [];
-							window.criteo_q.push({
-								event : "setAccount",
-								account : 87221
-							}, {
-								event : "setSiteType",
-								type : "d"
-							}, {
-								event : "viewItem",
-								item : self.gno
-							});
-							self.gno = ''
-						}
-					}
-
-				}
-			}
-		}
-		if (window.addEventListener) {
-			window.addEventListener('load', function() {
-				if (typeof jkcriteoEvt !== 'undefined') {
-					jkcriteoEvt.load();
-				}
-			});
-		}
-		var criteo_viewlist = function(criteo_gnos, pagetype) {
-			//console.log("%c criteo %c load Event = viewlist 2", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-			//console.log("criteo_viewlist : " + criteo_gnos + "/" + pagetype);
-			window.criteo_q = window.criteo_q || [];
-			window.criteo_q.push({
-				event : "setAccount",
-				account : 87221
-			}, {
-				event : "setSiteType",
-				type : "d"
-			}, {
-				event : "viewList",
-				item : [ criteo_gnos ]
-			});
-		}
-	</script>
-
-
-
-
-
-
 	<img
 		src="https://vid.vidoomy.com/dspsync?dspid=RTBH&amp;uid=9UZVpZtzT3kSf5hze2vy"
 		width="1" height="1" scrolling="no" frameborder="0"
@@ -1562,7 +1067,7 @@
 		function applyFocusStyle(event) {
 		    var parentRow = event.target.closest('.row');
 		    if (event.target.value === '') {
-		        parentRow.querySelector('.col_1').style.cssText = 'top: 9px';
+		        parentRow.querySelector('.col_1').style.cssText = 'top: 4px';
 		        parentRow.querySelector('label').style.cssText = 'font-size: 11px';
 		    }
 		}
@@ -1585,6 +1090,53 @@
 		    if (inputField.value !== '') {
 		        applyFocusStyle({ target: inputField });
 		    }
+		});
+		
+		document.getElementById("btnSendCert").addEventListener("click", function() {
+			var name = document.getElementById("M_Name").value;
+		    var phoneNumber = document.getElementById("M_Phone").value;
+		    
+		    $.ajax({
+		        type: "POST",
+		        url: "<%=request.getContextPath()%>/signup/sendVerificationCode",
+		        data: { 
+		        		name : name,
+		        		phoneNumber: phoneNumber
+		        		},
+		        success: function(response) {
+		            if (response.success) {
+		                alert("인증 번호가 전송되었습니다.");
+		            } else {
+		                alert("인증 번호 전송에 실패했습니다.");
+		            }
+		        },
+		        error: function() {
+		            alert("인증 번호 전송에 실패했습니다.");
+		        }
+		    });
+		});
+		
+		document.getElementById("btnCheckCert").addEventListener("click", function() {
+		    var verificationCode = document.getElementById("Certify_Num").value;
+		    
+		    $.ajax({
+		        type: "POST",
+		        url: "<%=request.getContextPath()%>/signup/checkVerificationCode",
+		        data: { verificationCode: verificationCode },
+		        success: function(response) {
+		            if (response.success) {
+		                alert("인증 번호가 확인되었습니다.");
+		                document.getElementById("registButton").disabled = false;
+		            } else {
+		                alert("인증 번호가 일치하지 않습니다.");
+		                document.getElementById("registButton").disabled = true;
+		            }
+		        },
+		        error: function() {
+		            alert("인증 번호 확인에 실패했습니다.");
+		            document.getElementById("registButton").disabled = true;
+		        }
+		    });
 		});
 	</script>
 </body>
