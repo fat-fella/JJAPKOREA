@@ -1007,7 +1007,7 @@
 					<div class="row_group line_none regist_complete"
 						style="position: relative;">
 						<div class="row">
-							<button type="submit" class="mbrBtnRegist" id="registButton">
+							<button type="submit" class="mbrBtnRegist" id="registButton" disabled>
 								<span>가입하기</span>
 							</button>
 						</div>
@@ -1137,14 +1137,6 @@
 		            document.getElementById("registButton").disabled = true;
 		        }
 		    });
-		});
-		
-		var registButton = document.getElementById("registButton");
-
-		registButton.addEventListener("click", function(event) {
-			event.preventDefault(); // 폼 제출 방지
-			alert("인증 번호를 확인하세요.");
-			registButton.disabled = true; // 버튼 활성화
 		});
 	</script>
 </body>

@@ -1,8 +1,8 @@
 package kh.lclass.jjapkorea.guest.controller;
 
+import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 import javax.validation.Valid;
 
@@ -90,10 +90,10 @@ public class SignupController {
 	
 	// 랜덤한 4자리 인증 번호 생성 메서드
 	private String generateVerificationCode() throws Exception {
-	    Random random = new Random();
+	    SecureRandom secureRandom = new SecureRandom();
 	    StringBuilder verificationCode = new StringBuilder();
 	    for (int i = 0; i < 4; i++) {
-	        int digit = random.nextInt(10); // 0부터 9까지의 난수 생성
+	        int digit = secureRandom.nextInt(10);
 	        verificationCode.append(digit);
 	    }
 	    return verificationCode.toString();
