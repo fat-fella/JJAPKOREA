@@ -46,84 +46,70 @@ public class ImageUploadController {
 	   private String api_secret;
 	   
 	
-	@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
-	@ResponseBody
-	public Map<String, String> imageUpload(MultipartFile upload, HttpServletRequest request,
-			HttpServletResponse response) {	
-		
-		System.out.println(cloud_name);
-		System.out.println(api_key);
-		System.out.println(api_secret);
-		
-		// cloudinary 사용을 위해 등록(properties 파일 이용)
-		Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap("cloud_name", cloud_name, "api_key", api_key,
-				"api_secret", api_secret, "secure", true));
-		
-		
-		Map<String, String> result = new HashMap<String, String>();
-		OutputStream out = null;
-		
-		
-		
-		// 파일이 비어있지 않고(비어 있다면 null 반환)
-		MultipartFile file = upload;
-		if (file != null) {
-			// 파일 사이즈가 0보다 크고, 파일이름이 공백이 아닐때
-			if (file.getSize() > 0 && StringUtils.isNotBlank(file.getName())) {
-				if (file.getContentType().toLowerCase().startsWith("image/")) {
+	   @RequestMapping(value = "/image/upload", method = RequestMethod.POST)
+	   @ResponseBody
+	   public Map<String, String> imageUpload(MultipartFile upload, HttpServletRequest request) {   
+	      System.out.println(cloud_name);
+	      System.out.println(api_key);
+	      System.out.println(api_secret);
+	      // cloudinary 사용을 위해 등록(properties 파일 이용)
+	      Cloudinary cloudinary = new Cloudinary(ObjectUtils.asMap("cloud_name", cloud_name, "api_key", api_key,
+	            "api_secret", api_secret, "secure", true));
 
-					try {
-						// 파일 이름 설정
-						String fileName = file.getName();
-						// 바이트 타입설정
-						byte[] bytes = null;
-						// 파일을 바이트 타입으로 변경
-						try {
-							bytes = file.getBytes();
-						} catch (java.io.IOException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						// 파일이 실제로 저장되는 경로
-						String uploadPath = request.getServletContext().getRealPath("/resources/ckimage/");
-						// 저장되는 파일에 경로 설정
-						File uploadFile = new File(uploadPath);
-						if (!uploadFile.exists()) {
-							uploadFile.mkdirs();
-						}
-						
-						// 파일이름을 랜덤하게 생성
-						fileName = UUID.randomUUID().toString();
-						// 업로드 경로 + 파일이름을 줘서 데이터를 서버에 전송
-						uploadPath = uploadPath + "/" + fileName;
-						out = new FileOutputStream(new File(uploadPath));
-						out.write(bytes);
-						
-						// 파일이 연결되는 Url 주소 설정
-						String fileUrl = request.getContextPath() + "/resources/ckimage/" + fileName;
-						
-						
-						Map res = cloudinary.uploader().upload(new File(fileUrl), ObjectUtils.emptyMap()); 
-						String cloudinaryUrl = res.get("url") == null ? "" : res.get("url").toString(); 
-						System.out.println("::::"+cloudinaryUrl);
-						
-						System.out.println("파일 경로 : " + cloudinaryUrl);
-						System.out.println("파일 전송이 완료되었습니다.");
-						
-						result.put("uploaded", "1");
-						result.put("fileName", fileName);
-						result.put("url", cloudinaryUrl);
-					} catch (Exception e) {
-						// TODO: handle exception
-					} finally {
+	      Map<String, String> result = new HashMap<String, String>();
+	      OutputStream out = null;
+	      // 파일이 비어있지 않고(비어 있다면 null 반환)
+	      MultipartFile file = upload;
+	      if (file != null) {
+	         // 파일 사이즈가 0보다 크고, 파일이름이 공백이 아닐때
+	         if (file.getSize() > 0 && StringUtils.isNotBlank(file.getName())) {
+//	            if (file.getContentType().toLowerCase().startsWith("image/")) {
 
-					}
+	               try {
+	                  // 파일 이름 설정
+	                  String fileName = file.getOriginalFilename();
+	                  System.out.println("원래file이름: "+ fileName);
+	                  
+	                  // 로컬 - 파일이 로컬 서버에 실제로 저장되는 경로
+	                  String uploadPath = request.getServletContext().getRealPath("/resources/ckimage/");
+	                  // 로컬 -  저장되는 파일에 경로 설정
+	                  File uploadFile = new File(uploadPath);
+	                  if (!uploadFile.exists()) {
+	                     uploadFile.mkdirs();
+	                  }
+	                  // 로컬 -  파일이름을 랜덤하게 생성
+	                  fileName = UUID.randomUUID().toString()+"_"+fileName;
+	                  System.out.println("바뀐file이름: "+ fileName);
+	                  // 업로드 경로 + 파일이름을 줘서 데이터를 서버에 전송
+	                  uploadPath = uploadPath + "/" + fileName;
+	                  
+	                  // 로컬 -  저장되는 파일에 경로 설정
+	                  upload.transferTo(new File(uploadPath)); // 로컬 파일 저장
+	                  
+	                  // 로컬 -  파일이 연결되는 Url 주소 설정
+	                  String fileUrl = uploadPath;
+	                  System.out.println("fileUrl: "+ fileUrl);
+	                  
+	                  // 파일서버 -  파일 저장
+	                  Map res = cloudinary.uploader().upload(new File(uploadPath), ObjectUtils.emptyMap()); 
+	                  String cloudinaryUrl = res.get("url") == null ? "" : res.get("url").toString(); 
+	                  System.out.println("cloudinaryUrl: "+cloudinaryUrl);
+	                  
+	                  System.out.println("파일 전송이 완료되었습니다.");
+	                  
+	                  result.put("uploaded", "1");
+	                  result.put("fileName", fileName);
+	                  result.put("url", cloudinaryUrl);
+	               } catch (Exception e) {
+	                  // TODO: handle exception
+	               } finally {
+	               }
 
 
-				}
+	            }
 
-			}
-		}
-		return result;
-	}
+//	         }
+	      }
+	      return result;
+	   }
 }
