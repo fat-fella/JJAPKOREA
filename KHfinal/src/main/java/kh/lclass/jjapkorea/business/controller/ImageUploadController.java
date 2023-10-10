@@ -70,28 +70,12 @@ public class ImageUploadController {
 	                  String fileName = file.getOriginalFilename();
 	                  System.out.println("원래file이름: "+ fileName);
 	                  
-	                  // 로컬 - 파일이 로컬 서버에 실제로 저장되는 경로
-	                  String uploadPath = request.getServletContext().getRealPath("/resources/ckimage/");
-	                  // 로컬 -  저장되는 파일에 경로 설정
-	                  File uploadFile = new File(uploadPath);
-	                  if (!uploadFile.exists()) {
-	                     uploadFile.mkdirs();
-	                  }
-	                  // 로컬 -  파일이름을 랜덤하게 생성
-	                  fileName = UUID.randomUUID().toString()+"_"+fileName;
-	                  System.out.println("바뀐file이름: "+ fileName);
-	                  // 업로드 경로 + 파일이름을 줘서 데이터를 서버에 전송
-	                  uploadPath = uploadPath + "/" + fileName;
-	                  
-	                  // 로컬 -  저장되는 파일에 경로 설정
-	                  upload.transferTo(new File(uploadPath)); // 로컬 파일 저장
-	                  
-	                  // 로컬 -  파일이 연결되는 Url 주소 설정
-	                  String fileUrl = uploadPath;
-	                  System.out.println("fileUrl: "+ fileUrl);
-	                  
+                 
 	                  // 파일서버 -  파일 저장
-	                  Map res = cloudinary.uploader().upload(new File(uploadPath), ObjectUtils.emptyMap()); 
+//	                  Map res = cloudinary.uploader().upload(new File(uploadPath), ObjectUtils.emptyMap()); 
+	                  File uploadedFile = new File(fileName);
+	                  file.transferTo(uploadedFile);
+	                  Map res = cloudinary.uploader().upload(uploadedFile, ObjectUtils.emptyMap()); 
 	                  String cloudinaryUrl = res.get("url") == null ? "" : res.get("url").toString(); 
 	                  System.out.println("cloudinaryUrl: "+cloudinaryUrl);
 	                  

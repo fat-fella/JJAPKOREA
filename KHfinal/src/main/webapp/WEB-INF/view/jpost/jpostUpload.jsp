@@ -27,7 +27,7 @@
 		</div>
 	</header>
 	<form action="../jobpostingupload/register" method="POST"
-		class="jpostform">
+		id="jpostform">
 		<div class="jposthead">
 			<h2>채용공고 등록</h2>
 			<h6>양식에 맞게 채용공고를 등록해주세요.</h6>
@@ -111,7 +111,7 @@
 					마감일</label> <input type="date" id="closeDate" name="closeDate">
 			</div>
 			<div class="jpostsubmitbtn">
-				<button type="submit">등록</button>
+				<button type="button" class="btn_submit">등록</button>
 			</div>
 		</div>
 	</form>
@@ -121,6 +121,15 @@
 			CKEDITOR.replace('jpostdetail',
 			{filebrowserUploadUrl:'<%=request.getContextPath()%>/image/upload'
 			});
+			
+			
+			   $(".btn_submit").click(function(){
+				      $("#jpostdetail").val(CKEDITOR.instances.jpostdetail.getData());
+				      document.getElementById("jpostform").submit();
+				   });
+			
+			
+			
 		</script>
 
 	<!-- 이미지 업로드  -->
