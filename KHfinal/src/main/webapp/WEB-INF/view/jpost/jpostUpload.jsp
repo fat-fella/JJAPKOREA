@@ -12,6 +12,7 @@
 	href="<%=request.getContextPath()%>/resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jobkh_jpostupload.css">
+<script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
 </head>
 <body>
 	<header>
@@ -20,8 +21,8 @@
 				src="<%=request.getContextPath()%>/resources/images/짭코리아.png"
 				alt="JJAPKOREA" class="logoimg"></a>
 			<div class="links">
-				<a href="#" class="link linkHome">기업회원 홈</a> <a href="#"
-					class="link linkManage">채용공고 관리</a>
+				<a href="<%=request.getContextPath()%>/index" class="link linkHome">기업회원 홈</a>
+				<a href="<%=request.getContextPath()%>/business/jobpostingupload/list" class="link linkManage">채용공고 관리</a>
 			</div>
 		</div>
 	</header>
@@ -100,7 +101,7 @@
 				</div>
 				<div id="jobpostingdetails">
 					<h4>상세정보</h4>
-					<textarea name="detaildetail" id="detaildetail"></textarea>
+					<textarea name="jpostdetail" id="jpostdetail"></textarea>
 					
 				</div>
 			</fieldset>
@@ -114,74 +115,16 @@
 			</div>
 		</div>
 	</form>
-	 <script
-		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/ckeditor.js"></script>
-	<script
-		src="https://cdn.ckeditor.com/ckeditor5/39.0.0/classic/translations/ko.js"></script>
-	<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
 
 	<!-- ckeditor 생성 -->
- 	<script>
-		ClassicEditor.create(document.querySelector('#detaildetail'), {
-			language:'ko',
-			ckfinder: {
-				uploadUrl : '/image/upload'
-			}
-		}).then(editor => {
-		    window.editor = editor;
-		}).catch( error => {
-		    console.error( error );
-		});
-	</script> 
+<script type="text/javascript">	// 글쓰기 editor 및 사진 업로드 기능
+			CKEDITOR.replace('jpostdetail',
+			{filebrowserUploadUrl:'<%=request.getContextPath()%>/image/upload'
+			});
+		</script>
 
 	<!-- 이미지 업로드  -->
-	<!--     <script>
-    class UploadAdapter {
-        constructor(loader) {
-            this.loader =loader;
-        }
-
-        upload() {
-            return this.loader.file.then( file => new Promise(((resolve, reject) => {
-                this._initRequest();
-                this._initListeners( resolve, reject, file );
-                this._sendRequest( file );
-            })))
-        }
-
-        _initRequest() {
-            const xhr = this.xhr = new XMLHttpRequest();
-            xhr.open('POST', 'business/common/fms/ckeditor5Upload.do', true);
-            xhr.responseType = 'json';
-        }
-
-        _initListeners(resolve, reject, file) {
-            const xhr = this.xhr;
-            const loader = this.loader;
-            const genericErrorText = '파일을 업로드 할 수 없습니다.'
-
-            xhr.addEventListener('error', () => {reject(genericErrorText)})
-            xhr.addEventListener('abort', () => reject())
-            xhr.addEventListener('load', () => {
-                const response = xhr.response
-                if(!response || response.error) {
-                    return reject( response && response.error ? response.error.message : genericErrorText );
-                }
-
-                resolve({
-                    default: response.url
-                })
-            })
-        }
-
-        _sendRequest(file) {
-            const data = new FormData()
-            data.append('upload',file)
-            this.xhr.send(data)
-        }
-    }
-    </script>
- -->
+	
 
 
 

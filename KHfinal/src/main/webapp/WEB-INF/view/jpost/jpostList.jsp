@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jobkh_jpostupload.css">
+<link rel="icon"
+	href="<%=request.getContextPath()%>/resources/favicon.ico">
 
 <!DOCTYPE html>
 <html>
@@ -13,25 +15,23 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-	<header class="jobkorea-header">
-		<div class="jobkorea-logo">
-			<a href="#">JJAPKorea</a>
-		</div>
-		<div class="jobkorea-menu">
-			<ul>
-				<li><a href="#">홈</a></li>
-				<li><a href="#">채용정보</a></li>
-				<li><a href="#">기업정보</a></li>
-				<li><a href="#">스카우트</a></li>
-			</ul>
+	<header>
+		<div class="container">
+			<a href="<%=request.getContextPath()%>/index" class="logo linkLogo"> <img
+				src="<%=request.getContextPath()%>/resources/images/짭코리아.png"
+				alt="JJAPKOREA" class="logoimg"></a>
+			<div class="links">
+				<a href="<%=request.getContextPath()%>/index" class="link linkHome">기업회원 홈</a>
+				<a href="#" class="link linkManage">채용공고 관리</a>
+			</div>
 		</div>
 	</header>
-	<div class="container">
+	<div class="list">
 		<div>
 			<ul>
 				<c:forEach var="jpostlist" items="${list}">
-					<li>
-					<a href="<c:url value='/info'><c:param name='reTitle' value='${jpostlist.reTitle}'/></c:url>">${jpostlist.reTitle}</a>
+					<li><a
+						href="<c:url value='/info'><c:param name='reTitle' value='${jpostlist.reTitle}'/></c:url>">${jpostlist.reTitle}</a>
 					</li>
 				</c:forEach>
 			</ul>
