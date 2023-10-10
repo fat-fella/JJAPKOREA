@@ -1701,7 +1701,7 @@
 		function applySelectStyle(event) {
 		    var parentRow = event.target.closest('.row');
 		    if (event.target.value !== '') {
-		        parentRow.querySelector('.col_1').style.cssText = 'top: 9px';
+		        parentRow.querySelector('.col_1').style.cssText = 'top: 4px';
 		        parentRow.querySelector('label').style.cssText = 'font-size: 11px';
 		    } else {
 		        parentRow.querySelector('.col_1').style.cssText = '';
@@ -1722,7 +1722,7 @@
 		function applyFocusStyle(event) {
 		    var parentRow = event.target.closest('.row');
 		    if (event.target.value === '') {
-		        parentRow.querySelector('.col_1').style.cssText = 'top: 9px';
+		        parentRow.querySelector('.col_1').style.cssText = 'top: 4px';
 		        parentRow.querySelector('label').style.cssText = 'font-size: 11px';
 		    }
 		}
