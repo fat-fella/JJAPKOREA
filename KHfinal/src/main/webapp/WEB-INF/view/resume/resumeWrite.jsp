@@ -49,7 +49,7 @@
 		</div>
 		<div class="headerRight">
 			<span id="personalHome"><a href="myPage">개인회원 홈</a></span> <span
-				id="resumeMgr"><a href="resume">이력서 관리</a></span>
+				id="resumeMgr"><a href="<%=request.getContextPath() %>/person/resume">이력서 관리</a></span>
 		</div>
 	</header>
 
