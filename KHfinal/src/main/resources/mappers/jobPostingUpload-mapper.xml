@@ -62,12 +62,11 @@
 
 
 
-	<select id="selectList" resultMap="jobpostingDtoResultMap">
-		SELECT * FROM INFO WHERE MID
-		=#{mid}
+	<select id="selectList" resultMap="jobpostingDtoResultMap" resultType="string">
+		SELECT RE_TITLE FROM INFO WHERE MID = #{mid}
 
 	</select>
 	<select id="getJobPostingWithInfo" resultType="java.util.Map">
-	    select b.*, i.* from info i join business b on i.mid = b.mid order by i.post_date desc
+	    select b.*, i.* from info i join business b on i.mid = b.mid where i.jid = #{jid} order by i.post_date desc
 	</select>
 </mapper>
