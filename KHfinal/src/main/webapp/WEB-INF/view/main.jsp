@@ -148,7 +148,7 @@ function getinfo(jid) {
 				<ul class="grid-container">
 					<c:forEach items="${list1}" var="item">
 						<li>
-							<form id="scrapForm" onclick="getinfo('${item.JID}')">
+							<form id="scrapForm">
 								<div>
 									<%
 									// 이미지 파일들의 경로 배열
@@ -167,7 +167,7 @@ function getinfo(jid) {
 									%>
 									<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 								</div>
-								<div class="compName">${item.BIZNAME}</div>
+								<div class="compName" onclick="getinfo('${item.JID}')">${item.BIZNAME}</div>
 								<div class="recruitInfo" data-jid="${item.JID}" onclick="getinfo('${item.JID}')">
 									${item.RE_TITLE}<br> <br>
 								</div>
