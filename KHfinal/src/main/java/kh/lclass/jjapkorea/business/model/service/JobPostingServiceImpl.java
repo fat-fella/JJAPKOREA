@@ -33,4 +33,7 @@ public class JobPostingServiceImpl implements JobPostingService {
     public List<Map<String, Object>> getJobPostingsWithBusinessInfo() throws Exception {
         return jobPostingDao.getJobPostingsWithBusinessInfo();
     }
+
+	
+	
 }

@@ -67,5 +67,7 @@
 		=#{mid}
 
 	</select>
-
+	<select id="getJobPostingWithInfo" resultType="java.util.Map">
+	    select b.*, i.* from info i join business b on i.mid = b.mid order by i.post_date desc
+	</select>
 </mapper>

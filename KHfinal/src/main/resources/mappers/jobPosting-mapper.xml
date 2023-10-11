@@ -17,6 +17,8 @@
 		<result property="empTypeCode" column="emp_type_code"/>
 		<result property="today" column="today"/>
 		<result property="dday" column="dday"/>
+		<result property="jpostdetail" column="JPOSTDETAIL" />
+		<result property="postTime" column="POST_TIME" />
 	</resultMap>
 	
 	<insert id="insertJobPosting" parameterType="jobPostingDto"> 
@@ -26,4 +28,5 @@
 	<select id="getJobPostingsWithBusinessInfo" resultType="java.util.Map">
 	    select b.bizname, b.brno, i.* from info i join business b on i.mid = b.mid order by i.post_date desc
 	</select>
+
 </mapper>

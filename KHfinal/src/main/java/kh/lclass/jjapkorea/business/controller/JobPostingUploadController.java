@@ -3,6 +3,7 @@ package kh.lclass.jjapkorea.business.controller;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,7 @@ public class JobPostingUploadController {
 
 	@Autowired
 	private JobPostingUploadService jobPostingUploadService;
+	private JobPostingService jobPostingService;
 
 	@GetMapping("/jobpostingupload/register")
 	public ModelAndView jobUpload(ModelAndView mv, Model model, String firstRecruitField) throws Exception {
@@ -90,6 +92,15 @@ public class JobPostingUploadController {
 	}
 	
 	
+//	@GetMapping("/jobpostingupload/info")
+//	public ModelAndView jobPostingUploadInfo(ModelAndView mv, Model model, String jid) throws Exception {
+//		jid= (String) model.getAttribute("jid");
+//		List<Map<String, Object>> jobPostingData = jobPostingUploadService.getJobPostingWithInfo(jid);
+//		mv.addObject(jobPostingData);
+//		mv.setViewName("jpost/jpostInfo");
+//		return mv;
+//	}
+//	
 	
 	
 	@GetMapping("/jobpostingupload/info")
@@ -100,7 +111,9 @@ public class JobPostingUploadController {
 
 	
 	@GetMapping("/jobpostingupload/list")
-	public ModelAndView jobPostingUploadList(ModelAndView mv, String mid) {
+	public ModelAndView jobPostingUploadList(ModelAndView mv, Model model, String mid) {
+		mid= (String) model.getAttribute("mid");
+
 		try {
 			mv.addObject("jpostlist", jobPostingUploadService.selectList(mid));
 			mv.setViewName("jpost/jpostList");

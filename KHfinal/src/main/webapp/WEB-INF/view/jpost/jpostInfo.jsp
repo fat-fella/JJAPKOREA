@@ -20,10 +20,8 @@
         </div>
         <div class="jobkorea-menu">
             <ul>
-                <li><a href="#">홈</a></li>
-                <li><a href="#">채용정보</a></li>
-                <li><a href="#">기업정보</a></li>
-                <li><a href="#">스카우트</a></li>
+                <li><a href="<%=request.getContextPath()%>/index">홈</a></li>
+                <li><a href="<%=request.getContextPath()%>/business/jobpostingupload/list">채용정보</a></li>
             </ul>
         </div>
     </header>

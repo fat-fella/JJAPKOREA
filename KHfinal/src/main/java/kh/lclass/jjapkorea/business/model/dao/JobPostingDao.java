@@ -21,4 +21,5 @@ public class JobPostingDao {
 	public List<Map<String, Object>> getJobPostingsWithBusinessInfo() throws Exception {
         return sqlSession.selectList("jobPosting.getJobPostingsWithBusinessInfo");
     }
+
 }

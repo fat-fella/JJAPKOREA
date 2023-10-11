@@ -1,6 +1,7 @@
 package kh.lclass.jjapkorea.business.model.dao;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.apache.ibatis.session.SqlSession;
@@ -35,4 +36,8 @@ public class JobPostingUploadDao {
 	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception{
 		return sqlSession.selectList("jobpostingUpload.selectThird", selectedOption);
 	}
+	public List<Map<String, Object>> getJobPostingWithInfo(String jid) throws Exception {
+        return sqlSession.selectList("jobPosting.getJobPostingWithInfo", jid);
+	}
+	
 }

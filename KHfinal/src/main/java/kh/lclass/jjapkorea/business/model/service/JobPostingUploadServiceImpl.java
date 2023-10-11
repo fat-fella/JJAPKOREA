@@ -1,6 +1,7 @@
 package kh.lclass.jjapkorea.business.model.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,5 +37,8 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 	}
 	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception{
 		return jobpostinguploadDao.selectThird(selectedOption);
+	}
+	public List<Map<String, Object>> getJobPostingWithInfo(String jid) throws Exception {
+		return jobpostinguploadDao.getJobPostingWithInfo(jid);
 	}
 }
