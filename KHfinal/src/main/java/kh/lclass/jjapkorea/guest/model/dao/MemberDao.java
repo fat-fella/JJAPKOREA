@@ -73,4 +73,8 @@ public class MemberDao {
 	public int cancelBusiness(String mid) throws Exception {
 		return sqlSession.delete("business.cancelBusiness", mid);
 	}
+	
+	public PersonDto findAccountByIdAndPhone(PersonDto personDto) throws Exception {
+		return sqlSession.selectOne("person.findAccountByIdAndPhone", personDto);
+	}
 }
