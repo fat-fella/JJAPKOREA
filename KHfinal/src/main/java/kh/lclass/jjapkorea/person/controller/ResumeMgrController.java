@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ResumeMgrController {
 
-	@GetMapping("resume")
+	@GetMapping("/person/resume")
 	public String resumeMgr() {
 
 		return "/resume/resumeMgr";
