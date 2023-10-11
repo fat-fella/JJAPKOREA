@@ -11,11 +11,15 @@
 <script>
 
 function getinfo(jid) {
+	
     $.ajax({
         type: 'GET',
         url: '${pageContext.request.contextPath}/jobpostinginfo',
-        data: { jid: jid },
-        dataType: 'text',  // 서버에서 문자열 응답을 받기 위해 설정
+        contentType: 'application/json',
+        data: JSON.stringify({
+        	jid: jid 
+        	}),
+        dataType: 'json',  // 서버에서 문자열 응답을 받기 위해 설정
         success: function (response) {
 
             console.log('취업공고 상세 ajax 성공:', response);

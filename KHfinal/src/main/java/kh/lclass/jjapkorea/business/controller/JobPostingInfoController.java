@@ -31,6 +31,7 @@ public class JobPostingInfoController {
 	JobPostingUploadService jobPostingUploadService;
 	
 	@GetMapping("/jobpostinginfo")
+	@ResponseBody
 	public ResponseEntity<String> jobPostingInfo(@RequestParam String jid) throws Exception {
 		JobPostingDto dto = new JobPostingDto();
 		jid= dto.getJid();
