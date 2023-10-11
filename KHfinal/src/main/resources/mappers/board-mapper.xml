@@ -58,9 +58,9 @@
 	</select>
 		
 	<select id="getListPage" resultType="BoardDto">
-    <![CDATA[
+	<![CDATA[
         select * from(
-	        select rownum as rn
+	        select /*+INDEX_DESC(board pk_board) */ rownum as rn
 	        , bno, btitle, bcontent, mid, bwrite_Date, readcnt, ref, rstep, rlevel, likehit
 	        from board where rownum <= #{pageNum} * #{amount}
     ]]> 
@@ -70,6 +70,7 @@
     <![CDATA[
     		)
         where rn > (#{pageNum} -1) * #{amount}
+
 	]]>
 	</select>
 	
