@@ -837,7 +837,7 @@
 					<!-- my 홈일경우 클래스 myPage -->
 					<ul class="userNav" style="">
 						<li class="userNav-item resume"><a
-							href="https://www.jobkorea.co.kr/User/ResumeMng"
+							href="<%=request.getContextPath() %>/person/resume"
 							class="txt-button ico-mng"
 							onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">이력서 관리</a></li>
 						<li class="userNav-item notification devLiNotification"><a
@@ -917,7 +917,7 @@
 									<div class="myInner">
 										<div class="myLists">
 											<ul>
-												<li><a href="https://www.jobkorea.co.kr/User/ResumeMng"
+												<li><a href="<%=request.getContextPath() %>/person/resume"
 													onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');"><span
 														class="tx">이력서 관리</span></a></li>
 												<li><a href="https://www.jobkorea.co.kr/User/ApplyMng"

@@ -29,9 +29,9 @@
 	<div class="list">
 		<div>
 			<ul>
-				<c:forEach var="jpostlist" items="${list}">
+				<c:forEach var="item" items="${jpostList}">
 					<li><a
-						href="<c:url value='/info'><c:param name='reTitle' value='${jpostlist.reTitle}'/></c:url>">${jpostlist.reTitle}</a>
+						href="<c:url value='business/jobpostingupload/info'><c:param name='reTitle' value='${item.reTitle}'/></c:url>">${item.reTitle}</a>
 					</li>
 				</c:forEach>
 			</ul>
