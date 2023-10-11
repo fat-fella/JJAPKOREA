@@ -10,9 +10,10 @@ public class APISnsMember {
 	private String mpw;
 	private String mname;
 	private Integer mpoint;
+	
 	private String apimid;
 	private String apiid;
-
+	
 	private String email;
 	private String id;
 	
@@ -20,7 +21,6 @@ public class APISnsMember {
 	private String naverid;
 	private String kakaoid;
 	private String nickname;
-
 	private String loginip;
 	private Date lastlogin;
 	

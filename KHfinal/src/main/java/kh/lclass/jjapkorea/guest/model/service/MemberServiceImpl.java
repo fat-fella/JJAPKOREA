@@ -44,6 +44,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
+	public int infoModifyMember(MemberDto memberDto) throws Exception {
+		return memberDao.infoModifyMember(memberDto);
+	}
+	
+	@Override
 	public void cancelMemberAndPerson(String mid) throws Exception {
 		memberDao.cancelPerson(mid);
 		memberDao.cancelMember(mid);
@@ -53,6 +58,11 @@ public class MemberServiceImpl implements MemberService {
 	public void cancelMemberAndBusiness(String mid) throws Exception {
 		memberDao.cancelBusiness(mid);
 		memberDao.cancelMember(mid);
+	}
+	
+	@Override
+	public String findAccountByNameAndPhone(PersonDto personDto) throws Exception {
+		return memberDao.findAccountByNameAndPhone(personDto);
 	}
 	
 	@Override

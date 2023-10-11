@@ -17,6 +17,10 @@
 		delete from person where mid = #{mid}
 	</delete>
 	
+	<select id="findAccountByNameAndPhone" resultType="string">
+		select mid from person where pname = #{pname} and pphone = #{pphone}
+	</select>
+	
 	<select id="findAccountByIdAndPhone" resultType="personDto">
 		select * from person where mid = #{mid} and pphone = #{pphone}
 	</select>

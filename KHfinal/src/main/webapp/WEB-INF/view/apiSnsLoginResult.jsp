@@ -9,8 +9,11 @@
 <link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/member/css/jobkh_psignup.css">
+<!-- jQuery 스크립트 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <jsp:include page="/WEB-INF/view/msg/msg.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
 <body class="jkJoin" style="">
 	<div id="wrap">
 
@@ -36,10 +39,9 @@
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person on" ><a href="person" style="width: 640px;">개인회원</a></li>
+				<li class="person on"><a href="person" style="width: 640px;">개인회원</a></li>
 			</ul>
 		</div>
-
 
 		<input type="hidden" id="hdnEduId" value="">
 		<div id="container" class="mbrRegist">
@@ -47,62 +49,64 @@
 			<fieldset>
 				<legend>개인회원 가입</legend>
 				<form action="person" id="frm" method="post" name="frm">
-				
-				<!--	API SNS Login   -->
-				
-					<!-- 소셜 로그인 -->
-					<div class="row_group row_group_social">
-						<h4>소셜로 간편하게 로그인하세요</h4>
-					</div>
+
+
 					<div class="row_group mbr_info">
 						<h4>회원가입하고 다양한 혜택을 누리세요!</h4>
 						<p class="subTx">
 							<strong>*</strong> 필수 입력 정보입니다.
 						</p>
+						
 						<input type="hidden" id="mtype" name="mtype" value="ROLE_PERSON">
 						<div class="row mbr_name">
+						
 							<div class="col_1">
-								<label for="M_Name" class="mbr_name">
-									이름(실명)<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="M_Name" class="mbr_name" > 이름(실명)<i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							
-
+							
+							
+							
+						<!-- 아이디 노출 되지 않음 -->
+			 				<div style="display: none;">
 							<div class="col_2">
-								<input type="text" id="M_Name" name="pname"
-									class="mbr_name devReadOnly dev-name" maxlength="12">
+								<input type="text" id="M_Name" name="pname" value="${snsprofile.mid}"
+									class="mbr_name devReadOnly dev-name" maxlength="12" required>
 								<div class="notice_msg" id="notice_msg_name"></div>
 							</div>
-							
-							
- 						<!-- 비밀번호란 노출 되지 않음 -->
-						<div style="display: none;">
+						
+ 				
 						<div class="row mbr_id">
 							<div class="col_1">
-								<label for="idcheck">
-									ID<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="idcheck"> 아이디(잡코리아, 알바몬 통합 ID)<i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							</div>
-							
-							<div class="col_2" >
+							</div>
+						
+						
+						<!-- 비밀번호 -->
+							<div class="col_2">
 								<input type="text" id="idcheck" name="mid" maxlength="16"
-									class="dev-id" value="${snsprofile.email}"
-									style="ime-mode: disabled;">
+									class="dev-id" value="" style="ime-mode: disabled;"
+									pattern="(?=.*[a-z])[a-z\d]+" required>
 								<div class="notice_msg" id="notice_msg_id"></div>
 							</div>
-							<div class="row mbr_passwd">
-								<div class="col_1">
-									<label for="M_Pwd"> 비밀번호(8~16자의 영문, 숫자, 특수기호)<i
-										class="icon required" aria-hidden="hidden">*</i>
-									</label>
-								</div>
+						</div>
+						<div class="row mbr_passwd">
+							<div class="col_1">
+								<label for="M_Pwd"> 비밀번호(8~16자의 영문, 숫자, 특수기호)<i
+									class="icon required" aria-hidden="hidde">*</i>
+								</label>
 							</div>
-					
-					
 							<div class="col_2">
 								<input type="password" id="M_Pwd" name="mpw"
-									class="dev-password" value="${snsprofile.id} maxlength="16" style="ime-mode: disabled;">
+									class="dev-password" maxlength="16" style="ime-mode: disabled;"
+									pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!.]).{8,16}"
+									required>
 								<button type="button" class="btnHelp" title="안전한 비밀번호 작성법">?</button>
 								<div class="lyHelp">
 									<dl>
@@ -119,36 +123,45 @@
 									</dl>
 								</div>
 								<div class="notice_msg" id="notice_msg_pwd"></div>
-								</div>
+							</div>
+							<div class="col_3">
+								<button type="button" class="mbrBtnAuth dev-password-dp">
+									<span>표시</span>
+								</button>
 							</div>
 						</div>
-						<!-- SNS 이메일 노출 되지 않음 -->
-						<div style="display: none;">
+						
+						
+						<!-- 이메일 노출 되지 않음 -->
+			 				<div style="display: none;">
 						<div class="row mbr_email">
 							<!-- <p class="emailTxt">개인 맞춤 채용정보/정기 뉴스레터/이벤트 메일이 발송됩니다.</p>  -->
 							<div class="col_1">
-								<label for="M_Email" class="mbr_email_id">
-									이메일<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="M_Email" class="mbr_email_id"> 이메일<i
+									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Email" name="pemail"
-									class="mbr_email_id dev-mail" value="${snsprofile.email}" size="8" maxlength="30">
+									class="mbr_email_id dev-mail" value="${snsprofile.email}" size="8" maxlength="30" required>
 								<div class="notice_msg" id="notice_msg_mail"></div>
 								<input type="hidden" id="Email_ID" name="Email_ID">
 								<input type="hidden" id="Email_Addr" name="Email_Addr">
 							</div>
 						</div>
 						</div>
+						
+						
+						
 						<div class="row mbr_phone">
 							<div class="col_1">
-								<!-- <label for="M_Phone">
-									휴대폰번호<i class="icon required" aria-hidden="hidde">*</i>
+								<label for="M_Phone"> 휴대폰번호<i class="icon required"
+									aria-hidden="hidde">*</i>
 								</label>
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Phone" name="pphone" size="4"
-									maxlength="13" class="dev-phone">
+									maxlength="13" class="dev-phone" required>
 								<button type="button" class="button buttonSendCertification"
 									id="btnSendCert">
 									<span>인증번호 전송</span>
@@ -176,36 +189,34 @@
 									<button type="button" class="btnSend" id="btnReSendCert">
 										<span>재전송</span>
 									</button>
-								</div> -->
+								</div>
 
 								<div class="notice_msg" id="notice_msg_certify"></div>
 							</div>
-
 						</div>
 					</div>
 					<h4 class="skip">약관 동의</h4>
 					<div class="row_group line_all policy">
 						<div class="row policy_check_all">
 							<input type="checkbox" id="lb_chk_all" class="mbrCheckOff">
-							<label for="lb_chk_all" class="chk_all">
-								<span class="txt">필수동의 항목 및 개인정보 수집 및 이용 동의(선택), 광고성 정보
-									수신<br>(선택)에 모두 동의합니다.
-								</span>
+							<label for="lb_chk_all" class="chk_all"> <span
+								class="txt">필수동의 항목 및 개인정보 수집 및 이용 동의(선택), 광고성 정보 수신<br>(선택)에
+									모두 동의합니다.
+							</span>
 							</label>
 						</div>
 						<div class="row policy_check_service required">
 							<input type="checkbox" id="lb_chk_age" name="Y15_Older_Agree"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_age" class="chk_age">
-								<strong>[필수]</strong> 만 15세 이상입니다
+							<label for="lb_chk_age" class="chk_age"> <strong>[필수]</strong>
+								만 15세 이상입니다
 							</label>
 						</div>
 						<div class="row policy_check_service required">
 							<input type="checkbox" id="lb_chk_service" name="Service_Agree"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_service" class="chk_service">
-								<strong>[필수]</strong> 이용약관 동의
-								<a href="#DevPolicyService" class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_service" class="chk_service"> <strong>[필수]</strong>
+								이용약관 동의 <a href="#DevPolicyService" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyService" class="policyTplBox">
 								<div class="pvsSec pvsCntTp">
@@ -802,9 +813,8 @@
 						<div class="row policy_check_privacy required">
 							<input type="checkbox" id="lb_chk_privacy" name="Priacy_Agree"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_privacy" class="chk_privacy">
-								<strong>[필수]</strong> 개인정보 수집 및 이용 동의
-								<a href="#DevPolicyPrivacy" class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_privacy" class="chk_privacy"> <strong>[필수]</strong>
+								개인정보 수집 및 이용 동의 <a href="#DevPolicyPrivacy" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyPrivacy" class="policyTplBox">
 								<div class="pvsSec pvsCntTp">
@@ -848,8 +858,8 @@
 							<input type="checkbox" id="lb_chk_privacyOptional"
 								name="PriacyOptional_Agree" class="mbrCheckOn" value="1">
 							<label for="lb_chk_privacyOptional" class="chk_privacyOptional">
-								[선택] 개인정보 수집 및 이용 동의
-								<a href="#DevPolicyPrivacyOptional" class="mbrBtnPolicy">내용보기</a>
+								[선택] 개인정보 수집 및 이용 동의 <a href="#DevPolicyPrivacyOptional"
+									class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyPrivacyOptional" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
@@ -883,9 +893,8 @@
 						<div class="row check_email optional">
 							<input type="checkbox" id="lb_chk_email" name="Event_Agree_Stat"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_email" class="chk_privacy">
-								[선택] 광고성 정보 이메일 수신 동의
-								<a href="#DevPolicyEMail" class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_email" class="chk_privacy"> [선택] 광고성
+								정보 이메일 수신 동의 <a href="#DevPolicyEMail" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicyEMail" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
@@ -922,9 +931,8 @@
 						<div class="row check_sms optional">
 							<input type="checkbox" id="lb_chk_sms" name="SMS_Agree_Stat"
 								class="mbrCheckOn" value="1">
-							<label for="lb_chk_sms" class="chk_privacy">
-								[선택] 광고성 정보 SMS 수신 동의
-								<a href="#DevPolicySMS" class="mbrBtnPolicy">내용보기</a>
+							<label for="lb_chk_sms" class="chk_privacy"> [선택] 광고성 정보
+								SMS 수신 동의 <a href="#DevPolicySMS" class="mbrBtnPolicy">내용보기</a>
 							</label>
 							<div id="DevPolicySMS" class="policyTplBox">
 								<div class="pvsSec pvsTpList">
@@ -1003,32 +1011,17 @@
 							</div>
 						</div>
 					</div>
-					<script type="text/javascript">
-						$(document).on(
-								"click",
-								".button-tooltip-close",
-								function() {
-									$(this).parent(".tooltip-dormant-account")
-											.hide();
-								});
-
-						function tooltipClose() {
-							$(".tooltip-dormant-account").hide();
-						}
-					</script>
-					
 					<!-- 회원 가입 버튼 -->
 					<div class="row_group line_none regist_complete"
 						style="position: relative;">
 						<div class="row">
-							<button type="submit" class="mbrBtnRegist">
+							<button type="submit" class="mbrBtnRegist" id="registButton" disabled>
 								<span>가입하기</span>
 							</button>
 						</div>
 					</div>
 				</form>
 			</fieldset>
-			
 			<!-- familysite -->
 			<div class="familysite">
 				<h3 class="skip">Family site</h3>
@@ -1040,15 +1033,6 @@
 			</div>
 
 		</div>
-		<script type="text/javascript">
-			!(function($) {
-				if (join) {
-					join.common.init();
-					join.account.init();
-					join.account.only_gg();
-				}
-			}(jQuery));
-		</script>
 		<div id="footer">
 			<p id="copyright">
 				<img
@@ -1062,484 +1046,12 @@
 		</div>
 	</div>
 
-
-
-
 	<div
 		style="position: absolute; left: -5000px; overflow: hidden; display: none;">
-
-
-
-
-
-
-		<!-- Google Tag Manager (noscript) -->
-		<noscript>
-			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WL56D3L"
-				height="0" width="0" style="display: none; visibility: hidden"></iframe>
-		</noscript>
-		<!-- End Google Tag Manager (noscript) -->
-
-		<!-- End Adobe Marketing Cloud Tag Management code -->
 	</div>
 	<div
 		style="position: absolute; left: -5000px; overflow: hidden; display: none;">
-
-
-		<script>
-			/* usage */
-			(function($) {
-				$(window)
-						.load(
-								function() {
-									(function(i, s, o, g, r, a, m) {
-										i['GoogleAnalyticsObject'] = r;
-										i[r] = i[r]
-												|| function() {
-													(i[r].q = i[r].q || [])
-															.push(arguments)
-												}, i[r].l = 1 * new Date();
-										a = s.createElement(o), m = s
-												.getElementsByTagName(o)[0];
-										a.async = 1;
-										a.src = g;
-										m.parentNode.insertBefore(a, m)
-									})
-											(
-													window,
-													document,
-													'script',
-													'https://www.google-analytics.com/analytics.js',
-													'ga');
-
-									ga('create', 'UA-75522609-1',
-											'jobkorea.co.kr', {
-												'allowLinker' : true,
-												'name' : 'trackerOne2'
-											});
-									ga('require', 'linker');
-									ga('linker:autoLink', [ 'jobbusan.co.kr' ]);
-									ga('trackerOne2.send', 'pageview');
-
-								});
-			})(jQuery);
-		</script>
-		<script type="text/javascript">
-		<!--
-			function loadScriptFn(url, callback) {
-				var scriptEle = document.createElement('script');
-				scriptEle.type = 'text/javascript';
-				var loaded = false;
-				scriptEle.onreadystatechange = function() {
-					// 서버에서 읽어올 경우 loaded, 캐쉬에서 가져올 경우 complete 이기에 둘 모두 처리
-					if (this.readyState == 'loaded'
-							|| this.readyState == 'complete') {
-						if (loaded)
-							return;
-						loaded = true;
-						callback();
-					}
-				}
-				scriptEle.onload = function() {
-					callback();
-				};
-				scriptEle.src = url;
-				document.getElementsByTagName('head')[0].appendChild(scriptEle);
-			}
-		//-->
-		</script>
 	</div>
-	<script type="text/javascript">
-		var DS_UID_Value = ''
-		var DSID_Value = ''
-		if (window._dslog) {
-			if (DS_UID_Value != "" && DSID_Value != "") {
-				window._dslog.setDSID(DSID_Value);
-			} else {
-				window._dslog.setUID(DS_UID_Value);
-			}
-			window._dslog.dispatch();
-		} else {
-			var dslog_tag = document.getElementById('dslog_tag');
-			if (dslog_tag != null && dslog_tag != undefined) {
-				dslog_tag.onload = dslog_tag.onreadystatechange = function() {
-					dslog_tag.onload = dslog_tag.onreadystatechange = null;
-					window._dslog.setUIDCookie('');
-					window._dslog.dispatch()
-				}
-			}
-		}
-	</script>
-
-
-	<!-- Facebook Pixel Code -->
-	<script>
-		(function($) {
-			$(window)
-					.load(
-							function() {
-								!function(f, b, e, v, n, t, s) {
-									if (f.fbq)
-										return;
-									n = f.fbq = function() {
-										n.callMethod ? n.callMethod.apply(n,
-												arguments) : n.queue
-												.push(arguments)
-									};
-									if (!f._fbq)
-										f._fbq = n;
-									n.push = n;
-									n.loaded = !0;
-									n.version = '2.0';
-									n.queue = [];
-									t = b.createElement(e);
-									t.async = !0;
-									t.src = v;
-									s = b.getElementsByTagName(e)[0];
-									s.parentNode.insertBefore(t, s)
-								}
-										(window, document, 'script',
-												'https://connect.facebook.net/en_US/fbevents.js');
-								fbq('set', 'autoConfig', 'false',
-										'1166416616740867');
-								fbq('init', '1166416616740867'); // Insert your pixel ID here.
-								fbq('track', 'PageView');
-								fbq('track', 'Search');
-							});
-		})(jQuery);
-	</script>
-	<noscript>
-		<img height="1" width="1" style="display: none"
-			src="https://www.facebook.com/tr?id=1166416616740867&ev=PageView&noscript=1" />
-	</noscript>
-	<!-- DO NOT MODIFY -->
-	<!-- End Facebook Pixel Code -->
-	<!-- 공통 호출 하단 스크립트 : 모든페이지 하단 설치 -->
-	<!-- PlayD TERA Log Script v1.2 -->
-	<script>
-		window.onload = function() {
-			var _nSA = (function(_g, _s, _p, _d, _i, _h) {
-				if (_i.wgc != _g) {
-					_i.wgc = _g;
-					_i.wrd = (new Date().getTime());
-					var _sc = _d.createElement('script');
-					_sc.src = _p + '//sas.nsm-corp.com/' + _s + 'gc=' + _g
-							+ '&rd=' + _i.wrd;
-					var _sm = _d.getElementsByTagName('script')[0];
-					_sm.parentNode.insertBefore(_sc, _sm);
-				}
-				return _i;
-			})('TR10148105490', 'sa-w.js?', location.protocol, document,
-					window._nSA || {}, location.hostname);
-		}
-	</script>
-	<!-- LogAnalytics Script Install -->
-
-
-
-	<script type="text/javascript">
-		"use strict"
-		var kakaoPixelTag = {
-			key : "397545586629917514",
-			url : "//t1.daumcdn.net/adfit/static/kp.js",
-			load : function() {
-				var self = this;
-
-				self.method().lazyload(self.method().loadPixel);
-			},
-			method : function() {
-				var self = this;
-				return {
-					lazyload : function(callback) {
-						var scriptEle = document.createElement('script');
-						scriptEle.type = 'text/javascript';
-						var loaded = false;
-						scriptEle.onreadystatechange = function() {
-							// 서버에서 읽어올 경우 loaded, 캐쉬에서 가져올 경우 complete 이기에 둘 모두 처리
-							if (this.readyState == 'loaded'
-									|| this.readyState == 'complete') {
-								if (loaded)
-									return;
-								loaded = true;
-								if (typeof callback === 'function') {
-									callback();
-								}
-							}
-						}
-						scriptEle.onload = function() {
-							if (typeof callback === 'function') {
-								callback();
-							}
-						};
-						scriptEle.src = self.url;
-						document.getElementsByTagName('head')[0]
-								.appendChild(scriptEle);
-					},
-					loadPixel : function() {
-						self.method().pageView();
-					},
-					check : function() {
-						if (typeof kakaoPixel === 'undefined') {
-							console.log("kakaoPixel is not defined")
-							return false;
-						} else {
-							return true;
-						}
-					},
-					pageView : function() {
-						if (self.method().check()) {
-							self.method().console('pageView');
-							kakaoPixel(self.key).pageView();
-						}
-					},
-					completeRegistration : function() {
-						if (self.method().check()) {
-							self.method().console('completeRegistration');
-							kakaoPixel(self.key).completeRegistration();
-						}
-					},
-					participation : function() {
-						if (self.method().check()) {
-							self.method().console('participation');
-							kakaoPixel(self.key).participation();
-						}
-					},
-					purchase : function() {
-						if (self.method().check()) {
-							self.method().console('purchase');
-							kakaoPixel(self.key).purchase();
-						}
-					},
-					addToWishList : function() {
-						if (self.method().check()) {
-							self.method().console('addToWishList');
-							kakaoPixel(self.key).addToWishList();
-						}
-					},
-					addToCart : function() {
-						if (self.method().check()) {
-							self.method().console('addToCart');
-							kakaoPixel(self.key).addToCart();
-						}
-					},
-					console : function(eventStr) {
-						//console.log('%c KakaoPixel %c load %c ' + eventStr, 'background: #4C5667;font-size: 12px;color: #FFF;padding: 6px;', 'background: #3474E8;font-size: 12px;color: #FFF;padding: 6px;', 'background: #027a00;font-size: 12px;color: #FFF;padding: 6px;');
-					}
-				}
-			}
-		};
-
-		if (window.addEventListener) {
-			window.addEventListener('load', function() {
-				if (kakaoPixelTag !== 'undefined') {
-					kakaoPixelTag.load();
-				}
-			});
-		}
-	</script>
-
-
-
-	<script>
-		var jkcriteoEvt = {
-			el : $(document),
-			Criteo_Event : 'viewPage',
-			CriteoMail : '',
-			gno : '',
-			gnolist : [],
-			isload : false,
-			load : function() {
-				var self = this;
-				if (self.isload) {
-					self.event();
-				} else {
-					self.method().lazyloadScriptFn(
-							'//dynamic.criteo.com/js/ld/ld.js?a=87221',
-							function() {
-								self.isload = true;
-								self.event();
-							});
-				}
-			},
-
-			event : function() {
-				var self = this;
-				//console.log(self.Criteo_Event);
-				if (self.Criteo_Event == "viewHome") {
-					self.method().viewhome();
-				} else if (self.Criteo_Event == "trackTransaction") {
-					self.method().trackTransaction();
-				} else if (self.Criteo_Event == "viewList") {
-					self.method().criteo_viewlist();
-
-				} else if (self.Criteo_Event == "viewPage") {
-					self.method().viewPage();
-				} else if (self.Criteo_Event == "viewItem") {
-					self.method().viewItem();
-				}
-			},
-			method : function() {
-				var self = this;
-
-				return {
-
-					lazyloadScriptFn : function(url, callback) {
-						var scriptEle = document.createElement('script');
-						scriptEle.type = 'text/javascript';
-						var loaded = false;
-						scriptEle.onreadystatechange = function() {
-							// 서버에서 읽어올 경우 loaded, 캐쉬에서 가져올 경우 complete 이기에 둘 모두 처리
-							if (this.readyState == 'loaded'
-									|| this.readyState == 'complete') {
-								if (loaded)
-									return;
-								loaded = true;
-								callback();
-							}
-						}
-						scriptEle.onload = function() {
-							callback();
-						};
-						scriptEle.src = url;
-						document.getElementsByTagName('head')[0]
-								.appendChild(scriptEle);
-					},
-
-					joblistevt : function(className) {
-						if (self.el.find(className).length == 0) {
-							return;
-						}
-						var _len = self.el.find(className).length < 3 ? self.el
-								.find(className).length : 3;
-						self.gnolist = self.el.find(className).slice(0, _len)
-								.map(function() {
-									return $(this).data('gno');
-								}).get();
-						self.method().criteo_viewlist(self.Criteo_Event);
-					},
-
-					criteo_viewlist : function(pagetype) {
-						window.criteo_q = window.criteo_q || [];
-						if (self.gnolist.length > 0) {
-							//console.log("%c criteo %c viewList " + self.gnolist + " gnoCount : " + self.gnolist.length, "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-							window.criteo_q.push({
-								event : "setAccount",
-								account : 87221
-							}, {
-								event : "setSiteType",
-								type : "d"
-							}, {
-								event : "viewList",
-								item : self.gnolist
-							});
-							self.gnolist = [];
-						}
-					},
-
-					viewhome : function() {
-						//console.log("%c criteo %c load Event = viewhome", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-						window.criteo_q = window.criteo_q || [];
-						window.criteo_q.push({
-							event : "setAccount",
-							account : 87221
-						}, {
-							event : "setSiteType",
-							type : "d"
-						}, {
-							event : "viewhome"
-						});
-					},
-
-					trackTransaction : function() {
-
-						if (self.gno != '') {
-							//console.log("%c criteo %c load Event = trackTransaction", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-							window.criteo_q = window.criteo_q || [];
-							window.criteo_q.push({
-								event : "setAccount",
-								account : 87221
-							}, {
-								event : "setSiteType",
-								type : "d"
-							}, {
-								event : "trackTransaction",
-								id : '1690798729',
-								deduplication : 1,
-								item : [ {
-									id : self.gno,
-									price : 1,
-									quantity : 1
-								} ]
-							});
-							self.gno = '';
-						}
-					},
-
-					viewPage : function() {
-						//console.log("%c criteo %c load Event = viewPage", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-						window.criteo_q = window.criteo_q || [];
-						window.criteo_q.push({
-							event : "setAccount",
-							account : 87221
-						}, {
-							event : "setSiteType",
-							type : "d"
-						}, {
-							event : "viewPage"
-						});
-					},
-
-					viewItem : function() {
-						//console.log("%c criteo %c load Event = viewItem", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-						if (self.gno != "") {
-							//console.log("%c criteo %c viewList " + self.gno, "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-							window.criteo_q = window.criteo_q || [];
-							window.criteo_q.push({
-								event : "setAccount",
-								account : 87221
-							}, {
-								event : "setSiteType",
-								type : "d"
-							}, {
-								event : "viewItem",
-								item : self.gno
-							});
-							self.gno = ''
-						}
-					}
-
-				}
-			}
-		}
-		if (window.addEventListener) {
-			window.addEventListener('load', function() {
-				if (typeof jkcriteoEvt !== 'undefined') {
-					jkcriteoEvt.load();
-				}
-			});
-		}
-		var criteo_viewlist = function(criteo_gnos, pagetype) {
-			//console.log("%c criteo %c load Event = viewlist 2", "background:orange; color: #FFF;font-size: 12px; padding:6px;", "background:green; color: #FFF;font-size: 12px; padding:6px;");
-			//console.log("criteo_viewlist : " + criteo_gnos + "/" + pagetype);
-			window.criteo_q = window.criteo_q || [];
-			window.criteo_q.push({
-				event : "setAccount",
-				account : 87221
-			}, {
-				event : "setSiteType",
-				type : "d"
-			}, {
-				event : "viewList",
-				item : [ criteo_gnos ]
-			});
-		}
-	</script>
-
-
-
-
-
-
 	<img
 		src="https://vid.vidoomy.com/dspsync?dspid=RTBH&amp;uid=9UZVpZtzT3kSf5hze2vy"
 		width="1" height="1" scrolling="no" frameborder="0"
@@ -1556,89 +1068,84 @@
 	<iframe height="0" width="0" title="Criteo DIS iframe"
 		style="display: none;"></iframe>
 	<script>
-		var col_1List = document.getElementsByClassName("col_1");
-		document
-				.querySelector(".mbrRegist .dev-name")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[0].style.cssText = "top: 9px";
-							document.querySelector(".col_1>.mbr_name").style.cssText = "font-size: 11px";
-						})
-		document
-				.querySelector(".mbrRegist .dev-name")
-				.addEventListener(
-						"blur",
-						function() {
-							// 포커스가 해제될 때 원래 스타일로 복구
-							col_1List[0].style.cssText = ""; // 빈 문자열로 스타일 초기화
-							document.querySelector(".col_1>.mbr_name").style.cssText = ""; // 빈 문자열로 스타일 초기화
-						});
-		document
-				.querySelector(".mbrRegist .dev-id")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[1].style.cssText = "top: 9px";
-							document.querySelector(".mbr_id label").style.cssText = "font-size: 11px";
-						})
-		document.querySelector(".mbrRegist .dev-id").addEventListener("blur",
-				function() {
-					// 포커스가 해제될 때 원래 스타일로 복구
-					col_1List[1].style.cssText = ""; // 빈 문자열로 스타일 초기화
-					document.querySelector(".mbr_id label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-				});
-		document
-				.querySelector(".mbrRegist .dev-password")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[2].style.cssText = "top: 9px";
-							document.querySelector(".mbr_passwd label").style.cssText = "font-size: 11px";
-						})
-		document
-				.querySelector(".mbrRegist .dev-password")
-				.addEventListener(
-						"blur",
-						function() {
-							// 포커스가 해제될 때 원래 스타일로 복구
-							col_1List[2].style.cssText = ""; // 빈 문자열로 스타일 초기화
-							document.querySelector(".mbr_passwd label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-						});
-		document
-				.querySelector(".mbrRegist .dev-mail")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[3].style.cssText = "top: 9px";
-							document.querySelector(".mbr_email label").style.cssText = "font-size: 11px";
-						})
-		document
-				.querySelector(".mbrRegist .dev-mail")
-				.addEventListener(
-						"blur",
-						function() {
-							// 포커스가 해제될 때 원래 스타일로 복구
-							col_1List[3].style.cssText = ""; // 빈 문자열로 스타일 초기화
-							document.querySelector(".mbr_email label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-						});
-		document
-				.querySelector(".mbrRegist .dev-phone")
-				.addEventListener(
-						"focus",
-						function() {
-							col_1List[4].style.cssText = "top: 9px";
-							document.querySelector(".mbr_phone label").style.cssText = "font-size: 11px";
-						})
-		document
-				.querySelector(".mbrRegist .dev-phone")
-				.addEventListener(
-						"blur",
-						function() {
-							// 포커스가 해제될 때 원래 스타일로 복구
-							col_1List[4].style.cssText = ""; // 빈 문자열로 스타일 초기화
-							document.querySelector(".mbr_phone label").style.cssText = ""; // 빈 문자열로 스타일 초기화
-						});
+		// 모든 입력 필드 요소를 선택
+		var inputFields = document.querySelectorAll('.row input');
+	
+		// 입력 필드에 포커스 시 스타일을 적용하는 함수
+		function applyFocusStyle(event) {
+		    var parentRow = event.target.closest('.row');
+		    if (event.target.value === '') {
+		        parentRow.querySelector('.col_1').style.cssText = 'top: 4px';
+		        parentRow.querySelector('label').style.cssText = 'font-size: 11px';
+		    }
+		}
+	
+		// 입력 필드에서 포커스가 벗어났을 때 스타일을 초기화하는 함수
+		function resetStyle(event) {
+		    var parentRow = event.target.closest('.row');
+		    if (event.target.value === '') {
+		        parentRow.querySelector('.col_1').style.cssText = '';
+		        parentRow.querySelector('label').style.cssText = '';
+		    }
+		}
+	
+		// 입력 필드에 포커스 및 블러 이벤트 리스너 등록
+		inputFields.forEach(function(inputField) {
+		    inputField.addEventListener('focus', applyFocusStyle);
+		    inputField.addEventListener('blur', resetStyle);
+	
+		    // 초기 로드 시 입력 값이 있는 경우에도 스타일 적용
+		    if (inputField.value !== '') {
+		        applyFocusStyle({ target: inputField });
+		    }
+		});
+		
+		document.getElementById("btnSendCert").addEventListener("click", function() {
+			var name = document.getElementById("M_Name").value;
+		    var phoneNumber = document.getElementById("M_Phone").value;
+		    
+		    $.ajax({
+		        type: "POST",
+		        url: "<%=request.getContextPath()%>/signup/sendVerificationCode",
+		        data: { 
+		        		name : name,
+		        		phoneNumber: phoneNumber
+		        		},
+		        success: function(response) {
+		            if (response.success) {
+		                alert("인증 번호가 전송되었습니다.");
+		            } else {
+		                alert("인증 번호 전송에 실패했습니다.");
+		            }
+		        },
+		        error: function() {
+		            alert("인증 번호 전송에 실패했습니다.");
+		        }
+		    });
+		});
+		
+		document.getElementById("btnCheckCert").addEventListener("click", function() {
+		    var verificationCode = document.getElementById("Certify_Num").value;
+		    
+		    $.ajax({
+		        type: "POST",
+		        url: "<%=request.getContextPath()%>/signup/checkVerificationCode",
+		        data: { verificationCode: verificationCode },
+		        success: function(response) {
+		            if (response.success) {
+		                alert("인증 번호가 확인되었습니다.");
+		                document.getElementById("registButton").disabled = false;
+		            } else {
+		                alert("인증 번호가 일치하지 않습니다.");
+		                document.getElementById("registButton").disabled = true;
+		            }
+		        },
+		        error: function() {
+		            alert("인증 번호 확인에 실패했습니다.");
+		            document.getElementById("registButton").disabled = true;
+		        }
+		    });
+		});
 	</script>
 </body>
 </html>
