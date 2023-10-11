@@ -10,6 +10,8 @@ public interface APISnsMemberService {
 	void keepLogin(String apimid, String apiid, Date expire);
 	APISnsMember checkLoginBefore(String value);
 	APISnsMember getBySns(APISnsMember snsUser);
+	APISnsMember mid(APISnsMember snsUser);
+	APISnsMember apimid(APISnsMember snsUser);
 	APISnsMember psignup(APISnsLoginDTO dto) throws Exception;
 	
 

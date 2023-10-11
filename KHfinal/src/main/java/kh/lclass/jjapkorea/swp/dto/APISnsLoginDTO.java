@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class APISnsLoginDTO {
-	private String apimid;
-	private String apimpw;
+	private String mid;
+	private String mpw;
 }

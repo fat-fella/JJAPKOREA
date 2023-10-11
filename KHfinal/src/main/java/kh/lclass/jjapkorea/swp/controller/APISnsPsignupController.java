@@ -94,14 +94,16 @@ public class APISnsPsignupController {
 			//미존재시 가입페이지로!!
 			
 		} else {
-			model.addAttribute("result", apiSnsMember.getMname() + "님 반갑습니다.");
 			
-			// 4. 존재시 강제로그인
+			model.addAttribute("result", apiSnsMember.getMid() + "님 반갑습니다.");
 			session.setAttribute(APISnsSessionNames.LOGIN, apiSnsMember);
+			return "redirect:/";
+			
+						// 4. 존재시 강제로그인
 		}
 		
-		
-		return "apiSnsLoginResult";
+		return "redirect:/";
+//		return "apiSnsLoginResult";
 	}
 	
 	@RequestMapping(value = "/psignuplogout", method = RequestMethod.GET)
