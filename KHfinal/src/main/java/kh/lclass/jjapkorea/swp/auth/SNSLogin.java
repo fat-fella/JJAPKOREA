@@ -79,6 +79,8 @@ public class SNSLogin {
                 if (nameNode != null && !nameNode.isNull()) {
                     apiSnsMember.setMname(nameNode.asText());
                 }
+                
+                
             } else if (this.sns.isNaver()) {
                 JsonNode resNode = rootNode.get("response");
                 if (resNode != null) {
@@ -94,6 +96,7 @@ public class SNSLogin {
                     if (idNode != null && !idNode.isNull()) {
                         apiSnsMember.setNaverid(idNode.asText());
                     }
+//                
                 }
             } else if (this.sns.isKakao()) {
                 JsonNode idNode = rootNode.get("id");

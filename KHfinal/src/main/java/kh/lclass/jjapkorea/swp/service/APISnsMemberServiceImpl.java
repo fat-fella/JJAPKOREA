@@ -22,8 +22,8 @@ public class APISnsMemberServiceImpl implements APISnsMemberService {
 	}
 
 	@Override
-	public void keepLogin(String apimid, String sessionId, Date expire) {
-		dao.keepLogin(apimid, sessionId, expire);
+	public void keepLogin(String mid, String sessionId, Date expire) {
+		dao.keepLogin(mid, sessionId, expire);
 	}
 
 	@Override
@@ -33,6 +33,15 @@ public class APISnsMemberServiceImpl implements APISnsMemberService {
 
 	@Override
 	public APISnsMember getBySns(APISnsMember snsUser) {
+		return dao.getBySns(snsUser);
+	}
+	@Override
+	public 	APISnsMember mid(APISnsMember snsUser) {
+		return dao.getBySns(snsUser);
+	}
+	
+	@Override
+	public 	APISnsMember apimid(APISnsMember snsUser) {
 		return dao.getBySns(snsUser);
 	}
 
