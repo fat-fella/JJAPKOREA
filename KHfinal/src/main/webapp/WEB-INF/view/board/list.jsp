@@ -6,12 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>TalkTalk</title>
-
-
-<%-- 
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<spring:eval expression="@api['api.key']" />" ></script>
- --%>
+<title>boardList</title>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <style>
 body {
     background-color: #f9f9f9;
@@ -124,13 +120,92 @@ body {
   cursor: pointer;
   z-index: 3; /* 모달 닫기 버튼의 z-index를 설정하여 다른 요소 위에 표시합니다. */
 }
+
+/* 페이지 버튼 컨테이너 스타일 */
+.pageInfo-wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 페이지 버튼 스타일 */
+.pageInfo_btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #white;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pageInfo_btn:hover {
+    background-color: #0056b3;
+}
+
+/* 이전 페이지 버튼 스타일 */
+.pageInfo_btn.previous {
+    background-color: #ccc;
+}
+
+.pageInfo_btn.previous:hover {
+    background-color: #bbb;
+}
+
+/* 다음 페이지 버튼 스타일 */
+.pageInfo_btn.next {
+    background-color: #ccc;
+}
+
+.pageInfo_btn.next:hover {
+    background-color: #bbb;
+}
+
+/* 현재 페이지 표시 스타일*/
+.active{ 
+    background-color: #cdd5ec;
+}
+
+/* 검색 */
+.search_area{
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 260px;
+ }
+ .search_area input{
+    height: 30px;
+    width: 250px;
+ }
+ .search_area button{
+    width: 100px;
+    height: 36px;
+ }
+ .search_area select{
+	height: 35px;
+ }
 </style>
 </head>
 <body>
 <div class="title">
-	<h2> 취업 TalkTalk! </h2>
-<%-- 	<h4>API Key: <spring:eval expression="@api['api.key']" /></h4> --%>
+	<h2> 쿵's 게시판 </h2>
 </div>
+<!-- 검색 -->
+<div class="search_wrap">
+    <div class="search_area">
+        <select name="type">
+        	<option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>--</option>
+            <option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':'' }"/>>제목</option>
+            <option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
+            <option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':'' }"/>>작성자</option>
+            <option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
+            <option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
+            <option value="TCW" <c:out value="${pageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
+        </select>   
+        <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
+        <button>Search</button>
+    </div>
+</div>   
 <c:if test="${not empty boardList }">
     <p>총 ${totalListCount } 개의 게시물이 있습니다</p>
     <table class="styled-board">
@@ -146,7 +221,7 @@ body {
             <tr>
                 <td>${dto.bno }</td>
                 <td>
-                   <a href="<c:url value='/board/get'/>?bno=${dto.bno }">
+                   <a class="move" href='<c:out value="${dto.bno}"/>'>
                         ${dto.btitle }
                    </a>
                 </td>
@@ -157,84 +232,98 @@ body {
             </tr>
         </c:forEach>
     </table>
-    <div style="display: block; text-align: center;">		
-		<c:if test="${page.startPage != 1 }">
-			<span>[ <a href="${pageContext.request.contextPath}/board/list?nowPage=${page.startPage - 1 }&cntPerPage=${page.cntPerPage}">이전</a> ]</span>
-		</c:if>
-		<c:forEach begin="${page.startPage }" end="${page.endPage }" var="p">
-			<c:choose>
-				<c:when test="${p == page.nowPage }">
-					<b>${p }</b>
-				</c:when>
-				<c:when test="${p != page.nowPage }">
-					<a href="${pageContext.request.contextPath}/board/list?nowPage=${p }&cntPerPage=${page.cntPerPage}">${p }</a>
-				</c:when>
-			</c:choose>
-		</c:forEach>
-		<c:if test="${page.endPage != page.lastPage}">
-			<span>[ <a href="${pageContext.request.contextPath}/board/list?nowPage=${page.endPage+1 }&cntPerPage=${page.cntPerPage}">다음</a> ]</span>
-		</c:if>
-	</div>
+ 
+<!-- 페이징 및 버튼 -->    
+    <div class="pageInfo-wrap">
+    	<div class="pageInfo_area">
+    		<ul>
+		        <!-- 이전페이지 버튼 -->
+                <c:if test="${pageMaker.prev}">
+                    <li class="pageInfo_btn previous"><a href="${pageMaker.startPage-1}">Previous</a></li>
+                </c:if>
+
+                <!-- 각 번호 페이지 버튼 (현재 페이지 표시)-->
+                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+                </c:forEach>
+	           
+	            <!-- 다음페이지 버튼 -->
+                <c:if test="${pageMaker.next}">
+                    <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
+                </c:if>   
+            </ul>
+    	</div>
+    </div>
+    
+    <form id="moveForm" method="get">
+	    <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+	    <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
+	    <input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
+	    <input type="hidden" name="type" value="${pageMaker.cri.type }">
+	</form>
 </c:if>
 
 <div class="btn-container">
 	<a href="<c:url value='/board/insert'/>">
 	    <button>글 등록</button>
 	</a>
-	<!-- <button type="button" id="openModalBtn">지도 보기</button> -->
+	<button type="button" id="openModalBtn">지도 보기</button>
 </div> 
 <hr>
 
 <!-- 모달 창 -->
-<!-- 
 <div id="mapModal" class="modal">
     <div class="modal-content">
-        지도 컨테이너
+        <!-- 지도 컨테이너 -->
       <div id="map"></div>
-      모달 닫기 버튼
+      <!-- 모달 닫기 버튼 -->
         <button id="closeModalBtn" class="close-button">&times;</button>
     </div>
-</div> 
--->
+</div>
 
 <script>
-/* //지도 모달
-document.getElementById('openModalBtn').addEventListener('click', function() {
-    var modal = document.getElementById('mapModal');
-    modal.style.display = 'block';
+let moveForm = $("#moveForm");
+$(".move").on("click", function(e){
+	e.preventDefault();
+	moveForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+ "'>");
+	moveForm.attr("action", "/jjapkorea/board/get");
+	moveForm.submit();
+});
 
-    // 지도 초기화
-    var mapContainer = document.getElementById('map');
-    var options = {
-        center: new kakao.maps.LatLng(37.4989968, 127.032821),
-        level: 4
-    };
-    var map = new kakao.maps.Map(mapContainer, options);
 
-    // 마커 추가
-    var markerPosition = new kakao.maps.LatLng(37.4989968, 127.032821);
-    var marker = new kakao.maps.Marker({
-        position: markerPosition,
-        text: 'KH정보교육원',
-        map: map
-    });
-    
-
-    // 모달 닫기 이벤트
-    var closeModalBtn = document.getElementById('closeModalBtn');
-    closeModalBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    // 모달 외부 클릭 시 닫기
-    window.addEventListener('click', function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
+$(document).ready(function() {
+    var moveForm = $("#moveForm");
+    $(".pageInfo_btn a").on("click", function(e) {
+        e.preventDefault();
+        var pageNum = $(this).attr("href");
+        moveForm.find("input[name='pageNum']").val(pageNum);
+        moveForm.find("input[name='amount']").val(10); // 보여질 글의 갯수
+        moveForm.attr("action", "/jjapkorea/board/list"); // context root를 포함한 URL
+        moveForm.submit();
     });
 });
- */
-</script>
 
+$(".search_area button").on("click", function(e){
+    e.preventDefault();
+    
+    let type = $(".search_area select").val();
+    let keyword = $(".search_area input[name='keyword']").val();
+    
+    if(!type){
+        alert("검색 종류를 선택하세요.");
+        return false;
+    }
+    
+    if(!keyword){
+        alert("키워드를 입력하세요.");
+        return false;
+    }        
+    
+    moveForm.find("input[name='type']").val(type);
+    moveForm.find("input[name='keyword']").val(keyword);
+    moveForm.find("input[name='pageNum']").val(1);
+    moveForm.submit();
+});
+</script>
 </body>
 </html>

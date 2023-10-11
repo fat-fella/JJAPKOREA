@@ -49,16 +49,48 @@
 	</update>
 	
 <!-- 페이징 -->
-	<select id="count" resultType="_int">
+	<!-- 게시물 총 갯수 -->
+	<select id="getTotal" resultType="_int">
 		select count(bno) from board
+		<if test="keyword != null">
+        	where bno > 0 <include refid="criteria"></include>
+        </if>
 	</select>
 		
-	<select id="listPage" parameterType="hashMap" resultType="BoardDto">
-    	SELECT *
-			FROM ( 
-				SELECT a.*, ROWNUM AS rnum
-			    FROM ( SELECT * FROM board ORDER BY bno DESC) a
-				)
-			WHERE rnum BETWEEN #{start} AND #{end}
-	</select>	
+	<select id="getListPage" resultType="BoardDto">
+    <![CDATA[
+        select * from(
+	        select rownum as rn
+	        , bno, btitle, bcontent, mid, bwrite_Date, readcnt, ref, rstep, rlevel, likehit
+	        from board where rownum <= #{pageNum} * #{amount}
+    ]]> 
+            <if test="keyword != null">
+            	<include refid="criteria"></include> 
+            </if>
+    <![CDATA[
+    		)
+        where rn > (#{pageNum} -1) * #{amount}
+	]]>
+	</select>
+	
+<!-- 검색 조건문 -->
+    <sql id="criteria">
+        <trim prefix="AND (" suffix=")" prefixOverrides="OR">
+            <foreach collection="typeArr" item="type">
+                <trim prefix="OR">
+                    <choose>
+                        <when test="type == 'T'.toString()">
+                            btitle like '%'||#{keyword}||'%' 
+                        </when>
+                        <when test="type == 'C'.toString()">
+                            bcontent like '%'||#{keyword}||'%' 
+                        </when>
+                        <when test="type == 'W'.toString()">
+                            mid like '%'||#{keyword}||'%' 
+                        </when>
+                    </choose>
+                </trim>
+            </foreach>
+        </trim>
+    </sql>	
 </mapper>
