@@ -62,7 +62,6 @@ button:hover {
 </style>
 </head>
 <body>
-	<c:out value="${like_no}" />
 	<div class="container">
 		<div class="content">
 			<div>
