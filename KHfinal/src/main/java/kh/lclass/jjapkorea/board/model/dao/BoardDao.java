@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
-import kh.lclass.jjapkorea.board.model.dto.PageDto;
+import kh.lclass.jjapkorea.board.model.dto.Criteria;
 
 @Repository
 public class BoardDao {
@@ -55,11 +55,11 @@ public class BoardDao {
 		}
 		
 	// 페이징
-		public int count() throws Exception{
-			return sqlSession.selectOne("board.count");
+		public int getTotal(Criteria cri) throws Exception{
+			return sqlSession.selectOne("board.getTotal");
 		}
 		
-		public List<BoardDto> listPage(PageDto page) throws Exception {
-			 return sqlSession.selectList("board.listPage", page);
+		public List<BoardDto> getListPage(Criteria cri) throws Exception {
+			 return sqlSession.selectList("board.getListPage", cri);
 		}
 }

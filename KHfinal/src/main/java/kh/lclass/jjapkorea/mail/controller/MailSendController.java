@@ -34,7 +34,6 @@ public class MailSendController {
 			
 			mailSender.send(message);
 		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 //		SimpleMailMessage msg = new SimpleMailMessage();

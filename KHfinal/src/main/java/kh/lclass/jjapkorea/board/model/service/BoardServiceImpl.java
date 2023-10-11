@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.board.model.dao.BoardDao;
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
-import kh.lclass.jjapkorea.board.model.dto.PageDto;
+import kh.lclass.jjapkorea.board.model.dto.Criteria;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -53,14 +53,14 @@ public class BoardServiceImpl implements BoardService {
 
 
 	@Override
-	public int count() throws Exception{
-		return boardDao.count();
+	public int getTotal(Criteria cri) throws Exception{
+		return boardDao.getTotal(cri);
 	}
-
+	
 	@Override
-	public List<BoardDto> listPage(PageDto page) throws Exception {
-	 return boardDao.listPage(page);
-	}	
+	public List<BoardDto> getListPage(Criteria cri) throws Exception {
+	 return boardDao.getListPage(cri);
+	}
 	
 	@Override
 	public int totalLike(int bno) throws Exception {
