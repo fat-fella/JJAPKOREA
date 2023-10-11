@@ -92,23 +92,23 @@ public class JobPostingUploadController {
 	}
 	
 	
-	@GetMapping("/jobpostingupload/info")
-	public ModelAndView jobPostingUploadInfo(ModelAndView mv, Model model, String jid) throws Exception {
-		JobPostingDto dto = new JobPostingDto();
-		jid= dto.getJid();
-		List<Map<String, Object>> jobPostingData = jobPostingUploadService.getJobPostingWithInfo(jid);
-		mv.addObject("jobPostingData" ,jobPostingData);
-		mv.setViewName("jpost/jpostInfo");
-		return mv;
-	}
-	
-	
-	
 //	@GetMapping("/jobpostingupload/info")
-//	public String jobPostingUploadSubmit(JobPostingDto dto) {
-//		return "/jpost/jpostInfo";
+//	public ModelAndView jobPostingUploadInfo(ModelAndView mv, Model model, String jid) throws Exception {
+//		JobPostingDto dto = new JobPostingDto();
+//		jid= dto.getJid();
+//		List<Map<String, Object>> jobPostingData = jobPostingUploadService.getJobPostingWithInfo(jid);
+//		mv.addObject("jobPostingData" ,jobPostingData);
+//		mv.setViewName("jpost/jpostInfo");
+//		return mv;
 //	}
 //	
+	
+	
+	@GetMapping("/jobpostingupload/info")
+	public String jobPostingUploadSubmit(JobPostingDto dto) {
+		return "/jpost/jpostInfo";
+	}
+	
 
 	
 	@GetMapping("/jobpostingupload/list")
