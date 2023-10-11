@@ -61,7 +61,7 @@ public class WorknetApi {
             urlBuilder.append("&" + URLEncoder.encode("returnType", "UTF-8") + "=" + URLEncoder.encode("xml", "UTF-8")); /* 결과형식(xml) */
             urlBuilder.append("&" + URLEncoder.encode("callTp", "UTF-8") + "=" + URLEncoder.encode("L", "UTF-8")); /* L(목록), D(상세) */
             urlBuilder.append("&" + URLEncoder.encode("startPage", "UTF-8") + "=" + URLEncoder.encode("3", "UTF-8")); /* 페이지번호 - 수정4!! */
-            urlBuilder.append("&" + URLEncoder.encode("display", "UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /* 한 페이지 결과 수 */
+            urlBuilder.append("&" + URLEncoder.encode("display", "UTF-8") + "=" + URLEncoder.encode("20", "UTF-8")); /* 한 페이지 결과 수 */
             urlBuilder.append("&" + URLEncoder.encode("region", "UTF-8") + "=" + URLEncoder.encode("11000", "UTF-8")); /* 지역-서울 */
             urlBuilder.append("&" + URLEncoder.encode("occupation", "UTF-8") + "=" + URLEncoder.encode("024", "UTF-8")); /* 직종-소프트웨어 */
 
