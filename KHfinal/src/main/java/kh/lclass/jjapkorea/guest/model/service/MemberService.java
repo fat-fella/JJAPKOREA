@@ -10,7 +10,9 @@ public interface MemberService {
 	int checkAndInsertBusinessForm() throws Exception;
 	PersonDto selectOnePerson(String mid) throws Exception;
 	void infoModifyMemberAndPerson(MemberDto memberDto, PersonDto personDto) throws Exception;
+	int infoModifyMember(MemberDto memberDto) throws Exception;
 	void cancelMemberAndPerson(String mid) throws Exception;
 	void cancelMemberAndBusiness(String mid) throws Exception;
+	String findAccountByNameAndPhone(PersonDto personDto) throws Exception;
 	PersonDto findAccountByIdAndPhone(PersonDto personDto) throws Exception;
 }

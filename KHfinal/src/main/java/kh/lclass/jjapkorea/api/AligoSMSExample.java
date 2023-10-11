@@ -18,7 +18,7 @@ import java.util.Map;
 import java.net.URLEncoder;
 
 public class AligoSMSExample {
-    public static void sendSms(String name, String phoneNumber, String verificationCode) throws Exception {
+    public static void sendSms(String message, String name, String phoneNumber, String verificationCode) throws Exception {
         try {
             final String encodingType = "utf-8";
             final String boundary = "____boundary____";
@@ -38,9 +38,7 @@ public class AligoSMSExample {
             /******************** 인증정보 ********************/
 
             /******************** 전송정보 ********************/
-            sms.put("msg", "인증번호 " + "[" + verificationCode + "]를 입력하세요."); // 메세지 내용
-//            sms.put("receiver", "01111111111,01111111112"); // 수신번호
-//            sms.put("destination", "01111111111|담당자,01111111112|홍길동"); // 수신인 %고객명% 치환
+            sms.put("msg", message); // 메세지 내용
             sms.put("receiver", phoneNumber); // 수신번호
             sms.put("destination", phoneNumber + "|" + name); // 수신인 %고객명% 치환
             sms.put("sender", "01055948861"); // 발신번호

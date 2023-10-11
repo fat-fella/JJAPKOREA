@@ -102,7 +102,8 @@ public class SignupController {
 	// 인증 번호 전송 로직
 	private boolean sendVerificationCodeLogic(String name, String phoneNumber) throws Exception {
 	    String verificationCode = storedVerificationCode;
-	    AligoSMSExample.sendSms(name, phoneNumber, verificationCode);
+	    String message = "인증번호 " + "[" + verificationCode + "]를 입력하세요.";
+	    AligoSMSExample.sendSms(message, name, phoneNumber, verificationCode);
 	    return true; // 전송 성공
 	}
 

@@ -5,7 +5,7 @@
 <head>
 	<jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
     <meta charset="UTF-8">
-    <title>비밀번호 찾기</title>
+    <title>아이디 찾기</title>
     <link rel="icon" href="resources/favicon.ico">
     <style>
         body {
@@ -80,14 +80,14 @@
 			<img src="<%=request.getContextPath()%>/resources/images/짭코리아2.png"
 				alt="JJAPKOREA" class="logoimg">
 		</a>
-        <h1>비밀번호 찾기</h1>
-        <form action="<%=request.getContextPath()%>/findPassword" method="post">
-            <label for="mid" style="text-align: left;">아이디</label>
-            <input type="text" id="mid" name="mid" placeholder="아이디를 입력하세요">
+        <h1>아이디 찾기</h1>
+        <form action="<%=request.getContextPath()%>/findId" method="post">
+            <label for="pname" style="text-align: left;">이름</label>
+            <input type="text" id="pname" name="pname" placeholder="이름을 입력하세요">
             <label for="pphone" style="text-align: left;">휴대폰 번호</label>
             <input type="text" id="pphone" name="pphone" placeholder="휴대폰 번호를 입력하세요">
             <div class="center-align">
-                <button id="find-password-button" type="submit">비밀번호 찾기</button>
+                <button id="find-password-button" type="submit">아이디 찾기</button>
             </div>
         </form>
     </div>
