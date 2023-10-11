@@ -31,7 +31,10 @@
 				<div class="sumTit">
 					<h3 class="hd_3">
 						<div class="header">
-							<span class="coName"> 중앙일보㈜ </span>
+							<c:forEach items="${jobPostingInfo}" var = "jobPosting">
+								<span class="coName"> ${jobPosting.bizName} </span>
+							</c:forEach>
+						
 							<div class="item favorite">
 								<button type="button"
 									class="girBtn girBtn_2 girBtnFav  devFavor5_15983790"
@@ -40,7 +43,9 @@
 								</button>
 							</div>
 						</div>
-
+						<c:forEach items="${jobPostingInfo}" var = "jobPosting">
+							<p>${jobPosting.reTitle}</p>
+						</c:forEach>
 						2023 중앙그룹 신입사원 모집
 					</h3>
 				</div>
@@ -50,25 +55,28 @@
 
 						<h4 class="hd_4">지원자격</h4>
 						<dl class="tbList">
+						<c:forEach items="${jobPostingInfo}" var = "jobPosting">
 							<dt>경력</dt>
 							<dd>
-								<strong class="col_1">신입·경력</strong>
+								<strong class="col_1">${jobPosting.career}</strong>
 							</dd>
 							<dt>학력</dt>
 							<dd>
-								<strong class="col_1">대졸이상</strong> (졸업예정자 가능)
+								<strong class="col_1">${jobPosting.userEducation}</strong> (졸업예정자 가능)
 							</dd>
+							</c:forEach>
 						</dl>
 					</div>
 						<div class="tbCol ">
 
 							<h4 class="hd_4">근무조건</h4>
 							<dl class="tbList">
+							<c:forEach items="${jobPostingInfo}" var = "jobPosting">
 								<dt>고용형태</dt>
 								<dd>
 									<ul class="addList">
 
-										<li><strong class="col_1">정규직</strong> <span
+										<li><strong class="col_1">${jobPosting.workType}</strong> <span
 											class="tahoma"></span></li>
 
 									</ul>
@@ -76,7 +84,7 @@
 
 								<dt>급여</dt>
 								<dd>
-									<em class="dotum"></em> 회사내규에 따름 - 면접 후 결정
+									<em class="dotum"></em> ${jobPosting.salary}
 								</dd>
 								<dt>지역</dt>
 								<dd>
@@ -92,7 +100,7 @@
 
 								</dd>
 
-
+							</c:forEach>
 							</dl>
 						</div>
 					</div>
@@ -113,22 +121,22 @@
 						</div>
 
 						<dl class="tbList">
-
+						<c:forEach items="${jobPostingInfo}" var = "jobPosting">
 							<dt>산업(업종)</dt>
 							<dd>
-								<text>신문 발행업</text>
+								<text>${jobPosting.recruitField}</text>
 							</dd>
 							<dt>사원수</dt>
 							<dd>
-								<span class="tahoma">606</span>명
+								<span class="tahoma">${jobPosting.bemp}</span>명
 							</dd>
 							<dt>설립년도</dt>
 							<dd>
-								<text> <span class="tahoma">1965</span>년 (<span
+								<text> <span class="tahoma">${jobPosting.bestd}</span>년 (<span
 									class="tahoma">59</span>년차) </text>
 							</dd>
 							<dt>기업형태</dt>
-							<dd>중견기업 (비상장)</dd>
+							<dd>${bform}</dd>
 							<dt>홈페이지</dt>
 							<dd>
 
@@ -136,7 +144,7 @@
 									href="http://www.joongang.co.kr"
 									onclick="javascript:go_HomePageTrace('http://www.joongang.co.kr','45389898');return false;">joongang.co.kr</a></span>
 							</dd>
-
+						</c:forEach>
 						</dl>
 						<p class="coBtn">
 							<a href="/Company/1824494/?C_IDX=807" target="_blank"
@@ -162,9 +170,8 @@
 
 			<button type="button"
 				class="tplBtn tplBtn_1 tplBtnBlue devHomePageApplyBtn"
-				onclick="window.open('/List_GI/GIB_Read_homepage_Link.asp?GI_NO=45389898&amp;logpath=0'); GI_Click_Cnt('', 'E05'); _LA.EVT('5283'); GA_Event('공고_PC', '공고지원상단', '홈페이지 지원');  BrazeCustomEventSetProperty(104, 'FirstVVIP|중앙일보㈜|42887747|2023-09-18|2023-10-04|15983790');"
 				title="홈페이지 지원(새창)" id="devApplyBtn">
-				<span>홈페이지 지원</span>
+				<span>이력서 지원</span>
 			</button>
 			<button type="button"
 				class="girBtn girBtn_1 girBtnScr devScrap142887747  "

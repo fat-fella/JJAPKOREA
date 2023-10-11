@@ -9,6 +9,34 @@
 	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 	crossorigin="anonymous"></script>
 <script>
+
+function getinfo(jid) {
+    $.ajax({
+        type: 'GET',
+        url: '${pageContext.request.contextPath}/jobpostinginfo',
+        data: { jid: jid },
+        dataType: 'text',  // 서버에서 문자열 응답을 받기 위해 설정
+        success: function (response) {
+
+            console.log('취업공고 상세 ajax 성공:', response);
+            if (response === "success") {
+                // 채용공고 상세 페이지로 이동
+            	window.location.assign('${pageContext.request.contextPath}/jobpostinginfo');
+            } else {
+                // 다른 처리를 원하는 경우
+                 window.location.href = '${pageContext.request.contextPath}/login';
+            }
+        },
+        error: function (error) {
+            console.log('취업공고 상세 ajax 실패:', error);
+        }
+    });
+}
+
+
+	
+
+
 	$(function() {
 		$(window).scroll(function() {
 			if ($(this).scrollTop() > 500) {
@@ -120,7 +148,7 @@
 				<ul class="grid-container">
 					<c:forEach items="${list1}" var="item">
 						<li>
-							<form id="scrapForm">
+							<form id="scrapForm" onclick="getinfo('${item.JID}')">
 								<div>
 									<%
 									// 이미지 파일들의 경로 배열
@@ -140,7 +168,7 @@
 									<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 								</div>
 								<div class="compName">${item.BIZNAME}</div>
-								<div class="recruitInfo">
+								<div class="recruitInfo" data-jid="${item.JID}" onclick="getinfo('${item.JID}')">
 									${item.RE_TITLE}<br> <br>
 								</div>
 								<div id="applyscrap">
