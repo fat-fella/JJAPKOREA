@@ -54,4 +54,9 @@ public class MemberServiceImpl implements MemberService {
 		memberDao.cancelBusiness(mid);
 		memberDao.cancelMember(mid);
 	}
+	
+	@Override
+	public PersonDto findAccountByIdAndPhone(PersonDto personDto) throws Exception {
+		return memberDao.findAccountByIdAndPhone(personDto);
+	}
 }

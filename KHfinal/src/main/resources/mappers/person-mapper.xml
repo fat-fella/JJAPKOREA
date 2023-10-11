@@ -16,4 +16,8 @@
 	<delete id="cancelPerson" parameterType="string">
 		delete from person where mid = #{mid}
 	</delete>
+	
+	<select id="findAccountByIdAndPhone" resultType="personDto">
+		select * from person where mid = #{mid} and pphone = #{pphone}
+	</select>
 </mapper>

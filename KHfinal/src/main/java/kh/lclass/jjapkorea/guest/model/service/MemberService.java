@@ -12,4 +12,5 @@ public interface MemberService {
 	void infoModifyMemberAndPerson(MemberDto memberDto, PersonDto personDto) throws Exception;
 	void cancelMemberAndPerson(String mid) throws Exception;
 	void cancelMemberAndBusiness(String mid) throws Exception;
+	PersonDto findAccountByIdAndPhone(PersonDto personDto) throws Exception;
 }
