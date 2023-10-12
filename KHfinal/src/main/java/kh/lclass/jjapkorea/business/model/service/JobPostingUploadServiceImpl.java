@@ -38,7 +38,7 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception{
 		return jobpostinguploadDao.selectThird(selectedOption);
 	}
-	public List<Map<String, Object>> getJobPostingWithInfo(String jid) throws Exception {
+	public Map<String, Object> getJobPostingWithInfo(String jid) throws Exception {
 		return jobpostinguploadDao.getJobPostingWithInfo(jid);
 	}
 }

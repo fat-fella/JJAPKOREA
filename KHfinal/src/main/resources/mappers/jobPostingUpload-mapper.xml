@@ -20,8 +20,7 @@
 		<result property="jpostdetail" column="JPOSTDETAIL" />
 		<result property="postTime" column="POST_TIME" />
 	</resultMap>
-	<resultMap id="jobPostingCategoryDtoResultMap"
-		type="jobPostingCategoryDto">
+	<resultMap id="jobPostingCategoryDtoResultMap"		type="jobPostingCategoryDto">
 		<id property="recruitField" column="RECRUIT_FIELD" />
 		<result property="jobscd" column="JOBSCD" />
 		<result property="jobscat" column="JOBSCAT" />
@@ -66,7 +65,7 @@
 		SELECT RE_TITLE FROM INFO WHERE MID = #{mid}
 
 	</select>
-	<select id="getJobPostingWithInfo" resultType="java.util.Map">
+	<select id="getJobPostingWithInfo" resultType="map">
 	    select b.*, i.* from info i join business b on i.mid = b.mid where i.jid = #{jid} order by i.post_date desc
 	</select>
 </mapper>

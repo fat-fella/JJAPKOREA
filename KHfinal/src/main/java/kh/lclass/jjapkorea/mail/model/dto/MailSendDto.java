@@ -1,52 +1,76 @@
 package kh.lclass.jjapkorea.mail.model.dto;
 
+import java.util.Arrays;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class MailSendDto {
-	private String title;
-	private String content;
-	private String receiver;
+	private int aid; // 이력서작성 지원 아이디
+	private String jid; // 채용정보 아이디
+	private String mid; // 개인회원 아이디
+	private String[] pemail; // 개인회원 이메일
+	private String bizName; // 기업회원 회사명
 	
 	@Override
 	public String toString() {
-		return "MailSendDto [title=" + title + ", content=" + content + ", receiver=" + receiver + "]";
+		return "MailSendDto [aid=" + aid + ", jid=" + jid + ", mid=" + mid + ", pemail=" + Arrays.toString(pemail)
+				+ ", bizName=" + bizName + "]";
+	}
+
+	public MailSendDto(int aid, String jid, String mid, String[] pemail, String bizName) {
+		super();
+		this.aid = aid;
+		this.jid = jid;
+		this.mid = mid;
+		this.pemail = pemail;
+		this.bizName = bizName;
 	}
 
 	public MailSendDto() {
 		super();
 	}
 
-	public MailSendDto(String title, String content, String receiver) {
-		super();
-		this.title = title;
-		this.content = content;
-		this.receiver = receiver;
+	public int getAid() {
+		return aid;
 	}
 
-	public String getTitle() {
-		return title;
+	public void setAid(int aid) {
+		this.aid = aid;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public String getJid() {
+		return jid;
 	}
 
-	public String getContent() {
-		return content;
+	public void setJid(String jid) {
+		this.jid = jid;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public String getMid() {
+		return mid;
 	}
 
-	public String getReceiver() {
-		return receiver;
+	public void setMid(String mid) {
+		this.mid = mid;
 	}
 
-	public void setReceiver(String receiver) {
-		this.receiver = receiver;
+	public String[] getPemail() {
+		return pemail;
 	}
+
+	public void setPemail(String[] pemail) {
+		this.pemail = pemail;
+	}
+
+	public String getBizName() {
+		return bizName;
+	}
+
+	public void setBizName(String bizName) {
+		this.bizName = bizName;
+	}
+
 	
 	
 }

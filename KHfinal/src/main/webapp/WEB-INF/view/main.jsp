@@ -10,8 +10,8 @@
 	crossorigin="anonymous"></script>
 <script>
 
-function getinfo(jid) {
-	
+/* function getinfo(jid) {
+
     $.ajax({
         type: 'GET',
         url: '${pageContext.request.contextPath}/jobpostinginfo',
@@ -19,6 +19,7 @@ function getinfo(jid) {
         data: JSON.stringify({
         	jid: jid 
         	}),
+
         dataType: 'json',  // 서버에서 문자열 응답을 받기 위해 설정
         success: function (response) {
 
@@ -36,7 +37,28 @@ function getinfo(jid) {
         }
     });
 }
-
+ */
+ function getinfo(jid) {
+	 location.href='${pageContext.request.contextPath}/jobpostinginfo?jid=' + jid;
+/* 	    $.ajax({
+	        type: 'GET',
+	        url: '${pageContext.request.contextPath}/jobpostinginfo?jid=' + jid,
+	        //dataType: 'json',
+	        success: function (response) {
+	            console.log('취업공고 상세 ajax 성공:', response);
+	            if (response === "success") {
+	                // 채용공고 상세 페이지로 이동
+	                window.location.assign('${pageContext.request.contextPath}/jobpostinginfo');
+	            } else {
+	                // 다른 처리를 원하는 경우
+	                window.location.href = '${pageContext.request.contextPath}/login';
+	            }
+	        },
+	        error: function (error) {
+	            console.log('취업공고 상세 ajax 실패:', error);
+	        }
+	    }); */
+	}
 
 	
 
