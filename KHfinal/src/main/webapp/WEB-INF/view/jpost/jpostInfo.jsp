@@ -120,7 +120,7 @@
 							<dt>설립년도</dt>
 							<dd>
 								<text> <span class="tahoma">${jobPosting.BESTD}</span>년 (<span
-									class="tahoma">59</span>년차) </text>
+									class="tahoma"></span>년차) </text>
 							</dd>
 							<dt>기업형태</dt>
 							<dd>${BFORM}</dd>
@@ -143,7 +143,7 @@
 						</p>
 					</div>
 					<div class="tbCoInfo">
-						<p>${JobPosting.JPOSTDETAIL}</p>
+						<p>${jobPosting.JPOSTDETAIL}</p>
 					</div>
 					
 				</div>

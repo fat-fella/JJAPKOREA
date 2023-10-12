@@ -7,6 +7,6 @@ import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 import kh.lclass.jjapkorea.person.model.dto.ResumeMgrDto;
 
 public interface ResumeMgrService {
-	void signUpMemberAndInsertResumeWrite(MemberDto memberDto, ResumeMgrDto resumeMgrDto) throws Exception;
+	void signUpMemberAndDeleteResumeMgr(MemberDto memberDto, ResumeMgrDto resumeMgrDto) throws Exception;
 	List<Map<String, Object>> getResumeMgrWithPerson() throws Exception;
 }
