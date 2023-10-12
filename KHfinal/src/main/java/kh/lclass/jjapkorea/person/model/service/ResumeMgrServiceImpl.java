@@ -23,7 +23,7 @@ public class ResumeMgrServiceImpl implements ResumeMgrService {
 	private ResumeMgrDao resumeMgrDao;
 
 	@Override
-	public void signUpMemberAndInsertResumeWrite(MemberDto memberDto, ResumeMgrDto resumeMgrDto) throws Exception {
+	public void signUpMemberAndDeleteResumeMgr(MemberDto memberDto, ResumeMgrDto resumeMgrDto) throws Exception {
 		memberDao.signUpMember(memberDto);
 		
 	}
