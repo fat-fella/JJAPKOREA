@@ -103,10 +103,7 @@
 								<p>
 									<a href="/Company/1824494/?C_IDX=807" target="_blank"
 										title="새창"
-										onclick="GA_Event('공고_PC', '기업정보상단', '기업로고_중앙일보㈜');"><img
-										src="//imgs.jobkorea.co.kr/img1/_whitebg/200X80/Co_Logo/Logo/2022/5/31/JK_CO_MYXPLxP22053110144946.gif?v=202309271603"
-										id="cologo" name="cologo" alt="중앙일보㈜"
-										onload="go_logo_size(this, 100, 40);" width="100" height="40"></a>
+										onclick="GA_Event('공고_PC', '기업정보상단', '기업로고_중앙일보㈜');"></a>
 								</p>
 							</div>
 						</div>
@@ -145,12 +142,12 @@
 									채용보기</span></a>
 						</p>
 					</div>
+					<div class="tbCoInfo">
+						<p>${JobPosting.JPOSTDETAIL}</p>
+					</div>
+					
 				</div>
 			</article>
-			<div class="jpostdetail">
-				<img src="">
-					
-			</div>
 		</div>
 
 
@@ -162,11 +159,7 @@
 				title="홈페이지 지원(새창)" id="devApplyBtn">
 				<span>이력서 지원</span>
 			</button>
-			<button type="button"
-				class="girBtn girBtn_1 girBtnScr devScrap142887747  "
-				onclick="GA_Event('공고_PC','공고지원상단','스크랩_' + ($(this).hasClass('girBtnScrOn')?'해제':'등록') + '_중앙일보㈜_중앙일보㈜2023 중앙그룹 신입사원 모집'); JKLoginLayer.open('/Recruit/Booth_GI_Read/42887747?Oem_Code=C1&amp;productType=FirstVVIP&amp;logpath=0'); ;">
-				<span>스크랩</span>
-			</button>
+
 
 		</p>
 		<p class="deadlineInfo" id="devTimeGuide"></p>
