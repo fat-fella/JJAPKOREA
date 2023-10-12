@@ -10,6 +10,6 @@ public class MailSendDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-//	public String 
+//	public String selectEmail(String ??)
 	
 }
