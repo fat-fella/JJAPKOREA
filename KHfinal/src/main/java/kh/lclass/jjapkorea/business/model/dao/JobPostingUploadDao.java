@@ -36,8 +36,8 @@ public class JobPostingUploadDao {
 	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception{
 		return sqlSession.selectList("jobpostingUpload.selectThird", selectedOption);
 	}
-	public List<Map<String, Object>> getJobPostingWithInfo(String jid) throws Exception {
-        return sqlSession.selectList("jobpostingUpload.getJobPostingWithInfo", jid);
+	public Map<String, Object> getJobPostingWithInfo(String jid) throws Exception {
+        return sqlSession.selectOne("jobpostingUpload.getJobPostingWithInfo", jid);
 	}
 	
 }

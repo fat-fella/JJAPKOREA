@@ -39,11 +39,11 @@
 }
  */
  function getinfo(jid) {
-	    $.ajax({
+	 location.href='${pageContext.request.contextPath}/jobpostinginfo?jid=' + jid;
+/* 	    $.ajax({
 	        type: 'GET',
 	        url: '${pageContext.request.contextPath}/jobpostinginfo?jid=' + jid,
-	        contentType: 'application/json',
-	        dataType: 'json',
+	        //dataType: 'json',
 	        success: function (response) {
 	            console.log('취업공고 상세 ajax 성공:', response);
 	            if (response === "success") {
@@ -57,7 +57,7 @@
 	        error: function (error) {
 	            console.log('취업공고 상세 ajax 실패:', error);
 	        }
-	    });
+	    }); */
 	}
 
 	

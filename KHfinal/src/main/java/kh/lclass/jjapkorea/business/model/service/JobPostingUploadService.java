@@ -13,7 +13,7 @@ public interface JobPostingUploadService {
 	List<JobPostingCategoryDto> selectFirst(String selectedOption) throws Exception;
 	public List<JobPostingCategoryDto> selectSecond(String selectedOption) throws Exception;
 	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception;
-	public List<Map<String, Object>> getJobPostingWithInfo(String jid) throws Exception;
+	public Map<String, Object> getJobPostingWithInfo(String jid) throws Exception;
 
 }
 

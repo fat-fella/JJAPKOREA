@@ -31,9 +31,7 @@
 				<div class="sumTit">
 					<h3 class="hd_3">
 						<div class="header">
-							<c:forEach items="${jobPostingInfo}" var = "jobPosting">
-								<span class="coName"> ${jobPosting.bizName} </span>
-							</c:forEach>
+								<span class="coName"> ${jobPosting.BIZNAME} </span>
 						
 							<div class="item favorite">
 								<button type="button"
@@ -43,10 +41,7 @@
 								</button>
 							</div>
 						</div>
-						<c:forEach items="${jobPostingInfo}" var = "jobPosting">
-							<p>${jobPosting.reTitle}</p>
-						</c:forEach>
-						2023 중앙그룹 신입사원 모집
+							<p>${jobPosting.RE_TITLE}</p>
 					</h3>
 				</div>
 				<div class="tbRow clear">
@@ -55,28 +50,25 @@
 
 						<h4 class="hd_4">지원자격</h4>
 						<dl class="tbList">
-						<c:forEach items="${jobPostingInfo}" var = "jobPosting">
 							<dt>경력</dt>
 							<dd>
-								<strong class="col_1">${jobPosting.career}</strong>
+								<strong class="col_1">${jobPosting.CAREER}</strong>
 							</dd>
 							<dt>학력</dt>
 							<dd>
-								<strong class="col_1">${jobPosting.userEducation}</strong> (졸업예정자 가능)
+								<strong class="col_1">${jobPosting.USER_EDUCATION}</strong> (졸업예정자 가능)
 							</dd>
-							</c:forEach>
 						</dl>
 					</div>
 						<div class="tbCol ">
 
 							<h4 class="hd_4">근무조건</h4>
 							<dl class="tbList">
-							<c:forEach items="${jobPostingInfo}" var = "jobPosting">
 								<dt>고용형태</dt>
 								<dd>
 									<ul class="addList">
 
-										<li><strong class="col_1">${jobPosting.workType}</strong> <span
+										<li><strong class="col_1">${jobPosting.WORK_TYPE}</strong> <span
 											class="tahoma"></span></li>
 
 									</ul>
@@ -84,7 +76,7 @@
 
 								<dt>급여</dt>
 								<dd>
-									<em class="dotum"></em> ${jobPosting.salary}
+									<em class="dotum"></em> ${jobPosting.SALARY}
 								</dd>
 								<dt>지역</dt>
 								<dd>
@@ -100,7 +92,6 @@
 
 								</dd>
 
-							</c:forEach>
 							</dl>
 						</div>
 					</div>
@@ -121,22 +112,21 @@
 						</div>
 
 						<dl class="tbList">
-						<c:forEach items="${jobPostingInfo}" var = "jobPosting">
 							<dt>산업(업종)</dt>
 							<dd>
-								<text>${jobPosting.recruitField}</text>
+								<text>${jobPosting.RECRUIT_FIELD}</text>
 							</dd>
 							<dt>사원수</dt>
 							<dd>
-								<span class="tahoma">${jobPosting.bemp}</span>명
+								<span class="tahoma">${jobPosting.BEMP}</span>명
 							</dd>
 							<dt>설립년도</dt>
 							<dd>
-								<text> <span class="tahoma">${jobPosting.bestd}</span>년 (<span
+								<text> <span class="tahoma">${jobPosting.BESTD}</span>년 (<span
 									class="tahoma">59</span>년차) </text>
 							</dd>
 							<dt>기업형태</dt>
-							<dd>${bform}</dd>
+							<dd>${BFORM}</dd>
 							<dt>홈페이지</dt>
 							<dd>
 
@@ -144,7 +134,6 @@
 									href="http://www.joongang.co.kr"
 									onclick="javascript:go_HomePageTrace('http://www.joongang.co.kr','45389898');return false;">joongang.co.kr</a></span>
 							</dd>
-						</c:forEach>
 						</dl>
 						<p class="coBtn">
 							<a href="/Company/1824494/?C_IDX=807" target="_blank"
