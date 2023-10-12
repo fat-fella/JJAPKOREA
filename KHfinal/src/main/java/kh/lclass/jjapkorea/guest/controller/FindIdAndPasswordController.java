@@ -16,7 +16,7 @@ import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 import kh.lclass.jjapkorea.guest.model.service.MemberService;
 
 @Controller
-public class FindPasswordController {
+public class FindIdAndPasswordController {
 	@Autowired
 	MemberService memberService;
 	
@@ -86,7 +86,7 @@ public class FindPasswordController {
         memberDto.setMid(mid);
         memberDto.setMpw(bCryptPasswordEncoder.encode(randomString.toString()));
         memberService.infoModifyMember(memberDto);
-        String message = "임시 비밀번호 " + "[" + randomString.toString() + "]를 입력하세요.";
+        String message = "임시 비밀번호는 " + "[" + randomString.toString() + "]입니다.";
 	    AligoSMSExample.sendSms(message, "", phoneNumber, randomString.toString());
 	    return true; // 전송 성공
 	}
