@@ -77,8 +77,8 @@
 <body>
     <div class="container">
     	<a href="index" class="logo linkLogo">
-			<img src="<%=request.getContextPath()%>/resources/images/짭코리아2.png"
-				alt="JJAPKOREA" class="logoimg">
+			<img src="<%=request.getContextPath()%>/resources/images/짭코리아_반전.png"
+				alt="JJAPKOREA" class="logoimg" width="300" height="100">
 		</a>
         <h1>비밀번호 찾기</h1>
         <form action="<%=request.getContextPath()%>/findPassword" method="post">
