@@ -110,12 +110,6 @@
 </script>
 </head>
 <body>
-	<div>
-		<a href="<%=request.getContextPath()%>/index" class="logo linkLogo">
-			<img src="<%=request.getContextPath()%>/resources/images/짭코리아_반전.png"
-				alt="JJAPKOREA" class="logoimg" width="150" height="50">
-		</a>
-	</div>
 	<h1 class="h1">이 력 서</h1>
 	<form action="<%=request.getContextPath()%>/person/resume/write"
 		method="post">

@@ -153,7 +153,7 @@
 
 			<button type="button"
 				class="tplBtn tplBtn_1 tplBtnBlue devHomePageApplyBtn"
-				title="홈페이지 지원(새창)" id="devApplyBtn">
+				title="홈페이지 지원(새창)" id="devApplyBtn" >
 				<span>이력서 지원</span>
 			</button>
 

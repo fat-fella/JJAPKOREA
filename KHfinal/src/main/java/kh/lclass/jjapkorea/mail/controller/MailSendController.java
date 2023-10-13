@@ -6,7 +6,7 @@ import javax.mail.MessagingException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 import kh.lclass.jjapkorea.mail.model.service.MailSendService;
 
@@ -19,7 +19,13 @@ public class MailSendController {
 		this.mailService = mailService;
 	}
 
-	@GetMapping("/person/noticeMail")
+//	@GetMapping("/person/noticeMail")
+//	public String noticeMail(PersonDto selectOnePerson, Model model) throws MessagingException, IOException {
+//		mailService.noticeMail(selectOnePerson, model);
+//		return "index";
+//	}
+	
+	@PostMapping("/person/noticeMail")
 	public String noticeMail(PersonDto selectOnePerson, Model model) throws MessagingException, IOException {
 		mailService.noticeMail(selectOnePerson, model);
 		return "index";

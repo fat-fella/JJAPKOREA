@@ -5,6 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>이력서 관리</title>
+<!-- swiper css -->
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<!-- 부트스트랩 css -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+<link rel="icon"
+	href="<%=request.getContextPath()%>/resources/favicon.ico">
 <!-- [1] 해상도 - 최적해상도 1260 결정 -->
 <!-- [2] content 영역 1260px -->
 <!-- [3] reset.css 폴더경로 -->
@@ -24,44 +35,27 @@
 <!-- [7] nav 영역 -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jobkh_nav.css">
+<!-- [8] main 영역 -->
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/jobkh_main.css">
 <!-- [9] footer 영역 -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
-<!-- swiper css -->
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-<!-- 부트스트랩 css -->
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous">
-<link rel="icon" href="resources/favicon.ico">
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <jsp:include page="../member/header.jsp"></jsp:include>
 <jsp:include page="resumeMgrSide.jsp"></jsp:include>
-
 <style>
 #resumeMgrSide {
 	position: absolute;
-	top: 168px;
+	top: 210px;
 	left: 210px;
 }
 </style>
-
 </head>
 <body>
-	<div class="wrap header">
-		<!-- header.html 파일 불러오기 -->
-	</div>
-
 	<div id="resumeMgrSide">
-		<!-- resumeMgr 안쪽 페이지 -->
-
 		<jsp:include page="resumeWrite.jsp"></jsp:include>
-
-
 	</div>
 
 </body>

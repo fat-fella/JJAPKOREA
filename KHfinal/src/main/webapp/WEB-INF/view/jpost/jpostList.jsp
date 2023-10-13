@@ -30,7 +30,37 @@ ul.job-posting-list li {
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 }
+.btn_ud{
+            background-color: rgba(245,245,245)/* #f8f9fa */;
+            border: 2px solid rgba(245,245,245);
+            color: #212529;
+            
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+.btn_ud:hover{
+            background-color: #212529;
+            color: white;
+
+}
+.btn_ud:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+}
+
+
+
 
 </style>
 </head>
@@ -57,6 +87,9 @@ ul.job-posting-list li {
                 <li>
                     <div class="job-posting-box">
                         <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.jid}'/></c:url>">${item.reTitle}</a>
+                        <div class="">
+	                        <input type="button" class="btn_ud" value="수정"><input type="button" class="btn_ud" value="삭제">
+                        </div>
                     </div>
                 </li>
             </c:forEach>
