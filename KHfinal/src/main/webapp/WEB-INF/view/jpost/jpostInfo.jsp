@@ -111,7 +111,7 @@
 						<dl class="tbList">
 							<dt>산업(업종)</dt>
 							<dd>
-								<text>${jobPosting.RECRUIT_FIELD}</text>
+								<text>${jobPosting.FIELD_TITLE}</text>
 							</dd>
 							<dt>사원수</dt>
 							<dd>
