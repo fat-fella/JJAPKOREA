@@ -31,7 +31,7 @@
 			<ul>
 				<c:forEach var="item" items="${jpostList}">
 					<li><a
-						href="<c:url value='business/jobpostingupload/info'><c:param name='reTitle' value='${item.reTitle}'/></c:url>">${item.reTitle}</a>
+						href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.jid}'/></c:url>">${item.reTitle}</a>
 					</li>
 				</c:forEach>
 			</ul>

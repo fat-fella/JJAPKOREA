@@ -1132,8 +1132,8 @@
 													</a>
 												</li>
 												<li>
-													<a href="business/jobpostingupload/register">
-														<span class="tx">채용공고 등록</span>
+													<a href="business/jobpostingupload/list">
+														<span class="tx">채용공고 관리</span>
 													</a>
 												</li>
 												<li>

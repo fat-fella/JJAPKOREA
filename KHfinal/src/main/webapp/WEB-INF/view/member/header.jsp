@@ -1191,10 +1191,10 @@
 						<ul id="devMyPage" class="userNav">
 							<sec:authorize access="isAnonymous()">
 								<li class="userNav-item login">
-									<a href="login/" class="txt-button login-button">로그인</a>
+									<a href="<%=request.getContextPath() %>/login" class="txt-button login-button">로그인</a>
 								</li>
 								<li class="userNav-item join">
-									<a href="signup/person" class="txt-button join-button">회원가입</a>
+									<a href="<%=request.getContextPath() %>/signup/person" class="txt-button join-button">회원가입</a>
 								</li>
 							</sec:authorize>
 							<sec:authorize access="hasRole('ROLE_PERSON')">

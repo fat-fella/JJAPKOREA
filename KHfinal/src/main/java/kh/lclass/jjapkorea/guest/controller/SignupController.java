@@ -49,7 +49,7 @@ public class SignupController {
 			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
 			memberService.signUpMemberAndPerson(memberDto, personDto);
 			redirectAttr.addFlashAttribute("message", "회원 가입 성공");
-			viewPage = "redirect:/login/";
+			viewPage = "redirect:/login";
 		} catch (Exception e) {
 			redirectAttr.addFlashAttribute("message", "회원 가입 실패");
 			viewPage = "redirect:/signup/person";
@@ -132,7 +132,7 @@ public class SignupController {
 			memberDto.setMpw(bCryptPasswordEncoder.encode(memberDto.getMpw()));
 			memberService.signUpMemberAndBusiness(memberDto, businessDto);
 			redirectAttr.addFlashAttribute("message", "회원 가입 성공");
-			viewPage = "redirect:/login/";
+			viewPage = "redirect:/login";
 		} catch (Exception e) {
 			redirectAttr.addFlashAttribute("message", "회원 가입 실패");
 			viewPage = "redirect:/signup/business";
