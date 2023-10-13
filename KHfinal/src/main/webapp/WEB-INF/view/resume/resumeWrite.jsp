@@ -199,68 +199,76 @@
 			<div>
 				<label style="font-size: large; font-weight: bold;">자격증</label>
 				<table class="content_table" id="qualificationsTable1">
-					<tr>
-						<th class="c_th">자격면허</th>
-						<th class="c_th">취득일</th>
-						<th class="c_th">발급기관</th>
-					</tr>
-					<tr>
-						<td class="c_td"><input type="text" name="qualificationName"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 1)"></td>
-						<td class="c_td"><input type="text" name="qualificationDate"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 1)"></td>
-						<td class="c_td"><input type="text"
-								name="qualificationIssuingAuthority"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 1)"></td>
-					</tr>
-					<tr>
-						<td class="c_td"><input type="text" name="qualificationName"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 1)"></td>
-						<td class="c_td"><input type="text" name="qualificationDate"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 1)"></td>
-						<td class="c_td"><input type="text"
-								name="qualificationIssuingAuthority"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 1)"></td>
-					</tr>
+					<thead>
+						<tr>
+							<th class="c_th">자격면허<input type="hidden" name="qualificationName"></th>
+							<th class="c_th">취득일<input type="hidden" name="qualificationDate"></th>
+							<th class="c_th">발급기관<input type="hidden" name="qualificationIssuingAuthority"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="c_td"><input type="text" name="qualificationName"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 1)"></td>
+							<td class="c_td"><input type="text" name="qualificationDate"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 1)"></td>
+							<td class="c_td"><input type="text"
+									name="qualificationIssuingAuthority"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 1)"></td>
+						</tr>
+						<tr>
+							<td class="c_td"><input type="text" name="qualificationName"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 1)"></td>
+							<td class="c_td"><input type="text" name="qualificationDate"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 1)"></td>
+							<td class="c_td"><input type="text"
+									name="qualificationIssuingAuthority"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 1)"></td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 			<br>
 			<div>
 				<label style="font-size: large; font-weight: bold;">학력</label>
 				<table class="content_table" id="qualificationsTable2">
-					<tr>
-						<th class="c_th">재학기간</th>
-						<th class="c_th">학교명</th>
-						<th class="c_th">전공</th>
-					</tr>
-					<tr>
-						<td class="c_td"><input type="text" name="educationPeriod"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 2)"></td>
-						<td class="c_td"><input type="text" name="schoolName"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 2)"></td>
-						<td class="c_td"><input type="text" name="major"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 2)"></td>
-					</tr>
-					<tr>
-						<td class="c_td"><input type="text" name="educationPeriod"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 2)"></td>
-						<td class="c_td"><input type="text" name="schoolName"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 2)"></td>
-						<td class="c_td"><input type="text" name="major"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 2)"></td>
-					</tr>
+					<thead>
+						<tr>
+							<th class="c_th">재학기간<input type="hidden" name="educationPeriod"></th>
+							<th class="c_th">학교명<input type="hidden" name="schoolName"></th>
+							<th class="c_th">전공<input type="hidden" name="major"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="c_td"><input type="text" name="educationPeriod"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 2)"></td>
+							<td class="c_td"><input type="text" name="schoolName"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 2)"></td>
+							<td class="c_td"><input type="text" name="major"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 2)"></td>
+						</tr>
+						<tr>
+							<td class="c_td"><input type="text" name="educationPeriod"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 2)"></td>
+							<td class="c_td"><input type="text" name="schoolName"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 2)"></td>
+							<td class="c_td"><input type="text" name="major"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 2)"></td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 			<br>
@@ -268,33 +276,37 @@
 			<div>
 				<label style="font-size: large; font-weight: bold;">경력</label>
 				<table class="content_table" id="qualificationsTable3">
-					<tr>
-						<th class="c_th">기간</th>
-						<th class="c_th">기관 및 장소</th>
-						<th class="c_th">상세 내용</th>
-					</tr>
-					<tr>
-						<td class="c_td"><input type="text" name="workPeriod"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 3)"></td>
-						<td class="c_td"><input type="text" name="workPlace"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 3)"></td>
-						<td class="c_td"><input type="text" name="workDetails"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 3)"></td>
-					</tr>
-					<tr>
-						<td class="c_td"><input type="text" name="workPeriod"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 3)"></td>
-						<td class="c_td"><input type="text" name="workPlace"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 3)"></td>
-						<td class="c_td"><input type="text" name="workDetails"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 3)"></td>
-					</tr>
+					<thead>
+						<tr>
+							<th class="c_th">기간<input type="hidden" name="workPeriod"></th>
+							<th class="c_th">기관 및 장소<input type="hidden" name="workPlace"></th>
+							<th class="c_th">상세 내용<input type="hidden" name="workDetails"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="c_td"><input type="text" name="workPeriod"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 3)"></td>
+							<td class="c_td"><input type="text" name="workPlace"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 3)"></td>
+							<td class="c_td"><input type="text" name="workDetails"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 3)"></td>
+						</tr>
+						<tr>
+							<td class="c_td"><input type="text" name="workPeriod"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 3)"></td>
+							<td class="c_td"><input type="text" name="workPlace"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 3)"></td>
+							<td class="c_td"><input type="text" name="workDetails"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 3)"></td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 			<br>
@@ -303,33 +315,37 @@
 				<label style="font-size: large; font-weight: bold;">수상내역 /
 					공모전</label>
 				<table class="content_table" id="qualificationsTable4">
-					<tr>
-						<th class="c_th">수상명</th>
-						<th class="c_th">수여기관</th>
-						<th class="c_th">수상일자</th>
-					</tr>
-					<tr>
-						<td class="c_td"><input type="text" name="awardName"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 4)"></td>
-						<td class="c_td"><input type="text" name="awardingAuthority"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 4)"></td>
-						<td class="c_td"><input type="text" name="awardDate"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 4)"></td>
-					</tr>
-					<tr>
-						<td class="c_td"><input type="text" name="awardName"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 4)"></td>
-						<td class="c_td"><input type="text" name="awardingAuthority"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 4)"></td>
-						<td class="c_td"><input type="text" name="awardDate"
-								style="border: none; background: transparent; width: 80%; height: 80%;"
-								oninput="checkAndAddRow(this, 4)"></td>
-					</tr>
+					<thead>
+						<tr>
+							<th class="c_th">수상명<input type="hidden" name="awardName"></th>
+							<th class="c_th">수여기관<input type="hidden" name="awardingAuthority"></th>
+							<th class="c_th">수상일자<input type="hidden" name="awardDate"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="c_td"><input type="text" name="awardName"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 4)"></td>
+							<td class="c_td"><input type="text" name="awardingAuthority"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 4)"></td>
+							<td class="c_td"><input type="text" name="awardDate"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 4)"></td>
+						</tr>
+						<tr>
+							<td class="c_td"><input type="text" name="awardName"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 4)"></td>
+							<td class="c_td"><input type="text" name="awardingAuthority"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 4)"></td>
+							<td class="c_td"><input type="text" name="awardDate"
+									style="border: none; background: transparent; width: 80%; height: 80%;"
+									oninput="checkAndAddRow(this, 4)"></td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 			<br>
@@ -366,41 +382,111 @@
 		}
 
 		function addRow(inputField, tableNumber) {
-			var tableId = 'qualificationsTable' + tableNumber;
-			var table = document.getElementById(tableId);
+		    var tableId = 'qualificationsTable' + tableNumber;
+		    var table = document.getElementById(tableId);
 
-			if (inputField.value !== '') {
-				var newRow = document.createElement('tr');
+		    if (inputField.value !== '') {
+		        var newRow = document.createElement('tr');
+		        var inputNameElements = table.querySelectorAll('thead input[name]');
 
-				// 두 번째 행에서 이름을 가져옴
-				var secondRow = table.querySelector('tr:nth-child(2)');
-				var inputNameElements = secondRow
-						.querySelectorAll('input[name]');
+		        for (var i = 0; i < 3; i++) {
+		            var cell = document.createElement('td');
+		            cell.className = "c_td";
+		            var newInput = document.createElement("input");
+		            newInput.type = "text";
+		            newInput.style = "border: none; background: transparent; width: 80%; height: 80%;";
+		            newInput.name = inputNameElements[i].name;
 
-				for (var i = 0; i < 3; i++) {
-					var cell = document.createElement('td');
-					cell.className = "c_td"; // 클래스를 사용하여 테이블 서식을 복사
-					var newInput = document.createElement("input");
-					newInput.type = "text";
-					newInput.style = "border: none; background: transparent; width: 80%; height: 80%;";
+		            newInput.oninput = function () {
+		                checkAndAddRow(this, tableNumber);
+		            };
+		            cell.appendChild(newInput);
+		            newRow.appendChild(cell);
+		        }
 
-					// 두 번째 행의 각 열에서 name을 가져와서 새로운 행에 할당
-					newInput.name = inputNameElements[i].name;
+		        table.querySelector('tbody').appendChild(newRow);
 
-					newInput.oninput = function() {
-						checkAndAddRow(this, tableNumber);
-					};
-					cell.appendChild(newInput);
-					newRow.appendChild(cell);
-				}
+		        // 입력 필드가 포커스를 가지도록 함
+		        newRow.querySelector('input').focus();
 
-				table.appendChild(newRow);
-
-				// 입력 필드가 포커스를 가지도록 함
-				newRow.querySelector('input').focus();
-			}
+		        // 새로운 행에 대한 삭제 이벤트 핸들러 추가
+		        newRow.querySelectorAll('input[type="text"]').forEach(function (input) {
+		            input.addEventListener('keydown', handleDelete);
+		        });
+		    }
 		}
 
+		// 삭제 이벤트 핸들러 함수
+		function handleDelete(event) {
+		    if (event.key === "Backspace" && event.target.value === "") {
+		        // 백스페이스 키를 누르고 해당 입력 필드가 비어 있으면 행 삭제
+		        deleteRow(event.target.parentElement.parentElement);
+		    }
+		}
+
+		// 행을 삭제하는 함수
+		function deleteRow(row) {
+		    var table = row.parentElement;
+		    var inputsInRow = row.querySelectorAll('input[type="text"]');
+
+		    // 해당 행의 모든 input 요소에 연결된 keydown 이벤트 리스너 제거
+		    inputsInRow.forEach(function (input) {
+		        input.removeEventListener('keydown', handleDelete);
+		    });
+
+		    table.removeChild(row);
+		}
+
+		// 각 행의 입력 필드에 keydown 이벤트 리스너 추가
+		var rows = document.querySelectorAll('tr');
+		rows.forEach(function (row) {
+		    var inputsInRow = row.querySelectorAll('input[type="text"]');
+		    inputsInRow.forEach(function (input) {
+		        input.addEventListener('keydown', handleDelete);
+		    });
+		});
+
+		for (var tableNumber = 1; tableNumber <= 4; tableNumber++) {
+		    (function(tableNumber) {
+		        var tableId = 'qualificationsTable' + tableNumber;
+		        var table = document.getElementById(tableId);
+		        var thead = table.querySelector('thead');
+		        var inputElements = thead.querySelectorAll('input[name]');
+
+		        thead.addEventListener('click', function () {
+		            // 기존 행이 있는지 확인
+		            var existingRows = table.querySelectorAll('tbody tr');
+
+		            if (existingRows.length === 0) {
+		                // 행이 없는 경우, 새로운 행을 생성하고 테이블에 추가
+		                var newRow = document.createElement('tr');
+
+		                for (var i = 0; i < inputElements.length; i++) {
+		                    var cell = document.createElement('td');
+		                    cell.className = 'c_td';
+		                    var newInput = document.createElement('input');
+		                    newInput.type = 'text';
+		                    newInput.style = 'border: none; background: transparent; width: 80%; height: 80%;';
+		                    newInput.name = inputElements[i].name;
+
+		                    newInput.oninput = function () {
+		                        checkAndAddRow(this, tableNumber);
+		                    };
+		                    cell.appendChild(newInput);
+		                    newRow.appendChild(cell);
+
+		                    // 삭제 이벤트 리스너 추가
+		                    newInput.addEventListener('keydown', handleDelete);
+		                }
+
+		                // 새 행을 테이블의 tbody에 추가
+		                var tbody = table.querySelector('tbody');
+		                tbody.appendChild(newRow);
+		            }
+		        });
+		    })(tableNumber);
+		}
+		
 		// 폼 제출 버튼 클릭 시 호출되는 함수
 		document.getElementById("registerButton")
 				.addEventListener("click", function(event) {
