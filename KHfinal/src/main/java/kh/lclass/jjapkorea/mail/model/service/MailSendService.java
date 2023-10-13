@@ -8,9 +8,8 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import kh.lclass.jjapkorea.mail.model.dto.MailSendDto;
+import org.springframework.ui.Model;
+import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,9 +19,10 @@ import lombok.extern.slf4j.Slf4j;
 public class MailSendService {
 
 	private final JavaMailSender emailSender;
-	
-	@GetMapping("/person/noticeMail")
-	public void noticeMail(MailSendDto mailDto) throws MessagingException, IOException {
+
+//	@PostMapping("/person/noticeMail")
+	public String noticeMail(PersonDto selectOnePerson, Model model) throws MessagingException, IOException {
+		
 
 		// 기타 설정들을 담당할 MimeMesageHelper 객체를 생성
 		// 생성자의 매개값으로 MimeMessage 객체, bool, 문자 인코딩 설정
@@ -34,24 +34,23 @@ public class MailSendService {
 
 			helper.setFrom("jjapkorea@naver.com"); // 발신자 주소
 			helper.setSubject("jjapkorea mail title test"); // 메일 제목 설정
-			
-			helper.setText("jjapkorea mail content test", true); 
+
+			helper.setText("jjapkorea mail content test", true);
 			// 메일 내용 설정
 			// true를 해야 html 형식으로 전송
 			
+			selectOnePerson = (PersonDto) model.getAttribute("selectOnePerson");
+			String pemail = selectOnePerson.getPemail();
+
 			// 수신자 전송
-			for (String mem : mailDto.getPemail()) {
-				helper.setTo(mem);
-				emailSender.send(message);
-				log.info("mail notice send complete.");
-			}
+			helper.setTo(pemail);
+			emailSender.send(message);
+			log.info("mail notice send complete.");
 
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}
-		return;
+		return "index";
 	}
 
-	
-	
 }
