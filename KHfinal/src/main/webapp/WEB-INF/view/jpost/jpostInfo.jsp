@@ -16,7 +16,7 @@
 <body>
     <header class="jobkorea-header">
         <div class="jobkorea-logo">
-            <a href="#">JJAPKorea</a>
+            <a href="<%=request.getContextPath() %>/index">JJAPKorea</a>
         </div>
         <div class="jobkorea-menu">
             <ul>
