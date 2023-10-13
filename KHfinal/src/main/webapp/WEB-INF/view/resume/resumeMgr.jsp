@@ -16,7 +16,7 @@
 	crossorigin="anonymous">
 <link rel="icon"
 	href="<%=request.getContextPath()%>/resources/favicon.ico">
-+<!-- [1] 해상도 - 최적해상도 1260 결정 -->
+<!-- [1] 해상도 - 최적해상도 1260 결정 -->
 <!-- [2] content 영역 1260px -->
 <!-- [3] reset.css 폴더경로 -->
 <link rel="stylesheet"
