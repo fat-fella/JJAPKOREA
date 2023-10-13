@@ -488,8 +488,8 @@
 								%>
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
-							<div class="compName">${item.BIZNAME}</div>
-							<div class="recruitInfo">
+							<div class="compName" onclick="getinfo('${item.JID}')">${item.BIZNAME}</div>
+							<div class="recruitInfo" onclick="getinfo('${item.JID}')">
 								${item.RE_TITLE}<br> <br>
 							</div>
 							<div id="applyscrap">
@@ -571,8 +571,8 @@
 								%>
 								<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 							</div>
-							<div class="compName">${item.BIZNAME}</div>
-							<div class="recruitInfo">
+							<div class="compName" onclick="getinfo('${item.JID}')">${item.BIZNAME}</div>
+							<div class="recruitInfo" onclick="getinfo('${item.JID}')">
 								${item.RE_TITLE}<br> <br>
 							</div>
 							<div id="applyscrap">
