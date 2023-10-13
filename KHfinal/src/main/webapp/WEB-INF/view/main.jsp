@@ -9,59 +9,56 @@
 	integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
 	crossorigin="anonymous"></script>
 <script>
+	/* function getinfo(jid) {
 
-/* function getinfo(jid) {
+	 $.ajax({
+	 type: 'GET',
+	 url: '${pageContext.request.contextPath}/jobpostinginfo',
+	 contentType: 'application/json',
+	 data: JSON.stringify({
+	 jid: jid 
+	 }),
 
-    $.ajax({
-        type: 'GET',
-        url: '${pageContext.request.contextPath}/jobpostinginfo',
-        contentType: 'application/json',
-        data: JSON.stringify({
-        	jid: jid 
-        	}),
+	 dataType: 'json',  // 서버에서 문자열 응답을 받기 위해 설정
+	 success: function (response) {
 
-        dataType: 'json',  // 서버에서 문자열 응답을 받기 위해 설정
-        success: function (response) {
-
-            console.log('취업공고 상세 ajax 성공:', response);
-            if (response === "success") {
-                // 채용공고 상세 페이지로 이동
-            	window.location.assign('${pageContext.request.contextPath}/jobpostinginfo');
-            } else {
-                // 다른 처리를 원하는 경우
-                 window.location.href = '${pageContext.request.contextPath}/login';
-            }
-        },
-        error: function (error) {
-            console.log('취업공고 상세 ajax 실패:', error);
-        }
-    });
-}
- */
- function getinfo(jid) {
-	 location.href='${pageContext.request.contextPath}/jobpostinginfo?jid=' + jid;
-/* 	    $.ajax({
-	        type: 'GET',
-	        url: '${pageContext.request.contextPath}/jobpostinginfo?jid=' + jid,
-	        //dataType: 'json',
-	        success: function (response) {
-	            console.log('취업공고 상세 ajax 성공:', response);
-	            if (response === "success") {
-	                // 채용공고 상세 페이지로 이동
-	                window.location.assign('${pageContext.request.contextPath}/jobpostinginfo');
-	            } else {
-	                // 다른 처리를 원하는 경우
-	                window.location.href = '${pageContext.request.contextPath}/login';
-	            }
-	        },
-	        error: function (error) {
-	            console.log('취업공고 상세 ajax 실패:', error);
-	        }
-	    }); */
+	 console.log('취업공고 상세 ajax 성공:', response);
+	 if (response === "success") {
+	 // 채용공고 상세 페이지로 이동
+	 window.location.assign('${pageContext.request.contextPath}/jobpostinginfo');
+	 } else {
+	 // 다른 처리를 원하는 경우
+	 window.location.href = '${pageContext.request.contextPath}/login';
+	 }
+	 },
+	 error: function (error) {
+	 console.log('취업공고 상세 ajax 실패:', error);
+	 }
+	 });
+	 }
+	 */
+	function getinfo(jid) {
+		location.href = '${pageContext.request.contextPath}/jobpostinginfo?jid='
+				+ jid;
+		/* 	    $.ajax({
+		 type: 'GET',
+		 url: '${pageContext.request.contextPath}/jobpostinginfo?jid=' + jid,
+		 //dataType: 'json',
+		 success: function (response) {
+		 console.log('취업공고 상세 ajax 성공:', response);
+		 if (response === "success") {
+		 // 채용공고 상세 페이지로 이동
+		 window.location.assign('${pageContext.request.contextPath}/jobpostinginfo');
+		 } else {
+		 // 다른 처리를 원하는 경우
+		 window.location.href = '${pageContext.request.contextPath}/login';
+		 }
+		 },
+		 error: function (error) {
+		 console.log('취업공고 상세 ajax 실패:', error);
+		 }
+		 }); */
 	}
-
-	
-
 
 	$(function() {
 		$(window).scroll(function() {
@@ -79,87 +76,128 @@
 			return false;
 		});
 	});
-	
-	$(document).ready(function() {
-	    $("[data-jid]").each(function() {
-	        var jid = $(this).data("jid");
-	        var scrapButton = $(this);
 
-	        // 서버에서 JSON 데이터 가져오기
-	        var selectListScrapJson = '${selectListScrapJson}';
-	        
-	        if (selectListScrapJson) {
-	            var selectListScrap = JSON.parse(selectListScrapJson);
+	$(document)
+			.ready(
+					function() {
+						$("[data-jid]")
+								.each(
+										function() {
+											var jid = $(this).data("jid");
+											var scrapButton = $(this);
 
-	            if (Array.isArray(selectListScrap)) {
-	                var selectOneScrap = selectListScrap.find(function(item) {
-	                    return item.jid === jid;
-	                });
+											// 서버에서 JSON 데이터 가져오기
+											var selectListScrapJson = '${selectListScrapJson}';
 
-	                if (selectOneScrap) {
-	                    var isScrapAction = JSON.parse(selectOneScrap.isScrapAction);
+											if (selectListScrapJson) {
+												var selectListScrap = JSON
+														.parse(selectListScrapJson);
 
-	                    if (isScrapAction) {
-	                        scrapButton.addClass('scraped');
-	                        scrapButton.text('스크랩됨');
-	                        scrapButton.removeClass('scrap');
-	                    } else {
-	                        scrapButton.removeClass('scraped');
-	                        scrapButton.text('채용정보 스크랩');
-	                        scrapButton.addClass('scrap');
-	                    }
-	                }
-	            }
-	        }
-	    });
-	});
-	
+												if (Array
+														.isArray(selectListScrap)) {
+													var selectOneScrap = selectListScrap
+															.find(function(item) {
+																return item.jid === jid;
+															});
+
+													if (selectOneScrap) {
+														var isScrapAction = JSON
+																.parse(selectOneScrap.isScrapAction);
+
+														if (isScrapAction) {
+															scrapButton
+																	.addClass('scraped');
+															scrapButton
+																	.text('스크랩됨');
+															scrapButton
+																	.removeClass('scrap');
+														} else {
+															scrapButton
+																	.removeClass('scraped');
+															scrapButton
+																	.text('채용정보 스크랩');
+															scrapButton
+																	.addClass('scrap');
+														}
+													}
+												}
+											}
+										});
+					});
+
 	// 스크랩 버튼 클릭 시
 	function setScrap(jid) {
-	    var mid = "${mid}";
-	    var scrapButton = $('[data-jid="' + jid + '"]');
-	    
-	    // 현재 스크랩 상태 가져오기
-	    var isScrapAction = scrapButton.hasClass('scrap'); // 스크랩 버튼이 'scrap' 클래스를 가지고 있는지 여부에 따라 설정
-	    
-	    $.ajax({
-	        url: "${pageContext.request.contextPath}/person/myPage",
-	        type: "post",
-	        contentType: "application/json", // JSON 형식으로 데이터 전송
-	        data: JSON.stringify({
-	            jid: jid,
-	            mid: mid,
-	            isScrapAction: isScrapAction.toString() // 문자열로 변환하여 보냄
-	        }),
-	        success: function(result) {
-	        	if (result === "스크랩 성공") {
-	                // 스크랩 성공 처리
-	                scrapButton.toggleClass('scraped');
-	                scrapButton.text('스크랩됨');
-	                scrapButton.removeClass('scrap');
-	                alert("스크랩 성공");
-	            } else if (result === "스크랩 해제 성공") {
-	                // 스크랩 해제 성공 처리
-	                scrapButton.toggleClass('scraped');
-	                scrapButton.text('채용정보 스크랩');
-	                scrapButton.addClass('scrap');
-	                alert("스크랩 해제 성공");
-	            } else {
-	            	// 스크랩 실패 처리
-	                alert("스크랩 실패");
-	            }
-	        },
-	        error: function(xhr, status, error) {
-	            if (xhr.status === 400) {
-	                alert("클라이언트 오류"); // 클라이언트 오류
-	            } else if (xhr.status === 500) {
-	                alert("서버 오류"); // 서버 오류
-	            } else {
-	                alert("알 수 없는 오류: " + xhr.status); // 기타 오류
-	            }
-	        }
-	    });
+		var mid = "${mid}";
+		var scrapButton = $('[data-jid="' + jid + '"]');
+
+		// 현재 스크랩 상태 가져오기
+		var isScrapAction = scrapButton.hasClass('scrap'); // 스크랩 버튼이 'scrap' 클래스를 가지고 있는지 여부에 따라 설정
+
+		$.ajax({
+			url : "${pageContext.request.contextPath}/person/myPage",
+			type : "post",
+			contentType : "application/json", // JSON 형식으로 데이터 전송
+			data : JSON.stringify({
+				jid : jid,
+				mid : mid,
+				isScrapAction : isScrapAction.toString()
+			// 문자열로 변환하여 보냄
+			}),
+			success : function(result) {
+				if (result === "스크랩 성공") {
+					// 스크랩 성공 처리
+					scrapButton.toggleClass('scraped');
+					scrapButton.text('스크랩됨');
+					scrapButton.removeClass('scrap');
+					alert("스크랩 성공");
+				} else if (result === "스크랩 해제 성공") {
+					// 스크랩 해제 성공 처리
+					scrapButton.toggleClass('scraped');
+					scrapButton.text('채용정보 스크랩');
+					scrapButton.addClass('scrap');
+					alert("스크랩 해제 성공");
+				} else {
+					// 스크랩 실패 처리
+					alert("스크랩 실패");
+				}
+			},
+			error : function(xhr, status, error) {
+				if (xhr.status === 400) {
+					alert("클라이언트 오류"); // 클라이언트 오류
+				} else if (xhr.status === 500) {
+					alert("서버 오류"); // 서버 오류
+				} else {
+					alert("알 수 없는 오류: " + xhr.status); // 기타 오류
+				}
+			}
+		});
 	}
+
+	// test
+	$(function sendEmail(mid) {
+		var mid = "${mid}";
+		
+		$("#devApplyBtn").click(function() {
+			$.ajax({
+				url : "${pageContext.request.contextPath}/person/noticeMail",
+				type : "post",
+				data : "json",
+				success : function(data){
+					alert("[지원완료] 이메일이 전송되었습니다.");
+				},
+				error: function (xhr, status, e) {
+					if (xhr.status === 400) {
+		                alert("클라이언트 오류"); // 클라이언트 오류
+		            } else if (xhr.status === 500) {
+		                alert("서버 오류"); // 서버 오류
+		            } else {
+		                alert("알 수 없는 오류: " + xhr.status); // 기타 오류
+		            }
+			});
+		});
+	});
+	
+	
 </script>
 <div class="wrap">
 	<main>
@@ -194,7 +232,8 @@
 									<img src="<%=randomImagePath%>" alt="랜덤 이미지">
 								</div>
 								<div class="compName" onclick="getinfo('${item.JID}')">${item.BIZNAME}</div>
-								<div class="recruitInfo" data-jid="${item.JID}" onclick="getinfo('${item.JID}')">
+								<div class="recruitInfo" data-jid="${item.JID}"
+									onclick="getinfo('${item.JID}')">
 									${item.RE_TITLE}<br> <br>
 								</div>
 								<div id="applyscrap">
@@ -214,22 +253,19 @@
 										</c:otherwise>
 									</c:choose>
 									<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
-									<input type="hidden" name="jid" value="${item.JID}">
-									<input type="hidden" name="recruitField"
-										value="${item.RECRUIT_FIELD}">
-									<input type="hidden" name="bizname" value="${item.BIZNAME}">
-									<input type="hidden" name="brno" value="${item.BRNO}">
-									<input type="hidden" name="userEducation"
-										value="${item.USER_EDUCATION}">
-									<input type="hidden" name="salary" value="${item.SALARY}">
-									<input type="hidden" name="minSalary"
-										value="${item.MIN_SALARY}">
+									<input type="hidden" name="jid" value="${item.JID}"> <input
+										type="hidden" name="recruitField"
+										value="${item.RECRUIT_FIELD}"> <input type="hidden"
+										name="bizname" value="${item.BIZNAME}"> <input
+										type="hidden" name="brno" value="${item.BRNO}"> <input
+										type="hidden" name="userEducation"
+										value="${item.USER_EDUCATION}"> <input type="hidden"
+										name="salary" value="${item.SALARY}"> <input
+										type="hidden" name="minSalary" value="${item.MIN_SALARY}">
 									<input type="hidden" name="maxSalary"
-										value="${item.MAX_SALARY}">
-									<input type="hidden" name="registDate"
-										value="${item.REGIST_DATE}">
-									<input type="hidden" name="closeDate"
-										value="${item.CLOSE_DATE}">
+										value="${item.MAX_SALARY}"> <input type="hidden"
+										name="registDate" value="${item.REGIST_DATE}"> <input
+										type="hidden" name="closeDate" value="${item.CLOSE_DATE}">
 									<input type="hidden" name="reTitle" value="${item.RE_TITLE}">
 									<input type="hidden" name="career" value="${item.CAREER}">
 									<input type="hidden" name="workType" value="${item.WORK_TYPE}">
@@ -615,13 +651,13 @@
 								</div>
 								<ul>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[아우터플레인] 서버 프로그래머');">[아우터플레인]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[아우터플레인] 서버 프로그래머');">[아우터플레인]
 											서버 프로그래머</a></li>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[아우터플레인] 전 직군 인재채용');">[아우터플레인]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[아우터플레인] 전 직군 인재채용');">[아우터플레인]
 											전 직군 인재채용</a></li>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[레트로홀릭스튜디오] 도트 디자이너 모집');">[레트로홀릭스튜디오]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_브이에이게임즈_[레트로홀릭스튜디오] 도트 디자이너 모집');">[레트로홀릭스튜디오]
 											도트 디자이너 모집</a></li>
 								</ul>
 								<div class="extra">
@@ -647,13 +683,13 @@
 								</div>
 								<ul>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[111퍼센트]마케팅 영상 콘텐츠 디자이너');">[111퍼센트]마케팅
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[111퍼센트]마케팅 영상 콘텐츠 디자이너');">[111퍼센트]마케팅
 											영상 콘텐츠 디자이너</a></li>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[111퍼센트] 로블록스 개발자 모집');">[111퍼센트]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[111퍼센트] 로블록스 개발자 모집');">[111퍼센트]
 											로블록스 개발자 모집</a></li>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[곰블]게임 클라이언트 개발자');">[곰블]게임
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_111퍼센트㈜_[곰블]게임 클라이언트 개발자');">[곰블]게임
 											클라이언트 개발자</a></li>
 								</ul>
 								<div class="extra">
@@ -678,13 +714,13 @@
 								</div>
 								<ul>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] 유니티 클라이언트 개발자 모집');">[경력]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] 유니티 클라이언트 개발자 모집');">[경력]
 											유니티 클라이언트 개발자 모집</a></li>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] 퍼포먼스 마케터 모집');">[경력]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] 퍼포먼스 마케터 모집');">[경력]
 											퍼포먼스 마케터 모집</a></li>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] QA 엔지니어 모집');">[경력]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_게임듀오_[경력] QA 엔지니어 모집');">[경력]
 											QA 엔지니어 모집</a></li>
 								</ul>
 								<div class="extra">
@@ -709,14 +745,14 @@
 								</div>
 								<ul>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] GameBI DW/DM 엔지니어');">[NHN]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] GameBI DW/DM 엔지니어');">[NHN]
 											GameBI DW/DM 엔지니어</a></li>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] 글로벌 신규 소셜 카지노 게임사업 PM');">
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] 글로벌 신규 소셜 카지노 게임사업 PM');">
 											[NHN] 글로벌 신규 소셜 카지노 게임<br>사업 PM
-										</a></li>
+									</a></li>
 									<li><a href="#" target="_blank"
-											onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] 글로벌 신규 소셜 카지노 게임 서버 개발');">[NHN]
+										onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_NHN_[NHN] 글로벌 신규 소셜 카지노 게임 서버 개발');">[NHN]
 											글로벌 신규 소셜 카지노 게임 서버 개발</a></li>
 								</ul>
 								<div class="extra">
@@ -731,8 +767,8 @@
 							</li>
 						</ul>
 						<a href="#" class="btn_more_header" target="_blank"
-							onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_채용광고더보기');">
-							채용광고 더보기<i class="icon-more-arrow-right" aria-hidden="true"></i>
+							onclick="GA_Event('홈_PC','게임분야채용정보','게임잡이동_채용광고더보기');"> 채용광고
+							더보기<i class="icon-more-arrow-right" aria-hidden="true"></i>
 						</a>
 					</div>
 				</div>
