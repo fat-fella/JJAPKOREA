@@ -34,12 +34,12 @@
 								<span class="coName"> ${jobPosting.BIZNAME} </span>
 						
 							<div class="item favorite">
-								<button type="button"
+								<!-- <button type="button"
 									class="girBtn girBtn_2 girBtnFav  devFavor5_15983790"
 									onclick=" JKLoginLayer.open('/Recruit/Booth_GI_Read/42887747?Oem_Code=C1&amp;productType=FirstVVIP&amp;logpath=0'); ">
 									<span>관심기업</span>
 								</button>
-							</div>
+ -->							</div>
 						</div>
 							<p>${jobPosting.RE_TITLE}</p>
 					</h3>
@@ -84,11 +84,8 @@
 										href="https://www.jobkorea.co.kr/List_GI/GI_Area_List.asp?AreaNo=I130&amp;AllStat=1"
 										target="_blank" title="새창"
 										onclick="javascript:go_Area_List('I130',1); return false;">서울시
-										마포구</a>
-									<button type="button" class="girBtn girBtn_3 girBtnMap"
-										onclick="$('html, body').stop().animate({ scrollTop: $('#secReadWork').offset().top - 70 }, 500);">
-										<span>지도</span>
-									</button>
+									</a>
+									
 
 								</dd>
 
