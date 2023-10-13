@@ -117,10 +117,8 @@ import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 		private BCryptPasswordEncoder bCryptPasswordEncoder; // 시큐리티 암호화
 		
 		
-		
 		// API sns login 각각의 소셜 API 콜백 받음
-		@RequestMapping(value = "/auth/{snsService}/callback", 
-				method = { RequestMethod.GET, RequestMethod.POST})
+			@GetMapping("/auth/{snsService}/callback")
 		public String snsLoginCallback(@PathVariable String snsService,
 				Model model, @RequestParam String code, HttpSession session) throws Exception {
 			
@@ -192,7 +190,7 @@ import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 			
 		}
 		
-		@RequestMapping(value = "/logout", method = RequestMethod.GET)
+		@GetMapping({"/logout", "/logout/"})
 		public String logout(HttpSession session, 
 				HttpServletRequest request, HttpServletResponse response) throws Exception {
 			logger.info("logout GET .....");
@@ -215,8 +213,7 @@ import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 			return "/login";
 		}
 		
-
-		@RequestMapping(value = "/loginPost", method = RequestMethod.POST)
+		@GetMapping({"/loginPost", "/loginPost/"})
 		public void loginPost(APISnsLoginDTO dto, Model model, HttpSession session) throws Exception {
 			logger.info("loginPost...LoginDTO={}", dto); 
 			
@@ -236,7 +233,7 @@ import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 		}
 		
 		@ResponseBody
-		@RequestMapping(value="/logoutAjax", method=RequestMethod.GET)
+		@GetMapping({"/logoutAjax", "/logoutAjax/"})
 		public ResponseEntity<String> logoutAjax(HttpServletRequest request, HttpServletResponse response, 
 				HttpSession session) {
 			logger.info("Logout Ajax>> " + session.getAttribute("loginUser"));
@@ -259,7 +256,7 @@ import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 		}
 		
 		@ResponseBody
-		@PostMapping("/loginAjax")
+		@GetMapping({"/loginAjax", "/loginAjax/"})
 		public ResponseEntity<APISnsMember> loginAjax(@RequestBody APISnsLoginDTO dto, HttpSession session,
 				HttpServletRequest request, HttpServletResponse response) throws Exception {
 			logger.info("loginPost...LoginDTO={}", dto); 
