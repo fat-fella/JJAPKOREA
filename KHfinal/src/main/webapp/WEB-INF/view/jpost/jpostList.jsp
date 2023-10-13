@@ -47,6 +47,10 @@ ul.job-posting-list li {
 		</div>
 	</header>
 	<div class="list">
+	<div class="jposthead">
+			<h2>채용공고 관리</h2>
+			<h6>관리할 채용공고를 등록해주세요.</h6>
+		</div>
     <div>
         <ul class="job-posting-list">
             <c:forEach var="item" items="${jpostList}">
