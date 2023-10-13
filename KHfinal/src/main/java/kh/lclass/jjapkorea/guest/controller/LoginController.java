@@ -185,7 +185,7 @@ import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 			}
 			System.out.println(" [mj] [3]: " + snsUser);
 //			return "apiSnsLoginResult";
-			return "redirect:/index";
+			return "redirect:/login";
 
 			
 		}
