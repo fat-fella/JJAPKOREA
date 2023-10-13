@@ -66,6 +66,6 @@
 
 	</select>
 	<select id="getJobPostingWithInfo" resultType="map">
-	    select b.*, i.JID, i.RECRUIT_FIELD, i.USER_EDUCATION, i.SALARY, i.MIN_SALARY, i.MAX_SALARY, i.REGIST_DATE, i.CLOSE_DATE, i.RE_TITLE, i.CAREER, i.WORK_TYPE, i.EMP_TYPE_CODE, i.TODAY, i.DDAY, TO_CHAR(i.JPOSTDETAIL) AS JPOSTDETAIL from info i join business b on i.mid = b.mid where i.jid = #{jid} order by i.post_date desc
-	</select>
+<!-- 	    select b.*, i.JID, i.RECRUIT_FIELD, i.USER_EDUCATION, i.SALARY, i.MIN_SALARY, i.MAX_SALARY, i.REGIST_DATE, i.CLOSE_DATE, i.RE_TITLE, i.CAREER, i.WORK_TYPE, i.EMP_TYPE_CODE, i.TODAY, i.DDAY, TO_CHAR(i.JPOSTDETAIL) AS JPOSTDETAIL from info i join business b on i.mid = b.mid where i.jid = #{jid} order by i.post_date desc-->	
+SELECT r.*, a.JID, a.RECRUIT_FIELD, a.USER_EDUCATION, a.SALARY, a.MIN_SALARY, a.MAX_SALARY, a.REGIST_DATE, a.CLOSE_DATE, a.RE_TITLE, a.CAREER, a.WORK_TYPE, a.EMP_TYPE_CODE, a.TODAY, a.DDAY, TO_CHAR(a.JPOSTDETAIL) AS JPOSTDETAIL FROM RFIELD r join (SELECT * FROM BUSINESS b JOIN INFO i ON i.MID = b.MID)a ON r.RECRUIT_FIELD =a.RECRUIT_FIELD WHERE JID = #{JID}	</select>
 </mapper>
