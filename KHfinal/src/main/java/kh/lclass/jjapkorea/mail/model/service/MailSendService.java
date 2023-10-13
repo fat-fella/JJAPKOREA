@@ -20,9 +20,7 @@ public class MailSendService {
 
 	private final JavaMailSender emailSender;
 
-//	@PostMapping("/person/noticeMail")
 	public String noticeMail(PersonDto selectOnePerson, Model model) throws MessagingException, IOException {
-		
 
 		// 기타 설정들을 담당할 MimeMesageHelper 객체를 생성
 		// 생성자의 매개값으로 MimeMessage 객체, bool, 문자 인코딩 설정
@@ -38,7 +36,7 @@ public class MailSendService {
 			helper.setText("jjapkorea mail content test", true);
 			// 메일 내용 설정
 			// true를 해야 html 형식으로 전송
-			
+
 			selectOnePerson = (PersonDto) model.getAttribute("selectOnePerson");
 			String pemail = selectOnePerson.getPemail();
 
