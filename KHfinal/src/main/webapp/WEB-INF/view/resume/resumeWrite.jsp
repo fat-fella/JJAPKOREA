@@ -488,54 +488,51 @@
 		}
 		
 		// 폼 제출 버튼 클릭 시 호출되는 함수
-		document.getElementById("registerButton")
-				.addEventListener("click", function(event) {
-					var rowsToSubmit = []; // 폼을 제출할 행을 저장할 배열
+		document.getElementById("registerButton").addEventListener("click", function(event) {
+		    var rowsToSubmit = []; // 폼을 제출할 행을 저장할 배열
+		    var isFormValid = true; // 폼이 유효한지 여부를 나타내는 변수
 
-					// 섹션 내에 있는 모든 테이블에 대해 루프 돌면서 확인
-					for (var tableNumber = 1; tableNumber <= 4; tableNumber++) {
-						var tableId = 'qualificationsTable' + tableNumber;
-						var table = document.getElementById(tableId);
-						var rows = table.querySelectorAll('tr');
+		    // 섹션 내에 있는 모든 테이블에 대해 루프 돌면서 확인
+		    for (var tableNumber = 1; tableNumber <= 4; tableNumber++) {
+		        var tableId = 'qualificationsTable' + tableNumber;
+		        var table = document.getElementById(tableId);
+		        var rows = table.querySelectorAll('tr');
 
-						// 각 행의 입력 필드를 확인하고 빈 값이 없는 행만 rowsToSubmit 배열에 추가
-						rows.forEach(function(row) {
-							var inputsInRow = row
-									.querySelectorAll('input[type="text"]');
-							var isRowEmpty = true;
+		        // 각 행의 입력 필드를 확인하고 빈 값이 없는 행만 rowsToSubmit 배열에 추가
+		        rows.forEach(function(row) {
+		            var inputsInRow = row.querySelectorAll('input[type="text"]');
+		            var isRowEmpty = true;
 
-							inputsInRow.forEach(function(input) {
-								if (input.value.trim() !== '') {
-									isRowEmpty = false;
-								}
-							});
+		            inputsInRow.forEach(function(input) {
+		                if (input.value.trim() !== '') {
+		                    isRowEmpty = false;
+		                }
+		            });
 
-							if (!isRowEmpty) {
-								rowsToSubmit.push(row);
-							}
-						});
-					}
+		            if (!isRowEmpty) {
+		                rowsToSubmit.push(row);
+		            }
+		        });
+		    }
 
-					// 폼 데이터 생성
-					var formData = new FormData();
+		    // rowsToSubmit 배열에 있는 행을 순회하면서 폼 데이터에 추가
+		    rowsToSubmit.forEach(function(row) {
+		        var inputsInRow = row.querySelectorAll('input[type="text"]');
+		        inputsInRow.forEach(function(input) {
+		            formData.append(input.name, input.value);
+		        });
+		    });
 
-					// rowsToSubmit 배열에 있는 행을 순회하면서 폼 데이터에 추가
-					rowsToSubmit.forEach(function(row) {
-						var inputsInRow = row
-								.querySelectorAll('input[type="text"]');
-						inputsInRow.forEach(function(input) {
-							formData.append(input.name, input.value);
-						});
-					});
-
-					if (rowsToSubmit.length > 0) {
-						// 폼을 제출하거나 폼 데이터를 사용할 수 있음
-					} else {
-						// 모든 행이 비어 있을 경우 폼 제출을 중지하고 경고 메시지를 표시
-						event.preventDefault(); // 폼 제출 중지
-						alert("항목을 작성해주세요.");
-					}
-				});
+		    // 모든 행이 비어 있지 않고, 적어도 하나의 행이 있을 경우 폼을 제출
+		    if (rowsToSubmit.length > 0) {
+		        // 폼을 제출하거나 폼 데이터를 사용할 수 있음
+		    } else {
+		        // 모든 행이 비어 있을 경우 폼 제출을 중지하고 경고 메시지를 표시
+		        event.preventDefault(); // 폼 제출 중지
+		        isFormValid = false; // 폼이 유효하지 않음
+		        alert("항목을 작성해주세요.");
+		    }
+		});
 	</script>
 </body>
 </html>
