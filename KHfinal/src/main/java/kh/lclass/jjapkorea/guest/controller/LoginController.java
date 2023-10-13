@@ -87,7 +87,7 @@ import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 //			@Autowired
 //			MemberService memberService;
 //			
-		@GetMapping("/login/admin")
+		@GetMapping("/admin")
 		public String loginAdmin() throws Exception {
 			return "member/loginAdmin";
 		}
