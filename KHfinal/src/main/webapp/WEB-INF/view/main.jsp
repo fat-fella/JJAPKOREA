@@ -173,7 +173,7 @@
 		});
 	}
 
-	// test
+	// 이메일 보내기 
 	$(function sendEmail(mid) {
 		var mid = "${mid}";
 		
@@ -193,10 +193,10 @@
 		            } else {
 		                alert("알 수 없는 오류: " + xhr.status); // 기타 오류
 		            }
-			});
-		});
-	});
-	
+				}); // error
+			}); // ajax
+		}); // click
+	} // sendEmail
 	
 </script>
 <div class="wrap">
