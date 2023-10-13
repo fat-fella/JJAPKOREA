@@ -20,9 +20,9 @@
 		<intercept-url pattern="/rooms/**" access="hasAnyRole('ROLE_PERSON', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/room/**" access="hasAnyRole('ROLE_PERSON', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/**" access="permitAll" />
-		<form-login login-page="/login/"
+		<form-login login-page="/login"
 							default-target-url="/index"
-							authentication-failure-url="/login/"
+							authentication-failure-url="/login"
 							username-parameter="mid"
 							password-parameter="mpw" 
 		/>

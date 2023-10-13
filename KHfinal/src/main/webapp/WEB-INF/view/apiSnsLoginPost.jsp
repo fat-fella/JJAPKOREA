@@ -6,7 +6,7 @@
 		<div class="text-center text-danger mtb50">${ apiSnsLoginResult }</div>
 		
 		<div class="box-footer text-center">
-		  <a href="/login" class="btn btn-primary">Retry Sign In</a>
+		  <a href="/login/" class="btn btn-primary">Retry Sign In</a>
 		</div>
 
 	</div>

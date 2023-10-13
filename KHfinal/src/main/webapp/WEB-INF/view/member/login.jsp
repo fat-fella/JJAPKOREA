@@ -24,7 +24,7 @@
 					<span class="logo"></span>짭코리아에 오신 것을 환영합니다.
 				</h1>
 				<p class="lnb">
-					<a href="../../jjapkorea/index">잡코리아홈</a>
+					<a href="${pageContext.request.contextPath}/index">잡코리아홈</a>
 					<span class="txtBar">|</span>
 					<a href="http://www.jobkorea.co.kr/Customer_C/CC_Main.asp">고객센터</a>
 				</p>
@@ -38,7 +38,7 @@
 						<legend class="blind">로그인 입력폼</legend>
 
 						<form name="form" id="form" method="post"
-							action="../../jjapkorea/login">
+							action="${pageContext.request.contextPath}/login">
 							<input type="hidden" name="mtype" id="mtype" value="ROLE_PERSON">
 							<!-- 회원선택-->
 							<div class="select_row">
