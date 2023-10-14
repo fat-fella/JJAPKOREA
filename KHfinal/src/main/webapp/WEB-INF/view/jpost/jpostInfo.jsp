@@ -8,6 +8,36 @@
 <meta charset="UTF-8">
 <title>채용공고 상세페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script>
+// 이메일 보내기 
+ $(function sendEmail(mid) {
+	var mid = "${mid}";
+	
+	$("#devApplyBtn").click(function() {
+		$.ajax({
+			url : "${pageContext.request.contextPath}/person/noticeMail",
+			type : "post",
+			data : "json",
+			success : function(data){
+				alert("[지원완료] 이메일이 전송되었습니다.");
+			},
+			error: function (xhr, status, e) {
+				if (xhr.status === 400) {
+	                alert("클라이언트 오류"); // 클라이언트 오류
+	            } else if (xhr.status === 500) {
+	                alert("서버 오류"); // 서버 오류
+	            } else {
+	                alert("알 수 없는 오류: " + xhr.status); // 기타 오류
+	            }
+			}); // error
+		}); // ajax
+	}); // click
+} // sendEmail
+ 
+
+</script> -->
+
+
 <link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jpostinfo.css">

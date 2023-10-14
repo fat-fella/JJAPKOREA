@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import kh.lclass.jjapkorea.swp.domain.APISnsMember;
 import kh.lclass.jjapkorea.swp.dto.APISnsLoginDTO;
+import kh.lclass.jjapkorea.swp.dto.APISnsSignUpDTO;
 import kh.lclass.jjapkorea.swp.persistence.APISnsUserDAO;
 
 @Service
@@ -46,8 +47,8 @@ public class APISnsMemberServiceImpl implements APISnsMemberService {
 	}
 
 	@Override
-	public APISnsMember psignup(APISnsLoginDTO dto) throws Exception {
-		return dao.login(dto);
+	public APISnsMember signup(APISnsSignUpDTO dto) throws Exception {
+		return dao.signup(dto);
 	}
 	
 }

@@ -32,6 +32,7 @@ import kh.lclass.jjapkorea.swp.auth.SNSLogin;
 import kh.lclass.jjapkorea.swp.auth.SnsValue;
 import kh.lclass.jjapkorea.swp.domain.APISnsMember;
 import kh.lclass.jjapkorea.swp.dto.APISnsLoginDTO;
+import kh.lclass.jjapkorea.swp.dto.APISnsSignUpDTO;
 import kh.lclass.jjapkorea.swp.interceptor.APISnsSessionNames;
 import kh.lclass.jjapkorea.swp.service.APISnsMemberService;
 
@@ -153,11 +154,11 @@ public class APISnsPsignupController {
 	}
 	
 	@RequestMapping(value = "/psignupPost", method = RequestMethod.POST)
-	public void psignupPost(APISnsLoginDTO dto, Model model, HttpSession session) throws Exception {
+	public void psignupPost(APISnsSignUpDTO dto, Model model, HttpSession session) throws Exception {
 		logger.info("psignupPost...LoginDTO={}", dto); 
 		
 		try {
-			APISnsMember apiSnsMember = service.psignup(dto);
+			APISnsMember apiSnsMember = service.signup(dto);
 			if (apiSnsMember != null) {
 				Date expire = new Date(System.currentTimeMillis() + APISnsSessionNames.EXPIRE * 1000);
 				service.keepLogin(apiSnsMember.getMid(), session.getId(), expire);
