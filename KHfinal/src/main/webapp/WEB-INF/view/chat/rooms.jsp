@@ -5,13 +5,24 @@
 <html lang="en">
 <head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_chatrooms.css">
+<meta charset="UTF-8">
+<title>고객센터 채팅</title>
 
-    <meta charset="UTF-8">
-    <title>고객센터 채팅</title>
-    <!-- 여기에 필요한 CSS 및 JavaScript 파일을 포함할 수 있습니다. -->
 </head>
+	<header>
+		<div class="container">
+			<a href="index" class="logo linkLogo"> <img
+				src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
+				alt="JJAPKOREA" class="logoimg"></a>
+			<div class="links">
+				<a href="<%=request.getContextPath()%>/index" class="link linkHome">개인회원 홈</a>
+				<a href="<%=request.getContextPath()%>/business/jobpostingupload/list" class="link linkManage">마이페이지</a>
+			</div>
+		</div>
+	</header>
 <body>
-    <div class="container">
+ <%--    <div class="container">
         <div>
             <ul>
                 <c:forEach var="room" items="${list}">
@@ -24,6 +35,21 @@
         <input type="text" name="name" class="form-control" placeholder="Room Name">
         <input type="text" name="writer" class="form-control" placeholder="Writer Name"> <!-- 추가된 부분 -->
         <button class="btn btn-secondary">개설하기</button>
+    </form> --%>
+
+ <div class="containerchat">
+        <div>
+            <ul>
+                <c:forEach var="room" items="${list}">
+                    <li><a href="<c:url value='/room'><c:param name='roomId' value='${room.roomId}'/></c:url>">${room.name}</a></li>
+                </c:forEach>
+            </ul>
+        </div>
+    </div>
+    <form action="/jjapkorea/room" method="post">
+        <input type="text" name="name" class="form-control" placeholder="Room Name">
+        <input type="text" name="writer" class="form-control" placeholder="Writer Name"> <!-- 추가된 부분 -->
+        <button class="btn-create">개설하기</button>
     </form>
 
     <script>

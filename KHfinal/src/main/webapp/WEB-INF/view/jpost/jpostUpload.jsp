@@ -10,8 +10,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="icon"
 	href="<%=request.getContextPath()%>/resources/favicon.ico">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_jpostupload.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_jpostupload.css">
 <script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
 </head>
 <body>
