@@ -26,6 +26,7 @@
         text-decoration: none;
     }
 
+	
     .links {
         margin-left: auto;
     }
@@ -139,8 +140,8 @@
         padding: 10px 0;
     }
     .logoimg{
-    	height: 48px;
-    	width: 90px;
+    	height: 40px;
+    	width: 120px;
     }
     span{
     	color:red;	

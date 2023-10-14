@@ -51,7 +51,7 @@
                         <dd class="footer__help-text"><a href="#" class="footer__help-link">gkwls8561@gmail.com</a></dd>
                     </dl>
                     <dl class="footer__help-wrap footer__help-wrap--consult">
-                        <a href="#" title="새창" class="footer__help-link">
+                        <a href="<%=request.getContextPath() %>/rooms" title="새창" class="footer__help-link">
                             <span class="footer__help--icon"></span>
                             <span class="footer__help--text">톡톡상담</span>
                         </a>

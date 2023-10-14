@@ -6,6 +6,11 @@
 <link rel="icon"
 	href="<%=request.getContextPath()%>/resources/favicon.ico">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +18,8 @@
 <title>채용공고 관리 페이지</title>
 <link rel="icon" href="resources/favicon.ico">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<%--     <jsp:include page="../member/header.jsp"></jsp:include>
+ --%>
 <style type="text/css">
 ul.job-posting-list {
     list-style-type: none;
@@ -32,6 +39,10 @@ ul.job-posting-list li {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+    text-align: center;
+    margin: auto;
+    
+    
 }
 .btn_ud{
             background-color: rgba(245,245,245)/* #f8f9fa */;
@@ -59,13 +70,27 @@ ul.job-posting-list li {
             transform: translateY(4px);
 }
 
-
-
+.jposthead{
+font-size: large;
+}
+.title{
+font-size: large;
+text-decoration: none;
+font-weight: bold;
+color: black;
+font-family: 'Noto Sans KR', sans-serif;
+margin-top: auto;
+margin-bottom: auto;
+margin-left: 10;
+}
+.title:hover{
+color:graytext;
+}
 
 </style>
 </head>
 <body>
-	<header>
+ 	<header>
 		<div class="container">
 			<a href="<%=request.getContextPath()%>/index" class="logo linkLogo"> <img
 				src="<%=request.getContextPath()%>/resources/images/짭코리아.png"
@@ -75,7 +100,7 @@ ul.job-posting-list li {
 				<a href="<%=request.getContextPath()%>/business/jobpostingupload/register" class="link linkManage">채용공고 등록</a>
 			</div>
 		</div>
-	</header>
+	</header> 
 	<div class="list">
 	<div class="jposthead">
 			<h2>채용공고 관리</h2>
@@ -86,7 +111,7 @@ ul.job-posting-list li {
             <c:forEach var="item" items="${jpostList}">
                 <li>
                     <div class="job-posting-box">
-                        <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.jid}'/></c:url>">${item.reTitle}</a>
+                        <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.jid}'/></c:url>" class="title">${item.reTitle}</a>
                         <div class="">
 	                        <input type="button" class="btn_ud" value="수정"><input type="button" class="btn_ud" value="삭제">
                         </div>

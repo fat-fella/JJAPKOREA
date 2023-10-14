@@ -174,7 +174,7 @@
 	}
 
 	// 이메일 보내기 
-	$(function sendEmail(mid) {
+	/* $(function sendEmail(mid) {
 		var mid = "${mid}";
 		
 		$("#devApplyBtn").click(function() {
@@ -197,7 +197,7 @@
 			}); // ajax
 		}); // click
 	} // sendEmail
-	
+	 */
 </script>
 <div class="wrap">
 	<main>

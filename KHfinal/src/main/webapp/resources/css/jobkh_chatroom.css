@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+        .chatcontainer {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .chat-container {
+            max-height: 400px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .chat-message {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .alert-secondary {
+            background-color: #f8f9fa;
+        }
+
+        .alert-warning {
+            background-color: #ffc107;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        #msgArea {
+            height: 200px;
+        }
+		.btn .btn-outline-secondary .send-button{
+			width: 100%;
+			margin-left: auto;
+			margin-right:auto;
+		}
+		.input-group-append{
+			align-items: center;
+			align-content: center;
+			align-self: center;
+			display: flex;
+			margin:auto;
+		}

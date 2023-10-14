@@ -62,7 +62,7 @@
 
 
 	<select id="selectList" resultMap="jobpostingDtoResultMap" resultType="string">
-		SELECT RE_TITLE, JID FROM INFO WHERE MID = #{mid}
+		SELECT RE_TITLE, JID, TO_CHAR(JPOSTDETAIL) FROM INFO WHERE MID = #{mid}
 
 	</select>
 	<select id="getJobPostingWithInfo" resultType="map">

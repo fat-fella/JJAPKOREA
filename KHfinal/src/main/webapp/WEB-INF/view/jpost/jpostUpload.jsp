@@ -18,7 +18,7 @@
 	<header>
 		<div class="container">
 			<a href="index" class="logo linkLogo"> <img
-				src="<%=request.getContextPath()%>/resources/images/짭코리아.png"
+				src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
 				alt="JJAPKOREA" class="logoimg"></a>
 			<div class="links">
 				<a href="<%=request.getContextPath()%>/index" class="link linkHome">기업회원 홈</a>
