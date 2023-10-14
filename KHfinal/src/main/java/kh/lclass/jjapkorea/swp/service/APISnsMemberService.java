@@ -14,7 +14,6 @@ public interface APISnsMemberService {
 	APISnsMember getBySns(APISnsMember snsUser);
 	APISnsMember mid(APISnsMember snsUser);
 	APISnsMember apimid(APISnsMember snsUser);
-	APISnsMember psignup(APISnsLoginDTO dto) throws Exception;
 	
 
 }

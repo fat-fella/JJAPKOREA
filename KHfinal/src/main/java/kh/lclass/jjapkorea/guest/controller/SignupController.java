@@ -111,6 +111,8 @@ public class SignupController {
 	public SignupController() throws Exception {
 	    storedVerificationCode = generateVerificationCode(); // 가상의 저장된 인증 번호
 	}
+	
+	
 		
 		// API sns login 각각의 소셜 API 콜백 받음
 			@GetMapping("/auth/{snsService}/callback")
@@ -282,7 +284,6 @@ public class SignupController {
 	
 		// API SNS 가입 끝
 
-		
 	
 	
 	@PostMapping("/person")

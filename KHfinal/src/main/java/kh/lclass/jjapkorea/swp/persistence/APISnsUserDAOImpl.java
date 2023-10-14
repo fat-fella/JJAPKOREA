@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.swp.domain.APISnsMember;
 import kh.lclass.jjapkorea.swp.dto.APISnsLoginDTO;
+import kh.lclass.jjapkorea.swp.dto.APISnsSignUpDTO;
 import kh.lclass.jjapkorea.swp.interceptor.APISnsSessionNames;
 
 
@@ -39,6 +40,12 @@ public class APISnsUserDAOImpl implements APISnsUserDAO {
 	public APISnsMember login(APISnsLoginDTO dto) throws Exception {
 		return session.selectOne(LOGIN, dto);
 	}
+	
+	@Override // login과 signup 똥일하게 소셜서비스 아이콘 버튼을 누르면 회원가입이 안되어있을시 자동으로 회원가입진행됨 
+	public APISnsMember signup(APISnsSignUpDTO dto) throws Exception {
+		return session.selectOne(LOGIN, dto);
+	}
+
 
 	// SNSAPI 로그인 유지하는 작업 수행
     // sqlSession을 사용하여 데이터베이스 업데이트 작업을 수행
