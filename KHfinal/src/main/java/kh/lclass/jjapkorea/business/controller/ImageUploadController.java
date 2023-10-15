@@ -57,7 +57,7 @@ public class ImageUploadController {
 	            "api_secret", api_secret, "secure", true));
 
 	      Map<String, String> result = new HashMap<String, String>();
-	      OutputStream out = null;
+//	      OutputStream out = null;
 	      // 파일이 비어있지 않고(비어 있다면 null 반환)
 	      MultipartFile file = upload;
 	      if (file != null) {
