@@ -13,7 +13,7 @@ import lombok.Setter;
 @Setter
 @Component
 public class ReplyDto {
-	private Integer replyNo;
+	private int replyNo;
 	private String memberId;
 	private String replyContent;
 	private String replyDate;

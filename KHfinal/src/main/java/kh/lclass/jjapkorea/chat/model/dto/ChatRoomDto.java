@@ -28,7 +28,8 @@ public class ChatRoomDto {
     public static ChatRoomDto create(String name, String writer){
         ChatRoomDto room = new ChatRoomDto();
 
-        room.roomId = UUID.randomUUID().toString();
+//        room.roomId = UUID.randomUUID().toString();
+        room.roomId = name;
         room.name = name;
         room.writer = writer;
         return room;

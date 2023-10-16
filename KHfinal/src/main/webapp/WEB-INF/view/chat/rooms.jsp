@@ -17,7 +17,7 @@
 				alt="JJAPKOREA" class="logoimg"></a>
 			<div class="links">
 				<a href="<%=request.getContextPath()%>/index" class="link linkHome">개인회원 홈</a>
-				<a href="<%=request.getContextPath()%>/business/jobpostingupload/list" class="link linkManage">마이페이지</a>
+				<a href="<%=request.getContextPath()%>/person/myPage" class="link linkManage">마이페이지</a>
 			</div>
 		</div>
 	</header>
@@ -46,11 +46,14 @@
             </ul>
         </div>
     </div>
+    
+        <c:if test="${empty list}">
     <form action="/jjapkorea/room" method="post">
-        <input type="text" name="name" class="form-control" placeholder="Room Name">
-        <input type="text" name="writer" class="form-control" placeholder="Writer Name"> <!-- 추가된 부분 -->
+        <input type="hidden" name="name" class="form-control" placeholder="Room Name" value="${mid}">
+        <input type="hidden" name="writer" class="form-control" placeholder="Writer Name" value="${mid}" > <!-- 추가된 부분 -->
         <button class="btn-create">개설하기</button>
     </form>
+        </c:if>
 
     <script>
         $(document).ready(function(){

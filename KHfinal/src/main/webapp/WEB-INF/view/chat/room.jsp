@@ -24,8 +24,8 @@
 				src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
 				alt="JJAPKOREA" class="logoimg"></a>
 			<div class="links">
-				<a href="<%=request.getContextPath()%>/index" class="link linkHome">기업회원 홈</a>
-				<a href="<%=request.getContextPath()%>/business/jobpostingupload/list" class="link linkManage">채용공고 관리</a>
+				<a href="<%=request.getContextPath()%>/index" class="link linkHome">개인회원 홈</a>
+				<a href="<%=request.getContextPath()%>/person/myPage" class="link linkManage">마이페이지</a>
 			</div>
 		</div>
 	</header>

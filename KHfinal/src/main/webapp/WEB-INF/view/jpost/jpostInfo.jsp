@@ -8,34 +8,32 @@
 <meta charset="UTF-8">
 <title>채용공고 상세페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- <script>
-// 이메일 보내기 
- $(function sendEmail(mid) {
-	var mid = "${mid}";
-	
-	$("#devApplyBtn").click(function() {
+
+<script>
+	// 이메일 보내기 
+	function sendEmail(jid) {
+		var mid = "${mid}";
+
 		$.ajax({
 			url : "${pageContext.request.contextPath}/person/noticeMail",
 			type : "post",
-			data : "json",
-			success : function(data){
-				alert("[지원완료] 이메일이 전송되었습니다.");
-			},
-			error: function (xhr, status, e) {
-				if (xhr.status === 400) {
-	                alert("클라이언트 오류"); // 클라이언트 오류
-	            } else if (xhr.status === 500) {
-	                alert("서버 오류"); // 서버 오류
-	            } else {
-	                alert("알 수 없는 오류: " + xhr.status); // 기타 오류
-	            }
-			}); // error
+			/* contentType : "application/json", // JSON 형식으로 데이터 전송
+			data : JSON.stringify({
+				jid : jid,
+				mid : mid
+			// 문자열로 변환하여 보냄
+			}), */
+			success : function() {
+				alert("[지원완료] 이메일 전송되었습니다.")
+			}/* ,
+			error : function() {
+				alert("에러가 발생하였습니다. 여러분의 잘못이 아니니 다음에 다시 시도해주세요.");
+			},// error */
 		}); // ajax
-	}); // click
-} // sendEmail
- 
 
-</script> -->
+	}
+</script>
+
 
 
 <link rel="icon" href="resources/favicon.ico">
@@ -44,52 +42,55 @@
 
 </head>
 <body>
-    <header class="jobkorea-header">
-        <div class="jobkorea-logo">
-            <a href="<%=request.getContextPath() %>/index">JJAPKorea</a>
-        </div>
-        <div class="jobkorea-menu">
-            <ul>
-                <li><a href="<%=request.getContextPath()%>/index">홈</a></li>
-                <li><a href="<%=request.getContextPath()%>/business/jobpostingupload/list">채용정보</a></li>
-            </ul>
-        </div>
-    </header>
+	<header class="jobkorea-header">
+		<div class="jobkorea-logo">
+			<a href="<%=request.getContextPath()%>/index">JJAPKorea</a>
+		</div>
+		<div class="jobkorea-menu">
+			<ul>
+				<li><a href="<%=request.getContextPath()%>/index">홈</a></li>
+				<li><a
+					href="<%=request.getContextPath()%>/business/jobpostingupload/list">채용정보</a></li>
+			</ul>
+		</div>
+	</header>
 	<section class="secReadSummary   ">
 		<div class="readSumWrap clear">
 			<article class="artReadJobSum">
 				<div class="sumTit">
 					<h3 class="hd_3">
 						<div class="header">
-								<span class="coName"> ${jobPosting.BIZNAME} </span>
-						
+							<span class="coName"> ${jobPosting.BIZNAME} </span>
+
 							<div class="item favorite">
 								<!-- <button type="button"
 									class="girBtn girBtn_2 girBtnFav  devFavor5_15983790"
 									onclick=" JKLoginLayer.open('/Recruit/Booth_GI_Read/42887747?Oem_Code=C1&amp;productType=FirstVVIP&amp;logpath=0'); ">
 									<span>관심기업</span>
 								</button>
- -->							</div>
+ -->
+							</div>
 						</div>
-							<p>${jobPosting.RE_TITLE}</p>
+						<p>${jobPosting.RE_TITLE}</p>
 					</h3>
 				</div>
 				<div class="tbRow clear">
-				<div class="tbcolrow">
-					<div class="tbCol ">
+					<div class="tbcolrow">
+						<div class="tbCol ">
 
-						<h4 class="hd_4">지원자격</h4>
-						<dl class="tbList">
-							<dt>경력</dt>
-							<dd>
-								<strong class="col_1">${jobPosting.CAREER}</strong>
-							</dd>
-							<dt>학력</dt>
-							<dd>
-								<strong class="col_1">${jobPosting.USER_EDUCATION}</strong> (졸업예정자 가능)
-							</dd>
-						</dl>
-					</div>
+							<h4 class="hd_4">지원자격</h4>
+							<dl class="tbList">
+								<dt>경력</dt>
+								<dd>
+									<strong class="col_1">${jobPosting.CAREER}</strong>
+								</dd>
+								<dt>학력</dt>
+								<dd>
+									<strong class="col_1">${jobPosting.USER_EDUCATION}</strong>
+									(졸업예정자 가능)
+								</dd>
+							</dl>
+						</div>
 						<div class="tbCol ">
 
 							<h4 class="hd_4">근무조건</h4>
@@ -98,8 +99,8 @@
 								<dd>
 									<ul class="addList">
 
-										<li><strong class="col_1">${jobPosting.WORK_TYPE}</strong> <span
-											class="tahoma"></span></li>
+										<li><strong class="col_1">${jobPosting.WORK_TYPE}</strong>
+											<span class="tahoma"></span></li>
 
 									</ul>
 								</dd>
@@ -115,7 +116,7 @@
 										target="_blank" title="새창"
 										onclick="javascript:go_Area_List('I130',1); return false;">서울시
 									</a>
-									
+
 
 								</dd>
 
@@ -172,23 +173,25 @@
 					<div class="tbCoInfo">
 						<p>${jobPosting.JPOSTDETAIL}</p>
 					</div>
-					
+
 				</div>
 			</article>
 		</div>
 
 
 
-		<p class="sumBtn">
 
-			<button type="button"
+		<form>
+		<p class="sumBtn">
+			<button type="button" onclick="sendEmail('${item.JID}')"
 				class="tplBtn tplBtn_1 tplBtnBlue devHomePageApplyBtn"
-				title="홈페이지 지원(새창)" id="devApplyBtn" >
+				title="홈페이지 지원(새창)" id="devApplyBtn">
 				<span>이력서 지원</span>
 			</button>
-
-
 		</p>
+		</form>
+
+
 		<p class="deadlineInfo" id="devTimeGuide"></p>
 	</section>
 </html>

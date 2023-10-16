@@ -41,6 +41,7 @@ import kh.lclass.jjapkorea.chat.model.repository.ChatRoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.List;
 
 @Service
@@ -55,6 +56,10 @@ public class ChatRoomService {
 
     public List<ChatRoomDto> findAllRooms() {
         return chatRoomRepository.findAllRooms();
+    }
+    
+    public String findRoom(Principal principal) {
+    	return chatRoomRepository.findRoom(principal.getName());
     }
 
     public ChatRoomDto findRoomById(String id) {

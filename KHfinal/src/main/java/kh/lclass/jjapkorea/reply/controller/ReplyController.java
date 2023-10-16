@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,35 +25,31 @@ public class ReplyController {
 
 	@GetMapping("/list")
 	@ResponseBody
-	public String selectListReply(Model model, Integer boardNo) throws Exception{
-		model.addAttribute("rlist", replyService.selectList(boardNo));
+	public String selectListReply(ModelAndView mv, Integer boardNo) throws Exception{
 		List<ReplyDto> result = replyService.selectList(boardNo);
+		mv.addObject("rList", replyService.selectList(boardNo));
+		mv.setViewName("replyboard/list");
 		return new Gson().toJson(result);
 	}
 	
 	@GetMapping("/moreReplylist")
 	@ResponseBody
-	public String selectmoreReplylist(int rref) throws Exception{
+	public String selectmoreReplylistboard(Integer rref) {
 		List<ReplyDto> result = replyService.selectMoreList(rref);
 		return new Gson().toJson(result);
 	}
 	
 	@GetMapping("/one")
-	public ModelAndView selectOneReply(ModelAndView mv, int replyNo) throws Exception{
-		mv.addObject("replyboard", replyService.selectOne(replyNo));
-		mv.setViewName("board/get");
-		return mv;
+	@ResponseBody
+	public String selectOnereplyboard(int replyNo) throws Exception{
+		ReplyDto result = replyService.selectOne(replyNo);
+		return new Gson().toJson(result);
 	}
 	
 	@PostMapping("/insert")
 	@ResponseBody
-	public String insertDoReply(ReplyDto rdto) {
-		List<ReplyDto> result = null;
-		try {
-			result = replyService.insert(rdto);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public String insertDoReply(ReplyDto rdto) throws Exception{
+		List<ReplyDto> result = replyService.insert(rdto);
 		return new Gson().toJson(result);
 	}
 	

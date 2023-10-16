@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
+import kh.lclass.jjapkorea.board.model.dto.BoardParam;
+import kh.lclass.jjapkorea.board.model.dto.BoardSelectReplyParam;
 import kh.lclass.jjapkorea.board.model.dto.Criteria;
 
 @Repository
@@ -18,48 +20,51 @@ public class BoardDao {
 		public List<BoardDto> selectList() throws Exception{ 
 			return sqlSession.selectList("board.selectList");
 		}
-		
 	// 게시글 상세	
 		public BoardDto selectOne(int bno) throws Exception{
 			return sqlSession.selectOne("board.selectOne", bno);
 		}
-		
 	// 글 등록	
 		// insert 시 selectKey를 이용해 PK 값이 추가되어있는 자료형
 		public BoardDto insert(BoardDto dto) throws Exception{
 			sqlSession.insert("board.insert", dto);
 			return dto;
 		}
-		
 	// 글 수정	
 		public int update(BoardDto dto) throws Exception{
 			return sqlSession.update("board.update", dto);
 		}
-
 	// 글 삭제	
 		public int delete(int bno) throws Exception{
 			return sqlSession.delete("board.delete", bno);
 		}
 	// 게시판 조회수
-		public int boardReadCnt(int bno) throws Exception{
-			return sqlSession.update("board.boardReadCnt", bno);
+		public int boardReadCnt(BoardParam param) throws Exception{
+			return sqlSession.update("board.boardReadCnt", param);
 		}
-		
-	// 좋아요 갯수
+
+	// 좋아요
 		public int totalLike(int bno) throws Exception{
 			return sqlSession.update("board.updateLike", bno);
-		}
-		
+		}	
 		public int totalLikeCancel(int bno) throws Exception{
 			return sqlSession.update("board.updateLikeCancel", bno);
 		}
 		
 	// 페이징
 		public int getTotal(Criteria cri) throws Exception{
-			return sqlSession.selectOne("board.getTotal");
+			return sqlSession.selectOne("board.getTotal", cri);
+		}	
+		public List<BoardDto> getListPage(Criteria cri) throws Exception{
+			 return sqlSession.selectList("board.getListPage", cri);
 		}
 		
-		public List<BoardDto> getListPage(Criteria cri) throws Exception {
-			 return sqlSession.selectList("board.getListPage", cri);
+	// 답글 선택
+		public BoardDto selectOneForReply(Integer bno) throws Exception{
+			return sqlSession.selectOne("board.selectOneJoinReply", bno);
+		}
+		
+		public int selectReply(BoardSelectReplyParam param) throws Exception{
+			return sqlSession.update("board.selectReply", param);
 		}
 }

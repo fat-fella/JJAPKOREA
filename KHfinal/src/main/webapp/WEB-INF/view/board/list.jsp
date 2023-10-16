@@ -61,26 +61,46 @@ body {
     color: #555;
 }
 
+/* 공통 스타일 */
 .btn-container {
-    text-align: center;
-    margin-top: 20px;
+  margin: 10px;
 }
-.btn-container button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.2s;
-    margin-right: 10px;
+
+a.button-link {
+  text-decoration: none;
 }
-.btn-container button:last-child {
-    margin-right: 0;
+
+/* 키워드가 있는 경우 버튼 스타일 */
+.btn-container-keyword {
+  margin: 10px;
+  float: right; /* 오른쪽으로 이동 */
 }
-.btn-container button:hover {
-    background-color: #0056b3;
+
+/* 키워드가 없는 경우 버튼 스타일 */
+.btn-container-no-keyword {
+  margin: 10px;
+  float: right; /* 오른쪽으로 이동 */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button.keyword {
+  background-color: #4CAF50;
+}
+
+button.keyword:hover {
+  background-color: #45a049;
 }
 
 /* 모달 스타일 */
@@ -194,14 +214,12 @@ body {
 <div class="search_wrap">
     <div class="search_area">
         <select name="type">
+        	<option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>선택</option>
             <option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':'' }"/>>제목</option>
             <option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
             <option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':'' }"/>>작성자</option>
-            <option value="TC" <c:out value="${pageMaker.cri.type eq 'TC'?'selected':'' }"/>>제목 + 내용</option>
-            <option value="TW" <c:out value="${pageMaker.cri.type eq 'TW'?'selected':'' }"/>>제목 + 작성자</option>
-            <option value="TCW" <c:out value="${pageMaker.cri.type eq 'TCW'?'selected':'' }"/>>제목 + 내용 + 작성자</option>
         </select>   
-        <input type="text" name="keyword" value="${pageMaker.cri.keyword }">
+        <input type="text" name="keyword" placeholder="키워드를 입력해주세요!" value="${pageMaker.cri.keyword }">
         <button>Search</button>
     </div>
 </div>   
@@ -231,22 +249,21 @@ body {
             </tr>
         </c:forEach>
     </table>
- 
 <!-- 페이징 및 버튼 -->    
     <div class="pageInfo-wrap">
     	<div class="pageInfo_area">
     		<ul>
-		        <!-- 이전페이지 버튼 -->
+		        <!-- Previous -->
                 <c:if test="${pageMaker.prev}">
                     <li class="pageInfo_btn previous"><a href="${pageMaker.startPage-1}">Previous</a></li>
                 </c:if>
 
-                <!-- 각 번호 페이지 버튼 (현재 페이지 표시)-->
+                <!-- Page (현재 페이지 표시)-->
                 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
                     <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
                 </c:forEach>
 	           
-	            <!-- 다음페이지 버튼 -->
+	            <!-- Next -->
                 <c:if test="${pageMaker.next}">
                     <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
                 </c:if>   
@@ -262,66 +279,88 @@ body {
 	</form>
 </c:if>
 
-<div class="btn-container">
-	<a href="<c:url value='/board/insert'/>">
-	    <button>글 등록</button>
-	</a>
-	<button type="button" id="openModalBtn">지도 보기</button>
-</div> 
-<hr>
-
-<!-- 모달 창 -->
-<div id="mapModal" class="modal">
-    <div class="modal-content">
-        <!-- 지도 컨테이너 -->
-      <div id="map"></div>
-      <!-- 모달 닫기 버튼 -->
-        <button id="closeModalBtn" class="close-button">&times;</button>
-    </div>
-</div>
+<!-- 키워드 있을때 -->
+	<c:if test="${not empty pageMaker.cri.keyword }">
+	    <div class="btn-container btn-container-keyword">
+	        <a href="<c:url value='/board/list'/>" class="button-link">
+	            <button class="keyword">메인으로</button>
+	        </a>
+	    </div>
+	    <div class="btn-container btn-container-keyword">
+	        <a href="<c:url value='/board/insert'/>" class="button-link">
+	            <button class="keyword">글 등록</button>
+	        </a>
+	    </div>
+	</c:if>
+	
+<!-- 키워드 없을때 -->
+	<c:if test="${empty pageMaker.cri.keyword }">
+	    <div class="btn-container btn-container-no-keyword">
+	        <a href="<c:url value='/board/insert'/>" class="button-link">
+	            <button>글 등록</button>
+	        </a>
+	    </div>
+	    <div class="btn-container btn-container-no-keyword">
+	        <button type="button" id="openModalBtn">지도 보기</button>
+	    </div>
+	</c:if>
 
 <script>
-let moveForm = $("#moveForm");
-$(".move").on("click", function(e){
-	e.preventDefault();
-	moveForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+ "'>");
-	moveForm.attr("action", "/jjapkorea/board/get");
-	moveForm.submit();
-});
-
-
+/* ------- 페이지 및 검색 ------- */
 $(document).ready(function() {
-    var moveForm = $("#moveForm");
+	let moveForm = $("#moveForm");
     $(".pageInfo_btn a").on("click", function(e) {
         e.preventDefault();
-        var pageNum = $(this).attr("href");
+        moveForm.find("input[name='pageNum']").val($(this).attr("href"));
+	    var pageNum = $(this).attr("href");
         moveForm.find("input[name='pageNum']").val(pageNum);
         moveForm.find("input[name='amount']").val(10); // 보여질 글의 갯수
-        moveForm.attr("action", "/jjapkorea/board/list"); // context root를 포함한 URL
+        moveForm.attr("action", "${pageContext.request.contextPath}/board/list"); // context root를 포함한 URL
         moveForm.submit();
     });
-});
+	
+	$(".move").on("click", function(e){
+		e.preventDefault();
+		var bno = moveForm.find("input[name='bno']").val();
+		if(bno != ''){
+			moveForm.find("input[name='bno']").remove();
+		}
+		moveForm.append("<input type='hidden' name='bno' value='"+ $(this).attr("href")+ "'>");
+		moveForm.attr("action", "${pageContext.request.contextPath}/board/get");
+		moveForm.submit();
+	});
+		
+/* --- 엔터키 --- */
+	$(".search_area button").on("click", function(e) {
+	    performSearch();
+	});
 
-$(".search_area button").on("click", function(e){
-    e.preventDefault();
-    
-    let type = $(".search_area select").val();
-    let keyword = $(".search_area input[name='keyword']").val();
-    
-    if(!type){
-        alert("검색 종류를 선택하세요.");
-        return false;
-    }
-    
-    if(!keyword){
-        alert("키워드를 입력하세요.");
-        return false;
-    }        
-    
-    moveForm.find("input[name='type']").val(type);
-    moveForm.find("input[name='keyword']").val(keyword);
-    moveForm.find("input[name='pageNum']").val(1);
-    moveForm.submit();
+	$(".search_area input[name='keyword']").on("keyup", function(e) {
+	    if (e.keyCode === 13) {
+	        performSearch();
+	    }
+	});
+	function performSearch() {
+	    var type = $(".search_area select").val();
+	    var keyword = $(".search_area input[name='keyword']").val();
+	    var sKey = '<c:out value="${pageMaker.cri.keyword}"/>';
+
+	    if (!type) {
+	        alert("검색 종류를 선택하세요.");
+	        return false;
+	    }
+	    if (!keyword) {
+	        alert("키워드를 입력하세요.");
+	        return false;
+	    }
+	    if (sKey != keyword) {
+	        moveForm.find("input[name='pageNum']").val(1);
+	    }
+	    moveForm.attr("action", "${pageContext.request.contextPath}/board/list");
+	    moveForm.find("input[name='type']").val(type);
+	    moveForm.find("input[name='keyword']").val(keyword);
+	    moveForm.submit();
+	}
 });
 </script>
 </body>
