@@ -271,7 +271,7 @@ $("#btn-board-delete").click(function () {
 	var bno = '${bvo.bno}';
 	var mid = '${memberid}';
 	function updateLike() {
-	    var memberid = '${memberid}'; // 현재 페이지의 memberid 값
+	    var memberid = '${memberid}';
 
 	    // memberid가 비어 있을 때는 함수 실행하지 않음
 	    if (memberid === '') {
@@ -319,7 +319,7 @@ window.onload = function () {
     });
 
     var moreReply = "";
-
+    var memberid = '${memberid}';
     $.ajax({
         type: "get",
         url: "${pageContext.request.contextPath}/replyboard/list",

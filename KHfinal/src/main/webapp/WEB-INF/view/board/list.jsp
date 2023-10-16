@@ -208,7 +208,7 @@ button.keyword:hover {
 </head>
 <body>
 <div class="title">
-	<h2> 쿵's 게시판 </h2>
+	<h2> 취업톡톡! 취뽀취뽀! </h2>
 </div>
 <!-- 검색 -->
 <div class="search_wrap">
