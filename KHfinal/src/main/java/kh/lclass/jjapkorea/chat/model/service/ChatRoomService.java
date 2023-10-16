@@ -54,12 +54,12 @@ public class ChatRoomService {
         this.chatRoomRepository = chatRoomRepository;
     }
 
-    public List<ChatRoomDto> findAllRooms(String mid) {
-        return chatRoomRepository.findAllRooms(mid);
+    public List<ChatRoomDto> findAllRooms() {
+        return chatRoomRepository.findAllRooms();
     }
     
-    public String findRoom(Principal principal) {
-    	return chatRoomRepository.findRoom(principal.getName());
+    public ChatRoomDto findRoom(String mid) {
+    	return chatRoomRepository.findRoom(mid);
     }
 
     public ChatRoomDto findRoomById(String id) {

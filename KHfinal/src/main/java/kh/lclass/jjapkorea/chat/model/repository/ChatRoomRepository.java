@@ -66,13 +66,13 @@ public class ChatRoomRepository {
     @Autowired
     private SqlSession sqlSession;
 
-    public String findRoom(String principal) {
-    	return sqlSession.selectOne("chat.findRoom");
+    public ChatRoomDto findRoom(String mid) {
+    	return sqlSession.selectOne("chat.findRoom", mid);
     }
     
-    public List<ChatRoomDto> findAllRooms(String mid) {
+    public List<ChatRoomDto> findAllRooms() {
         // MyBatis를 통해 오라클 데이터베이스에서 방 목록을 조회
-    	return sqlSession.selectList("chat.findAllRooms", mid);        
+    	return sqlSession.selectList("chat.findAllRooms");        
     }
 
     public ChatRoomDto findRoomById(String id) {

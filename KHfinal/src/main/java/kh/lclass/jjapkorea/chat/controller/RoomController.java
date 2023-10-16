@@ -12,6 +12,7 @@ import java.security.Principal;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authorization.AuthorityAuthorizationDecision;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,11 +37,14 @@ public class RoomController {
     		) throws Exception{
     	String mid = (String) principal.getName();
         log.info("# All Chat Rooms");
+// authority admin
+        if(mid.equals("admin")) {
+        mv.addObject("list", chatRoomService.findAllRooms());
+        }
+        else {
 // authority  person
-        mv.addObject("list", chatRoomService.findAllRooms(mid));
-// authority admin   	        
-//        mv.addObject("list", chatRoomService.findAllRooms(principal.getName()));
-        
+        mv.addObject("mylist", chatRoomService.findRoom(mid));
+        }
         mv.setViewName("chat/rooms");
 
         return mv;
