@@ -138,15 +138,16 @@ public class JobPostingUploadController {
 				mv.setViewName("jpost/jpostEdit");
 			} else {
 				rttr.addFlashAttribute("alertMsg", "지금은 삭제된 공고입니다.");
-				mv.setViewName("redirect:/jobpostingupload/list");
+				mv.setViewName("redirect:/business/jobpostingupload/list");
 			}
 			return mv;
 		} 
 	
 	@PostMapping("/jobpostingupload/edit")
-	public int jobPostingEdit(String jid) throws Exception{
-		int jobPostingUpdate = jobPostingUploadServiceImpl.jobPostingUpdate(jid);
-		return jobPostingUpdate;
+	public ModelAndView jobPostingUpdate(JobPostingDto dto, ModelAndView mv) throws Exception{
+		jobPostingUploadServiceImpl.jobPostingUpdate(dto);
+		mv.setViewName("redirect:/business/jobpostingupload/list");
+		return mv;
 		
 	}
 	

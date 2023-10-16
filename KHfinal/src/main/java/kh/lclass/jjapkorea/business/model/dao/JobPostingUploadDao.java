@@ -43,8 +43,8 @@ public class JobPostingUploadDao {
 		return sqlSession.delete("jobpostingUpload.jobPostingDelete",jid);
 		
 	}
-	public int jobPostingUpdate(String jid) throws Exception{
-		return sqlSession.update("jobpostingUpload.jobPostingUpdate", jid);
+	public int jobPostingUpdate(JobPostingDto dto) throws Exception{
+		return sqlSession.update("jobpostingUpload.jobPostingUpdate", dto);
 	}
 	
 	

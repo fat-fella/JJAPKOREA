@@ -49,7 +49,7 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 		return jobpostinguploadDao.jobPostingDelete(jid);
 	}
 	@Override
-	public int jobPostingUpdate(String jid) throws Exception{
-		return jobpostinguploadDao.jobPostingUpdate(jid);
+	public int jobPostingUpdate(JobPostingDto dto) throws Exception{
+		return jobpostinguploadDao.jobPostingUpdate(dto);
 	}
 }

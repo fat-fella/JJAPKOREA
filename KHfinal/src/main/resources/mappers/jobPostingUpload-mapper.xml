@@ -72,13 +72,13 @@
 	
 	<update id="jobPostingUpdate" parameterType="jobPostingDto">
 		UPDATE INFO SET RECRUIT_FIELD = #{recruitField}, USER_EDUCATION = #{userEducation}, SALARY = #{salary},
-		MIN_SALARY = ${minSalary}, MAX_SALARY = #{maxSalary}, REGIST_DATE = #{registDate}, CLOSE_DATE = #{closeDate}, RE_TITLE = #{reTitle}, CAREER = #{career},
+		MIN_SALARY = #{minSalary}, MAX_SALARY = #{maxSalary}, REGIST_DATE = #{registDate}, CLOSE_DATE = #{closeDate}, RE_TITLE = #{reTitle}, CAREER = #{career},
 		WORK_TYPE = #{workType}, TODAY = #{today}, DDAY = #{dday}, JPOSTDETAIL = #{jpostdetail} where JID = #{jid}
 	</update>
 	
 	
 	<delete id="jobPostingDelete" parameterType="int">
-		delete from info where jid =${jid}
+		delete from info where jid =#{jid}
 	</delete>
 	
 	

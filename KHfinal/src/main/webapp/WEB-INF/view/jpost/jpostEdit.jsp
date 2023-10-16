@@ -38,6 +38,8 @@
 	<form action="../jobpostingupload/edit" method="POST"
 		id="jpostform">
 		<div class="jposthead">
+		<input type="hidden" name="mid" value="${mid}">
+		<input type="hidden" name="jid" value="${jobPosting.JID}">
 			<h2>채용공고 수정</h2>
 			<h6>양식에 맞게 채용공고를 수정해주세요.</h6>
 		</div>
@@ -120,11 +122,16 @@
 					마감일</label> <input type="date" id="closeDate" name="closeDate">
 			</div>
 			<div class="jpostsubmitbtn">
-				<button type="button" class="btn_submit">수정</button>
-				<button type="button" class="btn_cancel">취소</button>
+				<button type="submit" class="btn_submit">수정</button>
+				<button type="button" class="btn_cancel" onclick="cancel()">취소</button>
 			</div>
 		</div>
 	</form>
+	<script>
+		function cancel(){
+			window.location.href="${pageContext.request.contextPath}/business/jobpostingupload/list"
+		}
+	</script>
 
 	<!-- ckeditor 생성 -->
 <script type="text/javascript">	// 글쓰기 editor 및 사진 업로드 기능
