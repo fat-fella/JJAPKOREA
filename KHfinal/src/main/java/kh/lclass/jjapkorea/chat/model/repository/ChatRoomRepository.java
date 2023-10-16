@@ -66,8 +66,8 @@ public class ChatRoomRepository {
     @Autowired
     private SqlSession sqlSession;
 
-    public String findRoom(String principal) {
-    	return sqlSession.selectOne("chat.findRoom");
+    public ChatRoomDto findRoom(String mid) {
+    	return sqlSession.selectOne("chat.findRoom", mid);
     }
     
     public List<ChatRoomDto> findAllRooms() {

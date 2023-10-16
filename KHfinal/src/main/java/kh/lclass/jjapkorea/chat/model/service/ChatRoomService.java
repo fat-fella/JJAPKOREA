@@ -58,8 +58,8 @@ public class ChatRoomService {
         return chatRoomRepository.findAllRooms();
     }
     
-    public String findRoom(Principal principal) {
-    	return chatRoomRepository.findRoom(principal.getName());
+    public ChatRoomDto findRoom(String mid) {
+    	return chatRoomRepository.findRoom(mid);
     }
 
     public ChatRoomDto findRoomById(String id) {

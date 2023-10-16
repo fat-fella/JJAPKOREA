@@ -23,11 +23,11 @@
 
 	<select id="findAllRooms"
 		resultMap="chatRoomResultMap">
-		SELECT * FROM CHAT WHERE ROOM_NAME = #{MID}
+		SELECT * FROM CHAT
 	</select>
 
-	<select id="findRoom">
-		SELECT * FROM CHAT WHERE ROOM_NAME = #{MID}
+	<select id="findRoom" resultMap="chatRoomResultMap">
+		SELECT * FROM CHAT WHERE ROOM_NAME = #{mid}
 	</select>
 	
 	<select id="findRoomById"

@@ -20,38 +20,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @RequiredArgsConstructor
 @Slf4j
-//@Controller
-//public class JobPostingInfoController {
-//	
-//	@Autowired
-//	JobPostingUploadService jobPostingUploadService;
-//	
-//	@GetMapping("/jobpostinginfo")
-//	@ResponseBody
-//	public ResponseEntity<String> jobPostingInfo(@RequestBody String jid) throws Exception {
-//		JobPostingDto dto = new JobPostingDto();
-//		jid= dto.getJid();
-//		List<Map<String, Object>> jobPostingInfo = jobPostingUploadService.getJobPostingWithInfo(jid);
-////		mv.addObject("jobPostingInfo" ,jobPostingInfo);
-////		mv.setViewName("jpost/jpostInfo");
-////		return mv;
-//		try {
-//			
-//		if (jobPostingInfo == null) {
-//			return ResponseEntity.ok("null");
-//		}else {
-//			return ResponseEntity.ok("success");
-//			
-//		}
-//		} catch( Exception e){
-//			e.printStackTrace();
-//			return ResponseEntity.ok("error");
-//
-//		} 
-//	}
-//
-//	
-//}
 @Controller
 public class JobPostingInfoController {
 	
@@ -84,3 +52,79 @@ public class JobPostingInfoController {
 }
 
 
+
+
+//@Controller
+//public class JobPostingInfoController {
+//	
+//	@Autowired
+//	JobPostingUploadService jobPostingUploadService;
+//	
+//	@GetMapping("/jobpostinginfo")
+//	@ResponseBody
+//	public ResponseEntity<String> jobPostingInfo(@RequestBody String jid) throws Exception {
+//		JobPostingDto dto = new JobPostingDto();
+//		jid= dto.getJid();
+//		List<Map<String, Object>> jobPostingInfo = jobPostingUploadService.getJobPostingWithInfo(jid);
+////		mv.addObject("jobPostingInfo" ,jobPostingInfo);
+////		mv.setViewName("jpost/jpostInfo");
+////		return mv;
+//		try {
+//			
+//		if (jobPostingInfo == null) {
+//			return ResponseEntity.ok("null");
+//		}else {
+//			return ResponseEntity.ok("success");
+//			
+//		}
+//		} catch( Exception e){
+//			e.printStackTrace();
+//			return ResponseEntity.ok("error");
+//
+//		} 
+//	}
+//
+//	
+//}
+
+
+
+
+
+
+
+
+
+
+//@Controller
+//public class JobPostingInfoController {
+//	
+//	@Autowired
+//	JobPostingUploadService jobPostingUploadService;
+//	
+//	@GetMapping("/jobpostinginfo")
+//	@ResponseBody
+//	public ResponseEntity<String> jobPostingInfo(@RequestBody String jid) throws Exception {
+//		JobPostingDto dto = new JobPostingDto();
+//		jid= dto.getJid();
+//		List<Map<String, Object>> jobPostingInfo = jobPostingUploadService.getJobPostingWithInfo(jid);
+////		mv.addObject("jobPostingInfo" ,jobPostingInfo);
+////		mv.setViewName("jpost/jpostInfo");
+////		return mv;
+//		try {
+//			
+//		if (jobPostingInfo == null) {
+//			return ResponseEntity.ok("null");
+//		}else {
+//			return ResponseEntity.ok("success");
+//			
+//		}
+//		} catch( Exception e){
+//			e.printStackTrace();
+//			return ResponseEntity.ok("error");
+//
+//		} 
+//	}
+//
+//	
+//}

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,15 +42,22 @@
 
  <div class="containerchat">
         <div>
-            <ul>
-                <c:forEach var="room" items="${list}">
-                    <li><a href="<c:url value='/room'><c:param name='roomId' value='${room.roomId}'/></c:url>">${room.name}</a></li>
-                </c:forEach>
-            </ul>
+			<sec:authorize access="hasRole('ROLE_PERSON')">			
+	            <ul>
+                    <li><a href="<c:url value='/room'><c:param name='roomId' value='${mylist.roomId}'/></c:url>">${mylist.name}</a></li>
+	            </ul>
+			</sec:authorize>
+			<sec:authorize access="hasRole('ROLE_ADMIN')">			
+	            <ul>
+	                <c:forEach var="room" items="${list}">
+	                    <li><a href="<c:url value='/room'><c:param name='roomId' value='${room.roomId}'/></c:url>">${room.name}</a></li>
+	                </c:forEach>
+	            </ul>
+			</sec:authorize>
         </div>
     </div>
     
-        <c:if test="${empty list}">
+        <c:if test="${empty mylist}">
     <form action="/jjapkorea/room" method="post">
         <input type="hidden" name="name" class="form-control" placeholder="Room Name" value="${mid}">
         <input type="hidden" name="writer" class="form-control" placeholder="Writer Name" value="${mid}" > <!-- 추가된 부분 -->

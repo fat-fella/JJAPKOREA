@@ -13,5 +13,5 @@ public class ChatMessageDto {
     private String writer;
     private String message;
     private String timestamp;
-    //private String participant;
+    private String participant;
 }

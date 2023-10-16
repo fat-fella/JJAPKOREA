@@ -20,74 +20,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <%--     <jsp:include page="../member/header.jsp"></jsp:include>
  --%>
-<style type="text/css">
-ul.job-posting-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul.job-posting-list li {
-    margin-bottom: 10px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.job-posting-box {
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin: auto;
-    
-    
-}
-.btn_ud{
-            background-color: rgba(245,245,245)/* #f8f9fa */;
-            border: 2px solid rgba(245,245,245);
-            color: #212529;
-            
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
-            cursor: pointer;
-            border-radius: 12px;
-        }
-.btn_ud:hover{
-            background-color: #212529;
-            color: white;
-
-}
-.btn_ud:active{
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-}
-
-.jposthead{
-font-size: large;
-}
-.title{
-font-size: large;
-text-decoration: none;
-font-weight: bold;
-color: black;
-font-family: 'Noto Sans KR', sans-serif;
-margin-top: auto;
-margin-bottom: auto;
-margin-left: 10;
-}
-.title:hover{
-color:graytext;
-}
-
-</style>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/jpostList.css">
+ 
 </head>
 <body>
  	<header>
