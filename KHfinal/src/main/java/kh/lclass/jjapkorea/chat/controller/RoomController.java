@@ -7,6 +7,8 @@ import kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto;
 import kh.lclass.jjapkorea.chat.model.repository.ChatRoomRepository;
 import kh.lclass.jjapkorea.chat.model.service.ChatRoomService;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +30,16 @@ public class RoomController {
 	
     //채팅방 목록 조회
     @GetMapping("/rooms")
-    public ModelAndView rooms(ModelAndView mv) throws Exception{
+    public ModelAndView rooms(ModelAndView mv
+    		, Principal principal
+    		) throws Exception{
 
         log.info("# All Chat Rooms");
-
+// authority  admin
         mv.addObject("list", chatRoomService.findAllRooms());
+        
+//        mv.addObject("list", chatRoomService.findAllRooms(principal.getName()));
+        
         mv.setViewName("chat/rooms");
 
         return mv;
