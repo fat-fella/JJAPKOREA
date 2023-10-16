@@ -57,7 +57,7 @@
         </div>
     </div>
     
-        <c:if test="${empty list}">
+        <c:if test="${empty mylist}">
     <form action="/jjapkorea/room" method="post">
         <input type="hidden" name="name" class="form-control" placeholder="Room Name" value="${mid}">
         <input type="hidden" name="writer" class="form-control" placeholder="Writer Name" value="${mid}" > <!-- 추가된 부분 -->
