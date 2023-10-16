@@ -279,41 +279,33 @@ button.keyword:hover {
 	</form>
 </c:if>
 
-<!-- 키워드 있을때 -->
-	<c:if test="${not empty pageMaker.cri.keyword }">
-	    <div class="btn-container btn-container-keyword">
-	        <a href="<c:url value='/board/list'/>" class="button-link">
-	            <button class="keyword">메인으로</button>
-	        </a>
-	    </div>
-	<c:choose>
-		<c:when test="${not empty member}">
-	        <!-- 로그인한 사용자가 있는 경우 -->
-	        <div class="btn-container btn-container-keyword">
-	            <a href="<c:url value='/board/insert'/>" class="button-link">
-	                <button class="keyword">글 등록</button>
-	            </a>
-	        </div>
-	    </c:when>
-	    <c:otherwise>
-			alert("로그인이 필요합니다!");
-	    </c:otherwise>
-	</c:choose>
-	</c:if>
-	
-<!-- 키워드 없을때 -->
-	<c:if test="${empty pageMaker.cri.keyword }">
-	    <div class="btn-container btn-container-no-keyword">
-	        <a href="<c:url value='/board/insert'/>" class="button-link">
-	            <button>글 등록</button>
-	        </a>
-	    </div>
-	    <div class="btn-container btn-container-no-keyword">
-	        <button type="button" id="openModalBtn">지도 보기</button>
-	    </div>
-	</c:if>
+<div class="btn-container btn-container-keyword">
+    <a href="<c:url value='/board/list'/>" class="button-link">
+        <button class="keyword">메인으로</button>
+    </a>
+</div>
+<div class="btn-container btn-container-keyword">
+    <c:choose>
+        <c:when test="${not empty memberid}">
+            <a href="<c:url value='/board/insert'/>" class="button-link">
+                <button class="keyword">글 등록</button>
+            </a>
+        </c:when>
+        <c:otherwise>
+            <a href="#" class="button-link" onclick="showAlertAndRedirect()">
+                <button class="keyword">글 등록</button>
+            </a>
+        </c:otherwise>
+    </c:choose>
+</div>
 
 <script>
+function showAlertAndRedirect() {
+    alert("로그인이 필요합니다!");
+    window.location.href = 'http://127.0.0.1:8090/jjapkorea/login/';
+}
+
+
 /* ------- 페이지 및 검색 ------- */
 $(document).ready(function() {
 	let moveForm = $("#moveForm");

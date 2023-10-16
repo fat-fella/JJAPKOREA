@@ -170,8 +170,6 @@ button:hover {
 .hideReplies:hover {
     background-color: #0056b3; /* 마우스 호버시 배경색 변경 (더 진한 파란색) */
 }
-
-
 </style>
 </head>
 <body>
@@ -192,11 +190,21 @@ button:hover {
 					<textarea id="bcontent" rows="10" cols="50" name="bcontent" readonly>${bvo.bcontent}</textarea>
 					<br> 
 					<label for="likehit">좋아요수: (${bvo.likehit })</label>
-					<a href="${pageContext.request.contextPath}/board/list">
-						<button type="submit" id="btn-board-update">글 수정</button>
-					</a>
-					<button type="button" id="btn-board-delete">글 삭제</button>
-					<a  class="btn" id="btn-board-list">
+					<c:choose>
+					    <c:when test="${memberid eq bvo.mid}">
+					        <a href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
+					            <button id="btn-board-update">글 수정</button>
+					        </a>
+					        <button id="btn-board-delete">글 삭제</button>
+					    </c:when>
+					    <c:otherwise>
+					        <script>
+					            document.getElementById("btn-board-update").style.display = "none";
+					            document.getElementById("btn-board-delete").style.display = "none;
+					        </script>
+					    </c:otherwise>
+					</c:choose>
+					<a class="btn" id="btn-board-list">
 						<button type="button">글 목록으로 이동</button>
 					</a>
 					<button type="button" id="btn-board-like" onclick="updateLike(); return false;">좋아요</button>
@@ -211,7 +219,7 @@ button:hover {
 					<div class="card">
 				    	<form method="post" action="${pageContext.request.contextPath}/replyboard/insert">
 				      		<div class="card-body addaddreply contenttextarea">
-				        		<label>댓글 작성자 : ${bvo.mid}</label>
+				        		<label>댓글 작성자 : ${memberid}</label>
 				        		<textarea rows="3" class="col-xl-12" name="replyContent" class="replyContent"></textarea>
 				        		<button class="submitreply" type="button" onclick="submitreplyHandler()">댓글 작성</button>
 				      		</div>
@@ -228,12 +236,14 @@ button:hover {
 let form = $("#infoForm");
 $("#btn-board-list").on("click", function(e){
 	form.find("#bno").remove();
-	form.attr("action", "/talk/board/list");
+	form.attr("action", "/jjapkorea/board/list");
 	form.submit();
 });
+
+
 $("#btn-board-update").on("click", function(e){
 	form.find("#bno").remove();
-	form.attr("action", "/talk/board/update");
+	form.attr("action", "/jjapkorea/board/update");
 	form.submit();
 });
 
@@ -259,30 +269,38 @@ $("#btn-board-delete").click(function () {
 });
 
 	var bno = '${bvo.bno}';
-	var mid = '${bvo.mid}';
-	function updateLike(){ 
-	     $.ajax({
-	            type : "POST",  
-	            url : "${pageContext.request.contextPath}/board/updateLike",       
-	            dataType : "json",   
-	            data : {'bno' : bno, 'mid' : mid },
-	            error : function(){
-	               alert("통신 에러");
-	            },
-	            success : function(likeCheck) {	                
-	                    if(likeCheck == 0){
-	                    	alert("좋아요");
-	                    	$("#btn-board-like").html("좋아요 취소");
-	                    	location.reload();
-	                    }
-	                    else if (likeCheck == 1){
-	                     	alert("좋아요 취소");
-	                    	$("#btn-board-like").html("좋아요");
-	                    	location.reload();
-	                    }
-	            	}
-	        	});
-			} 
+	var mid = '${memberid}';
+	function updateLike() {
+	    var memberid = '${memberid}'; // 현재 페이지의 memberid 값
+
+	    // memberid가 비어 있을 때는 함수 실행하지 않음
+	    if (memberid === '') {
+	        alert('로그인이 필요합니다!');
+	        window.location.href = 'http://127.0.0.1:8090/jjapkorea/login/';
+	        return;
+	    }
+
+	    $.ajax({
+	        type: 'POST',
+	        url: '${pageContext.request.contextPath}/board/updateLike',
+	        dataType: 'json',
+	        data: { 'bno': bno, 'mid': mid },
+	        error: function () {
+	            alert('통신 에러');
+	        },
+	        success: function (likeCheck) {
+	            if (likeCheck == 0) {
+	                alert('좋아요');
+	                $('#btn-board-like').html('좋아요 취소');
+	                location.reload();
+	            } else if (likeCheck == 1) {
+	                alert('좋아요 취소');
+	                $('#btn-board-like').html('좋아요');
+	                location.reload();
+	            }
+	        }
+	    });
+	}
 
 /* ---------- Reply ---------- */
 let replyreplyleftpadding = "";
@@ -346,7 +364,6 @@ function moreReplyHandler(e) {
     var eTarget = e.target;
     var $replyCard = $(eTarget).parents(".replyCard");
     var $forAppendArea = $replyCard.find(".forAppendArea");
-
     $.ajax({
         type: "get",
         url: "${pageContext.request.contextPath}/replyboard/moreReplylist",
@@ -411,7 +428,7 @@ function submitreplyHandler() {
         type: "post",
         url: "${pageContext.request.contextPath}/replyboard/insert",
         data: {
-            memberId: "${bvo.mid}",
+            memberId: "${memberid}",
             replyContent: replyContent,
             boardNo: $("#boardNo").val(),
             rstep: ${bvo.rstep} + 1,
@@ -510,7 +527,7 @@ function insertreplyreplyHandler() {
     if ($contenttextarea.length > 0) {
         $contenttextarea.remove();
     } else {
-    	var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${bvo.mid}"><div>↳작성자: ${bvo.mid}</div><div><textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent">@' + replyreplywriter + " " + '</textarea></div><div><button class="submitreplyreply">답글 저장</button></div></div>';
+    	var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${memberid}"><div>↳작성자: ${memberid}</div><div><textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent">@' + replyreplywriter + " " + '</textarea></div><div><button class="submitreplyreply">답글 저장</button></div></div>';
         $(this).parents(".replyCard").append(addreplyreply);
         $(".submitreplyreply").click(submitreplyreplyHandler);
     }

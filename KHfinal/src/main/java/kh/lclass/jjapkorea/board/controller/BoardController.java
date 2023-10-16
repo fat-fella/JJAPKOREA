@@ -32,11 +32,14 @@ public class BoardController {
 						, BoardParam param
 						, Principal principal ) throws Exception{
 		
-		String member = principal.getName();
+	    String memberid = null;
+	    if (principal != null) {
+	    	memberid = principal.getName();
+	    }
 		int readCount = boardService.boardReadCnt(param);
 		int total = boardService.getTotal(cri);
 		PageMakerDto pageMake = new PageMakerDto(cri, total);
-		mv.addObject("member", member);
+		mv.addObject("memberid", memberid);
 		mv.addObject("boardList", boardService.getListPage(cri));
 		mv.addObject("readCount", readCount);
 		mv.addObject("pageMaker", pageMake);
@@ -46,7 +49,12 @@ public class BoardController {
 	}
 	
 	@GetMapping("/get")
-	public ModelAndView get(ModelAndView mv, int bno) throws Exception{
+	public ModelAndView get(ModelAndView mv, int bno, Principal principal) throws Exception{
+	    String memberid = null;
+	    if (principal != null) {
+	    	memberid = principal.getName();
+	    }
+	    mv.addObject("memberid", memberid);
 		mv.addObject("bvo", boardService.selectOne(bno));
 		mv.setViewName("board/get"); // http://localhost:8090/jjap/board/get?bno=3
 		return mv;
