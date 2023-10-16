@@ -18,8 +18,6 @@
 <title>채용공고 관리 페이지</title>
 <link rel="icon" href="resources/favicon.ico">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<%--     <jsp:include page="../member/header.jsp"></jsp:include>
- --%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/jpostList.css">
  
@@ -28,7 +26,7 @@
  	<header>
 		<div class="container">
 			<a href="<%=request.getContextPath()%>/index" class="logo linkLogo"> <img
-				src="<%=request.getContextPath()%>/resources/images/짭코리아.png"
+				src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
 				alt="JJAPKOREA" class="logoimg"></a>
 			<div class="links">
 				<a href="<%=request.getContextPath()%>/index" class="link linkHome">기업회원 홈</a>
@@ -48,7 +46,7 @@
                     <div class="job-posting-box">
                         <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.jid}'/></c:url>" class="title">${item.reTitle}</a>
                         <div class="">
-	                        <input type="button" class="btn_ud" value="수정"><input type="button" class="btn_ud" value="삭제">
+	                        <input type="button" class="btn_ud" value="수정" onclick="edit('${item.jid}')"><input type="button" class="btn_ud" value="삭제" onclick="remove('${item.jid}')">
                         </div>
                     </div>
                 </li>
@@ -56,6 +54,29 @@
         </ul>
     </div>
 </div>
+<script>
+	function edit(jid){
+		location.href = '${pageContext.request.contextPath}/business/jobpostingupload/edit?jid='+jid;
+	};
+	
+	function remove(jid){
+		$.ajax({
+			type :'POST',
+			url:'${pageContext.request.contextPath}/business/jobpostingupload/list',
+			data: {jid:jid},
+			success: function(){
+				alert("채용공고가 삭제되었습니다.");
+				window.location.href = "${pageContext.request.contextPath}/business/jobpostingupload/list";
+			},
+			error: function(error){
+				console.error("채용공고 삭제 실패", error);
+			}
+			
+			
+		});
+	};
+	
+</script>
 
 </body>
 </html>

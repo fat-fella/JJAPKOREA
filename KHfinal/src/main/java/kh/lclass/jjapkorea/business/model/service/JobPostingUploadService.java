@@ -14,6 +14,7 @@ public interface JobPostingUploadService {
 	public List<JobPostingCategoryDto> selectSecond(String selectedOption) throws Exception;
 	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception;
 	public Map<String, Object> getJobPostingWithInfo(String jid) throws Exception;
-
+	public int jobPostingDelete(String jid) throws Exception;
+	public int jobPostingUpdate(String jid) throws Exception;
 }
 
