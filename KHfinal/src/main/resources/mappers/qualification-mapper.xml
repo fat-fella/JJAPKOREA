@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="qualification">
+	<resultMap type="qualificationDto" id="qualificationDto">
+	    <id property="qualificationId" column="qualification_id" />
+	    <result property="resumeId" column="resume_id" />
+	    <result property="qualificationName" column="qualification_name" />
+	    <result property="qualificationDate" column="qualification_date" />
+	    <result property="qualificationAuthority" column="qualification_authority" />
+	</resultMap>
+	
+	<insert id="insertQualification" parameterType="qualificationDto">
+	    INSERT INTO QUALIFICATION (QUALIFICATION_ID, RESUME_ID, QUALIFICATION_NAME, QUALIFICATION_DATE, QUALIFICATION_AUTHORITY)
+	    VALUES (QUALIFICATION_SEQ.NEXTVAL, #{resumeId}, #{qualificationName}, #{qualificationDate}, #{qualificationAuthority})
+	</insert>
+</mapper>

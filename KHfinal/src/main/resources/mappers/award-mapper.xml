@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="award">
+	<resultMap type="awardDto" id="awardDto">
+	    <id property="awardId" column="award_id" />
+	    <result property="resumeId" column="resume_id" />
+	    <result property="awardName" column="award_name" />
+	    <result property="awardingAuthority" column="awarding_authority" />
+	    <result property="awardDate" column="award_date" />
+	</resultMap>
+	
+	<insert id="insertAward" parameterType="awardDto">
+	    INSERT INTO AWARD (AWARD_ID, RESUME_ID, AWARD_NAME, AWARDING_AUTHORITY, AWARD_DATE)
+	    VALUES (AWARD_SEQ.NEXTVAL, #{resumeId}, #{awardName}, #{awardingAuthority}, #{awardDate})
+	</insert>
+</mapper>

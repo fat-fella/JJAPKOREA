@@ -1,37 +1,42 @@
-package kh.lclass.jjapkorea.person.model.dao;
+package kh.lclass.jjapkorea.person.model.service;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
+import kh.lclass.jjapkorea.person.model.dao.ResumeWriteDao;
 import kh.lclass.jjapkorea.person.model.dto.AwardDto;
 import kh.lclass.jjapkorea.person.model.dto.EducationDto;
 import kh.lclass.jjapkorea.person.model.dto.ExperienceDto;
 import kh.lclass.jjapkorea.person.model.dto.QualificationDto;
 import kh.lclass.jjapkorea.person.model.dto.ResumeWriteDto;
 
-@Repository
-public class ResumeWriteDao {
+@Service
+public class ResumeWriteServiceImpl implements ResumeWriteService {
 	@Autowired
-	private SqlSession sqlSession;
+	private ResumeWriteDao resumeWriteDao;
 	
+	@Override
 	public int insertResume(ResumeWriteDto resumeWriteDto) throws Exception {
-        return sqlSession.insert("resume.insertResume", resumeWriteDto);
+        return resumeWriteDao.insertResume(resumeWriteDto);
     }
 	
+	@Override
 	public int insertQualification(QualificationDto qualificationDto) throws Exception {
-		return sqlSession.insert("qualification.insertQualification", qualificationDto);
+		return resumeWriteDao.insertQualification(qualificationDto);
     }
 	
+	@Override
 	public int insertEducation(EducationDto educationDto) throws Exception {
-		return sqlSession.insert("education.insertEducation", educationDto);
+		return resumeWriteDao.insertEducation(educationDto);
     }
 	
+	@Override
 	public int insertExperience(ExperienceDto experienceDto) throws Exception {
-		return sqlSession.insert("experience.insertExperience", experienceDto);
+		return resumeWriteDao.insertExperience(experienceDto);
     }
 	
+	@Override
 	public int insertAward(AwardDto awardDto) throws Exception {
-		return sqlSession.insert("award.insertAward", awardDto);
+		return resumeWriteDao.insertAward(awardDto);
     }
 }

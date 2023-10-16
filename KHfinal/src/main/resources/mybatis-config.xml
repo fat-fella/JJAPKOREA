@@ -14,6 +14,11 @@
 		<typeAlias type="kh.lclass.jjapkorea.business.model.dto.JobPostingDto" alias="jobPostingDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.business.model.dto.JobPostingCategoryDto" alias="jobPostingCategoryDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.person.model.dto.ScrapDto" alias="scrapDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.person.model.dto.ResumeWriteDto" alias="resumeDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.person.model.dto.QualificationDto" alias="qualificationDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.person.model.dto.EducationDto" alias="educationDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.person.model.dto.ExperienceDto" alias="experienceDto"/>
+		<typeAlias type="kh.lclass.jjapkorea.person.model.dto.AwardDto" alias="awardDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.board.model.dto.BoardDto" alias="boardDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.board.model.dto.LikeDto" alias="LikeDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.reply.model.dto.ReplyDto" alias="replyDto"/>
@@ -29,6 +34,11 @@
 		<mapper resource="mappers/jobPosting-mapper.xml"/>
 		<mapper resource="mappers/jobPostingUpload-mapper.xml"/>
 		<mapper resource="mappers/scrap-mapper.xml"/>
+		<mapper resource="mappers/resume-mapper.xml"/>
+		<mapper resource="mappers/qualification-mapper.xml"/>
+		<mapper resource="mappers/education-mapper.xml"/>
+		<mapper resource="mappers/experience-mapper.xml"/>
+		<mapper resource="mappers/award-mapper.xml"/>
 		<mapper resource="mappers/board-mapper.xml"/>
 		<mapper resource="mappers/like-mapper.xml"/>
 		<mapper resource="mappers/reply-mapper.xml"/>

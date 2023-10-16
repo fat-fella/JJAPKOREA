@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="resume">
+	<resultMap type="resumeDto" id="resumeDto">
+        <id property="resumeId" column="resume_id" />
+        <result property="mid" column="mid" />
+        <result property="address" column="address" />
+        <result property="title" column="title" />
+        <result property="selfintroduction" column="selfintroduction" />
+    </resultMap>
+    
+    <insert id="insertResume" parameterType="resumeDto">
+    	<selectKey keyProperty="resumeId" order="BEFORE" resultType="int">
+	        SELECT RESUME_SEQ.NEXTVAL FROM DUAL
+	    </selectKey>
+	    INSERT INTO RESUME (RESUME_ID, MID, ADDRESS, TITLE, SELFINTRODUCTION)
+	    VALUES (#{resumeId}, #{mid}, #{address}, #{title}, #{selfintroduction})
+	</insert>
+</mapper>
