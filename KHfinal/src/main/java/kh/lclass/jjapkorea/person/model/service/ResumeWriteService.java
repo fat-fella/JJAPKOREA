@@ -1,5 +1,7 @@
 package kh.lclass.jjapkorea.person.model.service;
 
+import java.util.List;
+
 import kh.lclass.jjapkorea.person.model.dto.AwardDto;
 import kh.lclass.jjapkorea.person.model.dto.EducationDto;
 import kh.lclass.jjapkorea.person.model.dto.ExperienceDto;
@@ -12,4 +14,5 @@ public interface ResumeWriteService {
 	int insertEducation(EducationDto educationDto) throws Exception;
 	int insertExperience(ExperienceDto experienceDto) throws Exception;
 	int insertAward(AwardDto awardDto) throws Exception;
+	List<ResumeWriteDto> getResumeById(String mid) throws Exception;
 }

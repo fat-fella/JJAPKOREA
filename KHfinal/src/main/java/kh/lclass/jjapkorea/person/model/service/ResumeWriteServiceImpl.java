@@ -1,5 +1,7 @@
 package kh.lclass.jjapkorea.person.model.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,4 +41,9 @@ public class ResumeWriteServiceImpl implements ResumeWriteService {
 	public int insertAward(AwardDto awardDto) throws Exception {
 		return resumeWriteDao.insertAward(awardDto);
     }
+	
+	@Override
+	public List<ResumeWriteDto> getResumeById(String mid) throws Exception {
+		return resumeWriteDao.getResumeById(mid);
+	}
 }

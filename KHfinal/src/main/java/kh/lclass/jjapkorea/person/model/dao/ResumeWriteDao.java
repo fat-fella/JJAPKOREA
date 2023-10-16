@@ -1,5 +1,7 @@
 package kh.lclass.jjapkorea.person.model.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -34,4 +36,8 @@ public class ResumeWriteDao {
 	public int insertAward(AwardDto awardDto) throws Exception {
 		return sqlSession.insert("award.insertAward", awardDto);
     }
+	
+	public List<ResumeWriteDto> getResumeById(String mid) throws Exception {
+		return sqlSession.selectList("resume.getResumeById", mid);
+	}
 }

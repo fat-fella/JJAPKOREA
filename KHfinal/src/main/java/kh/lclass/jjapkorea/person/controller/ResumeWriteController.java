@@ -22,9 +22,12 @@ public class ResumeWriteController {
 	ResumeWriteService resumeWriteService;
 
 	@GetMapping("/person/resume/write")
-	public String resumeMgr() {
-
-		return "/resume/resumeWrite";
+	public String resumeMgr(Model model) throws Exception {
+		String mid = (String) model.getAttribute("mid");
+		// 이력서 데이터 확인
+		List<ResumeWriteDto> resumeList = resumeWriteService.getResumeById(mid);
+		model.addAttribute("resumeList", resumeList);
+		return "resume/resumeWrite";
 	}
 	
 	@PostMapping("/person/resume/write")
@@ -46,7 +49,6 @@ public class ResumeWriteController {
 	    // 이력서 정보 추가
 	    resumeWriteDto.setMid(mid);
 	    resumeWriteService.insertResume(resumeWriteDto);
-	    System.out.println(resumeWriteDto.getResumeId()+"하하하");
 
 	    // 자격증 추가
 	    for (int i = 1; i < qualificationName.size(); i++) {

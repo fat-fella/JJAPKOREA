@@ -16,4 +16,9 @@
 	    INSERT INTO RESUME (RESUME_ID, MID, ADDRESS, TITLE, SELFINTRODUCTION)
 	    VALUES (#{resumeId}, #{mid}, #{address}, #{title}, #{selfintroduction})
 	</insert>
+	
+	<select id="getResumeById" resultType="resumeDto">
+	    SELECT * FROM resume
+	    WHERE mid = #{mid}
+	  </select>
 </mapper>
