@@ -1,6 +1,8 @@
 package kh.lclass.jjapkorea.board.controller;
 
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,10 +27,16 @@ public class BoardController {
 	@Autowired private LikeService likeService;	
 	
 	@GetMapping("/list")
-	public ModelAndView list(ModelAndView mv, Criteria cri, BoardParam param) throws Exception{
+	public ModelAndView list(ModelAndView mv
+						, Criteria cri
+						, BoardParam param
+						, Principal principal ) throws Exception{
+		
+		String member = principal.getName();
 		int readCount = boardService.boardReadCnt(param);
 		int total = boardService.getTotal(cri);
 		PageMakerDto pageMake = new PageMakerDto(cri, total);
+		mv.addObject("member", member);
 		mv.addObject("boardList", boardService.getListPage(cri));
 		mv.addObject("readCount", readCount);
 		mv.addObject("pageMaker", pageMake);
@@ -64,8 +72,9 @@ public class BoardController {
 	}
 	@PostMapping("/insert")
 	@ResponseBody
-	public Integer insertDo(BoardDto dto) {
-		dto.setMid("admin");
+	public Integer insertDo(BoardDto dto, Principal principal) {
+		String member = principal.getName();
+		dto.setMid(member);
 	    Integer result;
 	    try {
 	        result = boardService.insert(dto);

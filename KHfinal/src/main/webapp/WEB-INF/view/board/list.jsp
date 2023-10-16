@@ -286,11 +286,19 @@ button.keyword:hover {
 	            <button class="keyword">메인으로</button>
 	        </a>
 	    </div>
-	    <div class="btn-container btn-container-keyword">
-	        <a href="<c:url value='/board/insert'/>" class="button-link">
-	            <button class="keyword">글 등록</button>
-	        </a>
-	    </div>
+	<c:choose>
+		<c:when test="${not empty member}">
+	        <!-- 로그인한 사용자가 있는 경우 -->
+	        <div class="btn-container btn-container-keyword">
+	            <a href="<c:url value='/board/insert'/>" class="button-link">
+	                <button class="keyword">글 등록</button>
+	            </a>
+	        </div>
+	    </c:when>
+	    <c:otherwise>
+			alert("로그인이 필요합니다!");
+	    </c:otherwise>
+	</c:choose>
 	</c:if>
 	
 <!-- 키워드 없을때 -->
