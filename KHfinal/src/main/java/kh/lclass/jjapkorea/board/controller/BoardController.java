@@ -1,6 +1,8 @@
 package kh.lclass.jjapkorea.board.controller;
 
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
 
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
+import kh.lclass.jjapkorea.board.model.dto.BoardParam;
 import kh.lclass.jjapkorea.board.model.dto.Criteria;
 import kh.lclass.jjapkorea.board.model.dto.PageMakerDto;
 import kh.lclass.jjapkorea.board.model.service.BoardService;
@@ -24,10 +27,18 @@ public class BoardController {
 	@Autowired private LikeService likeService;	
 	
 	@GetMapping("/list")
-	public ModelAndView list(ModelAndView mv, Criteria cri) throws Exception{
+	public ModelAndView list(ModelAndView mv
+						, Criteria cri
+						, BoardParam param
+						, Principal principal ) throws Exception{
+		
+		String member = principal.getName();
+		int readCount = boardService.boardReadCnt(param);
 		int total = boardService.getTotal(cri);
 		PageMakerDto pageMake = new PageMakerDto(cri, total);
+		mv.addObject("member", member);
 		mv.addObject("boardList", boardService.getListPage(cri));
+		mv.addObject("readCount", readCount);
 		mv.addObject("pageMaker", pageMake);
 		mv.addObject("total", total);
 		mv.setViewName("board/list");
@@ -61,8 +72,9 @@ public class BoardController {
 	}
 	@PostMapping("/insert")
 	@ResponseBody
-	public Integer insertDo(BoardDto dto) {
-		dto.setMid("admin");
+	public Integer insertDo(BoardDto dto, Principal principal) {
+		String member = principal.getName();
+		dto.setMid(member);
 	    Integer result;
 	    try {
 	        result = boardService.insert(dto);
@@ -73,11 +85,10 @@ public class BoardController {
 	    return result;
 	}
 	
-	@GetMapping("/boardReadCnt")
-	@ResponseBody
-	public Integer boardReadCount(int bno) throws Exception{
-		return boardService.boardReadCnt(bno);
-	}
+	@GetMapping("/readcnt")
+	@ResponseBody public Integer readcnt(Model model, BoardParam param) throws Exception{ 
+		return boardService.boardReadCnt(param);
+	 }
 	
 	@GetMapping("/update")
 	public String update(Model model, int bno) throws Exception{

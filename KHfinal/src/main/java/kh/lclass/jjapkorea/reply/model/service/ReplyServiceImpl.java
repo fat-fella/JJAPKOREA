@@ -27,7 +27,7 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	@Transactional
 	public List<ReplyDto> insert(ReplyDto rdto) throws Exception {
-		int result = replyDao.insert(rdto);
+		replyDao.insert(rdto);
 		List<ReplyDto> replyList = replyDao.selectList(rdto.getBoardNo());
 		return replyList;
 	}
@@ -35,7 +35,7 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	@Transactional
 	public List<ReplyDto> insertreplyreply(ReplyDto rdto) throws Exception {
-		int result = replyDao.insertreplyreply(rdto);
+		replyDao.insertreplyreply(rdto);
 		List<ReplyDto> replyList = replyDao.selectList(rdto.getBoardNo());
 		return replyList;
 	}
@@ -43,7 +43,7 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	@Transactional
 	public ReplyDto update(ReplyDto rdto) throws Exception {
-		int result = replyDao.update(rdto);
+		replyDao.update(rdto);
 		ReplyDto replyList = replyDao.selectOne(rdto.getBoardNo());
 		return replyList;
 	}
@@ -53,15 +53,14 @@ public class ReplyServiceImpl implements ReplyService {
 	public List<ReplyDto> delete(int replyNo) throws Exception {
 		ReplyDto rdto = replyDao.selectOne(replyNo);
 		int replyDtoNo = rdto.getBoardNo();
-		int result = replyDao.delete(replyNo);
+		replyDao.delete(replyNo);
 		List<ReplyDto> replyList = replyDao.selectList(replyDtoNo);
 		return replyList;
 	}
 
 	@Override
-	public List<ReplyDto> selectMoreList(int rref) throws Exception {
+	public List<ReplyDto> selectMoreList(Integer rref) {
 		return replyDao.selectMoreList(rref);
 	}
-
 	
 }

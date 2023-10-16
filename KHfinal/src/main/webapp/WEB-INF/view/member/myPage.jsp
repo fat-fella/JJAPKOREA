@@ -10,6 +10,7 @@
 <!-- [4] project명 또는 core.css 폴더경로 - bootstrap 등으로 대체 -->
 <!-- [4] 기본색상 10~15개 정도 class 미리 만들어두기 -->
 <!-- [4] 폰트크기 3~7개 정도 class 미리 만들어두기 -->
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" /> 
 <!-- [4] button 3개 class 미리 만들어두기 -->
 <!-- [4] a 모양 미리 만들어두기 -->
 <!-- [5] layout 영역 -->
@@ -40,7 +41,10 @@
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
 <link rel="icon" href="resources/favicon.ico">
+<script>
+	
 
+</script>
 <!DOCTYPE html>
 <html>
 <head>
