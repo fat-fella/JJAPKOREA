@@ -70,9 +70,9 @@ public class ChatRoomRepository {
     	return sqlSession.selectOne("chat.findRoom");
     }
     
-    public List<ChatRoomDto> findAllRooms() {
+    public List<ChatRoomDto> findAllRooms(String mid) {
         // MyBatis를 통해 오라클 데이터베이스에서 방 목록을 조회
-    	return sqlSession.selectList("chat.findAllRooms");        
+    	return sqlSession.selectList("chat.findAllRooms", mid);        
     }
 
     public ChatRoomDto findRoomById(String id) {

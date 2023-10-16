@@ -54,8 +54,8 @@ public class ChatRoomService {
         this.chatRoomRepository = chatRoomRepository;
     }
 
-    public List<ChatRoomDto> findAllRooms() {
-        return chatRoomRepository.findAllRooms();
+    public List<ChatRoomDto> findAllRooms(String mid) {
+        return chatRoomRepository.findAllRooms(mid);
     }
     
     public String findRoom(Principal principal) {
