@@ -18,12 +18,6 @@ public class MailSendController {
 	public MailSendController(MailSendService mailService) {
 		this.mailService = mailService;
 	}
-
-//	@GetMapping("/person/noticeMail")
-//	public String noticeMail(PersonDto selectOnePerson, Model model) throws MessagingException, IOException {
-//		mailService.noticeMail(selectOnePerson, model);
-//		return "index";
-//	}
 	
 	@PostMapping("/person/noticeMail")
 	public String noticeMail(PersonDto selectOnePerson, Model model) throws MessagingException, IOException {
