@@ -17,6 +17,10 @@ public class ReplyDao {
 		return sqlSession.selectList("reply.selectList", boardNo);
 	}
 	
+	public List<ReplyDto> selectMoreList(Integer rref) {
+		return sqlSession.selectList("reply.selectReply", rref);
+	}
+	
 	public ReplyDto selectOne(Integer replyNo) throws Exception{
 		return sqlSession.selectOne("reply.selectOne", replyNo);
 	}
@@ -35,8 +39,5 @@ public class ReplyDao {
 	
 	public int delete(int replyNo) throws Exception{
 		return sqlSession.delete("reply.delete", replyNo);
-	}
-	public List<ReplyDto> selectMoreList(int rref) throws Exception{
-		return sqlSession.selectList("reply.selectReply" ,rref);
 	}
 }

@@ -4,6 +4,8 @@ import java.util.List;
 
 
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
+import kh.lclass.jjapkorea.board.model.dto.BoardParam;
+import kh.lclass.jjapkorea.board.model.dto.BoardSelectReplyParam;
 import kh.lclass.jjapkorea.board.model.dto.Criteria;
 
 public interface BoardService {
@@ -12,7 +14,8 @@ public interface BoardService {
 	public int insert(BoardDto dto)throws Exception;
 	public int update(BoardDto dto)throws Exception;
 	public int delete(int bno)throws Exception;	
-	public int boardReadCnt(int bno)throws Exception;
+	public int boardReadCnt(BoardParam param) throws Exception;
+
 	
 // 좋아요 갯수 증감
 	public int totalLike(int bno) throws Exception;
@@ -21,5 +24,8 @@ public interface BoardService {
 // 게시물 목록 + 페이징
 	public int getTotal(Criteria cri) throws Exception;
 	public List<BoardDto> getListPage(Criteria cri) throws Exception;
+	
+// 답글
+	public BoardDto selectReply(BoardSelectReplyParam param) throws Exception;
 	
 }
