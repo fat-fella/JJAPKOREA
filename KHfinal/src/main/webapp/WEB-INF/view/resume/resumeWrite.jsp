@@ -162,13 +162,13 @@
 					<tr>
 						<th class="name_th">이름</th>
 						<td class="name_td"><input type="text" name="name"
-								style="border: none; background: transparent; width: 80%; height: 80%;"></td>
+								style="border: none; background: transparent; width: 80%; height: 80%;" value="${selectOnePerson.pname}"></td>
 					</tr>
 
 					<tr>
 						<th class="name_th">휴대폰 번호</th>
 						<td class="name_td"><input type="text" name="phone"
-								style="border: none; background: transparent; width: 80%; height: 80%;"></td>
+								style="border: none; background: transparent; width: 80%; height: 80%;" value="${selectOnePerson.pphone}"></td>
 					</tr>
 
 					<tr>
@@ -182,7 +182,7 @@
 					<tr>
 						<th class="name_th">이메일</th>
 						<td class="name_td"><input type="text" name="email"
-								style="border: none; background: transparent; width: 80%; height: 80%;"></td>
+								style="border: none; background: transparent; width: 80%; height: 80%;" value="${selectOnePerson.pemail}"></td>
 					</tr>
 				</table>
 			</div>
@@ -197,7 +197,7 @@
 						<tr>
 							<th class="c_th">자격면허<input type="hidden" name="qualificationName"></th>
 							<th class="c_th">취득일<input type="hidden" name="qualificationDate"></th>
-							<th class="c_th">발급기관<input type="hidden" name="qualificationIssuingAuthority"></th>
+							<th class="c_th">발급기관<input type="hidden" name="qualificationAuthority"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -209,7 +209,7 @@
 									style="border: none; background: transparent; width: 80%; height: 80%;"
 									oninput="checkAndAddRow(this, 1)"></td>
 							<td class="c_td"><input type="text"
-									name="qualificationIssuingAuthority"
+									name="qualificationAuthority"
 									style="border: none; background: transparent; width: 80%; height: 80%;"
 									oninput="checkAndAddRow(this, 1)"></td>
 						</tr>
@@ -221,7 +221,7 @@
 									style="border: none; background: transparent; width: 80%; height: 80%;"
 									oninput="checkAndAddRow(this, 1)"></td>
 							<td class="c_td"><input type="text"
-									name="qualificationIssuingAuthority"
+									name="qualificationAuthority"
 									style="border: none; background: transparent; width: 80%; height: 80%;"
 									oninput="checkAndAddRow(this, 1)"></td>
 						</tr>
