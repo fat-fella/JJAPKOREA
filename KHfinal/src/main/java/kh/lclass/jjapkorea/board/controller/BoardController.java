@@ -26,6 +26,11 @@ public class BoardController {
 	@Autowired private BoardService boardService;
 	@Autowired private LikeService likeService;	
 	
+	@GetMapping("/map")
+	public String map() {
+		return "board/map";
+	}
+	
 	@GetMapping("/list")
 	public ModelAndView list(ModelAndView mv
 						, Criteria cri
