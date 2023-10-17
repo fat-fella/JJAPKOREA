@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +63,7 @@
         $(document).ready(function() {
             var roomName = "${room.name}";
             var roomId = "${room.roomId}";
-            var username = "${room.writer}";
+            var username = "${principal.username}";
 
             var sockJs = new SockJS("/jjapkorea/stomp/chat");
             var stomp = Stomp.over(sockJs);
