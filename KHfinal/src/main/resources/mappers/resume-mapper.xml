@@ -18,7 +18,23 @@
 	</insert>
 	
 	<select id="getResumeById" resultType="resumeDto">
-	    SELECT * FROM resume
-	    WHERE mid = #{mid}
-	  </select>
+	   SELECT * FROM resume
+	   WHERE mid = #{mid}
+	</select>
+	 
+	<select id="getResumeWithQualification" resultType="java.util.Map">
+	    select * from resume join qualification using (resume_id) where mid = #{mid}
+	</select>
+	
+	<select id="getResumeWithEducation" resultType="java.util.Map">
+	    select * from resume join education using (resume_id) where mid = #{mid}
+	</select>
+	
+	<select id="getResumeWithExperience" resultType="java.util.Map">
+	    select * from resume join experience using (resume_id) where mid = #{mid}
+	</select>
+	
+	<select id="getResumeWithAward" resultType="java.util.Map">
+	    select * from resume join award using (resume_id) where mid = #{mid}
+	</select>
 </mapper>

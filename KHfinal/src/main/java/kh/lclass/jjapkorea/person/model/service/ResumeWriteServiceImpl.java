@@ -1,6 +1,7 @@
 package kh.lclass.jjapkorea.person.model.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,4 +47,24 @@ public class ResumeWriteServiceImpl implements ResumeWriteService {
 	public List<ResumeWriteDto> getResumeById(String mid) throws Exception {
 		return resumeWriteDao.getResumeById(mid);
 	}
+	
+	@Override
+	public List<Map<String, Object>> getResumeWithQualification(String mid) throws Exception {
+        return resumeWriteDao.getResumeWithQualification(mid);
+    }
+	
+	@Override
+	public List<Map<String, Object>> getResumeWithEducation(String mid) throws Exception {
+        return resumeWriteDao.getResumeWithEducation(mid);
+    }
+	
+	@Override
+	public List<Map<String, Object>> getResumeWithExperience(String mid) throws Exception {
+        return resumeWriteDao.getResumeWithExperience(mid);
+    }
+	
+	@Override
+	public List<Map<String, Object>> getResumeWithAward(String mid) throws Exception {
+        return resumeWriteDao.getResumeWithAward(mid);
+    }
 }

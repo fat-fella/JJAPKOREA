@@ -1,6 +1,7 @@
 package kh.lclass.jjapkorea.person.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,4 +41,20 @@ public class ResumeWriteDao {
 	public List<ResumeWriteDto> getResumeById(String mid) throws Exception {
 		return sqlSession.selectList("resume.getResumeById", mid);
 	}
+	
+	public List<Map<String, Object>> getResumeWithQualification(String mid) throws Exception {
+        return sqlSession.selectList("resume.getResumeWithQualification", mid);
+    }
+	
+	public List<Map<String, Object>> getResumeWithEducation(String mid) throws Exception {
+        return sqlSession.selectList("resume.getResumeWithEducation", mid);
+    }
+	
+	public List<Map<String, Object>> getResumeWithExperience(String mid) throws Exception {
+        return sqlSession.selectList("resume.getResumeWithExperience", mid);
+    }
+	
+	public List<Map<String, Object>> getResumeWithAward(String mid) throws Exception {
+        return sqlSession.selectList("resume.getResumeWithAward", mid);
+    }
 }

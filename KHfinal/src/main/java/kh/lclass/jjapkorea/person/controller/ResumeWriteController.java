@@ -1,6 +1,7 @@
 package kh.lclass.jjapkorea.person.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,14 @@ public class ResumeWriteController {
 		// 이력서 데이터 확인
 		List<ResumeWriteDto> resumeList = resumeWriteService.getResumeById(mid);
 		model.addAttribute("resumeList", resumeList);
+		List<Map<String, Object>> getResumeWithQualification = resumeWriteService.getResumeWithQualification(mid);
+		model.addAttribute("getResumeWithQualification", getResumeWithQualification);
+		List<Map<String, Object>> getResumeWithEducation = resumeWriteService.getResumeWithEducation(mid);
+		model.addAttribute("getResumeWithEducation", getResumeWithEducation);
+		List<Map<String, Object>> getResumeWithExperience = resumeWriteService.getResumeWithExperience(mid);
+		model.addAttribute("getResumeWithExperience", getResumeWithExperience);
+		List<Map<String, Object>> getResumeWithAward = resumeWriteService.getResumeWithAward(mid);
+		model.addAttribute("getResumeWithAward", getResumeWithAward);
 		return "resume/resumeWrite";
 	}
 	
