@@ -1,4 +1,4 @@
-@charset "euc-kr";
+@charset "utf-8";
 /*
 .File Name		: /inc/css/ver_2/mbr/mbr_common.css
 .Final Editor	: 占쏙옙占쏙옙占쏙옙(2015-04-21: 占쏘영占쏙옙占쏙옙트 占쌕로곤옙占쏙옙 占쏙옙占쏙옙처占쏙옙)
@@ -139,7 +139,7 @@ select.ipSelect:focus {
 ------------------------------------------------------------------------------------ */
 #header {
 	position: relative;
-    background: url('<%=request.getContextPath()%>/resources/images/infoModifyPerson_bg_mn_mbr_1.gif') repeat-x left 65px;
+	background: url(/content/images/personal/textuser/bg_mn_mbr_1.gif) repeat-x left 65px;
 	zoom: 1;
 	height: 110px;
 }
@@ -189,7 +189,7 @@ select.ipSelect:focus {
 	float: left;
 	padding: 0 7px;
 	margin-left: -1px;
-	background: url('<%=request.getContextPath()%>/resources/images/bg_bar.gif') no-repeat left 1px;
+	background: url(/content/images/personal/textuser/bg_bar.gif) no-repeat left 1px;
 }
 
 .mbrSubJoin #header .lnb a,
@@ -218,7 +218,7 @@ select.ipSelect:focus {
 .gnbWrap_mJoin .secNav li {
 	height: 80px;
 	padding-right: 69px;
-	background: url('<%=request.getContextPath()%>/resources/images/bg_bar_mn_mbr.gif') no-repeat 100% -90px;
+	background: url('/content/images/personal/textuser/bg_bar_mn_mbr.gif') no-repeat 100% -90px;
 	color: #fff;
 }
 
@@ -306,7 +306,7 @@ select.ipSelect:focus {
 	display: inline;
 	padding-right: 3px;
 	text-align: center;
-	background: url('<%=request.getContextPath()%>/resources/images/bg_bar_mn_mbr.gif') no-repeat right -191px;
+	background: url('/content/images/personal/textuser/bg_bar_mn_mbr.gif') no-repeat right -191px;
 	color: #fff;
 }
 
@@ -332,7 +332,7 @@ select.ipSelect:focus {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: url('<%=request.getContextPath()%>/resources/images/text_gnb_mbr_msch.gif') no-repeat;
+	background: url(/content/images/personal/textuser/text_gnb_mbr_msch.gif?2016110209) no-repeat;
 }
 
 .gnbWrap_mSearch .secNav li.mn1 a {
@@ -390,7 +390,7 @@ select.ipSelect:focus {
 
 .mbrSubCC #header {
 	position: relative;
-	background: url('<%=request.getContextPath()%>/resources/images/infoModifyPerson_bg_mn_mbr_1.gif') repeat-x left 101px;
+	background: url(/content/images/personal/textuser/bg_mn_mbr_1.gif) repeat-x left 101px;
 	zoom: 1;
 	height: 142px;
 }
@@ -448,7 +448,7 @@ select.ipSelect:focus {
 }
 
 .mbrSubMngGG .gnbWrap_mMng .secNav li span {
-	background: url('<%=request.getContextPath()%>/resources/images/text_gnb_mbr_mng_gg.gif') no-repeat;
+	background: url('/content/images/personal/textuser/text_gnb_mbr_mng_gg.gif') no-repeat;
 }
 
 .mbrSubMngGI .gnbWrap_mMng .secNav li span {
@@ -495,7 +495,7 @@ select.ipSelect:focus {
 	display: inline;
 	padding-right: 3px;
 	text-align: center;
-	background: url('<%=request.getContextPath()%>/resources/images/bg_bar_mn_mbr.gif') no-repeat;
+	background: url('/content/images/personal/textuser/bg_bar_mn_mbr.gif') no-repeat;
 	color: #fff;
 }
 

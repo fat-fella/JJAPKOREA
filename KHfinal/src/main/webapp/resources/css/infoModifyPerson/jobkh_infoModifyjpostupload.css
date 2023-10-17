@@ -2,7 +2,8 @@
 
 	input[type="text"],
 	input[type="password"],
-	input[type="email"] { width: 100%; border: 1px solid #ccc; }
+	input[type="email"]
+	{ width: 150px; border: 1px solid #ccc; }
 	legend.memberform { border: none; display: none;  }
 	.delimiter, .spanredgray { color: #666666; }
 	.delimiter { font-size: 16px; }

@@ -77,7 +77,7 @@ public class RoomController {
         mv.setViewName("chat/room");
         
         model.addAttribute("showChat", chatRoomService.showChat(roomId));
-        System.out.println("~!@!~!@!~@~@!~@!~Q@~!@~!@!~@"+chatRoomService.showChat(roomId));
+        System.out.println("~!@!~!@!~@~@!~@!~Q@~!@~!@!~@"+roomId);
         
         return mv;
     }

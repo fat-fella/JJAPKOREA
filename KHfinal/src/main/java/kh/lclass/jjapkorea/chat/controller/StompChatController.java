@@ -17,7 +17,6 @@ public class StompChatController {
 
     private final SimpMessagingTemplate template; //특정 Broker로 메세지를 전달
     private final ChatRoomRepository chatRoomRepository;
-    Principal principal;
 //    String participant= (String)principal.getName();
 
 
@@ -25,7 +24,7 @@ public class StompChatController {
     //stompConfig에서 설정한 applicationDestinationPrefixes와 @MessageMapping 경로가 병합됨
     //"/pub/chat/enter"
     @MessageMapping(value = "/chat/enter")
-    public void enter(ChatMessageDto message){
+    public void enter(ChatMessageDto message,  Principal principal){
     	String participant=(String)principal.getName();
     	System.out.println(participant + " &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
         message.setMessage(message.getWriter()/*participant*/ + "님이 채팅방에 참여하였습니다.");

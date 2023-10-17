@@ -90,7 +90,7 @@ public class ChatRoomRepository {
     }
     
     public List<ChatMessageDto> showChat(String id) {
-    	System.out.println("!!!!!!!!!!!!!!!!!!!!"+sqlSession.selectList("chat.showChat"));
+    	System.out.println("!!!!!!!!!!!!!!!!!!!!"+id);
     	return sqlSession.selectList("chat.showChat", id);
     }
 }

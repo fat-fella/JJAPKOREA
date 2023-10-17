@@ -191,14 +191,30 @@
 							<form id="scrapForm">
 								<div>
 									<%
-									// 이미지 파일들의 경로 배열
-									String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
-											"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
-											"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
-											"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
+									
+									String contextPath = request.getContextPath();
+									String[] imagePaths = new String[70];  // 이미지 경로들을 저장할 배열 생성
+
+									for (int i = 1; i <= 70; i++) {
+									    imagePaths[i - 1] = contextPath + "/resources/images/companylogo/companylogo" + String.format("%02d", i) + ".png";
+									}
+									
+									
+/* 								  	// 개별 이미지 파일들의 경로 배열
+									
+									String contextPath = request.getContextPath(); 
+									String[] imagePaths = {
+									    contextPath + "/resources/images/maru/maru1.png",
+									    contextPath + "/resources/images/maru/maru2.png",
+									    contextPath + "/resources/images/maru/maru3.png",
+									    contextPath + "/resources/images/maru/maru4.png",
+									    contextPath + "/resources/images/maru/maru5.png",
+									    contextPath + "/resources/images/maru/maru6.png",
+									    contextPath + "/resources/images/maru/maru7.png",
+									    contextPath + "/resources/images/maru/maru8.png"
 											// 추가 이미지 경로들...
 									};
-
+ */
 									// 랜덤으로 인덱스 생성
 									int randomIndex = (int) (Math.random() * imagePaths.length);
 
@@ -484,14 +500,30 @@
 						<li>
 							<div>
 								<%
-								// 이미지 파일들의 경로 배열
-								String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
-										"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
-										"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
-										"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
+								
+								String contextPath = request.getContextPath();
+								String[] imagePaths = new String[70];  // 이미지 경로들을 저장할 배열 생성
+
+								for (int i = 1; i <= 70; i++) {
+								    imagePaths[i - 1] = contextPath + "/resources/images/companylogo/companylogo" + String.format("%02d", i) + ".png";
+								}
+								
+								
+/* 								  	// 개별 이미지 파일들의 경로 배열
+								
+								String contextPath = request.getContextPath(); 
+								String[] imagePaths = {
+								    contextPath + "/resources/images/maru/maru1.png",
+								    contextPath + "/resources/images/maru/maru2.png",
+								    contextPath + "/resources/images/maru/maru3.png",
+								    contextPath + "/resources/images/maru/maru4.png",
+								    contextPath + "/resources/images/maru/maru5.png",
+								    contextPath + "/resources/images/maru/maru6.png",
+								    contextPath + "/resources/images/maru/maru7.png",
+								    contextPath + "/resources/images/maru/maru8.png"
 										// 추가 이미지 경로들...
 								};
-
+*/
 								// 랜덤으로 인덱스 생성
 								int randomIndex = (int) (Math.random() * imagePaths.length);
 
@@ -567,13 +599,30 @@
 						<li>
 							<div>
 								<%
-								// 이미지 파일들의 경로 배열
-								String[] imagePaths = { "/jjapkorea/resources/images/maru/maru1.png", "/jjapkorea/resources/images/maru/maru2.png",
-										"/jjapkorea/resources/images/maru/maru3.png", "/jjapkorea/resources/images/maru/maru4.png",
-										"/jjapkorea/resources/images/maru/maru5.png", "/jjapkorea/resources/images/maru/maru6.png",
-										"/jjapkorea/resources/images/maru/maru7.png", "/jjapkorea/resources/images/maru/maru8.png"
+								
+								String contextPath = request.getContextPath();
+								String[] imagePaths = new String[70];  // 이미지 경로들을 저장할 배열 생성
+
+								for (int i = 1; i <= 70; i++) {
+								    imagePaths[i - 1] = contextPath + "/resources/images/companylogo/companylogo" + String.format("%02d", i) + ".png";
+								}
+								
+								
+/* 								  	// 개별 이미지 파일들의 경로 배열
+								
+								String contextPath = request.getContextPath(); 
+								String[] imagePaths = {
+								    contextPath + "/resources/images/maru/maru1.png",
+								    contextPath + "/resources/images/maru/maru2.png",
+								    contextPath + "/resources/images/maru/maru3.png",
+								    contextPath + "/resources/images/maru/maru4.png",
+								    contextPath + "/resources/images/maru/maru5.png",
+								    contextPath + "/resources/images/maru/maru6.png",
+								    contextPath + "/resources/images/maru/maru7.png",
+								    contextPath + "/resources/images/maru/maru8.png"
 										// 추가 이미지 경로들...
 								};
+*/
 
 								// 랜덤으로 인덱스 생성
 								int randomIndex = (int) (Math.random() * imagePaths.length);
