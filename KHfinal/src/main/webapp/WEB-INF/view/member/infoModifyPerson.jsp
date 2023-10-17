@@ -84,7 +84,7 @@
 				<h1>
 					<a class="logo" href="${pageContext.request.contextPath}/index"><img
 						alt="잡코리아"
-						src="//i.jobkorea.kr/content/images/2023/common/gnb/h_logo.png"></a>
+						src="<%=request.getContextPath()%>/resources/images/JJAPkorea_logo(투명).png"   style="width: 180px; height:50px;"></a>
 					<span class="bar"><span class="title"><img
 							src="<%=request.getContextPath()%>/resources/images/infoModifyPerson_회원정보관리.gif"
 							width="117" height="23" alt="회원정보 관리"></span></span>
