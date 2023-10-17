@@ -220,20 +220,25 @@ button:hover {
 				 	<input type="hidden" name="type" value="${cri.type }">
 				 	<input type="hidden" name="keyword" value="${cri.keyword }">
 				</form>
+				
 			<!-- 댓글 Area -->
-				<div class="addreply">
-					<div class="card">
-				    	<form method="post" action="${pageContext.request.contextPath}/replyboard/insert">
-				      		<div class="card-body addaddreply contenttextarea">
-				        		<label>댓글 작성자 : ${memberid}</label>
-				        		<textarea rows="3" class="col-xl-12" name="replyContent" class="replyContent"></textarea>
-				        		<button class="submitreply" type="button" onclick="submitreplyHandler()">댓글 작성</button>
-				      		</div>
-				    	</form>
-					</div>
-				</div> 
+				<c:if test="${not empty memberid}">
+				    <div class="addreply">
+				        <div class="card">
+				            <form method="post" action="${pageContext.request.contextPath}/replyboard/insert">
+				                <div class="card-body addaddreply contenttextarea">
+				                    <label>댓글 작성자 : ${memberid}</label>
+				                    <textarea rows="3" class="col-xl-12" name="replyContent" class="replyContent"></textarea>
+				                    <button class="submitreply" type="button" onclick="submitreplyHandler()">댓글 작성</button>
+				                </div>
+				            </form>
+				        </div>
+				    </div>
+				</c:if>
+				
 		<!-- 댓글 대댓글 리스트 -->
 				<div class="testappend"></div>
+				
 			</div>
 		</div>
 	</div>
@@ -297,12 +302,12 @@ $("#btn-board-delete").click(function () {
 	        success: function (likeCheck) {
 	            if (likeCheck == 0) {
 	                alert('좋아요');
-	                $('#btn-board-like').html('좋아요 취소');
 	                location.reload();
+	                $('#btn-board-like').html('좋아요 취소');
 	            } else if (likeCheck == 1) {
 	                alert('좋아요 취소');
-	                $('#btn-board-like').html('좋아요');
 	                location.reload();
+	                $('#btn-board-like').html('좋아요');
 	            }
 	        }
 	    });
@@ -325,7 +330,6 @@ window.onload = function () {
     });
 
     var moreReply = "";
-    var memberid = '${memberid}';
     $.ajax({
         type: "get",
         url: "${pageContext.request.contextPath}/replyboard/list",
@@ -342,7 +346,7 @@ window.onload = function () {
                     htmlVal += 		'<div class="groupbtn">' 
                    	htmlVal += 			'<button class="updatereply">수정</button>' 
                  	htmlVal += 			'<button onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
-                 	htmlVal += 			'<button class="insertreplyreply">답글달기</button>' 
+                 	htmlVal += 			'<button class="insertreplyreply">댓글 삽입</button>' 
                 	htmlVal += 			'<button class="moreReply" data-replyno="' + result[i].replyNo + '">더보기</button>' 
                 	htmlVal += 		'</div>'  
                     htmlVal += '</div>'  
@@ -386,9 +390,8 @@ function moreReplyHandler(e) {
             $forAppendArea.html("");
             console.log("moreReplylist: success");
             console.log(result.length);
-            if (result.length === 0) {
+            if (result.length == 0) {
                 alert("댓글이 없습니다.");
-                location.reload();
             } else {
                 for (var i = 0; i < result.length; i++) {
                 	var htmlVal = '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">'
@@ -396,10 +399,11 @@ function moreReplyHandler(e) {
                     htmlVal += 			'<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>' 
                     htmlVal += 			'<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
                     htmlVal += 			'<div class="groupbtn"><button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
-                    htmlVal += 			'<button class="insertreplyreply">답글달기</button>'
+                    /* htmlVal += 			'<button class="insertreplyreply">답글달기</button>' */
                     htmlVal += 	  '</div>';
-                    $forAppendArea.append(htmlVal);
-                    $(".insertreplyreply").click(insertreplyreplyHandler);
+                    $(eTarget).parents(".replyCard").find(".forAppendArea").append(htmlVal);
+                    /* $forAppendArea.append(htmlVal);
+                    $(".insertreplyreply").click(insertreplyreplyHandler); */
                 }
             }
         },
@@ -530,7 +534,6 @@ function updateDoBtnHandler(){
 function insertreplyreplyHandler() {
     var $replyCard = $(this).parents(".replyCard");
     var $contenttextarea = $replyCard.find(".contenttextarea");
-
     if ($contenttextarea.length > 0) {
         $contenttextarea.remove();
     } else {
@@ -556,7 +559,7 @@ function submitreplyreplyHandler() {
         type: "post",
         url: "${pageContext.request.contextPath}/replyboard/replyinsert",
         data: {
-            memberId: "${bvo.mid}",
+            memberId: "${memberid}",
             replyContent: replyreplyContent,
             boardNo: ${bvo.bno},
             rref: $replyCard.data("replyno")

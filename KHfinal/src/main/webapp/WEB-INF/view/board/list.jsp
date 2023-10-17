@@ -280,10 +280,20 @@ button.keyword:hover {
 </c:if>
 
 <div class="btn-container btn-container-keyword">
-    <a href="<c:url value='/board/list'/>" class="button-link">
-        <button class="keyword">메인으로</button>
-    </a>
+    <c:choose>
+        <c:when test="${not empty pageMaker.cri.type and not empty pageMaker.cri.keyword}">
+            <a href="<c:url value='/board/list'/>" class="button-link">
+                <button class="keyword">메인으로</button>
+            </a>
+        </c:when>
+        <c:otherwise>
+            <a href="<c:url value='/index'/>" class="button-link">
+                <button class="keyword">홈으로</button>
+            </a>
+        </c:otherwise>
+    </c:choose>
 </div>
+
 <div class="btn-container btn-container-keyword">
     <c:choose>
         <c:when test="${not empty memberid}">
@@ -304,7 +314,6 @@ function showAlertAndRedirect() {
     alert("로그인이 필요합니다!");
     window.location.href = 'http://127.0.0.1:8090/jjapkorea/login/';
 }
-
 
 /* ------- 페이지 및 검색 ------- */
 $(document).ready(function() {
