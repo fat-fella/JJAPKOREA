@@ -199,8 +199,14 @@ button:hover {
 					    </c:when>
 					    <c:otherwise>
 					        <script>
-					            document.getElementById("btn-board-update").style.display = "none";
-					            document.getElementById("btn-board-delete").style.display = "none;
+					            var btnUpdate = document.getElementById("btn-board-update");
+					            var btnDelete = document.getElementById("btn-board-delete");
+					            if (btnUpdate) {
+					                btnUpdate.style.display = "none";
+					            }
+					            if (btnDelete) {
+					                btnDelete.style.display = "none";
+					            }
 					        </script>
 					    </c:otherwise>
 					</c:choose>
@@ -338,7 +344,7 @@ window.onload = function () {
                  	htmlVal += 			'<button onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
                  	htmlVal += 			'<button class="insertreplyreply">답글달기</button>' 
                 	htmlVal += 			'<button class="moreReply" data-replyno="' + result[i].replyNo + '">더보기</button>' 
-                    htmlVal += 		'</div>'  
+                	htmlVal += 		'</div>'  
                     htmlVal += '</div>'  
                     htmlVal += '<div class="forAppendArea"></div>';
                     $(".testappend").append(htmlVal);                  
@@ -366,28 +372,6 @@ window.onload = function () {
     
 }
 
-$(document).on("click", ".moreReply", function() {
-    var $card = $(this).closest(".replyCard");
-    var $forAppendArea = $card.find(".forAppendArea");
-    var $hideReplies = $card.find(".hideReplies");
-
-    if ($forAppendArea.children().length > 0) {
-        if ($hideReplies.is(":visible")) {
-            // 이미 숨겨져 있으면 숨김 상태 해제
-            $hideReplies.hide();
-            $(this).text("숨기기");
-        } else {
-            // 아직 숨겨져 있지 않으면 숨김 상태로 변경
-            $hideReplies.show();
-            $(this).text("숨기기");
-        }
-    }
-    // 다른 더보기 버튼들의 텍스트를 "더보기"로 변경
-    $(".moreReply").not(this).text("더보기");
-    
-    $forAppendArea.find(".insertreplyreply").click(insertreplyreplyHandler);
-});
-
 /* 대댓글 */
 function moreReplyHandler(e) {
     var rrefReplyNo = $(this).data("replyno");
@@ -411,7 +395,8 @@ function moreReplyHandler(e) {
                     htmlVal += 			'<div class="updatewriter">작성자 : ' + result[i].memberId + '</div>' 
                     htmlVal += 			'<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>' 
                     htmlVal += 			'<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
-                    htmlVal += 			'<div class="groupbtn"><button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>' 
+                    htmlVal += 			'<div class="groupbtn"><button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
+                    htmlVal += 			'<button class="insertreplyreply">답글달기</button>'
                     htmlVal += 	  '</div>';
                     $forAppendArea.append(htmlVal);
                     $(".insertreplyreply").click(insertreplyreplyHandler);
@@ -543,24 +528,23 @@ function updateDoBtnHandler(){
 }
 
 function insertreplyreplyHandler() {
-	var $replyreplyCard = $(this).parents(".replyreplycard");
-	var replyreplywriter = $(this).parents(".replyCard").data("writer");
-    var $contenttextarea = $(this).parents(".replyCard").find(".contenttextarea");
+    var $replyCard = $(this).parents(".replyCard");
+    var $contenttextarea = $replyCard.find(".contenttextarea");
 
     if ($contenttextarea.length > 0) {
         $contenttextarea.remove();
     } else {
-	var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${memberid}">'
-	   	addreplyreply +=	'<div>↳작성자: ${memberid}</div>' 
-	   	addreplyreply += 		'<div>' 
-	   	addreplyreply += 			'<textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent">@' + replyreplywriter + " " + '</textarea>' 
-	   	addreplyreply += 		'</div>'
-	   	addreplyreply +=		'<div>'
-	   	addreplyreply +='			<button class="submitreplyreply">답글 저장</button>'
-	   	addreplyreply +=		'</div>'
-	   	addreplyreply +='	</div>';
-	       $(this).parents(".replyCard").append(addreplyreply);
-	       $(".submitreplyreply").click(submitreplyreplyHandler);
+        var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${memberid}">';
+        addreplyreply += '<div>↳작성자: ${memberid}</div>';
+        addreplyreply += '<div>';
+        addreplyreply += '<textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent"></textarea>';
+        addreplyreply += '</div>';
+        addreplyreply += '<div>';
+        addreplyreply += '<button class="submitreplyreply">답글 저장</button>';
+        addreplyreply += '</div>';
+        addreplyreply += '</div>';
+        $replyCard.append(addreplyreply);
+        $(".submitreplyreply").click(submitreplyreplyHandler);
     }
 }
 
@@ -605,7 +589,7 @@ function submitreplyreplyHandler() {
                             	htmlVal +='</div>';
                             $forAppendArea.append(htmlVal);
                         }
-                        $(".insertreplyreply").click(insertreplyreplyHandler); // 답글 달기 버튼에 이벤트 핸들러 추가
+                        $(".insertreplyreply").click(insertreplyreplyHandler);
                         $replyCard.find(".hideReplies").show();
                         $replyCard.find(".moreReply").hide();
                     }
