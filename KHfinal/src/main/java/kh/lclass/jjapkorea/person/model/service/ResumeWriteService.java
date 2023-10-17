@@ -20,4 +20,13 @@ public interface ResumeWriteService {
 	List<Map<String, Object>> getResumeWithEducation(String mid) throws Exception;
 	List<Map<String, Object>> getResumeWithExperience(String mid) throws Exception;
 	List<Map<String, Object>> getResumeWithAward(String mid) throws Exception;
+	int updateResume(ResumeWriteDto resumeWriteDto) throws Exception;
+	int updateQualification(QualificationDto qualificationDto) throws Exception;
+	int updateEducation(EducationDto educationDto) throws Exception;
+	int updateExperience(ExperienceDto experienceDto) throws Exception;
+	int updateAward(AwardDto awardDto) throws Exception;
+	List<QualificationDto> getQualificationById(int resumeId) throws Exception;
+	List<EducationDto> getEducationById(int resumeId) throws Exception;
+	List<ExperienceDto> getExperienceById(int resumeId) throws Exception;
+	List<EducationDto> getAwardById(int resumeId) throws Exception;
 }

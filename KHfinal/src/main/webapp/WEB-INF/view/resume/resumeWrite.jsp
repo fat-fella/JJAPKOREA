@@ -381,7 +381,8 @@
 			</form>
 		</c:when>
 		<c:otherwise>
-			<form>
+			<form action="<%=request.getContextPath()%>/person/resume/write"
+				method="post">
 				<c:forEach items="${resumeList}" var="resume">
 					<input type="text" name="title"
 						style="display: block; margin: 0 auto; border: none; background: transparent; width: 500px; height: 50px; font-size: larger; font-weight: bold;"
