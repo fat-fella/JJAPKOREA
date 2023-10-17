@@ -57,4 +57,40 @@ public class ResumeWriteDao {
 	public List<Map<String, Object>> getResumeWithAward(String mid) throws Exception {
         return sqlSession.selectList("resume.getResumeWithAward", mid);
     }
+	
+	public int updateResume(ResumeWriteDto resumeWriteDto) throws Exception {
+		return sqlSession.update("resume.updateResume", resumeWriteDto);
+	}
+	
+	public int updateQualification(QualificationDto qualificationDto) throws Exception {
+		return sqlSession.update("qualification.updateQualification", qualificationDto);
+	}
+	
+	public int updateEducation(EducationDto educationDto) throws Exception {
+		return sqlSession.update("education.updateEducation", educationDto);
+	}
+	
+	public int updateExperience(ExperienceDto experienceDto) throws Exception {
+		return sqlSession.update("experience.updateExperience", experienceDto);
+	}
+	
+	public int updateAward(AwardDto awardDto) throws Exception {
+		return sqlSession.update("award.updateAward", awardDto);
+	}
+	
+	public List<QualificationDto> getQualificationById(int resumeId) throws Exception {
+		return sqlSession.selectList("qualification.getQualificationById", resumeId);
+	}
+	
+	public List<EducationDto> getEducationById(int resumeId) throws Exception {
+		return sqlSession.selectList("education.getEducationById", resumeId);
+	}
+	
+	public List<ExperienceDto> getExperienceById(int resumeId) throws Exception {
+		return sqlSession.selectList("experience.getExperienceById", resumeId);
+	}
+	
+	public List<EducationDto> getAwardById(int resumeId) throws Exception {
+		return sqlSession.selectList("award.getAwardById", resumeId);
+	}
 }

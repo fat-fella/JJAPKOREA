@@ -37,4 +37,8 @@
 	<select id="getResumeWithAward" resultType="java.util.Map">
 	    select * from resume join award using (resume_id) where mid = #{mid}
 	</select>
+	
+	<update id="updateResume" parameterType="resumeDto">
+		update resume set address = #{address}, selfintroduction = #{selfintroduction}, title = #{title}
+	</update>
 </mapper>

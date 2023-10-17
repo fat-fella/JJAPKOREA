@@ -13,4 +13,13 @@
 	    INSERT INTO EDUCATION (EDUCATION_ID, RESUME_ID, EDUCATION_PERIOD, SCHOOL_NAME, MAJOR)
 	    VALUES (EDUCATION_SEQ.NEXTVAL, #{resumeId}, #{educationPeriod}, #{schoolName}, #{major})
 	</insert>
+	
+	<update id="updateEducation" parameterType="educationDto">
+		update education set school_name = #{schoolName}, education_period = #{educationPeriod}, major = #{major}
+	</update>
+	
+	<select id="getEducationById" resultType="educationDto">
+	   SELECT * FROM education
+	   WHERE RESUME_ID = #{resumeId}
+	</select>
 </mapper>

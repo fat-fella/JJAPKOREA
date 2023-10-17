@@ -13,4 +13,13 @@
 	    INSERT INTO QUALIFICATION (QUALIFICATION_ID, RESUME_ID, QUALIFICATION_NAME, QUALIFICATION_DATE, QUALIFICATION_AUTHORITY)
 	    VALUES (QUALIFICATION_SEQ.NEXTVAL, #{resumeId}, #{qualificationName}, #{qualificationDate}, #{qualificationAuthority})
 	</insert>
+	
+	<update id="updateQualification" parameterType="qualificationDto">
+		update qualification set qualification_name = #{qualificationName}, qualification_date = #{qualificationDate}, qualification_authority = #{qualificationAuthority}
+	</update>
+	
+	<select id="getQualificationById" resultType="qualificationDto">
+	   SELECT * FROM qualification
+	   WHERE RESUME_ID = #{resumeId}
+	</select>
 </mapper>

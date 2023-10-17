@@ -13,4 +13,13 @@
 	    INSERT INTO AWARD (AWARD_ID, RESUME_ID, AWARD_NAME, AWARDING_AUTHORITY, AWARD_DATE)
 	    VALUES (AWARD_SEQ.NEXTVAL, #{resumeId}, #{awardName}, #{awardingAuthority}, #{awardDate})
 	</insert>
+	
+	<update id="updateAward" parameterType="experienceDto">
+		update award set award_date = #{awardDate}, award_name = #{awardName}, awarding_authority = #{awardingAuthority}
+	</update>
+	
+	<select id="getAwardById" resultType="awardDto">
+	   SELECT * FROM award
+	   WHERE RESUME_ID = #{resumeId}
+	</select>
 </mapper>

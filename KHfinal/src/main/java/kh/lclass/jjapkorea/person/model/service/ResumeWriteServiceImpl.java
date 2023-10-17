@@ -60,11 +60,56 @@ public class ResumeWriteServiceImpl implements ResumeWriteService {
 	
 	@Override
 	public List<Map<String, Object>> getResumeWithExperience(String mid) throws Exception {
-        return resumeWriteDao.getResumeWithExperience(mid);
+		return resumeWriteDao.getResumeWithExperience(mid);
     }
 	
 	@Override
 	public List<Map<String, Object>> getResumeWithAward(String mid) throws Exception {
         return resumeWriteDao.getResumeWithAward(mid);
     }
+	
+	@Override
+	public int updateResume(ResumeWriteDto resumeWriteDto) throws Exception {
+		return resumeWriteDao.updateResume(resumeWriteDto);
+	}
+	
+	@Override
+	public int updateQualification(QualificationDto qualificationDto) throws Exception {
+		return resumeWriteDao.updateQualification(qualificationDto);
+	}
+	
+	@Override
+	public int updateEducation(EducationDto educationDto) throws Exception {
+		return resumeWriteDao.updateEducation(educationDto);
+	}
+	
+	@Override
+	public int updateExperience(ExperienceDto experienceDto) throws Exception {
+		return resumeWriteDao.updateExperience(experienceDto);
+	}
+	
+	@Override
+	public int updateAward(AwardDto awardDto) throws Exception {
+		return resumeWriteDao.updateAward(awardDto);
+	}
+	
+	@Override
+	public List<QualificationDto> getQualificationById(int resumeId) throws Exception {
+		return resumeWriteDao.getQualificationById(resumeId);
+	}
+	
+	@Override
+	public List<EducationDto> getEducationById(int resumeId) throws Exception {
+		return resumeWriteDao.getEducationById(resumeId);
+	}
+	
+	@Override
+	public List<ExperienceDto> getExperienceById(int resumeId) throws Exception {
+		return resumeWriteDao.getExperienceById(resumeId);
+	}
+	
+	@Override
+	public List<EducationDto> getAwardById(int resumeId) throws Exception {
+		return resumeWriteDao.getAwardById(resumeId);
+	}
 }

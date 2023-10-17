@@ -13,4 +13,13 @@
 	    INSERT INTO EXPERIENCE (EXPERIENCE_ID, RESUME_ID, WORK_PERIOD, WORK_PLACE, WORK_DETAILS)
 	    VALUES (EXPERIENCE_SEQ.NEXTVAL, #{resumeId}, #{workPeriod}, #{workPlace}, #{workDetails})
 	</insert>
+	
+	<update id="updateExperience" parameterType="experienceDto">
+		update experience set work_details = #{workDetails}, work_period = #{workPeriod}, work_place = #{workPlace}
+	</update>
+	
+	<select id="getExperienceById" resultType="experienceDto">
+	   SELECT * FROM experience
+	   WHERE RESUME_ID = #{resumeId}
+	</select>
 </mapper>
