@@ -94,9 +94,17 @@ public class BoardController {
 	}
 	
 	@GetMapping("/readcnt")
-	@ResponseBody public Integer readcnt(Model model, BoardParam param) throws Exception{ 
+	@ResponseBody 
+	public Integer readcnt(Model model, BoardParam param) throws Exception{ 
 		return boardService.boardReadCnt(param);
 	 }
+	
+	@GetMapping("/readcntView")
+	public String readcntView(Model model, BoardParam param) throws Exception {
+	    Integer readCount = boardService.boardReadCnt(param);
+	    model.addAttribute("readcnt", readCount);
+	    return "board/list"; // 뷰 페이지 이름 반환
+	}
 	
 	@GetMapping("/update")
 	public String update(Model model, int bno) throws Exception{
