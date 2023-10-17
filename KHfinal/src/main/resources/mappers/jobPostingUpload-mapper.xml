@@ -77,7 +77,7 @@
 	</update>
 	
 	
-	<delete id="jobPostingDelete" parameterType="int">
+	<delete id="jobPostingDelete" parameterType="string">
 		delete from info where jid =#{jid}
 	</delete>
 	

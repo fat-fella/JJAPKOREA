@@ -146,6 +146,7 @@ public class JobPostingUploadController {
 	@PostMapping("/jobpostingupload/edit")
 	public ModelAndView jobPostingUpdate(JobPostingDto dto, ModelAndView mv) throws Exception{
 		jobPostingUploadServiceImpl.jobPostingUpdate(dto);
+		
 		mv.setViewName("redirect:/business/jobpostingupload/list");
 		return mv;
 		
@@ -155,8 +156,10 @@ public class JobPostingUploadController {
 	
 	
 	@PostMapping("/jobpostingupload/list")
-	public int jobPostingDelete(String jid) throws Exception{
-		return jobPostingUploadServiceImpl.jobPostingDelete(jid);
+	public ModelAndView jobPostingDelete(String jid, ModelAndView mv) throws Exception{
+		jobPostingUploadServiceImpl.jobPostingDelete(jid);
+		mv.setViewName("redirect:/business/jobpostingupload/list");
+		return mv;
 		
 	}
 	
