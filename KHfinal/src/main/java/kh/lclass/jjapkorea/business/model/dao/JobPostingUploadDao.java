@@ -39,5 +39,14 @@ public class JobPostingUploadDao {
 	public Map<String, Object> getJobPostingWithInfo(String jid) throws Exception {
         return sqlSession.selectOne("jobpostingUpload.getJobPostingWithInfo", jid);
 	}
+	public int jobPostingDelete(String jid) throws Exception {
+		return sqlSession.delete("jobpostingUpload.jobPostingDelete",jid);
+		
+	}
+	public int jobPostingUpdate(JobPostingDto dto) throws Exception{
+		return sqlSession.update("jobpostingUpload.jobPostingUpdate", dto);
+	}
+	
+	
 	
 }

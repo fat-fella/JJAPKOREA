@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kh.lclass.jjapkorea.business.model.dto.JobPostingCategoryDto;
 import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
@@ -37,7 +38,10 @@ public class JobPostingUploadController {
 
 	@Autowired
 	private JobPostingUploadService jobPostingUploadService;
+	@Autowired
 	private JobPostingService jobPostingService;
+	@Autowired
+	private JobPostingUploadService jobPostingUploadServiceImpl;
 
 	@GetMapping("/jobpostingupload/register")
 	public ModelAndView jobUpload(ModelAndView mv, Model model, String firstRecruitField) throws Exception {
@@ -124,4 +128,40 @@ public class JobPostingUploadController {
 		}
 		return mv;
 	}
+	
+	@GetMapping("/jobpostingupload/edit")
+	public ModelAndView jobPostingEdit(String jid, ModelAndView mv, RedirectAttributes rttr) throws Exception {
+		Map<String, Object> jobPostingInfo = jobPostingUploadServiceImpl.getJobPostingWithInfo(jid);
+
+			if (jobPostingInfo != null) {
+				mv.addObject("jobPosting" ,jobPostingInfo);
+				mv.setViewName("jpost/jpostEdit");
+			} else {
+				rttr.addFlashAttribute("alertMsg", "지금은 삭제된 공고입니다.");
+				mv.setViewName("redirect:/business/jobpostingupload/list");
+			}
+			return mv;
+		} 
+	
+	@PostMapping("/jobpostingupload/edit")
+	public ModelAndView jobPostingUpdate(JobPostingDto dto, ModelAndView mv) throws Exception{
+		jobPostingUploadServiceImpl.jobPostingUpdate(dto);
+		
+		mv.setViewName("redirect:/business/jobpostingupload/list");
+		return mv;
+		
+	}
+	
+	
+	
+	
+	@PostMapping("/jobpostingupload/list")
+	public ModelAndView jobPostingDelete(String jid, ModelAndView mv) throws Exception{
+		jobPostingUploadServiceImpl.jobPostingDelete(jid);
+		mv.setViewName("redirect:/business/jobpostingupload/list");
+		return mv;
+		
+	}
+	
+	
 }

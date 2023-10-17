@@ -23,22 +23,33 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 	public int insert(JobPostingDto dto) throws Exception{
 		return jobpostinguploadDao.insert(dto);
 	}
-	
+	@Override
 	public List<JobPostingDto> selectList(String mid) throws Exception{
 		return jobpostinguploadDao.selectList(mid);
 		
 	}
-	
+	@Override
 	public List<JobPostingCategoryDto> selectFirst(String selectedOption) throws Exception{
 		return jobpostinguploadDao.selectFirst(selectedOption);
 	}
+	@Override
 	public List<JobPostingCategoryDto> selectSecond(String selectedOption) throws Exception{
 		return jobpostinguploadDao.selectSecond(selectedOption);
 	}
+	@Override
 	public List<JobPostingCategoryDto> selectThird(String selectedOption) throws Exception{
 		return jobpostinguploadDao.selectThird(selectedOption);
 	}
+	@Override
 	public Map<String, Object> getJobPostingWithInfo(String jid) throws Exception {
 		return jobpostinguploadDao.getJobPostingWithInfo(jid);
+	}
+	@Override
+	public int jobPostingDelete(String jid) throws Exception {
+		return jobpostinguploadDao.jobPostingDelete(jid);
+	}
+	@Override
+	public int jobPostingUpdate(JobPostingDto dto) throws Exception{
+		return jobpostinguploadDao.jobPostingUpdate(dto);
 	}
 }
