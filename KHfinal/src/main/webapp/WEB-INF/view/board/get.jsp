@@ -399,6 +399,7 @@ button:hover {
 	                $(".insertreplyreply").click(insertreplyreplyHandler);
 	                $forAppendArea.css("display", "block");
 	                $moreReplyButton.text("숨기기");
+	                
 	            },
 	            error: function () {
 	                console.log("error");
@@ -406,6 +407,9 @@ button:hover {
 	            dataType: "json"
 	        });
 	    }
+	    $moreReplyButton.click(function() {
+	        location.reload();
+	    });
 	}
 
 /* ---------- 댓글 등록 ---------- */
