@@ -189,10 +189,10 @@ button:hover {
 					            var btnDelete = document.getElementById("btn-board-delete");
 					            if (btnUpdate) {
 					                btnUpdate.style.display = "none";
-					            }
+				            	}
 					            if (btnDelete) {
 					                btnDelete.style.display = "none";
-					            }
+				            	}
 					        </script>
 					    </c:otherwise>
 					</c:choose>
@@ -359,7 +359,7 @@ button:hover {
 	    var $replyCard = $(eTarget).parents(".replyCard");
 	    var $forAppendArea = $replyCard.find(".forAppendArea");
 	    var $moreReplyButton = $("#moreReplyButton");
-	
+	    
 	    if ($forAppendArea.css("display") === "block") {
 	        $forAppendArea.css("display", "none");
 	        $moreReplyButton.text("더보기");
@@ -392,7 +392,6 @@ button:hover {
 	                $(".insertreplyreply").click(insertreplyreplyHandler);
 	                $forAppendArea.css("display", "block");
 	                $moreReplyButton.text("숨기기");
-	                
 	            },
 	            error: function () {
 	                console.log("error");
