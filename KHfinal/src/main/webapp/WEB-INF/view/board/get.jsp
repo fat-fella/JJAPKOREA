@@ -159,72 +159,72 @@ button:hover {
 </style>
 </head>
 <body>
-	<div class="container">
-		<div class="content">
-			<div>
-				<div class="mb-3 mt-3">
-					<input type="hidden" class="form-control" id="boardNo"
-						name="boardNo" value="${bvo.bno}" disabled>
-				</div>
-				<form id="infoForm" action="${pageContext.request.contextPath }/board/update" method="get">
-				<h3><c:out value="${bvo.bno}"/>번글</h3>
-					<input type="hidden" name="bno" value="${bvo.bno}"> 
-					<label for="btitle">제목:</label> 
-					<input type="text" id="btitle" name="btitle" value="${bvo.btitle}" readonly> 
-					<br> 
-					<label for="bcontent">내용:</label>
-					<textarea id="bcontent" rows="10" cols="50" name="bcontent" readonly>${bvo.bcontent}</textarea>
-					<br> 
-					<label for="likehit">좋아요수: (${bvo.likehit })</label>
-					<c:choose>
-					    <c:when test="${memberid eq bvo.mid}">
-					        <a href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
-					            <button id="btn-board-update">글 수정</button>
-					        </a>
-					        <button id="btn-board-delete">글 삭제</button>
-					    </c:when>
-					    <c:otherwise>
-					        <script>
-					            var btnUpdate = document.getElementById("btn-board-update");
-					            var btnDelete = document.getElementById("btn-board-delete");
-					            if (btnUpdate) {
-					                btnUpdate.style.display = "none";
-				            	}
-					            if (btnDelete) {
-					                btnDelete.style.display = "none";
-				            	}
-					        </script>
-					    </c:otherwise>
-					</c:choose>
-					<a class="btn" id="btn-board-list">
-						<button type="button">글 목록으로 이동</button>
-					</a>
-					<button type="button" id="btn-board-like" onclick="updateLike(); return false;">좋아요</button>
-					<input type="hidden" id="bno" name="bno" value='<c:out value="${bvo.bno}"/>'>
-					<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
-					<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
-				 	<input type="hidden" name="type" value="${cri.type }">
-				 	<input type="hidden" name="keyword" value="${cri.keyword }">
-				</form>
-			<!-- 댓글 Area -->
-				<c:if test="${not empty memberid}">
-				    <div class="addreply">
-				        <div class="card">
-				            <form method="post" action="${pageContext.request.contextPath}/replyboard/insert">
-				                <div class="card-body addaddreply contenttextarea">
-				                    <label>댓글 작성자 : ${memberid}</label>
-				                    <textarea rows="3" class="col-xl-12" name="replyContent" class="replyContent"></textarea>
-				                    <button class="submitreply" type="button" onclick="submitreplyHandler()">댓글 작성</button>
-				                </div>
-				            </form>
-				        </div>
-				    </div>
-				</c:if>
-		<!-- 댓글 대댓글 리스트 -->
-				<div class="testappend"></div>
+<div class="container">
+	<div class="content">
+		<div>
+			<div class="mb-3 mt-3">
+				<input type="hidden" class="form-control" id="boardNo"
+					name="boardNo" value="${bvo.bno}" disabled>
 			</div>
+			<form id="infoForm" action="${pageContext.request.contextPath }/board/update" method="get">
+			<h3><c:out value="${bvo.bno}"/>번글</h3>
+				<input type="hidden" name="bno" value="${bvo.bno}"> 
+				<label for="btitle">제목:</label> 
+				<input type="text" id="btitle" name="btitle" value="${bvo.btitle}" readonly> 
+				<br> 
+				<label for="bcontent">내용:</label>
+				<textarea id="bcontent" rows="10" cols="50" name="bcontent" readonly>${bvo.bcontent}</textarea>
+				<br> 
+				<label for="likehit">좋아요수: (${bvo.likehit })</label>
+				<c:choose>
+				    <c:when test="${memberid eq bvo.mid}">
+				        <a href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
+				            <button id="btn-board-update">글 수정</button>
+				        </a>
+				        <button id="btn-board-delete">글 삭제</button>
+				    </c:when>
+				    <c:otherwise>
+				        <script>
+				            var btnUpdate = document.getElementById("btn-board-update");
+				            var btnDelete = document.getElementById("btn-board-delete");
+				            if (btnUpdate) {
+				                btnUpdate.style.display = "none";
+			            	}
+				            if (btnDelete) {
+				                btnDelete.style.display = "none";
+			            	}
+				        </script>
+				    </c:otherwise>
+				</c:choose>
+				<a class="btn" id="btn-board-list">
+					<button type="button">글 목록으로 이동</button>
+				</a>
+				<button type="button" id="btn-board-like" onclick="updateLike(); return false;">좋아요</button>
+				<input type="hidden" id="bno" name="bno" value='<c:out value="${bvo.bno}"/>'>
+				<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
+				<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
+			 	<input type="hidden" name="type" value="${cri.type }">
+			 	<input type="hidden" name="keyword" value="${cri.keyword }">
+			</form>
+		<!-- 댓글 Area -->
+			<c:if test="${not empty memberid}">
+			    <div class="addreply">
+			        <div class="card">
+			            <form method="post" action="${pageContext.request.contextPath}/replyboard/insert">
+			                <div class="card-body addaddreply contenttextarea">
+			                    <label>댓글 작성자 : ${memberid}</label>
+			                    <textarea rows="3" class="col-xl-12" name="replyContent" class="replyContent"></textarea>
+			                    <button class="submitreply" type="button" onclick="submitreplyHandler()">댓글 작성</button>
+			                </div>
+			            </form>
+			        </div>
+			    </div>
+			</c:if>
+	<!-- 댓글 대댓글 리스트 -->
+			<div class="testappend"></div>
 		</div>
 	</div>
+</div>
 <script>
 /* ---------- 리스트로 ---------- */
 	let form = $("#infoForm");
@@ -399,9 +399,9 @@ button:hover {
 	            dataType: "json"
 	        });
 	    }
-	    $moreReplyButton.click(function() {
+/* 	    $moreReplyButton.click(function() {
 	        location.reload();
-	    });
+	    }); */
 	}
 /* ---------- 댓글 등록 ---------- */
 	function submitreplyHandler() {
