@@ -62,6 +62,32 @@
             });
         });
     </script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css"> <!-- ui쪽 서버 파일로 변경예정 -->
+    <link rel="stylesheet" as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css"> <!-- 웹폰트 : ui 서버로 이관할지 확인 필요-->
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/jobkh_layout.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index/gnb-sv.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index/banner_promotion-sv.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index/notification-sv.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index/footer-sv.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index/banner-sv.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index/mtu_popup-sv.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index/flow.css">
+<%--     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/index/main-sv.css">
+ --%>    
+    
+<%--     
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/jobkh_nav.css">
+     --%>
+    
+<!-- 원본 잡코리아 가져온것   -->    
+
+    
+    
+<!-- 원본            우리가 작업한거  시작			 -->
+    
     <div class="wrap">
         <nav>
             <div id="point">
@@ -1106,7 +1132,7 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
+                    <hr class="nav-hr">
                     <div class="service-box">
                         <div class="tool">
                             <p class="tit">취업 성공 툴</p>

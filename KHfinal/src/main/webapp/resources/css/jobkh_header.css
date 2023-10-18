@@ -267,7 +267,7 @@ header .headInner .headBann .bannBx .bann-logo:after {
     content: "";
     display: block;
     width: 100%;
-    height: 90%;
+    height: 100%;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1114,7 +1114,7 @@ header .headNavBar .navInner:after {
     overflow: hidden;
 }
 
-#banner-area .bnr-big >  img,
+#banner-area .bnr-big > a img,
 #banner-area .bnr-marketing > a img {
     margin: 0;
 }
