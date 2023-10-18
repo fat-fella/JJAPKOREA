@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <title>채용공고 상세페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <script>
 	// 이메일 보내기 
 	function sendEmail(jid) {
@@ -116,8 +115,7 @@
 										target="_blank" title="새창"
 										onclick="javascript:go_Area_List('I130',1); return false;">서울시
 									</a>
-
-
+									<button id="openMapButton" onclick="openMapModal()">지도</button>
 								</dd>
 
 							</dl>
@@ -194,4 +192,25 @@
 
 		<p class="deadlineInfo" id="devTimeGuide"></p>
 	</section>
+	<div id="mapModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeMapModal()">&times;</span>
+        <div class="map_wrap">
+		<div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
+            <div id="menu_wrap" class="bg_white">
+                <div class="option">
+                    <div>
+                        <form onsubmit="searchPlaces(); return false;">
+                            키워드 : <input type="text" id="keyword" size="15" placeholder="기업명 입력!"> 
+                            <button type="submit">검색하기</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+                <ul id="placesList"></ul>
+                <div id="pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
 </html>
