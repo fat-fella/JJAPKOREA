@@ -10,8 +10,11 @@
 	</resultMap>
 	
 	<insert id="insertExperience" parameterType="experienceDto">
+		<selectKey keyProperty="experienceId" order="BEFORE" resultType="int">
+	        SELECT EXPERIENCE_SEQ.NEXTVAL FROM DUAL
+	    </selectKey>
 	    INSERT INTO EXPERIENCE (EXPERIENCE_ID, RESUME_ID, WORK_PERIOD, WORK_PLACE, WORK_DETAILS)
-	    VALUES (EXPERIENCE_SEQ.NEXTVAL, #{resumeId}, #{workPeriod}, #{workPlace}, #{workDetails})
+	    VALUES (#{experienceId}, #{resumeId}, #{workPeriod}, #{workPlace}, #{workDetails})
 	</insert>
 	
 	<update id="updateExperience" parameterType="experienceDto">
@@ -22,4 +25,8 @@
 	   SELECT * FROM experience
 	   WHERE RESUME_ID = #{resumeId}
 	</select>
+	
+	<delete id="deleteExperience">
+		delete from experience where experience_id = #{experienceId}
+	</delete>
 </mapper>

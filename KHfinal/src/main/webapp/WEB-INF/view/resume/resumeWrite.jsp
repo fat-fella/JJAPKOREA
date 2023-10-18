@@ -381,7 +381,7 @@
 			</form>
 		</c:when>
 		<c:otherwise>
-			<form action="<%=request.getContextPath()%>/person/resume/write"
+			<form id="formTest" action="<%=request.getContextPath()%>/person/resume/write"
 				method="post">
 				<c:forEach items="${resumeList}" var="resume">
 					<input type="text" name="title"
@@ -758,9 +758,11 @@
 
 		// 폼 제출 버튼 클릭 시 호출되는 함수
 		var registerButton = document.getElementById("registerButton");
+		var formTest = document.getElementById("formTest");
 
 		if (registerButton) {
 			registerButton.addEventListener("click", function(event) {
+				console.log($("#formTest").serialize());
 				// 모든 필수 필드가 비어 있지 않는 경우에만 폼 제출
 				var isFormValid = true;
 

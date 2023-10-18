@@ -10,8 +10,11 @@
 	</resultMap>
 	
 	<insert id="insertEducation" parameterType="educationDto">
+		<selectKey keyProperty="educationId" order="BEFORE" resultType="int">
+	        SELECT EDUCATION_SEQ.NEXTVAL FROM DUAL
+	    </selectKey>
 	    INSERT INTO EDUCATION (EDUCATION_ID, RESUME_ID, EDUCATION_PERIOD, SCHOOL_NAME, MAJOR)
-	    VALUES (EDUCATION_SEQ.NEXTVAL, #{resumeId}, #{educationPeriod}, #{schoolName}, #{major})
+	    VALUES (#{educationId}, #{resumeId}, #{educationPeriod}, #{schoolName}, #{major})
 	</insert>
 	
 	<update id="updateEducation" parameterType="educationDto">
@@ -22,4 +25,8 @@
 	   SELECT * FROM education
 	   WHERE RESUME_ID = #{resumeId}
 	</select>
+	
+	<delete id="deleteEducation">
+		delete from education where education_id = #{educationId}
+	</delete>
 </mapper>

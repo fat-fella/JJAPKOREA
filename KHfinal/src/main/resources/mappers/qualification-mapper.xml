@@ -10,8 +10,11 @@
 	</resultMap>
 	
 	<insert id="insertQualification" parameterType="qualificationDto">
+		<selectKey keyProperty="qualificationId" order="BEFORE" resultType="int">
+	        SELECT QUALIFICATION_SEQ.NEXTVAL FROM DUAL
+	    </selectKey>
 	    INSERT INTO QUALIFICATION (QUALIFICATION_ID, RESUME_ID, QUALIFICATION_NAME, QUALIFICATION_DATE, QUALIFICATION_AUTHORITY)
-	    VALUES (QUALIFICATION_SEQ.NEXTVAL, #{resumeId}, #{qualificationName}, #{qualificationDate}, #{qualificationAuthority})
+	    VALUES (#{qualificationId}, #{resumeId}, #{qualificationName}, #{qualificationDate}, #{qualificationAuthority})
 	</insert>
 	
 	<update id="updateQualification" parameterType="qualificationDto">
@@ -20,6 +23,10 @@
 	
 	<select id="getQualificationById" resultType="qualificationDto">
 	   SELECT * FROM qualification
-	   WHERE RESUME_ID = #{resumeId}
+	   WHERE RESUME_ID = #{resumeId} order by qualification_id
 	</select>
+	
+	<delete id="deleteQualification">
+		delete from qualification where RESUME_ID = #{resumeId}
+	</delete>
 </mapper>

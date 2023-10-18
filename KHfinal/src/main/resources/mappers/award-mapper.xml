@@ -10,11 +10,14 @@
 	</resultMap>
 	
 	<insert id="insertAward" parameterType="awardDto">
+		<selectKey keyProperty="awardId" order="BEFORE" resultType="int">
+	        SELECT AWARD_SEQ.NEXTVAL FROM DUAL
+	    </selectKey>
 	    INSERT INTO AWARD (AWARD_ID, RESUME_ID, AWARD_NAME, AWARDING_AUTHORITY, AWARD_DATE)
-	    VALUES (AWARD_SEQ.NEXTVAL, #{resumeId}, #{awardName}, #{awardingAuthority}, #{awardDate})
+	    VALUES (#{awardId}, #{resumeId}, #{awardName}, #{awardingAuthority}, #{awardDate})
 	</insert>
 	
-	<update id="updateAward" parameterType="experienceDto">
+	<update id="updateAward" parameterType="awardDto">
 		update award set award_date = #{awardDate}, award_name = #{awardName}, awarding_authority = #{awardingAuthority}
 	</update>
 	
@@ -22,4 +25,8 @@
 	   SELECT * FROM award
 	   WHERE RESUME_ID = #{resumeId}
 	</select>
+	
+	<delete id="deleteAward">
+		delete from award where award_id = #{awardId}
+	</delete>
 </mapper>

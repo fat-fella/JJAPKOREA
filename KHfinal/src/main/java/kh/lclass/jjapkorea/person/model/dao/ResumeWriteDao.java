@@ -90,7 +90,23 @@ public class ResumeWriteDao {
 		return sqlSession.selectList("experience.getExperienceById", resumeId);
 	}
 	
-	public List<EducationDto> getAwardById(int resumeId) throws Exception {
+	public List<AwardDto> getAwardById(int resumeId) throws Exception {
 		return sqlSession.selectList("award.getAwardById", resumeId);
+	}
+	
+	public int deleteQualification(int resumeId) throws Exception {
+		return sqlSession.delete("qualification.deleteQualification", resumeId);
+	}
+	
+	public int deleteEducation(int educationId) throws Exception {
+		return sqlSession.delete("education.deleteEducation", educationId);
+	}
+	
+	public int deleteExperience(int experienceId) throws Exception {
+		return sqlSession.delete("experience.deleteExperience", experienceId);
+	}
+	
+	public int deleteAward(int awardId) throws Exception {
+		return sqlSession.delete("award.deleteAward", awardId);
 	}
 }

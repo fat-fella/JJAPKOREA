@@ -109,7 +109,27 @@ public class ResumeWriteServiceImpl implements ResumeWriteService {
 	}
 	
 	@Override
-	public List<EducationDto> getAwardById(int resumeId) throws Exception {
+	public List<AwardDto> getAwardById(int resumeId) throws Exception {
 		return resumeWriteDao.getAwardById(resumeId);
+	}
+	
+	@Override
+	public int deleteQualification(int qualificationId) throws Exception {
+		return resumeWriteDao.deleteQualification(qualificationId);
+	}
+	
+	@Override
+	public int deleteEducation(int educationId) throws Exception {
+		return resumeWriteDao.deleteEducation(educationId);
+	}
+	
+	@Override
+	public int deleteExperience(int experienceId) throws Exception {
+		return resumeWriteDao.deleteExperience(experienceId);
+	}
+	
+	@Override
+	public int deleteAward(int awardId) throws Exception {
+		return resumeWriteDao.deleteAward(awardId);
 	}
 }

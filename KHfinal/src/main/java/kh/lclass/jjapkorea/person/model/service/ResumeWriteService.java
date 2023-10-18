@@ -28,5 +28,9 @@ public interface ResumeWriteService {
 	List<QualificationDto> getQualificationById(int resumeId) throws Exception;
 	List<EducationDto> getEducationById(int resumeId) throws Exception;
 	List<ExperienceDto> getExperienceById(int resumeId) throws Exception;
-	List<EducationDto> getAwardById(int resumeId) throws Exception;
+	List<AwardDto> getAwardById(int resumeId) throws Exception;
+	int deleteQualification(int qualificationId) throws Exception;
+	int deleteEducation(int educationId) throws Exception;
+	int deleteExperience(int experienceId) throws Exception;
+	int deleteAward(int awardId) throws Exception;
 }
