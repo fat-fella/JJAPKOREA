@@ -142,13 +142,13 @@
 							document
 									.getElementById('imageInput')
 									.addEventListener('change', function() {
-										// 선택한 파일을 처리하거나 서버로 업로드할 수 있습니다.
-										// 이 코드는 파일 선택 시 작동할 JavaScript 코드를 추가하는 부분입니다.
+										// 선택한 파일을 처리하거나 서버로 업로드
+										// 이 코드는 파일 선택 시 작동할 JavaScript 코드를 추가하는 부분
 										var selectedFile = this.files[0];
 										if (selectedFile) {
-											// 파일을 선택했을 때의 동작을 정의할 수 있습니다.
-											// 여기에 선택한 이미지 파일을 표시하거나 업로드하는 코드를 추가할 수 있습니다.
-											// 예를 들어, 이미지 미리보기를 추가하려면 다음과 같이 처리할 수 있습니다.
+											// 파일을 선택했을 때의 동작을 정의
+											// 여기에 선택한 이미지 파일을 표시하거나 업로드하는 코드를 추가
+											// 예를 들어, 이미지 미리보기를 추가하려면 다음과 같이 처리
 											var imagePreview = document
 													.getElementById('uploadImage');
 											imagePreview.innerHTML = ''; // 이전 내용 지우기
