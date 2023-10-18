@@ -620,7 +620,7 @@
 					</section>
 					<br>
 					<div style="text-align: center;">
-						<button id="modifyButton">수정</button>
+						<button id="registerButton">수정</button>
 					</div>
 				</c:forEach>
 			</form>

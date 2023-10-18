@@ -60,7 +60,7 @@ public class ResumeWriteController {
 	        // 이미 있는 경우: 업데이트
 	    	resumeWriteDto.setMid(mid);
 	        resumeWriteService.updateResume(resumeWriteDto);
-	        // 자격증 추가 또는 업데이트
+	        // 자격증 업데이트
 		    for (int i = 1; i < qualificationName.size(); i++) {
 		        QualificationDto qualificationDto = new QualificationDto();
 		        qualificationDto.setResumeId(resumeWriteDto.getResumeId());
@@ -70,7 +70,7 @@ public class ResumeWriteController {
 		        resumeWriteService.updateQualification(qualificationDto);
 		    }
 
-		    // 학력 추가 또는 업데이트
+		    // 학력 업데이트
 		    for (int i = 1; i < educationPeriod.size(); i++) {
 		        EducationDto educationDto = new EducationDto();
 		        educationDto.setResumeId(resumeWriteDto.getResumeId());
@@ -80,7 +80,7 @@ public class ResumeWriteController {
 		        resumeWriteService.updateEducation(educationDto);
 		    }
 
-		    // 경력 추가 또는 업데이트
+		    // 경력 업데이트
 		    for (int i = 1; i < workPeriod.size(); i++) {
 		        ExperienceDto experienceDto = new ExperienceDto();
 		        experienceDto.setResumeId(resumeWriteDto.getResumeId());
@@ -90,7 +90,7 @@ public class ResumeWriteController {
 		        resumeWriteService.updateExperience(experienceDto);
 		    }
 
-		    // 수상내역 추가 또는 업데이트
+		    // 수상내역 업데이트
 		    for (int i = 1; i < awardName.size(); i++) {
 		        AwardDto awardDto = new AwardDto();
 		        awardDto.setResumeId(resumeWriteDto.getResumeId());
@@ -103,7 +103,7 @@ public class ResumeWriteController {
 	        // 없는 경우: 추가
 	        resumeWriteDto.setMid(mid);
 	        resumeWriteService.insertResume(resumeWriteDto);
-	        // 자격증 추가 또는 업데이트
+	        // 자격증 추가
 		    for (int i = 1; i < qualificationName.size(); i++) {
 		        QualificationDto qualificationDto = new QualificationDto();
 		        qualificationDto.setResumeId(resumeWriteDto.getResumeId());
@@ -112,7 +112,7 @@ public class ResumeWriteController {
 		        qualificationDto.setQualificationAuthority(qualificationAuthority.get(i));
 		        resumeWriteService.insertQualification(qualificationDto);
 		    }
-		    // 학력 추가 또는 업데이트
+		    // 학력 추가
 		    for (int i = 1; i < educationPeriod.size(); i++) {
 		        EducationDto educationDto = new EducationDto();
 		        educationDto.setResumeId(resumeWriteDto.getResumeId());
@@ -122,7 +122,7 @@ public class ResumeWriteController {
 		        resumeWriteService.insertEducation(educationDto);
 		    }
 
-		    // 경력 추가 또는 업데이트
+		    // 경력 추가
 		    for (int i = 1; i < workPeriod.size(); i++) {
 		        ExperienceDto experienceDto = new ExperienceDto();
 		        experienceDto.setResumeId(resumeWriteDto.getResumeId());
@@ -132,7 +132,7 @@ public class ResumeWriteController {
 		        resumeWriteService.insertExperience(experienceDto);
 		    }
 
-		    // 수상내역 추가 또는 업데이트
+		    // 수상내역 추가
 		    for (int i = 1; i < awardName.size(); i++) {
 		        AwardDto awardDto = new AwardDto();
 		        awardDto.setResumeId(resumeWriteDto.getResumeId());
