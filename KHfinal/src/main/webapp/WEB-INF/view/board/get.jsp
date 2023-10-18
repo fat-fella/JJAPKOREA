@@ -206,7 +206,6 @@ button:hover {
 				 	<input type="hidden" name="type" value="${cri.type }">
 				 	<input type="hidden" name="keyword" value="${cri.keyword }">
 				</form>
-				
 			<!-- 댓글 Area -->
 				<c:if test="${not empty memberid}">
 				    <div class="addreply">
@@ -221,10 +220,8 @@ button:hover {
 				        </div>
 				    </div>
 				</c:if>
-				
 		<!-- 댓글 대댓글 리스트 -->
 				<div class="testappend"></div>
-				
 			</div>
 		</div>
 	</div>
@@ -236,14 +233,12 @@ button:hover {
 		form.attr("action", "/jjapkorea/board/list");
 		form.submit();
 	});
-
 /* ---------- 수정으로 ---------- */
 	$("#btn-board-update").on("click", function(e){
 		form.find("#bno").remove();
 		form.attr("action", "/jjapkorea/board/update");
 		form.submit();
 	});
-
 /* ---------- 게시글 삭제 ---------- */
 	$("#btn-board-delete").click(function () {
 		var bno = '${bvo.bno}';
@@ -264,7 +259,6 @@ button:hover {
 			});
 		}
 	});
-
 /* ---------- 좋아요 ---------- */
 	var bno = '${bvo.bno}';
 	var mid = '${memberid}';
@@ -296,7 +290,6 @@ button:hover {
 	        }
 	    });
 	}
-
 /* ---------- 댓글 ---------- */
 	let replyreplyleftpadding = "";
 	window.onload = function () {
@@ -411,7 +404,6 @@ button:hover {
 	        location.reload();
 	    });
 	}
-
 /* ---------- 댓글 등록 ---------- */
 	function submitreplyHandler() {
 		var replyContent = $("[name=replyContent]").val();
@@ -457,7 +449,6 @@ button:hover {
 	        dataType: "json"
 	    });
 	}
-
 /* ---------- 댓글 및 대댓글 삭제 ---------- */
 	function deletereplyHandler(forNumber) {
 	   	$.ajax({
@@ -495,7 +486,6 @@ button:hover {
 	      dataType: "json"
 	  });
 	}
-  
 /*  ---------- 답글 수정 ---------- */
 	function updatereplyHandler(){
 		var replyWriter= $(this).parents(".replyCard").data("writer");
@@ -529,7 +519,6 @@ button:hover {
 				dataType:"json"
 		});
 	}
-
 /* ---------- 대댓글 insert ---------- */	
 	function insertreplyreplyHandler() {
 	    var $replyCard = $(this).parents(".replyCard");
