@@ -30,6 +30,13 @@ a, a:link, a:visited {
     cursor: pointer;
 }
 
+a, a:link, a:visited .tab-menu2 .active{
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 button {
     overflow: visible;
     background: rgba(0,0,0,0);

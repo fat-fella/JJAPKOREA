@@ -15,7 +15,7 @@
 
 /* nav 오른쪽 사이즈 */
 #point .point-right {
-    width: 30%;
+    width: 26%;  /*취업성공툴 가로크키*/
     padding: 10px;
 }
 
@@ -345,6 +345,8 @@ span.post-txt {
     width: 80%;
     height: 50px;
     line-height: 50px;
+    font-family: Pretendard Variable,Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,Helvetica Neue,Segoe UI,Apple SD Gothic Neo,Noto Sans KR,Malgun Gothic,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,sans-serif;
+	font-size : 16px;
 }
 
 .tab-menu .tab-menu1 li:first-child {
@@ -408,17 +410,27 @@ div.noti-slide {
     text-decoration: none;
 }
 
+
+.bannerwrap {
+	font-family: Pretendard Variable,Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,Helvetica Neue,Segoe UI,Apple SD Gothic Neo,Noto Sans KR,Malgun Gothic,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,sans-serif;
+	}
+
 .notice-wrap {
     display: flex;
-    height: 50px;
-    border: 1px solid #000;
+    vertical-align: middle;
+    height: 40px;
+    border: 0px solid #000;
     border-radius: 8px;
     padding: 10px;
     background-color: #fff;
+    font-size: 14px;
+    font-family: Pretendard Variable,Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,Helvetica Neue,Segoe UI,Apple SD Gothic Neo,Noto Sans KR,Malgun Gothic,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,sans-serif;
 }
+    
 
 .notice-wrap > .tit {
     width: 15%;
+    font-weight: 700;
 }
 
 ul.noti-ul {
@@ -437,13 +449,13 @@ li.noti {
 
 /* 취업성공 툴 사이즈 */
 div.tool {
-    width: 400px; /* 원하는 너비 설정 */
+    width: 85%; /* 원하는 너비 설정 */
 }
 
 /* 취업 성공 툴 메뉴 그리드로 2x2 묶음 */
 ul.menu {
     display: grid;
-    margin: 0;
+    margin: 0 10;
     padding: 0;
     width: 100%;
     grid-template-columns: repeat(2, 40%); /* 2개의 열로 구성 */
@@ -476,10 +488,14 @@ div.blind {
 
 /* 서비스 박스 - 취업 성공 툴, 추천 서비스 보더로 묶기 */
 .service-box {
-    border: 1px solid #000;
+    border: 0px solid #000;
     border-radius: 8px;
-    padding: 10px;
+    padding: 23 17px;
     background-color: #fff;
+    font-size: 13px;
+    font-size: bold;
+    color:#494949;
+    font-family: Pretendard Variable,Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,Helvetica Neue,Segoe UI,Apple SD Gothic Neo,Noto Sans KR,Malgun Gothic,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,sans-serif;
 }
 
 .service-box .tit {
@@ -489,18 +505,62 @@ div.blind {
 }
 
 div.blind p {
-    margin: 5px;
-    padding: 5px;
+    margin: 1px;
+    padding: 3 15;
 }
 
 div.blind a {
-    border: 1px solid #000;
-    border-radius: 100px;
     padding: 5px;
+    display: inline-block;
+    padding: 6px 11px;
+    color: #6a6a6a;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid #e8e8e8;
+    border-radius: 100px;
+    max-height: 105px;
+    overflow: hidden;
+    letter-spacing: -.1px;
+    
 }
 
 /* 이직은 원픽 테두리 수정 */
 div.blind .onpick {
     border: 2px solid yellowgreen;
 }
+
+/* 추천서비스 스크롤바 수정*/
+
+#point .service-box .rcmd .tags::-webkit-scrollbar {
+	width: 8px
+}
+
+#point .service-box .rcmd .tags::-webkit-scrollbar-track {
+	background-color: #fff
+}
+
+#point .service-box .rcmd .tags::-webkit-scrollbar-thumb {
+	background: #ddd;
+	border-radius: 10px
+}
+
+#point .service-box .rcmd .tags::-webkit-scrollbar-thumb:hover {
+	background: #404040
+}
+
+#point .service-box .rcmd .tags::-webkit-scrollbar-thumb:active {
+	background: grey
+}
+
+#point .service-box .rcmd .tags::-webkit-scrollbar-button {
+	display: none
+}
+
+.nav-hr {
+  border: 0px solid ;
+  margin: 8px 0; /* 위아래 여백을 5px로 설정 */
+  height: 0px; /* 수평선의 굵기 설정 */
+  background-color: #000; /* 수평선의 색상 설정 */
+}
+
 /* ===== nav css 끝 =====*/
