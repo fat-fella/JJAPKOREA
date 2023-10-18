@@ -359,7 +359,6 @@ button:hover {
 	    });
 	    
 	}
-
 /* ---------- 대댓글 보기 ---------- */
 	function moreReplyHandler(e) {
 	    var rrefReplyNo = $(this).data("replyno");
@@ -382,6 +381,7 @@ button:hover {
 	                console.log(result.length);
 	                if (result.length == 0) {
 	                    alert("댓글이 없습니다.");
+	                    return false;
 	                } else {
 	                    for (var i = 0; i < result.length; i++) {
 	                        var htmlVal = '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">'
@@ -540,13 +540,13 @@ button:hover {
 	    } else {
 	    	var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${memberid}">';
 	        addreplyreply += 		'<div>↳작성자: ${memberid}</div>';
-	        addreplyreply += 	'<div>';
-	        addreplyreply += 		'<textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent">↳@' + replyreplywriter + " " + '</textarea>';
+	        addreplyreply += 		'<div>';
+	        addreplyreply += 			'<textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent">↳@' + replyreplywriter + " " + '</textarea>';
+	        addreplyreply += 		'</div>';
+	        addreplyreply += 		'<div>';
+	        addreplyreply += 			'<button class="submitreplyreply">답글 저장</button>';
+	        addreplyreply += 		'</div>';
 	        addreplyreply += 	'</div>';
-	        addreplyreply += 	'<div>';
-	        addreplyreply += 		'<button class="submitreplyreply">답글 저장</button>';
-	        addreplyreply += 	'</div>';
-	        addreplyreply += '</div>';
 	        $replyCard.append(addreplyreply);
 	        $(".submitreplyreply").click(submitreplyreplyHandler);
 	    }
@@ -589,7 +589,6 @@ button:hover {
 	                            	htmlVal +=		'<button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
 	                            	htmlVal += 		'<button class="insertreplyreply">답글달기</button>'
 	                            	htmlVal += '</div>'
-	                            	/* htmlVal +='</div>'; */
 	                            $forAppendArea.append(htmlVal);
 	                        }
 	                        $(".insertreplyreply").click(insertreplyreplyHandler);

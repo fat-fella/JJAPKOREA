@@ -215,7 +215,7 @@ button.keyword:hover {
 <div class="search_wrap">
     <div class="search_area">
         <select name="type">
-        	<option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>선택</option>
+        	<%-- <option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>선택</option> --%>
             <option value="T" <c:out value="${pageMaker.cri.type eq 'T'?'selected':'' }"/>>제목</option>
             <option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
             <option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':'' }"/>>작성자</option>
@@ -271,7 +271,6 @@ button.keyword:hover {
             </ul>
     	</div>
     </div>
-    
     <form id="moveForm" method="get">
 	    <input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
 	    <input type="hidden" name="amount" value="${pageMaker.cri.amount }">
@@ -343,7 +342,6 @@ $(document).ready(function() {
 	$(".search_area button").on("click", function(e) {
 	    performSearch();
 	});
-
 	$(".search_area input[name='keyword']").on("keyup", function(e) {
 	    if (e.keyCode === 13) {
 	        performSearch();
@@ -353,7 +351,6 @@ $(document).ready(function() {
 	    var type = $(".search_area select").val();
 	    var keyword = $(".search_area input[name='keyword']").val();
 	    var sKey = '<c:out value="${pageMaker.cri.keyword}"/>';
-
 	    if (!type) {
 	        alert("검색 종류를 선택하세요.");
 	        return false;
