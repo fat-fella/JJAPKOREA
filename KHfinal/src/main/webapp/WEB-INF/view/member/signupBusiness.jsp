@@ -15,9 +15,35 @@
 <link rel="SHORTCUT ICON" href="/favicon.ico?202307261400">
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- 카카오 API : 주소 검색 -->
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 
 <body>
+	<script>
+		function searchAddress_daumPostcode() {
+		    var addressPopup = new daum.Postcode({
+		        oncomplete: function (data) {
+		            var baddress = data.sido + " " + data.sigungu + " " + data.bname;
+		            document.getElementById("baddress").value = baddress;
+		        },
+		        onclose: function () {
+		            // 팝업이 닫힌 후 스타일을 설정
+		            var inputField = document.getElementById("baddress");
+		            var parentRow = inputField.closest('.row');
+		            if (inputField.value === '') {
+		                parentRow.querySelector('.col_1').style.cssText = '';
+		                parentRow.querySelector('label').style.cssText = '';
+		            } else {
+		                parentRow.querySelector('.col_1').style.cssText = 'top: 4px';
+		                parentRow.querySelector('label').style.cssText = 'font-size: 11px';
+		            }
+		        }
+		    });
+		    addressPopup.open();
+		}
+	</script>
 	<div id="wrap">
 
 		<div id="header">
@@ -176,8 +202,8 @@
 								<input class="mbr_name dev-ceo-name" data-val="true"
 									data-val-maxlength="필드 Boss_Name은(는) 최대 길이가 '20'인 문자열 또는 배열 형식이어야 합니다."
 									data-val-maxlength-max="20"
-									data-val-required="Zip_Code 필드가 필요합니다." id="Boss_Name"
-									maxlength="20" name="baddress" type="text" value="">
+									data-val-required="Zip_Code 필드가 필요합니다." id="baddress"
+									maxlength="20" name="baddress" type="text" value="" onclick="searchAddress_daumPostcode();">
 								<div class="notice_msg" id="notice_msg_ceo_name"></div>
 							</div>
 						</div>
