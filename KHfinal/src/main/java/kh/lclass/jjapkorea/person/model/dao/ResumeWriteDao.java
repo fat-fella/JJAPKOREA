@@ -98,15 +98,15 @@ public class ResumeWriteDao {
 		return sqlSession.delete("qualification.deleteQualification", resumeId);
 	}
 	
-	public int deleteEducation(int educationId) throws Exception {
-		return sqlSession.delete("education.deleteEducation", educationId);
+	public int deleteEducation(int resumeId) throws Exception {
+		return sqlSession.delete("education.deleteEducation", resumeId);
 	}
 	
-	public int deleteExperience(int experienceId) throws Exception {
-		return sqlSession.delete("experience.deleteExperience", experienceId);
+	public int deleteExperience(int resumeId) throws Exception {
+		return sqlSession.delete("experience.deleteExperience", resumeId);
 	}
 	
-	public int deleteAward(int awardId) throws Exception {
-		return sqlSession.delete("award.deleteAward", awardId);
+	public int deleteAward(int resumeId) throws Exception {
+		return sqlSession.delete("award.deleteAward", resumeId);
 	}
 }

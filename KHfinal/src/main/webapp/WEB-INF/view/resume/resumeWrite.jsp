@@ -758,7 +758,6 @@
 
 		// 폼 제출 버튼 클릭 시 호출되는 함수
 		var registerButton = document.getElementById("registerButton");
-		var formTest = document.getElementById("formTest");
 
 		if (registerButton) {
 			registerButton.addEventListener("click", function(event) {

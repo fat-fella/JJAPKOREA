@@ -27,6 +27,6 @@
 	</select>
 	
 	<delete id="deleteAward">
-		delete from award where award_id = #{awardId}
+		delete from award where RESUME_ID = #{resumeId}
 	</delete>
 </mapper>

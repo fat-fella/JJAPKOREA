@@ -27,6 +27,6 @@
 	</select>
 	
 	<delete id="deleteExperience">
-		delete from experience where experience_id = #{experienceId}
+		delete from experience where RESUME_ID = #{resumeId}
 	</delete>
 </mapper>

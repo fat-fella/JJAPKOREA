@@ -114,22 +114,22 @@ public class ResumeWriteServiceImpl implements ResumeWriteService {
 	}
 	
 	@Override
-	public int deleteQualification(int qualificationId) throws Exception {
-		return resumeWriteDao.deleteQualification(qualificationId);
+	public int deleteQualification(int resumeId) throws Exception {
+		return resumeWriteDao.deleteQualification(resumeId);
 	}
 	
 	@Override
-	public int deleteEducation(int educationId) throws Exception {
-		return resumeWriteDao.deleteEducation(educationId);
+	public int deleteEducation(int resumeId) throws Exception {
+		return resumeWriteDao.deleteEducation(resumeId);
 	}
 	
 	@Override
-	public int deleteExperience(int experienceId) throws Exception {
-		return resumeWriteDao.deleteExperience(experienceId);
+	public int deleteExperience(int resumeId) throws Exception {
+		return resumeWriteDao.deleteExperience(resumeId);
 	}
 	
 	@Override
-	public int deleteAward(int awardId) throws Exception {
-		return resumeWriteDao.deleteAward(awardId);
+	public int deleteAward(int resumeId) throws Exception {
+		return resumeWriteDao.deleteAward(resumeId);
 	}
 }

@@ -27,6 +27,6 @@
 	</select>
 	
 	<delete id="deleteEducation">
-		delete from education where education_id = #{educationId}
+		delete from education where RESUME_ID = #{resumeId}
 	</delete>
 </mapper>
