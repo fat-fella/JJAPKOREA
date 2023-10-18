@@ -44,10 +44,10 @@ header .headInner {
     display: block;
     width: 143px;
     height: 25px;
-    background-image: url(../images/logo_motion_pc.gif);
+    background-image: url(../images/JJAPkorea_Mlogo.gif);
     background-position: 50%;
     background-repeat: no-repeat;
-    background-size: 143px 25px;
+    background-size: 143px 65px;
 }
 
 /* 소스상에서만 보이는 텍스트 */
@@ -267,7 +267,7 @@ header .headInner .headBann .bannBx .bann-logo:after {
     content: "";
     display: block;
     width: 100%;
-    height: 100%;
+    height: 90%;
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;

@@ -1235,8 +1235,7 @@
 			</div>
 			<div class="bnr-marketing">
 				<a href="#" target="_blank">
-					<img
-						src="//apple.contentsfeed.com/RealMedia/ads/Creatives/jobkorea/230421_jnshipjump_mr_s/230510_jnshipjump_260_90.png"
+					<img src="//apple.contentsfeed.com/RealMedia/ads/Creatives/jobkorea/231017_snjobfair_mr/231017_snjobfair_260110.png"
 						border="0" alt="전남조선업도약센터 ">
 				</a>
 			</div>

@@ -7,29 +7,28 @@
 <meta charset="UTF-8">
 <title>boardInsert</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
+<style>     
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-    h2 {
-        text-align: center;
-        margin-top: 20px;
-    }
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
 
-    div {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
+div {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
     form input[type="text"],
     form textarea {
         width: 100%;
@@ -76,7 +75,10 @@
 		</a>	
     </form>
 </div>
+
+
 <script>
+
 $("#btn-board-insert").click(function() {	
     const btitle = $("input[name='btitle']").val().trim();
     const bcontent = $("textarea[name='bcontent']").val().trim();
@@ -115,6 +117,7 @@ $("#btn-board-insert").click(function() {
         });
     }
 });
+
 </script>
 </body>
 </html>

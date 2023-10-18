@@ -2,30 +2,58 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="reply">
 	<select id="selectList" resultType="ReplyDto">
-		select * from reply where board_no=#{boardNo} order by reply_no desc,reply_Date desc 
+		select * 
+			from reply 
+				where board_no=#{boardNo} 
+					order by reply_no desc,reply_Date desc 
 	</select> 
 
 	<select id="selectReply" resultType="ReplyDto">
-		select * from reply where rref=#{rref} order by RSTEP asc, reply_Date desc
+		select * 
+			from reply 
+				where rref=#{rref} 
+					order by RSTEP asc, reply_Date desc
 	</select> 
 	
 	<select id="selectOne" resultType="ReplyDto" parameterType="_int">
-		select * from reply where reply_No=#{replyNo}
+		select * 
+			from reply 
+				where reply_No=#{replyNo}
 	</select>
 	
 	<insert id="insert" parameterType="ReplyDto">
-		insert into reply values(SEQ_REPLY_REPLY_NO.nextval,#{memberId},#{replyContent},default,#{boardNo},#{rref},#{rstep},#{rlevel})
+		insert into reply values(
+					SEQ_REPLY_REPLY_NO.nextval
+					, #{memberId}
+					, #{replyContent}
+					, default
+					, #{boardNo}
+					, #{rref}
+					, #{rstep}
+					, #{rlevel}
+								)
 	</insert>
 	
 	<insert id="insertreplyreply">
 		insert into reply values(
-		SEQ_REPLY_REPLY_NO.nextval,#{memberId},#{replyContent},default,#{boardNo},#{rref}
-		,(select rstep from (select * from reply where board_no=#{boardNo} order by rstep desc ) where rownum =1)+1,2)
+					SEQ_REPLY_REPLY_NO.nextval
+					, #{memberId}
+					, #{replyContent}
+					, default
+					, #{boardNo}
+					, #{rref}
+					, (select rstep 
+							from (
+								select * 
+									from reply 
+										where board_no=#{boardNo} order by rstep desc ) 
+											where rownum =1)+1,2)
 	</insert>
 	
 	<update id="update" parameterType="ReplyDto">
-		update reply set reply_Content = #{replyContent}, reply_date = sysdate
-		where reply_No = #{replyNo}
+		update reply 
+			set reply_Content = #{replyContent}, reply_date = sysdate
+				where reply_No = #{replyNo}
 	</update>
 	
 	<delete id="delete" parameterType="_int">
