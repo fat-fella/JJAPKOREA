@@ -30,25 +30,32 @@
 		} else if(applyId !== null && applyId !== ""){
 			alert("이미 지원한 채용 공고입니다.");
 	    } else {
+	    	var dataToSend = {
+    		    jid: jid,
+    		    mid: mid,
+    		    bizname: bizname,
+    		    retitle: retitle,
+    		    resumeId: resumeId
+    		};
 	    	$.ajax({
 				url : "${pageContext.request.contextPath}/person/noticeMail",
 				type : "post",
 				contentType : "application/json; charset=utf-8", // JSON 형식으로 데이터 전송
-				data : JSON.stringify({
-					jid : jid,
-					mid : mid,
-					bizname : bizname,
-					retitle : retitle,
-					resumeId : resumeId
+				data : JSON.stringify(dataToSend),
 				// 문자열로 변환하여 보냄
-				}), 
 				success : function(data) {
-					
-					alert("[지원완료] 이메일 전송되었습니다.")
-				}/* ,
-				error : function() {
-					alert("에러가 발생하였습니다. 여러분의 잘못이 아니니 다음에 다시 시도해주세요.");
-				},// error */
+		            alert("[지원 완료] 이메일이 전송되었습니다.")
+				},
+			    error: function (xhr, status, error) {
+			        if (xhr.status === 500) {
+			            // 서버에서 에러 응답을 받았을 때 처리
+			            var errorMessage = xhr.responseText;
+			            alert("에러 발생: " + errorMessage);
+			        } else {
+			            // 다른 오류 처리
+			            alert("다른 오류 발생: " + error);
+			        }
+			    }
 			}); // ajax
 	    }
 	}
