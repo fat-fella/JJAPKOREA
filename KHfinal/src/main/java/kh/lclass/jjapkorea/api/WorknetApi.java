@@ -169,6 +169,36 @@ public class WorknetApi {
                 memberList.add(memberDto);
                 businessList.add(businessDto);
                 jobPostingList.add(jobPostingDto);
+                
+                
+                
+                
+                
+                
+                //기업 로고 저장
+				String[] imagePaths = {
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo10_hhd8nv.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo06_yz0lgy.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo07_r4nrro.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo08_gaxybw.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo05_vmclx2.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo03_egxmm1.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo09_i7ey5l.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo04_rzwpue.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo02_e4sfta.png"		
+				};
+
+				
+				// 랜덤으로 인덱스 생성
+				int randomIndex = (int) (Math.random() * imagePaths.length);
+
+				// 랜덤 이미지의 경로
+				String randomImagePath = imagePaths[randomIndex];
+                businessDto.setLogoImg(randomImagePath);
+                
+                
+                
+                
             }
             
             for (int i = 0; i < jobPostingList.size(); i++) {

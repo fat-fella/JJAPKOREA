@@ -1108,8 +1108,8 @@ header .headNavBar .navInner:after {
 
 /* 왼쪽 큰 배너 설정 */
 #banner-area .bnr-big {
-    width: 750px;
-    height: 90px;
+    width: 752px;
+    height: 110px;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -1132,8 +1132,9 @@ header .headNavBar .navInner:after {
 /* swiper 기능이 추가된 배너 설정 */
 #banner-area .bnr-service {
     width: 216px;
-    margin: 0 17px;
+    margin: 0 16px;
     border: 1px solid #e8e8e8;
+    height: 110px;
 }
 
 #banner-area .bnr-service a img {
@@ -1176,8 +1177,15 @@ header .headNavBar .navInner:after {
 /* 우측 작은 배너 이미지 설정 */
 #banner-area .bnr-marketing {
     width: 260px;
-    height: 90px;
+    height: 110px;
     border-radius: 8px;
+    overflow: hidden;
+}
+
+#banner-area .bnr-marketing a img {
+  width: 260px;
+  height: 110px;
+      border-radius: 8px;
     overflow: hidden;
 }
 
