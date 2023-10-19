@@ -167,7 +167,7 @@
 								<div class="lyRow row01">
 									<div class="lyCol col4">
 										<div class="colItem">
-											<strong class="titArea"><a href="#" class="tit">
+											<strong class="titArea"><a href="<%=request.getContextPath()%>/jobPostingList" class="tit">
 													채용정보<span class="spGnb"></span>
 												</a></strong>
 											<div class="listBx">
@@ -347,7 +347,7 @@
 					<ul class="serviceNav">
 						<!-- 메뉴 활성화 클래스 navFixed 마우스 오버시 active 클래스 추가 -->
 						<li id="gnbGi" class="navItem gi">
-							<a href="#" class="linkItem">
+							<a href="<%=request.getContextPath()%>/jobPostingList" class="linkItem">
 								<span class="spNav"><span class="txIr">채용정보</span></span>
 							</a>
 							<!-- // 채용정보 레이어 -->
