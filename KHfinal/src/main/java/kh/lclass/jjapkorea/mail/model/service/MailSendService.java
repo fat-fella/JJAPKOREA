@@ -8,7 +8,6 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import kh.lclass.jjapkorea.business.model.dao.JobPostingDao;
 import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 import kh.lclass.jjapkorea.mail.model.dto.MailSendDto;
 import lombok.RequiredArgsConstructor;
@@ -36,12 +35,9 @@ public class MailSendService {
 			// 로그인된 사용자 이메일 받아오기
 			String pemail = selectOnePerson.getPemail(); 
 			
-			
-			System.out.println("===2=======sbpark===="+mailSendDto);
-			
-			
+					
 			helper.setFrom("jjapkorea@naver.com"); // 발신자 주소
-			helper.setSubject("[지원완료]" + mailSendDto.getBizname() + ", 유사한 공고도 확인하세요."); // 메일 제목 설정
+			helper.setSubject("[지원완료] " + mailSendDto.getBizname() + ", 유사한 공고도 확인하세요."); // 메일 제목 설정
 
 			helper.setText("jjapkorea mail content test", true);
 			// 메일 내용 설정
