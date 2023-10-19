@@ -159,16 +159,15 @@ ul {
 <body>
 	<header class="a_header">
 		<div class="container">
-			<a href="index" class="logo linkLogo">
+			<a href="<%=request.getContextPath()%>/index" class="logo linkLogo">
 				<img src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
 					alt="JJAPKOREA" class="logoimg">
 			</a>
 			<div class="links">
-				<a href="<%=request.getContextPath()%>/index" class="link linkHome">기업회원
-					홈</a>
+				<a href="<%=request.getContextPath()%>/person/myPage" class="link linkHome">마이페이지</a>
 				<a
-					href="<%=request.getContextPath()%>/business/jobpostingupload/list"
-					class="link linkManage">채용공고 관리</a>
+					href="<%=request.getContextPath()%>/person/infoModifyPerson"
+					class="link linkManage">회원 정보 수정</a>
 			</div>
 		</div>
 	</header>
