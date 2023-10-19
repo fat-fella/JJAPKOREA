@@ -7,6 +7,7 @@
 	</settings>
 	
 	<typeAliases>
+		<typeAlias type="kh.lclass.jjapkorea.admin.model.dto.AdminDto" alias="adminDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.guest.model.dto.MemberDto" alias="memberDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.guest.model.dto.PersonDto" alias="personDto"/>
 		<typeAlias type="kh.lclass.jjapkorea.guest.model.dto.BusinessDto" alias="businessDto"/>
@@ -27,6 +28,7 @@
 	</typeAliases>
 	
 	<mappers>
+		<mapper resource="mappers/admin-mapper.xml"/>
 		<mapper resource="mappers/member-mapper.xml"/>
 		<mapper resource="mappers/person-mapper.xml"/>
 		<mapper resource="mappers/business-mapper.xml"/>
