@@ -26,6 +26,11 @@
 	   WHERE RESUME_ID = #{resumeId}
 	</select>
 	
+	<select id="getExperienceByWorkPeriod" resultType="experienceDto" parameterType="ExperienceDto">
+	   SELECT * FROM experience
+	   WHERE WORK_PERIOD = #{workPeriod}
+	</select>
+	
 	<delete id="deleteExperience">
 		delete from experience where RESUME_ID = #{resumeId}
 	</delete>

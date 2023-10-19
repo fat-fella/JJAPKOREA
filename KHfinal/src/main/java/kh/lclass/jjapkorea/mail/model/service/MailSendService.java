@@ -42,43 +42,40 @@ public class MailSendService {
 			
 			StringBuffer sbuffer = new StringBuffer();
 			
-			sbuffer.append("<style>"
-					+ ".mailSend {"
-					+ "bgcolor: 'ededed';"
-					+ "width: 100%;"
-					+ "height: 100%;"
-					+ "}"
-					+ "td {font-size: 9pt; align: center;}"
-					+ "</style>");
 			
-			sbuffer.append("<div class='mailSend'>");
-			sbuffer.append("<div class='logo img'>");
+			sbuffer.append("<html><body>");
+			
+			sbuffer.append("<div>");
+			sbuffer.append("<div>");
 
 			sbuffer.append("<img src=\""+"https://res.cloudinary.com/finaljjapkorea/image/upload/v1697709249/JJAPKOREA_LOGO__BG_COLOR_WHITE.png"+"\">");
 			
 			sbuffer.append("</div>"); //logo img
 			
-			sbuffer.append("<div class='title'>");
-			sbuffer.append(mailSendDto.getBizname()+" 채용공고에 <br> 입사지원이 완료되었습니다.");
-			sbuffer.append("</div>"); // title
+			sbuffer.append("<div style='font-size: 32px;  '>");
+			sbuffer.append("<div style='color: #111aff;'>"+mailSendDto.getBizname()+"</div>"+"<span style='color: #000000;'> 채용공고에 <br> 입사지원이 완료되었습니다. </span>");
+			sbuffer.append("</div><br><br>"); // title
 			
-			sbuffer.append("<table cellpadding=5 cellspacing=0 border=1 style='border-collapse:collapse'>");
-			sbuffer.append(" <tr>");
-			sbuffer.append(" <td bgcolor='ECECEC' width=140>"
+			sbuffer.append("<table width=400 height=200 cellpadding=5 cellspacing=0 border=1 style='border-collapse:collapse'>");
+			sbuffer.append("<tr style='vertical-align: middle;'>");
+			sbuffer.append(" <td style='font-size: 20px; color: #000000; font-weight: bold; text-align: center;'>"
 					+ mailSendDto.getBizname()
 					+ "</td>");
 			sbuffer.append(" </tr>");
-			
-			sbuffer.append(" <td width=170>"
+			sbuffer.append(" <tr style='vertical-align: middle;'>");
+			sbuffer.append(" <td style='font-size: 16px; color: #000000; height: 50px; text-align: center;'>"
 					+ mailSendDto.getRetitle()
 					+ "</td>");
-			sbuffer.append(" <tr>");
-			sbuffer.append(" <td>");
-			sbuffer.append("<a href='http://localhost:8090/jjapkorea/jobpostinginfo?jid="+mailSendDto.getJid()+"'>지원자 현황 보기</a><br><br>"); 
+			sbuffer.append(" </tr>");
+			sbuffer.append(" <tr style='vertical-align: middle; '>");
+			sbuffer.append(" <td style='font-size: 17px; background-color: #111aff; text-align: center;' >");
+			sbuffer.append("<a href='http://localhost:8090/jjapkorea/jobpostinginfo?jid="+mailSendDto.getJid()+"' style='text-decoration: none; color: white; '"+">지원자 현황 보기</a>"); 
 			sbuffer.append(" </td>");
 			sbuffer.append(" </tr>");
 			sbuffer.append("</table>");
 			sbuffer.append("</div>"); // mailSend
+			
+			sbuffer.append("</body></html>");
 
 //			helper.setText("jjapkorea mail content test", true); 메일 전송 확인 후 주석 처리 함
 			helper.setText(sbuffer.toString(), true);

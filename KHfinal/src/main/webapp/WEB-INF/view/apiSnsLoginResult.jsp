@@ -39,8 +39,7 @@
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person on"><a href="person">개인회원</a></li>
-				<li class="corp "><a href="business">기업회원</a></li>
+				<li class="person on"><a href="person" style="width: 640px;">개인회원</a></li>
 			</ul>
 		</div>
 
@@ -50,45 +49,46 @@
 			<fieldset>
 				<legend>개인회원 가입</legend>
 				<form action="person" id="frm" method="post" name="frm">
-					<!-- 소셜 로그인 -->
-					<div class="row_group row_group_social">
-						<h4>소셜로 간편하게 로그인하세요</h4>
-						<div class="list-social">
-							<ul>
-								<li><a href="${ naver_url }" id="btnNvLogin" class="naver"
-										onclick="_LA.EVT('4287')">네이버 로그인</a></li>
-								<li><a href="${ kakao_url }" id="btnKaLogin" class="kakao"
-										onclick="_LA.EVT('4286')">카카오 로그인</a></li>
-								<li><a href="${ google_url }" id="btnGlLogin"
-										class="google" onclick="_LA.EVT('4288')"
-										style="display: block;"> 구글 로그인</a></li>
-							</ul>
-						</div>
-					</div>
+
+
 					<div class="row_group mbr_info">
 						<h4>회원가입하고 다양한 혜택을 누리세요!</h4>
 						<p class="subTx">
 							<strong>*</strong> 필수 입력 정보입니다.
 						</p>
+						
 						<input type="hidden" id="mtype" name="mtype" value="ROLE_PERSON">
 						<div class="row mbr_name">
+						
 							<div class="col_1">
-								<label for="M_Name" class="mbr_name"> 이름(실명)<i
+								<label for="M_Name" class="mbr_name" > 이름(실명)<i
 									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
+							
+							
+							
+							
+						<!-- 아이디 노출 되지 않음 -->
+			 				<div style="display: none;">
 							<div class="col_2">
-								<input type="text" id="M_Name" name="pname"
+								<input type="text" id="M_Name" name="pname" value="${snsprofile.mid}"
 									class="mbr_name devReadOnly dev-name" maxlength="12" required>
 								<div class="notice_msg" id="notice_msg_name"></div>
 							</div>
-						</div>
+						
+ 				
 						<div class="row mbr_id">
 							<div class="col_1">
 								<label for="idcheck"> 아이디(잡코리아, 알바몬 통합 ID)<i
 									class="icon required" aria-hidden="hidde">*</i>
 								</label>
 							</div>
+							</div>
+							</div>
+						
+						
+						<!-- 비밀번호 -->
 							<div class="col_2">
 								<input type="text" id="idcheck" name="mid" maxlength="16"
 									class="dev-id" value="" style="ime-mode: disabled;"
@@ -130,6 +130,10 @@
 								</button>
 							</div>
 						</div>
+						
+						
+						<!-- 이메일 노출 되지 않음 -->
+			 				<div style="display: none;">
 						<div class="row mbr_email">
 							<!-- <p class="emailTxt">개인 맞춤 채용정보/정기 뉴스레터/이벤트 메일이 발송됩니다.</p>  -->
 							<div class="col_1">
@@ -139,12 +143,16 @@
 							</div>
 							<div class="col_2">
 								<input type="text" id="M_Email" name="pemail"
-									class="mbr_email_id dev-mail" size="8" maxlength="30" required>
+									class="mbr_email_id dev-mail" value="${snsprofile.email}" size="8" maxlength="30" required>
 								<div class="notice_msg" id="notice_msg_mail"></div>
 								<input type="hidden" id="Email_ID" name="Email_ID">
 								<input type="hidden" id="Email_Addr" name="Email_Addr">
 							</div>
 						</div>
+						</div>
+						
+						
+						
 						<div class="row mbr_phone">
 							<div class="col_1">
 								<label for="M_Phone"> 휴대폰번호<i class="icon required"
