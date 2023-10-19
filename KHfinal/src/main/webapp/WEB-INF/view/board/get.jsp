@@ -60,6 +60,15 @@ button:hover {
     background-color: #0056b3;
 }
 
+#bcontent {
+    background-color: #f7f7f7; /* 배경색 설정 */
+    border: 1px solid #e0e0e0; /* 테두리 설정 */
+    border-radius: 4px; /* 테두리 둥글게 만들기 */
+    padding: 12px; /* 여백 설정 */
+    font-size: 16px; /* 글꼴 크기 설정 */
+    color: #333333; /* 글자색 설정 */
+}
+
 /* 댓글 카드 스타일 */
 .replyCard {
     border: 1px solid #ccc;
@@ -173,7 +182,7 @@ button:hover {
 				<input type="text" id="btitle" name="btitle" value="${bvo.btitle}" readonly> 
 				<br> 
 				<label for="bcontent">내용:</label>
-				<textarea id="bcontent" rows="10" cols="50" name="bcontent" readonly>${bvo.bcontent}</textarea>
+				<div id="bcontent" style="width: 97%; height: 300px;" readonly>${bvo.bcontent}</div>
 				<br> 
 				<label for="likehit">좋아요수: (${bvo.likehit })</label>
 				<c:choose>
@@ -196,9 +205,7 @@ button:hover {
 				        </script>
 				    </c:otherwise>
 				</c:choose>
-				<a class="btn" id="btn-board-list">
-					<button type="button">글 목록으로 이동</button>
-				</a>
+				<button type="button" id="btn-board-list">글 목록으로 이동</button>
 				<button type="button" id="btn-board-like" onclick="updateLike(); return false;">좋아요</button>
 				<input type="hidden" id="bno" name="bno" value='<c:out value="${bvo.bno}"/>'>
 				<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
@@ -226,12 +233,13 @@ button:hover {
 	</div>
 </div>
 <script>
-/* ---------- 리스트로 ---------- */
 	let form = $("#infoForm");
+/* ---------- 리스트로 ---------- */
 	$("#btn-board-list").on("click", function(e){
-		form.find("#bno").remove();
+/* 		form.find("#bno").remove();
 		form.attr("action", "/jjapkorea/board/list");
-		form.submit();
+		form.submit(); */
+		window.history.back();
 	});
 /* ---------- 수정으로 ---------- */
 	$("#btn-board-update").on("click", function(e){
@@ -363,6 +371,7 @@ button:hover {
 	    if ($forAppendArea.css("display") === "block") {
 	        $forAppendArea.css("display", "none");
 	        $moreReplyButton.text("더보기");
+	        location.reload(false);
 	    } else {
 	        $.ajax({
 	            type: "get",
@@ -440,7 +449,7 @@ button:hover {
 	  			};
 	 			$(".updatereply").click(updatereplyHandler);
 	 			$(".insertreplyreply").click(insertreplyreplyHandler);
-	 			location.reload();
+	 			location.reload(false);
 	  		},
 	   	error: function (request, status, error) {
 	          alert("code: " + request.status + "\n" + "error: " + error);

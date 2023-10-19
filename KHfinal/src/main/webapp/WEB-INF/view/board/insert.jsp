@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>boardInsert</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
 <style>     
 body {
     font-family: Arial, sans-serif;
@@ -67,14 +67,18 @@ div {
    		<div>
         	제목: <input type="text" name="btitle">
    		</div>
-        <br>
        	내용: <textarea id="bcontent" rows="10" cols="50" name="bcontent" ></textarea>
-       	<script type="text/javascript">	// 글쓰기 editor 및 사진 업로드 기능
+       	<script type="text/javascript">
 			CKEDITOR.replace('bcontent', {
- 				filebrowserUploadUrl:'${pageContext.request.contextPath}/board/fileupload.do',
+ 				filebrowserUploadUrl:'${pageContext.request.contextPath}/image/upload',
+ 				enterMode: CKEDITOR.ENTER_BR, // 엔터키 입력시 <br>로 바꿔준다.
+ 			    shiftEnterMode: CKEDITOR.ENTER_P, // Shift + 엔터키 입력시 <p> 태그로 바꿔준다.
+ 			    autoParagraph: false, // 자동으로 <p> 태그를 추가하지 않도록 설정.
+ 			    removePlugins: 'enterkey',
+ 			   	/* clipboard_handleImages: true */
+ 			   	clipboard_handleImages: false
  			});
 		</script>
-        <br>    
         <div id="btn">
 	        <button type="button" id="btn-board-insert">글 등록</button>
 			<a href="${pageContext.request.contextPath}/board/list">
@@ -83,13 +87,10 @@ div {
         </div>     
     </form>
 </div>
-
-
 <script>
 $("#btn-board-insert").click(function() {	
     const btitle = $("input[name='btitle']").val().trim();
-    const bcontent = CKEDITOR.instances.bcontent.getData();    
-    /* document.getElementById("frmBoard").submit(); */
+    const bcontent = CKEDITOR.instances.bcontent.getData();
     if(btitle ===''){
     	alert("제목을 입력해주세요");
     	return;
@@ -115,11 +116,13 @@ $("#btn-board-insert").click(function() {
                 } 
             },
             error : ( request, status, error) => {
-            	console.log(request, status, error);
-            	console.log("Ajax오류");
+             	console.log("Ajax오류");
+             	console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+             	/*
             	console.log(request);
             	console.log(status);
             	console.log(error);
+            	*/
             	alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
            	}
         });
