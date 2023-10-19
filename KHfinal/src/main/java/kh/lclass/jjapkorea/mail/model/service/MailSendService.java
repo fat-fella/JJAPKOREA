@@ -48,41 +48,38 @@ public class MailSendService {
 					+ "width: 100%;"
 					+ "height: 100%;"
 					+ "}"
-					+ " "
-					+ "td {font-size: 9pt;}"
+					+ "td {font-size: 9pt; align: center;}"
 					+ "</style>");
 			
 			sbuffer.append("<div class='mailSend'>");
-			sbuffer.append("<div>");
-			sbuffer.append("<img src='resources/images/JJAPkorea_logo(불투명흰색).png'/>");
+			sbuffer.append("<div class='logo img'>");
+
+			sbuffer.append("<img src=\""+"https://res.cloudinary.com/finaljjapkorea/image/upload/v1697709249/JJAPKOREA_LOGO__BG_COLOR_WHITE.png"+"\">");
 			
-			sbuffer.append("<div>");
+			sbuffer.append("</div>"); //logo img
+			
+			sbuffer.append("<div class='title'>");
 			sbuffer.append(mailSendDto.getBizname()+" 채용공고에 <br> 입사지원이 완료되었습니다.");
-			sbuffer.append("</div>");
+			sbuffer.append("</div>"); // title
 			
-			sbuffer.append("<table cellpadding=5 cellspacing=0 border=1 style='border-collapse:collapse' boardcolor='888888'>");
+			sbuffer.append("<table cellpadding=5 cellspacing=0 border=1 style='border-collapse:collapse'>");
 			sbuffer.append(" <tr>");
-			sbuffer.append(" <td align=center bgcolor='ECECEC' width=140>"
+			sbuffer.append(" <td bgcolor='ECECEC' width=140>"
 					+ mailSendDto.getBizname()
 					+ "</td>");
 			sbuffer.append(" </tr>");
 			
-			sbuffer.append(" <tr>");
 			sbuffer.append(" <td width=170>"
 					+ mailSendDto.getRetitle()
 					+ "</td>");
+			sbuffer.append(" <tr>");
+			sbuffer.append(" <td>");
+			sbuffer.append("<a href='http://localhost:8090/jjapkorea/jobpostinginfo?jid="+mailSendDto.getJid()+"'>지원자 현황 보기</a><br><br>"); 
+			sbuffer.append(" </td>");
 			sbuffer.append(" </tr>");
 			sbuffer.append("</table>");
-			sbuffer.append("</div>");
-			
-			sbuffer.append("<div id='jpostInfo'>");
-			sbuffer.append("<form action='${pageContext.request.contextPath}");
-			sbuffer.append("<br><br>");
-			sbuffer.append("<button type='button'><a href='<%=request.getContextPath() %>/jobpostinginfo?jid=\"+mailSendDto.getJid()+\" method='post'>지원자 현황 보기</a></button>");
-			sbuffer.append("</form>");
-			sbuffer.append("</div>");
-			
-			
+			sbuffer.append("</div>"); // mailSend
+
 //			helper.setText("jjapkorea mail content test", true); 메일 전송 확인 후 주석 처리 함
 			helper.setText(sbuffer.toString(), true);
 			// 메일 내용 설정
