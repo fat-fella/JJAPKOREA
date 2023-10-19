@@ -44,7 +44,9 @@
 				data : JSON.stringify(dataToSend),
 				// 문자열로 변환하여 보냄
 				success : function(data) {
-		            alert("[지원 완료] 이메일이 전송되었습니다.")
+					alert("[지원 완료] 이메일이 전송되었습니다.");
+					// data 변수에 서버에서 반환된 텍스트 데이터(applyId)가 저장됨
+					applyId = data;
 				},
 			    error: function (xhr, status, error) {
 			        if (xhr.status === 500) {

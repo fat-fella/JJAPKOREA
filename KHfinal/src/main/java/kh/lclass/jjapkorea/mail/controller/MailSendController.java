@@ -60,13 +60,12 @@ public class MailSendController {
 		try {
 			applyServiceImlp.insertApply(applyDto);
 			String applyId = applyServiceImlp.getApplyIdByJidAndResumeId(applyDto);
+			return applyId;
 		} catch (Exception e) {
 			e.printStackTrace();
 			String errorMessage = e.getMessage(); // 예외 메시지 가져오기
 			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR); // 서버 오류 응답 코드 설정
-			response.getWriter().write(errorMessage); // 에러 메시지를 응답으로 전송
+			return errorMessage;
 		}
-		return "index";
 	}
-
 }
