@@ -185,7 +185,21 @@ public class WorknetApi {
 						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo03_egxmm1.png",
 						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo09_i7ey5l.png",
 						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo04_rzwpue.png",
-						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo02_e4sfta.png"		
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697611598/logoimg/companylogo02_e4sfta.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697668/logoimg/companylogo41_mqe3zo.gif",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697668/logoimg/companylogo40_leamhd.gif",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697668/logoimg/companylogo42_xgodhw.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo32_qt69yk.gif",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697668/logoimg/companylogo38_sijklj.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo37_egvgxl.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo33_ge7owj.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo30_b0hv2i.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo36_mpwzpn.gif",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo29_y7ow0r.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo34_a38cqe.gif",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo31_ihrl5p.png",
+						"https://res.cloudinary.com/jjapkorea/image/upload/v1697697667/logoimg/companylogo27_jkuzyi.png",
+						
 				};
 
 				
