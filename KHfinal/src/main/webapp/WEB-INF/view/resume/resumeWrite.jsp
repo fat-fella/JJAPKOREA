@@ -21,28 +21,22 @@ body {
 	padding: 0;
 }
 
-ul {
-	list-style: none;
+.jobkorea-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
 }
 
-.a_header {
-	background-color: #007bff;
-	color: white;
-	padding: 10px 0;
-	margin: 0 auto;
-}
-
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 20px;
-}
-
-.logo {
-	text-decoration: none;
+.jobkorea-logo a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 24px;
 }
 
 .logoimg {
@@ -50,14 +44,29 @@ ul {
 	width: 120px;
 }
 
-.links {
-	margin-left: auto;
+.jobkorea-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.link {
-	color: white;
-	margin-left: 20px;
-	text-decoration: none;
+.jobkorea-menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.jobkorea-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.readSumWrap {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .h1, .c_header {
@@ -131,6 +140,24 @@ ul {
 	border-right: 2px solid lightgray;
 	border-bottom: 1px solid lightgray;
 }
+
+#registerButton {
+	background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; 
+    margin-top: 10px;
+       padding: 10px 0; 
+  		width:10%;
+		box-sizing: border-box;
+}
+
+#registerButton:hover {
+    background-color: #005b8a;
+}
 </style>
 <script>
 	function searchAddress_daumPostcode() {
@@ -157,21 +184,22 @@ ul {
 </script>
 </head>
 <body>
-	<header class="a_header">
-		<div class="container">
-			<a href="<%=request.getContextPath()%>/index" class="logo linkLogo">
-				<img src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
-					alt="JJAPKOREA" class="logoimg">
-			</a>
-			<div class="links">
-				<a href="<%=request.getContextPath()%>/person/myPage" class="link linkHome">마이페이지</a>
-				<a
+	<header class="jobkorea-header">
+		<div class="jobkorea-logo">
+			<a href="<%=request.getContextPath()%>/index"><img
+				src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
+				alt="JJAPKOREA" class="logoimg"></a>
+		</div>
+		<div class="jobkorea-menu">
+			<ul>
+				<li><a href="<%=request.getContextPath()%>/person/myPage" class="link linkHome">스크랩</a></li>
+				<li><a
 					href="<%=request.getContextPath()%>/person/infoModifyPerson"
-					class="link linkManage">회원 정보 수정</a>
-			</div>
+					class="link linkManage">회원 정보 수정</a></li>
+			</ul>
 		</div>
 	</header>
-	<br><br>
+	<div class="readSumWrap clear">
 	<h1 class="h1">이 력 서</h1>
 	<c:choose>
 		<c:when test="${empty resumeList}">
@@ -782,6 +810,7 @@ ul {
 			</form>
 		</c:otherwise>
 	</c:choose>
+	</div>
 	<br><br>
 	<script>
 		function checkAndAddRow(inputField, tableNumber) {
