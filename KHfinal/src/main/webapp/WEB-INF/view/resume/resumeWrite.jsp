@@ -61,6 +61,15 @@ body {
     font-size: 16px;
 }
 
+#dynamicHeader span:not(:last-child)::after {
+  content: "\00a0"; /* Non-breaking space character */
+}
+
+/* 띄어쓰기 문자의 색상 변경 */
+#dynamicHeader span {
+  color: #007bff;
+}
+
 .readSumWrap {
     width: 50%;
     margin: 0 auto;
@@ -200,7 +209,20 @@ body {
 		</div>
 	</header>
 	<div class="readSumWrap clear">
-	<h1 class="h1">이 력 서</h1>
+	<h1 class="h1" id="dynamicHeader">&nbsp;&nbsp;&nbsp;님&nbsp;의&nbsp;&nbsp;&nbsp;이&nbsp;력&nbsp;서</h1>
+	<script>
+		const name = '"${selectOnePerson.pname}"'; // 이름 예시
+		
+		// 헤더 요소 선택
+		const header = document.getElementById("dynamicHeader");
+		
+		// 이름을 한 글자씩 분리하고 각 글자를 <span> 요소로 감싸서 추가
+		for (let i = 0; i < name.length; i++) {
+		  const span = document.createElement("span");
+		  span.textContent = name[i];
+		  header.insertBefore(span, header.lastChild);
+		}
+	</script>
 	<c:choose>
 		<c:when test="${empty resumeList}">
 			<form action="<%=request.getContextPath()%>/person/resume/write"
