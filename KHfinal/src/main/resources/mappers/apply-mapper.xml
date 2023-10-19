@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="apply">
+	<resultMap type="applyDto" id="applyDto">
+	    <id property="applyId" column="apply_id" />
+	    <result property="resumeId" column="resume_id" />
+	    <result property="jid" column="jid" />
+	</resultMap>
+	
+	<insert id="insertApply" parameterType="applyDto">
+	    INSERT INTO apply (RESUME_ID, jid)
+	    VALUES (#{resumeId}, #{jid})
+	</insert>
+	
+	<select id="getApplyById" resultType="applyDto">
+	   SELECT * FROM apply
+	   WHERE RESUME_ID = #{resumeId}
+	</select>
+	
+	<select id="getApplyByJid" resultType="applyDto">
+	   SELECT * FROM apply
+	   WHERE jid = #{jid}
+	</select>
+	
+	<select id="getResumeById" resultType="int">
+		select resume_id from resume where mid = #{mid}
+	</select>
+	
+	<delete id="deleteApply" parameterType="int">
+		delete from apply where RESUME_ID = #{resumeId}
+	</delete>
+</mapper>
