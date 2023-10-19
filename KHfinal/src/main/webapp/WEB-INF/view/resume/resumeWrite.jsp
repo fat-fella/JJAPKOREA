@@ -14,6 +14,52 @@
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.a_header {
+	background-color: #007bff;
+	color: white;
+	padding: 10px 0;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.logo {
+	text-decoration: none;
+}
+
+.logoimg {
+	height: 40px;
+	width: 120px;
+}
+
+.links {
+	margin-left: auto;
+}
+
+.link {
+	color: white;
+	margin-left: 20px;
+	text-decoration: none;
+}
+
 .h1, .c_header {
 	display: flex;
 	justify-content: center;
@@ -111,6 +157,22 @@
 </script>
 </head>
 <body>
+	<header class="a_header">
+		<div class="container">
+			<a href="index" class="logo linkLogo">
+				<img src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
+					alt="JJAPKOREA" class="logoimg">
+			</a>
+			<div class="links">
+				<a href="<%=request.getContextPath()%>/index" class="link linkHome">기업회원
+					홈</a>
+				<a
+					href="<%=request.getContextPath()%>/business/jobpostingupload/list"
+					class="link linkManage">채용공고 관리</a>
+			</div>
+		</div>
+	</header>
+	<br><br>
 	<h1 class="h1">이 력 서</h1>
 	<c:choose>
 		<c:when test="${empty resumeList}">
@@ -124,20 +186,23 @@
 					<div class="img">
 						<table class="img_table" id="img_table">
 							<tr>
-						        <td colspan="4" style="text-align: center; position: relative;">
-						            <div id="imagePreviewContainer" style="position: relative; max-height: 170px; overflow: hidden;">
-						            	<div id="uploadImage">사진</div>
-					                    <!-- 이미지 미리보기 -->
-					                    <img id="imagePreview" style="max-width: 100%; height: auto;">
-					                    <!-- 이미지 업로드 버튼 -->
-					                    <button id="imageUploadButton" style="position: absolute; bottom: 0; left: 0; width: 100%; display: none;">이미지 업로드</button>
-					                </div>
-						        </td>
-						    </tr>
+								<td colspan="4" style="text-align: center; position: relative;">
+									<div id="imagePreviewContainer"
+										style="position: relative; max-height: 170px; overflow: hidden;">
+										<div id="uploadImage">사진</div>
+										<!-- 이미지 미리보기 -->
+										<img id="imagePreview" style="max-width: 100%; height: auto;">
+										<!-- 이미지 업로드 버튼 -->
+										<button id="imageUploadButton"
+											style="position: absolute; bottom: 0; left: 0; width: 100%; display: none;">이미지
+											업로드</button>
+									</div>
+								</td>
+							</tr>
 						</table>
 						<!-- 실제 파일 업로드를 위한 숨김 input -->
-						<input type="file" name="imageUrl" id="imageInput" style="display: none;"
-							accept="image/*">
+						<input type="file" name="imageUrl" id="imageInput"
+							style="display: none;" accept="image/*">
 						<script>
 						    // 사진을 클릭했을 때 input 엘리먼트를 클릭하는 함수
 						    document.getElementById('uploadImage').addEventListener('click', function() {
@@ -416,7 +481,8 @@
 			</form>
 		</c:when>
 		<c:otherwise>
-			<form id="formTest" action="<%=request.getContextPath()%>/person/resume/write"
+			<form id="formTest"
+				action="<%=request.getContextPath()%>/person/resume/write"
 				method="post">
 				<c:forEach items="${resumeList}" var="resume">
 					<input type="text" name="title"
@@ -427,16 +493,20 @@
 						<div class="img">
 							<table class="img_table" id="img_table">
 								<tr>
-							        <td colspan="4" style="text-align: center; position: relative;">
-							            <div id="imagePreviewContainer" style="position: relative; max-height: 170px; overflow: hidden;">
-							            	<div id="uploadImage">사진</div>
-						                    <!-- 이미지 미리보기 -->
-						                    <img id="imagePreview" style="max-width: 100%; height: auto;" src="${resume.imageUrl}">
-						                    <!-- 이미지 업로드 버튼 -->
-						                    <button id="imageUploadButton" style="position: absolute; bottom: 0; left: 0; width: 100%; display: none;">이미지 업로드</button>
-						                </div>
-							        </td>
-							    </tr>
+									<td colspan="4" style="text-align: center; position: relative;">
+										<div id="imagePreviewContainer"
+											style="position: relative; max-height: 170px; overflow: hidden;">
+											<div id="uploadImage">사진</div>
+											<!-- 이미지 미리보기 -->
+											<img id="imagePreview" style="max-width: 100%; height: auto;"
+												src="${resume.imageUrl}">
+											<!-- 이미지 업로드 버튼 -->
+											<button id="imageUploadButton"
+												style="position: absolute; bottom: 0; left: 0; width: 100%; display: none;">이미지
+												업로드</button>
+										</div>
+									</td>
+								</tr>
 							</table>
 							<!-- 실제 파일 업로드를 위한 숨김 input -->
 							<input type="file" id="imageInput" style="display: none;"
@@ -712,6 +782,7 @@
 			</form>
 		</c:otherwise>
 	</c:choose>
+	<br><br>
 	<script>
 		function checkAndAddRow(inputField, tableNumber) {
 			var tableId = 'qualificationsTable' + tableNumber;

@@ -1048,7 +1048,7 @@
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_PERSON')">
 							<li class="userNav-item resume">
-								<a href="<%=request.getContextPath() %>/person/resume" class="txt-button ico-mng"
+								<a href="<%=request.getContextPath() %>/person/resume/write" class="txt-button ico-mng"
 									onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">이력서 관리</a>
 							</li>
 							<li class="userNav-item my member">
@@ -1062,7 +1062,7 @@
 										<div class="myLists">
 											<ul>
 												<li>
-													<a href="<%=request.getContextPath() %>/person/resume"
+													<a href="<%=request.getContextPath() %>/person/resume/write"
 														onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">
 														<span class="tx">이력서 관리</span>
 													</a>
