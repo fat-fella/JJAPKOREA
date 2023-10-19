@@ -200,8 +200,9 @@ ul {
 							</tr>
 						</table>
 						<!-- 실제 파일 업로드를 위한 숨김 input -->
-						<input type="file" name="imageUrl" id="imageInput"
+						<input type="file" id="imageInput"
 							style="display: none;" accept="image/*">
+						<input type="hidden" name="imageUrl" id="imageUrlInput">
 						<script>
 						    // 사진을 클릭했을 때 input 엘리먼트를 클릭하는 함수
 						    document.getElementById('uploadImage').addEventListener('click', function() {
@@ -255,6 +256,7 @@ ul {
 						            
 						         	// 이미지 URL을 숨겨진 입력 필드에 설정하여 서버로 전송할 준비
 						            document.getElementById('imageUrlInput').value = imageUrl;
+						            alert("파일 전송이 완료되었습니다.");
 						        })
 						        .catch(error => {
 						            console.error('이미지 업로드 실패: ' + error);
@@ -564,6 +566,7 @@ ul {
 							            
 							         	// 이미지 URL을 숨겨진 입력 필드에 설정하여 서버로 전송할 준비
 							            document.getElementById('imageUrlInput').value = imageUrl;
+							         	alert("파일 전송이 완료되었습니다.");
 							        })
 							        .catch(error => {
 							            console.error('이미지 업로드 실패: ' + error);
@@ -577,14 +580,12 @@ ul {
 							    var uploadImage = document.getElementById('uploadImage');
 							    var imagePreview = document.getElementById('imagePreview');
 
-							    // 이미지 URL이 존재하면 uploadImage를 숨기고 imagePreview를 표시
+							    // 이미지 URL이 존재하면 uploadImage를 숨김
 							    if (imageUrl) {
 							        uploadImage.style.display = 'none';
-							        imagePreview.style.display = 'block';
 							    } else {
-							        // 이미지 URL이 없으면 uploadImage를 표시하고 imagePreview를 숨깁니다.
+							        // 이미지 URL이 없으면 uploadImage를 표시
 							        uploadImage.style.display = 'block';
-							        imagePreview.style.display = 'none';
 							    }
 							</script>
 						</div>
