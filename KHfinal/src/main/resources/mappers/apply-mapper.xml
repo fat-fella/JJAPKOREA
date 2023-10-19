@@ -29,4 +29,8 @@
 	<delete id="deleteApply" parameterType="int">
 		delete from apply where RESUME_ID = #{resumeId}
 	</delete>
+	
+	<select id="getApplyIdByJidAndResumeId" resultType="string">
+		select apply_id from apply where jid = #{jid} and resume_id = #{resumeId}
+	</select>
 </mapper>

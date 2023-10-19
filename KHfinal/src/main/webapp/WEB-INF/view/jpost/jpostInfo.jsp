@@ -19,6 +19,7 @@
 		var retitle = "${jobPosting.RE_TITLE}";
 		
 		var resumeId = "${resumeId}";
+		var applyId = "${applyId}";
 		
 		if (mid.trim() === "" || mid.trim() === "anonymousUser") {
 	        alert("로그인 후 이용해주세요.");
@@ -26,6 +27,8 @@
 		} else if(resumeId === null || resumeId === "") {
 			alert("이력서 등록 후 이용해주세요.");
 			window.location.href = '${pageContext.request.contextPath}/person/resume/write';
+		} else if(applyId !== null && applyId !== ""){
+			alert("이미 지원한 채용 공고입니다.");
 	    } else {
 	    	$.ajax({
 				url : "${pageContext.request.contextPath}/person/noticeMail",
@@ -35,7 +38,8 @@
 					jid : jid,
 					mid : mid,
 					bizname : bizname,
-					retitle : retitle
+					retitle : retitle,
+					resumeId : resumeId
 				// 문자열로 변환하여 보냄
 				}), 
 				success : function(data) {

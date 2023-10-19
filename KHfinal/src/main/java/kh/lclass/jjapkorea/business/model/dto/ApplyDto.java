@@ -6,5 +6,5 @@ import lombok.Data;
 public class ApplyDto {
 	private String applyId;
 	private String jid;
-	private int resumeId;
+	private Integer resumeId;
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import kh.lclass.jjapkorea.business.model.dto.ApplyDto;
 import kh.lclass.jjapkorea.business.model.service.ApplyService;
 import kh.lclass.jjapkorea.business.model.service.JobPostingUploadService;
 import lombok.RequiredArgsConstructor;
@@ -43,7 +44,12 @@ public class JobPostingInfoController {
 				mv.setViewName("redirect:/index");
 			}
 			String mid = (String) model.getAttribute("mid");
-			mv.addObject("resumeId", applyServiceImlp.getResumeById(mid));
+			Integer resumeId = applyServiceImlp.getResumeById(mid);
+			mv.addObject("resumeId", resumeId);
+			ApplyDto applyDto = new ApplyDto();
+			applyDto.setJid(jid);
+			applyDto.setResumeId(resumeId);
+			mv.addObject("applyId", applyServiceImlp.getApplyIdByJidAndResumeId(applyDto));
 			return mv;
 		} 
 	

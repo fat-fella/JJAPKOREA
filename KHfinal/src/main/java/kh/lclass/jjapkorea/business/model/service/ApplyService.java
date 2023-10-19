@@ -10,4 +10,5 @@ public interface ApplyService {
 	List<ApplyDto> getApplyByJid(String jid) throws Exception;
 	Integer getResumeById(String mid) throws Exception;
 	int deleteApply(int resumeId) throws Exception;
+	String getApplyIdByJidAndResumeId(ApplyDto applyDto) throws Exception;
 }
