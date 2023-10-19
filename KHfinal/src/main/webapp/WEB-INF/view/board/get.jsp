@@ -365,60 +365,60 @@ button:hover {
 	    
 	}
 /* ---------- 대댓글 보기 ---------- */
-	function moreReplyHandler(e) {
-	    var rrefReplyNo = $(this).data("replyno");
-	    var eTarget = e.target;
-	    var $replyCard = $(eTarget).parents(".replyCard");
-	    var $forAppendArea = $replyCard.find(".forAppendArea");
-	    var $moreReplyButton = $("#moreReplyButton");
-	    
-	    if ($forAppendArea.css("display") === "block") {
-	        $forAppendArea.css("display", "none");
-	        $moreReplyButton.text("더보기");
-	        location.reload(false);
-	    } else {
-	        $.ajax({
-	            type: "get",
-	            url: "${pageContext.request.contextPath}/replyboard/moreReplylist",
-	            data: { rref: rrefReplyNo },
-	            success: function (result) {
-	                $forAppendArea.html("");
-	                console.log("moreReplylist: success");
-	                console.log(result.length);
-	                if (result.length == 0) {
-	                    alert("댓글이 없습니다.");
-	                    return false;
-	                } else {
-	                    for (var i = 0; i < result.length; i++) {
-	                        var htmlVal = '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">'
-	                        htmlVal += 			'<div class="updatewriter">작성자 : ' + result[i].memberId + '</div>'
-	                        htmlVal += 			'<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
-	                        htmlVal += 			'<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
-	                        htmlVal += 			'<div class="groupbtn">'
-	                        htmlVal += 				'<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
-	                        htmlVal += 				'<button class="insertreplyreply">답글달기</button>'
-	                        htmlVal += 			'</div>';
-	                        htmlVal += 	   '</div>';
-	                        $forAppendArea.append(htmlVal);
-				            if(result[i].memberId != "${memberid}"){
-			                    $(".testappend .card:last-child .deletereplyreply").hide();
-				            }
-	                    }
-	                }
-	                $(".insertreplyreply").click(insertreplyreplyHandler);
-	                $forAppendArea.css("display", "block");
-	                $moreReplyButton.text("숨기기");
-	            },
-	            error: function () {
-	                console.log("error");
-	            },
-	            dataType: "json"
-	        });
-	    }
-	}
+function moreReplyHandler(e) {
+    var rrefReplyNo = $(this).data("replyno");
+    var eTarget = e.target;
+    var $replyCard = $(eTarget).parents(".replyCard");
+    var $forAppendArea = $replyCard.find(".forAppendArea");
+    var $moreReplyButton = $(this);
+
+    if ($forAppendArea.css("display") === "block") {
+        $forAppendArea.css("display", "none");
+        $moreReplyButton.text("더보기");
+        location.reload(false);
+    } else {
+        $.ajax({
+            type: "get",
+            url: "${pageContext.request.contextPath}/replyboard/moreReplylist",
+            data: { rref: rrefReplyNo },
+            success: function (result) {
+                $forAppendArea.html("");
+                console.log("moreReplylist: success");
+                console.log(result.length);
+                if (result.length == 0) {
+                    alert("댓글이 없습니다.");
+                    return true;
+                } else {
+                    for (var i = 0; i < result.length; i++) {
+                        var htmlVal = '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">'
+                        htmlVal += '<div class="updatewriter">작성자 : ' + result[i].memberId + '</div>'
+                        htmlVal += '<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
+                        htmlVal += '<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
+                        htmlVal += '<div class="groupbtn">';
+                        if (result[i].memberId === "${memberid}") {
+                            htmlVal += '<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>';
+                        }
+                        htmlVal += '<button class="insertreplyreply">답글달기</button>';
+                        htmlVal += '</div>';
+                        htmlVal += '</div>';
+                        $forAppendArea.append(htmlVal);
+                    }
+                }
+                $(".insertreplyreply").click(insertreplyreplyHandler);
+                $forAppendArea.css("display", "block");
+                $moreReplyButton.text("숨기기");
+            },
+            error: function () {
+                console.log("error");
+            },
+            dataType: "json"
+        });
+    }
+}
 /* ---------- 댓글 등록 ---------- */
 	function submitreplyHandler() {
 		var replyContent = $("[name=replyContent]").val();
+	    var memberid = '${memberid}';
 	    if(replyContent === ''){
 	 	   alert("댓글을 입력해주세요.");
 	 	   return false;
@@ -499,22 +499,26 @@ button:hover {
 	  });
 	}
 /*  ---------- 답글 수정 ---------- */
-	function updatereplyHandler(){
-		var replyWriter= $(this).parents(".replyCard").data("writer");
-		if(replyWriter=="${memberid}"){
-		$(this).parents(".replyCard").find(".updatereplyContent").html("");
-		$(this).parents(".replyCard").find(".updatereplyDate").hide();
-		
-		var updateContent ='<textarea rows="3" class="col-xl-12 replyContent" name="replyContent1"></textarea>'
-		$(this).parents(".replyCard").find(".updatereplyContent").html(updateContent);	
-		
-		var updateDoBtn ='<button type="button" class="updateDoBtn">댓글 수정</button>'
-		$(this).parents(".groupbtn").html(updateDoBtn); 
-		$(".updateDoBtn").click(updateDoBtnHandler);
-		}else{
-			alert("작성자가 아닙니다");
-		}
-	}
+	function updatereplyHandler() {
+    var $replyCard = $(this).parents(".replyCard");
+    var replyWriter = $replyCard.data("writer");
+
+    // 내가 작성한 댓글인 경우에만 수정 가능하도록 확인합니다.
+    if (replyWriter === "${memberid}") {
+        $replyCard.find(".updatereplyContent").html("");
+        $replyCard.find(".updatereplyDate").hide();
+
+        var updateContent = '<textarea rows="3" class="col-xl-12 replyContent" name="replyContent1"></textarea>';
+        $replyCard.find(".updatereplyContent").html(updateContent);
+
+        var updateDoBtn = '<button type="button" class="updateDoBtn">댓글 수정</button>';
+        $replyCard.find(".groupbtn").html(updateDoBtn);
+
+        $(".updateDoBtn").click(updateDoBtnHandler);
+    } else {
+        alert("작성자가 아닙니다");
+    }
+}
 	function updateDoBtnHandler(){
 		var replyContent1= $("[name=replyContent1]").val();
 		 $.ajax({
@@ -536,6 +540,14 @@ button:hover {
 	    var $replyCard = $(this).parents(".replyCard");
 		var replyreplywriter = $(this).parents(".replyCard").data("writer");
 	    var $contenttextarea = $replyCard.find(".contenttextarea");
+	    
+	    var bno = '${bvo.bno}'
+	    var memberid = '${memberid}';
+	    if (memberid === '') {
+	        alert('로그인이 필요합니다!');
+	        var returnUrl = encodeURIComponent('http://127.0.0.1:8090/jjapkorea/board/get?bno=' + bno);
+       	    window.location.href = 'http://127.0.0.1:8090/jjapkorea/login?returnUrl=' + returnUrl;
+	    }
 	    if ($contenttextarea.length > 0) {
 	        $contenttextarea.remove();
 	    	}else {
@@ -552,17 +564,10 @@ button:hover {
 		        $(".submitreplyreply").click(submitreplyreplyHandler);
 		    }
 		}
+		
 	function submitreplyreplyHandler() {
 	    var $replyContentTextarea = $(this).parent().siblings().find(".replyContent");
 	    var replyreplyContent = $replyContentTextarea.val().trim();
-
-/*
-		if (replyreplyContent === "") {
-	        alert("내용을 입력해주세요.");
-	        return false; 
-	    }
- */
-	    console.log("submitreplyreplyHandler");
 	    var $replyCard = $(this).parents(".replyCard");
 	    $.ajax({
 	        type: "post",
@@ -577,9 +582,11 @@ button:hover {
 	            console.log("result: ", result);
 	            console.log("success");
 	            $replyCard.find(".contenttextarea").remove();
-	            var rrefReplyNo = $replyCard.data("replyno");
-	            var $forAppendArea = $replyCard.find(".forAppendArea");
-	            $.ajax({
+	            
+ 	            var rrefReplyNo = $replyCard.data("replyno");
+	            var $forAppendArea = $replyCard.find(".forAppendArea"); // 대댓글이 추가될 영역
+         // 대댓글 목록 다시 불러와서 불러온 대댓글 목록 화면에 추가
+	            $.ajax({ 
 	                type: "get",
 	                url: "${pageContext.request.contextPath}/replyboard/moreReplylist",
 	                data: { rref: rrefReplyNo },
@@ -595,13 +602,10 @@ button:hover {
 	                            htmlVal += '<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
 	                            htmlVal += '<div class "updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
 	                            htmlVal += '<div class="groupbtn">'
-	                            htmlVal +=		'<button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
+	                            htmlVal +=		'<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
 	                            htmlVal += 		'<button class="insertreplyreply">답글달기</button>'
 	                            htmlVal += '</div>'
 	                            $forAppendArea.append(htmlVal);
-	                            if(result[i].memberId ){
-	    		                    $(".testappend .card:last-child .deletereply").hide();
-	                            }
 	                        }
 	                        $(".insertreplyreply").click(insertreplyreplyHandler);
 	                    }
