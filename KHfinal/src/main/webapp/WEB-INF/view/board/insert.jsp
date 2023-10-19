@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>boardInsert</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <style>     
 body {
     font-family: Arial, sans-serif;
@@ -63,34 +64,41 @@ div {
 <body>
 <div>
    <form id="frmBoard">
-        제목: <input type="text" name="btitle">
+   		<div>
+        	제목: <input type="text" name="btitle">
+   		</div>
         <br>
-        내용: <textarea rows="10" cols="50" name="bcontent"></textarea>
-        <br>         
-		<input type="file" name="uploadFile1">
-        <input type="checkbox" name="hobby" value="a">삼겹살?<br>
-        <button type="button" id="btn-board-insert">글 등록</button>
-		<a href="${pageContext.request.contextPath}/board/list">
-			<button type="button">글 목록으로 이동</button>
-		</a>	
+       	내용: <textarea id="bcontent" rows="10" cols="50" name="bcontent" ></textarea>
+       	<script type="text/javascript">	// 글쓰기 editor 및 사진 업로드 기능
+			CKEDITOR.replace('bcontent', {
+ 				filebrowserUploadUrl:'${pageContext.request.contextPath}/board/fileupload.do',
+ 			});
+		</script>
+        <br>    
+        <div id="btn">
+	        <button type="button" id="btn-board-insert">글 등록</button>
+			<a href="${pageContext.request.contextPath}/board/list">
+				<button type="button">글 목록으로 이동</button>
+			</a>	
+        </div>     
     </form>
 </div>
 
 
 <script>
-
 $("#btn-board-insert").click(function() {	
     const btitle = $("input[name='btitle']").val().trim();
-    const bcontent = $("textarea[name='bcontent']").val().trim();
+    const bcontent = CKEDITOR.instances.bcontent.getData();    
+    /* document.getElementById("frmBoard").submit(); */
     if(btitle ===''){
     	alert("제목을 입력해주세요");
     	return;
     }
-    if(bcontent ===''){
+     if(bcontent ===''){
     	alert("내용을 입력해주세요");
     	return;
     }
-    if (confirm("글을 등록하시겠습니까?")) {
+     if (confirm("글을 등록하시겠습니까?")) {
         $.ajax({
             type: "POST",
             url: "${pageContext.request.contextPath}/board/insert",
@@ -117,7 +125,6 @@ $("#btn-board-insert").click(function() {
         });
     }
 });
-
 </script>
 </body>
 </html>

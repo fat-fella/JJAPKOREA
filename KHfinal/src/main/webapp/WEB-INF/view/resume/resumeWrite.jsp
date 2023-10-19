@@ -122,45 +122,80 @@
 				<br>
 				<header class="c_header">
 					<div class="img">
-						<table class="img_table">
+						<table class="img_table" id="img_table">
 							<tr>
-								<th colspan="4" id="uploadImage">사진</th>
-							</tr>
+						        <td colspan="4" style="text-align: center; position: relative;">
+						            <div id="imagePreviewContainer" style="position: relative; max-height: 170px; overflow: hidden;">
+						            	<div id="uploadImage">사진</div>
+					                    <!-- 이미지 미리보기 -->
+					                    <img id="imagePreview" style="max-width: 100%; height: auto;">
+					                    <!-- 이미지 업로드 버튼 -->
+					                    <button id="imageUploadButton" style="position: absolute; bottom: 0; left: 0; width: 100%; display: none;">이미지 업로드</button>
+					                </div>
+						        </td>
+						    </tr>
 						</table>
 						<!-- 실제 파일 업로드를 위한 숨김 input -->
-						<input type="file" id="imageInput" style="display: none;"
+						<input type="file" name="imageUrl" id="imageInput" style="display: none;"
 							accept="image/*">
 						<script>
-							// 사진을 클릭했을 때 input 엘리먼트를 클릭하는 함수
-							document.getElementById('uploadImage')
-									.addEventListener('click', function() {
-										document.getElementById('imageInput')
-												.click();
-									});
+						    // 사진을 클릭했을 때 input 엘리먼트를 클릭하는 함수
+						    document.getElementById('uploadImage').addEventListener('click', function() {
+						        document.getElementById('imageInput').click();
+						    });
+						    
+						    document.getElementById('imagePreview').addEventListener('click', function() {
+						        document.getElementById('imageInput').click();
+						    });
+						
+						    // input 엘리먼트의 값이 변경될 때 파일 업로드 이벤트 처리
+						    document.getElementById('imageInput').addEventListener('change', function() {
+						        // 선택한 파일을 처리하거나 서버로 업로드
+						        var selectedFile = this.files[0];
+						        if (selectedFile) {
+						            var imagePreview = document.getElementById('imagePreview');
+						            imagePreview.src = URL.createObjectURL(selectedFile); // 이미지 미리보기 URL 설정
+						         	// 이미지 업로드 버튼 표시
+					                imageUploadButton.style.display = 'block';
+						        }
+						    });
+						    
+						 	// 이미지 업로드 시 <tr> 요소를 숨기는 스크립트
+						    document.getElementById('imageInput').addEventListener('change', function() {
+						        // 이미지를 선택한 경우
+						        if (this.files.length > 0) {
+						            document.getElementById('uploadImage').style.display = 'none'; // <tr> 숨기기
+						        }
+						    });
+						 	
+						    var imageUploadButton = document.getElementById('imageUploadButton');
 
-							// input 엘리먼트의 값이 변경될 때 파일 업로드 이벤트 처리
-							document
-									.getElementById('imageInput')
-									.addEventListener('change', function() {
-										// 선택한 파일을 처리하거나 서버로 업로드
-										// 이 코드는 파일 선택 시 작동할 JavaScript 코드를 추가하는 부분
-										var selectedFile = this.files[0];
-										if (selectedFile) {
-											// 파일을 선택했을 때의 동작을 정의
-											// 여기에 선택한 이미지 파일을 표시하거나 업로드하는 코드를 추가
-											// 예를 들어, 이미지 미리보기를 추가하려면 다음과 같이 처리
-											var imagePreview = document
-													.getElementById('uploadImage');
-											imagePreview.innerHTML = ''; // 이전 내용 지우기
-											var image = document
-													.createElement('img');
-											image.src = URL
-													.createObjectURL(selectedFile); // 이미지 미리보기 URL 설정
-											image.style.maxWidth = '100%'; // 이미지 크기 조절
-											image.style.height = 'auto';
-											imagePreview.appendChild(image);
-										}
-									});
+						 	// 이미지 업로드 버튼 클릭 이벤트 핸들러
+						    imageUploadButton.addEventListener('click', function(event) {
+						        event.preventDefault(); // 기본 동작 중지
+						        
+						        // 이미지를 서버로 업로드
+						        var formData = new FormData();
+						        formData.append('upload', imageInput.files[0]);
+						        
+						        fetch('<%=request.getContextPath()%>/image/upload', {
+						            method: 'POST',
+						            body: formData
+						        })
+						        .then(response => response.json())
+						        .then(data => {
+						            // 서버로부터 이미지 URL을 받아온 후, 이 URL을 적절한 위치에 삽입 또는 표시
+						            var imageUrl = data.url;
+						            var imagePreview = document.getElementById('imagePreview');
+						            imagePreview.src = imageUrl;
+						            
+						         	// 이미지 URL을 숨겨진 입력 필드에 설정하여 서버로 전송할 준비
+						            document.getElementById('imageUrlInput').value = imageUrl;
+						        })
+						        .catch(error => {
+						            console.error('이미지 업로드 실패: ' + error);
+						        });
+						    });
 						</script>
 					</div>
 					<div class="name">
@@ -390,47 +425,98 @@
 					<br>
 					<header class="c_header">
 						<div class="img">
-							<table class="img_table">
+							<table class="img_table" id="img_table">
 								<tr>
-									<th colspan="4" id="uploadImage">사진</th>
-								</tr>
+							        <td colspan="4" style="text-align: center; position: relative;">
+							            <div id="imagePreviewContainer" style="position: relative; max-height: 170px; overflow: hidden;">
+							            	<div id="uploadImage">사진</div>
+						                    <!-- 이미지 미리보기 -->
+						                    <img id="imagePreview" style="max-width: 100%; height: auto;" src="${resume.imageUrl}">
+						                    <!-- 이미지 업로드 버튼 -->
+						                    <button id="imageUploadButton" style="position: absolute; bottom: 0; left: 0; width: 100%; display: none;">이미지 업로드</button>
+						                </div>
+							        </td>
+							    </tr>
 							</table>
 							<!-- 실제 파일 업로드를 위한 숨김 input -->
 							<input type="file" id="imageInput" style="display: none;"
 								accept="image/*">
+							<input type="hidden" name="imageUrl" id="imageUrlInput">
 							<script>
-								// 사진을 클릭했을 때 input 엘리먼트를 클릭하는 함수
-								document
-										.getElementById('uploadImage')
-										.addEventListener('click', function() {
-											document
-													.getElementById('imageInput')
-													.click();
-										});
+							    // 사진을 클릭했을 때 input 엘리먼트를 클릭하는 함수
+							    document.getElementById('uploadImage').addEventListener('click', function() {
+							        document.getElementById('imageInput').click();
+							    });
+							    
+							    document.getElementById('imagePreview').addEventListener('click', function() {
+							        document.getElementById('imageInput').click();
+							    });
+							
+							    // input 엘리먼트의 값이 변경될 때 파일 업로드 이벤트 처리
+							    document.getElementById('imageInput').addEventListener('change', function() {
+							        // 선택한 파일을 처리하거나 서버로 업로드
+							        var selectedFile = this.files[0];
+							        if (selectedFile) {
+							            var imagePreview = document.getElementById('imagePreview');
+							            imagePreview.src = URL.createObjectURL(selectedFile); // 이미지 미리보기 URL 설정
+							         	// 이미지 업로드 버튼 표시
+						                imageUploadButton.style.display = 'block';
+							        }
+							    });
+							    
+							 	// 이미지 업로드 시 <tr> 요소를 숨기는 스크립트
+							    document.getElementById('imageInput').addEventListener('change', function() {
+							        // 이미지를 선택한 경우
+							        if (this.files.length > 0) {
+							            document.getElementById('uploadImage').style.display = 'none'; // <tr> 숨기기
+							        }
+							    });
+							 	
+							    var imageUploadButton = document.getElementById('imageUploadButton');
+	
+							 	// 이미지 업로드 버튼 클릭 이벤트 핸들러
+							    imageUploadButton.addEventListener('click', function(event) {
+							        event.preventDefault(); // 기본 동작 중지
+							        
+							        // 이미지를 서버로 업로드
+							        var formData = new FormData();
+							        formData.append('upload', imageInput.files[0]);
+							        
+							        fetch('<%=request.getContextPath()%>/image/upload', {
+							            method: 'POST',
+							            body: formData
+							        })
+							        .then(response => response.json())
+							        .then(data => {
+							            // 서버로부터 이미지 URL을 받아온 후, 이 URL을 적절한 위치에 삽입 또는 표시
+							            var imageUrl = data.url;
+							            var imagePreview = document.getElementById('imagePreview');
+							            imagePreview.src = imageUrl;
+							            
+							         	// 이미지 URL을 숨겨진 입력 필드에 설정하여 서버로 전송할 준비
+							            document.getElementById('imageUrlInput').value = imageUrl;
+							        })
+							        .catch(error => {
+							            console.error('이미지 업로드 실패: ' + error);
+							        });
+							    });
+							 	
+							 	// 이미지 URL이 존재하는지 확인
+							    var imageUrl = "${resume.imageUrl}"; // 이 부분을 실제 데이터 소스에서 값을 가져오는 방식으로 변경해야 합니다
 
-								// input 엘리먼트의 값이 변경될 때 파일 업로드 이벤트 처리
-								document
-										.getElementById('imageInput')
-										.addEventListener('change', function() {
-											// 선택한 파일을 처리하거나 서버로 업로드할 수 있습니다.
-											// 이 코드는 파일 선택 시 작동할 JavaScript 코드를 추가하는 부분입니다.
-											var selectedFile = this.files[0];
-											if (selectedFile) {
-												// 파일을 선택했을 때의 동작을 정의할 수 있습니다.
-												// 여기에 선택한 이미지 파일을 표시하거나 업로드하는 코드를 추가할 수 있습니다.
-												// 예를 들어, 이미지 미리보기를 추가하려면 다음과 같이 처리할 수 있습니다.
-												var imagePreview = document
-														.getElementById('uploadImage');
-												imagePreview.innerHTML = ''; // 이전 내용 지우기
-												var image = document
-														.createElement('img');
-												image.src = URL
-														.createObjectURL(selectedFile); // 이미지 미리보기 URL 설정
-												image.style.maxWidth = '100%'; // 이미지 크기 조절
-												image.style.height = 'auto';
-												imagePreview.appendChild(image);
-											}
-										});
+							    // uploadImage와 imagePreview 엘리먼트에 대한 참조
+							    var uploadImage = document.getElementById('uploadImage');
+							    var imagePreview = document.getElementById('imagePreview');
+
+							    // 이미지 URL이 존재하면 uploadImage를 숨기고 imagePreview를 표시
+							    if (imageUrl) {
+							        uploadImage.style.display = 'none';
+							        imagePreview.style.display = 'block';
+							    } else {
+							        // 이미지 URL이 없으면 uploadImage를 표시하고 imagePreview를 숨깁니다.
+							        uploadImage.style.display = 'block';
+							        imagePreview.style.display = 'none';
+							    }
 							</script>
 						</div>
 						<div class="name">
