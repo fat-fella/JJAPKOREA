@@ -20,4 +20,5 @@ public class BusinessDto {
 	private String bsales;
 	private String bgradSalary;
 	private String bindDetail;
+	public String logoImg;
 }
