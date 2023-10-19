@@ -330,13 +330,17 @@ button:hover {
 	                    htmlVal += 			'<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>' 
 	                    htmlVal += 			'<div class="groupbtn">' 
 	                   	htmlVal += 				'<button class="updatereply">수정</button>' 
-	                	htmlVal += 				'<button onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
+	                	htmlVal += 				'<button class ="deletereply" onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
 	                 	htmlVal += 				'<button class="insertreplyreply">댓글 삽입</button>' 
 	                	htmlVal += 				'<button class="moreReply" id="moreReplyButton" data-replyno="' + result[i].replyNo + '">더보기</button>' 
 	                	htmlVal += 			'</div>'  
 	                    htmlVal += 	  '</div>'  
 	                    htmlVal += '<div class="forAppendArea" style="display: none"></div>';
 	                    $(".testappend").append(htmlVal);                  
+			            if(result[i].memberId != "${memberid}"){
+			            	$(".testappend .card:last-child .updatereply").hide();
+		                    $(".testappend .card:last-child .deletereply").hide();
+			            }
 	                }
 	            }
 	            $(".updatereply").click(updatereplyHandler);
@@ -391,11 +395,14 @@ button:hover {
 	                        htmlVal += 			'<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
 	                        htmlVal += 			'<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
 	                        htmlVal += 			'<div class="groupbtn">'
-	                        htmlVal += 				'<button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
-	                        htmlVal += 				'<button class="insertreplyreply">댓글 삽입</button>'
+	                        htmlVal += 				'<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
+	                        htmlVal += 				'<button class="insertreplyreply">답글달기</button>'
 	                        htmlVal += 			'</div>';
 	                        htmlVal += 	   '</div>';
 	                        $forAppendArea.append(htmlVal);
+				            if(result[i].memberId != "${memberid}"){
+			                    $(".testappend .card:last-child .deletereplyreply").hide();
+				            }
 	                    }
 	                }
 	                $(".insertreplyreply").click(insertreplyreplyHandler);
@@ -408,9 +415,6 @@ button:hover {
 	            dataType: "json"
 	        });
 	    }
-/* 	    $moreReplyButton.click(function() {
-	        location.reload();
-	    }); */
 	}
 /* ---------- 댓글 등록 ---------- */
 	function submitreplyHandler() {
@@ -534,23 +538,31 @@ button:hover {
 	    var $contenttextarea = $replyCard.find(".contenttextarea");
 	    if ($contenttextarea.length > 0) {
 	        $contenttextarea.remove();
-	    } else {
-	    	var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${memberid}">';
-	        addreplyreply += 		'<div>↳작성자: ${memberid}</div>';
-	        addreplyreply += 		'<div>';
-	        addreplyreply += 			'<textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent">↳@' + replyreplywriter + " " + '</textarea>';
-	        addreplyreply += 		'</div>';
-	        addreplyreply += 		'<div>';
-	        addreplyreply += 			'<button class="submitreplyreply">답글 저장</button>';
-	        addreplyreply += 		'</div>';
-	        addreplyreply += 	'</div>';
-	        $replyCard.append(addreplyreply);
-	        $(".submitreplyreply").click(submitreplyreplyHandler);
-	    }
-	}
+	    	}else {
+		    	var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${memberid}">';
+		        addreplyreply += 		'<div>↳작성자: ${memberid}</div>';
+		        addreplyreply += 		'<div>';
+		        addreplyreply += 			'<textarea rows="3" class="col-xl-12 replyContent" name="replyreplyContent">↳@' + replyreplywriter + " " + '</textarea>';
+		        addreplyreply += 		'</div>';
+		        addreplyreply += 		'<div>';
+		        addreplyreply += 			'<button class="submitreplyreply">답글 저장</button>';
+		        addreplyreply += 		'</div>';
+		        addreplyreply += 	'</div>';
+		        $replyCard.append(addreplyreply);
+		        $(".submitreplyreply").click(submitreplyreplyHandler);
+		    }
+		}
 	function submitreplyreplyHandler() {
+	    var $replyContentTextarea = $(this).parent().siblings().find(".replyContent");
+	    var replyreplyContent = $replyContentTextarea.val().trim();
+
+/*
+		if (replyreplyContent === "") {
+	        alert("내용을 입력해주세요.");
+	        return false; 
+	    }
+ */
 	    console.log("submitreplyreplyHandler");
-	    var replyreplyContent = $("[name=replyreplyContent]").val();
 	    var $replyCard = $(this).parents(".replyCard");
 	    $.ajax({
 	        type: "post",
@@ -578,15 +590,18 @@ button:hover {
 	                    if (result.length === 0) {
 	                        alert("답글이 없습니다.");
 	                    } else {
-	                    	for (var i = 0; i < result.length; i++) {
+	                        for (var i = 0; i < result.length; i++) {
 	                            var htmlVal =  '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '"><div class="updatewriter">작성자 : ' + result[i].memberId + '</div>'
-	                            	htmlVal += '<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
-	                            	htmlVal += '<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
-	                            	htmlVal += '<div class="groupbtn">'
-	                            	htmlVal +=		'<button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
-	                            	htmlVal += 		'<button class="insertreplyreply">답글달기</button>'
-	                            	htmlVal += '</div>'
+	                            htmlVal += '<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
+	                            htmlVal += '<div class "updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
+	                            htmlVal += '<div class="groupbtn">'
+	                            htmlVal +=		'<button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
+	                            htmlVal += 		'<button class="insertreplyreply">답글달기</button>'
+	                            htmlVal += '</div>'
 	                            $forAppendArea.append(htmlVal);
+	                            if(result[i].memberId ){
+	    		                    $(".testappend .card:last-child .deletereply").hide();
+	                            }
 	                        }
 	                        $(".insertreplyreply").click(insertreplyreplyHandler);
 	                    }
@@ -602,7 +617,6 @@ button:hover {
 	        },
 	        dataType: "json"
 	    });
-	    $replyCard.find(".insertreplyreply").click(insertreplyreplyHandler);
 	}
 </script>
 </body>
