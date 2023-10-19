@@ -9,4 +9,5 @@ public class ResumeWriteDto {
 	private String address;
 	private String title;
 	private String selfintroduction;
+	private String imageUrl;
 }

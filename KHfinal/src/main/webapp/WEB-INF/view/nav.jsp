@@ -730,7 +730,7 @@
                                             </li>
                                             <li>
                                                 <div class="box-double">
-                                                    <a href="#" class="link" data-rcmdsvc-galabel="연봉 검색 순위" target="_blank">
+                                                    <a href="#" class="link" data-rcmdsvc-galabel="연봉 검색 순위" target="_blank" >
                                                         <div class="ms-head">
                                                             <span class="bdgs">
                                                                 <span class="ut-bdg e">연봉 검색 순위</span>
@@ -1137,17 +1137,17 @@
                         <div class="tool">
                             <p class="tit">취업 성공 툴</p>
                             <ul class="menu">
-                                <li class="menu-item"><a href="# return false;"><img src="resources/images/자소서.png">자소서작성</a></li>
-                                <li class="menu-item"><a href="# return false;"><img src="resources/images/맞춤법.png">맞춤법검사</a></li>
-                                <li class="menu-item"><a href="# return false;"><img src="resources/images/글자수.png">글자수세기</a></li>
-                                <li class="menu-item"><a href="# return false;"><img src="resources/images/학점.png">학점계산기</a></li>
+                                <li class="menu-item"><a href="# return false;"><img src="<%=request.getContextPath()%>/resources/images/자소서.png">자소서작성</a></li>
+                                <li class="menu-item"><a href="# return false;"><img src="<%=request.getContextPath()%>/resources/images/맞춤법.png">맞춤법검사</a></li>
+                                <li class="menu-item"><a href="# return false;"><img src="<%=request.getContextPath()%>/resources/images/글자수.png">글자수세기</a></li>
+                                <li class="menu-item"><a href="# return false;"><img src="<%=request.getContextPath()%>/resources/images/학점.png">학점계산기</a></li>
                             </ul>
                         </div>
                         <hr>
                         <div class="rcmd">
                             <p class="tit">추천 서비스</p>
                             <div class="tags blind">
-                                <p><a href=" <%=request.getContextPath() %>/onpick" class="onpick"><img src="resources/images/check.svg" width="15px" height="15px"> 이직은 원픽</a></p>
+                                <p><a href=" <%=request.getContextPath()%>/onpick" class="onpick"><img src="<%=request.getContextPath()%>/resources/images/check.svg" width="15px" height="15px"> 이직은 원픽</a></p>
                                 <p><a href="# return false;"># 합격자소서</a></p>
                                 <p><a href="# return false;"># 인적성·면접후기</a></p>
                                 <p><a href="# return false;"># 공채달력</a></p>

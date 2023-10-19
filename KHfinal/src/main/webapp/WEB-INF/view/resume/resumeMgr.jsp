@@ -43,8 +43,8 @@
 	href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
 <!-- jQuery 스크립트 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<jsp:include page="../member/header.jsp"></jsp:include>
-<jsp:include page="resumeMgrSide.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/view/member/header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/view/resume/resumeMgrSide.jsp"></jsp:include>
 <style>
 #resumeMgrSide {
 	position: absolute;

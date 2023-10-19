@@ -79,10 +79,9 @@
 
 <script>   
 	let form = $("#infoForm");
+	/* ---------- 리스트로 ---------- */
 	$("#btn-board-list").on("click", function(e){
-		form.find("#bno").remove();
-		form.attr("action", "/jjapkorea/board/list");
-		form.submit();
+		window.history.back();
 	});
 	
 	$("#btn-board-update").click(function(){
@@ -96,7 +95,7 @@
 	            	console.log(response);
 	                if(response > 0){
 	                    alert("글 수정되었습니다.");
-	                    location.href = "${pageContext.request.contextPath}/board/list";
+	                    location.href = "${pageContext.request.contextPath}/board/get?bno=${dto.bno}";
 	                }else{
 	                    alert("글 수정에 실패했습니다.");
 	                }

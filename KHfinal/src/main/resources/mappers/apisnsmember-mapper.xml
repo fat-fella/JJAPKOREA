@@ -35,10 +35,12 @@
 
 	<insert id="signupSns" parameterType="kh.lclass.jjapkorea.swp.domain.APISnsMember">
 	  INSERT ALL
-	  INTO member (mid, mpw, naverid, googleid, kakaoid)
-	  VALUES (snsmid, #{mpw}, #{naverid}, #{googleid}, #{kakaoid})
+	  INTO member (mid, mpw, mtype, ENABLED, naverid, googleid, kakaoid)
+	  VALUES (snsmid, #{mpw}, 'ROLE_PERSON', '1', #{naverid}, #{googleid}, #{kakaoid})
 	  INTO person (mid, pemail, pphone, pname)
-	  VALUES (snsmid, #{email}, '010-1111-1111', COALESCE(#{nickname}, #{mname}, snsmid))
+	  VALUES (snsmid, #{email}, 
+	          '010-' || TO_CHAR(FLOOR(DBMS_RANDOM.VALUE(1000, 10000))) || '-' || TO_CHAR(FLOOR(DBMS_RANDOM.VALUE(1000, 10000))), 
+	          COALESCE(#{nickname}, #{mname}, snsmid))
 	  SELECT substr(#{email}, 1, instr(#{email}, '@', 1, 1) - 1) snsmid FROM DUAL
 	</insert>
 

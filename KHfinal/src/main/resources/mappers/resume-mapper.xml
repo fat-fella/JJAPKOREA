@@ -13,8 +13,8 @@
     	<selectKey keyProperty="resumeId" order="BEFORE" resultType="int">
 	        SELECT RESUME_SEQ.NEXTVAL FROM DUAL
 	    </selectKey>
-	    INSERT INTO RESUME (RESUME_ID, MID, ADDRESS, TITLE, SELFINTRODUCTION)
-	    VALUES (#{resumeId}, #{mid}, #{address}, #{title}, #{selfintroduction})
+	    INSERT INTO RESUME (RESUME_ID, MID, ADDRESS, TITLE, SELFINTRODUCTION, IMAGE_URL)
+	    VALUES (#{resumeId}, #{mid}, #{address}, #{title}, #{selfintroduction}, #{imageUrl})
 	</insert>
 	
 	<select id="getResumeById" resultType="resumeDto">
@@ -39,6 +39,6 @@
 	</select>
 	
 	<update id="updateResume" parameterType="resumeDto">
-		update resume set address = #{address}, selfintroduction = #{selfintroduction}, title = #{title}
+		update resume set address = #{address}, selfintroduction = #{selfintroduction}, title = #{title}, image_url = #{imageUrl}
 	</update>
 </mapper>

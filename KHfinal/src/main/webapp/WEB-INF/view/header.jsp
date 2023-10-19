@@ -167,7 +167,7 @@
 								<div class="lyRow row01">
 									<div class="lyCol col4">
 										<div class="colItem">
-											<strong class="titArea"><a href="#" class="tit">
+											<strong class="titArea"><a href="<%=request.getContextPath()%>/jobPostingList" class="tit">
 													채용정보<span class="spGnb"></span>
 												</a></strong>
 											<div class="listBx">
@@ -347,7 +347,7 @@
 					<ul class="serviceNav">
 						<!-- 메뉴 활성화 클래스 navFixed 마우스 오버시 active 클래스 추가 -->
 						<li id="gnbGi" class="navItem gi">
-							<a href="#" class="linkItem">
+							<a href="<%=request.getContextPath()%>/jobPostingList" class="linkItem">
 								<span class="spNav"><span class="txIr">채용정보</span></span>
 							</a>
 							<!-- // 채용정보 레이어 -->
@@ -1235,7 +1235,7 @@
 			</div>
 			<div class="bnr-marketing">
 				<a href="#" target="_blank">
-					<img src="//apple.contentsfeed.com/RealMedia/ads/Creatives/jobkorea/231017_snjobfair_mr/231017_snjobfair_260110.png"
+					<img src="<%=request.getContextPath()%>/resources/images/companylogo/companylogobn01.png"
 						border="0" alt="전남조선업도약센터 ">
 				</a>
 			</div>
