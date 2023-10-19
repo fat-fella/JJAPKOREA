@@ -76,9 +76,9 @@ public class MailSendService {
 			sbuffer.append("</div>");
 			
 			sbuffer.append("<div id='jpostInfo'>");
-			sbuffer.append("<form action='http://localhost:8090/jjapkorea/jobpostinginfo?jid=mailSendDto.getJid()' method='post'>");
+			sbuffer.append("<form action='${pageContext.request.contextPath}");
 			sbuffer.append("<br><br>");
-			sbuffer.append("<button type='button'>지원자 현황 보기</button>");
+			sbuffer.append("<button type='button'><a href='<%=request.getContextPath() %>/jobpostinginfo?jid=\"+mailSendDto.getJid()+\" method='post'>지원자 현황 보기</a></button>");
 			sbuffer.append("</form>");
 			sbuffer.append("</div>");
 			
