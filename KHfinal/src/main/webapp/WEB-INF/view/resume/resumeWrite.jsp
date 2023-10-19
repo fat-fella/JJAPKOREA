@@ -13,9 +13,12 @@
 <!-- 카카오 API : 주소 검색 -->
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'Noto Sans KR', Arial, sans-serif;
 	background-color: #f5f5f5;
 	margin: 0;
 	padding: 0;
@@ -61,15 +64,6 @@ body {
     font-size: 16px;
 }
 
-#dynamicHeader span:not(:last-child)::after {
-  content: "\00a0"; /* Non-breaking space character */
-}
-
-/* 띄어쓰기 문자의 색상 변경 */
-#dynamicHeader span {
-  color: #007bff;
-}
-
 .readSumWrap {
     width: 50%;
     margin: 0 auto;
@@ -82,6 +76,15 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+#dynamicHeader span:not(:last-child)::after {
+  content: "\00a0"; /* Non-breaking space character */
+}
+
+/* 띄어쓰기 문자의 색상 변경 */
+#dynamicHeader span {
+  color: #007bff;
 }
 
 .img_table {
@@ -209,9 +212,10 @@ body {
 		</div>
 	</header>
 	<div class="readSumWrap clear">
+	<br><br>
 	<h1 class="h1" id="dynamicHeader">&nbsp;&nbsp;&nbsp;님&nbsp;의&nbsp;&nbsp;&nbsp;이&nbsp;력&nbsp;서</h1>
 	<script>
-		const name = '"${selectOnePerson.pname}"'; // 이름 예시
+		const name = "${selectOnePerson.pname}";
 		
 		// 헤더 요소 선택
 		const header = document.getElementById("dynamicHeader");
@@ -524,8 +528,7 @@ body {
 							style="border: 2px solid black; background: transparent; width: 530px; height: 530px; resize: none;"></textarea>
 					</div>
 				</section>
-				<br>
-
+				<br><br>
 				<div style="text-align: center;">
 					<button id="registerButton">등록</button>
 				</div>
@@ -824,7 +827,7 @@ body {
 								style="border: 2px solid black; background: transparent; width: 530px; height: 530px; resize: none;">${resume.selfintroduction}</textarea>
 						</div>
 					</section>
-					<br>
+					<br><br>
 					<div style="text-align: center;">
 						<button id="registerButton">수정</button>
 					</div>
@@ -832,6 +835,7 @@ body {
 			</form>
 		</c:otherwise>
 	</c:choose>
+	<br><br>
 	</div>
 	<br><br>
 	<script>
