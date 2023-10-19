@@ -54,9 +54,5 @@
 </style>
 </head>
 <body>
-	<div id="resumeMgrSide">
-		<jsp:include page="resumeWrite.jsp"></jsp:include>
-	</div>
-
 </body>
 </html>
