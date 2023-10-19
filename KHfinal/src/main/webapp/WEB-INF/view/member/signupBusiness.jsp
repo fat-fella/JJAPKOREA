@@ -216,48 +216,21 @@
 						<h4>기업로고</h4>
 						<div class="row certificate_num">
 							<div class="col_1">
-								<input type="file">
+								<input type="file" accept="image/*" id="logoimg">
 								<input type="button" value="서버로 전송" style="width:80px;">
 
 							</div>
-							<button type="button"
-								class="button layer-popup-button devCorpCertInfo">사업자등록번호
-								입력가이드</button>
 							<div class="layer-popup devCorpCertInfoPopup">
-								<div class="layer-popup-dim"></div>
 								<div class="layer-popup-content">
-									<button type="button"
-										class="layer-popup-close devCorpCertInfoCls">
-										<span class="skip">닫기</span>
-									</button>
-									<p class="layer-popup-title">사업자등록증명원 발급번호란?</p>
-									<p class="layer-popup-text">
-										사업자등록증명원 <em class="point-color">최상단 좌측 문서 고유 발급번호</em>입니다.
-									</p>
+									
 									<div class="layer-popup-table">
 										<table class="layer-table">
 											<colgroup>
 												<col class="col1">
 												<col class="col2">
 											</colgroup>
-											<tbody>
-												<tr>
-													<td class="cell-title">발급번호</td>
-													<td class="cell-item" rowspan="2"><strong>사업자등록증명</strong><br>(부가가치세
-														면세사업자)</td>
-												</tr>
-												<tr>
-													<td class="cell-value">0000-000-0000-000</td>
-												</tr>
-											</tbody>
 										</table>
 									</div>
-									<p class="layer-popup-text">
-										기업인증을 위해서는 신청일 기준 90일 이내 발급한<br>사업자등록증명원의 발급번호가 필요합니다.
-									</p>
-									<a
-										href="https://www.gov.kr/mw/AA020InfoCappView.do?HighCtgCD=A09002&amp;CappBizCD=12100000016&amp;tp_seq=01"
-										target="_blank" class="layer-popup-link">사업자등록증명원 발급하기</a>
 								</div>
 							</div>
 							<div class="col_2">
@@ -385,7 +358,10 @@
 						</div>
 					</div>
 					<h4 class="skip">사이트 이용 정보</h4>
-					<!-- 개인정보 유효기간 선택 -->
+					<!-- 기업 로고 업로드 -->
+					<script>
+						var 
+					</script>
 
 					
 					<script type="text/javascript">
