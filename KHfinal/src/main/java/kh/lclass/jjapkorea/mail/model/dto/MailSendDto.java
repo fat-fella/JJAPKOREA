@@ -7,4 +7,5 @@ public class MailSendDto {
 	private String mid;
 	private String jid;
 	private String bizname;
+	private String retitle;
 }

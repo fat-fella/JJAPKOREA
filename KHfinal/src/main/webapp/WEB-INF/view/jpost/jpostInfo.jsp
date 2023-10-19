@@ -16,7 +16,7 @@
 	function sendEmail(jid) {
 		var mid = "${mid}";
 		var bizname = "${jobPosting.BIZNAME}";
-		
+		var retitle = "${jobPosting.RE_TITLE}";
 
 		$.ajax({
 			url : "${pageContext.request.contextPath}/person/noticeMail",
@@ -25,7 +25,8 @@
 			data : JSON.stringify({
 				jid : jid,
 				mid : mid,
-				bizname : bizname
+				bizname : bizname,
+				retitle : retitle
 			// 문자열로 변환하여 보냄
 			}), 
 			success : function(data) {
