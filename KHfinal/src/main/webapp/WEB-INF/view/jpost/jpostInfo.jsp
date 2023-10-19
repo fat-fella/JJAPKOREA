@@ -250,7 +250,7 @@
                 <div class="option">
                     <div>
                         <form onsubmit="searchPlaces(); return false;">
-                            키워드 : <input type="text" id="keyword" size="15" placeholder="기업명 입력!"> 
+                            키워드 : <input type="text" value="${jobPosting.BIZNAME}" id="keyword" size="15" placeholder="기업명 입력!"> 
                             <button type="submit">검색하기</button>
                         </form>
                     </div>
