@@ -1196,7 +1196,7 @@
 					href="https://yellow.contentsfeed.com/RealMedia/ads/click_lx.ads/jobkorea/main/L13/392175146/Right3/jobkorea/230421_jnshipjump_mr_s/230413_jklotte_mr.html/41643134773253614c45454143545249"
 					target="_blank">
 					<img
-						src="//apple.contentsfeed.com/RealMedia/ads/Creatives/jobkorea/230421_jnshipjump_mr_s/230510_jnshipjump_260_90.png"
+						src="<%=request.getContextPath()%>/resources/images/companylogo/companylogobn01.png"
 						border="0" alt="전남조선업도약센터 ">
 				</a>
 			</div>

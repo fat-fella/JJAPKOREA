@@ -170,15 +170,18 @@
   margin-top: 30px;
   color: rgba(54, 59, 59, 0.878);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
+  font-family: Pretendard Variable,Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,Helvetica Neue,Segoe UI,Apple SD Gothic Neo,Noto Sans KR,Malgun Gothic,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,sans-serif;
 }
 /*채용공고 내 채용정보*/
 .recruitInfo{
   text-align: left;
   margin-left: 30px;
-  font-size: 16px;
+  font-size: 20px;
   margin-right: 30px;
   height: 72px;
+  font-weight: 500;
+  font-family: Pretendard Variable,Pretendard,-apple-system,BlinkMacSystemFont,system-ui,Roboto,Helvetica Neue,Segoe UI,Apple SD Gothic Neo,Noto Sans KR,Malgun Gothic,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,sans-serif;
 }
 /*즉시지원 버튼 있는 칸 지원기간*/
 .applydateWithApply{
@@ -324,4 +327,29 @@
   overflow: hidden;
   border: 0;
   clip: rect(1px,1px,1px,1px);
+}
+
+/* 원픽 */
+
+.box-tit {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.box {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.box-bot {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-txt, .info-gray {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
