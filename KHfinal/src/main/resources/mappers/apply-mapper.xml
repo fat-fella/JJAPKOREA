@@ -22,7 +22,7 @@
 	   WHERE jid = #{jid}
 	</select>
 	
-	<select id="getResumeById" resultType="int">
+	<select id="getResumeById" resultType="java.lang.Integer">
 		select resume_id from resume where mid = #{mid}
 	</select>
 	

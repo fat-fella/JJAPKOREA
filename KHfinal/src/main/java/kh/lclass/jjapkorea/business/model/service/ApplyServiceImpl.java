@@ -29,7 +29,7 @@ public class ApplyServiceImpl implements ApplyService {
 	}
 	
 	@Override
-	public int getResumeById(String mid) throws Exception {
+	public Integer getResumeById(String mid) throws Exception {
 		return applyDao.getResumeById(mid);
 	}
 	

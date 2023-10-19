@@ -17,27 +17,36 @@
 		var mid = "${mid}";
 		var bizname = "${jobPosting.BIZNAME}";
 		var retitle = "${jobPosting.RE_TITLE}";
-
-		$.ajax({
-			url : "${pageContext.request.contextPath}/person/noticeMail",
-			type : "post",
-			 contentType : "application/json; charset=utf-8", // JSON 형식으로 데이터 전송
-			data : JSON.stringify({
-				jid : jid,
-				mid : mid,
-				bizname : bizname,
-				retitle : retitle
-			// 문자열로 변환하여 보냄
-			}), 
-			success : function(data) {
-				
-				alert("[지원완료] 이메일 전송되었습니다.")
-			}/* ,
-			error : function() {
-				alert("에러가 발생하였습니다. 여러분의 잘못이 아니니 다음에 다시 시도해주세요.");
-			},// error */
-		}); // ajax
-
+		
+		var resumeId = "${resumeId}";
+		
+		if (mid.trim() === "" || mid.trim() === "anonymousUser") {
+	        alert("로그인 후 이용해주세요.");
+	        window.location.href = '${pageContext.request.contextPath}/login/';
+		} else if(resumeId === null || resumeId === "") {
+			alert("이력서 등록 후 이용해주세요.");
+			window.location.href = '${pageContext.request.contextPath}/person/resume/write';
+	    } else {
+	    	$.ajax({
+				url : "${pageContext.request.contextPath}/person/noticeMail",
+				type : "post",
+				contentType : "application/json; charset=utf-8", // JSON 형식으로 데이터 전송
+				data : JSON.stringify({
+					jid : jid,
+					mid : mid,
+					bizname : bizname,
+					retitle : retitle
+				// 문자열로 변환하여 보냄
+				}), 
+				success : function(data) {
+					
+					alert("[지원완료] 이메일 전송되었습니다.")
+				}/* ,
+				error : function() {
+					alert("에러가 발생하였습니다. 여러분의 잘못이 아니니 다음에 다시 시도해주세요.");
+				},// error */
+			}); // ajax
+	    }
 	}
 </script>
 <!-- ------- 지도 STYLE ------- -->

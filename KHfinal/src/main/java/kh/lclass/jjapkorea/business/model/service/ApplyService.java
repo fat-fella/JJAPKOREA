@@ -8,6 +8,6 @@ public interface ApplyService {
 	int insertApply(ApplyDto applyDto) throws Exception;
 	List<ApplyDto> getApplyById(int resumeId) throws Exception;
 	List<ApplyDto> getApplyByJid(String jid) throws Exception;
-	int getResumeById(String mid) throws Exception;
+	Integer getResumeById(String mid) throws Exception;
 	int deleteApply(int resumeId) throws Exception;
 }

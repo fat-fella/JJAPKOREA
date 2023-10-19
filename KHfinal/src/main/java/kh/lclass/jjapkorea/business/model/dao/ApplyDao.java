@@ -25,7 +25,7 @@ public class ApplyDao {
 		return sqlSession.selectList("apply.getApplyByJid", jid);
 	}
 	
-	public int getResumeById(String mid) throws Exception {
+	public Integer getResumeById(String mid) throws Exception {
 		return sqlSession.selectOne("apply.getResumeById", mid);
 	}
 	
