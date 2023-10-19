@@ -26,7 +26,7 @@
     </insert>
     
 	<select id="getJobPostingsWithBusinessInfo" resultType="java.util.Map">
-	    select b.bizname, b.brno, i.* from info i join business b on i.mid = b.mid order by i.post_date desc
+	    select b.bizname, b.brno, TO_CHAR(b.LOGO_IMG) as LOGO_IMG, i.* from info i join business b on i.mid = b.mid order by i.post_date desc
 	</select>
 
 </mapper>

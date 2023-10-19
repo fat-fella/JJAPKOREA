@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="admin">
+	
+	<!-- 검색 조건문 -->
+	<sql id="criteria">
+		<trim prefix="AND (" suffix=")" prefixOverrides="OR">
+			<foreach collection="typeArr" item="type">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'I'.toString()">
+							mid like '%'||#{keyword}||'%' 
+						</when>
+						<when test="type == 'N'.toString()">
+							pname like '%'||#{keyword}||'%' 
+						</when>
+						<when test="type == 'B'.toString()">
+							bname like '%'||#{keyword}||'%' 
+						</when>
+						<when test="type == 'A'.toString()">
+							mtype like '%'||#{keyword}||'%' 
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	<select id="personList" resultType="AdminDto">
+		<![CDATA[
+			select rownum, mid, pname, pemail, pphone, enabled, mtype from 
+			(select rownum as rn, mid, pname, pemail, pphone, enabled, mtype
+			from member m join person u using (mid)
+			where rownum <= #{pageNum} * #{amount} and enabled = 1 and mtype = 'ROLE_PERSON'
+		]]>
+			<if test="keyword != null">
+				<include refid="criteria"></include> 
+			</if>
+		<![CDATA[        
+			    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="businessList" resultType="AdminDto">
+		<![CDATA[
+			select rownum, mid, bizname, baddress, bname, btel, bemail, enabled, mtype from 
+			(select rownum as rn, mid, bizname, baddress, bname, btel, bemail, enabled, mtype
+			from member m join business u using (mid)
+			where rownum <= #{pageNum} * #{amount} and enabled = 1 and mtype = 'ROLE_BUSINESS'
+		]]>
+			<if test="keyword != null">
+				<include refid="criteria"></include> 
+			</if>
+		<![CDATA[        
+			    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="suspendedPersonList" resultType="AdminDto">
+		<![CDATA[
+			select rownum, mid, pname, pemail, pphone, enabled, mtype from 
+			(select rownum as rn, mid, pname, pemail, pphone, enabled, mtype
+			from member m join person u using (mid)
+			where rownum <= #{pageNum} * #{amount} and enabled = 0 and mtype = 'ROLE_PERSON'
+		]]>
+			<if test="keyword != null">
+				<include refid="criteria"></include> 
+			</if>
+		<![CDATA[
+			    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="suspendedBusinessList" resultType="AdminDto">
+		<![CDATA[
+			select rownum, mid, bizname, baddress, bname, btel, bemail, enabled, mtype from 
+			(select rownum as rn, mid, bizname, baddress, bname, btel, bemail, enabled, mtype
+			from member m join business u using (mid)
+			where rownum <= #{pageNum} * #{amount} and enabled = 0 and mtype = 'ROLE_BUSINESS'
+		]]>
+			<if test="keyword != null">
+				<include refid="criteria"></include> 
+			</if>
+		<![CDATA[
+			    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="idSearch" parameterType="string" resultType="string">
+		select mtype from member
+		where mid = #{mid}
+	</select>
+	
+	<update id="suspendedActive" parameterType="string">
+		update member set enabled = 0
+		where mid = #{mid}
+	</update>
+	
+	<update id="suspendedClear" parameterType="string">
+		update member set enabled = 1
+		where mid = #{mid}
+	</update>
+	<!-- 
+	<select id="adminList" resultType="AdminDto">
+		<![CDATA[
+			select rownum, mid, pname, pemail, pphone, enabled, mtype from 
+			(select rownum as rn, mid, pname, pemail, pphone, enabled, mtype
+			from member m join person u using (mid)
+			where rownum <= #{pageNum} * #{amount} and enabled = 1 and mtype = 'ROLE_ADMIN'
+		]]>
+			<if test="keyword != null">
+				<include refid="criteria"></include> 
+			</if>
+		<![CDATA[        
+			    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	 -->
+	<select id="getTotal" resultType="_int">
+		select count(*) from member m
+		where mtype != 'ROLE_ADMIN'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	
+	<select id="getPersonTotal" resultType="_int">
+		select count(*) from member m join person u using (mid)
+		where mtype = 'ROLE_PERSON'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	
+	<select id="getBusinessTotal" resultType="_int">
+		select count(*) from member m join business b using (mid)
+		where mtype = 'ROLE_BUSINESS'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+
+	<select id="getTotalActive" resultType="_int">
+		select count(*) from member m
+		where enabled = 1 
+		and mtype != 'ROLE_PERSON'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	
+	<select id="getPersonTotalActive" resultType="_int">
+		select count(*) from member m join person u using (mid)
+		where enabled = 1 
+		and mtype = 'ROLE_PERSON'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	
+	<select id="getBusinessTotalActive" resultType="_int">
+		select count(*) from member m join business b using (mid)
+		where enabled = 1 
+		and mtype = 'ROLE_BUSINESS'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+
+	<select id="getTotalSuspended" resultType="_int">
+		select count(*) from member m left join person u using (mid) left join business b using (mid)
+		where enabled = 0
+		and mtype != 'ROLE_ADMIN'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+
+	<select id="getPersonTotalSuspended" resultType="_int">
+		select count(*) from member m join person u using (mid)
+		where enabled = 0
+		and mtype = 'ROLE_PERSON'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	
+	<select id="getBusinessTotalSuspended" resultType="_int">
+		select count(*) from member m join business b using (mid)
+		where enabled = 0
+		and mtype = 'ROLE_BUSINESS'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	
+	<!-- 
+	<select id="declarationWait" resultType="DeclarationDto">
+		<![CDATA[
+			select rownum, mid, pname, pemail, pphone, enabled, mtype from 
+			(select rownum as rn, mid, pname, pemail, pphone, enabled, mtype
+			from member m join person u using (mid)
+			where rownum <= #{pageNum} * #{amount} and enabled = 1 and mtype = 'ROLE_PERSON'
+		]]>
+			<if test="keyword != null">
+				<include refid="criteria"></include> 
+			</if>
+		<![CDATA[        
+			    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	 -->
+	
+	<select id="adminMypage" parameterType="string" resultType="AdminDto">
+		select * from member m
+		join person p using (mid)
+		where mid = #{adminId}
+	</select>
+	
+	<!-- 마이페이지 업데이트 -->
+	<update id="update" parameterType="AdminDto">
+		update person set pname=#{pname}, pemail=#{pemail}, pphone=#{pphone}
+		where mid = #{mid}
+	</update>
+	
+	<!-- 
+	<select id="getTotalAdmin" resultType="_int">
+		select count(*) from member m join person u using (mid) join business b using (mid)
+		where mtype = 'ROLE_ADMIN'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	 -->
+</mapper>
