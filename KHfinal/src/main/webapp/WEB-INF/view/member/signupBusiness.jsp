@@ -217,7 +217,7 @@
 						<div class="row certificate_num">
 							<div class="col_1">
 								<input type="file" accept="image/*" id="logoimg">
-								<input type="button" value="서버로 전송" style="width:80px;">
+								<input type="button" value="서버로 전송" style="width:80px;" onclick="uploadFile()">
 
 							</div>
 							<div class="layer-popup devCorpCertInfoPopup">
@@ -234,7 +234,7 @@
 								</div>
 							</div>
 							<div class="col_2">
-								<input type="text" name="CRTFCT_Issue_No" id="CRTFCT_Issue_No"
+								<input type="text" name="logoImg" id="CRTFCT_Issue_No"
 									class="mbr_name dev-corp-cert CRTFCT_Issue_No" maxlength="20"
 									value="">
 								<input type="hidden" id="CRTFCT_Issue_No1"
@@ -359,9 +359,7 @@
 					</div>
 					<h4 class="skip">사이트 이용 정보</h4>
 					<!-- 기업 로고 업로드 -->
-					<script>
-						var 
-					</script>
+					
 
 					
 					<script type="text/javascript">
@@ -385,6 +383,36 @@
 					</div>
 
 				</form>
+				
+				
+								<script>
+
+					function uploadFile(){
+						
+						var formData = new FormData();
+						formData.append('upload', logoimg.files[0]);
+						
+						fetch('<%=request.getContextPath()%>/image/upload', {
+							method: 'POST',		
+							body: formData
+						})
+						.then(response => response.json())
+						.then(data => {
+							var imageUrl = data.url;
+							var imageUrlInput = document.getElementById('CRTFCT_Issue_No');
+							imageUrlInput.src = imageUrl;
+							
+							alert("파일 전송 완료");
+							
+							document.getElementById('CRTFCT_Issue_No').value = imageUrl;
+						})
+						.catch(err => console.error('Error uploading image: ', err));
+						
+						
+						
+						
+					}
+				</script>
 			</fieldset>
 			
 
