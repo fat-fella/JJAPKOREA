@@ -56,6 +56,7 @@ public class ResumeWriteController {
 		if (!resumeWriteDtos.isEmpty()) {
 			// 이미 있는 경우: 업데이트
 			resumeId = resumeWriteDtos.get(0).getResumeId();
+			resumeWriteDto.setMid(mid);
 			resumeWriteService.updateResume(resumeWriteDto);
 
 			// 기존 데이터 삭제

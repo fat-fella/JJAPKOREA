@@ -70,57 +70,43 @@ body {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-	border-bottom: 1px solid #000;
-	padding-bottom: 20px;
+h3 {
+	border-bottom: 1px solid #ADADAD;
+	padding-bottom: 30px;
 }
 
 ul.apply-list {
-	list-style-type: none;
 	padding: 0;
+	list-style-type: none;
 }
 
 ul.apply-list li {
-	margin-bottom: 10px;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
+	margin-bottom: 20px;
 }
 
 .apply-box {
-	border: 1px solid #ddd;
-	padding: 10px;
-	border-radius: 5px;
 	display: flex;
 	justify-content: space-between;
-	text-align: center;
-	margin: auto;
+	border-bottom: 1px solid #ADADAD;
+	padding-bottom: 20px;
+}
+
+.title {
+	text-decoration: none;
+	color: #000;
 }
 
 .btn_ud {
-	background-color: rgba(245, 245, 245);
-	border: 2px solid rgba(245, 245, 245);
-	color: #212529;
-	padding: 10px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	transition-duration: 0.4s;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
 	cursor: pointer;
-	border-radius: 12px;
+	box-sizing: border-box;
 }
 
 .btn_ud:hover {
-	background-color: #212529;
-	color: white;
-}
-
-.btn_ud:active {
-	background-color: #3e8e41;
-	box-shadow: 0 5px #666;
-	transform: translateY(4px);
+	background-color: #0059B8;
 }
 </style>
 </head>
@@ -148,23 +134,26 @@ ul.apply-list li {
 	</header>
 	<section>
 		<div class="readSumWrap clear">
-			<h1 class="h1">${selectOnePerson.pname}님의 입사지원 현황입니다.</h1>
-		</div>
-		<div>
-			<ul class="apply-list">
-				<c:forEach var="item" items="">
-					<li>
-						<div class="apply-box">
-							<a
-								href="<c:url value='/jobpostinginfo'><c:param name='jid' value=''/></c:url>"
-								class="title"></a>
-							<div class="">
-								<button type="button" class="btn_ud" onclick="remove('')">삭제</button>
+			<h3>
+				<i>${selectOnePerson.pname}</i>&nbsp;&nbsp;님의 입사지원 현황입니다.
+			</h3>
+			<div>
+				<ul class="apply-list">
+					<c:forEach var="item" items="${applyList}">
+						<li>
+							<div class="apply-box">
+								<a
+									href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/>${item.RE_TITLE}</c:url>"
+									class="title">${item.RE_TITLE}&nbsp;&nbsp;&nbsp;&nbsp;<i><b>D-${item.DDAY}</b></i></a>
+								<div>
+									<button type="button" class="btn_ud"
+										onclick="remove('${item.JID}')">삭제</button>
+								</div>
 							</div>
-						</div>
-					</li>
-				</c:forEach>
-			</ul>
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
 		</div>
 	</section>
 </body>

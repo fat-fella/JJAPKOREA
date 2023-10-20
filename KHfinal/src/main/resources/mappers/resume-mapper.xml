@@ -39,6 +39,6 @@
 	</select>
 	
 	<update id="updateResume" parameterType="resumeDto">
-		update resume set address = #{address}, selfintroduction = #{selfintroduction}, title = #{title}, image_url = #{imageUrl}
+		update resume set address = #{address}, selfintroduction = #{selfintroduction}, title = #{title}, image_url = #{imageUrl} where mid = #{mid}
 	</update>
 </mapper>
