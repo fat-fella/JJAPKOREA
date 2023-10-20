@@ -121,11 +121,11 @@ ul.apply-list li {
 
 .pagination a {
 	text-decoration: none;
-	color: #800080;
+	color: #007bff;
 }
 
 .pagination span {
-	color: #800080;
+	color: #007bff;
 }
 </style>
 </head>
@@ -154,7 +154,7 @@ ul.apply-list li {
 	<section>
 		<div class="readSumWrap clear">
 			<h3>
-				<i>${selectOnePerson.pname}</i>&nbsp;&nbsp;님의 입사지원 현황입니다.
+				<i style="color: #007bff;">${selectOnePerson.pname}</i>&nbsp;&nbsp;님의 입사지원 현황입니다.
 			</h3>
 			<div>
 				<ul class="apply-list">
@@ -169,11 +169,11 @@ ul.apply-list li {
 									<a
 										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/>${item.RE_TITLE}</c:url>"
 										class="title">${item.RE_TITLE}
-										&nbsp;&nbsp;&nbsp;&nbsp;<i><b>D-${item.DDAY}</b></i>
+										&nbsp;&nbsp;&nbsp;&nbsp;<i style="color: #007bff;"><b>D-${item.DDAY}</b></i>
 									</a>
 									<div>
 										<button type="button" class="btn_ud"
-											onclick="remove('${item.JID}')">삭제</button>
+											onclick="cancel('${item.JID}')">취소</button>
 									</div>
 								</div>
 							</li>
@@ -261,5 +261,21 @@ ul.apply-list li {
 			</div>
 		</div>
 	</section>
+	<script>
+		function cancel(jid){
+			$.ajax({
+				type :'POST',
+				url:'${pageContext.request.contextPath}/person/apply/list',
+				data: {jid : jid},
+				success: function(){
+					alert("입사지원이 취소되었습니다.");
+					window.location.href = "${pageContext.request.contextPath}/person/apply/list";
+				},
+				error: function () {
+	                alert("에러 혹은 다른 오류 발생");
+	            }
+			});
+		};
+	</script>
 </body>
 </html>
