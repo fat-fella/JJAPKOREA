@@ -1806,7 +1806,7 @@
                     </label>
                 </div>
                 <div class="user-status-title">
-                        <h1><a href="<%=request.getContextPath()%>/person/resume/write"><strong class="company">${workperiod}</strong></a>에서 일하고 있어요 💻</h1>
+                        <h1><a href="<%=request.getContextPath()%>/person/resume/write"><strong class="company">${workPeriod}</strong></a>에서 일하고 있어요 💻</h1>
 
                 </div>
                 <div class="my-status-box">
@@ -1912,7 +1912,7 @@
 
 <div class="topContent" id="dev-onepick">
     <div class="topHdWrap">
-        <h2 class="top_hd_2">${mid}님께 딱! 맞는 원픽 공고</h2>
+        <h2 class="top_hd_2">${mid}${workperiod}님께 딱! 맞는 원픽 공고</h2>
     </div>
 
     <div class="swiper celebrate_my swiper-container-horizontal" style="padding: ">

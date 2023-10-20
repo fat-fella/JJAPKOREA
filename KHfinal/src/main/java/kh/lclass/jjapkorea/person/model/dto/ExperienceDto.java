@@ -9,4 +9,5 @@ public class ExperienceDto {
 	private String workPeriod;
 	private String workPlace;
 	private String workDetails;
+	private String mid;
 }
