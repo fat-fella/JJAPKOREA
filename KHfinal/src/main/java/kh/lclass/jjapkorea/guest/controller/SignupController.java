@@ -43,7 +43,6 @@ import kh.lclass.jjapkorea.guest.model.service.MemberService;
 import kh.lclass.jjapkorea.swp.auth.SNSLogin;
 import kh.lclass.jjapkorea.swp.auth.SnsValue;
 import kh.lclass.jjapkorea.swp.domain.APISnsMember;
-import kh.lclass.jjapkorea.swp.dto.APISnsLoginDTO;
 import kh.lclass.jjapkorea.swp.dto.APISnsSignUpDTO;
 import kh.lclass.jjapkorea.swp.interceptor.APISnsSessionNames;
 import kh.lclass.jjapkorea.swp.service.APISnsMemberService;

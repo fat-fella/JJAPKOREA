@@ -12,53 +12,60 @@
 <script>
 	console.log("${jobPosting}");
 	
-	// 이메일 보내기 
+	// 초기에 resumeId를 가져오기 위해 페이지 로드 시 실행
+	var applyId = "${applyId}";
+
+	// 업데이트된 resumeId를 받아와서 사용하는 함수
+	function updateApplyId(newApplyId) {
+		applyId = newApplyId;
+	}
+
+	// 이메일 보내기 함수
 	function sendEmail(jid) {
-		var mid = "${mid}";
-		var bizname = "${jobPosting.BIZNAME}";
-		var retitle = "${jobPosting.RE_TITLE}";
-		
-		var resumeId = "${resumeId}";
-		var applyId = "${applyId}";
-		
-		if (mid.trim() === "" || mid.trim() === "anonymousUser") {
+	    var mid = "${mid}";
+	    var bizname = "${jobPosting.BIZNAME}";
+	    var retitle = "${jobPosting.RE_TITLE}";
+	    
+	    var resumeId = "${resumeId}";
+
+	    if (mid.trim() === "" || mid.trim() === "anonymousUser") {
 	        alert("로그인 후 이용해주세요.");
 	        window.location.href = '${pageContext.request.contextPath}/login/';
-		} else if(resumeId === null || resumeId === "") {
-			alert("이력서 등록 후 이용해주세요.");
-			window.location.href = '${pageContext.request.contextPath}/person/resume/write';
-		} else if(applyId !== null && applyId !== ""){
-			alert("이미 지원한 채용 공고입니다.");
+	    } else if (resumeId === null || resumeId === "") {
+	        alert("이력서 등록 후 이용해주세요.");
+	        window.location.href = '${pageContext.request.contextPath}/person/resume/write';
+	    } else if(applyId !== null && applyId !== ""){
+				alert("이미 지원한 채용 공고입니다.");
 	    } else {
-	    	var dataToSend = {
-    		    jid: jid,
-    		    mid: mid,
-    		    bizname: bizname,
-    		    retitle: retitle,
-    		    resumeId: resumeId
-    		};
-	    	$.ajax({
-				url : "${pageContext.request.contextPath}/person/noticeMail",
-				type : "post",
-				contentType : "application/json; charset=utf-8", // JSON 형식으로 데이터 전송
-				data : JSON.stringify(dataToSend),
-				// 문자열로 변환하여 보냄
-				success : function(data) {
-					alert("[지원 완료] 이메일이 전송되었습니다.");
-					// data 변수에 서버에서 반환된 텍스트 데이터(applyId)가 저장됨
-					applyId = data;
-				},
-			    error: function (xhr, status, error) {
-			        if (xhr.status === 500) {
-			            // 서버에서 에러 응답을 받았을 때 처리
-			            var errorMessage = xhr.responseText;
-			            alert("에러 발생: " + errorMessage);
-			        } else {
-			            // 다른 오류 처리
-			            alert("다른 오류 발생: " + error);
-			        }
-			    }
-			}); // ajax
+	        var dataToSend = {
+	            jid: jid,
+	            mid: mid,
+	            bizname: bizname,
+	            retitle: retitle,
+	            resumeId: resumeId
+	        };
+	        $.ajax({
+	            url: "${pageContext.request.contextPath}/person/noticeMail",
+	            type: "post",
+	            contentType: "application/json; charset=utf-8", // JSON 형식으로 데이터 전송
+	            data: JSON.stringify(dataToSend),
+	            success: function (data) {
+	                alert("[지원 완료] 이메일이 전송되었습니다.");
+
+	                // 업데이트된 applyId를 함수로 전달
+	                updateApplyId(data);
+	            },
+	            error: function (xhr, status, error) {
+	                if (xhr.status === 500) {
+	                    // 서버에서 에러 응답을 받았을 때 처리
+	                    var errorMessage = xhr.responseText;
+	                    alert("에러 발생: " + errorMessage);
+	                } else {
+	                    // 다른 오류 처리
+	                    alert("다른 오류 발생: " + error);
+	                }
+	            }
+	        }); // ajax
 	    }
 	}
 </script>
