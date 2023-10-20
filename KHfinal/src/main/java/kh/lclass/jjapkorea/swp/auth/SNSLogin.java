@@ -1,9 +1,5 @@
 package kh.lclass.jjapkorea.swp.auth;
 
-import java.util.Iterator;
-
-import org.apache.commons.lang3.StringUtils;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.scribejava.core.builder.ServiceBuilder;
