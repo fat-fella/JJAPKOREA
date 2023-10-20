@@ -4,6 +4,6 @@ import kh.lclass.jjapkorea.person.model.dto.ExperienceDto;
 
 public interface MyPageService {
 	
-	public String getByWorkperiod(String mid);
+	public String getByWorkplace(String mid);
 	
 }

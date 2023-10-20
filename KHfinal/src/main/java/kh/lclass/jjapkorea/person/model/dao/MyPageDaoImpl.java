@@ -18,13 +18,13 @@ public class MyPageDaoImpl implements MyPageDao {
 	private SqlSession session;
 
 	private static final String EXPE = "experience";
-	private static final String GET_BY_WORK_PERIOD = EXPE + ".getByWorkperiod";
+	private static final String GET_BY_WORK_PLACE = EXPE + ".getByWorkplace";
 
 	
 	@Override
-	public String getByWorkperiod (String mid) {
+	public String getByWorkplace (String mid) {
 		System.out.println(" [mj]  경력확인 [1] mid : " +  mid);
-		return session.selectOne(GET_BY_WORK_PERIOD, mid);
+		return session.selectOne(GET_BY_WORK_PLACE, mid);
 	}
 
 

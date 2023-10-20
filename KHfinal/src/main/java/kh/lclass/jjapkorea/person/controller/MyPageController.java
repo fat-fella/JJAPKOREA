@@ -47,14 +47,14 @@ public class MyPageController {
 		String mid = (String) model.getAttribute("mid");
 		List<Map<String, Object>> scrapList = scrapService.getJobPostingsWithScrapBusinessInfo(mid);
 		
-		//String workPeriod = (String) model.getAttribute("workPeriod");
-		String workPeriod = myPageService.getByWorkperiod(mid);
+		//String workPlace = (String) model.getAttribute("workPlace");
+		String workPlace = myPageService.getByWorkplace(mid);
 		
 		
-	    System.out.println("[mj] 여기 들어오나요? 1번 workPeriod : " + workPeriod);
+	    System.out.println("[mj] 여기 들어오나요? 1번 workPlace : " + workPlace);
 	    System.out.println("[mj] 여기 들어오나요? 1번 mid : " + mid);
 
-	    model.addAttribute("workPeriod", workPeriod);
+	    model.addAttribute("workPlace", workPlace);
 		model.addAttribute("scrapList", scrapList);
 		return "member/myPage";
 	}
@@ -98,7 +98,7 @@ public class MyPageController {
 
 	@GetMapping("/infoModifyPerson")
 	public String infoModifyPerson(HttpSession session) throws Exception {
-	    String workPerio = (String) session.getAttribute("workPerio");
+	    String workPlace = (String) session.getAttribute("workplace");
 		return "member/infoModifyPerson";
 	}
 

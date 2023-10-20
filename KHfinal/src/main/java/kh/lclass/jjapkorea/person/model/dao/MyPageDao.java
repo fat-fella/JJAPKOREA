@@ -10,7 +10,7 @@ import kh.lclass.jjapkorea.person.model.dto.ExperienceDto;
 
 public interface MyPageDao {
 	
-	String getByWorkperiod(String mid);
+	String getByWorkplace(String mid);
 
 
 	

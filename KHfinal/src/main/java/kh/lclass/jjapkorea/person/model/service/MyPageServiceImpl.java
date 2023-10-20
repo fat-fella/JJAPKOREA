@@ -17,8 +17,8 @@ public class MyPageServiceImpl implements MyPageService{
 	
 
 	@Override
-	public String getByWorkperiod(String mid) {
-		return dao.getByWorkperiod(mid);
+	public String getByWorkplace(String mid) {
+		return dao.getByWorkplace(mid);
 	}
 
 
