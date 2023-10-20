@@ -168,7 +168,7 @@ ul.apply-list li {
 								<div class="apply-box">
 									<a
 										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/>${item.RE_TITLE}</c:url>"
-										class="title">${item.SHORT_RE_TITLE}
+										class="title">${item.RE_TITLE}
 										&nbsp;&nbsp;&nbsp;&nbsp;<i><b>D-${item.DDAY}</b></i>
 									</a>
 									<div>
