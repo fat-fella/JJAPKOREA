@@ -1806,14 +1806,14 @@
                     </label>
                 </div>
                 <div class="user-status-title">
-                        <h1><a href="<%=request.getContextPath()%>/person/resume/write"><strong class="company">${workperiod}</strong></a>에서 일하고 있어요 💻</h1>
+                        <h1><a href="<%=request.getContextPath()%>/person/resume/write"><strong class="company">${workPlace}</strong></a>에서 일하고 있어요 💻</h1>
 
                 </div>
                 <div class="my-status-box">
                                 <p class="status">
                                 </p>
                                 <ul>
-                                    <li><span> 회사명 기입예정 workperiod 왜 안먹히지 </span></li>
+                                    <li><span> ${workPlace }</span></li>
                                  </ul>
                                     <!-- 담당업무 미입력 -->
                                     <a href="<%=request.getContextPath()%>/person/resume/write"  target="_blank" class="no-data">어떤 업무 담당하셨어요?</a>
@@ -1912,7 +1912,7 @@
 
 <div class="topContent" id="dev-onepick">
     <div class="topHdWrap">
-        <h2 class="top_hd_2">${mid}님께 딱! 맞는 원픽 공고</h2>
+        <h2 class="top_hd_2">${mid}${workperiod}님께 딱! 맞는 원픽 공고</h2>
     </div>
 
     <div class="swiper celebrate_my swiper-container-horizontal" style="padding: ">
@@ -2290,7 +2290,7 @@
             <img src="//i.jobkorea.kr/content/images/ver_1/mtu/test/question.png?v=202310171400" alt="역량테스트 결과 이미지">
         </div>
         <div class="TestText Testbefore">
-            <p><strong>${workperiod}${workPeriod}${pname}님, 이력서에 쓸 ‘강점‘ 고민 그만하고 MICT에서 찾아 쓰세요!</strong></p>
+            <p><strong>${pname}님, 이력서에 쓸 ‘강점‘ 고민 그만하고 MICT에서 찾아 쓰세요!</strong></p>
             <span>나만의 강점을 매력적으로 소개하는 합격 팁도 알려 드려요.</span>
         </div>
         <div class="BtnWrap">

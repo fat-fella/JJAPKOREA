@@ -34,4 +34,27 @@
 	<delete id="deleteExperience">
 		delete from experience where RESUME_ID = #{resumeId}
 	</delete>
+	
+	<select id="getByWorkplace" resultType="string" parameterType="string">
+	    SELECT WORK_PLACE 
+		FROM experience
+		WHERE EXPERIENCE_ID = (
+		    SELECT MAX(EXPERIENCE_ID)
+		    FROM experience 
+		    WHERE RESUME_ID IN (SELECT RESUME_ID FROM resume WHERE MID=#{mid}) 
+			)
+    </select>
+	
+	<select id="getByWorkperiod" resultType="int" parameterType="int">
+		SELECT WORK_PERIOD 
+		FROM experience
+		WHERE EXPERIENCE_ID = (
+		    SELECT MAX(EXPERIENCE_ID)
+		    FROM experience 
+		    WHERE RESUME_ID IN (SELECT RESUME_ID FROM resume WHERE MID=#{mid}) 
+		)
+    </select>
+	
+	
+	
 </mapper>

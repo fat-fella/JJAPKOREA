@@ -3,6 +3,8 @@ package kh.lclass.jjapkorea.person.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 import kh.lclass.jjapkorea.guest.model.service.MemberService;
+import kh.lclass.jjapkorea.person.model.dto.ExperienceDto;
 import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
+import kh.lclass.jjapkorea.person.model.service.MyPageService;
 import kh.lclass.jjapkorea.person.model.service.ScrapService;
 
 @Controller
@@ -34,11 +38,23 @@ public class MyPageController {
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	@Autowired
+	private MyPageService myPageService;
 
 	@GetMapping("/myPage")
 	public String myPage(Model model) throws Exception {
 		String mid = (String) model.getAttribute("mid");
 		List<Map<String, Object>> scrapList = scrapService.getJobPostingsWithScrapBusinessInfo(mid);
+		
+		//String workPlace = (String) model.getAttribute("workPlace");
+		String workPlace = myPageService.getByWorkplace(mid);
+		
+		
+	    System.out.println("[mj] 여기 들어오나요? 1번 workPlace : " + workPlace);
+	    System.out.println("[mj] 여기 들어오나요? 1번 mid : " + mid);
+
+	    model.addAttribute("workPlace", workPlace);
 		model.addAttribute("scrapList", scrapList);
 		return "member/myPage";
 	}
@@ -81,7 +97,8 @@ public class MyPageController {
 	}
 
 	@GetMapping("/infoModifyPerson")
-	public String infoModifyPerson() throws Exception {
+	public String infoModifyPerson(HttpSession session) throws Exception {
+	    String workPlace = (String) session.getAttribute("workplace");
 		return "member/infoModifyPerson";
 	}
 

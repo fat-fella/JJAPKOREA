@@ -10,8 +10,8 @@
 	    <result property="workDetails" column="work_details" />
 	</resultMap>
 	
-	<select id="getWorkPeriod" resultType="ExperienceDto" parameterType="String">
+	<select id="getWorkplace" resultType="ExperienceDto" parameterType="String">
 	   SELECT * FROM experience
-	   WHERE WORK_PERIOD = #{workPeriod}
+	   WHERE WORK_PLACE = #{workPlace}
 	</select>
 </mapper>
