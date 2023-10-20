@@ -18,7 +18,7 @@
 body {
 	font-family: 'Noto Sans KR', Arial, sans-serif;
 	background-color: #f5f5f5;
-	margin: 0;
+	margin-top: 150px;
 	padding: 0;
 }
 
@@ -63,7 +63,9 @@ body {
 }
 
 .readSumWrap {
+	position: relative;
 	width: 50%;
+	height: 464px;
 	margin: 0 auto;
 	padding: 20px;
 	background-color: #fff;
@@ -110,22 +112,20 @@ ul.apply-list li {
 }
 
 .pagination {
-	margin-top: 30px;
-	text-align: center;
-}
-
-.pagination {
-	margin-top: 30px;
-	text-align: center;
+	position: absolute;
+	bottom: 30px;
+	left: 42.5%;
 }
 
 .pagination a {
 	text-decoration: none;
 	color: #007bff;
+	margin: 0 10px;
 }
 
 .pagination span {
 	color: #007bff;
+	margin: 0 10px;
 }
 </style>
 </head>
