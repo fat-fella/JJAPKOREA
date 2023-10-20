@@ -22,9 +22,19 @@ public class ApplyController {
 	
 	@GetMapping("/list")
 	public String ApplyList(Principal principal, Model model, @RequestParam(name = "page", defaultValue = "1") int page,
-            @RequestParam(name = "itemsPerPage", defaultValue = "1") int itemsPerPage) throws Exception {
+            @RequestParam(name = "itemsPerPage", defaultValue = "5") int itemsPerPage) throws Exception {
 		String participant = principal.getName();
 		List<Map<String, Object>> applyList = applyServiceImpl.applyList(participant);
+		for (Map<String, Object> item : applyList) {
+		    String reTitle = (String) item.get("RE_TITLE");
+		    int reTitleLength = reTitle.length();
+		    if (reTitleLength > 100) {
+		        String shortReTitle = reTitle.substring(0, 100) + "...";
+		        item.put("SHORT_RE_TITLE", shortReTitle);
+		    } else {
+		    	item.put("SHORT_RE_TITLE", reTitle);
+		    }
+		}
 		model.addAttribute("applyList", applyList);
 		
 		// 전체 데이터의 총 수를 구한 뒤, 페이징 정보를 생성

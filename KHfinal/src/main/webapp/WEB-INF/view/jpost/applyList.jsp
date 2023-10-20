@@ -65,8 +65,8 @@ body {
 .readSumWrap {
 	width: 50%;
 	margin: 0 auto;
-	background-color: #fff;
 	padding: 20px;
+	background-color: #fff;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -168,7 +168,8 @@ ul.apply-list li {
 								<div class="apply-box">
 									<a
 										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/>${item.RE_TITLE}</c:url>"
-										class="title">${item.RE_TITLE}&nbsp;&nbsp;&nbsp;&nbsp;<i><b>D-${item.DDAY}</b></i>
+										class="title">${item.SHORT_RE_TITLE}
+										&nbsp;&nbsp;&nbsp;&nbsp;<i><b>D-${item.DDAY}</b></i>
 									</a>
 									<div>
 										<button type="button" class="btn_ud"
@@ -181,7 +182,7 @@ ul.apply-list li {
 				</ul>
 			</div>
 			<div class="pagination">
-				<c:if test="${pagination.totalPages >= 1}">
+				<c:if test="${pagination.totalPages > 0}">
 					<c:if test="${pagination.currentPage > 1}">
 						<c:if test="${pagination.currentPage > 2}">
 							<a href="?page=1&itemsPerPage=${pagination.itemsPerPage}">처음</a>
@@ -190,16 +191,63 @@ ul.apply-list li {
 							href="?page=${pagination.currentPage - 1}&itemsPerPage=${pagination.itemsPerPage}">이전</a>
 					</c:if>
 
-					<c:forEach var="i" begin="1" end="${pagination.totalPages}">
-						<c:choose>
-							<c:when test="${i eq pagination.currentPage}">
-								<span class="current-page">${i}</span>
-							</c:when>
-							<c:otherwise>
-								<a href="?page=${i}&itemsPerPage=${pagination.itemsPerPage}">${i}</a>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>
+					<c:choose>
+						<c:when test="${pagination.totalPages < 6}">
+							<c:forEach var="i" begin="1" end="${pagination.totalPages}">
+								<c:choose>
+									<c:when test="${i eq pagination.currentPage}">
+										<span class="current-page">${i}</span>
+									</c:when>
+									<c:otherwise>
+										<a href="?page=${i}&itemsPerPage=${pagination.itemsPerPage}">${i}</a>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<c:choose>
+								<c:when test="${pagination.currentPage < 3}">
+									<c:forEach var="i" begin="1" end="5">
+										<c:choose>
+											<c:when test="${i eq pagination.currentPage}">
+												<span class="current-page">${i}</span>
+											</c:when>
+											<c:otherwise>
+												<a href="?page=${i}&itemsPerPage=${pagination.itemsPerPage}">${i}</a>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:when>
+								<c:when
+									test="${pagination.currentPage > pagination.totalPages - 3}">
+									<c:forEach var="i" begin="${pagination.totalPages - 4}"
+										end="${pagination.totalPages}">
+										<c:choose>
+											<c:when test="${i eq pagination.currentPage}">
+												<span class="current-page">${i}</span>
+											</c:when>
+											<c:otherwise>
+												<a href="?page=${i}&itemsPerPage=${pagination.itemsPerPage}">${i}</a>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<c:forEach var="i" begin="${pagination.currentPage - 2}"
+										end="${pagination.currentPage + 2}">
+										<c:choose>
+											<c:when test="${i eq pagination.currentPage}">
+												<span class="current-page">${i}</span>
+											</c:when>
+											<c:otherwise>
+												<a href="?page=${i}&itemsPerPage=${pagination.itemsPerPage}">${i}</a>
+											</c:otherwise>
+										</c:choose>
+									</c:forEach>
+								</c:otherwise>
+							</c:choose>
+						</c:otherwise>
+					</c:choose>
 
 					<c:if test="${pagination.currentPage < pagination.totalPages}">
 						<a
