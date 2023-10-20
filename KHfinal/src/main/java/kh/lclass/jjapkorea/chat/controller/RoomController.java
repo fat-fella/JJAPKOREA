@@ -1,19 +1,11 @@
 package kh.lclass.jjapkorea.chat.controller;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
-import kh.lclass.jjapkorea.chat.model.dto.ChatMessageDto;
-import kh.lclass.jjapkorea.chat.model.dto.ChatRoomDto;
-import kh.lclass.jjapkorea.chat.model.repository.ChatRoomRepository;
 import kh.lclass.jjapkorea.chat.model.service.ChatRoomService;
 
 import java.security.Principal;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authorization.AuthorityAuthorizationDecision;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

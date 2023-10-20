@@ -54,11 +54,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.PostConstruct;
-
-import java.security.Principal;
 import java.util.*;
-import java.util.stream.Stream;
 
 @Repository
 public class ChatRoomRepository {
