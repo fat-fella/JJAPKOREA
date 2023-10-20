@@ -121,12 +121,11 @@ ul.apply-list li {
 
 .pagination a {
 	text-decoration: none;
-	color: #007bff;
+	color: #000;
 	margin: 0 10px;
 }
 
 .pagination span {
-	color: #007bff;
 	margin: 0 10px;
 }
 </style>
@@ -176,7 +175,9 @@ ul.apply-list li {
 									</a>
 									<div>
 										<button type="button" class="btn_ud"
-											onclick="cancel('${item.JID}')">취소</button>
+											onclick="info('${item.JID}')">지원자 실시간 현황</button>
+										<button type="button" class="btn_ud"
+											onclick="cancel('${item.JID}')">지원 취소</button>
 									</div>
 								</div>
 							</li>
