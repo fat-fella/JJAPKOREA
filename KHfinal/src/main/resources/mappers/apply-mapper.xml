@@ -26,8 +26,8 @@
 		select resume_id from resume where mid = #{mid}
 	</select>
 	
-	<delete id="deleteApply" parameterType="int">
-		delete from apply where RESUME_ID = #{resumeId}
+	<delete id="deleteApply" parameterType="string">
+		delete from apply where jid = #{jid}
 	</delete>
 	
 	<select id="getApplyIdByJidAndResumeId" resultType="string">
@@ -35,7 +35,7 @@
 	</select>
 	
 	<select id="applyList" resultType="java.util.Map">
-		SELECT i.*, b.*
+		SELECT i.*, b.*, a.apply_id
 		FROM resume r
 		JOIN person p ON r.MID = p.MID
 		JOIN apply a ON r.RESUME_ID = a.RESUME_ID

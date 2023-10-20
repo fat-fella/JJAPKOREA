@@ -10,7 +10,7 @@ public interface ApplyService {
 	List<ApplyDto> getApplyById(int resumeId) throws Exception;
 	List<ApplyDto> getApplyByJid(String jid) throws Exception;
 	Integer getResumeById(String mid) throws Exception;
-	int deleteApply(int resumeId) throws Exception;
+	int deleteApply(String jid) throws Exception;
 	String getApplyIdByJidAndResumeId(ApplyDto applyDto) throws Exception;
 	List<Map<String, Object>> applyList(String mid) throws Exception;
 	Integer applyInfo() throws Exception;

@@ -18,7 +18,7 @@
 body {
 	font-family: 'Noto Sans KR', Arial, sans-serif;
 	background-color: #f5f5f5;
-	margin-top: 150px;
+	margin-top: 140px;
 	padding: 0;
 }
 
@@ -114,7 +114,9 @@ ul.apply-list li {
 .pagination {
 	position: absolute;
 	bottom: 30px;
-	left: 42.5%;
+	left: 0;
+	right: 0;
+	text-align: center;
 }
 
 .pagination a {
@@ -154,7 +156,8 @@ ul.apply-list li {
 	<section>
 		<div class="readSumWrap clear">
 			<h3>
-				<i style="color: #007bff;">${selectOnePerson.pname}</i>&nbsp;&nbsp;님의 입사지원 현황입니다.
+				<i style="color: #007bff;">${selectOnePerson.pname}</i>&nbsp;&nbsp;님의
+				입사지원 현황입니다.
 			</h3>
 			<div>
 				<ul class="apply-list">
@@ -262,19 +265,22 @@ ul.apply-list li {
 		</div>
 	</section>
 	<script>
-		function cancel(jid){
-			$.ajax({
-				type :'POST',
-				url:'${pageContext.request.contextPath}/person/apply/list',
-				data: {jid : jid},
-				success: function(){
-					alert("입사지원이 취소되었습니다.");
-					window.location.href = "${pageContext.request.contextPath}/person/apply/list";
-				},
-				error: function () {
-	                alert("에러 혹은 다른 오류 발생");
-	            }
-			});
+		function cancel(jid) {
+			$
+					.ajax({
+					type : 'POST',
+					url : '${pageContext.request.contextPath}/person/apply/list',
+					data : {
+						jid : jid
+					},
+					success : function() {
+						alert("입사지원이 취소되었습니다.");
+						window.location.href = "${pageContext.request.contextPath}/person/apply/list";
+					},
+					error : function() {
+						alert("에러 혹은 다른 오류 발생");
+					}
+					});
 		};
 	</script>
 </body>

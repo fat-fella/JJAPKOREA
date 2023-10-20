@@ -30,8 +30,8 @@ public class ApplyDao {
 		return sqlSession.selectOne("apply.getResumeById", mid);
 	}
 	
-	public int deleteApply(int resumeId) throws Exception {
-		return sqlSession.delete("apply.deleteApply", resumeId);
+	public int deleteApply(String jid) throws Exception {
+		return sqlSession.delete("apply.deleteApply", jid);
 	}
 	
 	public String getApplyIdByJidAndResumeId(ApplyDto applyDto) throws Exception {

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,5 +33,11 @@ public class ApplyController {
 	    Pagination pagination = new Pagination(totalItems, page, itemsPerPage);
 	    model.addAttribute("pagination", pagination);
 		return "jpost/applyList";
+	}
+	
+	@PostMapping("/list")
+	public String ApplyList(String jid) throws Exception {
+		applyServiceImpl.deleteApply(jid);
+		return "redirect:/person/apply/list";
 	}
 }

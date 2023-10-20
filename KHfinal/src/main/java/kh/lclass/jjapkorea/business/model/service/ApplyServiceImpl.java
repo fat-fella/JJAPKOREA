@@ -35,8 +35,8 @@ public class ApplyServiceImpl implements ApplyService {
 	}
 	
 	@Override
-	public int deleteApply(int resumeId) throws Exception {
-		return applyDao.deleteApply(resumeId);
+	public int deleteApply(String jid) throws Exception {
+		return applyDao.deleteApply(jid);
 	}
 	
 	@Override
