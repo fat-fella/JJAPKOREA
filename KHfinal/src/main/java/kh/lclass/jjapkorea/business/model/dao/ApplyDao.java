@@ -45,4 +45,8 @@ public class ApplyDao {
 	public Integer applyInfo() throws Exception {
 		return sqlSession.selectOne("apply.applyInfo");
 	}
+	
+	public Integer getTotalItems(String mid) throws Exception {
+		return sqlSession.selectOne("apply.getTotalItems", mid);
+	}
 }

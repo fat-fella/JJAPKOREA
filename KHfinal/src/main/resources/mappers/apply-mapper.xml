@@ -45,6 +45,10 @@
 	</select>
 	
 	<select id="applyInfo" resultType="java.lang.Integer">
-		select count(*) from apply;
+		select count(*) from apply
+	</select>
+	
+	<select id="getTotalItems" resultType="java.lang.Integer">
+	    select count(*) from apply join resume using (resume_id) where mid = #{mid}
 	</select>
 </mapper>

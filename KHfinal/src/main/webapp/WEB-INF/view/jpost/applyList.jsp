@@ -108,6 +108,25 @@ ul.apply-list li {
 .btn_ud:hover {
 	background-color: #0059B8;
 }
+
+.pagination {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.pagination {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.pagination a {
+	text-decoration: none;
+	color: #800080;
+}
+
+.pagination span {
+	color: #800080;
+}
 </style>
 </head>
 <body>
@@ -139,20 +158,58 @@ ul.apply-list li {
 			</h3>
 			<div>
 				<ul class="apply-list">
-					<c:forEach var="item" items="${applyList}">
-						<li>
-							<div class="apply-box">
-								<a
-									href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/>${item.RE_TITLE}</c:url>"
-									class="title">${item.RE_TITLE}&nbsp;&nbsp;&nbsp;&nbsp;<i><b>D-${item.DDAY}</b></i></a>
-								<div>
-									<button type="button" class="btn_ud"
-										onclick="remove('${item.JID}')">삭제</button>
+					<c:set var="startIndex"
+						value="${(pagination.currentPage - 1) * pagination.itemsPerPage}" />
+					<c:set var="endIndex"
+						value="${startIndex + pagination.itemsPerPage}" />
+					<c:forEach var="item" items="${applyList}" varStatus="loop">
+						<c:if test="${loop.index >= startIndex && loop.index < endIndex}">
+							<li>
+								<div class="apply-box">
+									<a
+										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/>${item.RE_TITLE}</c:url>"
+										class="title">${item.RE_TITLE}&nbsp;&nbsp;&nbsp;&nbsp;<i><b>D-${item.DDAY}</b></i>
+									</a>
+									<div>
+										<button type="button" class="btn_ud"
+											onclick="remove('${item.JID}')">삭제</button>
+									</div>
 								</div>
-							</div>
-						</li>
+							</li>
+						</c:if>
 					</c:forEach>
 				</ul>
+			</div>
+			<div class="pagination">
+				<c:if test="${pagination.totalPages >= 1}">
+					<c:if test="${pagination.currentPage > 1}">
+						<c:if test="${pagination.currentPage > 2}">
+							<a href="?page=1&itemsPerPage=${pagination.itemsPerPage}">처음</a>
+						</c:if>
+						<a
+							href="?page=${pagination.currentPage - 1}&itemsPerPage=${pagination.itemsPerPage}">이전</a>
+					</c:if>
+
+					<c:forEach var="i" begin="1" end="${pagination.totalPages}">
+						<c:choose>
+							<c:when test="${i eq pagination.currentPage}">
+								<span class="current-page">${i}</span>
+							</c:when>
+							<c:otherwise>
+								<a href="?page=${i}&itemsPerPage=${pagination.itemsPerPage}">${i}</a>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+
+					<c:if test="${pagination.currentPage < pagination.totalPages}">
+						<a
+							href="?page=${pagination.currentPage + 1}&itemsPerPage=${pagination.itemsPerPage}">다음</a>
+						<c:if test="${pagination.currentPage < pagination.totalPages - 1}">
+							<a
+								href="?page=${pagination.totalPages}&itemsPerPage=${pagination.itemsPerPage}">마지막</a>
+						</c:if>
+					</c:if>
+				</c:if>
 			</div>
 		</div>
 	</section>

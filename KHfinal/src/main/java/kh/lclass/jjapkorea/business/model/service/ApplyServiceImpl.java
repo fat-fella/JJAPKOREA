@@ -53,4 +53,9 @@ public class ApplyServiceImpl implements ApplyService {
 	public Integer applyInfo() throws Exception {
 		return applyDao.applyInfo();
 	}
+	
+	@Override
+	public Integer getTotalItems(String mid) throws Exception {
+		return applyDao.getTotalItems(mid);
+	}
 }

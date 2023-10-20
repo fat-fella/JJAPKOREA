@@ -14,4 +14,5 @@ public interface ApplyService {
 	String getApplyIdByJidAndResumeId(ApplyDto applyDto) throws Exception;
 	List<Map<String, Object>> applyList(String mid) throws Exception;
 	Integer applyInfo() throws Exception;
+	Integer getTotalItems(String mid) throws Exception;
 }
