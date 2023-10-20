@@ -52,7 +52,7 @@
 	            success: function (data) {
 	                alert("[지원 완료] 이메일이 전송되었습니다.");
 
-	                // 업데이트된 resumeId를 함수로 전달
+	                // 업데이트된 applyId를 함수로 전달
 	                updateApplyId(data);
 	            },
 	            error: function (xhr, status, error) {
