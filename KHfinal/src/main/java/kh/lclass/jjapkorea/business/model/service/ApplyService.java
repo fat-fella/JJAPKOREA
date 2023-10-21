@@ -20,4 +20,5 @@ public interface ApplyService {
 	Double experienceAvg(String jid) throws Exception;
 	List<Map<String, Object>> applyListAll(String jid) throws Exception;
 	Integer jobPostingGetTotalItems(String jid) throws Exception;
+	String findMidByResumeId(Integer resumeId) throws Exception;
 }

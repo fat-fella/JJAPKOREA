@@ -107,4 +107,8 @@
 	<select id="jobPostingGetTotalItems" resultType="java.lang.Integer">
 		select count(*) from apply join where jid = #{jid}
 	</select>
+	
+	<select id="findMidByResumeId" resultType="string">
+		select mid from resume where resume_id = #{resumeId}
+	</select>
 </mapper>
