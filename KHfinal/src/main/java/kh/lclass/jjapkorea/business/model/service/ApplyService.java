@@ -21,4 +21,6 @@ public interface ApplyService {
 	List<Map<String, Object>> applyListAll(String jid) throws Exception;
 	Integer jobPostingGetTotalItems(String jid) throws Exception;
 	String findMidByResumeId(Integer resumeId) throws Exception;
+	List<Map<String, Object>> findPersonByResumeId(Integer resumeId) throws Exception;
+	String findImageUrl(Integer resumeId) throws Exception;
 }

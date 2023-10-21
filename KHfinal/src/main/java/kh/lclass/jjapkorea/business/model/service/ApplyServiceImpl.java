@@ -88,4 +88,14 @@ public class ApplyServiceImpl implements ApplyService {
 	public String findMidByResumeId(Integer resumeId) throws Exception {
 		return applyDao.findMidByResumeId(resumeId);
 	}
+	
+	@Override
+	public List<Map<String, Object>> findPersonByResumeId(Integer resumeId) throws Exception {
+		return applyDao.findPersonByResumeId(resumeId);
+	}
+	
+	@Override
+	public String findImageUrl(Integer resumeId) throws Exception {
+		return applyDao.findImageUrl(resumeId);
+	}
 }

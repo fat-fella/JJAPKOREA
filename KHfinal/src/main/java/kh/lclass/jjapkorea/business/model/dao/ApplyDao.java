@@ -73,4 +73,12 @@ public class ApplyDao {
 	public String findMidByResumeId(Integer resumeId) throws Exception {
 		return sqlSession.selectOne("apply.findMidByResumeId", resumeId);
 	}
+	
+	public List<Map<String, Object>> findPersonByResumeId(Integer resumeId) throws Exception {
+		return sqlSession.selectList("apply.findPersonByResumeId", resumeId);
+	}
+	
+	public String findImageUrl(Integer resumeId) throws Exception {
+		return sqlSession.selectOne("apply.findImageUrl", resumeId);
+	}
 }
