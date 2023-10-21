@@ -10,7 +10,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4367be77ab43095200d26c3ea16f01f8&libraries=services"></script>
 <script>
-	console.log("${jobPosting}");
 	
 	// 초기에 resumeId를 가져오기 위해 페이지 로드 시 실행
 	var applyId = "${applyId}";
@@ -98,16 +97,12 @@
 						<div class="header">
 							<span class="coName"> ${jobPosting.BIZNAME} </span>
 
-							<div class="item favorite">
-								<!-- <button type="button"
-									class="girBtn girBtn_2 girBtnFav  devFavor5_15983790"
-									onclick=" JKLoginLayer.open('/Recruit/Booth_GI_Read/42887747?Oem_Code=C1&amp;productType=FirstVVIP&amp;logpath=0'); ">
-									<span>관심기업</span>
-								</button>
- -->
-							</div>
+							
 						</div>
 						<p>${jobPosting.RE_TITLE}</p>
+						<div class="views">
+							<p class="viewsText">조회수 : ${jobPosting.COUNT}</p>
+						</div>
 					</h3>
 				</div>
 				<div class="tbRow clear">
@@ -150,7 +145,7 @@
 									<a
 										href="https://www.jobkorea.co.kr/List_GI/GI_Area_List.asp?AreaNo=I130&amp;AllStat=1"
 										target="_blank" title="새창"
-										onclick="javascript:go_Area_List('I130',1); return false;">서울시
+										onclick="javascript:go_Area_List('I130',1); return false;">${jobPosting.BADDRESS}
 									</a>
 									<button id="openMapButton" onclick="openMapModal()">지도검색</button>
 								</dd>
@@ -185,14 +180,8 @@
 									class="tahoma"></span>년차) </text>
 							</dd>
 							<dt>기업형태</dt>
-							<dd>${BFORM}</dd>
-							<dt>홈페이지</dt>
-							<dd>
-
-								<span class="tahoma"><a class="devCoHomepageLink"
-									href="http://www.joongang.co.kr"
-									onclick="javascript:go_HomePageTrace('http://www.joongang.co.kr','45389898');return false;">joongang.co.kr</a></span>
-							</dd>
+							<dd>${jobPosting.BFORM}</dd>
+							
 						</dl>
 						<p class="coBtn">
 							<a href="/Company/1824494/?C_IDX=807" target="_blank"
