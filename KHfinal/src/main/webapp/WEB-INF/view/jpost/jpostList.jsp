@@ -46,6 +46,7 @@
                     <div class="job-posting-box">
                         <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.jid}'/></c:url>" class="title">${item.reTitle}</a>
                         <div class="">
+                        	<button class="btn_ud" onclick="apply('${item.jid}')">지원 현황</button> 
 	                        <input type="button" class="btn_ud" value="수정" onclick="edit('${item.jid}')"><input type="button" class="btn_ud" value="삭제" onclick="remove('${item.jid}')">
                         </div>
                     </div>
@@ -55,6 +56,20 @@
     </div>
 </div>
 <script>
+	function apply(jid){
+		$.ajax({
+			type :'GET',
+			url:'${pageContext.request.contextPath}/business/apply/list',
+			data: {jid : jid},
+			success: function(){
+				window.location.href = "${pageContext.request.contextPath}/business/apply/list";
+			},
+			error: function(error){
+				console.error("채용공고 삭제 실패", error);
+			}
+		});
+	}
+	
 	function edit(jid){
 		location.href = '${pageContext.request.contextPath}/business/jobpostingupload/edit?jid='+jid;
 	};
