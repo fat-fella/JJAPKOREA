@@ -94,6 +94,7 @@ public class JobPostingApplyController {
 					approvalDto.setApplyId(applyId);
 					approvalDto.setStatus(passOrFail);
 					applyServiceImpl.updateApproval(approvalDto);
+					sendPassSms(phoneNumber, bizName, pname);
 					return ResponseEntity.ok("update");
 				} else if(applyServiceImpl.statusByApplyId(applyId) !=null && applyServiceImpl.statusByApplyId(applyId).equals("합격")) {
 					return ResponseEntity.ok("exist");
@@ -112,6 +113,7 @@ public class JobPostingApplyController {
 					approvalDto.setApplyId(applyId);
 					approvalDto.setStatus(passOrFail);
 					applyServiceImpl.updateApproval(approvalDto);
+					sendFailSms(phoneNumber, bizName, pname);
 					return ResponseEntity.ok("update");
 				} else if(applyServiceImpl.statusByApplyId(applyId) !=null && applyServiceImpl.statusByApplyId(applyId).equals("불합격")) {
 					return ResponseEntity.ok("exist");
