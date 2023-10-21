@@ -90,25 +90,44 @@ public class JobPostingApplyController {
 			int result;
 			ApprovalDto approvalDto = new ApprovalDto();
 			if ("합격".equals(passOrFail)) {
-				// 합격일 경우의 처리
-				approvalDto.setApplyId(applyId);
-				approvalDto.setStatus(passOrFail);
-				result = applyServiceImpl.insertApproval(approvalDto);
-				if (result > 0) {
-					sendPassSms(phoneNumber, bizName, pname);
+				if(applyServiceImpl.statusByApplyId(applyId) !=null && applyServiceImpl.statusByApplyId(applyId).equals("불합격")) {
+					approvalDto.setApplyId(applyId);
+					approvalDto.setStatus(passOrFail);
+					applyServiceImpl.updateApproval(approvalDto);
+					return ResponseEntity.ok("update");
+				} else if(applyServiceImpl.statusByApplyId(applyId) !=null && applyServiceImpl.statusByApplyId(applyId).equals("합격")) {
+					return ResponseEntity.ok("exist");
+				} else {
+					// 합격일 경우의 처리
+					approvalDto.setApplyId(applyId);
+					approvalDto.setStatus(passOrFail);
+					result = applyServiceImpl.insertApproval(approvalDto);
+					if (result > 0) {
+						sendPassSms(phoneNumber, bizName, pname);
+					}
 				}
 				return ResponseEntity.ok("pass");
 			} else {
-				// 불합격일 경우의 처리
-				approvalDto.setApplyId(applyId);
-				approvalDto.setStatus(passOrFail);
-				result = applyServiceImpl.insertApproval(approvalDto);
-				if (result > 0) {
-					sendFailSms(phoneNumber, bizName, pname);
+				if(applyServiceImpl.statusByApplyId(applyId) !=null && applyServiceImpl.statusByApplyId(applyId).equals("합격")) {
+					approvalDto.setApplyId(applyId);
+					approvalDto.setStatus(passOrFail);
+					applyServiceImpl.updateApproval(approvalDto);
+					return ResponseEntity.ok("update");
+				} else if(applyServiceImpl.statusByApplyId(applyId) !=null && applyServiceImpl.statusByApplyId(applyId).equals("불합격")) {
+					return ResponseEntity.ok("exist");
+				} else {
+					// 불합격일 경우의 처리
+					approvalDto.setApplyId(applyId);
+					approvalDto.setStatus(passOrFail);
+					result = applyServiceImpl.insertApproval(approvalDto);
+					if (result > 0) {
+						sendFailSms(phoneNumber, bizName, pname);
+					}
 				}
 				return ResponseEntity.ok("fail");
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error");
 		}
 	}

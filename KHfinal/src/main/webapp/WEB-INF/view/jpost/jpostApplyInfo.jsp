@@ -430,8 +430,16 @@ body {
 			jid : jid,
 			passOrFail : '합격'
 			},
-			success : function(data) {
-				alert("지원자에게 합격 통지가 완료되었습니다.");
+			success : function(response) {
+				if (response === 'update') {
+					// 서버에서 'update'를 반환했을 때의 동작
+					alert('데이터가 업데이트되었습니다.');
+				} else if (response === 'exist') {
+					// 서버에서 'exist'를 반환했을 때의 동작
+					alert('데이터가 이미 존재합니다.');
+				} else {
+					alert("지원자에게 합격 통지가 완료되었습니다.");
+				}
 			},
 			error : function(xhr, status, error) {
 				var errorMessage = "클라이언트에서 오류 발생: " + error;
@@ -449,8 +457,16 @@ body {
 			jid : jid,
 			passOrFail : '불합격'
 			},
-			success : function(data) {
-				alert("지원자에게 불합격 통지가 완료되었습니다.");
+			success : function(response) {
+				if (response === 'update') {
+					// 서버에서 'update'를 반환했을 때의 동작
+					alert('데이터가 업데이트되었습니다.');
+				} else if (response === 'exist') {
+					// 서버에서 'exist'를 반환했을 때의 동작
+					alert('데이터가 이미 존재합니다.');
+				} else {
+					alert("지원자에게 불합격 통지가 완료되었습니다.");
+				}
 			},
 			error : function(xhr, status, error) {
 				var errorMessage = "클라이언트에서 오류 발생: " + error;
