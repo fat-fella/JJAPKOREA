@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kh.lclass.jjapkorea.business.model.dto.ApplyDto;
+import kh.lclass.jjapkorea.business.model.dto.ApprovalDto;
 
 @Repository
 public class ApplyDao {
@@ -80,5 +81,9 @@ public class ApplyDao {
 	
 	public String findImageUrl(Integer resumeId) throws Exception {
 		return sqlSession.selectOne("apply.findImageUrl", resumeId);
+	}
+	
+	public int insertApproval(ApprovalDto approvalDto) throws Exception {
+		return sqlSession.insert("approval.insertApproval", approvalDto);
 	}
 }
