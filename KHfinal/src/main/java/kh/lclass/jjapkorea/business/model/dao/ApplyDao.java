@@ -69,4 +69,8 @@ public class ApplyDao {
 	public Integer jobPostingGetTotalItems(String jid) throws Exception {
 		return sqlSession.selectOne("apply.jobPostingGetTotalItems", jid);
 	}
+	
+	public String findMidByResumeId(Integer resumeId) throws Exception {
+		return sqlSession.selectOne("apply.findMidByResumeId", resumeId);
+	}
 }

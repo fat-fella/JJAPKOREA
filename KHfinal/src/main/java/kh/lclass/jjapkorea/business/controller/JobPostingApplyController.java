@@ -1,9 +1,12 @@
 package kh.lclass.jjapkorea.business.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,24 +39,30 @@ public class JobPostingApplyController {
 	    Pagination pagination = new Pagination(totalItems, page, itemsPerPage);
 	    model.addAttribute("pagination", pagination);
 	    
-	    String mid = (String) model.getAttribute("mid");
-		// 이력서 데이터 확인
-		List<ResumeWriteDto> resumeList = resumeWriteServiceImpl.getResumeById(mid);
-		model.addAttribute("resumeList", resumeList);
-		List<Map<String, Object>> getResumeWithQualification = resumeWriteServiceImpl.getResumeWithQualification(mid);
-		model.addAttribute("getResumeWithQualification", getResumeWithQualification);
-		List<Map<String, Object>> getResumeWithEducation = resumeWriteServiceImpl.getResumeWithEducation(mid);
-		model.addAttribute("getResumeWithEducation", getResumeWithEducation);
-		List<Map<String, Object>> getResumeWithExperience = resumeWriteServiceImpl.getResumeWithExperience(mid);
-		model.addAttribute("getResumeWithExperience", getResumeWithExperience);
-		List<Map<String, Object>> getResumeWithAward = resumeWriteServiceImpl.getResumeWithAward(mid);
-		model.addAttribute("getResumeWithAward", getResumeWithAward);
-	    
 	    return "jpost/jpostApplyList";
 	}
 	
 	@PostMapping("/list")
-	public String JobPostingApplyList(Model model, String resumeId) throws Exception {
-	    return "jpost/jpostApplyList";
+	public ResponseEntity<Map<String, Object>> JobPostingApplyList(Model model, String resumeId) throws Exception {
+	    Map<String, Object> response = new HashMap<>();
+	    
+	    // 여러 정보를 모델에 추가
+	    String mid = (String) model.getAttribute("mid");
+	    List<ResumeWriteDto> resumeList = resumeWriteServiceImpl.getResumeById(mid);
+	    response.put("resumeList", resumeList);
+	    
+	    List<Map<String, Object>> getResumeWithQualification = resumeWriteServiceImpl.getResumeWithQualification(mid);
+	    response.put("getResumeWithQualification", getResumeWithQualification);
+	    
+	    List<Map<String, Object>> getResumeWithEducation = resumeWriteServiceImpl.getResumeWithEducation(mid);
+	    response.put("getResumeWithEducation", getResumeWithEducation);
+	    
+	    List<Map<String, Object>> getResumeWithExperience = resumeWriteServiceImpl.getResumeWithExperience(mid);
+	    response.put("getResumeWithExperience", getResumeWithExperience);
+	    
+	    List<Map<String, Object>> getResumeWithAward = resumeWriteServiceImpl.getResumeWithAward(mid);
+	    response.put("getResumeWithAward", getResumeWithAward);
+
+	    return ResponseEntity.ok(response);
 	}
 }

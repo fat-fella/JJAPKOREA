@@ -83,4 +83,9 @@ public class ApplyServiceImpl implements ApplyService {
 	public Integer jobPostingGetTotalItems(String jid) throws Exception {
 		return applyDao.jobPostingGetTotalItems(jid);
 	}
+	
+	@Override
+	public String findMidByResumeId(Integer resumeId) throws Exception {
+		return applyDao.findMidByResumeId(resumeId);
+	}
 }

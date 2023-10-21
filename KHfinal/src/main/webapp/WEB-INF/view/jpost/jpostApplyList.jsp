@@ -218,6 +218,12 @@ ul.apply-list li {
 					resumeId : resumeId
 				},
 				success : function(data) {
+					var resumeList = data.resumeList;
+		            var getResumeWithQualification = data.getResumeWithQualification;
+		            var getResumeWithEducation = data.getResumeWithEducation;
+		            var getResumeWithExperience = data.getResumeWithExperience;
+		            var getResumeWithAward = data.getResumeWithAward;
+
 					// 모달 창 열기
 					$('#myModal').modal('show');
 					// 모달 뒤 배경 생성
