@@ -23,4 +23,5 @@ public class JobPostingDto {
 	private int dday;
 	private String jpostdetail;
 	private Date postTime;
+	private int count;
 }
