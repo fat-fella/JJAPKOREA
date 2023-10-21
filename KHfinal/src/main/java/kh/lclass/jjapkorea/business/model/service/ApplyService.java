@@ -13,6 +13,9 @@ public interface ApplyService {
 	int deleteApply(String jid) throws Exception;
 	String getApplyIdByJidAndResumeId(ApplyDto applyDto) throws Exception;
 	List<Map<String, Object>> applyList(String mid) throws Exception;
-	Integer applyInfo() throws Exception;
+	Integer applyInfo(String jid) throws Exception;
 	Integer getTotalItems(String mid) throws Exception;
+	Double qualificationAvg(String jid) throws Exception;
+	Double educationAvg(String jid) throws Exception;
+	Double experienceAvg(String jid) throws Exception;
 }

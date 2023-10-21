@@ -50,12 +50,27 @@ public class ApplyServiceImpl implements ApplyService {
 	}
 	
 	@Override
-	public Integer applyInfo() throws Exception {
-		return applyDao.applyInfo();
+	public Integer applyInfo(String jid) throws Exception {
+		return applyDao.applyInfo(jid);
 	}
 	
 	@Override
 	public Integer getTotalItems(String mid) throws Exception {
 		return applyDao.getTotalItems(mid);
+	}
+	
+	@Override
+	public Double qualificationAvg(String jid) throws Exception {
+		return applyDao.qualificationAvg(jid);
+	}
+	
+	@Override
+	public Double educationAvg(String jid) throws Exception {
+		return applyDao.educationAvg(jid);
+	}
+	
+	@Override
+	public Double experienceAvg(String jid) throws Exception {
+		return applyDao.experienceAvg(jid);
 	}
 }

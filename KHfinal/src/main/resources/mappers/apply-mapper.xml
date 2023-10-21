@@ -45,10 +45,52 @@
 	</select>
 	
 	<select id="applyInfo" resultType="java.lang.Integer">
-		select count(*) from apply
+		SELECT count(*)
+		FROM resume r
+		JOIN person p ON r.MID = p.MID
+		JOIN apply a ON r.RESUME_ID = a.RESUME_ID
+		JOIN info i ON a.JID = i.JID
+		LEFT JOIN business b ON i.MID = b.MID
+		WHERE a.JID = #{jid}
 	</select>
 	
 	<select id="getTotalItems" resultType="java.lang.Integer">
 	    select count(*) from apply join resume using (resume_id) where mid = #{mid}
+	</select>
+	
+	<select id="qualificationAvg" resultType="java.lang.Double">
+		SELECT AVG(qualification_count) AS average_qualification_count
+		FROM (
+		    SELECT COUNT(q.qualification_id) AS qualification_count
+		    FROM apply a
+		    JOIN resume r ON a.resume_id = r.resume_id
+		    LEFT JOIN qualification q ON r.resume_id = q.resume_id
+		    WHERE a.jid = #{jid}
+		    GROUP BY a.jid, r.resume_id
+		)
+	</select>
+	
+	<select id="educationAvg" resultType="java.lang.Double">
+		SELECT AVG(education_count) AS average_education_count
+		FROM (
+		    SELECT COUNT(e.education_id) AS education_count
+		    FROM apply a
+		    JOIN resume r ON a.resume_id = r.resume_id
+		    LEFT JOIN education e ON r.resume_id = e.resume_id
+		    WHERE a.jid = #{jid}
+		    GROUP BY a.jid, r.resume_id
+		)
+	</select>
+	
+	<select id="experienceAvg" resultType="java.lang.Double">
+		SELECT AVG(experience_count) AS average_experience_count
+		FROM (
+		    SELECT COUNT(e.experience_id) AS experience_count
+		    FROM apply a
+		    JOIN resume r ON a.resume_id = r.resume_id
+		    LEFT JOIN experience e ON r.resume_id = e.resume_id
+		    WHERE a.jid = #{jid}
+		    GROUP BY a.jid, r.resume_id
+		)
 	</select>
 </mapper>

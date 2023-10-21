@@ -42,11 +42,23 @@ public class ApplyDao {
 		return sqlSession.selectList("apply.applyList", mid);
 	}
 	
-	public Integer applyInfo() throws Exception {
-		return sqlSession.selectOne("apply.applyInfo");
+	public Integer applyInfo(String jid) throws Exception {
+		return sqlSession.selectOne("apply.applyInfo", jid);
 	}
 	
 	public Integer getTotalItems(String mid) throws Exception {
 		return sqlSession.selectOne("apply.getTotalItems", mid);
+	}
+	
+	public Double qualificationAvg(String jid) throws Exception {
+		return sqlSession.selectOne("apply.qualificationAvg", jid);
+	}
+	
+	public Double educationAvg(String jid) throws Exception {
+		return sqlSession.selectOne("apply.educationAvg", jid);
+	}
+	
+	public Double experienceAvg(String jid) throws Exception {
+		return sqlSession.selectOne("apply.experienceAvg", jid);
 	}
 }

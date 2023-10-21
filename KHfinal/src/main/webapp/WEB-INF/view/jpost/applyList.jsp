@@ -8,7 +8,14 @@
 <title>입사지원 현황</title>
 <link rel="icon"
 	href="<%=request.getContextPath()%>/resources/favicon.ico">
+	
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -175,7 +182,7 @@ ul.apply-list li {
 									</a>
 									<div>
 										<button type="button" class="btn_ud"
-											onclick="info('${item.JID}')">지원자 실시간 현황</button>
+											onclick="info('${item.JID}')">실시간 지원 현황</button>
 										<button type="button" class="btn_ud"
 											onclick="cancel('${item.JID}')">지원 취소</button>
 									</div>
@@ -267,22 +274,205 @@ ul.apply-list li {
 	</section>
 	<script>
 		function cancel(jid) {
-			$
-					.ajax({
-					type : 'POST',
-					url : '${pageContext.request.contextPath}/person/apply/list',
-					data : {
-						jid : jid
-					},
-					success : function() {
-						alert("입사지원이 취소되었습니다.");
-						window.location.href = "${pageContext.request.contextPath}/person/apply/list";
-					},
-					error : function() {
-						alert("에러 혹은 다른 오류 발생");
-					}
-					});
+			$.ajax({
+				type : 'POST',
+				url : '${pageContext.request.contextPath}/person/apply/list',
+				data : {
+					jid : jid
+				},
+				success : function() {
+					alert("입사지원이 취소되었습니다.");
+					window.location.href = "${pageContext.request.contextPath}/person/apply/list";
+				},
+				error : function() {
+					alert("에러 혹은 다른 오류 발생");
+				}
+			});
+		};
+		
+		var chart = null; // 차트 변수를 선언
+
+		function createChart(data) {
+		    if (chart) {
+		        chart.destroy(); // 기존 차트 파괴
+		    }
+
+		    // 차트 데이터 생성
+		    var ctx = document.getElementById('myChart').getContext('2d');
+		    chart = new Chart(ctx, {
+		        type: 'bar',
+		        data: {
+		            labels: ["자격증", "학력", "경력"], // 레이블 설정
+		            datasets: [{
+		                label: '지원 현황',
+		                labels: Array.from({ length: 11 }, (_, i) => i.toString()), // 레이블 설정 (0부터 10까지 1씩 증가)
+		                data: data, // 데이터 설정
+		                backgroundColor: 'rgba(75, 192, 192, 0.2)', // 그래프 색상 설정
+		                borderColor: 'rgba(75, 192, 192, 1)', // 테두리 색상 설정
+		                borderWidth: 1
+		            }]
+		        },
+		        options: {
+		            scales: {
+		                y: {
+		                    beginAtZero: true
+		                }
+		            }
+		        }
+		    });
+		}
+		
+		function info(jid) {
+			$.ajax({
+				type : 'POST',
+				url : '${pageContext.request.contextPath}/person/apply/info',
+				data : {
+					jid : jid
+				},
+				success : function(data) {
+					var applyInfo = data.applyInfo;
+					var qualificationAvg = data.qualificationAvg;
+					var educationAvg = data.educationAvg;
+					var experienceAvg = data.experienceAvg;
+					
+					// 모달 창 열기
+					$('#myModal').modal('show');
+					// 모달 뒤 배경 생성
+				    $('<div class="modal-backdrop"></div>').appendTo('body');
+					
+				 	// 새로운 <span> 요소를 생성하여 applyInfo 및 qualificationAvg를 강조
+		            var highlightedApplyInfo = $('<span class="highlighted-text"><i>' + applyInfo + '</i></span>');
+		            var highlightedQualificationAvg = $('<span class="highlighted-text"><i>' + qualificationAvg + '</i></span');
+		            var highlightedEducationAvg = $('<span class="highlighted-text"><i>' + educationAvg + '</i></span');
+		            var highlightedExperienceAvg = $('<span class="highlighted-text"><i>' + experienceAvg + '</i></span');
+
+		            var applyInfoText = '지원자 수는 ';
+		            applyInfoText += highlightedApplyInfo.prop('outerHTML');
+		            applyInfoText += ' 명입니다.';
+
+		            var qualificationAvgText = '평균 자격증 개수는 ';
+		            qualificationAvgText += highlightedQualificationAvg.prop('outerHTML');
+		            qualificationAvgText += ' 개입니다.';
+		            
+		            var educationAvgText = '평균 학력은 ';
+		            educationAvgText += highlightedEducationAvg.prop('outerHTML');
+		            educationAvgText += ' 입니다.';
+		            
+		            var experienceAvgText = '평균 경력은 ';
+		            experienceAvgText += highlightedExperienceAvg.prop('outerHTML');
+		            experienceAvgText += ' 입니다.';
+
+		            // 요소에 HTML을 추가
+		            $('#applyInfoElement').html(applyInfoText);
+		            $('#qualificationAvgElement').html(qualificationAvgText);
+		            $('#educationAvgElement').html(educationAvgText);
+		            $('#experienceAvgElement').html(experienceAvgText);
+
+		            createChart([qualificationAvg, educationAvg, experienceAvg]); // 차트 생성
+				},
+				error: function(xhr, status, error) {
+		           var errorMessage = "클라이언트에서 오류 발생: " + error;
+		           alert(errorMessage);
+		       }
+			});
+		};
+		
+		function removeBackdrop() {
+		    $('.modal-backdrop').remove();
+		}
+		
+		function displayTime() {
+		    const now = new Date();
+		    const timeElement = document.getElementById("real-time");
+		    timeElement.innerHTML = now.toLocaleTimeString(); // 시간 형식 설정
+		}
+		
+		// 페이지 로드 시 시작
+		window.onload = function() {
+		    // 1초마다 displayTime 함수 호출
+		    setInterval(displayTime, 1000);
 		};
 	</script>
+	<div class="modal" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">실시간 지원 현황</h4>
+	        <button type="button" class="close" data-dismiss="modal" onclick="removeBackdrop()">&times;</button>
+	      </div>
+	      <div class="modal-body">
+	      	<div>현재 시각은 <span id="real-time"></span>&nbsp;&nbsp;입니다.</div>
+	      	<div><p id="applyInfoElement"></p></div>
+	      	<div><p id="qualificationAvgElement"></p></div>
+	      	<div><p id="educationAvgElement"></p></div>
+	      	<div><p id="experienceAvgElement"></p></div>
+	      	<canvas id="myChart" width="400" height="200"></canvas>
+	      </div>
+	      <div class="modal-footer">
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </body>
+<style>
+.modal {
+	display: none;
+    position: fixed; /* 모달 위치 고정 */
+    top: 50%; /* 화면 상단에서 50% 떨어진 위치로 설정 */
+    left: 50%; /* 화면 왼쪽에서 50% 떨어진 위치로 설정 */
+    transform: translate(-50%, -50%); /* 모달을 가운데 정렬 */
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* 다른 요소 위에 모달 표시 */
+    text-align: center;
+}
+
+/* 모달 뒷 배경 */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 배경 어두움 정도 설정 */
+    z-index: 1;
+}
+
+.modal-header {
+    position: relative;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.modal-body {
+    text-align: left; /* 모달 내용 왼쪽 정렬 */
+    margin-top: 20px; /* 위쪽 여백 추가 */
+}
+
+#real-time {
+	color: #007bff;
+	font-style: italic;
+}
+
+.highlighted-text {
+	color: #007bff;
+}
+
+.modal-footer {
+    text-align: right; /* 모달 하단 오른쪽 정렬 */
+    margin-top: 20px; /* 위쪽 여백 추가 */
+}
+</style>
 </html>
