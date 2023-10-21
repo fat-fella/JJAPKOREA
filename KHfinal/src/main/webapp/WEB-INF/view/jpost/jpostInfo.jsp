@@ -99,12 +99,7 @@
 							<span class="coName"> ${jobPosting.BIZNAME} </span>
 
 							<div class="item favorite">
-								<!-- <button type="button"
-									class="girBtn girBtn_2 girBtnFav  devFavor5_15983790"
-									onclick=" JKLoginLayer.open('/Recruit/Booth_GI_Read/42887747?Oem_Code=C1&amp;productType=FirstVVIP&amp;logpath=0'); ">
-									<span>관심기업</span>
-								</button>
- -->
+								<p>조회수 : ${jobPosting.COUNT};</p>
 							</div>
 						</div>
 						<p>${jobPosting.RE_TITLE}</p>
@@ -150,7 +145,7 @@
 									<a
 										href="https://www.jobkorea.co.kr/List_GI/GI_Area_List.asp?AreaNo=I130&amp;AllStat=1"
 										target="_blank" title="새창"
-										onclick="javascript:go_Area_List('I130',1); return false;">서울시
+										onclick="javascript:go_Area_List('I130',1); return false;">${jobPosting.BADDRESS}
 									</a>
 									<button id="openMapButton" onclick="openMapModal()">지도검색</button>
 								</dd>
@@ -185,14 +180,8 @@
 									class="tahoma"></span>년차) </text>
 							</dd>
 							<dt>기업형태</dt>
-							<dd>${BFORM}</dd>
-							<dt>홈페이지</dt>
-							<dd>
-
-								<span class="tahoma"><a class="devCoHomepageLink"
-									href="http://www.joongang.co.kr"
-									onclick="javascript:go_HomePageTrace('http://www.joongang.co.kr','45389898');return false;">joongang.co.kr</a></span>
-							</dd>
+							<dd>${jobPosting.BFORM}</dd>
+							
 						</dl>
 						<p class="coBtn">
 							<a href="/Company/1824494/?C_IDX=807" target="_blank"
