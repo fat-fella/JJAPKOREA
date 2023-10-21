@@ -325,9 +325,9 @@ window.onload = function () {
             for (var i = 0; i < result.length; i++) {
                 if (result[i].rref == 0) {
                     var htmlVal = '<div class="card replyCard" data-replytype="reply" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '"><div class="firstReply card" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">' 
-                    htmlVal += 			'<div class="updatewriter">작성자 : ' + result[i].memberId + '</div>' 
-                    htmlVal += 			'<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>' 
-                    htmlVal += 			'<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>' 
+                    htmlVal += 			'<div class="updatewriter">[작성자] : ' + result[i].memberId + '</div>' 
+                    htmlVal += 			'<div cla ss="updatereplyContent">[내용] : ' + result[i].replyContent + '</div>' 
+                    htmlVal += 			'<div class="updatereplyDate">[입력날짜] : ' + result[i].replyDate + '</div>' 
                     htmlVal += 			'<div class="groupbtn">' 
                    	htmlVal += 				'<button class="updatereply">수정</button>' 
                 	htmlVal += 				'<button class ="deletereply" onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
@@ -390,9 +390,9 @@ function moreReplyHandler(e) {
                 } else {
                     for (var i = 0; i < result.length; i++) {
                         var htmlVal = '<div class="firstReply card" data-replytype="child" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">'
-                        htmlVal += '<div class="updatewriter">작성자 : ' + result[i].memberId + '</div>'
-                        htmlVal += '<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
-                        htmlVal += '<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
+                        htmlVal += '<div class="updatewriter"><작성자> : ' + result[i].memberId + '</div>'
+                        htmlVal += '<div class="updatereplyContent"><내용> : ' + result[i].replyContent + '</div>'
+                        htmlVal += '<div class="updatereplyDate"><입력날짜> : ' + result[i].replyDate + '</div>'
                         htmlVal += '<div class="groupbtn">';
                         if (result[i].memberId === "${memberid}") {
                             htmlVal += '<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>';
@@ -437,9 +437,9 @@ function submitreplyHandler() {
             for (var i = 0; i < result.length; i++) {
                 var htmlVal = '<div class="card replyCard" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">'
                 htmlVal += '<div class="firstReply card">'
-                htmlVal += '<div class="updatewriter">작성자 : ' + result[i].memberId + '</div>'
-                htmlVal += '<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
-                htmlVal += '<div class="updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
+                htmlVal += '<div class="updatewriter">[작성자] : ' + result[i].memberId + '</div>'
+                htmlVal += '<div class="updatereplyContent">[내용] : ' + result[i].replyContent + '</div>'
+                htmlVal += '<div class="updatereplyDate">[입력날짜] : ' + result[i].replyDate + '</div>'
                 htmlVal += '</div>'
                 htmlVal += '<div class="groupbtn">'
                 htmlVal += '<button class="updatereply">수정</button>'
@@ -498,28 +498,20 @@ function deletereplyHandler(forNumber) {
   });
 }
 /*  ---------- 답글 수정 ---------- */
-function updatereplyHandler() {
-    var $replyCard = $(this).parents(".replyCard");
-    var replyWriter = $replyCard.data("writer");
-    var replyType = $replyCard.data("replytype"); // 댓글 원글인지 대댓글인지 확인
-
-    if (replyType === "reply" && replyWriter === "${memberid}") {
-    	console.log("답글 수정 진입!");
-        // 댓글 원글에 대한 수정 버튼을 클릭한 경우에만 수정 양식 표시
-        $replyCard.find(".updatereplyContent").html("");
-        $replyCard.find(".updatereplyDate").hide();
-
-        var updateContent = '<textarea rows="3" class="col-xl-12 replyContent" name="replyContent1"></textarea>';
-        $replyCard.find(".updatereplyContent").html(updateContent);
-
-        var updateDoBtn = '<button type="button" class="updateDoBtn">댓글 수정</button>';
-        $replyCard.find(".groupbtn").html(updateDoBtn);
-
-        $(".updateDoBtn").click(updateDoBtnHandler);
-    } else {
-        alert("작성자가 아닙니다");
-    }
-}
+function updatereplyHandler(){
+		var replyWriter= $(this).parents(".replyCard").data("writer");
+		if(replyWriter=="${memberid}"){
+		$(this).parents(".replyCard").find(".updatereplyContent").html("");
+		$(this).parents(".replyCard").find(".updatereplyDate").hide();
+		var updateContent ='<textarea rows="3" class="col-xl-12 replyContent" name="replyContent1"></textarea>'
+		$(this).parents(".replyCard").find(".updatereplyContent").html(updateContent);	
+		 var updateDoBtn ='<button type="button" class="updateDoBtn">댓글 수정</button>'
+		$(this).parents(".groupbtn").html(updateDoBtn); 
+		 $(".updateDoBtn").click(updateDoBtnHandler);
+		}else{
+			alert("작성자가 아닙니다");
+		}
+	}
 
 function updateDoBtnHandler(){
 	var replyContent1= $("[name=replyContent1]").val();
@@ -549,14 +541,13 @@ function updateDoBtnHandler(){
     
     if ($contentTextarea.length === 0) {
         // 입력창이 존재하지 않는 경우
-        /* var replyreplywriter = $replyCard.data("writer"); */
         var memberid = '${memberid}';
         if (memberid === '') {
             alert('로그인이 필요합니다!');
             window.location.href = 'http://127.0.0.1:8090/jjapkorea/login';
         }
-        var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${bvo.mid}">'
-        addreplyreply += 		'<div>↳작성자: ${bvo.mid}</div>'
+        var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${memberid}">'
+        addreplyreply += 		'<div>↳작성자: ${memberid}</div>'
         addreplyreply += 		'<div>'
         addreplyreply += 			'<textarea id="rereplyContent" rows="3" class="col-xl-12 replyContent" name="replyreplyContent">@' + replyreplywriter + " " + '</textarea>' //@' + replyreplywriter + " " + '
         addreplyreply += 		'</div>'
@@ -565,14 +556,11 @@ function updateDoBtnHandler(){
         addreplyreply += 		'</div>'
         addreplyreply += 	'</div>';
         $replyCard.append(addreplyreply);
-        
-        var textarea = document.getElementById("rereplyContent");
-        textarea.value = '@' + replyreplywriter + ' ';
-        
         $(".submitreplyreply").click(submitreplyreplyHandler);
         $replyCard.find(".forAppendArea").css("display", "block");
     } else {
         $contentTextarea.remove(); // 입력창을 제거하여 숨김
+        location.reload(true);
     }
 }
 function insertreplyreplyHandler() {
@@ -645,9 +633,9 @@ function submitreplyreplyHandler() {
                         alert("답글이 없습니다.");
                     } else {
                         for (var i = 0; i < result.length; i++) {
-                            var htmlVal =  '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '"><div class="updatewriter">작성자 : ' + result[i].memberId + '</div>'
-                            htmlVal += '<div class="updatereplyContent">내용 : ' + result[i].replyContent + '</div>'
-                            htmlVal += '<div class "updatereplyDate">입력날짜 : ' + result[i].replyDate + '</div>'
+                            var htmlVal =  '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '"><div class="updatewriter"><작성자> : ' + result[i].memberId + '</div>'
+                            htmlVal += '<div class="updatereplyContent"><내용> : ' + result[i].replyContent + '</div>'
+                            htmlVal += '<div class "updatereplyDate"><입력날짜> : ' + result[i].replyDate + '</div>'
                             htmlVal += '<div class="groupbtn">'
                             htmlVal +=		'<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
                             htmlVal += 		'<button class="insertreplyreply">답글달기</button>'

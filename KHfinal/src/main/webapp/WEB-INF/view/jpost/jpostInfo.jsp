@@ -227,7 +227,7 @@
                 <div class="option">
                     <div>
                         <form onsubmit="searchPlaces(); return false;"> 
-                            키워드 : <input type="text" id="keyword" size="15" placeholder="기업명 입력!"> <%--  value="${jobPosting.BIZNAME}" --%>
+                            키워드 : <input type="text" value="${jobPosting.BADDRESS}" id="keyword" size="15" placeholder="기업명 입력!">
                             <button type="submit">검색하기</button>
                         </form>
                     </div>
@@ -286,9 +286,6 @@ function placesSearchCB(data, status, pagination) {
 	if (status === kakao.maps.services.Status.OK) {
 		displayPlaces(data);
 		displayPagination(pagination);
-	} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-		alert('검색 결과가 존재하지 않습니다.');
-		return;
 	} else if (status === kakao.maps.services.Status.ERROR) {
 		alert('검색 결과 중 오류가 발생했습니다.');
 		return;
@@ -327,7 +324,7 @@ function displayPlaces(places) {
 	listEl.appendChild(fragment);
 	menuEl.scrollTop = 0;
 
-	map.setBounds(bounds);
+	/* map.setBounds(bounds); */
 }
 function getListItem(index, places) {
 	var el = document.createElement('li'), itemStr = '<span class="markerbg marker_'
