@@ -19,6 +19,7 @@
 		<result property="dday" column="dday"/>
 		<result property="jpostdetail" column="JPOSTDETAIL" />
 		<result property="postTime" column="POST_TIME" />
+		<result property="count" column="COUNT"/>
 	</resultMap>
 	
 	<insert id="insertJobPosting" parameterType="jobPostingDto"> 
@@ -28,5 +29,8 @@
 	<select id="getJobPostingsWithBusinessInfo" resultType="java.util.Map">
 	    select b.bizname, b.brno, TO_CHAR(b.LOGO_IMG) as LOGO_IMG, i.* from info i join business b on i.mid = b.mid order by i.post_date desc
 	</select>
+	<update id="updateCount" parameterType="jobPostingDto">
+		update info set count = count+1 where jid=#{jid}
+	</update>
 
 </mapper>

@@ -34,6 +34,10 @@ public class JobPostingServiceImpl implements JobPostingService {
         return jobPostingDao.getJobPostingsWithBusinessInfo();
     }
 
+	@Override 
+	public void updateCount(String jid) throws Exception{
+		jobPostingDao.updateCount(jid);
+	}
 	
 	
 }

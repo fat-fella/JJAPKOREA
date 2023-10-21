@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kh.lclass.jjapkorea.business.model.dto.ApplyDto;
 import kh.lclass.jjapkorea.business.model.service.ApplyService;
+import kh.lclass.jjapkorea.business.model.service.JobPostingService;
 import kh.lclass.jjapkorea.business.model.service.JobPostingUploadService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,11 +30,14 @@ public class JobPostingInfoController {
 	@Autowired
 	private ApplyService applyServiceImlp;
 	
+	@Autowired
+	private JobPostingService jobPostingServiceImpl;
+	
 	@GetMapping("/jobpostinginfo")
 	public ModelAndView jobPostingInfo(String jid, ModelAndView mv, RedirectAttributes rttr, Model model) throws Exception {
 		Map<String, Object> jobPostingInfo = jobPostingUploadServiceImpl.getJobPostingWithInfo(jid);
-
-			if (jobPostingInfo != null) {
+		jobPostingServiceImpl.updateCount(jid);
+		if (jobPostingInfo != null) {
 				mv.addObject("jobPosting" ,jobPostingInfo);
 				mv.setViewName("jpost/jpostInfo");
 			} else {
