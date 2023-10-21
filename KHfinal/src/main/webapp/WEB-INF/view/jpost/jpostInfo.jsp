@@ -180,7 +180,7 @@
 									class="tahoma"></span>년차) </text>
 							</dd>
 							<dt>기업형태</dt>
-							<dd>${jobPosting.BFORM}</dd>
+							<dd>${jobPosting.BFORM_NAME}</dd>
 							
 						</dl>
 						<p class="coBtn">
