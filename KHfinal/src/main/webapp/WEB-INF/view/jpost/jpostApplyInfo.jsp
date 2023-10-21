@@ -408,9 +408,48 @@ body {
 	</div>
 	<br> <br>
 	<div style="text-align: center;">
-	    <button id="passButton" style="display: inline-block; margin-right: 10px;">서류 합격</button>
-	    <button id="failButton" style="display: inline-block;">서류 불합격</button>
+	    <button id="passButton" style="display: inline-block; margin-right: 10px;" onclick="pass('${applyId}', '${jid}')">서류 합격</button>
+	    <button id="failButton" style="display: inline-block;" onclick="fail('${applyId}', '${jid}')">서류 불합격</button>
 	</div>
 	<br> <br>
+	<script>
+		function pass(resumeId, jid) {
+			$.ajax({
+				type : 'POST',
+				url : '${pageContext.request.contextPath}/business/apply/info',
+				data : {
+					resumeId : resumeId,
+					jid : jid,
+					passOrFail: '합격'
+				},
+				success : function(data) {
+					alert("지원자에게 합격 통지가 완료되었습니다.");
+				},
+				error: function(xhr, status, error) {
+		           var errorMessage = "클라이언트에서 오류 발생: " + error;
+		           alert(errorMessage);
+		       }
+			});
+		};
+		
+		function fail(resumeId, jid) {
+			$.ajax({
+				type : 'POST',
+				url : '${pageContext.request.contextPath}/business/apply/info',
+				data : {
+					resumeId : resumeId,
+					jid : jid,
+					passOrFail: '불합격'
+				},
+				success : function(data) {
+					alert("지원자에게 불합격 통지가 완료되었습니다.");
+				},
+				error: function(xhr, status, error) {
+		           var errorMessage = "클라이언트에서 오류 발생: " + error;
+		           alert(errorMessage);
+		       }
+			});
+		};
+	</script>
 </body>
 </html>

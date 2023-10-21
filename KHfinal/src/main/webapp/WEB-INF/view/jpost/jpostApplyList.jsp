@@ -119,7 +119,7 @@ ul.apply-list li {
 						<c:if test="${loop.index >= startIndex && loop.index < endIndex}">
 							<li>
 								<div class="apply-box">
-									<div class="title" onclick="info('${item.RESUME_ID}')">${item.TITLE}</div>
+									<div class="title" onclick="info('${item.RESUME_ID}', '${item.JID}')">${item.TITLE}</div>
 								</div>
 							</li>
 						</c:if>
@@ -207,15 +207,16 @@ ul.apply-list li {
 		</div>
 	</section>
 	<script>
-		function info(resumeId) {
+		function info(resumeId, jid) {
 			$.ajax({
 				type : 'GET',
 				url : '${pageContext.request.contextPath}/business/apply/info',
 				data : {
-					resumeId : resumeId
+					resumeId : resumeId,
+					jid : jid
 				},
 				success : function() {
-					window.location.href = '${pageContext.request.contextPath}/business/apply/info?resumeId=' + resumeId;
+					window.location.href = '${pageContext.request.contextPath}/business/apply/info?resumeId=' + resumeId + "&jid=" + jid;
 				},
 				error: function(xhr, status, error) {
 		           var errorMessage = "클라이언트에서 오류 발생: " + error;
