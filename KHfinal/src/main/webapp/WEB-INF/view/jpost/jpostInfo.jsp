@@ -10,7 +10,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4367be77ab43095200d26c3ea16f01f8&libraries=services"></script>
 <script>
-	console.log("${jobPosting}");
 	
 	// 초기에 resumeId를 가져오기 위해 페이지 로드 시 실행
 	var applyId = "${applyId}";
@@ -98,11 +97,12 @@
 						<div class="header">
 							<span class="coName"> ${jobPosting.BIZNAME} </span>
 
-							<div class="item favorite">
-								<p>조회수 : ${jobPosting.COUNT}</p>
-							</div>
+							
 						</div>
 						<p>${jobPosting.RE_TITLE}</p>
+						<div class="views">
+							<p class="viewsText">조회수 : ${jobPosting.COUNT}</p>
+						</div>
 					</h3>
 				</div>
 				<div class="tbRow clear">
