@@ -8,7 +8,7 @@
 <title>입사지원 현황</title>
 <link rel="icon"
 	href="<%=request.getContextPath()%>/resources/favicon.ico">
-	
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,24 +47,6 @@ body {
 	width: 140px;
 }
 
-.jjapkorea-menu ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.jjapkorea-menu li {
-	display: inline;
-	margin-right: 20px;
-}
-
-.jjapkorea-menu span {
-	color: #fff;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-}
-
 .readSumWrap {
 	position: relative;
 	width: 50%;
@@ -86,15 +68,9 @@ ul.apply-list li {
 
 .apply-box {
 	display: flex;
-	justify-content: space-between;
+	gap: 25px;
 	border-bottom: 1px solid #ADADAD;
 	padding-bottom: 20px;
-}
-
-.title {
-	text-decoration: none;
-	color: #000;
-	cursor: pointer;
 }
 
 .pagination {
@@ -124,11 +100,6 @@ ul.apply-list li {
 					alt="JJAPKOREA" class="logoimg">
 			</a>
 		</div>
-		<div class="jjapkorea-menu">
-			<ul>
-				<li><span class="link" onclick="infoAll('${jid}')">지원자 목록</span></li>
-			</ul>
-		</div>
 	</header>
 	<section>
 		<div class="readSumWrap clear">
@@ -142,7 +113,8 @@ ul.apply-list li {
 						<c:if test="${loop.index >= startIndex && loop.index < endIndex}">
 							<li>
 								<div class="apply-box">
-									<div class="title" onclick="info('${item.RESUME_ID}', '${item.JID}')">${item.TITLE}</div>
+									<div class="label">${loop.index + 1}</div>
+									<div class="title">${item.PNAME}&nbsp;&nbsp;&nbsp;&nbsp;${item.PPHONE}&nbsp;&nbsp;&nbsp;&nbsp;${item.PEMAIL}</div>
 								</div>
 							</li>
 						</c:if>
@@ -229,41 +201,5 @@ ul.apply-list li {
 			</div>
 		</div>
 	</section>
-	<script>
-		function info(resumeId, jid) {
-			$.ajax({
-				type : 'GET',
-				url : '${pageContext.request.contextPath}/business/apply/info',
-				data : {
-					resumeId : resumeId,
-					jid : jid
-				},
-				success : function() {
-					window.location.href = '${pageContext.request.contextPath}/business/apply/info?resumeId=' + resumeId + "&jid=" + jid;
-				},
-				error: function(xhr, status, error) {
-		           var errorMessage = "클라이언트에서 오류 발생: " + error;
-		           alert(errorMessage);
-		       }
-			});
-		};
-		
-		function infoAll(jid) {
-			$.ajax({
-				type : 'GET',
-				url : '${pageContext.request.contextPath}/business/apply/infoAll',
-				data : {
-					jid : jid
-				},
-				success : function() {
-					window.location.href = '${pageContext.request.contextPath}/business/apply/infoAll?jid=' + jid;
-				},
-				error: function(xhr, status, error) {
-		           var errorMessage = "클라이언트에서 오류 발생: " + error;
-		           alert(errorMessage);
-		       }
-			});
-		};
-	</script>
 </body>
 </html>

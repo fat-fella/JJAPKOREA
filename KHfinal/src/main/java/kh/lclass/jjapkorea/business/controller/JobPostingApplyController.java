@@ -38,6 +38,8 @@ public class JobPostingApplyController {
 	public String JobPostingApplyList(Model model, String jid,
 			@RequestParam(name = "page", defaultValue = "1") int page,
 			@RequestParam(name = "itemsPerPage", defaultValue = "5") int itemsPerPage) throws Exception {
+		model.addAttribute("jid", jid);
+		
 		List<Map<String, Object>> applyListAll = applyServiceImpl.applyListAll(jid);
 		model.addAttribute("applyListAll", applyListAll);
 
@@ -133,14 +135,31 @@ public class JobPostingApplyController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error");
 		}
 	}
+	
 	public boolean sendPassSms(String phoneNumber, String bizName, String pname) throws Exception {
 		String message = pname + " 님, " + bizName + "에 서류 합격되셨습니다. 면접 일정은 개별 연락드리겠습니다.";
 		AligoSMSExample.sendSms(message, "", phoneNumber, "");
 		return true; // 전송 성공
 	}
+	
 	public boolean sendFailSms(String phoneNumber, String bizName, String pname) throws Exception {
 		String message = pname + " 님, " + bizName + "에 서류 불합격되셨습니다.";
 		AligoSMSExample.sendSms(message, "", phoneNumber, "");
 		return true; // 전송 성공
+	}
+	
+	@GetMapping("/infoAll")
+	public String JobPostingApplyInfo(Model model, String jid,
+			@RequestParam(name = "page", defaultValue = "1") int page,
+			@RequestParam(name = "itemsPerPage", defaultValue = "5") int itemsPerPage) throws Exception {
+		List<Map<String, Object>> applyListAll = applyServiceImpl.applyListAll(jid);
+		model.addAttribute("applyListAll", applyListAll);
+
+		// 전체 데이터의 총 수를 구한 뒤, 페이징 정보를 생성
+		int totalItems = applyServiceImpl.jobPostingGetTotalItems(jid);
+		Pagination pagination = new Pagination(totalItems, page, itemsPerPage);
+		model.addAttribute("pagination", pagination);
+
+		return "jpost/jpostApplyInfoAll";
 	}
 }

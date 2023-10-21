@@ -95,7 +95,7 @@
 	</select>
 	
 	<select id="applyListAll" resultType="java.util.Map">
-		SELECT a.*, r.*, b.*
+		SELECT a.*, r.*, b.*, p.*
 		FROM resume r
 		JOIN person p ON r.MID = p.MID
 		JOIN apply a ON r.RESUME_ID = a.RESUME_ID
