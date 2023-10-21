@@ -10,4 +10,5 @@ import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 public interface JobPostingService {
 	void signUpMemberAndBusinessAndInsertJobPosting(MemberDto memberDto, BusinessDto businessDto, JobPostingDto jobPostingDto) throws Exception;
 	List<Map<String, Object>> getJobPostingsWithBusinessInfo() throws Exception;
+	void updateCount(String jid) throws Exception;
 }
