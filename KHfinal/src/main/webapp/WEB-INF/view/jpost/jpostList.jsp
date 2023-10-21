@@ -62,7 +62,7 @@
 			url:'${pageContext.request.contextPath}/business/apply/list',
 			data: {jid : jid},
 			success: function(){
-				window.location.href = "${pageContext.request.contextPath}/business/apply/list";
+				window.location.href = "${pageContext.request.contextPath}/business/apply/list?jid=" + jid;
 			},
 			error: function(error){
 				console.error("채용공고 삭제 실패", error);

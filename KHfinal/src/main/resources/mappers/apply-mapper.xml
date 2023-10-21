@@ -93,4 +93,18 @@
 		    GROUP BY a.jid, r.resume_id
 		)
 	</select>
+	
+	<select id="applyListAll" resultType="java.util.Map">
+		SELECT a.*, r.*, b.*
+		FROM resume r
+		JOIN person p ON r.MID = p.MID
+		JOIN apply a ON r.RESUME_ID = a.RESUME_ID
+		JOIN info i ON a.JID = i.JID
+		LEFT JOIN business b ON i.MID = b.MID
+		WHERE a.jid = #{jid}
+	</select>
+	
+	<select id="jobPostingGetTotalItems" resultType="java.lang.Integer">
+		select count(*) from apply join where jid = #{jid}
+	</select>
 </mapper>

@@ -61,4 +61,12 @@ public class ApplyDao {
 	public Double experienceAvg(String jid) throws Exception {
 		return sqlSession.selectOne("apply.experienceAvg", jid);
 	}
+	
+	public List<Map<String, Object>> applyListAll(String jid) throws Exception {
+		return sqlSession.selectList("apply.applyListAll", jid);
+	}
+	
+	public Integer jobPostingGetTotalItems(String jid) throws Exception {
+		return sqlSession.selectOne("apply.jobPostingGetTotalItems", jid);
+	}
 }

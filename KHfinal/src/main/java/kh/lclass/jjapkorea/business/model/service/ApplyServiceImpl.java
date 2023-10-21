@@ -73,4 +73,14 @@ public class ApplyServiceImpl implements ApplyService {
 	public Double experienceAvg(String jid) throws Exception {
 		return applyDao.experienceAvg(jid);
 	}
+	
+	@Override
+	public List<Map<String, Object>> applyListAll(String jid) throws Exception {
+		return applyDao.applyListAll(jid);
+	}
+	
+	@Override
+	public Integer jobPostingGetTotalItems(String jid) throws Exception {
+		return applyDao.jobPostingGetTotalItems(jid);
+	}
 }

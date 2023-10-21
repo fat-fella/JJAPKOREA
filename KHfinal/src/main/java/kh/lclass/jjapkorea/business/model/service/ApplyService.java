@@ -18,4 +18,6 @@ public interface ApplyService {
 	Double qualificationAvg(String jid) throws Exception;
 	Double educationAvg(String jid) throws Exception;
 	Double experienceAvg(String jid) throws Exception;
+	List<Map<String, Object>> applyListAll(String jid) throws Exception;
+	Integer jobPostingGetTotalItems(String jid) throws Exception;
 }
