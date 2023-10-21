@@ -1068,7 +1068,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="https://www.jobkorea.co.kr/User/ApplyMng"
+													<a href="<%=request.getContextPath() %>/person/apply/list"
 														onclick="GA_Event('공통_PC', 'gnb', '입사지원 현황');">
 														<span class="tx">입사지원 현황</span>
 													</a>

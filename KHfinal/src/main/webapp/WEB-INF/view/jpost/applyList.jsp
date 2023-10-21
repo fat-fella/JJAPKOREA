@@ -25,7 +25,7 @@
 body {
 	font-family: 'Noto Sans KR', Arial, sans-serif;
 	background-color: #f5f5f5;
-	margin-top: 140px;
+	margin-top: 145px;
 	padding: 0;
 }
 
@@ -301,19 +301,12 @@ ul.apply-list li {
 		    var ctx = document.getElementById('myChart').getContext('2d');
 		    chart = new Chart(ctx, {
 		        type: 'bar',
-		        data: {
-		            labels: ["자격증", "학력", "경력"], // 레이블 설정
-		            datasets: [{
-		                label: '지원 현황',
-		                labels: Array.from({ length: 11 }, (_, i) => i.toString()), // 레이블 설정 (0부터 10까지 1씩 증가)
-		                data: data, // 데이터 설정
-		                backgroundColor: 'rgba(75, 192, 192, 0.2)', // 그래프 색상 설정
-		                borderColor: 'rgba(75, 192, 192, 1)', // 테두리 색상 설정
-		                borderWidth: 1
-		            }]
-		        },
+		        data: data,
 		        options: {
 		            scales: {
+		            	x: {
+		                    stacked: true // x 축에 막대를 누적
+		                },
 		                y: {
 		                    beginAtZero: true
 		                }
@@ -354,13 +347,13 @@ ul.apply-list li {
 		            qualificationAvgText += highlightedQualificationAvg.prop('outerHTML');
 		            qualificationAvgText += ' 개입니다.';
 		            
-		            var educationAvgText = '평균 학력은 ';
+		            var educationAvgText = '대졸 이상 지원자 수는 ';
 		            educationAvgText += highlightedEducationAvg.prop('outerHTML');
-		            educationAvgText += ' 입니다.';
+		            educationAvgText += ' 명입니다.';
 		            
-		            var experienceAvgText = '평균 경력은 ';
+		            var experienceAvgText = '경력직 지원자 수는 ';
 		            experienceAvgText += highlightedExperienceAvg.prop('outerHTML');
-		            experienceAvgText += ' 입니다.';
+		            experienceAvgText += ' 명입니다.';
 
 		            // 요소에 HTML을 추가
 		            $('#applyInfoElement').html(applyInfoText);
@@ -368,7 +361,40 @@ ul.apply-list li {
 		            $('#educationAvgElement').html(educationAvgText);
 		            $('#experienceAvgElement').html(experienceAvgText);
 
-		            createChart([qualificationAvg, educationAvg, experienceAvg]); // 차트 생성
+		         	// 그래프 생성
+		            createChart({
+		                labels: ["지원 현황", "자격증", "학력", "경력"],
+		                datasets: [
+		                	{
+		                        label: '지원 현황', // 데이터 세트 레이블
+		                        data: [applyInfo, 0, 0, 0], // 지원 현황 데이터 설정
+		                        backgroundColor: 'rgba(169, 169, 169, 0.2)',
+		                        borderColor: 'rgba(169, 169, 169, 1)',
+		                        borderWidth: 0.5
+		                    },
+		                    {
+		                        label: '자격증', // 데이터 세트 레이블
+		                        data: [0, qualificationAvg, 0, 0], // 자격증 데이터 설정
+		                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+		                        borderColor: 'rgba(75, 192, 192, 1)',
+		                        borderWidth: 1
+		                    },
+		                    {
+		                        label: '학력', // 데이터 세트 레이블
+		                        data: [0, 0, educationAvg, 0], // 학력 데이터 설정
+		                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+		                        borderColor: 'rgba(255, 99, 132, 1)',
+		                        borderWidth: 1
+		                    },
+		                    {
+		                        label: '경력', // 데이터 세트 레이블
+		                        data: [0, 0, 0, experienceAvg], // 경력 데이터 설정
+		                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+		                        borderColor: 'rgba(255, 206, 86, 1)',
+		                        borderWidth: 1
+		                    }
+		                ]
+		            });
 				},
 				error: function(xhr, status, error) {
 		           var errorMessage = "클라이언트에서 오류 발생: " + error;
@@ -446,7 +472,7 @@ ul.apply-list li {
 }
 
 .modal-title {
-    text-align: center;
+    text-align: left;
 }
 
 .close {
@@ -457,7 +483,7 @@ ul.apply-list li {
 }
 
 .modal-body {
-    text-align: left; /* 모달 내용 왼쪽 정렬 */
+    text-align: left;
     margin-top: 20px; /* 위쪽 여백 추가 */
 }
 

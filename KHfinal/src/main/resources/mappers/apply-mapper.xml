@@ -73,19 +73,19 @@
 	<select id="educationAvg" resultType="java.lang.Double">
 		SELECT AVG(education_count) AS average_education_count
 		FROM (
-		    SELECT COUNT(e.education_id) AS education_count
+		    SELECT COUNT(DISTINCT e.resume_id) AS education_count
 		    FROM apply a
 		    JOIN resume r ON a.resume_id = r.resume_id
 		    LEFT JOIN education e ON r.resume_id = e.resume_id
 		    WHERE a.jid = #{jid}
-		    GROUP BY a.jid, r.resume_id
+		    AND e.school_name LIKE '%대학%'
 		)
 	</select>
 	
 	<select id="experienceAvg" resultType="java.lang.Double">
 		SELECT AVG(experience_count) AS average_experience_count
 		FROM (
-		    SELECT COUNT(e.experience_id) AS experience_count
+		    SELECT COUNT(DISTINCT r.resume_id) AS experience_count
 		    FROM apply a
 		    JOIN resume r ON a.resume_id = r.resume_id
 		    LEFT JOIN experience e ON r.resume_id = e.resume_id
