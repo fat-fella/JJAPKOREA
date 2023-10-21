@@ -36,8 +36,8 @@ public class JobPostingInfoController {
 	@GetMapping("/jobpostinginfo")
 	public ModelAndView jobPostingInfo(String jid, ModelAndView mv, RedirectAttributes rttr, Model model) throws Exception {
 		Map<String, Object> jobPostingInfo = jobPostingUploadServiceImpl.getJobPostingWithInfo(jid);
-		jobPostingServiceImpl.updateCount(jid);
 		if (jobPostingInfo != null) {
+				jobPostingServiceImpl.updateCount(jid);
 				mv.addObject("jobPosting" ,jobPostingInfo);
 				mv.setViewName("jpost/jpostInfo");
 			} else {
