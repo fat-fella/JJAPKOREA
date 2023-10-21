@@ -99,7 +99,7 @@
 							<span class="coName"> ${jobPosting.BIZNAME} </span>
 
 							<div class="item favorite">
-								<p>조회수 : ${jobPosting.COUNT};</p>
+								<p>조회수 : ${jobPosting.COUNT}</p>
 							</div>
 						</div>
 						<p>${jobPosting.RE_TITLE}</p>
