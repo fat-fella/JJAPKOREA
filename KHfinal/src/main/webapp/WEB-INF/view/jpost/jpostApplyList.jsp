@@ -238,10 +238,227 @@ ul.apply-list li {
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <h4 class="modal-title">이력서</h4>
+	        <h4 class="modal-title">${selectOnePerson.pname} 님의 이력서</h4>
 	        <button type="button" class="close" data-dismiss="modal" onclick="removeBackdrop()">&times;</button>
 	      </div>
 	      <div class="modal-body">
+	      	<form id="formTest">
+				<c:forEach items="${resumeList}" var="resume">
+					<input type="text" name="title"
+						style="display: block; margin: 0 auto; border: none; background: transparent; width: 500px; height: 50px; font-size: larger; font-weight: bold;"
+						value="${resume.title}" required>
+					<br>
+					<header class="c_header">
+						<div class="img">
+							<table class="img_table" id="img_table">
+								<tr>
+									<td colspan="4" style="text-align: center; position: relative;">
+										<div id="imagePreviewContainer"
+											style="position: relative; max-height: 170px; overflow: hidden;">
+											<div id="uploadImage">사진</div>
+											<!-- 이미지 미리보기 -->
+											<img id="imagePreview" style="max-width: 100%; height: auto;"
+												src="${resume.imageUrl}">
+											<!-- 이미지 업로드 버튼 -->
+											<button id="imageUploadButton"
+												style="position: absolute; bottom: 0; left: 0; width: 100%; display: none;">이미지
+												업로드</button>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="name">
+							<table class="name_table">
+								<tr>
+									<th class="name_th">이름</th>
+									<td class="name_td"><input type="text" name="name"
+											style="border: none; background: transparent; width: 80%; height: 80%;"
+											value="${selectOnePerson.pname}"></td>
+								</tr>
+
+								<tr>
+									<th class="name_th">휴대폰 번호</th>
+									<td class="name_td"><input type="text" name="phone"
+											style="border: none; background: transparent; width: 80%; height: 80%;"
+											value="${selectOnePerson.pphone}"></td>
+								</tr>
+
+								<tr>
+									<th class="name_th">주소</th>
+									<td class="name_td"><input type="text"
+											id="sido_sigungu_bname" name="address"
+											style="border: none; background: transparent; width: 80%; height: 80%;"
+											onclick="searchAddress_daumPostcode()"
+											value="${resume.address}"></td>
+								</tr>
+
+								<tr>
+									<th class="name_th">이메일</th>
+									<td class="name_td"><input type="text" name="email"
+											style="border: none; background: transparent; width: 80%; height: 80%;"
+											value="${selectOnePerson.pemail}"></td>
+								</tr>
+							</table>
+						</div>
+					</header>
+					<br>
+
+					<section class="c_section">
+						<div>
+							<label style="font-size: large; font-weight: bold;">자격증</label>
+							<table class="content_table" id="qualificationsTable1">
+								<thead>
+									<tr>
+										<th class="c_th">자격면허<input type="hidden"
+												name="qualificationName"></th>
+										<th class="c_th">취득일<input type="hidden"
+												name="qualificationDate"></th>
+										<th class="c_th">발급기관<input type="hidden"
+												name="qualificationAuthority"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="item" items="${getResumeWithQualification}">
+										<tr>
+											<td class="c_td"><input type="text"
+													name="qualificationName"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 1)"
+													value="${item.QUALIFICATION_NAME}"></td>
+											<td class="c_td"><input type="text"
+													name="qualificationDate"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 1)"
+													value="${item.QUALIFICATION_DATE}"></td>
+											<td class="c_td"><input type="text"
+													name="qualificationAuthority"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 1)"
+													value="${item.QUALIFICATION_AUTHORITY}"></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+						<br>
+						<div>
+							<label style="font-size: large; font-weight: bold;">학력</label>
+							<table class="content_table" id="qualificationsTable2">
+								<thead>
+									<tr>
+										<th class="c_th">재학기간<input type="hidden"
+												name="educationPeriod"></th>
+										<th class="c_th">학교명<input type="hidden"
+												name="schoolName"></th>
+										<th class="c_th">전공<input type="hidden" name="major"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="item" items="${getResumeWithEducation}">
+										<tr>
+											<td class="c_td"><input type="text"
+													name="educationPeriod"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 2)"
+													value="${item.EDUCATION_PERIOD}"></td>
+											<td class="c_td"><input type="text" name="schoolName"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 2)"
+													value="${item.SCHOOL_NAME}"></td>
+											<td class="c_td"><input type="text" name="major"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 2)" value="${item.MAJOR}"></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+						<br>
+
+						<div>
+							<label style="font-size: large; font-weight: bold;">경력</label>
+							<table class="content_table" id="qualificationsTable3">
+								<thead>
+									<tr>
+										<th class="c_th">기간<input type="hidden" name="workPeriod"></th>
+										<th class="c_th">기관 및 장소<input type="hidden"
+												name="workPlace"></th>
+										<th class="c_th">상세 내용<input type="hidden"
+												name="workDetails"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="item" items="${getResumeWithExperience}">
+										<tr>
+											<td class="c_td"><input type="text" name="workPeriod"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 3)"
+													value="${item.WORK_PERIOD}"></td>
+											<td class="c_td"><input type="text" name="workPlace"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 3)"
+													value="${item.WORK_PLACE}"></td>
+											<td class="c_td"><input type="text" name="workDetails"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 3)"
+													value="${item.WORK_DETAILS}"></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+						<br>
+
+						<div>
+							<label style="font-size: large; font-weight: bold;">수상내역
+								/ 공모전</label>
+							<table class="content_table" id="qualificationsTable4">
+								<thead>
+									<tr>
+										<th class="c_th">수상명<input type="hidden" name="awardName"></th>
+										<th class="c_th">수여기관<input type="hidden"
+												name="awardingAuthority"></th>
+										<th class="c_th">수상일자<input type="hidden"
+												name="awardDate"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="item" items="${getResumeWithAward}">
+										<tr>
+											<td class="c_td"><input type="text" name="awardName"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 4)"
+													value="${item.AWARD_NAME}"></td>
+											<td class="c_td"><input type="text"
+													name="awardingAuthority"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 4)"
+													value="${item.AWARDING_AUTHORITY}"></td>
+											<td class="c_td"><input type="text" name="awardDate"
+													style="border: none; background: transparent; width: 80%; height: 80%;"
+													oninput="checkAndAddRow(this, 4)"
+													value="${item.AWARD_DATE}"></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+						<br>
+						<div
+							style="display: flex; flex-direction: column; align-items: center;">
+							<label
+								style="font-size: large; font-weight: bold; align-self: flex-start;">자기소개서</label>
+							<textarea name="selfintroduction"
+								style="border: 2px solid black; background: transparent; width: 530px; height: 530px; resize: none;">${resume.selfintroduction}</textarea>
+						</div>
+					</section>
+					<br><br>
+					<div style="text-align: center;">
+						<button id="registerButton">수정</button>
+					</div>
+				</c:forEach>
+			</form>
 	      </div>
 	      <div class="modal-footer">
 	      </div>
@@ -294,6 +511,72 @@ ul.apply-list li {
 	.modal-body {
 	    text-align: left;
 	    margin-top: 20px; /* 위쪽 여백 추가 */
+	}
+	
+	.img_table {
+		width: 150px;
+		height: 170px;
+		float: left;
+		margin-right: 20px;
+		border: 2px solid black;
+		text-align: center;
+	}
+	
+	.name_table {
+		text-align: center;
+		width: 350px;
+		height: 100px;
+		float: left;
+		border-top: 3px solid black;
+		border-bottom: 2px solid lightgray;
+		border-left: 2px solid lightgray;
+		border-right: 2px solid lightgray;
+		border-collapse: collapse;
+	}
+	
+	.name_table th.name_th {
+		width: 100px;
+		height: 40px;
+		border-right: 2px solid lightgray;
+		border-bottom: 1px solid lightgray;
+		background-color: #c8c8c8;
+	}
+	
+	.name_table td.name_td {
+		border-bottom: 1px solid lightgray;
+	}
+	
+	.c_section {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	
+	.content_table {
+		text-align: center;
+		width: 530px;
+		height: 100px;
+		border-top: 3px solid black;
+		border-bottom: 2px solid lightgray;
+		border-left: 2px solid lightgray;
+		border-right: 2px solid lightgray;
+		border-collapse: collapse;
+	}
+	
+	.content_table th.c_th {
+		width: 150px;
+		height: 40px;
+		border-right: 2px solid lightgray;
+		border-bottom: 1px solid lightgray;
+		background-color: #c8c8c8;
+	}
+	
+	.content_table td.c_td {
+		width: 150px;
+		height: 40px;
+		border-right: 2px solid lightgray;
+		border-bottom: 1px solid lightgray;
 	}
 	
 	.modal-footer {
