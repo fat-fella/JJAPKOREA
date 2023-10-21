@@ -14,8 +14,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -83,19 +81,6 @@ ul.apply-list li {
 	color: #000;
 }
 
-.btn_ud {
-	background-color: #007bff;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	box-sizing: border-box;
-}
-
-.btn_ud:hover {
-	background-color: #0059B8;
-}
-
 .pagination {
 	position: absolute;
 	bottom: 30px;
@@ -139,12 +124,6 @@ ul.apply-list li {
 									<a
 										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/>${item.TITLE}</c:url>"
 										class="title">${item.TITLE}</a>
-									<div>
-										<button type="button" class="btn_ud"
-											onclick="info('${item.JID}')">이력서 확인</button>
-										<%-- <button type="button" class="btn_ud"
-											onclick="cancel('${item.JID}')">지원 취소</button> --%>
-									</div>
 								</div>
 							</li>
 						</c:if>
