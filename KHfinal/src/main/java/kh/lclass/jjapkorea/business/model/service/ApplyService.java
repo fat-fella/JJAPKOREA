@@ -25,4 +25,7 @@ public interface ApplyService {
 	List<Map<String, Object>> findPersonByResumeId(Integer resumeId) throws Exception;
 	String findImageUrl(Integer resumeId) throws Exception;
 	int insertApproval(ApprovalDto approvalDto) throws Exception;
+	String findBizName(ApplyDto applyDto) throws Exception;
+	int updateApproval(ApprovalDto approvalDto) throws Exception;
+	String statusByApplyId(String applyId) throws Exception;
 }

@@ -86,4 +86,16 @@ public class ApplyDao {
 	public int insertApproval(ApprovalDto approvalDto) throws Exception {
 		return sqlSession.insert("approval.insertApproval", approvalDto);
 	}
+	
+	public String findBizName(ApplyDto applyDto) throws Exception {
+		return sqlSession.selectOne("apply.findBizName", applyDto);
+	}
+	
+	public int updateApproval(ApprovalDto approvalDto) throws Exception {
+		return sqlSession.update("approval.updateApproval", approvalDto);
+	}
+	
+	public String statusByApplyId(String applyId) throws Exception {
+		return sqlSession.selectOne("approval.statusByApplyId", applyId);
+	}
 }

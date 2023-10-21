@@ -104,4 +104,19 @@ public class ApplyServiceImpl implements ApplyService {
 	public int insertApproval(ApprovalDto approvalDto) throws Exception {
 		return applyDao.insertApproval(approvalDto);
 	}
+	
+	@Override
+	public String findBizName(ApplyDto applyDto) throws Exception {
+		return applyDao.findBizName(applyDto);
+	}
+	
+	@Override
+	public int updateApproval(ApprovalDto approvalDto) throws Exception {
+		return applyDao.updateApproval(approvalDto);
+	}
+	
+	@Override
+	public String statusByApplyId(String applyId) throws Exception {
+		return applyDao.statusByApplyId(applyId);
+	}
 }

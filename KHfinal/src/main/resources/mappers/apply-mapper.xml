@@ -119,4 +119,8 @@
 	<select id="findImageUrl" resultType="string">
 		SELECT image_url FROM resume WHERE resume_id = #{resumeId}
 	</select>
+	
+	<select id="findBizName" resultType="string">
+		select b.bizname from apply a join info i on a.jid = i.jid join business b on i.mid = b.mid where a.resume_id = #{resumeId} and a.jid = #{jid}
+	</select>
 </mapper>

@@ -10,4 +10,12 @@
 	<insert id="insertApproval" parameterType="approvalDto">
 		insert into approval (apply_id, STATUS) values (#{applyId}, #{status})
 	</insert>
+	
+	<update id="updateApproval" parameterType="approvalDto">
+		update approval set status = #{status} where apply_id = #{applyId}
+	</update>
+	
+	<select id="statusByApplyId" resultType="string">
+		select status from approval where apply_id = #{applyId}
+	</select>
 </mapper>
