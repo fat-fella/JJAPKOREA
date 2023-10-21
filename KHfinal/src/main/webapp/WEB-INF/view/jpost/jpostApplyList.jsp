@@ -79,6 +79,7 @@ ul.apply-list li {
 .title {
 	text-decoration: none;
 	color: #000;
+	cursor: pointer;
 }
 
 .pagination {
@@ -121,9 +122,7 @@ ul.apply-list li {
 						<c:if test="${loop.index >= startIndex && loop.index < endIndex}">
 							<li>
 								<div class="apply-box">
-									<a
-										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/>${item.TITLE}</c:url>"
-										class="title">${item.TITLE}</a>
+									<div class="title" onclick="info('${item.RESUME_ID}')">${item.TITLE}</div>
 								</div>
 							</li>
 						</c:if>
@@ -211,5 +210,95 @@ ul.apply-list li {
 		</div>
 	</section>
 	<script>
+		function info(resumeId) {
+			$.ajax({
+				type : 'POST',
+				url : '${pageContext.request.contextPath}/business/apply/list',
+				data : {
+					resumeId : resumeId
+				},
+				success : function(data) {
+					// 모달 창 열기
+					$('#myModal').modal('show');
+					// 모달 뒤 배경 생성
+				    $('<div class="modal-backdrop"></div>').appendTo('body');
+				},
+				error: function(xhr, status, error) {
+		           var errorMessage = "클라이언트에서 오류 발생: " + error;
+		           alert(errorMessage);
+		       }
+			});
+		};
+		
+		function removeBackdrop() {
+		    $('.modal-backdrop').remove();
+		}
 	</script>
+	<div class="modal" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">이력서</h4>
+	        <button type="button" class="close" data-dismiss="modal" onclick="removeBackdrop()">&times;</button>
+	      </div>
+	      <div class="modal-body">
+	      </div>
+	      <div class="modal-footer">
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</body>
+<style>
+	.modal {
+		display: none;
+	    position: fixed; /* 모달 위치 고정 */
+	    top: 50%; /* 화면 상단에서 50% 떨어진 위치로 설정 */
+	    left: 50%; /* 화면 왼쪽에서 50% 떨어진 위치로 설정 */
+	    transform: translate(-50%, -50%); /* 모달을 가운데 정렬 */
+	    width: 30%;
+	    margin: 0 auto;
+	    padding: 20px;
+	    background-color: #f5f5f5;
+	    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	    z-index: 1000; /* 다른 요소 위에 모달 표시 */
+	    text-align: center;
+	}
+	
+	/* 모달 뒷 배경 */
+	.modal-backdrop {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background: rgba(0, 0, 0, 0.5); /* 배경 어두움 정도 설정 */
+	    z-index: 1;
+	}
+	
+	.modal-header {
+	    position: relative;
+	}
+	
+	.modal-title {
+	    text-align: left;
+	}
+	
+	.close {
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    cursor: pointer;
+	}
+	
+	.modal-body {
+	    text-align: left;
+	    margin-top: 20px; /* 위쪽 여백 추가 */
+	}
+	
+	.modal-footer {
+	    text-align: right; /* 모달 하단 오른쪽 정렬 */
+	    margin-top: 20px; /* 위쪽 여백 추가 */
+	}
+</style>
 </html>

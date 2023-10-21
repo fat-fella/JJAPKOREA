@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -30,6 +31,11 @@ public class JobPostingApplyController {
 	    Pagination pagination = new Pagination(totalItems, page, itemsPerPage);
 	    model.addAttribute("pagination", pagination);
 	    
+	    return "jpost/jpostApplyList";
+	}
+	
+	@PostMapping("/list")
+	public String JobPostingApplyList(Model model, String resumeId) throws Exception {
 	    return "jpost/jpostApplyList";
 	}
 }
