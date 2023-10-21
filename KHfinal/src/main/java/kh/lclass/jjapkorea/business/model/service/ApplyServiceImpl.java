@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import kh.lclass.jjapkorea.business.model.dao.ApplyDao;
 import kh.lclass.jjapkorea.business.model.dto.ApplyDto;
+import kh.lclass.jjapkorea.business.model.dto.ApprovalDto;
 
 @Service
 public class ApplyServiceImpl implements ApplyService {
@@ -97,5 +98,10 @@ public class ApplyServiceImpl implements ApplyService {
 	@Override
 	public String findImageUrl(Integer resumeId) throws Exception {
 		return applyDao.findImageUrl(resumeId);
+	}
+	
+	@Override
+	public int insertApproval(ApprovalDto approvalDto) throws Exception {
+		return applyDao.insertApproval(approvalDto);
 	}
 }

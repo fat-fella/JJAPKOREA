@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import kh.lclass.jjapkorea.business.model.dto.ApplyDto;
+import kh.lclass.jjapkorea.business.model.dto.ApprovalDto;
 
 public interface ApplyService {
 	int insertApply(ApplyDto applyDto) throws Exception;
@@ -23,4 +24,5 @@ public interface ApplyService {
 	String findMidByResumeId(Integer resumeId) throws Exception;
 	List<Map<String, Object>> findPersonByResumeId(Integer resumeId) throws Exception;
 	String findImageUrl(Integer resumeId) throws Exception;
+	int insertApproval(ApprovalDto approvalDto) throws Exception;
 }

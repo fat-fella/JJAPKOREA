@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kh.lclass.jjapkorea.business.model.dto.ApplyDto;
+import kh.lclass.jjapkorea.business.model.dto.ApprovalDto;
 import kh.lclass.jjapkorea.business.model.service.ApplyService;
 import kh.lclass.jjapkorea.person.model.dto.Pagination;
 import kh.lclass.jjapkorea.person.model.service.ResumeWriteService;
@@ -76,7 +77,10 @@ public class JobPostingApplyController {
 	        if ("합격".equals(passOrFail)) {
 	            // 합격일 경우의 처리
 	        	String applyId = applyServiceImpl.getApplyIdByJidAndResumeId(applyDto);
-	        	
+	        	ApprovalDto approvalDto = new ApprovalDto();
+	        	approvalDto.setApplyId(applyId);
+	        	approvalDto.setStatus(passOrFail);
+	        	applyServiceImpl.insertApproval(approvalDto);
 	            return ResponseEntity.ok("pass");
 	        } else if ("불합격".equals(passOrFail)) {
 	            // 불합격일 경우의 처리

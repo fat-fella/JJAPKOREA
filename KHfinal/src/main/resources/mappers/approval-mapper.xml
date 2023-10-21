@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="approval">
+	<resultMap type="approvalDto" id="approvalDto">
+	    <id property="applyId" column="apply_id" />
+	    <result property="status" column="STATUS" />
+	    <result property="approvalDate" column="APPROVAL_DATE" />
+	</resultMap>
+	
+	<insert id="insertApproval" parameterType="approvalDto">
+		insert into approval (apply_id, STATUS) values (#{applyId}, #{status})
+	</insert>
+</mapper>
