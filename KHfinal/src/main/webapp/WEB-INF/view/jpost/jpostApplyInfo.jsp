@@ -46,23 +46,6 @@ body {
 	width: 120px;
 }
 
-.jobkorea-menu ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.jobkorea-menu li {
-	display: inline;
-	margin-right: 20px;
-}
-
-.jobkorea-menu a {
-	color: #fff;
-	text-decoration: none;
-	font-size: 16px;
-}
-
 .readSumWrap {
 	width: 50%;
 	margin: 0 auto;
@@ -152,21 +135,20 @@ body {
 	border-bottom: 1px solid lightgray;
 }
 
-#registerButton {
+#passButton, #failButton {
 	background-color: #007bff;
 	color: white;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	display: block;
 	margin: 0 auto;
 	margin-top: 10px;
 	padding: 10px 0;
-	width: 10%;
+	width: 5%;
 	box-sizing: border-box;
 }
 
-#registerButton:hover {
+#passButton:hover, #failButton:hover {
 	background-color: #005b8a;
 }
 </style>
@@ -201,15 +183,6 @@ body {
 				<img src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
 					alt="JJAPKOREA" class="logoimg">
 			</a>
-		</div>
-		<div class="jobkorea-menu">
-			<ul>
-				<li><a href="<%=request.getContextPath()%>/person/myPage"
-						class="link linkHome">스크랩</a></li>
-				<li><a
-						href="<%=request.getContextPath()%>/person/infoModifyPerson"
-						class="link linkManage">회원 정보 수정</a></li>
-			</ul>
 		</div>
 	</header>
 	<div class="readSumWrap clear">
@@ -429,13 +402,15 @@ body {
 							style="border: 2px solid black; background: transparent; width: 530px; height: 530px; resize: none;">${resume.SELFINTRODUCTION}</textarea>
 					</div>
 				</section>
-				<br>
-				<br>
+				<br> <br>
 			</c:forEach>
 		</form>
-		<br> <br>
 	</div>
-	<br>
-	<br>
+	<br> <br>
+	<div style="text-align: center;">
+	    <button id="passButton" style="display: inline-block; margin-right: 10px;">서류 합격</button>
+	    <button id="failButton" style="display: inline-block;">서류 불합격</button>
+	</div>
+	<br> <br>
 </body>
 </html>
