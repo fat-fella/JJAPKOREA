@@ -31,7 +31,9 @@ public class BusinessController {
 	}
 	
 	@RequestMapping(value = "/businessInfo", method = RequestMethod.POST)
-	public String BusinessInfo(String mid) throws Exception {
+	public String BusinessInfo(String mid, Model model) throws Exception {
+		List<Map<String, Object>> getBusinessWithBusinessformByMid = memberServiceImpl.getBusinessWithBusinessformByMid(mid);
+		model.addAttribute("getBusinessWithBusinessformByMid", getBusinessWithBusinessformByMid);
 		return "businessInfo";
 	}
 }
