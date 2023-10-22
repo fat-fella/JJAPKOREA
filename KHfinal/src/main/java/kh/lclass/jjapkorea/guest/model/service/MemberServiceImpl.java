@@ -77,4 +77,9 @@ public class MemberServiceImpl implements MemberService {
 	public List<Map<String, Object>> getBusinessWithBusinessform() throws Exception {
 		return memberDao.getBusinessWithBusinessform();
 	}
+	
+	@Override
+	public List<Map<String, Object>> getBusinessWithBusinessformByMid(String mid) throws Exception {
+		return memberDao.getBusinessWithBusinessformByMid(mid);
+	}
 }
