@@ -152,8 +152,8 @@
 					<div class="bannerwrap">
 						<h4>채용관</h4>
 						<select id = "order" onchange="orderby()">
-							<option selected>최신순</option>
-							<option>인기순</option>
+							<option value="최신순">최신순</option>
+							<option value= "인기순" selected>인기순</option>
 						</select>
 						<script>
 							function orderby(){

@@ -33,6 +33,10 @@ public class JobPostingServiceImpl implements JobPostingService {
     public List<Map<String, Object>> getJobPostingsWithBusinessInfo() throws Exception {
         return jobPostingDao.getJobPostingsWithBusinessInfo();
     }
+	@Override
+	public List<Map<String, Object>> getJobPostingsWithBusinessInfoCount() throws Exception {
+		return jobPostingDao.getJobPostingsWithBusinessInfoCount();
+	}
 
 	@Override 
 	public void updateCount(String jid) throws Exception{
