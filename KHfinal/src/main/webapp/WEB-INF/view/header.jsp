@@ -28,41 +28,6 @@
 			$('.jkNavDimm-click').toggleClass("on");
 		})
 
-		$('#gnbGi').hover(function() {
-			if (!$('.allArea').hasClass("active")) {
-				$('#gnbGi').toggleClass("open");
-				$('.jkNavDimm-hover1').toggleClass("on");
-			}
-		})
-
-		$('#gnbStart').hover(function() {
-			if (!$('.allArea').hasClass("active")) {
-				$('#gnbStart').toggleClass("open");
-				$('.jkNavDimm-hover2').toggleClass("on");
-			}
-		})
-
-		$('#gnbHh').hover(function() {
-			if (!$('.allArea').hasClass("active")) {
-				$('#gnbHh').toggleClass("open");
-				$('.jkNavDimm-hover3').toggleClass("on");
-			}
-		})
-
-		$('#gnbSalary').hover(function() {
-			if (!$('.allArea').hasClass("active")) {
-				$('#gnbSalary').toggleClass("open");
-				$('.jkNavDimm-hover4').toggleClass("on");
-			}
-		})
-
-		$('#futurelab').hover(function() {
-			if (!$('.allArea').hasClass("active")) {
-				$('#futurelab').toggleClass("open");
-				$('.jkNavDimm-hover5').toggleClass("on");
-			}
-		})
-
 		$(document).ready(function() {
 			$('.userNav-item.my.member').hover(function() {
 				$('.userNav-item.my.member .lyMyArea').css({
