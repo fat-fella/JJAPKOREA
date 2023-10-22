@@ -119,4 +119,9 @@ function send(mid) {
 }
 </script>
 </body>
+<style>
+#banner-area .bnr-marketing a img {
+	width: 240px;
+}
+</style>
 </html>
