@@ -8,15 +8,15 @@
 <title>기업 정보</title>
 <link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/reset.css">
+	href="${pageContext.request.contextPath}/resources/css/reset.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_layout.css">
+	href="${pageContext.request.contextPath}/resources/css/jobkh_layout.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_header.css">
+	href="${pageContext.request.contextPath}/resources/css/jobkh_header.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_main.css">
+	href="${pageContext.request.contextPath}/resources/css/jobkh_main.css">
 <link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
+	href="${pageContext.request.contextPath}/resources/css/jobkh_footer.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
