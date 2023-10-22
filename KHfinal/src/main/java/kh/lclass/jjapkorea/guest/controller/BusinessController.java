@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 import kh.lclass.jjapkorea.business.model.service.JobPostingUploadService;
 import kh.lclass.jjapkorea.guest.model.service.MemberService;
 
