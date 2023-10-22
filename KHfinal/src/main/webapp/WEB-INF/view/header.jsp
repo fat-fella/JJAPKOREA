@@ -316,9 +316,9 @@
 									</div>
 									<div class="lyCol col4">
 										<div class="colItem">
-											<strong class="titArea"><a href="/Review/Home"
+											<strong class="titArea"><a href="${pageContext.request.contextPath}/businessList"
 													class="tit beta">
-													기업·연봉<span class="spGnb"></span>
+													기업정보<span class="spGnb"></span>
 												</a></strong>
 
 											<div class="listBx">
@@ -835,8 +835,8 @@
 							<!-- 헤드헌팅 신청 레이어 // -->
 						</li>
 						<li id="gnbSalary" class="navItem salary">
-							<a href="#" class="linkItem">
-								<span class="spNav"><span class="txIr">기업·연봉</span></span>
+							<a href="${pageContext.request.contextPath}/businessList" class="linkItem">
+								<span class="spNav"><span class="txIr">기업정보</span></span>
 							</a>
 							<!-- // 연봉 레이어 -->
 							<div class="lyNavArea">
