@@ -1,5 +1,8 @@
 package kh.lclass.jjapkorea.guest.model.service;
 
+import java.util.List;
+import java.util.Map;
+
 import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
 import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
@@ -15,4 +18,5 @@ public interface MemberService {
 	void cancelMemberAndBusiness(String mid) throws Exception;
 	String findAccountByNameAndPhone(PersonDto personDto) throws Exception;
 	PersonDto findAccountByIdAndPhone(PersonDto personDto) throws Exception;
+	List<Map<String, Object>> getBusinessWithBusinessform() throws Exception;
 }

@@ -1,5 +1,8 @@
 package kh.lclass.jjapkorea.guest.model.service;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -68,5 +71,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public PersonDto findAccountByIdAndPhone(PersonDto personDto) throws Exception {
 		return memberDao.findAccountByIdAndPhone(personDto);
+	}
+	
+	@Override
+	public List<Map<String, Object>> getBusinessWithBusinessform() throws Exception {
+		return memberDao.getBusinessWithBusinessform();
 	}
 }

@@ -28,4 +28,8 @@
 	<delete id="cancelBusiness" parameterType="string">
 		delete from business where mid = #{mid}
 	</delete>
+	
+	<select id="getBusinessWithBusinessform" resultType="java.util.Map">
+		select b.*, to_char(b.logo_img) as LI, f.bform_name from business b join businessform f on b.bform = f.bform order by b.bizname asc
+	</select>
 </mapper>

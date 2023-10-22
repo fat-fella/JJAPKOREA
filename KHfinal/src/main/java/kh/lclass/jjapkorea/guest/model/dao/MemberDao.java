@@ -2,6 +2,7 @@ package kh.lclass.jjapkorea.guest.model.dao;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,5 +81,9 @@ public class MemberDao {
 	
 	public PersonDto findAccountByIdAndPhone(PersonDto personDto) throws Exception {
 		return sqlSession.selectOne("person.findAccountByIdAndPhone", personDto);
+	}
+	
+	public List<Map<String, Object>> getBusinessWithBusinessform() throws Exception {
+		return sqlSession.selectList("business.getBusinessWithBusinessform");
 	}
 }
