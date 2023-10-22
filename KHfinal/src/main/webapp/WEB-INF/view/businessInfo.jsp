@@ -41,6 +41,16 @@
 	body {
 		font-family: 'Noto Sans KR', Arial, sans-serif;
 	}
+	
+	.item {
+        background-color: white; /* 흰색 배경 설정 */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 설정 */
+        margin: 10px; /* 각 아이템 간의 간격 조절 */
+        padding: 10px; /* 아이템 내용과 테두리 간의 간격 조절 */
+        width: 300px; /* 가로 크기 설정 */
+        height: 600px; /* 세로 크기 설정 */
+        overflow: auto; /* 스크롤바 표시 설정 */
+    }
 </style>
 <body>
 
@@ -142,12 +152,12 @@
 
 		<div class="post-slider-wrap" data-aos="fade-up" data-aos-delay="300">
 			<div id="post-slider" class="post-slider">
-				<c:forEach items="${selectList}" var="item">
+				<c:forEach items="${selectListMap}" var="item">
 					<div class="item">
-						<a href="case-study.html" class="card d-block">
+						<a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="title" class="card d-block">
 							<div class="card-body">
-								<h5 class="card-title">${item.reTitle}</h5>
-								<p>${item.jpostdetail}</p>
+								<h5 class="card-title">${item.RE_TITLE}</h5>
+								<p>${item.JPOSTDETAIL}</p>
 							</div>
 						</a>
 					</div>
@@ -155,6 +165,33 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="site-footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="widget">
+					<h3>About</h3>
+					<p>짭코리아 기업 상세 정보입니다.</p>
+				</div> <!-- /.widget -->
+			</div> <!-- /.col-lg-4 -->
+		</div>
+
+		<div class="row mt-5">
+			<div class="col-12 text-center">
+					<!-- 
+              **==========
+              NOTE: 
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              **==========
+            -->
+
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
+            </p>
+          </div>
+        </div>
+      </div> <!-- /.container -->
+    </div> <!-- /.site-footer -->
 
 	<script
 		src="${pageContext.request.contextPath}/resources/js/tiny-slider.js"></script>

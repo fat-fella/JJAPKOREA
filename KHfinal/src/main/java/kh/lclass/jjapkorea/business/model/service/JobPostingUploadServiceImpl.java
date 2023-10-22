@@ -52,4 +52,9 @@ public class JobPostingUploadServiceImpl implements JobPostingUploadService{
 	public int jobPostingUpdate(JobPostingDto dto) throws Exception{
 		return jobpostinguploadDao.jobPostingUpdate(dto);
 	}
+	
+	@Override
+	public List<Map<String, Object>> selectListMap(String mid) throws Exception{
+		return jobpostinguploadDao.selectListMap(mid);
+	}
 }

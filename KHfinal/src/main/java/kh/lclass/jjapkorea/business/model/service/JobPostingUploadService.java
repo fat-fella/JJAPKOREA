@@ -16,5 +16,6 @@ public interface JobPostingUploadService {
 	public Map<String, Object> getJobPostingWithInfo(String jid) throws Exception;
 	public int jobPostingDelete(String jid) throws Exception;
 	public int jobPostingUpdate(JobPostingDto dto) throws Exception;
+	List<Map<String, Object>> selectListMap(String mid) throws Exception;
 }
 

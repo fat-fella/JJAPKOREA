@@ -45,6 +45,8 @@ public class JobPostingUploadDao {
 		return sqlSession.update("jobpostingUpload.jobPostingUpdate", dto);
 	}
 	
-	
+	public List<Map<String, Object>> selectListMap(String mid) throws Exception{
+		return sqlSession.selectList("selectListMap", mid);
+	}
 	
 }

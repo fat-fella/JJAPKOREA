@@ -57,9 +57,10 @@
 		SELECT * FROM "RFIELD" WHERE SUBSTR(RECRUIT_FIELD, 1, 3) = #{selectedOption}
 	</select>
 
+	<select id="selectListMap" resultType="map">
+		SELECT RE_TITLE, JID, TO_CHAR(JPOSTDETAIL) AS JPOSTDETAIL FROM INFO WHERE MID = #{mid}
 
-
-
+	</select>
 
 	<select id="selectList" resultMap="jobpostingDtoResultMap" resultType="string">
 		SELECT RE_TITLE, JID, TO_CHAR(JPOSTDETAIL) FROM INFO WHERE MID = #{mid}
