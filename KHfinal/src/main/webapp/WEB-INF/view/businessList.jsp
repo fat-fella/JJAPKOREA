@@ -129,15 +129,14 @@ table.inner-table td {
 	</div>
 	<script>
 		function send(mid) {
-			var url = '${pageContext.request.contextPath}/businessInfo';
+			var baseUrl = '${pageContext.request.contextPath}/businessInfo';
+		    var url = baseUrl + '?mid=' + mid;
+		    
 			$.ajax({
-			type : 'POST',
+			type : 'GET',
 			url : url,
-			data : {
-				mid : mid
-			},
 			success : function(response) {
-				window.location.href = url;
+				window.location.href = baseUrl;
 			},
 			error : function(error) {
 				console.log('Error:', error);

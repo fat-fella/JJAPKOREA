@@ -26,14 +26,9 @@ public class BusinessController {
 	}
 	
 	@RequestMapping(value = "/businessInfo", method = RequestMethod.GET)
-	public String BusinessInfo() throws Exception {
-		return "businessInfo";
-	}
-	
-	@RequestMapping(value = "/businessInfo", method = RequestMethod.POST)
 	public String BusinessInfo(String mid, Model model) throws Exception {
 		Map<String, Object> getBusinessWithBusinessformByMid = memberServiceImpl.getBusinessWithBusinessformByMid(mid);
 		model.addAttribute("getBusinessWithBusinessformByMid", getBusinessWithBusinessformByMid);
-		return "redirect:/businessInfo";
+		return "businessInfo";
 	}
 }
