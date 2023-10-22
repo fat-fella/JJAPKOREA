@@ -151,6 +151,10 @@
 				<section class="First VVIP 채용관">
 					<div class="bannerwrap">
 						<h4>채용관</h4>
+						<select>
+							<option selected>최신순</option>
+							<option>인기순</option>
+						</select>
 					</div>
 					<ul class="grid-container">
 						<c:forEach items="${list}" var="item">
