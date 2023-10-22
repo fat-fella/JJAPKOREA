@@ -67,8 +67,12 @@ table.inner-table {
     width: 100%;
 }
 
-.inner-table td {
+table.inner-table td {
     text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
 }
 </style>
 </head>
@@ -78,7 +82,7 @@ table.inner-table {
     <main>
         <div id="content">
             <c:forEach items="${getBusinessWithBusinessform}" var="item">
-                <table class="outer-table">
+                <table class="outer-table" onclick="send('${item.MID}')">
                     <tr>
                         <td><img src="${item.LI}"></td>
                         <td>
@@ -98,5 +102,21 @@ table.inner-table {
     </main>
     <footer><jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include></footer>
 </div>
+<script>
+function send(mid) {
+	var url = '${pageContext.request.contextPath}/businessInfo';
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: { mid: mid },
+        success: function(response) {
+        	window.location.href = url;
+        },
+        error: function(error) {
+            console.log('Error:', error);
+        }
+    });
+}
+</script>
 </body>
 </html>

@@ -18,4 +18,14 @@ public class BusinessController {
 		model.addAttribute("getBusinessWithBusinessform", memberServiceImpl.getBusinessWithBusinessform());
 		return "businessList";
 	}
+	
+	@RequestMapping(value = "/businessInfo", method = RequestMethod.GET)
+	public String BusinessInfo() throws Exception {
+		return "businessInfo";
+	}
+	
+	@RequestMapping(value = "/businessInfo", method = RequestMethod.POST)
+	public String BusinessInfo(String mid) throws Exception {
+		return "businessInfo";
+	}
 }
