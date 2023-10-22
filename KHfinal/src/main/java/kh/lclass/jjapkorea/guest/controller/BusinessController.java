@@ -34,6 +34,6 @@ public class BusinessController {
 	public String BusinessInfo(String mid, Model model) throws Exception {
 		Map<String, Object> getBusinessWithBusinessformByMid = memberServiceImpl.getBusinessWithBusinessformByMid(mid);
 		model.addAttribute("getBusinessWithBusinessformByMid", getBusinessWithBusinessformByMid);
-		return "businessInfo";
+		return "redirect:/businessInfo";
 	}
 }
