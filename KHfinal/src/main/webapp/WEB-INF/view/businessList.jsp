@@ -74,6 +74,15 @@ table.inner-table td {
     text-overflow: ellipsis;
     max-width: 100px;
 }
+
+#loadMoreContainer {
+	width: 1240px;
+	margin: 0 auto;
+}
+
+#loadMoreButton {
+	float: right;
+}
 </style>
 </head>
 <body>
@@ -99,6 +108,10 @@ table.inner-table td {
                 </table>
             </c:forEach>
         </div>
+        <br>
+        <div id="loadMoreContainer">
+        	<button id="loadMoreButton">더 보기 ∨</button>
+        </div>
     </main>
     <footer><jsp:include page="/WEB-INF/view/footer.jsp"></jsp:include></footer>
 </div>
@@ -117,6 +130,39 @@ function send(mid) {
         }
     });
 }
+
+var visibleElements = 32; // 페이지 로드 시 처음에 보이는 요소 수
+var elementsPerLoad = 4; // "더 보기" 버튼을 누를 때 로드할 요소 수
+var totalElements = ${getBusinessWithBusinessform.size()}; // 전체 요소 수
+var loadedElements = visibleElements; // 초기로드한 요소 수
+
+// 초기로드에 보여줄 요소 설정
+showElements(visibleElements);
+
+// "더 보기" 버튼 클릭 시 호출되는 함수
+function loadMore() {
+    loadedElements += elementsPerLoad;
+    if (loadedElements >= totalElements) {
+        // 모든 요소가 로드된 경우 "더 보기" 버튼을 숨김
+        document.getElementById("loadMoreButton").style.display = "none";
+    }
+    // 다음 요소를 보여줌
+    showElements(loadedElements);
+}
+
+// 지정된 수만큼 요소를 화면에 표시
+function showElements(count) {
+    var elements = document.querySelectorAll(".outer-table");
+    for (var i = 0; i < elements.length; i++) {
+        if (i < count) {
+            elements[i].style.display = "block";
+        } else {
+            elements[i].style.display = "none";
+        }
+    }
+}
+
+document.getElementById("loadMoreButton").addEventListener("click", loadMore);
 </script>
 </body>
 <style>

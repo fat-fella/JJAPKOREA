@@ -1,10 +1,17 @@
 package kh.lclass.jjapkorea.guest.controller;
 
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.google.gson.Gson;
 
 import kh.lclass.jjapkorea.guest.model.service.MemberService;
 
@@ -14,8 +21,9 @@ public class BusinessController {
 	MemberService memberServiceImpl;
 	
 	@RequestMapping(value = "/businessList", method = RequestMethod.GET)
-	public String BusinessList(Model model) throws Exception {
-		model.addAttribute("getBusinessWithBusinessform", memberServiceImpl.getBusinessWithBusinessform());
+	public String BusinessList(Model model, HttpServletRequest request) throws Exception {
+		List<Map<String, Object>> getBusinessWithBusinessform = memberServiceImpl.getBusinessWithBusinessform();
+		model.addAttribute("getBusinessWithBusinessform", getBusinessWithBusinessform);
 		return "businessList";
 	}
 	
