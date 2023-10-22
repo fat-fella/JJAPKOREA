@@ -21,6 +21,9 @@ public class JobPostingDao {
 	public List<Map<String, Object>> getJobPostingsWithBusinessInfo() throws Exception {
         return sqlSession.selectList("jobPosting.getJobPostingsWithBusinessInfo");
     }
+	public List<Map<String, Object>> getJobPostingsWithBusinessInfoCount() throws Exception {
+		return sqlSession.selectList("jobPosting.getJobPostingsWithBusinessInfoCount");
+	}
 	
 	public void updateCount(String jid) throws Exception{
 		sqlSession.update("jobPosting.updateCount", jid);
