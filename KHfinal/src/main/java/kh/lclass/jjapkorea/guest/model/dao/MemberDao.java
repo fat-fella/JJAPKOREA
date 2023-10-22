@@ -87,7 +87,7 @@ public class MemberDao {
 		return sqlSession.selectList("business.getBusinessWithBusinessform");
 	}
 	
-	public List<Map<String, Object>> getBusinessWithBusinessformByMid(String mid) throws Exception {
-		return sqlSession.selectList("business.getBusinessWithBusinessformByMid", mid);
+	public Map<String, Object> getBusinessWithBusinessformByMid(String mid) throws Exception {
+		return sqlSession.selectOne("business.getBusinessWithBusinessformByMid", mid);
 	}
 }

@@ -19,5 +19,5 @@ public interface MemberService {
 	String findAccountByNameAndPhone(PersonDto personDto) throws Exception;
 	PersonDto findAccountByIdAndPhone(PersonDto personDto) throws Exception;
 	List<Map<String, Object>> getBusinessWithBusinessform() throws Exception;
-	List<Map<String, Object>> getBusinessWithBusinessformByMid(String mid) throws Exception;
+	Map<String, Object> getBusinessWithBusinessformByMid(String mid) throws Exception;
 }
