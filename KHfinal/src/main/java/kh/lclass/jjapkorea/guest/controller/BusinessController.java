@@ -11,12 +11,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
+import kh.lclass.jjapkorea.business.model.service.JobPostingUploadService;
 import kh.lclass.jjapkorea.guest.model.service.MemberService;
 
 @Controller
 public class BusinessController {
 	@Autowired
 	MemberService memberServiceImpl;
+	
+	@Autowired
+	JobPostingUploadService jobPostingUploadServiceImpl;
 	
 	@RequestMapping(value = "/businessList", method = RequestMethod.GET)
 	public String BusinessList(Model model, HttpServletRequest request) throws Exception {
@@ -29,6 +34,8 @@ public class BusinessController {
 	public String BusinessInfo(String mid, Model model) throws Exception {
 		Map<String, Object> getBusinessWithBusinessformByMid = memberServiceImpl.getBusinessWithBusinessformByMid(mid);
 		model.addAttribute("getBusinessWithBusinessformByMid", getBusinessWithBusinessformByMid);
+		List<JobPostingDto> selectList = jobPostingUploadServiceImpl.selectList(mid);
+		model.addAttribute("selectList", selectList);
 		return "businessInfo";
 	}
 }
