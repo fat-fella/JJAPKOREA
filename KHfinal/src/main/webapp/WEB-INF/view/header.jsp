@@ -63,7 +63,7 @@
 			<!-- // search -->
 			<div class="search">
 				<h2 class="skip">검색</h2>
-				<form class="global_seek" action="/search/">
+				<form class="global_seek" action="<%=request.getContextPath()%>/search" method="get">
 					<fieldset>
 						<legend>Smart Match 통합검색</legend>
 						<div class="smKey">

@@ -29,4 +29,7 @@ public class JobPostingDao {
 		sqlSession.update("jobPosting.updateCount", jid);
 	}
 
+	public List<Map<String, Object>> getJobPostingByKeyword(String keyword) throws Exception {
+		return sqlSession.selectList("search.getJobPostingByKeyword", keyword);
+	}
 }

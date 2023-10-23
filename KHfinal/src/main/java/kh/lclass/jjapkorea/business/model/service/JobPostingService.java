@@ -12,4 +12,5 @@ public interface JobPostingService {
 	List<Map<String, Object>> getJobPostingsWithBusinessInfo() throws Exception;
 	List<Map<String, Object>> getJobPostingsWithBusinessInfoCount() throws Exception;
 	void updateCount(String jid) throws Exception;
+	List<Map<String, Object>> getJobPostingByKeyword(String keyword) throws Exception;
 }

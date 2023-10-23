@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="search">
+	<select id="getJobPostingByKeyword" resultType="java.util.Map">
+	    select i.*, b.*, TO_CHAR(b.LOGO_IMG) AS LI from info i join business b on i.mid = b.mid where re_title LIKE '%' || #{keyword} || '%' or bizname LIKE '%' || #{keyword} || '%'
+	</select>
+</mapper>
