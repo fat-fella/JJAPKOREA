@@ -1,10 +1,8 @@
 package kh.lclass.jjapkorea.person.controller;
 
-import java.util.Date;
+
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,14 +21,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 import kh.lclass.jjapkorea.guest.model.service.MemberService;
-import kh.lclass.jjapkorea.person.model.dto.ExperienceDto;
 import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
-import kh.lclass.jjapkorea.person.model.service.MyPageService;
 import kh.lclass.jjapkorea.person.model.service.ScrapService;
 
 @Controller
 @RequestMapping("/person")
-public class MyPageController {
+public class Scrap {
 	@Autowired
 	private MemberService memberService;
 
@@ -39,37 +35,16 @@ public class MyPageController {
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
-	@Autowired
-	private MyPageService myPageService;
 
-	@GetMapping("/myPage")
+	@GetMapping("/scrap")
 	public String myPage(Model model) throws Exception {
 		String mid = (String) model.getAttribute("mid");
 		List<Map<String, Object>> scrapList = scrapService.getJobPostingsWithScrapBusinessInfo(mid);
-		
-		//String workPlace = (String) model.getAttribute("workPlace");
-		String workPlace = myPageService.getByWorkplace(mid);
-//		Date workPeriod = myPageService.getByWorkperiod(mid);
-		String workDetails = myPageService.getByWorkdetails(mid);
-//		String workPname = myPageService.findAccountByPname(mid);
-		
-		
-	    System.out.println("[mj] 여기 들어오나요? workPlace : " + workPlace);
-		/* System.out.println("[mj] 여기 들어오나요? workPeriod : " + workPeriod); */
-	    System.out.println("[mj] 여기 들어오나요? workDetails : " + workDetails);
-//	    System.out.println("[mj] 여기 들어오나요? workPname : " + workPname);
-//	    System.out.println("[mj] 여기 들어오나요? mid : " + mid);
-
-	    model.addAttribute("workPlace", workPlace);
-		/* model.addAttribute("workPeriod", workPeriod); */
-	    model.addAttribute("workDetails", workDetails);
-//	    model.addAttribute("workPname", workPname);
 		model.addAttribute("scrapList", scrapList);
-		return "member/myPage";
+		return "member/scrap";
 	}
 
-	@RequestMapping(value = "/myPage", method = RequestMethod.POST, produces = "application/text; charset=UTF-8")
+	@RequestMapping(value = "/scrap", method = RequestMethod.POST, produces = "application/text; charset=UTF-8")
 	@ResponseBody
 	public ResponseEntity<String> scrap(Model model, @RequestBody ScrapDto scrapDto) throws Exception {
 		if (scrapDto != null && scrapDto.getIsScrapAction() != null) {
@@ -106,14 +81,13 @@ public class MyPageController {
 		}
 	}
 
-	@GetMapping("/infoModifyPerson")
-	public String infoModifyPerson(HttpSession session) throws Exception {
-	    String workPlace = (String) session.getAttribute("workplace");
+	@GetMapping("/infoModifyPersonPage")
+	public String infoModifyPersonGET() throws Exception {
 		return "member/infoModifyPerson";
 	}
 
-	@PostMapping("/infoModifyPerson")
-	public String infoModifyPerson(MemberDto memberDto, PersonDto personDto, RedirectAttributes redirectAttr)
+	@PostMapping("/infoModifyPersonPage")
+	public String infoModifyPersonPOST(MemberDto memberDto, PersonDto personDto, RedirectAttributes redirectAttr)
 			throws Exception {
 		String viewPage = "redirect:/";
 		try {

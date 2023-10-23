@@ -45,7 +45,7 @@
 			)
     </select>
 	
-	<select id="getByWorkperiod" resultType="int" parameterType="int">
+	<select id="getByWorkperiod" resultType="Date" parameterType="Date">
 		SELECT WORK_PERIOD 
 		FROM experience
 		WHERE EXPERIENCE_ID = (
@@ -55,6 +55,15 @@
 		)
     </select>
 	
-	
+	<select id="getByWorkdetails" resultType="string" parameterType="string">
+		SELECT WORK_DETAILS
+		FROM experience
+		WHERE EXPERIENCE_ID = (
+		    SELECT MAX(EXPERIENCE_ID)
+		    FROM experience 
+		    WHERE RESUME_ID IN (SELECT RESUME_ID FROM resume WHERE MID=#{mid}) 
+		)
+    </select>
+    
 	
 </mapper>

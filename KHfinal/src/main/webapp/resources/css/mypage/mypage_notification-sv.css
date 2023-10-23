@@ -1,0 +1,34 @@
+.all-notification{z-index:1000;position:fixed;right:38px;bottom:20px}
+.all-notification .button-close {overflow:hidden;z-index:10;display:block;position:absolute;right:16px;top:24px;width:14px;height:14px}
+.all-notification .button-close:before {content:'';display:block;width:14px;height:13px;background-image:url(/content/images/components/notification/1.0.0/icon-close.png);background-repeat:no-repeat}
+.all-notification .notification.attached {z-index:10;opacity:1;-webkit-animation:fadeIn .5s ease-out both;animation:fadeIn .5s ease-out both}
+.all-notification .notification.detached {opacity:0;-webkit-animation:fadeOut .5s ease-out both;animation:fadeOut .5s ease-out both}
+.all-notification .notification-header {position:relative;margin-bottom:0;padding-left:28px;font-size:17px;font-weight:bold;color:#ffffff;line-height:28px; letter-spacing:-0.8px;}
+.all-notification .notification {position:absolute;right:0;bottom:0;width:350px;border-radius:5px;opacity:0;display:block;-webkit-box-sizing:border-box;box-sizing:border-box;display:block; background: -moz-linear-gradient(top,  rgba(51,52,57,0.97) 0%, rgba(51,52,57,0.97) 100%);  background: -webkit-linear-gradient(top,  rgba(51,52,57,0.97) 0%,rgba(51,52,57,0.97) 100%); background: linear-gradient(to bottom,  rgba(51,52,57,0.97) 0%,rgba(51,52,57,0.97) 100%);  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7333439', endColorstr='#f7333439',GradientType=0 ); -webkit-box-shadow: 5px 10px 15px 0px rgba(0,0,0,0.2); -moz-box-shadow: 5px 10px 15px 0px rgba(0,0,0,0.2); box-shadow: 5px 10px 15px 0px rgba(0,0,0,0.2);}
+.all-notification .notification-content {margin-top:8px;font-size:15px;color:#cccccc;line-height:24px;letter-spacing:-0.8px;}
+.all-notification .notification-content em {color:#fff074}
+
+/* ì„ ë°°ì—ê²Œì§ˆë¬¸í•˜ê¸° notification*/
+.component-notification .notification a {display:block; width:350px; padding: 17px 22px 18px; -webkit-box-sizing:border-box;box-sizing:border-box}
+.component-notification .notification-header:before {content:'';display:block;position:absolute;left:0;top:5px;width:17px;height:19px;background-image:url(/content/images/components/notification/1.0.0/icon-notification.png);background-repeat:no-repeat}
+
+@-webkit-keyframes fadeIn {from {opacity:0}
+to {opacity:1}}@keyframes fadeIn {from {opacity:0}
+to {opacity:1}}@-webkit-keyframes fadeOut {from {opacity:1}
+to {opacity:0}}@keyframes fadeOut {from {opacity:1}
+to {opacity:0}}
+
+/* í¬ì§€ì…˜ ì œì•ˆ notification*/
+.position-notification {z-index:1000;position:fixed;right:38px;bottom:20px}
+.position-notification .notification-position--suggest,
+.position-notification .notification-position--complete{padding:15px 22px 20px;}
+.position-notification .notification-position--suggest{padding-bottom:23px;}
+.position-notification .notification-position--suggest .notification-header:before {content:'';display:block;position:absolute;left:0;top:7px;width:18px;height:17px;background-image:url(/content/images/components/notification/1.0.0/icon-message.png);background-repeat:no-repeat}
+.position-notification .notification-position--suggest .notification-content em{color:#fff;}
+.position-notification .notification-position--complete .notification-header:before {content:'';display:block;position:absolute;left:0;top:5px;width:18px;height:20px;background-image:url(/content/images/components/notification/1.0.0/icon-complete.png);background-repeat:no-repeat}
+.position-notification .notification-button{margin-top:15px;}
+.position-notification .notification-button .button-position--suggest {border-radius:5px; background-color:#fff074; color:#434d5d; font-size:17px; font-weight:bold; letter-spacing:-.8px; width:100%; padding:15px 0;}
+
+/* ê´€ì‹¬ê¸°ì—… ì‹ ê·œ ê³µê³  notification*/
+.interest-notification {z-index:1000;position:fixed;right:38px;bottom:20px}
+.interest-notification .notification-header:before {content:'';display:block;position:absolute;left:0;top:5px;width:18px;height:20px;background-image:url(/content/images/components/notification/1.0.0/icon-notification.png);background-repeat:no-repeat}

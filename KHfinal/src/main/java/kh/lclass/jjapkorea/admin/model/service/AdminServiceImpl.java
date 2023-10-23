@@ -3,6 +3,7 @@ package kh.lclass.jjapkorea.admin.model.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import kh.lclass.jjapkorea.admin.model.dao.AdminDao;
 import kh.lclass.jjapkorea.admin.model.dto.AdminDto;
@@ -129,6 +130,14 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public int getDeclarationComplete(Criteria cri) {
 		return adminDao.getDeclarationComplete(cri);
+	}
+	
+	@Transactional
+	@Override
+	public int deleteBoard(int rno) {
+		adminDao.deleteBoard(rno);
+		adminDao.reportUpdate(rno);
+		return 1;
 	}
 	
 	

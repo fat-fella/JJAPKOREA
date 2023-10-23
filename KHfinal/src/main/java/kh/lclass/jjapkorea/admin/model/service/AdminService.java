@@ -38,6 +38,8 @@ public interface AdminService {
 	int getDeclarationWait(Criteria cri);
 	int getDeclarationComplete(Criteria cri);
 	
+	int deleteBoard(int rno);
+	
 	
 	AdminDto adminMypage(String adminId);
 	int update(AdminDto vo);

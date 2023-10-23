@@ -24,4 +24,8 @@
 	<select id="findAccountByIdAndPhone" resultType="personDto">
 		select * from person where mid = #{mid} and pphone = #{pphone}
 	</select>
+	
+	<select id="findAccountByPname" resultType="string">
+		select pname from person where mid = #{mid};
+	</select>
 </mapper>

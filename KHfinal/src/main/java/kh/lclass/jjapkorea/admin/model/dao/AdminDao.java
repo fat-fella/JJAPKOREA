@@ -107,6 +107,13 @@ public class AdminDao {
 		return sqlSession.selectOne("admin.getDeclarationWait", cri);
 	}
 	
+	public int deleteBoard(int rno) {
+		return sqlSession.delete("admin.deleteBoard", rno);
+	}
+	public int reportUpdate(int rno) {
+		return sqlSession.update("admin.reportUpdate", rno);
+	}
+	
 	public int getDeclarationComplete(Criteria cri) {
 		return sqlSession.selectOne("admin.getDeclarationComplete", cri);
 	}
