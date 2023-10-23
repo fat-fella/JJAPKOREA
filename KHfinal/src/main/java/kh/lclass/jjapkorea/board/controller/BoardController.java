@@ -58,12 +58,12 @@ public class BoardController {
 	    if (principal != null) {
 	    	memberid = principal.getName();
 	    }
-		int readCount = boardService.boardReadCnt(param);
+		/* int readCount = boardService.boardReadCnt(param); */
 		int total = boardService.getTotal(cri);
 		PageMakerDto pageMake = new PageMakerDto(cri, total);
 		mv.addObject("memberid", memberid);
 		mv.addObject("boardList", boardService.getListPage(cri));
-		mv.addObject("readCount", readCount);
+		/* mv.addObject("readCount", readCount); */
 		mv.addObject("pageMaker", pageMake);
 		mv.addObject("total", total);
 		mv.setViewName("board/list");
@@ -163,6 +163,13 @@ public class BoardController {
 				likeService.deleteLike(bno, mid); //like테이블 삭제
 			}
 			return likeCheck;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/getLikeStatus", method = RequestMethod.GET)
+	public int getLikeStatus(int bno, String mid) throws Exception {
+	    int likeCheck = likeService.likeCheck(bno, mid);
+	    return likeCheck;
 	}
 	
 // --------------- 이미지 업로드 ---------------

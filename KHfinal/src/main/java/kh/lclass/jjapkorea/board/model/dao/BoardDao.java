@@ -67,4 +67,8 @@ public class BoardDao {
 		public int selectReply(BoardSelectReplyParam param) throws Exception{
 			return sqlSession.update("board.selectReply", param);
 		}
+		
+		public int boardhit(int bno) throws Exception{
+			return sqlSession.update("board.boardhit", bno);
+		}
 }

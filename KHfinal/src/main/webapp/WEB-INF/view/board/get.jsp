@@ -184,7 +184,7 @@ button:hover {
 				<label for="bcontent">내용:</label>
 				<div id="bcontent" style="width: 97%; height: 300px;" readonly>${bvo.bcontent}</div>
 				<br> 
-				<label for="likehit">좋아요수: (${bvo.likehit })</label>
+				<label for="likehit">좋아요: (${bvo.likehit })</label>
 				<c:choose>
 				    <c:when test="${memberid eq bvo.mid}">
 				        <a href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
@@ -206,7 +206,8 @@ button:hover {
 				    </c:otherwise>
 				</c:choose>
 				<button type="button" id="btn-board-list">글 목록으로 이동</button>
-				<button type="button" id="btn-board-like" onclick="updateLike(); return false;">좋아요</button>
+				<button type="button" id="btn-board-dislike" style="display: none;" onclick="updateLike();">좋아요 취소</button>
+				<button type="button" id="btn-board-like"  onclick="updateLike();">좋아요</button>
 				<button type="button" id="btn-board-report" onclick="report()">게시글 신고</button>
 				<input type="hidden" id="bno" name="bno" value='<c:out value="${bvo.bno}"/>'>
 				<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
@@ -269,7 +270,7 @@ $("#btn-board-delete").click(function () {
 	}
 });
 /* ---------- 좋아요 ---------- */
-var bno = '${bvo.bno}';
+/* var bno = '${bvo.bno}';
 var mid = '${memberid}';
 function updateLike() {
     var memberid = '${memberid}';
@@ -298,7 +299,65 @@ function updateLike() {
             }
         }
     });
+} */
+
+var bno = '${bvo.bno}';
+var mid = '${memberid}';
+var liked = false; // 초기에 좋아요 여부를 서버에서 가져와 설정
+
+// 페이지 로드 시 서버로부터 좋아요 상태를 가져오는 함수
+function fetchLikeStatus() {
+    $.ajax({
+        type: 'GET',
+        url: '${pageContext.request.contextPath}/board/getLikeStatus',
+        data: { 'bno': bno, 'mid': mid },
+        dataType: 'json',
+        success: function (likeCheck) {
+            liked = likeCheck === 0;
+            updateButtonDisplay();
+        }
+    });
 }
+
+function updateButtonDisplay() {
+    if (liked) {
+        $('#btn-board-like').show();
+        $('#btn-board-dislike').hide();
+    } else {
+        $('#btn-board-dislike').show();
+        $('#btn-board-like').hide();
+    }
+}
+
+// 페이지가 로드될 때 좋아요 상태를 가져옴
+$(document).ready(function () {
+    fetchLikeStatus();
+});
+
+function updateLike() {
+    var memberid = '${memberid}';
+    if (memberid === '') {
+        alert('로그인이 필요합니다!');
+        window.location.href = 'http://127.0.0.1:8090/jjapkorea/login/';
+        return;
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: '${pageContext.request.contextPath}/board/updateLike',
+        dataType: 'json',
+        data: { 'bno': bno, 'mid': mid },
+        error: function () {
+            alert('통신 에러');
+        },
+        success: function (likeCheck) {
+            liked = likeCheck === 0;
+            updateButtonDisplay(); // 버튼 상태 업데이트
+            location.reload();
+        }
+    });
+}
+
 /* ---------- 댓글 ---------- */
 let replyreplyleftpadding = "";
 window.onload = function () {
@@ -375,7 +434,7 @@ function moreReplyHandler(e) {
     if ($forAppendArea.css("display") === "block") {
         $forAppendArea.css("display", "none");
         $moreReplyButton.text("더보기");
-        location.reload(false);
+        /* location.reload(false); */
     } else {
         $.ajax({
             type: "get",

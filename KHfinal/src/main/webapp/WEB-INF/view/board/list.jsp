@@ -209,7 +209,7 @@ button.keyword:hover {
 </head>
 <body>
 <div class="title">
-	<h2> 취업톡톡! 취뽀취뽀! </h2>
+	<h2> 취업톡톡! 취뽀취뽀! <c:out value="${readCount}" /></h2>
 </div>
 <!-- 검색 -->
 <div class="search_wrap">
@@ -245,7 +245,7 @@ button.keyword:hover {
                 </td>
                 <td>${dto.mid }</td>
                 <td>${dto.bwriteDate }</td>
-                <td>${readCount }</td>
+                <td>${dto.readcnt }</td>
                 <td>${dto.likehit }</td>
             </tr>
         </c:forEach>
