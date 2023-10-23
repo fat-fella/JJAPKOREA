@@ -61,4 +61,28 @@ public class JobPostingDao {
 	public List<Map<String, Object>> getNextTwoInfoByDDay5() throws Exception {
 		return sqlSession.selectList("jobPosting.getNextTwoInfoByDDay5");
 	}
+	
+	public List<Map<String, Object>> topTwoInfoByLikehit() throws Exception {
+		return sqlSession.selectList("jobPosting.topTwoInfoByLikehit");
+	}
+	
+	public List<Map<String, Object>> getNextTwoInfoByLikehit() throws Exception {
+		return sqlSession.selectList("jobPosting.getNextTwoInfoByLikehit");
+	}
+	
+	public List<Map<String, Object>> getNextTwoInfoByLikehit2() throws Exception {
+		return sqlSession.selectList("jobPosting.getNextTwoInfoByLikehit2");
+	}
+	
+	public List<Map<String, Object>> getNextTwoInfoByLikehit3() throws Exception {
+		return sqlSession.selectList("jobPosting.getNextTwoInfoByLikehit3");
+	}
+	
+	public List<Map<String, Object>> getNextTwoInfoByLikehit4() throws Exception {
+		return sqlSession.selectList("jobPosting.getNextTwoInfoByLikehit4");
+	}
+	
+	public List<Map<String, Object>> getNextTwoInfoByLikehit5() throws Exception {
+		return sqlSession.selectList("jobPosting.getNextTwoInfoByLikehit5");
+	}
 }

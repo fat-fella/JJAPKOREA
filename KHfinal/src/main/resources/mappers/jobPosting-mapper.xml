@@ -102,4 +102,40 @@
 		)
 		<![CDATA[WHERE row_num >= 11 and row_num <= 12]]>
 	</select>
+	
+	<select id="topTwoInfoByLikehit" resultType="java.util.Map">
+		select * from 
+		(select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit from board b join board_like l on b.bno = l.bno order by b.likehit desc) 
+		<![CDATA[where rownum <= 1]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 1 and row_num <= 2]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit2" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 2 and row_num <= 3]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit3" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 3 and row_num <= 4]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit4" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 4 and row_num <= 5]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit5" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 5 and row_num <= 6]]>
+	</select>
 </mapper>

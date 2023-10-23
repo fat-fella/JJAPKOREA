@@ -21,4 +21,10 @@ public interface JobPostingService {
 	List<Map<String, Object>> getNextTwoInfoByDDay3() throws Exception;
 	List<Map<String, Object>> getNextTwoInfoByDDay4() throws Exception;
 	List<Map<String, Object>> getNextTwoInfoByDDay5() throws Exception;
+	List<Map<String, Object>> topTwoInfoByLikehit() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByLikehit() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByLikehit2() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByLikehit3() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByLikehit4() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByLikehit5() throws Exception;
 }

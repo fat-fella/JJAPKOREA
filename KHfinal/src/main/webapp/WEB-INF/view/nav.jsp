@@ -96,10 +96,6 @@
                     <div class="tab-menu">
                         <ul class="tab-menu1 person-tab active">
                             <li class="tab-menu1-1 active" data-contentnumber="1"><a href="# return false;"># 공고속보</a></li>
-                            <li class="tab-menu1-1" data-contentnumber="2"><a href="# return false;"># AI추천</a></li>
-                            <li class="tab-menu1-1" data-contentnumber="3"><a href="# return false;"># 전문채용관</a></li>
-                            <li class="tab-menu1-1" data-contentnumber="4"><a href="# return false;"># 기업·연봉</a></li>
-                            <li class="tab-menu1-1" data-contentnumber="5"><a href="# return false;"># 진로탐색</a></li>
                             <li class="tab-menu1-1" data-contentnumber="6"><a href="# return false;"># 취업톡톡</a></li>
                         </ul>
                         <ul class="tab-menu1 corp-tab">
@@ -983,20 +979,40 @@
                                     <div class="swiper-slide slide-box">
                                         <ul class="box-lst">
                                             <li>
-                                                <div class="box-double">
-                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg d">인기글</span>
-                                                        </span>
-                                                        <h4 class="box-tit">생산직4년차인데 고민이 있습니다</h4>
-                                                        <span class="post-txt">
-                                                            교대생산직으로 4년차 29살입니다전문대졸 무스펙이다 보니 이직할 곳도 크게 없네요그래서 4년 동안 모은 돈도 있으니 현직장을 그만두고 알바 조금씩하면서 자격증 공부를 하면 어떨까 싶어요&nbsp;게다가 교대근무에 대한 어려움이 아직도 있네요직장을 그만둔다는 두려움도 있고 이렇게 그만두고자격증 공부를 하는 것이 맞는 판단인지 모르겠습니다더 나은 방향이 있다면 무슨 의견이든 괜찮습니다
-                                                        </span>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">생산직종사자</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty topTwoInfoByLikehit}">
+                                            		<c:forEach items="${topTwoInfoByLikehit}" var="item">
+	                                            		<div class="box-double">
+		                                                    <a href="<c:url value='/board/get'><c:param name='bno' value='${item.BNO}'/></c:url>" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg d">인기글</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.BTITLE}</h4>
+		                                                        <span class="post-txt">
+		                                                            ${item.BC}
+		                                                        </span>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.MID}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+                                            		</c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty topTwoInfoByLikehit}">
+                                            		<div class="box-double">
+	                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg d">인기글</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">생산직4년차인데 고민이 있습니다</h4>
+	                                                        <span class="post-txt">
+	                                                            교대생산직으로 4년차 29살입니다전문대졸 무스펙이다 보니 이직할 곳도 크게 없네요그래서 4년 동안 모은 돈도 있으니 현직장을 그만두고 알바 조금씩하면서 자격증 공부를 하면 어떨까 싶어요&nbsp;게다가 교대근무에 대한 어려움이 아직도 있네요직장을 그만둔다는 두려움도 있고 이렇게 그만두고자격증 공부를 하는 것이 맞는 판단인지 모르겠습니다더 나은 방향이 있다면 무슨 의견이든 괜찮습니다
+	                                                        </span>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">생산직종사자</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                             <li>
                                                 <div class="box-img">
@@ -1006,58 +1022,118 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="box-double">
-                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg d">인기글</span>
-                                                        </span>
-                                                        <h4 class="box-tit">2개월 된 신입인데 퇴사하고 싶어요ㅠㅠ</h4>
-                                                        <span class="post-txt">
-                                                            입사 첫날부터 전직원이 저와 마주칠때마다 제 사수가 많이 깐깐해서 걱정이 된다 하셨습니다. 아니나 다를까, 첫날부터 반말, 그리고 한두번 알려준거에서 실수가 생기면“야. 니 일로 와봐라” 이러면서 사무실 내에서 큰소리로 핀잔을 줬습니다.&nbsp;제가 일처리에 있어서 부족한 점도 많지만 사수의 한숨과 구박, 직설적인 화법으로 매번 위축되었고, 긴장된 상태로 일을 하다보니 한달차까진 실수가 잦게 되었습니다.문제는 지금부터입니다.다른 곳도 이런지 모르겠지만 업무를 달라고 하면 저보고 직접 찾아서 하라고 하셨습니다. 찾아서 하기가 너무 힘들땐 사수에게 ”제가 지금 해야될 업무가 있을까요? 또는 도와드릴 일 없을까요?“ 라고 물어보면 항상 대답은 짧게 ”없다“거나 ”내가 니 찾아서 일하라고 했지 나한테 물어봐라했나?“ 이렇게 하십니다. 제가 일감을 찾지 못했을땐 제가 메모한걸 보는 편인데 그러면 또 ”메모 그거 본다고 니 실력이 늘겠냐“ 이러십니다 ㅠ그 외에도1. (회식자리에서) 각자 어디 사는지 얘기하는데 사수왈, “너네집 안좋은덴거 알제?”&nbsp;2. 직장내 성추행 신고 2번 당함3. 제 입사 전 타부서 남직원들이 내 사수때매 그만둠4. 실수가 겹쳤을때 저 들어란 식으로 부장한테 “쟤 저정도면 바보아냐?”5. 구박은 항상 사무실 내에서 큰소리로 하심. 오죽하면 옆부서에서 저한테 괜찮냐고 하셨음6. 구박할 때, “내 성격 지랄 맞은거 안다. 이런 내 밑에서 일하기 싫으면 부장님한테 말씀드려서 착한 김과장으로 사수 교체해달라라고 말해라”7. 참고로 우리팀은 나, 과장 2명(둘 중 하나가 내 사수), 부장 1명으로 총 4명이런 상황에서 2개월을 다녔습니다. 일 보다는 사람이 힘들어서 나가고 싶은데 못버티는 제가 나약한 걸까요? 아니면 빠른 퇴사가 맞을까요 ㅠㅠ 선배님들 조언구합니다
-                                                            
-                                                        </span>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">사무담당자</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+	                                            <c:if test="${not empty getNextTwoInfoByLikehit}">
+                                            		<c:forEach items="${getNextTwoInfoByLikehit}" var="item">
+	                                            		<div class="box-double">
+		                                                    <a href="<c:url value='/board/get'><c:param name='bno' value='${item.BNO}'/></c:url>" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg d">인기글</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.BTITLE}</h4>
+		                                                        <span class="post-txt">
+		                                                            ${item.BC}
+		                                                        </span>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.MID}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+                                            		</c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByLikehit}">
+	                                            	<div class="box-double">
+	                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg d">인기글</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">2개월 된 신입인데 퇴사하고 싶어요ㅠㅠ</h4>
+	                                                        <span class="post-txt">
+	                                                            입사 첫날부터 전직원이 저와 마주칠때마다 제 사수가 많이 깐깐해서 걱정이 된다 하셨습니다. 아니나 다를까, 첫날부터 반말, 그리고 한두번 알려준거에서 실수가 생기면“야. 니 일로 와봐라” 이러면서 사무실 내에서 큰소리로 핀잔을 줬습니다.&nbsp;제가 일처리에 있어서 부족한 점도 많지만 사수의 한숨과 구박, 직설적인 화법으로 매번 위축되었고, 긴장된 상태로 일을 하다보니 한달차까진 실수가 잦게 되었습니다.문제는 지금부터입니다.다른 곳도 이런지 모르겠지만 업무를 달라고 하면 저보고 직접 찾아서 하라고 하셨습니다. 찾아서 하기가 너무 힘들땐 사수에게 ”제가 지금 해야될 업무가 있을까요? 또는 도와드릴 일 없을까요?“ 라고 물어보면 항상 대답은 짧게 ”없다“거나 ”내가 니 찾아서 일하라고 했지 나한테 물어봐라했나?“ 이렇게 하십니다. 제가 일감을 찾지 못했을땐 제가 메모한걸 보는 편인데 그러면 또 ”메모 그거 본다고 니 실력이 늘겠냐“ 이러십니다 ㅠ그 외에도1. (회식자리에서) 각자 어디 사는지 얘기하는데 사수왈, “너네집 안좋은덴거 알제?”&nbsp;2. 직장내 성추행 신고 2번 당함3. 제 입사 전 타부서 남직원들이 내 사수때매 그만둠4. 실수가 겹쳤을때 저 들어란 식으로 부장한테 “쟤 저정도면 바보아냐?”5. 구박은 항상 사무실 내에서 큰소리로 하심. 오죽하면 옆부서에서 저한테 괜찮냐고 하셨음6. 구박할 때, “내 성격 지랄 맞은거 안다. 이런 내 밑에서 일하기 싫으면 부장님한테 말씀드려서 착한 김과장으로 사수 교체해달라라고 말해라”7. 참고로 우리팀은 나, 과장 2명(둘 중 하나가 내 사수), 부장 1명으로 총 4명이런 상황에서 2개월을 다녔습니다. 일 보다는 사람이 힘들어서 나가고 싶은데 못버티는 제가 나약한 걸까요? 아니면 빠른 퇴사가 맞을까요 ㅠㅠ 선배님들 조언구합니다
+	                                                            
+	                                                        </span>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">사무담당자</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                             <li>
-                                                <div class="box-double">
-                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg d">인기글</span>
-                                                        </span>
-                                                        <h4 class="box-tit">갈곳이 없습니다</h4>
-                                                        <span class="post-txt">
-                                                            나이28지거국 학점 2.2 물류학과영어 teps187운전면허경력 없습니다불면증도 심합니다기술을 배우고 싶은데 전기 쪽은 너무 어려운거같아요&nbsp;집에서도 재촉하는데 공장도 떨어지네요하고 싶은 거 기술영업이나 생산공정이지만 사회의 벽이 실감되네요
-                                                            
-                                                        </span>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">생산직종사자</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty getNextTwoInfoByLikehit2}">
+                                            		<c:forEach items="${getNextTwoInfoByLikehit2}" var="item">
+	                                            		<div class="box-double">
+		                                                    <a href="<c:url value='/board/get'><c:param name='bno' value='${item.BNO}'/></c:url>" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg d">인기글</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.BTITLE}</h4>
+		                                                        <span class="post-txt">
+		                                                            ${item.BC}
+		                                                        </span>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.MID}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+                                            		</c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByLikehit2}">
+	                                            	<div class="box-double">
+	                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg d">인기글</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">갈곳이 없습니다</h4>
+	                                                        <span class="post-txt">
+	                                                            나이28지거국 학점 2.2 물류학과영어 teps187운전면허경력 없습니다불면증도 심합니다기술을 배우고 싶은데 전기 쪽은 너무 어려운거같아요&nbsp;집에서도 재촉하는데 공장도 떨어지네요하고 싶은 거 기술영업이나 생산공정이지만 사회의 벽이 실감되네요
+	                                                            
+	                                                        </span>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">생산직종사자</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="swiper-slide slide-box">
                                         <ul class="box-lst">
                                             <li>
-                                                <div class="box-double">
-                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg d">인기글</span>
-                                                        </span>
-                                                        <h4 class="box-tit">사무직이라는게,,,</h4>
-                                                        <span class="post-txt">
-                                                            나이는 27이고 지상직 준비하다가 서비스직 자격증이나 항공 관련 자격증만 좀 따고 코로나 때문에 포기하고 편입준비하다가 취업에 도움되는 자격증이 없습니다. 중소기업이라도 사무직으로 시작해서 들어가고 싶은데 27이면 자격증 없이는 아무 중소기업도 들어갈 곳이 없겠죠?자격증을 따려고 구직을 미루지말라는 소리도 있는데 자격증이 없는데 구직을 할 수 없는게 현실 아닌가요..
-                                                        </span>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">사무보조</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+	                                            <c:if test="${not empty getNextTwoInfoByLikehit3}">
+                                            		<c:forEach items="${getNextTwoInfoByLikehit3}" var="item">
+	                                            		<div class="box-double">
+		                                                    <a href="<c:url value='/board/get'><c:param name='bno' value='${item.BNO}'/></c:url>" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg d">인기글</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.BTITLE}</h4>
+		                                                        <span class="post-txt">
+		                                                            ${item.BC}
+		                                                        </span>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.MID}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+                                            		</c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByLikehit3}">
+                                            		<div class="box-double">
+	                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg d">인기글</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">사무직이라는게,,,</h4>
+	                                                        <span class="post-txt">
+	                                                            나이는 27이고 지상직 준비하다가 서비스직 자격증이나 항공 관련 자격증만 좀 따고 코로나 때문에 포기하고 편입준비하다가 취업에 도움되는 자격증이 없습니다. 중소기업이라도 사무직으로 시작해서 들어가고 싶은데 27이면 자격증 없이는 아무 중소기업도 들어갈 곳이 없겠죠?자격증을 따려고 구직을 미루지말라는 소리도 있는데 자격증이 없는데 구직을 할 수 없는게 현실 아닌가요..
+	                                                        </span>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">사무보조</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                             <li>
                                                 <div class="box-img">
@@ -1067,38 +1143,78 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="box-double">
-                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg d">인기글</span>
-                                                        </span>
-                                                        <h4 class="box-tit">단순 생산직 근무하고 있는데 고민 중입니다.</h4>
-                                                        <span class="post-txt">
-                                                            안녕하세요 29살 남자입니다.고등학교 졸업 후부터 돈 때문에 빠르게 일자리를 구할 수 있는 공장에 발을 들였고 계속 생산직만 근무 했습니다. 그러다 작년부터 산업대학(야간대)를 다니기 시작하면서 남들을 보니 제 미래가 너무 불안하다고 느꼈습니다. 남들은 이것저것 자격증도 준비하고 했는데 저는 단순히 돈만 바라보고 일만 죽어라 하고 있었습니다. 최근 몸도 예전같지 않다고 느껴지기 시작하니 일을 그만두고 알바를 하면서 자격증을 따서 차라리 내년 1월에 다시 새로운 일자리를 찾는게 맞는지 고민 중입니다. 혹시 비슷한 경험이 있으신 분들은 어떻게 하셨는지 궁금하여 질문 남깁니다..
-                                                            
-                                                        </span>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">생산직종사자</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty getNextTwoInfoByLikehit4}">
+                                            		<c:forEach items="${getNextTwoInfoByLikehit4}" var="item">
+	                                            		<div class="box-double">
+		                                                    <a href="<c:url value='/board/get'><c:param name='bno' value='${item.BNO}'/></c:url>" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg d">인기글</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.BTITLE}</h4>
+		                                                        <span class="post-txt">
+		                                                            ${item.BC}
+		                                                        </span>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.MID}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+                                            		</c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByLikehit4}">
+	                                            	<div class="box-double">
+	                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg d">인기글</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">단순 생산직 근무하고 있는데 고민 중입니다.</h4>
+	                                                        <span class="post-txt">
+	                                                            안녕하세요 29살 남자입니다.고등학교 졸업 후부터 돈 때문에 빠르게 일자리를 구할 수 있는 공장에 발을 들였고 계속 생산직만 근무 했습니다. 그러다 작년부터 산업대학(야간대)를 다니기 시작하면서 남들을 보니 제 미래가 너무 불안하다고 느꼈습니다. 남들은 이것저것 자격증도 준비하고 했는데 저는 단순히 돈만 바라보고 일만 죽어라 하고 있었습니다. 최근 몸도 예전같지 않다고 느껴지기 시작하니 일을 그만두고 알바를 하면서 자격증을 따서 차라리 내년 1월에 다시 새로운 일자리를 찾는게 맞는지 고민 중입니다. 혹시 비슷한 경험이 있으신 분들은 어떻게 하셨는지 궁금하여 질문 남깁니다..
+	                                                            
+	                                                        </span>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">생산직종사자</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                             <li>
-                                                <div class="box-double">
-                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg d">인기글</span>
-                                                        </span>
-                                                        <h4 class="box-tit">입사하고 싶어요</h4>
-                                                        <span class="post-txt">
-                                                            새로이 세우는 기업이라고 들었습니다 기업안전성과 복지가 좋을거라는 얘기를 많이 들어서 꼭 취업하고 싶습니다 괜찮은 곳인가요?
-                                                            ㈜네오바이오텍 [네오바이오텍] 생산본부 신입/경력 채용 공고 
-                                                        </span>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">생산직종사자, (주)네오바이오텍, 한국방송통신대학교</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty getNextTwoInfoByLikehit5}">
+                                            		<c:forEach items="${getNextTwoInfoByLikehit5}" var="item">
+	                                            		<div class="box-double">
+		                                                    <a href="<c:url value='/board/get'><c:param name='bno' value='${item.BNO}'/></c:url>" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg d">인기글</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.BTITLE}</h4>
+		                                                        <span class="post-txt">
+		                                                            ${item.BC}
+		                                                        </span>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.MID}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+                                            		</c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByLikehit5}">
+	                                            	<div class="box-double">
+	                                                    <a href="#" class="link post-box" target="_blank" data-rcmdsvc-galabel="취업톡톡일반글">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg d">인기글</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">입사하고 싶어요</h4>
+	                                                        <span class="post-txt">
+	                                                            새로이 세우는 기업이라고 들었습니다 기업안전성과 복지가 좋을거라는 얘기를 많이 들어서 꼭 취업하고 싶습니다 괜찮은 곳인가요?
+	                                                            ㈜네오바이오텍 [네오바이오텍] 생산본부 신입/경력 채용 공고 
+	                                                        </span>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">생산직종사자, (주)네오바이오텍, 한국방송통신대학교</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                         </ul>
                                     </div>

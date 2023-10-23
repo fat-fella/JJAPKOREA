@@ -374,6 +374,13 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 			<version>2.4.5</version>
 		</dependency>
+		
+		<!-- Jsoup -->
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.14.3</version>
+		</dependency>
 
 		<!-- ================[ Api SNS Login end ]====================== -->
 

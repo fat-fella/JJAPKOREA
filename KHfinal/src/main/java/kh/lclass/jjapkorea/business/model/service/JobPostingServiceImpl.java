@@ -83,4 +83,34 @@ public class JobPostingServiceImpl implements JobPostingService {
 	public List<Map<String, Object>> getNextTwoInfoByDDay5() throws Exception {
 		return jobPostingDao.getNextTwoInfoByDDay5();
 	}
+	
+	@Override
+	public List<Map<String, Object>> topTwoInfoByLikehit() throws Exception {
+		return jobPostingDao.topTwoInfoByLikehit();
+	}
+	
+	@Override
+	public List<Map<String, Object>> getNextTwoInfoByLikehit() throws Exception {
+		return jobPostingDao.getNextTwoInfoByLikehit();
+	}
+	
+	@Override
+	public List<Map<String, Object>> getNextTwoInfoByLikehit2() throws Exception {
+		return jobPostingDao.getNextTwoInfoByLikehit2();
+	}
+	
+	@Override
+	public List<Map<String, Object>> getNextTwoInfoByLikehit3() throws Exception {
+		return jobPostingDao.getNextTwoInfoByLikehit3();
+	}
+	
+	@Override
+	public List<Map<String, Object>> getNextTwoInfoByLikehit4() throws Exception {
+		return jobPostingDao.getNextTwoInfoByLikehit4();
+	}
+	
+	@Override
+	public List<Map<String, Object>> getNextTwoInfoByLikehit5() throws Exception {
+		return jobPostingDao.getNextTwoInfoByLikehit5();
+	}
 }
