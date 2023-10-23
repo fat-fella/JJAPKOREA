@@ -40,6 +40,14 @@ public class AdminDao {
 		return sqlSession.selectList("admin.suspendedBusinessList", cri);
 	}
 	
+	public List<DeclarationDto> declarationWait(Criteria cri) {
+		return sqlSession.selectList("admin.declarationWait", cri);
+	}
+	
+	public List<DeclarationDto> declarationComplete(Criteria cri) {
+		return sqlSession.selectList("admin.declarationComplete", cri);
+	}
+	
 //	public List<AdminDto> adminList(Criteria cri) {
 //		return sqlSession.selectList("admin.adminList", cri);
 //	}
@@ -93,14 +101,6 @@ public class AdminDao {
 	
 	public int getBusinessTotalSuspended(Criteria cri) {
 		return sqlSession.selectOne("admin.getBusinessTotalSuspended", cri);
-	}
-	
-	public List<DeclarationDto> declarationWait(Criteria cri) {
-		return sqlSession.selectList("admin.declarationWait", cri);
-	}
-	
-	public List<DeclarationDto> declarationComplete(Criteria cri) {
-		return sqlSession.selectList("admin.declarationComplete", cri);
 	}
 	
 	public int getDeclarationWait(Criteria cri) {

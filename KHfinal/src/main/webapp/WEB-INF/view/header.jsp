@@ -557,18 +557,6 @@
 													</a>
 												</li>
 												<li>
-													<a href="https://www.jobkorea.co.kr/User/PositionOffer"
-														onclick="GA_Event('공통_PC', 'gnb', '이력서 열람기업');">
-														<span class="tx">이력서열람 기업</span>
-													</a>
-												</li>
-												<li>
-													<a href="https://www.jobkorea.co.kr/User/Smartmatch"
-														onclick="GA_Event('공통_PC', 'gnb', '스마트매치');">
-														<span class="tx">스마트매치</span>
-													</a>
-												</li>
-												<li>
 													<a href="<%=request.getContextPath() %>/person/myPage"
 														onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
 														<span class="tx">스크랩</span>
@@ -616,33 +604,7 @@
 												</li>
 												<li>
 													<a href="business/jobpostingupload/list">
-														<span class="tx">채용공고 관리</span>
-													</a>
-												</li>
-												<li>
-													<a href="https://www.jobkorea.co.kr/Corp/GiMng/List">
-														<span class="tx">공고·지원자 관리</span>
-													</a>
-												</li>
-												<li>
-													<a href="https://www.jobkorea.co.kr/Corp/Person/Find">
-														<span class="tx">인재검색 관리</span>
-													</a>
-												</li>
-												<li>
-													<a href="https://www.jobkorea.co.kr/OnePick/Intro">
-														<span class="tx">원픽 서비스 이용</span>
-													</a>
-												</li>
-												<li>
-													<a href="https://www.jobkorea.co.kr/service/company/option">
-														<span class="tx">기업회원 서비스 안내</span>
-													</a>
-												</li>
-												<li>
-													<a
-														href="https://www.jobkorea.co.kr/service/headhunting/platinum">
-														<span class="tx">서치펌 서비스 안내</span>
+														<span class="tx">채용공고·지원자 관리</span>
 													</a>
 												</li>
 											</ul>
@@ -666,6 +628,11 @@
 									<a href="<%=request.getContextPath() %>/Login/Logout.asp" class="btnLogOut"
 										onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 								</form>
+							</li>
+							<li>
+								<a href="<%=request.getContextPath()%>/admin/index">
+									<span class="tx">관리자페이지</span>
+								</a>
 							</li>
 						</sec:authorize>
 					</ul>

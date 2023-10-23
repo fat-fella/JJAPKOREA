@@ -38,33 +38,23 @@
 					<jsp:include page="./frame/adminmenu.jsp"></jsp:include>
 					<table>
 						<tr>
-							<th class="bg-secondary">번호</th>
-							<th class="bg-secondary">아이디</th>
-							<th class="bg-secondary">이름</th>
-							<th class="bg-secondary">이메일</th>
-							<th class="bg-secondary">활성화유무</th>
-							<th class="bg-secondary">권한</th>
+							<th class="bg-secondary">게시판 번호</th>
+							<th class="bg-secondary">게시판 제목</th>
+							<th class="bg-secondary">신고 카테고리</th>
+							<th class="bg-secondary">신고 내용</th>
+							<th class="bg-secondary">처리 유무</th>
 							<th class="bg-secondary">정지</th>
 						</tr>
-						<c:forEach items="${personList }" var="person">
+						<c:forEach items="${declarationComplete }" var="report">
 						<tr>
-							<td class="bg-success"><c:out value="${person.rownum + ((pageMaker.cri.pageNum-1) * 10)}"/></td>
-							<td class="bg-success"><c:out value="${person.mid}"/></td>
-							<td class="bg-success"><c:out value="${person.pname}"/></td>
-							<td class="bg-success"><c:out value="${person.pemail}"/></td>
-							<td class="bg-success">
-								<c:choose>
-									<c:when test="${person.enabled == 1}">
-										활성화
-									</c:when>
-									<c:when test="${person.enabled == 0}">
-										정지
-									</c:when>
-								</c:choose>
-							</td>
-							<td class="bg-success"><c:out value="${person.mtype}"/></td>
-							<td class="bg-success"><button class="suspended_btn btn btn-outline-primary" value="${person.mid}">
-									정지</button></td>
+							<td class="bg-success"><c:out value="${report.rownum + ((pageMaker.cri.pageNum-1) * 10)}"/></td>
+							<td class="bg-success"><c:out value="${report.bno}"/></td>
+							<td class="bg-success"><c:out value="${report.btitle}"/></td>
+							<td class="bg-success"><c:out value="${report.rCategory}"/></td>
+							<td class="bg-success"><c:out value="${report.rContent}"/></td>
+							<td class="bg-success"><c:out value="${report.rCheck}"/></td>
+							<td class="bg-success"><button class="suspended_btn btn btn-outline-primary" value="${report.mid}">
+									사용자 정지 유무</button></td>
 						</tr>
 						</c:forEach>
 					</table>

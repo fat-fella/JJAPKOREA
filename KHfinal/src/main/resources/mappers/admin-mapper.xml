@@ -103,6 +103,40 @@
 		update member set enabled = 1
 		where mid = #{mid}
 	</update>
+	
+	<select id="declarationWait" resultType="declarationDto">
+		<![CDATA[
+			select rownum, rno, bno, btitle, rid, mid, r_category, r_content, r_check from 
+			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r_category, r_content, r_check
+			from report r join board b on r.rid = b.mid
+			where rownum <= #{pageNum} * #{amount} and r_check = 0
+		]]>
+			<if test="keyword != null">
+				<include refid="criteria"></include> 
+			</if>
+		<![CDATA[
+			    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="declarationComplete" resultType="declarationDto">
+		<![CDATA[
+			select rownum, rno, bno, btitle, rid, mid, r_category, r_content, r_check from 
+			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r_category, r_content, r_check
+			from report r join board b on r.rid = b.mid
+			where rownum <= #{pageNum} * #{amount} and r_check = 1
+		]]>
+			<if test="keyword != null">
+				<include refid="criteria"></include> 
+			</if>
+		<![CDATA[
+			    )
+		where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	
 	<!-- 
 	<select id="adminList" resultType="AdminDto">
 		<![CDATA[
@@ -193,6 +227,22 @@
 		select count(*) from member m join business b using (mid)
 		where enabled = 0
 		and mtype = 'ROLE_BUSINESS'
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	
+	<select id="getDeclarationWait" resultType="_int">
+		select count(*) from report r join board b using (bno)
+		where r_check = 0
+		<if test="keyword != null">
+			and rownum > 0 <include refid="criteria"></include>
+		</if>
+	</select>
+	
+	<select id="getDeclarationComplete" resultType="_int">
+		select count(*) from report r join board b using (bno)
+		where r_check = 1
 		<if test="keyword != null">
 			and rownum > 0 <include refid="criteria"></include>
 		</if>
