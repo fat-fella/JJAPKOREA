@@ -65,8 +65,13 @@
 		update board 
 			set readcnt = readcnt + 1 
 				where bno = #{bno}
+	</update> 	
+	<update id="boardhit" parameterType="_int">
+		update board 
+			set readcnt = readcnt + 1 
+				where bno = #{bno}
 	</update>
-	<update id="selectReply" parameterType="BoardDto">
+ 	<update id="selectReply" parameterType="BoardDto">
 		update board 
 			set select_Reply_no = #{selectReplyNo}
 				where bno = #{bno}
