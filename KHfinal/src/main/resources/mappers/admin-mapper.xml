@@ -20,6 +20,9 @@
 						<when test="type == 'A'.toString()">
 							mtype like '%'||#{keyword}||'%' 
 						</when>
+						<when test="type == 'B'.toString()">
+							btitle like '%'||#{keyword}||'%' 
+						</when>
 					</choose>
 				</trim>
 			</foreach>
@@ -106,9 +109,9 @@
 	
 	<select id="declarationWait" resultType="declarationDto">
 		<![CDATA[
-			select rownum, rno, bno, btitle, rid, mid, r_category, r_content, r_check from 
-			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r_category, r_content, r_check
-			from report r join board b on r.rid = b.mid
+			select rownum, rno, bno, btitle, rid, mid, r_category, r_content, r_check, enabled from 
+			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r_category, r_content, r_check, m.enabled
+			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid
 			where rownum <= #{pageNum} * #{amount} and r_check = 0
 		]]>
 			<if test="keyword != null">
@@ -122,9 +125,9 @@
 	
 	<select id="declarationComplete" resultType="declarationDto">
 		<![CDATA[
-			select rownum, rno, bno, btitle, rid, mid, r_category, r_content, r_check from 
-			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r_category, r_content, r_check
-			from report r join board b on r.rid = b.mid
+			select rownum, rno, bno, btitle, rid, mid, r_category, r_content, r_check, enabled from 
+			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r_category, r_content, r_check, m.enabled
+			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid
 			where rownum <= #{pageNum} * #{amount} and r_check = 1
 		]]>
 			<if test="keyword != null">
@@ -265,6 +268,15 @@
 		]]>
 	</select>
 	 -->
+	 
+	<delete id="deleteBoard" parameterType="_int">
+		delete from board
+		where rno = #{rno}
+	</delete>
+	<update id="declarationUpdate" parameterType="_int">
+		update report set r_check = 1
+		where rno = #{rno}
+	</update>
 	
 	<select id="adminMypage" parameterType="string" resultType="AdminDto">
 		select * from member m
