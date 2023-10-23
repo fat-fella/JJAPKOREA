@@ -65,7 +65,7 @@
 			<!-- // headerInner -->
 			<div class="headInner">
 				<h1 class="jkLogo">
-					<a href="../index"></a>
+					<a href="<%=request.getContextPath()%>/index"></a>
 				</h1>
 				<!-- // search -->
 				<div class="search">
