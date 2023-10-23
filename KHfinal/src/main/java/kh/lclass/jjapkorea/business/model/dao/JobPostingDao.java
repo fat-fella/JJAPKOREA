@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
+import kh.lclass.jjapkorea.guest.model.dto.SearchDto;
 
 @Repository
 public class JobPostingDao {
@@ -31,5 +32,9 @@ public class JobPostingDao {
 
 	public List<Map<String, Object>> getJobPostingByKeyword(String keyword) throws Exception {
 		return sqlSession.selectList("search.getJobPostingByKeyword", keyword);
+	}
+	
+	public List<Map<String, Object>> getJobPostingByKeywords(SearchDto searchDto) throws Exception {
+		return sqlSession.selectList("search.getJobPostingByKeywords", searchDto);
 	}
 }

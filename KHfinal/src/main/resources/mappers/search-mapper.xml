@@ -4,4 +4,24 @@
 	<select id="getJobPostingByKeyword" resultType="java.util.Map">
 	    select i.*, b.*, TO_CHAR(b.LOGO_IMG) AS LI from info i join business b on i.mid = b.mid where re_title LIKE '%' || #{keyword} || '%' or bizname LIKE '%' || #{keyword} || '%'
 	</select>
+	
+	<select id="getJobPostingByKeywords" resultType="java.util.Map">
+	    select i.*, b.*, f.bform_name, TO_CHAR(b.LOGO_IMG) AS LI
+	    from info i
+	    join business b on i.mid = b.mid
+	    join businessform f on b.bform = f.bform 
+	    where
+	        <if test="keywordBaddress != null">
+	            b.baddress like '%' || #{keywordBaddress} || '%'
+	        </if>
+	        <if test="keywordCareer != null">
+	            and i.career like '%' || #{keywordCareer} || '%'
+	        </if>
+	        <if test="keywordUserEducation != null">
+	            and i.user_education like '%' || #{keywordUserEducation} || '%'
+	        </if>
+	        <if test="keywordBformName != null">
+	            and f.bform_name like '%' || #{keywordBformName} || '%'
+	        </if>
+	</select>
 </mapper>

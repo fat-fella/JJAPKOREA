@@ -12,6 +12,7 @@ import kh.lclass.jjapkorea.business.model.dto.JobPostingDto;
 import kh.lclass.jjapkorea.guest.model.dao.MemberDao;
 import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
 import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
+import kh.lclass.jjapkorea.guest.model.dto.SearchDto;
 
 @Service
 @Transactional
@@ -46,5 +47,10 @@ public class JobPostingServiceImpl implements JobPostingService {
 	@Override
 	public List<Map<String, Object>> getJobPostingByKeyword(String keyword) throws Exception {
 		return jobPostingDao.getJobPostingByKeyword(keyword);
+	}
+	
+	@Override
+	public List<Map<String, Object>> getJobPostingByKeywords(SearchDto searchDto) throws Exception {
+		return jobPostingDao.getJobPostingByKeywords(searchDto);
 	}
 }
