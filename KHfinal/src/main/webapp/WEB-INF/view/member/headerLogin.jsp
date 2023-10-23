@@ -931,7 +931,7 @@
 													href="https://www.jobkorea.co.kr/User/Smartmatch"
 													onclick="GA_Event('공통_PC', 'gnb', '스마트매치');"><span
 														class="tx">스마트매치</span></a></li>
-												<li><a href="https://www.jobkorea.co.kr/User/Scrap"
+												<li><a href="<%=request.getContextPath() %>/person/scrap"
 													onclick="GA_Event('공통_PC', 'gnb', '스크랩');"><span
 														class="tx">스크랩</span></a></li>
 												<li><a
