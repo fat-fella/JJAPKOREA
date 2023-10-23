@@ -192,7 +192,7 @@
 					<b>채용공고 상세검색</b>
 				</h5>
 				<br>
-				<form action="<%=request.getContextPath()%>/detailSearch"
+				<form action="<%=request.getContextPath()%>/detailSearchResult"
 					method="GET">
 					<div class="custom-select">
 						<div class="select-container">
