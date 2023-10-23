@@ -87,7 +87,7 @@
 				<div class="subSchArea">
 					<div class="subSchLink">
 						<a
-							href="https://www.jobkorea.co.kr/recruit/joblist?menucode=search"
+							href="<%=request.getContextPath()%>/detailSearch"
 							class="linkItem">
 							<span class="spNav"><span class="txIr">상세검색</span></span>
 						</a>
