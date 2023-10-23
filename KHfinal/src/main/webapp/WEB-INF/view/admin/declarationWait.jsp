@@ -43,7 +43,6 @@
 							<th class="bg-secondary">신고 카테고리</th>
 							<th class="bg-secondary">신고 내용</th>
 							<th class="bg-secondary">처리 유무</th>
-							<th class="bg-secondary">게시판 작성자 정지</th>
 							<th class="bg-secondary">게시판 삭제</th>
 						</tr>
 						<c:forEach items="${declarationWait }" var="report">
@@ -55,8 +54,6 @@
 							<td class="bg-success"><c:out value="${report.rContent}"/></td>
 							<td class="bg-success"><c:out value="${report.rCheck}"/></td>
 							<td class="bg-success"><c:out value="${report.rid}"/></td>
-							<td class="bg-success"><button class="suspended_btn btn btn-outline-primary" value="${report.rid}">
-									사용자 정지</button></td>
 							<td class="bg-success"><button class="delete_btn btn btn-outline-primary" value="${report.bno}">
 									게시판 삭제</button></td>
 						</tr>
@@ -66,11 +63,9 @@
 						<div class="search_area">
 							<select name="type">
 								<option value="I"
-									<c:out value="${pageMaker.cri.type eq 'I'?'selected':'' }"/>>아이디</option>
-								<option value="N"
-									<c:out value="${pageMaker.cri.type eq 'N'?'selected':'' }"/>>이름</option>
-								<option value="A"
-									<c:out value="${pageMaker.cri.type eq 'A'?'selected':'' }"/>>권한</option>
+									<c:out value="${pageMaker.cri.type eq 'I'?'selected':'' }"/>>신고자 아이디</option>
+								<option value="B"
+									<c:out value="${pageMaker.cri.type eq 'B'?'selected':'' }"/>>게시판 제목</option>
 							</select> 
 							<input type="text" name="keyword" class="searchInput" value="${pageMaker.cri.keyword }">
 							<button class="btn btn-outline-primary">Search</button>
@@ -119,7 +114,7 @@
 		$(".pageInfo a").on("click", function(e) {
 			e.preventDefault();
 			moveForm.find("input[name='pageNum']").val($(this).attr("href"));
-			moveForm.attr("action", "${pageContext.request.contextPath}/admin/personList");
+			moveForm.attr("action", "${pageContext.request.contextPath}/admin/declarationWait");
 			moveForm.submit();
 		});
 		
@@ -150,35 +145,16 @@
 			moveForm.submit();
 		}
 		
-		$(".suspended_btn").on("click", function() {
-	        var mid = $(this).val();
-	        console.log(mid);
+		$(".delete_btn").on("click", function() {
+	        var rno = $(this).val();
+	        console.log(rno);
 	        $.ajax({
 	            type: "POST", // 또는 GET 등 HTTP 메소드 선택
-	            url: "${pageContext.request.contextPath}/admin/suspended/active",
-	            data: { mid: mid },
+	            url: "${pageContext.request.contextPath}/admin/delete/board",
+	            data: { rno: rno },
 	            success: function(response) {
 	                // 성공 시 수행할 로직
-	                location.href="${pageContext.request.contextPath}/admin/personList";
-	                console.log(response);
-	            },
-	            error: (request, status, error) => {
-	                // 에러 시 수행할 로직
-	            	alert("code : " + request.status + "\n" + "message : " + request.responseText + "\n" + "error : " + request.error);
-	            }
-	        });
-	    });
-		
-		$(".suspended_btn").on("click", function() {
-	        var mid = $(this).val();
-	        console.log(mid);
-	        $.ajax({
-	            type: "POST", // 또는 GET 등 HTTP 메소드 선택
-	            url: "${pageContext.request.contextPath}/admin/suspended/active",
-	            data: { mid: mid },
-	            success: function(response) {
-	                // 성공 시 수행할 로직
-	                location.href="${pageContext.request.contextPath}/admin/personList";
+	                location.href="${pageContext.request.contextPath}/admin/declarationWait";
 	                console.log(response);
 	            },
 	            error: (request, status, error) => {

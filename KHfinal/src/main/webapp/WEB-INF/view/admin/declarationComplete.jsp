@@ -43,7 +43,6 @@
 							<th class="bg-secondary">신고 카테고리</th>
 							<th class="bg-secondary">신고 내용</th>
 							<th class="bg-secondary">처리 유무</th>
-							<th class="bg-secondary">정지</th>
 						</tr>
 						<c:forEach items="${declarationComplete }" var="report">
 						<tr>
@@ -53,8 +52,6 @@
 							<td class="bg-success"><c:out value="${report.rCategory}"/></td>
 							<td class="bg-success"><c:out value="${report.rContent}"/></td>
 							<td class="bg-success"><c:out value="${report.rCheck}"/></td>
-							<td class="bg-success"><button class="suspended_btn btn btn-outline-primary" value="${report.mid}">
-									사용자 정지 유무</button></td>
 						</tr>
 						</c:forEach>
 					</table>
@@ -62,11 +59,9 @@
 						<div class="search_area">
 							<select name="type">
 								<option value="I"
-									<c:out value="${pageMaker.cri.type eq 'I'?'selected':'' }"/>>아이디</option>
-								<option value="N"
-									<c:out value="${pageMaker.cri.type eq 'N'?'selected':'' }"/>>이름</option>
-								<option value="A"
-									<c:out value="${pageMaker.cri.type eq 'A'?'selected':'' }"/>>권한</option>
+									<c:out value="${pageMaker.cri.type eq 'I'?'selected':'' }"/>>신고자 아이디</option>
+								<option value="B"
+									<c:out value="${pageMaker.cri.type eq 'B'?'selected':'' }"/>>게시판 제목</option>
 							</select> 
 							<input type="text" name="keyword" class="searchInput" value="${pageMaker.cri.keyword }">
 							<button class="btn btn-outline-primary">Search</button>
@@ -115,7 +110,7 @@
 		$(".pageInfo a").on("click", function(e) {
 			e.preventDefault();
 			moveForm.find("input[name='pageNum']").val($(this).attr("href"));
-			moveForm.attr("action", "${pageContext.request.contextPath}/admin/personList");
+			moveForm.attr("action", "${pageContext.request.contextPath}/admin/declarationComplete");
 			moveForm.submit();
 		});
 		
@@ -155,7 +150,7 @@
 	            data: { mid: mid },
 	            success: function(response) {
 	                // 성공 시 수행할 로직
-	                location.href="${pageContext.request.contextPath}/admin/personList";
+	                location.href="${pageContext.request.contextPath}/admin/declarationComplete";
 	                console.log(response);
 	            },
 	            error: (request, status, error) => {

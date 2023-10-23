@@ -26,12 +26,14 @@ public class AdminController {
 	
 	private final AdminService service;
 	
+	// Admin Index 페이지
 	@GetMapping("/index")
 	public ModelAndView adminIndex(ModelAndView mv) {
 		mv.setViewName("/admin/index");
 		return mv;
 	}
 	
+	// 일반 멤버 리스트 페이지 접근 시
 	@GetMapping("/personList")
 	public ModelAndView personList(ModelAndView mv, Criteria cri) {
 		logger.info("personListGET");
@@ -46,6 +48,7 @@ public class AdminController {
 		return mv;
 	}
 	
+	// 기업 멤버 리스트 페이지 접근 시
 	@GetMapping("/businessList")
 	public ModelAndView businessList(ModelAndView mv, Criteria cri) {
 		logger.info("businessListGET");
@@ -60,6 +63,7 @@ public class AdminController {
 		return mv;
 	}
 	
+	// 일반 멤버 정지 리스트 페이지 접근 시
 	@GetMapping("/suspendedPersonList")
 	public ModelAndView suspendedPersonList(ModelAndView mv, Criteria cri) {
 		logger.info("suspendedPersonListGET");
@@ -74,6 +78,7 @@ public class AdminController {
 		return mv;
 	}
 	
+	// 기업 멤버 정지 리스트 페이지 접근 시
 	@GetMapping("/suspendedBusinessList")
 	public ModelAndView suspendedBusinessList(ModelAndView mv, Criteria cri) {
 		logger.info("suspendedBusinessListGET");
@@ -88,6 +93,7 @@ public class AdminController {
 		return mv;
 	}
 	
+	// 신고 리스트 처리 중 페이지 접근 시
 	@GetMapping("/declarationWait")
 	public ModelAndView declarationWait(ModelAndView mv, Criteria cri) {
 		logger.info("declarationWaitGET");
@@ -102,6 +108,7 @@ public class AdminController {
 		return mv;
 	}
 	
+	// 신고 리스트 처리 완료 페이지 접근 시
 	@GetMapping("/declarationComplete")
 	public ModelAndView declarationComplete(ModelAndView mv, Criteria cri) {
 		logger.info("declarationWaitGET");
@@ -116,6 +123,7 @@ public class AdminController {
 		return mv;
 	}
 	
+	// 멤버 리스트에서 정지 버튼 클릭 시
 	@PostMapping("/suspended/active")
 	public ModelAndView suspendedActive(ModelAndView mv, @RequestParam("mid") String mid) {
 		service.suspendedActive(mid);
@@ -128,6 +136,7 @@ public class AdminController {
 		return mv;
 	}
 	
+	// 멤버 정지 리스트에서 정지 해제 버튼 클릭 시
 	@PostMapping("/suspended/clear")
 	public ModelAndView suspendedClear(ModelAndView mv, @RequestParam String mid) {
 		service.suspendedClear(mid);
@@ -137,6 +146,14 @@ public class AdminController {
 		} else if (result.equals("ROLE_BUSINESS")) {
 			mv.setViewName("admin/suspendedBusinessList");
 		}
+		return mv;
+	}
+	
+	// 신고 페이지 처리 중에서 삭제 버튼 클릭 시
+	@PostMapping("/delete/board")
+	public ModelAndView deleteBoard(ModelAndView mv, @RequestParam("rno") int rno) {
+		service.deleteBoard(rno);
+		mv.setViewName("admin/declarationWait");
 		return mv;
 	}
 	
