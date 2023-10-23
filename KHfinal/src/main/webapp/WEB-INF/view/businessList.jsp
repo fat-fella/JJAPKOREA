@@ -71,7 +71,8 @@ table.outer-table td:last-child {
 }
 
 table.outer-table td img {
-	width: 100%;
+	width: 112.19px;
+    height: 72px;
 	display: block;
 	margin: 0 auto;
 }
@@ -106,7 +107,7 @@ table.inner-table td {
 				<c:forEach items="${getBusinessWithBusinessform}" var="item">
 					<table class="outer-table" onclick="send('${item.MID}')">
 						<tr>
-							<td><img src="${item.LI}" onerror="this.src='${pageContext.request.contextPath}/resources/images/maru/180x72.png';"></td>
+							<td><img src="${item.LI}" onerror="this.src='${pageContext.request.contextPath}/resources/images/maru/180x72.png';" width="112.19px" height="72px"></td>
 							<td>
 								<table class="inner-table">
 									<tr>
