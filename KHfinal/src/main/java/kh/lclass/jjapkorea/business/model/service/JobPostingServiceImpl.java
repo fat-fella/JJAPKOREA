@@ -43,5 +43,8 @@ public class JobPostingServiceImpl implements JobPostingService {
 		jobPostingDao.updateCount(jid);
 	}
 	
-	
+	@Override
+	public List<Map<String, Object>> getJobPostingByKeyword(String keyword) throws Exception {
+		return jobPostingDao.getJobPostingByKeyword(keyword);
+	}
 }
