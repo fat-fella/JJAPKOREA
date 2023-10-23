@@ -50,6 +50,25 @@
 <script type="text/javascript" src="/Scripts/EchoScriptV2.js"></script>
 
 
+<!--  어떤일 하셨어요? 팝업 버튼 닫기 스크립트  -->
+<script>
+function closeButton(element) {
+    // 팝업이 닫히도록 하는 코드
+    var badge = element.closest(".tip");
+    badge.style.display = "none";
+}
+
+$(document).ready(function() {
+    // 팝업 버튼에 클릭 이벤트를 연결
+    $(".tip-close").click(function() {
+        closeButton(this);
+    });
+});
+</script>
+
+
+
+
     <script type="text/javascript" src="/resources/lib/datastory/dslog.js?ver=1.1" id="dslog_tag"></script> 
  <script type="text/javascript"> 
  window.dsValDic = {}; 
@@ -1797,7 +1816,7 @@
                     <div class="badge "> 이력서를 새로 업데이트해주세요
                             <div class="tip">
                                 <button type="button" class="tip-close" onclick="closeButton(this)"></button>
-                                <a href="/person/resume/Edit?RNo=22569840&amp;Input_Type_Code=6" onclick="GA_Event('마이페이지_PC', '이력서 완성 유도 메시지', '경력 입력 유도')" target="_blank">가장 최근에 진행한 업무는 어떤것인가요?</a>
+                               <a href="<%=request.getContextPath()%>/person/resume/write" onclick="GA_Event('마이페이지_PC', '이력서 완성 유도 메시지', '경력 입력 유도')" target="_blank">${workPlace }에서 어떤일을 하셨나요?</a>
                             </div>
                     </div>
                     <label class="switch">
