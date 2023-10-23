@@ -1,5 +1,6 @@
 package kh.lclass.jjapkorea.person.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -49,12 +50,21 @@ public class MyPageController {
 		
 		//String workPlace = (String) model.getAttribute("workPlace");
 		String workPlace = myPageService.getByWorkplace(mid);
+//		Date workPeriod = myPageService.getByWorkperiod(mid);
+		String workDetails = myPageService.getByWorkdetails(mid);
+//		String workPname = myPageService.findAccountByPname(mid);
 		
 		
-	    System.out.println("[mj] 여기 들어오나요? 1번 workPlace : " + workPlace);
-	    System.out.println("[mj] 여기 들어오나요? 1번 mid : " + mid);
+	    System.out.println("[mj] 여기 들어오나요? workPlace : " + workPlace);
+		/* System.out.println("[mj] 여기 들어오나요? workPeriod : " + workPeriod); */
+	    System.out.println("[mj] 여기 들어오나요? workDetails : " + workDetails);
+//	    System.out.println("[mj] 여기 들어오나요? workPname : " + workPname);
+//	    System.out.println("[mj] 여기 들어오나요? mid : " + mid);
 
 	    model.addAttribute("workPlace", workPlace);
+		/* model.addAttribute("workPeriod", workPeriod); */
+	    model.addAttribute("workDetails", workDetails);
+//	    model.addAttribute("workPname", workPname);
 		model.addAttribute("scrapList", scrapList);
 		return "member/myPage";
 	}

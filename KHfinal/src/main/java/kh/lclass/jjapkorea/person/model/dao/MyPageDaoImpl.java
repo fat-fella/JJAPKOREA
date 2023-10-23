@@ -1,5 +1,6 @@
 package kh.lclass.jjapkorea.person.model.dao;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +20,9 @@ public class MyPageDaoImpl implements MyPageDao {
 
 	private static final String EXPE = "experience";
 	private static final String GET_BY_WORK_PLACE = EXPE + ".getByWorkplace";
+	private static final String GET_BY_WORK_PERIOD = EXPE + ".getByWorkperiod";
+	private static final String GET_BY_WORK_DETAILS = EXPE + ".getByWorkdetails";
+	private static final String GET_BY_WORK_PNAME = EXPE + ".findAccountByPname";
 
 	
 	@Override
@@ -26,6 +30,27 @@ public class MyPageDaoImpl implements MyPageDao {
 		System.out.println(" [mj]  경력확인 [1] mid : " +  mid);
 		return session.selectOne(GET_BY_WORK_PLACE, mid);
 	}
+
+//
+//	@Override
+//	public String getByWorkperiod(String mid) {
+//		System.out.println(" [mj]  경력기간 [2] mid : " +  mid);
+//		return session.selectOne(GET_BY_WORK_PERIOD, mid);
+//	}
+//
+
+	@Override
+	public String getByWorkdetails(String mid) {
+		System.out.println(" [mj]  경력상세내용 [3] mid : " +  mid);
+		return session.selectOne(GET_BY_WORK_DETAILS, mid);
+	}
+
+//
+//	@Override
+//	public String findAccountByPname(String mid) {
+//		System.out.println(" [mj]  경력자이름 [4] mid : " +  mid);
+//		return session.selectOne(GET_BY_WORK_PNAME, mid);
+//	}
 
 
 	

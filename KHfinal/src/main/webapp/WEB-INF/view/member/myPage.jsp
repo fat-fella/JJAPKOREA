@@ -1852,7 +1852,7 @@ $(document).ready(function() {
                                     <li><span> ${workDetails }</span></li>
                                  </ul>
                                     <!-- 담당업무 미입력 -->
-                                    <a href="<%=request.getContextPath()%>/person/resume/write"  target="_blank" class="no-data">어떤 업무 담당하셨어요?</a>
+                                   <ul> <a href="<%=request.getContextPath()%>/person/resume/write"  target="_blank" class="no-data">어떤 업무 담당하셨어요?</a></ul>
 
                 </div>
                         

@@ -45,7 +45,7 @@
 			)
     </select>
 	
-	<select id="getByWorkperiod" resultType="date" parameterType="date">
+	<select id="getByWorkperiod" resultType="Date" parameterType="Date">
 		SELECT WORK_PERIOD 
 		FROM experience
 		WHERE EXPERIENCE_ID = (
@@ -65,11 +65,5 @@
 		)
     </select>
     
-	<select id="getByWorkpanme" resultType="string" parameterType="string">
-     	SELECT PNAME
-		FROM PERSON
-		WHERE MID = MID=#{mid};
-	</select>
-	
 	
 </mapper>
