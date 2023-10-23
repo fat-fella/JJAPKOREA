@@ -1395,7 +1395,7 @@ $(document).ready(function() {
         <div class="swiper-container addmict swiper-container-horizontal">
             <div class="swiper-wrapper" style="transform: translate3d(-360px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" style="width: 120px;">
                     <a href="javascript:;" onclick="MICT_CALL('right'); return false;" title="mict">
-                        <img src="https://file1.jobkorea.co.kr/Banner/mict_120x57.png" alt="mict">
+                        <img src="<%=request.getContextPath()%>/resources/images/myPage_mict_120x57.png" alt="mict">
                     </a>
                 </div>
                 <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" style="width: 120px;">
@@ -1426,7 +1426,7 @@ $(document).ready(function() {
         <div class="right-banner swiper mySwiper swiper-container-horizontal">
             <div class="swiper-wrapper" style="transform: translate3d(-360px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" style="width: 120px;" data-swiper-slide-index="2">
                     <a href="//careerpath.jobkorea.co.kr" target="_blank">
-                        <img src="//i.jobkorea.kr/content/images/careerpath/img_banner.png" alt="당신의 커리어는 안녕하신가요?">
+                        <img src="<%=request.getContextPath()%>/resources/images/myPage_img_banner.png" alt="당신의 커리어는 안녕하신가요?">
                     </a>
                 </div>
                 <div class="swiper-slide swiper-slide-duplicate-next" data-swiper-slide-index="0" style="width: 120px;">
@@ -1860,48 +1860,48 @@ $(document).ready(function() {
             <h2 class="skip">주요활동내역</h2>
             <ul class="my-active-list">
                 <li class="list">
-                    <a class="box" href="/User/ApplyMng" onclick="GA_Event('마이페이지_PC', '나의지원현황', '지원완료')">
+                    <a class="box" href="#" onclick="GA_Event('마이페이지_PC', '나의지원현황', '지원완료')">
                         <p class="title">
                             지원완료
-                            <strong class="count">0</strong>
+                            <strong class="count"></strong>
                         </p>
                     </a>
                 </li>
 
                 <li class="list">
-                    <a class="box" href="/user/PositionOffer#dev-tab-resume-read" onclick="GA_Event('마이페이지_PC', '나의지원현황', '이력서열람')">
+                    <a class="box" href="#" onclick="GA_Event('마이페이지_PC', '나의지원현황', '이력서열람')">
                         <p class="title">
                             이력서 열람
-                            <strong class="count">1</strong>
+                            <strong class="count"></strong>
                         </p>
                     </a>
                 </li>
 
                 <li class="list">
-                    <a class="box" href="/User/PositionOffer?tabStat=1#dev-tab-position" onclick="GA_Event('마이페이지_PC', '나의지원현황', '포지션제안')">
+                    <a class="box" href="#" onclick="GA_Event('마이페이지_PC', '나의지원현황', '포지션제안')">
                         <p class="title">
                             포지션 제안
-                            <strong class="count">0</strong>
+                            <strong class="count"></strong>
                         </p>
                     </a>
 
                 </li>
 
                 <li class="list">
-                    <a class="box" href="/User/Scrap/Index" onclick="GA_Event('마이페이지_PC', '나의지원현황', '스크랩공고')">
+                    <a class="box" href="#" onclick="GA_Event('마이페이지_PC', '나의지원현황', '스크랩공고')">
                         <p class="title">
                             스크랩 공고
-                            <strong class="count">0</strong>
+                            <strong class="count"></strong>
                         </p>
                     </a>
 
                 </li>
 
                 <li class="list">
-                    <a class="box" href="/User/FavorCo" onclick="GA_Event('마이페이지_PC', '나의지원현황', '관심기업공고')">
+                    <a class="box" href="#" onclick="GA_Event('마이페이지_PC', '나의지원현황', '관심기업공고')">
                         <p class="title">
                             관심기업공고
-                            <strong class="count">0</strong>
+                            <strong class="count"></strong>
                         </p>
                     </a>
                 </li>
@@ -1922,8 +1922,8 @@ $(document).ready(function() {
     <!-- 건강보험공단 배너 -->
     <div class="topContent healthBanner">
         <div class="IconWrap">
-            <a href="/person/resume/Edit?RNo=22569840&amp;healthBanner=1" target="_blank" class="health-link" onclick="GA_Event('마이페이지_PC', '상단배너', '건강보험공단 경력 불러오기')">
-                <img src="//i.jobkorea.kr/content/images/Text_User/resume/banner_health.png" alt="">
+            <a href="#" target="_blank" class="health-link" onclick="GA_Event('마이페이지_PC', '상단배너', '건강보험공단 경력 불러오기')">
+                <img src="<%=request.getContextPath()%>/resources/images/myPage_banner_health.png" alt="">
             </a>
         </div>
     </div>
@@ -2306,7 +2306,7 @@ $(document).ready(function() {
     <!-- 역량테스트 검사 전 -->
     <div class="topContent capabilityTest before">
         <div class="IconWrap">
-            <img src="//i.jobkorea.kr/content/images/ver_1/mtu/test/question.png?v=202310171400" alt="역량테스트 결과 이미지">
+            <img src="<%=request.getContextPath()%>/resources/images/myPage_question.png" alt="역량테스트 결과 이미지">
         </div>
         <div class="TestText Testbefore">
             <p><strong>${pname}님, 이력서에 쓸 ‘강점‘ 고민 그만하고 MICT에서 찾아 쓰세요!</strong></p>
@@ -2649,27 +2649,27 @@ $(document).ready(function() {
 <section class="secLnb">
     <h1 class="skip">개인회원 서비스 메뉴</h1>
     <div class="lnbGroup">
-        <h2 class="lnbTit"><a href="/User/MyPage" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '개인회원 홈')">개인회원 홈</a></h2>
+        <h2 class="lnbTit"><a href="<%=request.getContextPath() %>/person/myPage" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '개인회원 홈')">개인회원 홈</a></h2>
     </div>
     <div class="lnbGroup">
         <h2 class="lnbTit">이력서 관리</h2>
         <ul>
             <li><a href="<%=request.getContextPath()%>/person/resume/write" target="_blank" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '이력서 등록')">이력서 등록</a></li>
             <li>
-                <a href="/person/resume/ResumeMgr" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '이력서 현황')">이력서 현황</a>
+                <a href="<%=request.getContextPath() %>/person/myPage" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '이력서 현황')">이력서 현황</a>
             </li>
-            <li><a href="/User/ResumeMng/File" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '첨부파일 관리')">첨부파일 관리</a></li>
-            <li><a href="/user/ResumeRead/ResumeLimit" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '이력서 열람제한 설정')">이력서 열람제한 설정</a></li>
-            <li><a href="/User/ResumeBuy/" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '강조노출 상품신청')">강조노출 상품신청</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '첨부파일 관리')">첨부파일 관리</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '이력서 열람제한 설정')">이력서 열람제한 설정</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '강조노출 상품신청')">강조노출 상품신청</a></li>
         </ul>
     </div>
     <div class="lnbGroup">
         <h2 class="lnbTit">입사지원·제안 관리</h2>
         <ul>
-            <li><a href="/User/ApplyMng" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '입사지원 현황')">입사지원 현황</a></li>
-            <li><a href="/User/ApplyMng/ApplyCert" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '취업활동 증명서')">취업활동 증명서</a></li>
-            <li><a href="/User/PositionOffer" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '받은 포지션 제안')">받은 포지션 제안</a></li>
-            <li><a href="/user/consulting" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '헤드헌팅 채용상담')">헤드헌팅 채용상담</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '입사지원 현황')">입사지원 현황</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '취업활동 증명서')">취업활동 증명서</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '받은 포지션 제안')">받은 포지션 제안</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '헤드헌팅 채용상담')">헤드헌팅 채용상담</a></li>
         </ul>
     </div>
     <div class="lnbGroup">
@@ -2678,24 +2678,24 @@ $(document).ready(function() {
     <div class="lnbGroup">
         <h2 class="lnbTit">스크랩/관심기업</h2>
         <ul>
-            <li><a href="/User/Scrap" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '스크랩 공고')">스크랩 공고</a></li>
-            <li><a href="/User/FavorCo" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '관심기업/헤드헌터')">관심기업/헤드헌터</a></li>
-            <li><a href="/User/Alarm" onclick="GA_Event('마이페이지_PC', '사이드메뉴', 'MY 알림')">MY 알림</a></li>        
+            <li><a href="<%=request.getContextPath() %>/person/myPage" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '스크랩 공고')">스크랩 공고</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '관심기업/헤드헌터')">관심기업/헤드헌터</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', 'MY 알림')">MY 알림</a></li>        
         </ul>
     </div>
     <div class="lnbGroup">
         <h2 class="lnbTit">콘텐츠 관리</h2>
         <ul>
-            <li><a href="/Review/MyReview" onclick="GA_Event('마이페이지_PC', '사이드메뉴', 'MY기업리뷰'); BrazeCallPageInto('기업리뷰진입');">MY 기업리뷰</a></li>
-            <li><a href="/Starter/AptitudeTest/JatTest" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '인적성 검사')">인적성 검사</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', 'MY기업리뷰'); BrazeCallPageInto('기업리뷰진입');">MY 기업리뷰</a></li>
+            <li><a href="#" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '인적성 검사')">인적성 검사</a></li>
         </ul>
     </div>
     <div class="lnbGroup">
         <h2 class="lnbTit">회원정보 관리</h2>
         <ul>
-            <li><a href="/Text_User/User_Info_Mng.asp" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '회원정보 수정')">회원정보 수정</a></li>
-            <li><a href="/Text_User/User_PWD_Mng.asp" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '비밀번호 변경')">비밀번호 변경</a></li>
-            <li><a href="/Text_User/User_Mailing_Mng.asp" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '메일·문자 설정')">메일·문자 설정</a></li>
+            <li><a href="<%=request.getContextPath() %>/person/infoModifyPerson" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '회원정보 수정')">회원정보 수정</a></li>
+            <li><a href="<%=request.getContextPath() %>/person/infoModifyPerson" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '비밀번호 변경')">비밀번호 변경</a></li>
+            <li><a href="<%=request.getContextPath() %>/person/infoModifyPerson" onclick="GA_Event('마이페이지_PC', '사이드메뉴', '메일·문자 설정')">메일·문자 설정</a></li>
         </ul>
     </div>
 </section>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>전체 채용 공고</title>
+<title>검색 결과</title>
 <link rel="icon" href="resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/reset.css">
