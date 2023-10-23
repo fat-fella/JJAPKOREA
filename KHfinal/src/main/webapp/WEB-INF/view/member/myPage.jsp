@@ -1818,7 +1818,7 @@ $(document).ready(function() {
                     </div>
                     <button class="profile-btn btnRegist" type="button"><span class="skip">사진편집</span></button>
                 </div>
-            <a href="/person/resume/write" target="_blank" class="my-career link"><span>이력서 작성중</span></a>
+            <a href="<%=request.getContextPath() %>/person/resume/write" target="_blank" class="my-career link"><span>이력서 작성중</span></a>
         </div>
         <div class="my-info-wrap">
             <div class="my-status-wrap">

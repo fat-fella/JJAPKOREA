@@ -1120,7 +1120,7 @@
 													</a>
 												</li>
 												<li>
-													<a href="<%=request.getContextPath() %>/mypage"
+													<a href="<%=request.getContextPath() %>/person/scrap"
 														onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
 														<span class="tx">스크랩</span>
 													</a>
