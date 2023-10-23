@@ -629,6 +629,11 @@
 										onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 								</form>
 							</li>
+							<li>
+								<a href="<%=request.getContextPath()%>/admin/index">
+									<span class="tx">관리자페이지</span>
+								</a>
+							</li>
 						</sec:authorize>
 					</ul>
 				</div>
