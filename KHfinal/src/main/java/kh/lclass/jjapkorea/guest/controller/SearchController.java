@@ -41,4 +41,9 @@ public class SearchController {
 		}
 		return "jpost/searchResult";
 	}
+	
+	@GetMapping("/detailSearch")
+	public String detailSearch(Model model) throws Exception {
+		return "jpost/detailSearch";
+	}
 }

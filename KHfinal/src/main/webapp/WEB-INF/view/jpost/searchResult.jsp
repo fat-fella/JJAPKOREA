@@ -150,7 +150,7 @@
 			<div id="content">
 				<section class="First VVIP 채용관">
 					<div class="bannerwrap">
-						<h4>채용관</h4>
+						<h4>검색 결과</h4>
 					</div>
 					<ul class="grid-container">
 						<c:forEach items="${getJobPostingByKeyword}" var="item">

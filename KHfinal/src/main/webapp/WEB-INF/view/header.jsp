@@ -79,7 +79,7 @@
 			<!-- search // -->
 			<div class="subSchArea">
 				<div class="subSchLink">
-					<a href="#" class="linkItem">
+					<a href="<%=request.getContextPath()%>/detailSearch" class="linkItem">
 						<span class="spNav"> <span class="txIr">상세검색</span>
 						</span>
 					</a>
