@@ -207,7 +207,7 @@ button:hover {
 				</c:choose>
 				<button type="button" id="btn-board-list">글 목록으로 이동</button>
 				<button type="button" id="btn-board-like" onclick="updateLike(); return false;">좋아요</button>
-				<button type="button" id="btn-board-report">게시글 신고</button>
+				<button type="button" id="btn-board-report" onclick="report()">게시글 신고</button>
 				<input type="hidden" id="bno" name="bno" value='<c:out value="${bvo.bno}"/>'>
 				<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
 				<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
