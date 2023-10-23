@@ -1798,12 +1798,12 @@ $(document).ready(function() {
             <h2 class="skip">프로필</h2>
 
                 <div class="my-profile">
-                    <div class="pie-chart" style="background: conic-gradient(rgb(0, 42, 255) 0%, rgb(0, 42, 255) 60%, rgb(244, 244, 244) 60%, rgb(244, 244, 244) 100%);">
+                    <div class="pie-chart" style="background: conic-gradient(rgb(0, 42, 255) 0%, rgb(0, 42, 255) 100%, rgb(244, 244, 244) 100%, rgb(244, 244, 244) 100%);">  <!-- 프로필 사진으로 이력서 작성 기준으로 %적용 -->
                         <div class="profile-img"><p class="img"><img src="" alt=""></p></div>
                     </div>
                     <button class="profile-btn btnRegist" type="button"><span class="skip">사진편집</span></button>
                 </div>
-            <a href="/person/resume/write" target="_blank" class="my-career link"><span>이력서 60% 완성</span></a>
+            <a href="/person/resume/write" target="_blank" class="my-career link"><span>이력서 작성중</span></a>
         </div>
         <div class="my-info-wrap">
             <div class="my-status-wrap">
@@ -1833,6 +1833,8 @@ $(document).ready(function() {
                                 </p>
                                 <ul>
                                     <li><span> ${workPlace }</span></li>
+                                    <li><span> ${workPeriod }</span></li>
+                                    <li><span> ${workDetails }</span></li>
                                  </ul>
                                     <!-- 담당업무 미입력 -->
                                     <a href="<%=request.getContextPath()%>/person/resume/write"  target="_blank" class="no-data">어떤 업무 담당하셨어요?</a>
@@ -1935,40 +1937,40 @@ $(document).ready(function() {
     </div>
 
     <div class="swiper celebrate_my swiper-container-horizontal" style="padding: ">
-        <ul class="swiper-wrapper" style="transform: translate3d(-978px, 0px, 0px); transition-duration: 0ms;"><li class="rank_1 swiper-slide swiper-slide-duplicate" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42922537,&quot;giNo&quot;:45420703,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="8">
+        <ul class="swiper-wrapper" style="transform: translate3d(-978px, 0px, 0px); transition-duration: 0ms;"><li class="rank_1 swiper-slide swiper-slide-duplicate" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43104804,&quot;giNo&quot;:45581474,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="8">
                     <div class="col infoCol">
                         <div class="company">
-                            <a href="/Recruit/Co_Read/C/37847903?Oem_Code=C1" target="_blank">진심감성</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="42922537" data-mem-sys="37847903" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                            <a href="/Recruit/Co_Read/C/19155090?Oem_Code=C1" target="_blank">㈜띵스파이어</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43104804" data-mem-sys="19155090" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
                         </div>
                         <div class="tit">
-                            <a href="/Recruit/GI_Read/42922537?Oem_Code=C" target="_blank" class="giread" data-gno="42922537" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">e커머스 발주 및 CX고객경험관리</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45420703" data-gno="42922537" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                            <a href="/Recruit/GI_Read/43104804?Oem_Code=C" target="_blank" class="giread" data-gno="43104804" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">AI 융합사업부기획 및 사업관리</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45581474" data-gno="43104804" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
                         </div>
                         <div class="desc">
-                            <span class="cell">사무보조</span>
-                            <span class="cell">서울 성동구</span>
-                            <span class="cell">~10/20(금)</span>
+                            <span class="cell">경영·비즈니스기획</span>
+                            <span class="cell">서울 용산구</span>
+                            <span class="cell">~11/16(목)</span>
                         </div>
                         <div class="vou">
                                 <img class="ico"><span class="cell">합격축하금 50만원</span>
                             <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
                         </div>
                     </div>
-                </li><li class="rank_1 swiper-slide swiper-slide-duplicate swiper-slide-prev" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43104048,&quot;giNo&quot;:45580778,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="9">
+                </li><li class="rank_1 swiper-slide swiper-slide-duplicate swiper-slide-prev" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43090543,&quot;giNo&quot;:45568479,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="9">
                     <div class="col infoCol">
                         <div class="company">
-                            <a href="/Recruit/Co_Read/C/127755?Oem_Code=C1" target="_blank">㈜클루닉스</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43104048" data-mem-sys="127755" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                            <a href="/Recruit/Co_Read/C/17342290?Oem_Code=C1" target="_blank">주식회사 긴트</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43090543" data-mem-sys="17342290" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
                         </div>
                         <div class="tit">
-                            <a href="/Recruit/GI_Read/43104048?Oem_Code=C" target="_blank" class="giread" data-gno="43104048" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">전략/경영 기획 경력직 채용</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45580778" data-gno="43104048" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                            <a href="/Recruit/GI_Read/43090543?Oem_Code=C" target="_blank" class="giread" data-gno="43090543" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">B2B사업 Manager 채용(경력)</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45568479" data-gno="43090543" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
                         </div>
                         <div class="desc">
                             <span class="cell">경영·비즈니스기획</span>
-                            <span class="cell">서울 영등포구</span>
-                            <span class="cell">~10/27(금)</span>
+                            <span class="cell">서울 강남구</span>
+                            <span class="cell">~11/12(일)</span>
                         </div>
                         <div class="vou">
                                 <img class="ico"><span class="cell">합격축하금 50만원</span>
@@ -1976,68 +1978,51 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </li>
-                <li class="rank_1 swiper-slide swiper-slide-active" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42957774,&quot;giNo&quot;:45451700,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="0">
+                <li class="rank_1 swiper-slide swiper-slide-active" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42956774,&quot;giNo&quot;:45450775,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="0">
                     <div class="col infoCol">
                         <div class="company">
-                        	<ul class="grid-container">
-						<c:forEach items="${list}" var="item">
-							<li class="bannereach">
-								<form id="scrapForm">
-									<div>
-										<img src="${item.LOGO_IMG}" alt="이미지">
-									</div>
-									<div class="compName" onclick="getinfo('${item.JID}')">${item.BIZNAME}</div>
-									<div class="recruitInfo" data-jid="${item.JID}"
-										onclick="getinfo('${item.JID}')">
-										${item.RE_TITLE}<br> <br>
-									</div>
-									<div id="applyscrap">
-										<c:choose>
-											<c:when test="${item.TODAY == 0}">
-												<div class="applydateWithApply">오늘시작</div>
-											</c:when>
-											<c:when test="${item.DDAY == 0}">
-												<div class="applydateWithApply">오늘마감</div>
-											</c:when>
-											<c:when test="${item.DDAY <= 7}">
-												<button onclick="" class="applynow">즉시지원</button>
-												<div class="applydateWithApply">D-${item.DDAY}</div>
-											</c:when>
-											<c:otherwise>
-												<div class="applydateWithApply">D-${item.DDAY}</div>
-											</c:otherwise>
-										</c:choose>
-										<!-- 클릭한 채용 정보 데이터를 폼에 담아 서버로 전송 -->
-										<input type="hidden" name="jid" value="${item.JID}">
-										<input type="hidden" name="recruitField"
-											value="${item.RECRUIT_FIELD}">
-										<input type="hidden" name="bizname" value="${item.BIZNAME}">
-										<input type="hidden" name="brno" value="${item.BRNO}">
-										<input type="hidden" name="userEducation"
-											value="${item.USER_EDUCATION}">
-										<input type="hidden" name="salary" value="${item.SALARY}">
-										<input type="hidden" name="minSalary"
-											value="${item.MIN_SALARY}">
-										<input type="hidden" name="maxSalary"
-											value="${item.MAX_SALARY}">
-										<input type="hidden" name="registDate"
-											value="${item.REGIST_DATE}">
-										<input type="hidden" name="closeDate"
-											value="${item.CLOSE_DATE}">
-										<input type="hidden" name="reTitle" value="${item.RE_TITLE}">
-										<input type="hidden" name="career" value="${item.CAREER}">
-										<input type="hidden" name="workType" value="${item.WORK_TYPE}">
-										<input type="hidden" name="empTypeCode"
-											value="${item.EMP_TYPE_CODE}">
-										<button type="button" onclick="setScrap('${item.JID}')"
-											data-jid="${item.JID}" class="scrap">채용정보 스크랩</button>
-									</div>
-								</form>
-							</li>
-						</c:forEach>
-					</ul>
-                        
-                        
+                            <a href="/Recruit/Co_Read/C/61177?Oem_Code=C1" target="_blank">㈜에이아이매틱스</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="42956774" data-mem-sys="61177" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                        </div>
+                        <div class="tit">
+                            <a href="/Recruit/GI_Read/42956774?Oem_Code=C" target="_blank" class="giread" data-gno="42956774" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">국내사업(영업) 담당자 채용</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45450775" data-gno="42956774" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                        </div>
+                        <div class="desc">
+                            <span class="cell">경영·비즈니스기획</span>
+                            <span class="cell">서울 영등포구</span>
+                            <span class="cell">~10/25(수)</span>
+                        </div>
+                        <div class="vou">
+                                <img class="ico"><span class="cell">합격축하금 50만원</span>
+                            <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="rank_1 swiper-slide swiper-slide-next" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43054734,&quot;giNo&quot;:45536931,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="1">
+                    <div class="col infoCol">
+                        <div class="company">
+                            <a href="/Recruit/Co_Read/C/36248759?Oem_Code=C1" target="_blank">디피니션㈜</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43054734" data-mem-sys="36248759" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                        </div>
+                        <div class="tit">
+                            <a href="/Recruit/GI_Read/43054734?Oem_Code=C" target="_blank" class="giread" data-gno="43054734" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">사업 운영 관리</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45536931" data-gno="43054734" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                        </div>
+                        <div class="desc">
+                            <span class="cell">경영·비즈니스기획</span>
+                            <span class="cell">서울 강남구</span>
+                            <span class="cell">~11/10(금)</span>
+                        </div>
+                        <div class="vou">
+                                <img class="ico"><span class="cell">합격축하금 50만원</span>
+                            <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42957774,&quot;giNo&quot;:45451700,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="2">
+                    <div class="col infoCol">
+                        <div class="company">
                             <a href="/Recruit/Co_Read/C/23029?Oem_Code=C1" target="_blank">잡코리아(유)</a>
                             <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="42957774" data-mem-sys="23029" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
                         </div>
@@ -2056,28 +2041,7 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </li>
-                <li class="rank_1 swiper-slide swiper-slide-next" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43011343,&quot;giNo&quot;:45498580,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="1">
-                    <div class="col infoCol">
-                        <div class="company">
-                            <a href="/Recruit/Co_Read/C/28433953?Oem_Code=C1" target="_blank">로코모티브</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43011343" data-mem-sys="28433953" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
-                        </div>
-                        <div class="tit">
-                            <a href="/Recruit/GI_Read/43011343?Oem_Code=C" target="_blank" class="giread" data-gno="43011343" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">2023년 경영지원팀 채용</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45498580" data-gno="43011343" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
-                        </div>
-                        <div class="desc">
-                            <span class="cell">사무담당자</span>
-                            <span class="cell">서울 성동구</span>
-                            <span class="cell">~11/04(토)</span>
-                        </div>
-                        <div class="vou">
-                                <img class="ico"><span class="cell">합격축하금 50만원</span>
-                            <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
-                        </div>
-                    </div>
-                </li>
-                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43114538,&quot;giNo&quot;:45590037,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="2">
+                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43114538,&quot;giNo&quot;:45590037,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="3">
                     <div class="col infoCol">
                         <div class="company">
                             <a href="/Recruit/Co_Read/C/15483720?Oem_Code=C1" target="_blank">㈜에스엘아이평생교육원</a>
@@ -2098,20 +2062,20 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </li>
-                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43090527,&quot;giNo&quot;:45568465,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="3">
+                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43067553,&quot;giNo&quot;:45548548,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="4">
                     <div class="col infoCol">
                         <div class="company">
-                            <a href="/Recruit/Co_Read/C/17342290?Oem_Code=C1" target="_blank">주식회사 긴트</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43090527" data-mem-sys="17342290" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                            <a href="/Recruit/Co_Read/C/22050331?Oem_Code=C1" target="_blank">㈜에코크레이션</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43067553" data-mem-sys="22050331" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
                         </div>
                         <div class="tit">
-                            <a href="/Recruit/GI_Read/43090527?Oem_Code=C" target="_blank" class="giread" data-gno="43090527" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">B2B사업 Manager 채용(신입)</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45568465" data-gno="43090527" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                            <a href="/Recruit/GI_Read/43067553?Oem_Code=C" target="_blank" class="giread" data-gno="43067553" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">기획 및 신사업 개발 담당자 과-부장급 채용</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45548548" data-gno="43067553" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
                         </div>
                         <div class="desc">
                             <span class="cell">경영·비즈니스기획</span>
-                            <span class="cell">서울 강남구</span>
-                            <span class="cell">~11/12(일)</span>
+                            <span class="cell">인천 서구</span>
+                            <span class="cell">~11/11(토)</span>
                         </div>
                         <div class="vou">
                                 <img class="ico"><span class="cell">합격축하금 50만원</span>
@@ -2119,41 +2083,20 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </li>
-                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43006506,&quot;giNo&quot;:45494184,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="4">
+                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42995553,&quot;giNo&quot;:45484146,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="5">
                     <div class="col infoCol">
                         <div class="company">
-                            <a href="/Recruit/Co_Read/C/95670?Oem_Code=C1" target="_blank">㈜케어원</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43006506" data-mem-sys="95670" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                            <a href="/Recruit/Co_Read/C/22491099?Oem_Code=C1" target="_blank">루트에너지</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="42995553" data-mem-sys="22491099" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
                         </div>
                         <div class="tit">
-                            <a href="/Recruit/GI_Read/43006506?Oem_Code=C" target="_blank" class="giread" data-gno="43006506" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">[㈜케어원] 영업관리 및 지원 사무직 경력채용</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45494184" data-gno="43006506" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
-                        </div>
-                        <div class="desc">
-                            <span class="cell">사무보조</span>
-                            <span class="cell">서울 강남구 외 4</span>
-                            <span class="cell">~11/04(토)</span>
-                        </div>
-                        <div class="vou">
-                                <img class="ico"><span class="cell">합격축하금 50만원</span>
-                            <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
-                        </div>
-                    </div>
-                </li>
-                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42916714,&quot;giNo&quot;:45415615,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="5">
-                    <div class="col infoCol">
-                        <div class="company">
-                            <a href="/Recruit/Co_Read/C/38223973?Oem_Code=C1" target="_blank">링크렙㈜</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="42916714" data-mem-sys="38223973" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
-                        </div>
-                        <div class="tit">
-                            <a href="/Recruit/GI_Read/42916714?Oem_Code=C" target="_blank" class="giread" data-gno="42916714" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">[뇌분야 초일류기업 지향] 영업지원 경력 채용</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45415615" data-gno="42916714" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                            <a href="/Recruit/GI_Read/42995553?Oem_Code=C" target="_blank" class="giread" data-gno="42995553" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">[루트에너지] 신재생에너지 기획 실무자</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45484146" data-gno="42995553" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
                         </div>
                         <div class="desc">
                             <span class="cell">경영·비즈니스기획</span>
-                            <span class="cell">서울 구로구 외 5</span>
-                            <span class="cell">~10/19(목)</span>
+                            <span class="cell">서울 성동구 외 5</span>
+                            <span class="cell">~11/03(금)</span>
                         </div>
                         <div class="vou">
                                 <img class="ico"><span class="cell">합격축하금 50만원</span>
@@ -2161,7 +2104,28 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </li>
-                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43025270,&quot;giNo&quot;:45511246,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="6">
+                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43112942,&quot;giNo&quot;:45588578,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="6">
+                    <div class="col infoCol">
+                        <div class="company">
+                            <a href="/Recruit/Co_Read/C/28951532?Oem_Code=C1" target="_blank">심작이엔지</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43112942" data-mem-sys="28951532" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                        </div>
+                        <div class="tit">
+                            <a href="/Recruit/GI_Read/43112942?Oem_Code=C" target="_blank" class="giread" data-gno="43112942" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">2023 심작이엔지 제안서/기획 경력 채용</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45588578" data-gno="43112942" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                        </div>
+                        <div class="desc">
+                            <span class="cell">경영·비즈니스기획</span>
+                            <span class="cell">충남 홍성군</span>
+                            <span class="cell">~11/17(금)</span>
+                        </div>
+                        <div class="vou">
+                                <img class="ico"><span class="cell">합격축하금 50만원</span>
+                            <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43025270,&quot;giNo&quot;:45511246,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="7">
                     <div class="col infoCol">
                         <div class="company">
                             <a href="/Recruit/Co_Read/C/14657?Oem_Code=C1" target="_blank">㈜트라코월드</a>
@@ -2182,62 +2146,41 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </li>
-                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43041481,&quot;giNo&quot;:45525002,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="7">
+                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43104804,&quot;giNo&quot;:45581474,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="8">
                     <div class="col infoCol">
                         <div class="company">
-                            <a href="/Recruit/Co_Read/C/24726677?Oem_Code=C1" target="_blank">바이너랩</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43041481" data-mem-sys="24726677" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                            <a href="/Recruit/Co_Read/C/19155090?Oem_Code=C1" target="_blank">㈜띵스파이어</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43104804" data-mem-sys="19155090" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
                         </div>
                         <div class="tit">
-                            <a href="/Recruit/GI_Read/43041481?Oem_Code=C" target="_blank" class="giread" data-gno="43041481" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">[바이너랩] 신규브랜드 화장품기획자 모집</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45525002" data-gno="43041481" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                            <a href="/Recruit/GI_Read/43104804?Oem_Code=C" target="_blank" class="giread" data-gno="43104804" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">AI 융합사업부기획 및 사업관리</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45581474" data-gno="43104804" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                        </div>
+                        <div class="desc">
+                            <span class="cell">경영·비즈니스기획</span>
+                            <span class="cell">서울 용산구</span>
+                            <span class="cell">~11/16(목)</span>
+                        </div>
+                        <div class="vou">
+                                <img class="ico"><span class="cell">합격축하금 50만원</span>
+                            <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
+                        </div>
+                    </div>
+                </li>
+                <li class="rank_1 swiper-slide swiper-slide-duplicate-prev" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43090543,&quot;giNo&quot;:45568479,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="9">
+                    <div class="col infoCol">
+                        <div class="company">
+                            <a href="/Recruit/Co_Read/C/17342290?Oem_Code=C1" target="_blank">주식회사 긴트</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43090543" data-mem-sys="17342290" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                        </div>
+                        <div class="tit">
+                            <a href="/Recruit/GI_Read/43090543?Oem_Code=C" target="_blank" class="giread" data-gno="43090543" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">B2B사업 Manager 채용(경력)</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45568479" data-gno="43090543" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
                         </div>
                         <div class="desc">
                             <span class="cell">경영·비즈니스기획</span>
                             <span class="cell">서울 강남구</span>
-                            <span class="cell">~11/09(목)</span>
-                        </div>
-                        <div class="vou">
-                                <img class="ico"><span class="cell">합격축하금 50만원</span>
-                            <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
-                        </div>
-                    </div>
-                </li>
-                <li class="rank_1 swiper-slide" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42922537,&quot;giNo&quot;:45420703,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="8">
-                    <div class="col infoCol">
-                        <div class="company">
-                            <a href="/Recruit/Co_Read/C/37847903?Oem_Code=C1" target="_blank">진심감성</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="42922537" data-mem-sys="37847903" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
-                        </div>
-                        <div class="tit">
-                            <a href="/Recruit/GI_Read/42922537?Oem_Code=C" target="_blank" class="giread" data-gno="42922537" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">e커머스 발주 및 CX고객경험관리</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45420703" data-gno="42922537" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
-                        </div>
-                        <div class="desc">
-                            <span class="cell">사무보조</span>
-                            <span class="cell">서울 성동구</span>
-                            <span class="cell">~10/20(금)</span>
-                        </div>
-                        <div class="vou">
-                                <img class="ico"><span class="cell">합격축하금 50만원</span>
-                            <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
-                        </div>
-                    </div>
-                </li>
-                <li class="rank_1 swiper-slide swiper-slide-duplicate-prev" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43104048,&quot;giNo&quot;:45580778,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="9">
-                    <div class="col infoCol">
-                        <div class="company">
-                            <a href="/Recruit/Co_Read/C/127755?Oem_Code=C1" target="_blank">㈜클루닉스</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43104048" data-mem-sys="127755" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
-                        </div>
-                        <div class="tit">
-                            <a href="/Recruit/GI_Read/43104048?Oem_Code=C" target="_blank" class="giread" data-gno="43104048" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">전략/경영 기획 경력직 채용</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45580778" data-gno="43104048" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
-                        </div>
-                        <div class="desc">
-                            <span class="cell">경영·비즈니스기획</span>
-                            <span class="cell">서울 영등포구</span>
-                            <span class="cell">~10/27(금)</span>
+                            <span class="cell">~11/12(일)</span>
                         </div>
                         <div class="vou">
                                 <img class="ico"><span class="cell">합격축하금 50만원</span>
@@ -2246,40 +2189,40 @@ $(document).ready(function() {
                     </div>
                 </li>
 
-        <li class="rank_1 swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42957774,&quot;giNo&quot;:45451700,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="0">
+        <li class="rank_1 swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:42956774,&quot;giNo&quot;:45450775,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="0">
                     <div class="col infoCol">
                         <div class="company">
-                            <a href="/Recruit/Co_Read/C/23029?Oem_Code=C1" target="_blank">잡코리아(유)</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="42957774" data-mem-sys="23029" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                            <a href="/Recruit/Co_Read/C/61177?Oem_Code=C1" target="_blank">㈜에이아이매틱스</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="42956774" data-mem-sys="61177" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
                         </div>
                         <div class="tit">
-                            <a href="/Recruit/GI_Read/42957774?Oem_Code=C" target="_blank" class="giread" data-gno="42957774" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">잡코리아 One-Pick 서비스 사업전략</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45451700" data-gno="42957774" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                            <a href="/Recruit/GI_Read/42956774?Oem_Code=C" target="_blank" class="giread" data-gno="42956774" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">국내사업(영업) 담당자 채용</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45450775" data-gno="42956774" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
                         </div>
                         <div class="desc">
                             <span class="cell">경영·비즈니스기획</span>
-                            <span class="cell">서울 서초구</span>
+                            <span class="cell">서울 영등포구</span>
                             <span class="cell">~10/25(수)</span>
                         </div>
                         <div class="vou">
-                                <img class="ico"><span class="cell">합격축하금 100만원</span>
+                                <img class="ico"><span class="cell">합격축하금 50만원</span>
                             <button type="button" class="tplBtn tplBtn_1 tplBtnOrgOnePick float-right devBtnPassDirect gireadNoMove" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '즉시지원')"><span>즉시지원</span></button>
                         </div>
                     </div>
-                </li><li class="rank_1 swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43011343,&quot;giNo&quot;:45498580,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="1">
+                </li><li class="rank_1 swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-source="{&quot;memberId&quot;:&quot;laufey&quot;,&quot;gno&quot;:43054734,&quot;giNo&quot;:45536931,&quot;companyMemberType&quot;:&quot;C&quot;,&quot;oemCode&quot;:&quot;C1&quot;}" style="width: 469px; margin-right: 20px;" data-swiper-slide-index="1">
                     <div class="col infoCol">
                         <div class="company">
-                            <a href="/Recruit/Co_Read/C/28433953?Oem_Code=C1" target="_blank">로코모티브</a>
-                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43011343" data-mem-sys="28433953" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
+                            <a href="/Recruit/Co_Read/C/36248759?Oem_Code=C1" target="_blank">디피니션㈜</a>
+                            <button type="button" class="tplBtnTy tplBtnFavOff marginUp js-tplBtn" data-gno="43054734" data-mem-sys="36248759" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','관심_' + ($(this).hasClass('tplBtnFavOn')?'해제':'등록'));"><span class="blind">관심기업</span></button>
                         </div>
                         <div class="tit">
-                            <a href="/Recruit/GI_Read/43011343?Oem_Code=C" target="_blank" class="giread" data-gno="43011343" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">2023년 경영지원팀 채용</a>
-                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45498580" data-gno="43011343" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
+                            <a href="/Recruit/GI_Read/43054734?Oem_Code=C" target="_blank" class="giread" data-gno="43054734" onclick="GA_Event('마이페이지_PC', '합격축하금 공고', '클릭')">사업 운영 관리</a>
+                            <button type="button" class="tplBtnTy tplBtnScrOff js-scrBtn" data-gino="45536931" data-gno="43054734" data-m_id="laufey" data-membertype="C" onclick="GA_Event('마이페이지_PC', '합격축하금 공고','스크랩_' + ($(this).hasClass('on')?'해제':'등록'));"><span class="blind">스크랩</span></button>
                         </div>
                         <div class="desc">
-                            <span class="cell">사무담당자</span>
-                            <span class="cell">서울 성동구</span>
-                            <span class="cell">~11/04(토)</span>
+                            <span class="cell">경영·비즈니스기획</span>
+                            <span class="cell">서울 강남구</span>
+                            <span class="cell">~11/10(금)</span>
                         </div>
                         <div class="vou">
                                 <img class="ico"><span class="cell">합격축하금 50만원</span>
@@ -2288,6 +2231,24 @@ $(document).ready(function() {
                     </div>
                 </li></ul>
     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <a class="mtuSpImgAfter btnSpMore" href="/OnePick/JobList" target="_blank">더보기</a>
     <div class="celebrate-btn-next celebrate-btn" style="" tabindex="0" role="button" aria-label="Next slide"></div>
     <div class="celebrate-btn-prev celebrate-btn" style="" tabindex="0" role="button" aria-label="Previous slide"></div>
@@ -2607,21 +2568,21 @@ $(document).ready(function() {
     <h2 class="skip">성공 취업툴</h2>
     <dl class="toolList">
         <dt>이력서 작성</dt>
-        <dd><a href="/service/user/tool/photo" class="mtuSpImgBefore iconCrop" onclick="GA_Event('마이페이지_PC', '성공취업툴', '사진크기 조정')"><span>사진크기 조정</span></a></dd>
-        <dd><a href="/service/user/tool/univpoint" class="mtuSpImgBefore iconPoint" onclick="GA_Event('마이페이지_PC', '성공취업툴', '학점계산기')"><span>학점계산기</span></a></dd>
-        <dd><a href="/service/user/tool/engpoint" class="mtuSpImgBefore iconEng" onclick="GA_Event('마이페이지_PC', '성공취업툴', '어학점수 변환')"><span>어학점수 변환</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconCrop" onclick="GA_Event('마이페이지_PC', '성공취업툴', '사진크기 조정')"><span>사진크기 조정</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconPoint" onclick="GA_Event('마이페이지_PC', '성공취업툴', '학점계산기')"><span>학점계산기</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconEng" onclick="GA_Event('마이페이지_PC', '성공취업툴', '어학점수 변환')"><span>어학점수 변환</span></a></dd>
     </dl>
     <dl class="toolList">
         <dt>자기소개서 작성</dt>
-        <dd><a href="/service/user/tool/textcount" class="mtuSpImgBefore iconCount" onclick="GA_Event('마이페이지_PC', '성공취업툴', '글자수 세기')"><span>글자수 세기</span></a></dd>
-        <dd><a href="/service/user/tool/spellcheck" class="mtuSpImgBefore iconSpell" onclick="GA_Event('마이페이지_PC', '성공취업툴', '맞춤법 검사')"><span>맞춤법 검사</span></a></dd>
-        <dd><a href="/service/user/tool/autoresume" class="mtuSpImgBefore iconPass" onclick="GA_Event('마이페이지_PC', '성공취업툴', '자소서 자동완성')"><span>자소서 자동완성</span></a></dd>
-        <dd><a href="/service/user/tool/dictionary" class="mtuSpImgBefore iconDict" onclick="GA_Event('마이페이지_PC', '성공취업툴', '자소서∙면접 사전')"><span>자소서∙면접 사전</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconCount" onclick="GA_Event('마이페이지_PC', '성공취업툴', '글자수 세기')"><span>글자수 세기</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconSpell" onclick="GA_Event('마이페이지_PC', '성공취업툴', '맞춤법 검사')"><span>맞춤법 검사</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconPass" onclick="GA_Event('마이페이지_PC', '성공취업툴', '자소서 자동완성')"><span>자소서 자동완성</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconDict" onclick="GA_Event('마이페이지_PC', '성공취업툴', '자소서∙면접 사전')"><span>자소서∙면접 사전</span></a></dd>
     </dl>
     <dl class="toolList">
         <dt>증명서 외</dt>
-        <dd><a href="/service/user/tool/applycert" class="mtuSpImgBefore iconCert" onclick="GA_Event('마이페이지_PC', '성공취업툴', '취업활동 증명서')"><span>취업활동 증명서</span></a></dd>
-        <dd><a href="/service/user/tool/stamp" class="mtuSpImgBefore iconStamp" onclick="GA_Event('마이페이지_PC', '성공취업툴', '온라인 도장')"><span>온라인 도장</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconCert" onclick="GA_Event('마이페이지_PC', '성공취업툴', '취업활동 증명서')"><span>취업활동 증명서</span></a></dd>
+        <dd><a href="#" class="mtuSpImgBefore iconStamp" onclick="GA_Event('마이페이지_PC', '성공취업툴', '온라인 도장')"><span>온라인 도장</span></a></dd>
     </dl>
     
    
