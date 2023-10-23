@@ -15,4 +15,10 @@ public interface JobPostingService {
 	void updateCount(String jid) throws Exception;
 	List<Map<String, Object>> getJobPostingByKeyword(String keyword) throws Exception;
 	List<Map<String, Object>> getJobPostingByKeywords(SearchDto searchDto) throws Exception;
+	List<Map<String, Object>> topTwoInfoByDDay() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByDDay() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByDDay2() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByDDay3() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByDDay4() throws Exception;
+	List<Map<String, Object>> getNextTwoInfoByDDay5() throws Exception;
 }

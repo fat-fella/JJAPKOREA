@@ -35,5 +35,71 @@
 	<update id="updateCount" parameterType="jobPostingDto">
 		update info set count = count+1 where jid=#{jid}
 	</update>
-
+	
+	<select id="topTwoInfoByDDay" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		    ORDER BY i.dday ASC
+		)
+		<![CDATA[WHERE ROWNUM <= 2]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 3 and row_num <= 4]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay2" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 5 and row_num <= 6]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay3" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 7 and row_num <= 8]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay4" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 9 and row_num <= 10]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay5" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 11 and row_num <= 12]]>
+	</select>
 </mapper>

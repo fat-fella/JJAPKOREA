@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <!-- jQuery 스크립트 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -94,7 +95,7 @@
                 <div class="point-left point-box active">
                     <div class="tab-menu">
                         <ul class="tab-menu1 person-tab active">
-                            <li class="tab-menu1-1 active" data-contentnumber="1"><a href="# return false;"># 공채속보</a></li>
+                            <li class="tab-menu1-1 active" data-contentnumber="1"><a href="# return false;"># 공고속보</a></li>
                             <li class="tab-menu1-1" data-contentnumber="2"><a href="# return false;"># AI추천</a></li>
                             <li class="tab-menu1-1" data-contentnumber="3"><a href="# return false;"># 전문채용관</a></li>
                             <li class="tab-menu1-1" data-contentnumber="4"><a href="# return false;"># 기업·연봉</a></li>
@@ -122,56 +123,92 @@
                                     <div class="swiper-slide slide-box">
                                         <ul class="box-lst">
                                             <li>
-                                                <div class="box">
-                                                    <a href="#" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg a">이번주 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">2023년 2분기 경력/신입/인턴사원 채용</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">LS엠트론㈜</span>
-                                                            <span class="info-gray">D-10</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                                <div class="box">
-                                                    <a href="#" class="link clickcnt" data-cntnt-no="12333" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg a">이번주 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">분야별 신입/경력 수시채용</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">㈜셀트리온</span>
-                                                            <span class="info-gray">D-11</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty topTwoInfoByDDay}">
+                                            		<c:forEach items="${topTwoInfoByDDay}" var="item">
+		                                                <div class="box">
+		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg a">임박한 공고</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.RE_TITLE}</h4>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.BIZNAME}</span>
+		                                                            <span class="info-gray">D-${item.DDAY}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+	                                                </c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty topTwoInfoByDDay}">
+                                            		<div class="box">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg a">이번주 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">2023년 2분기 경력/신입/인턴사원 채용</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">LS엠트론㈜</span>
+	                                                            <span class="info-gray">D-10</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+	                                                <div class="box">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12333" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg a">이번주 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">분야별 신입/경력 수시채용</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">㈜셀트리온</span>
+	                                                            <span class="info-gray">D-11</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                             <li>
-                                                <div class="box">
-                                                    <a href="#" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg a">이번주 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">2023년 일반직원 신규채용</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">건국대학교 GLOCAL(글로컬)캠퍼스</span>
-                                                            <span class="info-gray">D-10</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                                <div class="box">
-                                                    <a href="#" class="link clickcnt" data-cntnt-no="12318" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg a">이번주 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">2023년 신입 및 경력사원 모집</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">동화약품㈜</span>
-                                                            <span class="info-gray">D-11</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty getNextTwoInfoByDDay}">
+                                            		<c:forEach items="${getNextTwoInfoByDDay}" var="item">
+		                                                <div class="box">
+		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg a">임박한 공고</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.RE_TITLE}</h4>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.BIZNAME}</span>
+		                                                            <span class="info-gray">D-${item.DDAY}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+	                                                </c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByDDay}">
+                                            		<div class="box">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg a">이번주 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">2023년 일반직원 신규채용</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">건국대학교 GLOCAL(글로컬)캠퍼스</span>
+	                                                            <span class="info-gray">D-10</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+	                                                <div class="box">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12318" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg a">이번주 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">2023년 신입 및 경력사원 모집</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">동화약품㈜</span>
+	                                                            <span class="info-gray">D-11</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                             <li>
                                                 <div class="box-img">
@@ -184,86 +221,140 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="box">
-                                                    <a href="#" class="link clickcnt" data-cntnt-no="12334" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg b">그룹사 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">부문별 신입/경력 인재채용</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">㈜유비케어</span>
-                                                            <span class="info-gray">D-9</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                                <div class="box">
-                                                    <a href="#" class="link clickcnt" data-cntnt-no="12330" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg b">그룹사 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">2023년 코오롱그룹 6월 정기공채</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">코오롱그룹</span>
-                                                            <span class="info-gray">D-7</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty getNextTwoInfoByDDay2}">
+                                            		<c:forEach items="${getNextTwoInfoByDDay2}" var="item">
+		                                                <div class="box">
+		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link clickcnt" data-cntnt-no="12334" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg b">임박한 공고</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.RE_TITLE}</h4>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.BIZNAME}</span>
+		                                                            <span class="info-gray">D-${item.DDAY}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+	                                                </c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByDDay2}">
+                                            		<div class="box">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12334" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg b">그룹사 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">부문별 신입/경력 인재채용</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">㈜유비케어</span>
+	                                                            <span class="info-gray">D-9</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+	                                                <div class="box">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12330" data-click-value="2" data-rcmdsvcagi-galabel="그룹사 공채" target="_blank">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg b">그룹사 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">2023년 코오롱그룹 6월 정기공채</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">코오롱그룹</span>
+	                                                            <span class="info-gray">D-7</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="swiper-slide slide-box">
                                         <ul class="box-lst">
                                             <li>
-                                                <div class="box">
-                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg c">최근 시작 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">[네이버계열사][NIT Service] NAVER 서비스 보안진단</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">엔아이티서비스㈜</span>
-                                                            <span class="info-gray">D-30</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                                <div class="box">
-                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg c">최근 시작 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">중장비 및 화물차 보전 계약직 모집</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">현대삼호중공업㈜</span>
-                                                            <span class="info-gray">D-17</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty getNextTwoInfoByDDay3}">
+                                            		<c:forEach items="${getNextTwoInfoByDDay3}" var="item">
+		                                                <div class="box">
+		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg c">임박한 공고</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.RE_TITLE}</h4>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.BIZNAME}</span>
+		                                                            <span class="info-gray">D-${item.DDAY}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+	                                                </c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByDDay3}">
+                                            		<div class="box">
+	                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg c">최근 시작 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">[네이버계열사][NIT Service] NAVER 서비스 보안진단</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">엔아이티서비스㈜</span>
+	                                                            <span class="info-gray">D-30</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+	                                                <div class="box">
+	                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg c">최근 시작 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">중장비 및 화물차 보전 계약직 모집</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">현대삼호중공업㈜</span>
+	                                                            <span class="info-gray">D-17</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                             <li>
-                                                <div class="box">
-                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg c">최근 시작 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">[CTO] 인증 플랫폼 Frontend 개발자 채용</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">엘지유플러스</span>
-                                                            <span class="info-gray">D-11</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                                <div class="box">
-                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg c">최근 시작 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">2023년 서울지역 임원비서(계약직) 채용</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">포스코홀딩스</span>
-                                                            <span class="info-gray">D-3</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty getNextTwoInfoByDDay4}">
+                                            		<c:forEach items="${getNextTwoInfoByDDay4}" var="item">
+		                                                <div class="box">
+		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg c">임박한 공고</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.RE_TITLE}</h4>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.BIZNAME}</span>
+		                                                            <span class="info-gray">D-${item.DDAY}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+	                                                </c:forEach>
+                                            	</c:if>
+                                            	<c:if test="${empty getNextTwoInfoByDDay4}">
+	                                            	<div class="box">
+	                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg c">최근 시작 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">[CTO] 인증 플랫폼 Frontend 개발자 채용</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">엘지유플러스</span>
+	                                                            <span class="info-gray">D-11</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+	                                                <div class="box">
+	                                                    <a href="#" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg c">최근 시작 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">2023년 서울지역 임원비서(계약직) 채용</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">포스코홀딩스</span>
+	                                                            <span class="info-gray">D-3</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                             <li>
                                                 <div class="box-img">
@@ -273,30 +364,48 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="box">
-                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="마감 임박 공채" target="_blank">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg d">마감 임박 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">서울지사 임시 기간제계약직(하반기) 채용</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">한국가스기술공사</span>
-                                                            <span class="info-gray">오늘마감</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                                <div class="box">
-                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="마감 임박 공채" target="_blank">
-                                                        <span class="bdgs">
-                                                            <span class="ut-bdg d">마감 임박 공채</span>
-                                                        </span>
-                                                        <h4 class="box-tit">전북지사 임시 기간제 계약직(하반기) 채용</h4>
-                                                        <span class="box-bot">
-                                                            <span class="info-txt">한국가스기술공사</span>
-                                                            <span class="info-gray">오늘마감</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
+                                            	<c:if test="${not empty getNextTwoInfoByDDay5}">
+                                            		<c:forEach items="${getNextTwoInfoByDDay5}" var="item">
+		                                                <div class="box">
+		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link" target="_blank" data-rcmdsvcagi-galabel="최근 시작 공채">
+		                                                        <span class="bdgs">
+		                                                            <span class="ut-bdg c">임박한 공고</span>
+		                                                        </span>
+		                                                        <h4 class="box-tit">${item.RE_TITLE}</h4>
+		                                                        <span class="box-bot">
+		                                                            <span class="info-txt">${item.BIZNAME}</span>
+		                                                            <span class="info-gray">D-${item.DDAY}</span>
+		                                                        </span>
+		                                                    </a>
+		                                                </div>
+	                                                </c:forEach>
+                                            	</c:if>
+	                                            	<c:if test="${empty getNextTwoInfoByDDay5}">
+	                                            	<div class="box">
+	                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="마감 임박 공채" target="_blank">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg d">마감 임박 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">서울지사 임시 기간제계약직(하반기) 채용</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">한국가스기술공사</span>
+	                                                            <span class="info-gray">오늘마감</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+	                                                <div class="box">
+	                                                    <a href="#" class="link" data-rcmdsvcagi-galabel="마감 임박 공채" target="_blank">
+	                                                        <span class="bdgs">
+	                                                            <span class="ut-bdg d">마감 임박 공채</span>
+	                                                        </span>
+	                                                        <h4 class="box-tit">전북지사 임시 기간제 계약직(하반기) 채용</h4>
+	                                                        <span class="box-bot">
+	                                                            <span class="info-txt">한국가스기술공사</span>
+	                                                            <span class="info-gray">오늘마감</span>
+	                                                        </span>
+	                                                    </a>
+	                                                </div>
+                                            	</c:if>
                                             </li>
                                         </ul>
                                     </div>

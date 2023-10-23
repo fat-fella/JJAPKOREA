@@ -46,6 +46,18 @@ public class IndexController {
             String selectListScrapJson = objectMapper.writeValueAsString(selectListScrap);
             model.addAttribute("selectListScrapJson", selectListScrapJson);
         }
+        List<Map<String, Object>> topTwoInfoByDDay = jobPostingService.topTwoInfoByDDay();
+        model.addAttribute("topTwoInfoByDDay", topTwoInfoByDDay);
+        List<Map<String, Object>> getNextTwoInfoByDDay = jobPostingService.getNextTwoInfoByDDay();
+        model.addAttribute("getNextTwoInfoByDDay", getNextTwoInfoByDDay);
+        List<Map<String, Object>> getNextTwoInfoByDDay2 = jobPostingService.getNextTwoInfoByDDay2();
+        model.addAttribute("getNextTwoInfoByDDay2", getNextTwoInfoByDDay2);
+        List<Map<String, Object>> getNextTwoInfoByDDay3 = jobPostingService.getNextTwoInfoByDDay3();
+        model.addAttribute("getNextTwoInfoByDDay3", getNextTwoInfoByDDay3);
+        List<Map<String, Object>> getNextTwoInfoByDDay4 = jobPostingService.getNextTwoInfoByDDay4();
+        model.addAttribute("getNextTwoInfoByDDay4", getNextTwoInfoByDDay4);
+        List<Map<String, Object>> getNextTwoInfoByDDay5 = jobPostingService.getNextTwoInfoByDDay5();
+        model.addAttribute("getNextTwoInfoByDDay5", getNextTwoInfoByDDay5);
         return "index";
     }
     
