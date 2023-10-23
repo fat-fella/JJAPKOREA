@@ -1816,7 +1816,7 @@ $(document).ready(function() {
                     <div class="badge "> 이력서를 새로 업데이트해주세요
                             <div class="tip">
                                 <button type="button" class="tip-close" onclick="closeButton(this)"></button>
-                                <a href="/person/resume/Edit?RNo=22569840&amp;Input_Type_Code=6" onclick="GA_Event('마이페이지_PC', '이력서 완성 유도 메시지', '경력 입력 유도')" target="_blank">${workPlace }에서 어떤일을 하셨나요?</a>
+                               <a href="<%=request.getContextPath()%>/person/resume/write" onclick="GA_Event('마이페이지_PC', '이력서 완성 유도 메시지', '경력 입력 유도')" target="_blank">${workPlace }에서 어떤일을 하셨나요?</a>
                             </div>
                     </div>
                     <label class="switch">
