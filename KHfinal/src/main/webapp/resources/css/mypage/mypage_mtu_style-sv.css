@@ -165,7 +165,7 @@ background-size: contain;
 .my-content .my-profile-wrap:after {content:""; display:block; clear:both;}
 .my-content .my-profile {position: relative;}
 .my-content .my-profile .pie-chart {position: relative; width: 90px; height: 90px; border-radius: 50%; background: #f2f7ff; transition: 0.3s;}
-.my-content .my-profile .profile-img {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border-radius: 50%; overflow: hidden; background: url(/content/images/ver_1/mtu/default_photo.png) no-repeat center; background-size: contain; border: 3px solid #fff; box-sizing: border-box;}
+.my-content .my-profile .profile-img {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 84px; height: 84px; border-radius: 50%; overflow: hidden; background: url(../../images/default_photo.png) no-repeat center; background-size: contain; border: 3px solid #fff; box-sizing: border-box;}
 .my-content .my-profile .profile-img img {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;}
 .my-content .my-profile .profile-btn {position: absolute; bottom: 3px; right: 2px; z-index: 2; width: 30px; height: 30px; background: url(/content/images/ver_1/mtu/icon_camera.png) no-repeat center; background-size: contain; border-radius: 50%;}
 .my-content .my-career {display: block; font-size: 13px; color: #002aff; margin-top: 10px;}
@@ -2766,7 +2766,7 @@ transform: translateY(-50%) rotate(180deg);
 .celebrate_my .swiper-slide::before{display:block;position: absolute;top:0;left:0;width:3px;height:100%;content: "";}
 .celebrate_my .swiper-slide .celebrate-badge-big{width: 197px; padding:0 27px 0 27px;border-right:1px solid #EEEEEE;display: flex;align-items: center;justify-content: center; box-sizing: border-box;}
 .celebrate_my .swiper-slide .celebrate-badge-big span{line-height:20px;font-size:15px;letter-spacing: -1.5px;color: #171717;display:inline-block;}
-.celebrate_my .swiper-slide .celebrate-badge-big span::before{display:inline-block;content: "";width:18px;height:18px;background-image: url("/content/images/theme/celebrate/icon_celebrate_search_txt_bb.svg");background-size: 18px 18px;background-position: center center;background-repeat: no-repeat;margin:0 4px 0 0;position: relative;top:3px;}
+.celebrate_my .swiper-slide .celebrate-badge-big span::before{display:inline-block;content: "";width:18px;height:18px;background-image: url("../../images/mypage_icon_celebrate_search_txt_bb.svg");background-size: 18px 18px;background-position: center center;background-repeat: no-repeat;margin:0 4px 0 0;position: relative;top:3px;}
 .celebrate_my .swiper-slide .infoCol{width: 657px; box-sizing: border-box;}
 .celebrate_my .swiper-slide .infoCol .company{margin-bottom:12px;}
 .celebrate_my .swiper-slide .infoCol .company a{font-size:15px;line-height:20px;color: #333333;font-weight: 400;display: inline-block; max-width: 400px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
@@ -2777,7 +2777,7 @@ transform: translateY(-50%) rotate(180deg);
 .celebrate_my .swiper-slide .infoCol .desc .cell{margin:0 13px 0 0;}
 .celebrate_my .swiper-slide .infoCol .vou{margin:17px 0 0 0;}
 .celebrate_my .swiper-slide .infoCol .vou .cell{font-size:13px;line-height:17px;color: #333333;margin: 17px 0 0 4px;letter-spacing: -1px;}
-.celebrate_my .swiper-slide .infoCol .vou .ico{content: url("/content/images/theme/celebrate/icon_celebrate_search_txt_bb.svg"); width: 16px; height: 16px; margin-top: 1px;}
+.celebrate_my .swiper-slide .infoCol .vou .ico{content: url("../../images/mypage_icon_celebrate_search_txt_bb.svg"); width: 16px; height: 16px; margin-top: 1px;}
 .celebrate_my .swiper-slide .infoCol .company:hover,
 .celebrate_my .swiper-slide .infoCol .tit:hover{text-decoration: none;}
 .celebrate_my .swiper-slide .btnCol{display: flex;align-items: flex-end;}
