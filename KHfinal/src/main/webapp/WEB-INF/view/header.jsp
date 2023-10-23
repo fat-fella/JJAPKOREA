@@ -1005,10 +1005,10 @@
 					<ul id="devMyPage" class="userNav">
 						<sec:authorize access="isAnonymous()">
 							<li class="userNav-item login">
-								<a href="login/" class="txt-button login-button">로그인</a>
+								<a href="<%=request.getContextPath() %>/login/" class="txt-button login-button">로그인</a>
 							</li>
 							<li class="userNav-item join">
-								<a href="signup/person" class="txt-button join-button">회원가입</a>
+								<a href="<%=request.getContextPath() %>/signup/person" class="txt-button join-button">회원가입</a>
 							</li>
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_PERSON')">
@@ -1017,7 +1017,7 @@
 									onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">이력서 관리</a>
 							</li>
 							<li class="userNav-item my member">
-								<a href="person/myPage" class="btnMyOpen txt-button ico-cp"
+								<a href="<%=request.getContextPath() %>/person/myPage" class="btnMyOpen txt-button ico-cp"
 									onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');">
 									<span class="spGnb"></span><span class="user-name">${selectOnePerson.pname}</span><span
 										class="skip">열기</span>
@@ -1051,13 +1051,13 @@
 													</a>
 												</li>
 												<li>
-													<a href="person/myPage"
+													<a href="<%=request.getContextPath() %>/person/myPage"
 														onclick="GA_Event('공통_PC', 'gnb', '스크랩');">
 														<span class="tx">스크랩</span>
 													</a>
 												</li>
 												<li>
-													<a href="person/infoModifyPerson"
+													<a href="<%=request.getContextPath() %>/person/infoModifyPerson"
 														onclick="GA_Event('공통_PC', 'gnb', '개인정보 수정');">
 														<span class="tx">개인정보 수정</span>
 													</a>
@@ -1067,7 +1067,7 @@
 										<div class="lyRow">
 											<div class="btnRowWrap">
 												<form action="logout" method="post">
-													<a href="/Login/Logout.asp" class="btnLogOut"
+													<a href="<%=request.getContextPath() %>//Login/Logout.asp" class="btnLogOut"
 														onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 												</form>
 											</div>
@@ -1079,14 +1079,14 @@
 						</sec:authorize>
 						<sec:authorize access="hasRole('ROLE_BUSINESS')">
 							<li class="userNav-item corp">
-								<a href="login" target="_blank">
+								<a href="<%=request.getContextPath() %>/login" target="_blank">
 									<span class="spGnb">기업서비스</span>
 								</a>
 								<div class="lyMyArea">
 									<div class="myInner">
 										<div class="lyRow">
 											<div class="btnRowWrap">
-												<a href="login">기업회원 로그인</a>
+												<a href="<%=request.getContextPath() %>/login">기업회원 로그인</a>
 											</div>
 										</div>
 										<div class="myLists">
@@ -1131,7 +1131,7 @@
 											<div class="lyRow">
 												<div class="btnRowWrap">
 													<form action="logout" method="post">
-														<a href="/Login/Logout.asp" class="btnLogOut"
+														<a href="<%=request.getContextPath() %>/Login/Logout.asp" class="btnLogOut"
 															onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 													</form>
 												</div>
@@ -1145,7 +1145,7 @@
 						<sec:authorize access="hasRole('ROLE_ADMIN')">
 							<li class="userNav-item admin">
 								<form action="logout" method="post">
-									<a href="/Login/Logout.asp" class="btnLogOut"
+									<a href="<%=request.getContextPath() %>/Login/Logout.asp" class="btnLogOut"
 										onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 								</form>
 							</li>
