@@ -40,20 +40,25 @@
 						<tr>
 							<th class="bg-secondary">게시판 번호</th>
 							<th class="bg-secondary">게시판 제목</th>
-							<th class="bg-secondary">신고 제목</th>
+							<th class="bg-secondary">신고 카테고리</th>
 							<th class="bg-secondary">신고 내용</th>
-							<th class="bg-secondary">신고 일시</th>
-							<th class="bg-secondary">정지</th>
+							<th class="bg-secondary">처리 유무</th>
+							<th class="bg-secondary">게시판 작성자 정지</th>
+							<th class="bg-secondary">게시판 삭제</th>
 						</tr>
-						<c:forEach items="${personList }" var="person">
+						<c:forEach items="${declarationWait }" var="report">
 						<tr>
-							<td class="bg-success"><c:out value="${person.rownum + ((pageMaker.cri.pageNum-1) * 10)}"/></td>
-							<td class="bg-success"><c:out value="${person.mid}"/></td>
-							<td class="bg-success"><c:out value="${person.pname}"/></td>
-							<td class="bg-success"><c:out value="${person.pemail}"/></td>
-							<td class="bg-success"><c:out value="${person.mtype}"/></td>
-							<td class="bg-success"><button class="suspended_btn btn btn-outline-primary" value="${person.mid}">
-									정지</button></td>
+							<td class="bg-success"><c:out value="${report.rownum + ((pageMaker.cri.pageNum-1) * 10)}"/></td>
+							<td class="bg-success"><c:out value="${report.bno}"/></td>
+							<td class="bg-success"><c:out value="${report.btitle}"/></td>
+							<td class="bg-success"><c:out value="${report.rCategory}"/></td>
+							<td class="bg-success"><c:out value="${report.rContent}"/></td>
+							<td class="bg-success"><c:out value="${report.rCheck}"/></td>
+							<td class="bg-success"><c:out value="${report.rid}"/></td>
+							<td class="bg-success"><button class="suspended_btn btn btn-outline-primary" value="${report.rid}">
+									사용자 정지</button></td>
+							<td class="bg-success"><button class="delete_btn btn btn-outline-primary" value="${report.bno}">
+									게시판 삭제</button></td>
 						</tr>
 						</c:forEach>
 					</table>
@@ -144,6 +149,25 @@
 			moveForm.find("input[name='pageNum']").val(1);
 			moveForm.submit();
 		}
+		
+		$(".suspended_btn").on("click", function() {
+	        var mid = $(this).val();
+	        console.log(mid);
+	        $.ajax({
+	            type: "POST", // 또는 GET 등 HTTP 메소드 선택
+	            url: "${pageContext.request.contextPath}/admin/suspended/active",
+	            data: { mid: mid },
+	            success: function(response) {
+	                // 성공 시 수행할 로직
+	                location.href="${pageContext.request.contextPath}/admin/personList";
+	                console.log(response);
+	            },
+	            error: (request, status, error) => {
+	                // 에러 시 수행할 로직
+	            	alert("code : " + request.status + "\n" + "message : " + request.responseText + "\n" + "error : " + request.error);
+	            }
+	        });
+	    });
 		
 		$(".suspended_btn").on("click", function() {
 	        var mid = $(this).val();
