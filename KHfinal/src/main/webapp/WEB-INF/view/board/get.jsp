@@ -749,6 +749,8 @@ function submitreplyreplyHandler() {
 				<option value="6">불쾌한 표현이 있습니다.</option>
 				<option value="7">기타</option>
 			</select>
+			<textarea id="description" placeholder="사유를 입력해주세요" style="width: 100%; max-width: 400px; height: 100px; padding: 5px; font-size: 14px; margin-top: 10px;"></textarea>
+			
 			<button id="submitBtn">신고</button>
 		</div>
 	</div>
@@ -793,7 +795,7 @@ function submitreplyreplyHandler() {
 	function removeBackdrop() {
 		$('.modal-backdrop').remove();
 	}
-  </script>
+	</script>
 </body>
 <style>
 .modal {

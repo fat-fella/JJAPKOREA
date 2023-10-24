@@ -112,7 +112,7 @@
 			select rownum, rno, bno, btitle, rid, mid, r_category, r_cat, r_content, r_check, enabled from 
 			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r.r_category, r_cat, r_content, r_check, m.enabled
 			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid join rcategory rc on r.r_category = rc.r_category
-			where rownum <= #{pageNum} * #{amount} and r_check = 0)
+			where rownum <= #{pageNum} * #{amount} and r_check = 0
 		]]>
 			<if test="keyword != null">
 				<include refid="criteria"></include> 
@@ -128,7 +128,7 @@
 			select rownum, rno, bno, btitle, rid, mid, r_category, r_cat, r_content, r_check, enabled from 
 			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r.r_category, r_cat, r_content, r_check, m.enabled
 			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid join rcategory rc on r.r_category = rc.r_category
-			where rownum <= #{pageNum} * #{amount} and r_check = 1)
+			where rownum <= #{pageNum} * #{amount} and r_check = 1
 		]]>
 			<if test="keyword != null">
 				<include refid="criteria"></include> 
@@ -139,8 +139,8 @@
 		]]>
 	</select>
 	<insert id="reportBoard" parameterType="declarationDto">
-		insert into report (RNO, BNO, MID, RID, R_CATEGORY, R_CONTENT, R_CHECK)
-		values (#{rno}, #{bno}, #{mid}, #{rid}, #{rCategory}, #{rContent}, #{rCheck})
+		insert into report (RNO, BNO, MID, RID, R_CATEGORY, R_CONTENT)
+		values (REPORT_SEQ.NEXTVAL, #{bno}, #{mid}, #{rid}, #{rCategory}, #{rContent})
 	</insert>
 	
 	<!-- 
