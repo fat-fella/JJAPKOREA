@@ -228,7 +228,6 @@ button:hover {
 	      <option value="reason2">Reason 2</option>
 	      <option value="reason3">Reason 3</option>
 	    </select>
-	    <textarea></textarea>
 	    <button id="submitBtn">제출</button>
 	  </div>
 	</div>
