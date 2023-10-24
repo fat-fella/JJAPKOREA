@@ -44,9 +44,6 @@ public class AdminDao {
 		return sqlSession.selectList("admin.declarationWait", cri);
 	}
 	
-	
-	
-	
 	public List<DeclarationDto> declarationComplete(Criteria cri) {
 		return sqlSession.selectList("admin.declarationComplete", cri);
 	}

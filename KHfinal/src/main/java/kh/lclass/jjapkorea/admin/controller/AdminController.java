@@ -149,19 +149,6 @@ public class AdminController {
 		return mv;
 	}
 	
-	// 신고처리
-	@PostMapping("/declarationWait")
-	public void reportBoard(Criteria cri) {
-		service.declarationWait(cri);
-		
-	}
-	
-	
-	
-	
-	
-	
-	
 	// 신고 페이지 처리 중에서 삭제 버튼 클릭 시
 	@PostMapping("/delete/board")
 	public ModelAndView deleteBoard(ModelAndView mv, @RequestParam("rno") int rno) {

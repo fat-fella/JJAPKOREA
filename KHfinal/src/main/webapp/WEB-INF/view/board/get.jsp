@@ -7,8 +7,6 @@
 <meta charset="UTF-8">
 <title>boardOne</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <style>
 body {
 	font-family: Arial, sans-serif;
@@ -217,59 +215,6 @@ button:hover {
 			 	<input type="hidden" name="type" value="${cri.type }">
 			 	<input type="hidden" name="keyword" value="${cri.keyword }">
 			</form>
-			
-			
-			<!-- 모달 창 -->
-	<div id="myModal" class="modal">
-	  <div class="modal-content">
-	    <span class="close">&times;</span>
-	    <select id="reasonSelect">
-	      <option value="reason1">Reason 1</option>
-	      <option value="reason2">Reason 2</option>
-	      <option value="reason3">Reason 3</option>
-	    </select>
-	    <textarea></textarea>
-	    <button id="submitBtn">제출</button>
-	  </div>
-	</div>
-			<script>
-			
-			
-			
-				function report(){
-					$.ajax({
-						url:"jjapkorea/admin/declarationWait",
-						data:{
-							bno:bno,
-							mid:mid
-						},
-						type:'post',
-						success: function () {
-							var modal = document.getElementById("myModal");
-							var btn = document.getElementById("myBtn");
-							var span = document.getElementsByClassName("close")[0];
-
-							btn.onclick = function() {
-							  modal.style.display = "block";
-							}
-
-							span.onclick = function() {
-							  modal.style.display = "none";
-							}
-
-							window.onclick = function(event) {
-							  if (event.target == modal) {
-							    modal.style.display = "none";
-							  }
-							}
-			            },
-			            error: function (){
-			            	alert('이미 신고하셨습니다.');
-			            }
-			            
-					});
-				}
-			</script>
 		<!-- 댓글 Area -->
 			<c:if test="${not empty memberid}">
 			    <div class="addreply">
