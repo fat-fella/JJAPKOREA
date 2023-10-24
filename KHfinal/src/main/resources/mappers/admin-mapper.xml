@@ -109,10 +109,10 @@
 	
 	<select id="declarationWait" resultType="declarationDto">
 		<![CDATA[
-			select rownum, rno, bno, btitle, rid, mid, r_category, r_content, r_check, enabled from 
-			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r_category, r_content, r_check, m.enabled
-			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid
-			where rownum <= #{pageNum} * #{amount} and r_check = 0
+			select rownum, rno, bno, btitle, rid, mid, r_category, r_cat, r_content, r_check, enabled from 
+			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r.r_category, r_cat, r_content, r_check, m.enabled
+			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid join rcategory rc on r.r_category = rc.r_category
+			where rownum <= #{pageNum} * #{amount} and r_check = 0)
 		]]>
 			<if test="keyword != null">
 				<include refid="criteria"></include> 
@@ -125,10 +125,10 @@
 	
 	<select id="declarationComplete" resultType="declarationDto">
 		<![CDATA[
-			select rownum, rno, bno, btitle, rid, mid, r_category, r_content, r_check, enabled from 
-			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r_category, r_content, r_check, m.enabled
-			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid
-			where rownum <= #{pageNum} * #{amount} and r_check = 1
+			select rownum, rno, bno, btitle, rid, mid, r_category, r_cat, r_content, r_check, enabled from 
+			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r.r_category, r_cat, r_content, r_check, m.enabled
+			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid join rcategory rc on r.r_category = rc.r_category
+			where rownum <= #{pageNum} * #{amount} and r_check = 1)
 		]]>
 			<if test="keyword != null">
 				<include refid="criteria"></include> 
