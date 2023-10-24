@@ -1168,7 +1168,7 @@
 										onclick="GA_Event('공통_PC', 'gnb', '이력서 관리');">이력서 관리</a>
 								</li>
 								<li class="userNav-item my member">
-									<a href="myPage" class="btnMyOpen txt-button ico-cp"
+									<a href="<%=request.getContextPath() %>/person/myPage" class="btnMyOpen txt-button ico-cp"
 										onclick="GA_Event('공통_PC', 'gnb', '개인회원홈');">
 										<span class="spGnb"></span><span class="user-name">${selectOnePerson.pname}</span><span
 											class="skip">열기</span>
