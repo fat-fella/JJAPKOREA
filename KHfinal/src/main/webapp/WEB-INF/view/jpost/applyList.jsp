@@ -150,7 +150,7 @@ ul.apply-list li {
 				<li><a href="<%=request.getContextPath()%>/person/resume/write"
 						class="link">이력서 관리</a></li>
 				<li>|</li>
-				<li><a href="<%=request.getContextPath()%>/person/myPage"
+				<li><a href="<%=request.getContextPath()%>/person/scrap"
 						class="link">스크랩</a></li>
 				<li>|</li>
 				<li><a
