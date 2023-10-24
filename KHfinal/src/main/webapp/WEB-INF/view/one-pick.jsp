@@ -11,7 +11,8 @@
 <meta content="Free HTML Templates" name="description">
 
 <!-- Favicon -->
-<link href="${pageContext.request.contextPath}/resources/favicon.ico" rel="icon">
+<link href="${pageContext.request.contextPath}/resources/favicon.ico"
+	rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,15 +30,22 @@
 	rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
-<link href="${pageContext.request.contextPath}/resources/css/one-pick/owl.carousel.min.css"
+<link
+	href="${pageContext.request.contextPath}/resources/css/one-pick/owl.carousel.min.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/resources/css/one-pick/animate.min.css" rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/resources/css/one-pick/animate.min.css"
+	rel="stylesheet">
 
 <!-- Customized Bootstrap Stylesheet -->
-<link href="${pageContext.request.contextPath}/resources/css/one-pick/bootstrap.min.css" rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/resources/css/one-pick/bootstrap.min.css"
+	rel="stylesheet">
 
 <!-- Template Stylesheet -->
-<link href="${pageContext.request.contextPath}/resources/css/one-pick/style.css" rel="stylesheet">
+<link
+	href="${pageContext.request.contextPath}/resources/css/one-pick/style.css"
+	rel="stylesheet">
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -54,7 +62,8 @@
 	<!-- Navbar & Carousel Start -->
 	<div class="container-fluid position-relative p-0">
 		<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-			<a href="${pageContext.request.contextPath}/index" class="navbar-brand p-0">
+			<a href="${pageContext.request.contextPath}/index"
+				class="navbar-brand p-0">
 				<h1 class="m-0">
 					<i class="fa fa-user-tie me-2"></i>JJAPKOREA
 				</h1>
@@ -65,15 +74,20 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<div class="navbar-nav ms-auto py-0">
-					<a href="${pageContext.request.contextPath}/one-pick" class="nav-item nav-link active">Home</a>
-					<a href="${pageContext.request.contextPath}/jobPostingList/date" class="nav-item nav-link">Jobs</a>
-					<a href="${pageContext.request.contextPath}/businessList" class="nav-item nav-link">Companies</a>
-					<a href="${pageContext.request.contextPath}/login/" class="nav-item nav-link">Chats</a>
-					<a href="${pageContext.request.contextPath}/board/list" class="nav-item nav-link">JobTalk</a>
+					<a href="${pageContext.request.contextPath}/one-pick"
+						class="nav-item nav-link active">Home</a>
+					<a href="${pageContext.request.contextPath}/jobPostingList/date"
+						class="nav-item nav-link">Jobs</a>
+					<a href="${pageContext.request.contextPath}/businessList"
+						class="nav-item nav-link">Companies</a>
+					<a href="${pageContext.request.contextPath}/login/"
+						class="nav-item nav-link">Chats</a>
+					<a href="${pageContext.request.contextPath}/board/list"
+						class="nav-item nav-link">JobTalk</a>
 				</div>
 				<butaton type="button" class="btn text-primary ms-3"
-					data-bs-toggle="modal" data-bs-target="#searchModal">
-				<i class="fa fa-search"></i></butaton>
+					data-bs-toggle="modal" data-bs-target="#searchModal"> <i
+					class="fa fa-search"></i></butaton>
 			</div>
 		</nav>
 
@@ -81,11 +95,14 @@
 			data-bs-ride="carousel">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="w-100" src="${pageContext.request.contextPath}/resources/images/one-pick/carousel-1.jpg" alt="Image">
+					<img class="w-100"
+						src="${pageContext.request.contextPath}/resources/images/one-pick/carousel-1.jpg"
+						alt="Image">
 					<div
 						class="carousel-caption d-flex flex-column align-items-center justify-content-center">
 						<div class="p-3" style="max-width: 900px;">
-							<h5 class="text-white text-uppercase mb-3 animated slideInDown">Most Popular Job Listings</h5>
+							<h5 class="text-white text-uppercase mb-3 animated slideInDown">Most
+								Popular Job Listings</h5>
 							<c:choose>
 								<c:when test="${not empty mostScrappedJob}">
 									<c:forEach items="${mostScrappedJob}" var="item">
@@ -93,13 +110,15 @@
 										<a href="quote.html"
 											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
 											Quote</a>
-										<a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
-											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View Details</a>
+										<a
+											href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
+											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View
+											Details</a>
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
 									<h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative
-									& Innovative Digital Solution</h1>
+										& Innovative Digital Solution</h1>
 									<a href="quote.html"
 										class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
 										Quote</a>
@@ -112,11 +131,14 @@
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="w-100" src="${pageContext.request.contextPath}/resources/images/one-pick/carousel-2.jpg" alt="Image">
+					<img class="w-100"
+						src="${pageContext.request.contextPath}/resources/images/one-pick/carousel-2.jpg"
+						alt="Image">
 					<div
 						class="carousel-caption d-flex flex-column align-items-center justify-content-center">
 						<div class="p-3" style="max-width: 900px;">
-							<h5 class="text-white text-uppercase mb-3 animated slideInDown">Most Clicked Job Listings</h5>
+							<h5 class="text-white text-uppercase mb-3 animated slideInDown">Most
+								Clicked Job Listings</h5>
 							<c:choose>
 								<c:when test="${not empty mostClickedJob}">
 									<c:forEach items="${mostClickedJob}" var="item">
@@ -124,13 +146,15 @@
 										<a href="quote.html"
 											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
 											Quote</a>
-										<a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
-											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View Details</a>
+										<a
+											href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
+											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View
+											Details</a>
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
 									<h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative
-									& Innovative Digital Solution</h1>
+										& Innovative Digital Solution</h1>
 									<a href="quote.html"
 										class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
 										Quote</a>
@@ -143,11 +167,14 @@
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="w-100" src="${pageContext.request.contextPath}/resources/images/one-pick/carousel-2.jpg" alt="Image">
+					<img class="w-100"
+						src="${pageContext.request.contextPath}/resources/images/one-pick/carousel-2.jpg"
+						alt="Image">
 					<div
 						class="carousel-caption d-flex flex-column align-items-center justify-content-center">
 						<div class="p-3" style="max-width: 900px;">
-							<h5 class="text-white text-uppercase mb-3 animated slideInDown">Highest-Paying Job Listings</h5>
+							<h5 class="text-white text-uppercase mb-3 animated slideInDown">Highest-Paying
+								Job Listings</h5>
 							<c:choose>
 								<c:when test="${not empty highestSalaryJob}">
 									<c:forEach items="${highestSalaryJob}" var="item">
@@ -155,13 +182,15 @@
 										<a href="quote.html"
 											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
 											Quote</a>
-										<a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
-											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View Details</a>
+										<a
+											href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
+											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View
+											Details</a>
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
 									<h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative
-									& Innovative Digital Solution</h1>
+										& Innovative Digital Solution</h1>
 									<a href="quote.html"
 										class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
 										Quote</a>
@@ -256,7 +285,8 @@
 							<c:choose>
 								<c:when test="${not empty mostClickedJob}">
 									<c:forEach items="${mostClickedJob}" var="item">
-										<h1 class="text-white mb-0" data-toggle="counter-up" style="color: #091E3E !important;">${item.COUNT}</h1>
+										<h1 class="text-white mb-0" data-toggle="counter-up"
+											style="color: #091E3E !important;">${item.COUNT}</h1>
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
@@ -279,23 +309,12 @@
 							<h5 class="text-white mb-0">Salary</h5>
 							<c:choose>
 								<c:when test="${not empty highestSalaryJob}">
-									<c:forEach items="${highestSalaryJob}" var="item" varStatus="vs">
-										<h1 class="text-white mb-0" data-toggle="counter-up" id="salaryValue_${vs.count }" data-salary="${item.SALARY}">
-										${item.SALARY}
-										</h1>
-										<script>
-											const salaryValue = document.querySelector('#salaryValue_${vs.count }').getAttribute('data-salary');
-											console.log(salaryValue);
-											
-											if (salaryValue.length >= 5) {
-												const displayedSalary = salaryValue.substr(0, 4) + '...';
-												console.log(displayedSalary);
-												
-												document.querySelector('#salaryValue_${vs.count }').innerText = "aaa";
-												console.log(document.querySelector('#salaryValue_${vs.count }').textContent);
-												console.log("sssss");
-											}
-										</script>
+									<c:forEach items="${highestSalaryJob}" var="item"
+										varStatus="vs">
+										<h1 class="text-white mb-0" data-toggle="counter-up"
+											id="salaryValue_${vs.count }" data-salary="${item.SALARY}"
+											style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+											${item.SALARY}</h1>
 									</c:forEach>
 								</c:when>
 								<c:otherwise>
@@ -362,7 +381,8 @@
 				<div class="col-lg-5" style="min-height: 500px;">
 					<div class="position-relative h-100">
 						<img class="position-absolute w-100 h-100 rounded wow zoomIn"
-							data-wow-delay="0.9s" src="${pageContext.request.contextPath}/resources/images/one-pick/about.jpg"
+							data-wow-delay="0.9s"
+							src="${pageContext.request.contextPath}/resources/images/one-pick/about.jpg"
 							style="object-fit: cover;">
 					</div>
 				</div>
@@ -411,7 +431,8 @@
 					style="min-height: 350px;">
 					<div class="position-relative h-100">
 						<img class="position-absolute w-100 h-100 rounded wow zoomIn"
-							data-wow-delay="0.1s" src="${pageContext.request.contextPath}/resources/images/one-pick/feature.jpg"
+							data-wow-delay="0.1s"
+							src="${pageContext.request.contextPath}/resources/images/one-pick/feature.jpg"
 							style="object-fit: cover;">
 					</div>
 				</div>
@@ -757,7 +778,8 @@
 				data-wow-delay="0.6s">
 				<div class="testimonial-item bg-light my-4">
 					<div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-						<img class="img-fluid rounded" src="${pageContext.request.contextPath}/resources/images/one-pick/testimonial-1.jpg"
+						<img class="img-fluid rounded"
+							src="${pageContext.request.contextPath}/resources/images/one-pick/testimonial-1.jpg"
 							style="width: 60px; height: 60px;">
 						<div class="ps-4">
 							<h4 class="text-primary mb-1">Client Name</h4>
@@ -769,7 +791,8 @@
 				</div>
 				<div class="testimonial-item bg-light my-4">
 					<div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-						<img class="img-fluid rounded" src="${pageContext.request.contextPath}/resources/images/one-pick/testimonial-2.jpg"
+						<img class="img-fluid rounded"
+							src="${pageContext.request.contextPath}/resources/images/one-pick/testimonial-2.jpg"
 							style="width: 60px; height: 60px;">
 						<div class="ps-4">
 							<h4 class="text-primary mb-1">Client Name</h4>
@@ -781,7 +804,8 @@
 				</div>
 				<div class="testimonial-item bg-light my-4">
 					<div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-						<img class="img-fluid rounded" src="${pageContext.request.contextPath}/resources/images/one-pick/testimonial-3.jpg"
+						<img class="img-fluid rounded"
+							src="${pageContext.request.contextPath}/resources/images/one-pick/testimonial-3.jpg"
 							style="width: 60px; height: 60px;">
 						<div class="ps-4">
 							<h4 class="text-primary mb-1">Client Name</h4>
@@ -793,7 +817,8 @@
 				</div>
 				<div class="testimonial-item bg-light my-4">
 					<div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-						<img class="img-fluid rounded" src="${pageContext.request.contextPath}/resources/images/one-pick/testimonial-4.jpg"
+						<img class="img-fluid rounded"
+							src="${pageContext.request.contextPath}/resources/images/one-pick/testimonial-4.jpg"
 							style="width: 60px; height: 60px;">
 						<div class="ps-4">
 							<h4 class="text-primary mb-1">Client Name</h4>
@@ -823,7 +848,9 @@
 				<div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
 					<div class="team-item bg-light rounded overflow-hidden">
 						<div class="team-img position-relative overflow-hidden">
-							<img class="img-fluid w-100" src="${pageContext.request.contextPath}/resources/images/one-pick/team-1.jpg" alt="">
+							<img class="img-fluid w-100"
+								src="${pageContext.request.contextPath}/resources/images/one-pick/team-1.jpg"
+								alt="">
 							<div class="team-social">
 								<a class="btn btn-lg btn-primary btn-lg-square rounded" href="">
 									<i class="fab fa-twitter fw-normal"></i>
@@ -848,7 +875,9 @@
 				<div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
 					<div class="team-item bg-light rounded overflow-hidden">
 						<div class="team-img position-relative overflow-hidden">
-							<img class="img-fluid w-100" src="${pageContext.request.contextPath}/resources/images/one-pick/team-2.jpg" alt="">
+							<img class="img-fluid w-100"
+								src="${pageContext.request.contextPath}/resources/images/one-pick/team-2.jpg"
+								alt="">
 							<div class="team-social">
 								<a class="btn btn-lg btn-primary btn-lg-square rounded" href="">
 									<i class="fab fa-twitter fw-normal"></i>
@@ -873,7 +902,9 @@
 				<div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
 					<div class="team-item bg-light rounded overflow-hidden">
 						<div class="team-img position-relative overflow-hidden">
-							<img class="img-fluid w-100" src="${pageContext.request.contextPath}/resources/images/one-pick/team-3.jpg" alt="">
+							<img class="img-fluid w-100"
+								src="${pageContext.request.contextPath}/resources/images/one-pick/team-3.jpg"
+								alt="">
 							<div class="team-social">
 								<a class="btn btn-lg btn-primary btn-lg-square rounded" href="">
 									<i class="fab fa-twitter fw-normal"></i>
@@ -914,7 +945,9 @@
 				<div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
 					<div class="blog-item bg-light rounded overflow-hidden">
 						<div class="blog-img position-relative overflow-hidden">
-							<img class="img-fluid" src="${pageContext.request.contextPath}/resources/images/one-pick/blog-1.jpg" alt="">
+							<img class="img-fluid"
+								src="${pageContext.request.contextPath}/resources/images/one-pick/blog-1.jpg"
+								alt="">
 							<a
 								class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
 								href="">Web Design</a>
@@ -937,7 +970,9 @@
 				<div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
 					<div class="blog-item bg-light rounded overflow-hidden">
 						<div class="blog-img position-relative overflow-hidden">
-							<img class="img-fluid" src="${pageContext.request.contextPath}/resources/images/one-pick/blog-2.jpg" alt="">
+							<img class="img-fluid"
+								src="${pageContext.request.contextPath}/resources/images/one-pick/blog-2.jpg"
+								alt="">
 							<a
 								class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
 								href="">Web Design</a>
@@ -960,7 +995,9 @@
 				<div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
 					<div class="blog-item bg-light rounded overflow-hidden">
 						<div class="blog-img position-relative overflow-hidden">
-							<img class="img-fluid" src="${pageContext.request.contextPath}/resources/images/one-pick/blog-3.jpg" alt="">
+							<img class="img-fluid"
+								src="${pageContext.request.contextPath}/resources/images/one-pick/blog-3.jpg"
+								alt="">
 							<a
 								class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
 								href="">Web Design</a>
@@ -991,12 +1028,24 @@
 		<div class="container py-5 mb-5">
 			<div class="bg-white">
 				<div class="owl-carousel vendor-carousel">
-					<img src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-1.jpg" alt=""> <img
-						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-2.jpg" alt=""> <img src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-3.jpg"
-						alt=""> <img src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-4.jpg" alt=""> <img
-						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-5.jpg" alt=""> <img src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-6.jpg"
-						alt=""> <img src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-7.jpg" alt=""> <img
-						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-8.jpg" alt=""> <img src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-9.jpg"
+					<img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-1.jpg"
+						alt=""> <img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-2.jpg"
+						alt=""> <img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-3.jpg"
+						alt=""> <img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-4.jpg"
+						alt=""> <img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-5.jpg"
+						alt=""> <img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-6.jpg"
+						alt=""> <img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-7.jpg"
+						alt=""> <img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-8.jpg"
+						alt=""> <img
+						src="${pageContext.request.contextPath}/resources/images/one-pick/vendor-9.jpg"
 						alt="">
 				</div>
 			</div>
@@ -1162,13 +1211,19 @@
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/one-pick/wow.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/one-pick/easing.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/one-pick/waypoints.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/one-pick/counterup.min.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/one-pick/owl.carousel.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/one-pick/wow.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/one-pick/easing.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/one-pick/waypoints.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/one-pick/counterup.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/one-pick/owl.carousel.min.js"></script>
 
 	<!-- Template Javascript -->
-	<script src="${pageContext.request.contextPath}/resources/js/one-pick/main.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/js/one-pick/main.js"></script>
 </body>
 </html>
