@@ -35,5 +35,144 @@
 	<update id="updateCount" parameterType="jobPostingDto">
 		update info set count = count+1 where jid=#{jid}
 	</update>
-
+	
+	<select id="topTwoInfoByDDay" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		    ORDER BY i.dday ASC
+		)
+		<![CDATA[WHERE ROWNUM <= 2]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 3 and row_num <= 4]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay2" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 5 and row_num <= 6]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay3" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 7 and row_num <= 8]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay4" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 9 and row_num <= 10]]>
+	</select>
+	
+	<select id="getNextTwoInfoByDDay5" resultType="java.util.Map">
+		SELECT *
+		FROM (
+		    SELECT i.dday, i.re_title, b.bizname, i.jid, ROW_NUMBER() OVER (ORDER BY i.dday ASC) AS row_num
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    WHERE i.dday > 1
+		)
+		<![CDATA[WHERE row_num >= 11 and row_num <= 12]]>
+	</select>
+	
+	<select id="topTwoInfoByLikehit" resultType="java.util.Map">
+		select * from 
+		(select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit from board b join board_like l on b.bno = l.bno order by b.likehit desc) 
+		<![CDATA[where rownum <= 1]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 1 and row_num <= 2]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit2" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 2 and row_num <= 3]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit3" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 3 and row_num <= 4]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit4" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 4 and row_num <= 5]]>
+	</select>
+	
+	<select id="getNextTwoInfoByLikehit5" resultType="java.util.Map">
+		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
+		from board b join board_like l on b.bno = l.bno) 
+		<![CDATA[where row_num > 5 and row_num <= 6]]>
+	</select>
+	
+	<select id="mostScrappedJob" resultType="java.util.Map">
+		SELECT scrap_count, i.*, b.bizname, bf.bform_name
+		FROM info i
+		JOIN (
+		    SELECT s.jid, COUNT(s.jid) AS scrap_count
+		    FROM scrap s
+		    WHERE s.is_scrap_action = 'true'
+		    GROUP BY s.jid
+		    ORDER BY scrap_count DESC
+		) max_scrap_jid
+		ON i.jid = max_scrap_jid.jid
+		JOIN business b ON i.mid = b.mid
+		JOIN businessform bf ON b.bform = bf.bform
+		WHERE ROWNUM = 1
+	</select>
+	
+	<select id="mostClickedJob" resultType="java.util.Map">
+		SELECT * FROM (
+		    SELECT i.*, b.bizname, bf.bform_name
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    JOIN businessform bf ON b.bform = bf.bform
+		    ORDER BY i.count DESC
+		) WHERE ROWNUM = 1
+	</select>
+	
+	<select id="highestSalaryJob" resultType="java.util.Map">
+		SELECT * FROM (
+		    SELECT i.*, b.bizname, bf.bform,
+		           TO_NUMBER(REGEXP_REPLACE(salary, '[^0-9]', '')) AS numeric_salary
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    JOIN businessform bf ON b.bform = bf.bform
+		    ORDER BY numeric_salary DESC
+		) WHERE ROWNUM = 1
+	</select>
 </mapper>

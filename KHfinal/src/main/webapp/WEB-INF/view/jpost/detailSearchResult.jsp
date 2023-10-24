@@ -15,6 +15,112 @@
 }
 </style>
 <body>
+	<script>
+		$(function() {
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 500) {
+					$('.go_top').fadeIn();
+				} else {
+					$('.go_top').fadeOut();
+				}
+			});
+
+			$(".go_top").click(function() {
+				$('html, body').animate({
+					scrollTop : 0
+				}, 0);
+				return false;
+			});
+		});
+
+		$(document).ready(function() {
+			$("[data-jid]").each(function() {
+				var jid = $(this).data("jid");
+				var scrapButton = $(this);
+
+				// 서버에서 JSON 데이터 가져오기
+				var selectListScrapJson = '${selectListScrapJson}';
+
+				if (selectListScrapJson) {
+					var selectListScrap = JSON.parse(selectListScrapJson);
+
+					if (Array.isArray(selectListScrap)) {
+						var selectOneScrap = selectListScrap
+								.find(function(item) {
+									return item.jid === jid;
+								});
+
+						if (selectOneScrap) {
+							var isScrapAction = JSON
+									.parse(selectOneScrap.isScrapAction);
+
+							if (isScrapAction) {
+								scrapButton.addClass('scraped');
+								scrapButton.text('스크랩됨');
+								scrapButton.removeClass('scrap');
+							} else {
+								scrapButton.removeClass('scraped');
+								scrapButton.text('채용정보 스크랩');
+								scrapButton.addClass('scrap');
+							}
+						}
+					}
+				}
+			});
+		});
+
+		// 스크랩 버튼 클릭 시
+		function setScrap(jid) {
+			var mid = "${mid}";
+			var scrapButton = $('[data-jid="' + jid + '"]');
+
+			// 현재 스크랩 상태 가져오기
+			var isScrapAction = scrapButton.hasClass('scrap'); // 스크랩 버튼이 'scrap' 클래스를 가지고 있는지 여부에 따라 설정
+
+			$.ajax({
+			url : "${pageContext.request.contextPath}/person/myPage",
+			type : "post",
+			contentType : "application/json", // JSON 형식으로 데이터 전송
+			data : JSON.stringify({
+			jid : jid,
+			mid : mid,
+			isScrapAction : isScrapAction.toString()
+			// 문자열로 변환하여 보냄
+			}),
+			success : function(result) {
+				if (result === "스크랩 성공") {
+					// 스크랩 성공 처리
+					scrapButton.toggleClass('scraped');
+					scrapButton.text('스크랩됨');
+					scrapButton.removeClass('scrap');
+					alert("스크랩 성공");
+				} else if (result === "스크랩 해제 성공") {
+					// 스크랩 해제 성공 처리
+					scrapButton.toggleClass('scraped');
+					scrapButton.text('채용정보 스크랩');
+					scrapButton.addClass('scrap');
+					alert("스크랩 해제 성공");
+				} else {
+					// 스크랩 실패 처리
+					alert("스크랩 실패");
+				}
+			},
+			error : function(xhr, status, error) {
+				if (xhr.status === 400) {
+					alert("클라이언트 오류"); // 클라이언트 오류
+				} else if (xhr.status === 500) {
+					alert("서버 오류"); // 서버 오류
+				} else {
+					alert("알 수 없는 오류: " + xhr.status); // 기타 오류
+				}
+			}
+			});
+		}
+
+		function getinfo(jid) {
+			location.href = '${pageContext.request.contextPath}/jobpostinginfo?jid=' + jid;
+		}
+	</script>
 	<section class="First VVIP 채용관">
 		<div class="bannerwrap">
 			<h5>
