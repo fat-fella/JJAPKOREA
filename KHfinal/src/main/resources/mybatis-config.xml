@@ -32,6 +32,7 @@
 	</typeAliases>
 	
 	<mappers>
+		<mapper resource="mappers/declaration-mapper.xml"/>
 		<mapper resource="mappers/admin-mapper.xml"/>
 		<mapper resource="mappers/member-mapper.xml"/>
 		<mapper resource="mappers/person-mapper.xml"/>

@@ -216,8 +216,8 @@ button:hover {
 					<button type="button" id="btn-board-dislike" style="display: none;"
 						onclick="updateLike();">좋아요 취소</button>
 					<button type="button" id="btn-board-like" onclick="updateLike();">좋아요</button>
-					<button type="button" id="btn-board-report" onclick="report()">게시글
-						신고</button>
+					<button type="button" id="btn-board-report"
+						onclick="report('${bvo.bno}', '${bvo.mid}')">게시글 신고</button>
 					<input type="hidden" id="bno" name="bno"
 						value='<c:out value="${bvo.bno}"/>'>
 					<input type="hidden" name="pageNum"
@@ -739,8 +739,7 @@ function submitreplyreplyHandler() {
 	<div id="myModal" class="modal">
 		<div class="modal-content">
 			<span class="close" id="closeBtn" data-dismiss="modal"
-				onclick="removeBackdrop()">&times;</span>
-			<select id="reasonSelect">
+				onclick="removeBackdrop()">&times;</span> <select id="reasonSelect">
 				<option value="1">스팸홍보/도배글입니다.</option>
 				<option value="2">음란물입니다.</option>
 				<option value="3">불법정보를 포함하고 있습니다.</option>
@@ -749,41 +748,81 @@ function submitreplyreplyHandler() {
 				<option value="6">불쾌한 표현이 있습니다.</option>
 				<option value="7">기타</option>
 			</select>
-			<textarea id="description" placeholder="사유를 입력해주세요" style="width: 100%; max-width: 400px; height: 100px; padding: 5px; font-size: 14px; margin-top: 10px;"></textarea>
-			
+			<textarea id="description" placeholder="사유를 입력해주세요"
+				style="width: 100%; max-width: 400px; height: 100px; padding: 5px; font-size: 14px; margin-top: 10px;"></textarea>
+
 			<button id="submitBtn">신고</button>
 		</div>
 	</div>
 
 	<script>
-	function report() {
+	function report(bno, rid) {
+		console.log(bno, rid);
 		// 모달 창 열기
 		$('#myModal').modal('show');
 		// 모달 뒤 배경 생성
 	    $('<div class="modal-backdrop"></div>').appendTo('body');
-	 	// 모달 창 내 "제출" 버튼 클릭 시 AJAX 요청을 보내기
-	    $("#submitBtn").click(function () {
-	        var selectedCategory = $("#reasonSelect").val();
-
-	        $.ajax({
-	            url: "jjapkorea/admin/declarationWait",
-	            type: "POST",
-	            data: {
-	                bno: bno, // 게시물 번호
-	                mid: mid, // 사용자 ID
-	                category: selectedCategory,
-	                description: description
-	            },
-	            success: function () {
-	                alert("신고가 접수되었습니다.");
-	                $('#myModal').modal('hide');
-	            },
-	            error: function () {
-	                alert("이미 신고하셨습니다.");
-	                $('#myModal').modal('hide');
-	            }
-	        });
+		
+	 	// "신고" 버튼 활성화 여부를 감시하고 업데이트
+        $("#reasonSelect").change(function() {
+            var selectedCategory = $("#reasonSelect").val();
+            // 1~7 중 하나를 선택한 경우 버튼 활성화, 그 외에는 비활성화
+        });
+	 	
+     	// 모달 창 내 "신고" 버튼 클릭 시 AJAX 요청을 보내기
+        $("#submitBtn").off("click").on("click", function() {
+			var selectedCategory = $("#reasonSelect").val();
+			var description = $("#description").val();
+			console.log(JSON.stringify({
+			    bno: bno,
+			    rid: rid,
+			    rCategory: selectedCategory,
+			    rContent: description
+			}));
+            
+			$.ajax({
+			    url: "${pageContext.request.contextPath}/board/declarationWait",
+			    type: "POST",
+			    data: JSON.stringify ({
+			        bno: bno, // 게시물 번호
+			        rid: rid, // 작성자 ID
+			        rCategory: selectedCategory,
+			        rContent: description
+			    }),
+			    contentType: "application/json",
+			    success: function (data) {
+			    	if(data === "success") {
+			    		alert("신고가 접수되었습니다.");
+			    		 $('#myModal').modal('hide');
+			    	} else if(data === "fail") {
+			        	alert("이미 신고하셨습니다.");
+			            $('#myModal').modal('hide');
+			        } else {
+			        	alert("본인 게시글은 신고할 수 없습니다.");
+			            $('#myModal').modal('hide');
+			        }
+			    },
+			    error: function (xhr, textStatus, errorThrown) {
+			        if (xhr.status === 401) {
+			            // HTTP 상태 코드가 401인 경우, 로그인이 필요한 경우 처리
+			            alert("로그인 후에 이용해주세요.");
+			            window.location.href = "${pageContext.request.contextPath}/login/";
+			        } else {
+			            // 그 외의 오류인 경우 처리
+			        	alert("서버 오류입니다.");
+			            $('#myModal').modal('hide');
+			        }
+			    }
+			});
 	    });
+	}
+	
+	// 초기화 함수 정의
+	function resetModal() {
+	    // 모달 창 내 필드 초기화 (예: 내용 지우기)
+	    $("#description").val("");
+	    // 모달 창을 닫음
+	    $('#myModal').modal('hide');
 	}
 	
     window.onclick = function(event) {

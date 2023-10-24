@@ -138,10 +138,6 @@
 		where rn > (#{pageNum} -1) * #{amount}
 		]]>
 	</select>
-	<insert id="reportBoard" parameterType="declarationDto">
-		insert into report (RNO, BNO, MID, RID, R_CATEGORY, R_CONTENT)
-		values (REPORT_SEQ.NEXTVAL, #{bno}, #{mid}, #{rid}, #{rCategory}, #{rContent})
-	</insert>
 	
 	<!-- 
 	<select id="adminList" resultType="AdminDto">

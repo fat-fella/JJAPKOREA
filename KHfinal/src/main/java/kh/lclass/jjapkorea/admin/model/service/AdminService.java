@@ -45,4 +45,7 @@ public interface AdminService {
 	int update(AdminDto vo);
 	
 //	int getTotalAdmin(Criteria cri);
+	
+	int reportBoard(DeclarationDto declarationDto) throws Exception;
+	List<DeclarationDto> reportsByUser(DeclarationDto declarationDto) throws Exception;
 }

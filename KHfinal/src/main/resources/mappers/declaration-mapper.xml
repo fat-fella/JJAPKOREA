@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="declaration">
+	<insert id="reportBoard" parameterType="declarationDto">
+		insert into report (RNO, BNO, MID, RID, R_CATEGORY, R_CONTENT)
+		values (REPORT_SEQ.NEXTVAL, #{bno}, #{mid}, #{rid}, #{rCategory}, #{rContent})
+	</insert>
+	
+	<select id="reportsByUser" resultType="declarationDto">
+		select * from report where mid = #{mid} and bno = #{bno}
+	</select>
+</mapper>

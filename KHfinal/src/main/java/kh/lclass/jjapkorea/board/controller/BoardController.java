@@ -17,9 +17,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,6 +33,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import org.springframework.ui.Model;
 
+import kh.lclass.jjapkorea.admin.model.dto.DeclarationDto;
+import kh.lclass.jjapkorea.admin.model.service.AdminService;
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
 import kh.lclass.jjapkorea.board.model.dto.BoardParam;
 import kh.lclass.jjapkorea.board.model.dto.Criteria;
@@ -41,7 +46,8 @@ import kh.lclass.jjapkorea.board.model.service.LikeService;
 @RequestMapping("/board")
 public class BoardController {
 	@Autowired private BoardService boardService;
-	@Autowired private LikeService likeService;	
+	@Autowired private LikeService likeService;
+	@Autowired private AdminService adminService;
 	
 	@GetMapping("/map")
 	public String map() {
@@ -339,5 +345,25 @@ public class BoardController {
 //		}
 //		return null;
 //	}
-    
+    @PostMapping("/declarationWait")
+    @ResponseBody
+    public ResponseEntity<String> handleDeclaration(Principal principal, @RequestBody DeclarationDto declarationDto) throws Exception {
+    	if (principal != null) {
+    		String mid = principal.getName();
+    		declarationDto.setMid(mid);
+    		if(!mid.equals(declarationDto.getRid())) {
+        		if(adminService.reportsByUser(declarationDto) == null || adminService.reportsByUser(declarationDto).isEmpty()) {
+        			adminService.reportBoard(declarationDto);
+        			return new ResponseEntity<>("success", HttpStatus.OK);
+        		} else {
+            		return new ResponseEntity<>("fail", HttpStatus.OK);
+        		}
+
+    		} else {
+    			return new ResponseEntity<>("failure", HttpStatus.OK);
+    		}
+    	} else {
+    		return new ResponseEntity<>("Unauthorized: 로그인이 필요합니다.", HttpStatus.UNAUTHORIZED);
+    	}
+    }
 }
