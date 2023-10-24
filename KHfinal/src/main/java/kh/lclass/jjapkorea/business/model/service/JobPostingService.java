@@ -27,4 +27,7 @@ public interface JobPostingService {
 	List<Map<String, Object>> getNextTwoInfoByLikehit3() throws Exception;
 	List<Map<String, Object>> getNextTwoInfoByLikehit4() throws Exception;
 	List<Map<String, Object>> getNextTwoInfoByLikehit5() throws Exception;
+	List<Map<String, Object>> mostScrappedJob() throws Exception;
+	List<Map<String, Object>> mostClickedJob() throws Exception;
+	List<Map<String, Object>> highestSalaryJob() throws Exception;
 }

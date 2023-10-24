@@ -85,4 +85,16 @@ public class JobPostingDao {
 	public List<Map<String, Object>> getNextTwoInfoByLikehit5() throws Exception {
 		return sqlSession.selectList("jobPosting.getNextTwoInfoByLikehit5");
 	}
+	
+	public List<Map<String, Object>> mostScrappedJob() throws Exception {
+		return sqlSession.selectList("jobPosting.mostScrappedJob");
+	}
+	
+	public List<Map<String, Object>> mostClickedJob() throws Exception {
+		return sqlSession.selectList("jobPosting.mostClickedJob");
+	}
+	
+	public List<Map<String, Object>> highestSalaryJob() throws Exception {
+		return sqlSession.selectList("jobPosting.highestSalaryJob");
+	}
 }

@@ -138,4 +138,41 @@
 		from board b join board_like l on b.bno = l.bno) 
 		<![CDATA[where row_num > 5 and row_num <= 6]]>
 	</select>
+	
+	<select id="mostScrappedJob" resultType="java.util.Map">
+		SELECT scrap_count, i.*, b.bizname, bf.bform_name
+		FROM info i
+		JOIN (
+		    SELECT s.jid, COUNT(s.jid) AS scrap_count
+		    FROM scrap s
+		    WHERE s.is_scrap_action = 'true'
+		    GROUP BY s.jid
+		    ORDER BY scrap_count DESC
+		) max_scrap_jid
+		ON i.jid = max_scrap_jid.jid
+		JOIN business b ON i.mid = b.mid
+		JOIN businessform bf ON b.bform = bf.bform
+		WHERE ROWNUM = 1
+	</select>
+	
+	<select id="mostClickedJob" resultType="java.util.Map">
+		SELECT * FROM (
+		    SELECT i.*, b.bizname, bf.bform_name
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    JOIN businessform bf ON b.bform = bf.bform
+		    ORDER BY i.count DESC
+		) WHERE ROWNUM = 1
+	</select>
+	
+	<select id="highestSalaryJob" resultType="java.util.Map">
+		SELECT * FROM (
+		    SELECT i.*, b.bizname, bf.bform,
+		           TO_NUMBER(REGEXP_REPLACE(salary, '[^0-9]', '')) AS numeric_salary
+		    FROM info i
+		    JOIN business b ON i.mid = b.mid
+		    JOIN businessform bf ON b.bform = bf.bform
+		    ORDER BY numeric_salary DESC
+		) WHERE ROWNUM = 1
+	</select>
 </mapper>

@@ -113,4 +113,19 @@ public class JobPostingServiceImpl implements JobPostingService {
 	public List<Map<String, Object>> getNextTwoInfoByLikehit5() throws Exception {
 		return jobPostingDao.getNextTwoInfoByLikehit5();
 	}
+	
+	@Override
+	public List<Map<String, Object>> mostScrappedJob() throws Exception {
+		return jobPostingDao.mostScrappedJob();
+	}
+	
+	@Override
+	public List<Map<String, Object>> mostClickedJob() throws Exception {
+		return jobPostingDao.mostClickedJob();
+	}
+	
+	@Override
+	public List<Map<String, Object>> highestSalaryJob() throws Exception {
+		return jobPostingDao.highestSalaryJob();
+	}
 }
