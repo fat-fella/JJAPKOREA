@@ -69,7 +69,7 @@ public class MailSendService {
 			sbuffer.append(" </tr>");
 			sbuffer.append(" <tr style='vertical-align: middle; '>");
 			sbuffer.append(" <td style='font-size: 17px; background-color: #b8ff00; text-align: center;' >");
-			sbuffer.append("<a href='http://localhost:8090/jjapkorea/jobpostinginfo?jid="+mailSendDto.getJid()+"' style='text-decoration: none; color: black; '"+">지원자 현황 보기</a>"); 
+			sbuffer.append("<a href='http://localhost:8090/jjapkorea/person/apply/list' style='text-decoration: none; color: black; '"+">지원자 현황 보기</a>"); 
 			sbuffer.append(" </td>");
 			sbuffer.append(" </tr>");
 			sbuffer.append(" </tr>");
