@@ -160,7 +160,7 @@
 	
       <div class="container" style="margin-top:30px">
     	<a href="index" class="logo linkLogo">
-			<img src="<%=request.getContextPath()%>/resources/images/짭코리아_반전.png"
+			<img src="<%=request.getContextPath()%>/resources/images/JJAPkorea_Mlogo.gif"
 				alt="JJAPKOREA" class="logoimg" width="300" height="100">
 		</a>
         <h1>아이디 찾기</h1>
