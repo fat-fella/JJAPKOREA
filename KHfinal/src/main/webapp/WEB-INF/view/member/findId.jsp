@@ -14,6 +14,7 @@
     
     
     
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/jobkh_findid.css">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_banner.promotion-sv.css">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_gnb-sv.css">
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_mtu_common-sv.css">
@@ -110,7 +111,7 @@
             color: #333;
         }
 
-        form {
+        #idf {
             margin-top: 20px;
             text-align: left;
         }
@@ -123,15 +124,15 @@
             text-align: left;
         }
 
-        input {
-            display: inline-block;
-            width: 60%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
+		#pname, #pphone {
+		    display: inline-block;
+		    width: 60%;
+		    padding: 10px;
+		    margin-top: 10px;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    font-size: 16px;
+		}
 
         #find-password-button {
             background-color: #007bff;
@@ -163,7 +164,7 @@
 				alt="JJAPKOREA" class="logoimg" width="300" height="100">
 		</a>
         <h1>아이디 찾기</h1>
-        <form action="<%=request.getContextPath()%>/findId" method="post">
+        <form action="<%=request.getContextPath()%>/findId" method="post" name="idf">
             <label for="pname" style="text-align: left;">이름</label>
             <input type="text" id="pname" name="pname" placeholder="이름을 입력하세요">
             <label for="pphone" style="text-align: left;">휴대폰 번호</label>
