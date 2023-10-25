@@ -1,26 +1,99 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- nav active 별 스크립트 구성 -->
+
+  
+	<jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
+    <meta charset="UTF-8">
+    <title>취업톡톡</title>
+    <link rel="icon" href="resources/favicon.ico">
+    
+    
+    
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/jobkh_findid.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_banner.promotion-sv.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_gnb-sv.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_mtu_common-sv.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_mtu_tpl-sv.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_mtu_popup-sv-202308211127.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_notification-sv.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_footer-sv.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_tooltip.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_flow.css">
+	
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_common-sv.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_mtu_style-sv.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_mtu_popup-sv-202309061743.css">
+	
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_faba.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_font-awesome-css.min.css">
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_pretendard-dynamic-subset.css">
+	
+	<!-- 헤더 시작 -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!-- [1] 해상도 - 최적해상도 1260 결정 -->
+<!-- [2] content 영역 1260px -->
+<!-- [3] reset.css 폴더경로 -->
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/reset.css">
+<!-- [4] project명 또는 core.css 폴더경로 - bootstrap 등으로 대체 -->
+<!-- [4] 기본색상 10~15개 정도 class 미리 만들어두기 -->
+<!-- [4] 폰트크기 3~7개 정도 class 미리 만들어두기 -->
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" /> 
+<!-- [4] button 3개 class 미리 만들어두기 -->
+<!-- [4] a 모양 미리 만들어두기 -->
+<!-- [5] layout 영역 -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_layout.css">
+<!-- [6] header 영역 -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_header.css">
+<!-- [7] nav 영역 -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_nav.css">
+<!-- [8] main 영역 -->
+<link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/css/jobkh_main.css">
+<!-- [9] footer 영역 -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
+<!-- 스크랩부 -->
+<link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/member/css/jobkh_mypage.css">
+<!-- swiper css -->
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/member/css/swiper-bundle.min.css" />
+<!-- 부트스트랩 css -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+<link rel="icon" href="resources/favicon.ico">
+<head>
 <meta charset="UTF-8">
-<title>boardList</title>
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4367be77ab43095200d26c3ea16f01f8"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY페이지 | KH</title>
+<!-- jQuery 스크립트 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- nav active 별 스크립트 구성 -->
+
+
 <style>
 body {
     background-color: #f9f9f9;
     margin: 0;
-    padding: 20px;
+/*     padding: 20px; */
 }
 
 .title {
     text-align: center;
-    margin-top: 40px;
+    margin-top: -53px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #007bff;
+/*     border-bottom: 2px solid #007bff; */
+    font-family: Pretendard Variable, Pretendard, -apple-system,
+			BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI,
+			Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji,
+			Segoe UI Emoji, Segoe UI Symbol, sans-serif
 }
 .title h2 {
     font-size: 32px;
@@ -54,7 +127,7 @@ body {
     text-align: center;
     margin-top: 40px;
     padding-top: 10px;
-    border-top: 2px solid #007bff;
+/*     border-top: 2px solid #007bff; */
     background-color: #f9f9f9;
 }
 .footer p {
@@ -84,12 +157,7 @@ a.button-link {
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+
 }
 
 button:hover {
@@ -97,11 +165,16 @@ button:hover {
 }
 
 button.keyword {
-  background-color: #4CAF50;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #3399ff;
 }
 
 button.keyword:hover {
-  background-color: #45a049;
+  background-color: #007bff;
 }
 
 /* 모달 스타일 */
@@ -190,9 +263,13 @@ button.keyword:hover {
 
 /* 검색 */
 .search_area{
-    display: inline-block;
-    margin-top: 30px;
-    margin-left: 260px;
+    display: flex;
+/*     display: inline-block; */
+/*     margin-top: 30px; */
+    margin-left: 700px;
+    align-items: center;
+    justify-content: flex-end;
+}
  }
  .search_area input{
     height: 30px;
@@ -206,13 +283,28 @@ button.keyword:hover {
 	height: 35px;
  }
 </style>
+
+
 </head>
-<body>
+	    
+    <div class="wrap header">
+<div style="background-color:#ffffff">
+    <jsp:include page="/WEB-INF/view/member/header.jsp"></jsp:include>
+</div>    
+    </div>
+    
+<body style="font-family: Pretendard Variable, Pretendard, -apple-system,
+			BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI,
+			Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji,
+			Segoe UI Emoji, Segoe UI Symbol, sans-serif">
+	
+<div class="container" style="margin-top: 47px;padding-bottom: 85px; line-height: 10px;">
+   
 <div class="title">
-	<h2> 취업톡톡! 취뽀취뽀! <c:out value="${readCount}" /></h2>
+	<h2> <img src="<%=request.getContextPath()%>/resources/images/취업톡톡(투명).png"style="height: 200px;""> <c:out value="${readCount}" /></h2>
 </div>
 <!-- 검색 -->
-<div class="search_wrap">
+<div class="search_wrap" style="margin: 10px;height: 1px;">
     <div class="search_area">
         <select name="type">
         	<%-- <option value="" <c:out value="${pageMaker.cri.type == null?'selected':'' }"/>>선택</option> --%>
@@ -220,8 +312,8 @@ button.keyword:hover {
             <option value="C" <c:out value="${pageMaker.cri.type eq 'C'?'selected':'' }"/>>내용</option>
             <option value="W" <c:out value="${pageMaker.cri.type eq 'W'?'selected':'' }"/>>작성자</option>
         </select>   
-        <input type="text" name="keyword" placeholder="키워드를 입력해주세요!" value="${pageMaker.cri.keyword }">
-        <button>Search</button>
+        <input type="text" name="keyword" placeholder="키워드를 입력해주세요!" value="${pageMaker.cri.keyword }" style="height: 35px;margin: 0 3px;width: 40%;">
+        <button class="keyword">Search</button>
     </div>
 </div>   
 <c:if test="${not empty boardList }">
@@ -308,6 +400,7 @@ button.keyword:hover {
         </c:otherwise>
     </c:choose>
 </div>
+</div>
 <script>
 function showAlertAndRedirect() {
     alert("로그인이 필요합니다!");
@@ -369,5 +462,21 @@ $(document).ready(function() {
 	}
 });
 </script>
+
+
+
+
+
+
+
+
+    <div class="wrap footer">
+   	 <jsp:include page="/WEB-INF/view/member/footer.jsp"></jsp:include>
+    </div>
+    <!-- swiper 스크립트 -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- swiper 기능 스크립트 -->
 </body>
+
+
 </html>
