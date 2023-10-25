@@ -65,17 +65,19 @@ public class IndexController {
         
         // HTML 태그를 제거하고 텍스트만 추출하여 다시 맵에 담는 작업 수행
         for (Map<String, Object> item : topTwoInfoByLikehit) {
-            // "BC" 키의 HTML 내용 가져오기
-            String htmlContent = (String) item.get("BC");
-            
-            // Jsoup을 사용하여 HTML 파싱
-            Document doc = Jsoup.parse(htmlContent);
-            
-            // HTML 태그 제거
-            String plainText = doc.text();
-            
-            // "BC" 키에 텍스트 값 설정
-            item.put("BC", plainText);
+        	if (item.containsKey("BC")) {
+	            // "BC" 키의 HTML 내용 가져오기
+	            String htmlContent = (String) item.get("BC");
+	            
+	            // Jsoup을 사용하여 HTML 파싱
+	            Document doc = Jsoup.parse(htmlContent);
+	            
+	            // HTML 태그 제거
+	            String plainText = doc.text();
+	            
+	            // "BC" 키에 텍스트 값 설정
+	            item.put("BC", plainText);
+        	}
         }
         
         model.addAttribute("topTwoInfoByLikehit", topTwoInfoByLikehit);

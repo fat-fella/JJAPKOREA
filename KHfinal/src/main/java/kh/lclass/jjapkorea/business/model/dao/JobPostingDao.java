@@ -97,4 +97,8 @@ public class JobPostingDao {
 	public List<Map<String, Object>> highestSalaryJob() throws Exception {
 		return sqlSession.selectList("jobPosting.highestSalaryJob");
 	}
+	
+	public List<Map<String, Object>> list() throws Exception {
+		return sqlSession.selectList("jobPosting.list");
+	}
 }
