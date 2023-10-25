@@ -686,7 +686,7 @@
 														<!-- row01 영역으로 이동 -->
 														<div class="sideBtmBx">
 															<div class="sideLinkType01">
-																<a href="<%=request.getContextPath()%>/onpick"
+																<a href="<%=request.getContextPath()%>/one-pick"
 																	class="onepick">
 																	<strong>이직은 원픽</strong>
 																</a>
@@ -801,7 +801,7 @@
 								<!-- 신입공채 레이어 // -->
 							</li>
 							<li class="navItem lyNull theme" id="theme">
-								<a href="<%=request.getContextPath()%>/onpick" class="linkItem">
+								<a href="<%=request.getContextPath()%>/one-pick" class="linkItem">
 									<span class="spNav"><span class="txIr">원픽</span></span>
 								</a>
 							</li>

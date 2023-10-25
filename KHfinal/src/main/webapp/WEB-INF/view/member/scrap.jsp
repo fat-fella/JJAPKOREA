@@ -93,7 +93,7 @@
 							<div class="col infoCol">
 								<div class="company">
 									<a class="company"
-										href="/Recruit/Co_Read/C/univtomorrow?Oem_Code=C1&amp;sc=10"
+										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
 										target="_blank">${item.COMPANY_NAME}</a>
 									<button type="button" class="tplBtnTy tplBtnFavOff js-tplBtn"
 										data-mem-sys="13401121">
@@ -102,12 +102,12 @@
 								</div>
 								<div class="tit">
 									<a class="devLinkRecruit"
-										href="/Recruit/GI_Read/${item.JID}?Oem_Code=C1"
+										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
 										target="_blank">${item.RE_TITLE}</a>
 								</div>
 								<div class="desc">
 									<a class="devLinkRecruit"
-										href="/Recruit/GI_Read/${item.JID}?Oem_Code=C1"
+										href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
 										target="_blank">
 										<span class="cell">${item.CAREER}</span> <span
 											class="cell">${item.USER_EDUCATION}</span> <span
