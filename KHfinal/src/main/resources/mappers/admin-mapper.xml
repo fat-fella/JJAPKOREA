@@ -269,11 +269,11 @@
 	 
 	<delete id="deleteBoard" parameterType="_int">
 		delete from board
-		where rno = #{rno}
+		where bno = #{bno}
 	</delete>
 	<update id="declarationUpdate" parameterType="_int">
 		update report set r_check = 1
-		where rno = #{rno}
+		where bno = #{bno}
 	</update>
 	
 	<select id="adminMypage" parameterType="string" resultType="AdminDto">

@@ -146,12 +146,12 @@
 		}
 		
 		$(".delete_btn").on("click", function() {
-	        var rno = $(this).val();
-	        console.log(rno);
+	        var bno = $(this).val();
+	        console.log(bno);
 	        $.ajax({
 	            type: "POST", // 또는 GET 등 HTTP 메소드 선택
 	            url: "${pageContext.request.contextPath}/admin/delete/board",
-	            data: { rno: rno },
+	            data: { bno: bno },
 	            success: function(response) {
 	                // 성공 시 수행할 로직
 	                location.href="${pageContext.request.contextPath}/admin/declarationWait";
