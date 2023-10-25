@@ -1,13 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
 <meta charset="UTF-8">
-<title>boardOne</title>
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<title>취업톡톡상세</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/reset.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" /> 
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_layout.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_header.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_nav.css">
+<link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/css/jobkh_main.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
+<link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/member/css/jobkh_mypage.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+<link rel="icon" href="resources/favicon.ico">
+
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
 	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -18,13 +33,10 @@
 	crossorigin="anonymous"></script>
 <style>
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f5f5f5;
+    background-color: #f9f9f9;
+    margin: 0;
 }
-
-.container {
+.bcontainer {
 	max-width: 800px;
 	margin: 20px auto;
 	background-color: #ffffff;
@@ -167,10 +179,24 @@ button:hover {
 .moreReply:hover {
 	background-color: #0056b3;
 }
+.btnAllService {
+	background-color:#ffffff
+}
 </style>
 </head>
-<body>
-	<div class="container">
+
+<div class="wrap header">
+	<div style="background-color:#ffffff">
+    	<jsp:include page="/WEB-INF/view/member/header.jsp"></jsp:include>
+	</div>    
+</div>
+<body style="font-family: Pretendard Variable, Pretendard, -apple-system,
+			BlinkMacSystemFont, system-ui, Roboto, Helvetca Neue, Segoe UI,
+			Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji,
+			Segoe UI Emoji, Segoe UI Symbol, sans-serif">
+			
+<div class="container">
+	<div class="bcontainer" style="max-width: 960px;">
 		<div class="content">
 			<div>
 				<div class="mb-3 mt-3">
@@ -181,14 +207,10 @@ button:hover {
 					action="${pageContext.request.contextPath }/board/update"
 					method="get">
 					<h3>
-						<c:out value="${bvo.bno}" />
-						번글
+						<c:out value="${bvo.btitle}" />
 					</h3>
 					<input type="hidden" name="bno" value="${bvo.bno}">
-					<label for="btitle">제목:</label>
-					<input type="text" id="btitle" name="btitle" value="${bvo.btitle}"
-						readonly>
-					<br> <label for="bcontent">내용:</label>
+					<br>
 					<div id="bcontent" style="width: 97%; height: 300px;" readonly>${bvo.bcontent}</div>
 					<br> <label for="likehit">좋아요: (${bvo.likehit })</label>
 					<c:choose>
@@ -228,7 +250,7 @@ button:hover {
 					<input type="hidden" name="keyword" value="${cri.keyword }">
 				</form>
 
-				<!-- 댓글 Area -->
+			<!-- 댓글 Area -->
 				<c:if test="${not empty memberid}">
 					<div class="addreply">
 						<div class="card">
@@ -245,12 +267,13 @@ button:hover {
 						</div>
 					</div>
 				</c:if>
-				<!-- 댓글 대댓글 리스트 -->
+			<!-- 댓글 대댓글 리스트 -->
 				<div class="testappend"></div>
 			</div>
 		</div>
 	</div>
-	<script>
+</div>
+<script>
 	let form = $("#infoForm");
 /* ---------- 리스트로 ---------- */
 $("#btn-board-list").on("click", function(e){
@@ -835,6 +858,10 @@ function submitreplyreplyHandler() {
 		$('.modal-backdrop').remove();
 	}
 	</script>
+	
+<div class="wrap footer">
+	<jsp:include page="/WEB-INF/view/member/footer.jsp"></jsp:include>
+</div>
 </body>
 <style>
 .modal {
