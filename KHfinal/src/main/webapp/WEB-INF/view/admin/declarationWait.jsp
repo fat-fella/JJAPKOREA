@@ -65,10 +65,10 @@
 					<div class="search_wrap">
 						<div class="search_area">
 							<select name="type">
-								<option value="I"
-									<c:out value="${pageMaker.cri.type eq 'I'?'selected':'' }"/>>신고자 아이디</option>
-								<option value="B"
-									<c:out value="${pageMaker.cri.type eq 'B'?'selected':'' }"/>>게시판 제목</option>
+								<option value="P"
+									<c:out value="${pageMaker.cri.type eq 'P'?'selected':'' }"/>>신고자 아이디</option>
+								<option value="L"
+									<c:out value="${pageMaker.cri.type eq 'L'?'selected':'' }"/>>게시판 제목</option>
 							</select> 
 							<input type="text" name="keyword" class="searchInput" value="${pageMaker.cri.keyword }">
 							<button class="btn btn-outline-primary">Search</button>
