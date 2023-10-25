@@ -114,7 +114,7 @@ public class AdminDao {
 		return sqlSession.delete("admin.deleteBoard", bno);
 	}
 	public int reportUpdate(int bno) {
-		return sqlSession.update("admin.reportUpdate", bno);
+		return sqlSession.update("admin.declarationUpdate", bno);
 	}
 	
 	public int getDeclarationComplete(Criteria cri) {
