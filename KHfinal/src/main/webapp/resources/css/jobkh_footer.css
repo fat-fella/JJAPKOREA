@@ -379,7 +379,7 @@
 }
 .footer__award-item a {
     position: relative;
-    display: block;
+/*     display: block; */
     padding: 18px 0px 4px 0px;
     font-size: 12px;
     line-height: 1.5;
@@ -387,7 +387,7 @@
 }
 .footer__award-item a::before {
     content: "";
-    position: absolute;
+/*     position: absolute; */
     background-image: url("https://i.jobkorea.kr/content/images/main/footer_spr_award_01.png?v202205161");
     vertical-align: top
 }

@@ -74,6 +74,7 @@
 								<!--<span id="ipNotice" class="devHide"><img src="https://i.jobkorea.kr/content/images/login/ver_1/ip_layer_bg.png" alt="개인정보 보호를 위해 IP보완을 ON으로 변경해주세요"></span>-->
 								<p class="sch">
 									<a href="../findId"
+
 										target="_new">아이디 찾기</a>
 									<span class="txtBar"> | </span>
 									<a
