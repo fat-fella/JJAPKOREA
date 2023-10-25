@@ -642,6 +642,13 @@ REFERENCES "RCATEGORY" (
 
 CREATE SEQUENCE REPORT_SEQ START WITH 1 INCREMENT BY 1;
 
+INSERT INTO RCATEGORY (r_category, r_cat) values ('1', '스팸홍보/도배글입니다.');
+INSERT INTO RCATEGORY (r_category, r_cat) values ('2', '음란물입니다.');
+INSERT INTO RCATEGORY (r_category, r_cat) values ('3', '불법정보를 포함하고 있습니다.');
+INSERT INTO RCATEGORY (r_category, r_cat) values ('4', '개인정보 노출 게시물입니다.');
+INSERT INTO RCATEGORY (r_category, r_cat) values ('5', '욕설/혐오/차별적 표현입니다.');
+INSERT INTO RCATEGORY (r_category, r_cat) values ('6', '불쾌한 표현이 있습니다.');
+INSERT INTO RCATEGORY (r_category, r_cat) values ('7', '기타');
 
 INSERT INTO MEMBER (mid, mpw, mtype) VALUES ('admin', '$2y$04$1BoDp4za/DAyRhZrDOqKxe6OBCGImbhCWLX8ntKo5eVsMBFABz8JC', 'ROLE_ADMIN');
 COMMIT;
