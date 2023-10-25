@@ -134,9 +134,9 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Transactional
 	@Override
-	public int deleteBoard(int rno) {
-		adminDao.deleteBoard(rno);
-		adminDao.reportUpdate(rno);
+	public int deleteBoard(int bno) {
+		adminDao.deleteBoard(bno);
+		adminDao.reportUpdate(bno);
 		return 1;
 	}
 	

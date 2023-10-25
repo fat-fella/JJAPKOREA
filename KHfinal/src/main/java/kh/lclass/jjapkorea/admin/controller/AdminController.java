@@ -159,8 +159,8 @@ public class AdminController {
 	
 	// 신고 페이지 처리 중에서 삭제 버튼 클릭 시
 	@PostMapping("/delete/board")
-	public ModelAndView deleteBoard(ModelAndView mv, @RequestParam("rno") int rno) {
-		service.deleteBoard(rno);
+	public ModelAndView deleteBoard(ModelAndView mv, @RequestParam("bno") int bno) {
+		service.deleteBoard(bno);
 		mv.setViewName("admin/declarationWait");
 		return mv;
 	}
