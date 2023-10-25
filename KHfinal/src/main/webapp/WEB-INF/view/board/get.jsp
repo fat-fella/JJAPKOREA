@@ -1,13 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
+<c:set var="bwriteDateStr" value="${bvo.bwriteDate}" />
+<%
+  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+  Date bwriteDate = sdf.parse((String)pageContext.getAttribute("bwriteDateStr"));
+  pageContext.setAttribute("bwriteDate", bwriteDate);
+%>
 <meta charset="UTF-8">
-<title>boardOne</title>
-<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<title>취업톡톡상세</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/reset.css">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" /> 
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_layout.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_header.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_nav.css">
+<link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/css/jobkh_main.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
+<link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/member/css/jobkh_mypage.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
+<link rel="icon" href="resources/favicon.ico">
+
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
 	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -18,13 +41,10 @@
 	crossorigin="anonymous"></script>
 <style>
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f5f5f5;
+    background-color: #f9f9f9;
+    margin: 0;
 }
-
-.container {
+.bcontainer {
 	max-width: 800px;
 	margin: 20px auto;
 	background-color: #ffffff;
@@ -167,10 +187,53 @@ button:hover {
 .moreReply:hover {
 	background-color: #0056b3;
 }
+.btnAllService {
+	background-color:#ffffff
+}
+.testappend,
+.card.replyCard {
+    background-color: #ffffff;
+}
+.firstReply {
+	border: none;
+}
+.show-options {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; /* 조절 가능한 버튼 크기 */
+    margin-left: 5px; /* 버튼과 작성자 사이 여백 조절 */
+    padding: 0;
+    color: #000; /* 버튼 색상 */
+}
+.firstReply card{
+    position: relative;
+}
+
+.show-options {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    padding: 5px 10px;
+    z-index: 1;
+    cursor: pointer;
+}
 </style>
 </head>
-<body>
-	<div class="container">
+
+<div class="wrap header">
+	<div style="background-color:#ffffff">
+    	<jsp:include page="/WEB-INF/view/member/header.jsp"></jsp:include>
+	</div>    
+</div>
+<body style="font-family: Pretendard Variable, Pretendard, -apple-system,
+			BlinkMacSystemFont, system-ui, Roboto, Helvetca Neue, Segoe UI,
+			Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji,
+			Segoe UI Emoji, Segoe UI Symbol, sans-serif">
+			
+<div class="container">
+	<div class="bcontainer" style="max-width: 960px;">
 		<div class="content">
 			<div>
 				<div class="mb-3 mt-3">
@@ -181,14 +244,13 @@ button:hover {
 					action="${pageContext.request.contextPath }/board/update"
 					method="get">
 					<h3>
-						<c:out value="${bvo.bno}" />
-						번글
+						<c:out value="${bvo.btitle}" />
 					</h3>
+				    <span style="color: #888; font-size: 11px;">
+						<fmt:formatDate value="${bwriteDate}" pattern="yyyy-MM-dd HH시 MM분" /> 작성
+				    </span>
 					<input type="hidden" name="bno" value="${bvo.bno}">
-					<label for="btitle">제목:</label>
-					<input type="text" id="btitle" name="btitle" value="${bvo.btitle}"
-						readonly>
-					<br> <label for="bcontent">내용:</label>
+					<br>
 					<div id="bcontent" style="width: 97%; height: 300px;" readonly>${bvo.bcontent}</div>
 					<br> <label for="likehit">좋아요: (${bvo.likehit })</label>
 					<c:choose>
@@ -212,7 +274,7 @@ button:hover {
 				        </script>
 						</c:otherwise>
 					</c:choose>
-					<button type="button" id="btn-board-list">글 목록으로 이동</button>
+					<button type="button" id="btn-board-list">목록으로</button>
 					<button type="button" id="btn-board-dislike" style="display: none;"
 						onclick="updateLike();">좋아요 취소</button>
 					<button type="button" id="btn-board-like" onclick="updateLike();">좋아요</button>
@@ -228,35 +290,33 @@ button:hover {
 					<input type="hidden" name="keyword" value="${cri.keyword }">
 				</form>
 
-				<!-- 댓글 Area -->
+			<!-- 댓글 Area -->
 				<c:if test="${not empty memberid}">
 					<div class="addreply">
 						<div class="card">
 							<form method="post"
 								action="${pageContext.request.contextPath}/replyboard/insert">
 								<div class="card-body addaddreply contenttextarea">
-									<label>댓글 작성자 : ${memberid}</label>
 									<textarea rows="3" class="col-xl-12" name="replyContent"
-										class="replyContent"></textarea>
+										class="replyContent" placeholder="솔직하고 따듯한 댓글을 남겨주세요."></textarea>
 									<button class="submitreply" type="button"
-										onclick="submitreplyHandler()">댓글 작성</button>
+										onclick="submitreplyHandler()">댓글 작성
+									</button>
 								</div>
 							</form>
 						</div>
 					</div>
 				</c:if>
-				<!-- 댓글 대댓글 리스트 -->
+			<!-- 댓글 대댓글 리스트 -->
 				<div class="testappend"></div>
 			</div>
 		</div>
 	</div>
-	<script>
+</div>
+<script>
 	let form = $("#infoForm");
 /* ---------- 리스트로 ---------- */
 $("#btn-board-list").on("click", function(e){
-/* 	form.find("#bno").remove();
-	form.attr("action", "/jjapkorea/board/list");
-	form.submit(); */
 	window.history.back();
 });
 /* ---------- 수정으로 ---------- */
@@ -286,37 +346,6 @@ $("#btn-board-delete").click(function () {
 	}
 });
 /* ---------- 좋아요 ---------- */
-/* var bno = '${bvo.bno}';
-var mid = '${memberid}';
-function updateLike() {
-    var memberid = '${memberid}';
-    if (memberid === '') {
-        alert('로그인이 필요합니다!');
-        window.location.href = 'http://127.0.0.1:8090/jjapkorea/login/';
-        return;
-    }
-    $.ajax({
-        type: 'POST',
-        url: '${pageContext.request.contextPath}/board/updateLike',
-        dataType: 'json',
-        data: { 'bno': bno, 'mid': mid },
-        error: function () {
-            alert('통신 에러');
-        },
-        success: function (likeCheck) {
-            if (likeCheck == 0) {
-                alert('좋아요');
-                location.reload();
-                $('#btn-board-like').html('좋아요 취소');
-            } else if (likeCheck == 1) {
-                alert('좋아요 취소');
-                location.reload();
-                $('#btn-board-like').html('좋아요');
-            }
-        }
-    });
-} */
-
 var bno = '${bvo.bno}';
 var mid = '${memberid}';
 var liked = false; // 초기에 좋아요 여부를 서버에서 가져와 설정
@@ -401,15 +430,20 @@ window.onload = function () {
             for (var i = 0; i < result.length; i++) {
                 if (result[i].rref == 0) {
                     var htmlVal = '<div class="card replyCard" data-replytype="reply" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '"><div class="firstReply card" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">' 
-                    htmlVal += 			'<div class="updatewriter">[작성자] : ' + result[i].memberId + '</div>' 
-                    htmlVal += 			'<div cla ss="updatereplyContent">[내용] : ' + result[i].replyContent + '</div>' 
-                    htmlVal += 			'<div class="updatereplyDate">[입력날짜] : ' + result[i].replyDate + '</div>' 
+                    if (result[i].memberId === "${memberid}") {
+                   	htmlVal += 			'<div class="updatewriter">' + result[i].memberId + '<span style="color: #888; font-size: 10px;">&nbsp;&nbsp;작성자</span>' + '</div>'}
+                    else {
+                   	htmlVal += 			'<div class="updatewriter">' + result[i].memberId + '</div>'}
+                    htmlVal += 			'<div cla ss="updatereplyContent">' + result[i].replyContent + '</div>' 
+                    htmlVal += 			'<div class="updatereplyDate">' + result[i].replyDate + '</div>' 
                     htmlVal += 			'<div class="groupbtn">' 
-                   	htmlVal += 				'<button class="updatereply">수정</button>' 
-                	htmlVal += 				'<button class ="deletereply" onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
-                 	htmlVal += 				'<button class="insertreplyreply">댓글 삽입</button>' 
-                	htmlVal += 				'<button class="moreReply" id="moreReplyButton" data-type="more" data-replyno="' + result[i].replyNo + '">더보기</button>' 
+                   	htmlVal += 				'<button class="updatereply show-options" style="display: none;">수정</button>' 
+                	htmlVal += 				'<button class ="deletereply show-options" style="display: none;"onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
+                 	htmlVal += 				'<button class="insertreplyreply">댓글</button>'
+                	htmlVal += 				'<button class="moreReply" id="moreReplyButton" data-type="more" data-replyno="' + result[i].replyNo + '">더보기</button>'
                 	htmlVal += 			'</div>'  
+                    if (result[i].memberId === "${memberid}") {
+                    htmlVal += 			'<button class="show-options">:</button>';}
                     htmlVal += 	  '</div>'  
                     htmlVal += '<div class="forAppendArea" style="display: none"></div>';
                     $(".testappend").append(htmlVal);                  
@@ -422,8 +456,7 @@ window.onload = function () {
             $(".updatereply").click(updatereplyHandler);
             $(".insertreplyreply").click(insertreplyreplyHandler);
             $(".moreReply").click(moreReplyHandler);
-            
-            if (${bvo.bno} != 0) {
+/*             if (${bvo.bno} != 0) {
                 console.log(${bvo.selectReplyNo});
                 var firstReply = document.getElementsByClassName('firstReply');
                 for (var i = 0; i < firstReply.length; i++) {
@@ -431,7 +464,7 @@ window.onload = function () {
                         firstReply[i].classList.add('text-bg-warning');
                     }
                 }
-            }
+            } */
         },
         error: function (result) {
             console.log("error");
@@ -439,6 +472,13 @@ window.onload = function () {
         dataType: "json"
     });  
 }
+//':' 버튼을 클릭했을 때의 이벤트 처리
+$(document).on('click', '.show-options', function(event) {
+	var replyCard = $(this).closest(".card.replyCard");
+    replyCard.find(".updatereply").css("display", "block");
+    replyCard.find(".deletereply").css("display", "block");
+    event.stopPropagation();
+});
 /* ---------- 대댓글 보기 ---------- */
 function moreReplyHandler(e) {
     var rrefReplyNo = $(this).data("replyno");
@@ -466,9 +506,14 @@ function moreReplyHandler(e) {
                 } else {
                     for (var i = 0; i < result.length; i++) {
                         var htmlVal = '<div class="firstReply card" data-replytype="child" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">'
-                        htmlVal += '<div class="updatewriter"><작성자> : ' + result[i].memberId + '</div>'
-                        htmlVal += '<div class="updatereplyContent"><내용> : ' + result[i].replyContent + '</div>'
-                        htmlVal += '<div class="updatereplyDate"><입력날짜> : ' + result[i].replyDate + '</div>'
+                        if (result[i].memberId === "${memberid}") {
+                        	htmlVal += 			'<div class="updatewriter">↳' + result[i].memberId + '<span style="color: #888; font-size: 10px;">&nbsp;&nbsp;작성자</span>' + '</div>'
+                        } else {
+                        	htmlVal += 			'<div class="updatewriter">↳' + result[i].memberId + '</div>'		
+                        }
+                        
+                        htmlVal += '<div class="updatereplyContent">' + result[i].replyContent + '</div>'
+                        htmlVal += '<div class="updatereplyDate">' + result[i].replyDate + '</div>'
                         htmlVal += '<div class="groupbtn">';
                         if (result[i].memberId === "${memberid}") {
                             htmlVal += '<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>';
@@ -513,14 +558,14 @@ function submitreplyHandler() {
             for (var i = 0; i < result.length; i++) {
                 var htmlVal = '<div class="card replyCard" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">'
                 htmlVal += '<div class="firstReply card">'
-                htmlVal += '<div class="updatewriter">[작성자] : ' + result[i].memberId + '</div>'
-                htmlVal += '<div class="updatereplyContent">[내용] : ' + result[i].replyContent + '</div>'
-                htmlVal += '<div class="updatereplyDate">[입력날짜] : ' + result[i].replyDate + '</div>'
+                htmlVal += '<div class="updatewriter">' + result[i].memberId + '</div>'
+                htmlVal += '<div class="updatereplyContent">' + result[i].replyContent + '</div>'
+                htmlVal += '<div class="updatereplyDate">' + result[i].replyDate + '</div>'
                 htmlVal += '</div>'
                 htmlVal += '<div class="groupbtn">'
                 htmlVal += '<button class="updatereply">수정</button>'
                 htmlVal += '<button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
-                htmlVal += '<button class="insertreply">댓글 삽입</button>'
+                htmlVal += '<button class="insertreply">댓글</button>'
                 htmlVal += '</div>';
                 htmlVal += '</div>'
                 $(".testappend").append(htmlVal);
@@ -536,6 +581,7 @@ function submitreplyHandler() {
         dataType: "json"
     });
 }
+
 /* ---------- 댓글 및 대댓글 삭제 ---------- */
 function deletereplyHandler(forNumber) {
    	$.ajax({
@@ -623,9 +669,9 @@ function updateDoBtnHandler(){
             window.location.href = 'http://127.0.0.1:8090/jjapkorea/login';
         }
         var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${memberid}">'
-        addreplyreply += 		'<div>↳작성자: ${memberid}</div>'
+        addreplyreply += 		'<div>↳${memberid}</div>'
         addreplyreply += 		'<div>'
-        addreplyreply += 			'<textarea id="rereplyContent" rows="3" class="col-xl-12 replyContent" name="replyreplyContent">@' + replyreplywriter + " " + '</textarea>' //@' + replyreplywriter + " " + '
+        addreplyreply += 			'<textarea id="rereplyContent" rows="3" class="col-xl-12 replyContent" name="replyreplyContent"></textarea>' //@' + replyreplywriter + " " + '
         addreplyreply += 		'</div>'
         addreplyreply += 		'<div>'
         addreplyreply += 			'<button class="submitreplyreply">답글 저장</button>'
@@ -637,38 +683,6 @@ function updateDoBtnHandler(){
     } else {
         $contentTextarea.remove(); // 입력창을 제거하여 숨김
         location.reload(true);
-    }
-}
-function insertreplyreplyHandler() {
-    var $replyCard = $(this).parents(".replyCard");
-    var replyreplywriter = $(this).parents(".replyCard").data("writer");
-    var $contentTextarea = $replyCard.find(".contenttextarea");
-    var textarea = document.getElementById("rereplyContent");
-    if ($contentTextarea.length === 0) {
-        // 입력창이 존재하지 않는 경우
-        var replyreplywriter = $replyCard.data("writer");
-        var memberid = '${memberid}';
-        if (memberid === '') {
-            alert('로그인이 필요합니다!');
-            window.location.href = 'http://127.0.0.1:8090/jjapkorea/login';
-        }
-        var addreplyreply = '<div class="contenttextarea card replyreplycard" data-writer="${bvo.mid}">'
-        addreplyreply += '<div>↳작성자: ${bvo.mid}</div>'
-        addreplyreply += '<div>'
-        addreplyreply += '<textarea rows="3" id="rereplyContent" class="col-xl-12 replyContent" name="replyreplyContent"></textarea>' //@' + replyreplywriter + " " + '
-        addreplyreply += '</div>'
-        addreplyreply += '<div>'
-        addreplyreply += '<button class="submitreplyreply">답글 저장</button>'
-        addreplyreply += '</div>'
-        addreplyreply += '</div>';
-        $replyCard.append(addreplyreply);
-        $(".submitreplyreply").click(submitreplyreplyHandler);
-        $replyCard.find(".forAppendArea").css("display", "block");
-
-        textarea.value = '@' + replyreplywriter + " ";
-        textarea.readOnly = true;
-    } else {
-        $contentTextarea.remove(); // 입력창을 제거하여 숨김
     }
 }
 
@@ -709,9 +723,9 @@ function submitreplyreplyHandler() {
                         alert("답글이 없습니다.");
                     } else {
                         for (var i = 0; i < result.length; i++) {
-                            var htmlVal =  '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '"><div class="updatewriter"><작성자> : ' + result[i].memberId + '</div>'
-                            htmlVal += '<div class="updatereplyContent"><내용> : ' + result[i].replyContent + '</div>'
-                            htmlVal += '<div class "updatereplyDate"><입력날짜> : ' + result[i].replyDate + '</div>'
+                            var htmlVal =  '<div class="firstReply card" style="padding-left:' + replyreplyleftpadding + 'px" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '"><div class="updatewriter">↳' + result[i].memberId + '</div>'
+                            htmlVal += '<div class="updatereplyContent">' + result[i].replyContent + '</div>'
+                            htmlVal += '<div class "updatereplyDate">' + result[i].replyDate + '</div>'
                             htmlVal += '<div class="groupbtn">'
                             htmlVal +=		'<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
                             htmlVal += 		'<button class="insertreplyreply">답글달기</button>'
@@ -835,6 +849,10 @@ function submitreplyreplyHandler() {
 		$('.modal-backdrop').remove();
 	}
 	</script>
+	
+<div class="wrap footer">
+	<jsp:include page="/WEB-INF/view/member/footer.jsp"></jsp:include>
+</div>
 </body>
 <style>
 .modal {
