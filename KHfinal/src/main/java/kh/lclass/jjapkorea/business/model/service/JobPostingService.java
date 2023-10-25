@@ -30,4 +30,5 @@ public interface JobPostingService {
 	List<Map<String, Object>> mostScrappedJob() throws Exception;
 	List<Map<String, Object>> mostClickedJob() throws Exception;
 	List<Map<String, Object>> highestSalaryJob() throws Exception;
+	List<Map<String, Object>> list() throws Exception;
 }

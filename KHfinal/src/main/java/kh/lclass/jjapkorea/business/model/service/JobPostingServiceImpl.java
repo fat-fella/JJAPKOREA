@@ -128,4 +128,9 @@ public class JobPostingServiceImpl implements JobPostingService {
 	public List<Map<String, Object>> highestSalaryJob() throws Exception {
 		return jobPostingDao.highestSalaryJob();
 	}
+	
+	@Override
+	public List<Map<String, Object>> list() throws Exception {
+		return jobPostingDao.list();
+	}
 }
