@@ -3,12 +3,42 @@
 <mapper namespace="admin">	
 	<!-- 검색 조건문 -->
 	<sql id="criteria">
+    <trim prefix="AND (" suffix=")" prefixOverrides="OR">
+        <foreach collection="typeArr" item="type">
+            <trim prefix="OR">
+                <choose>
+                    <when test="type == 'I'.toString()">
+                        mid like '%'||#{keyword}||'%' 
+                    </when>
+                    <when test="type == 'N'.toString()">
+                        pname like '%'||#{keyword}||'%' 
+                    </when>
+                    <when test="type == 'B'.toString()">
+                        <choose>
+                            <when test="subtype == 'board'">
+                                bname like '%'||#{keyword}||'%' 
+                            </when>
+                            <when test="subtype == 'report'">
+                                mtype like '%'||#{keyword}||'%' 
+                            </when>
+                            <!-- Add other cases if necessary -->
+                        </choose>
+                    </when>
+                    <when test="type == 'A'.toString()">
+                        mtype like '%'||#{keyword}||'%' 
+                    </when>
+                </choose>
+            </trim>
+        </foreach>
+    </trim>
+</sql>
+	<sql id="criteria2">
 		<trim prefix="AND (" suffix=")" prefixOverrides="OR">
 			<foreach collection="typeArr" item="type">
 				<trim prefix="OR">
 					<choose>
 						<when test="type == 'I'.toString()">
-							mid like '%'||#{keyword}||'%' 
+							r.mid like '%'||#{keyword}||'%' 
 						</when>
 						<when test="type == 'N'.toString()">
 							pname like '%'||#{keyword}||'%' 
@@ -234,10 +264,10 @@
 	</select>
 	
 	<select id="getDeclarationWait" resultType="_int">
-		select count(*) from report r join board b using (bno)
+		select count(*) from report r join board b on r.bno = b.bno and r.rid = b.mid
 		where r_check = 0
 		<if test="keyword != null">
-			and rownum > 0 <include refid="criteria"></include>
+			and rownum > 0 <include refid="criteria2"></include>
 		</if>
 	</select>
 	

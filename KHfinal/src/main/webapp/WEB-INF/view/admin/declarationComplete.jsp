@@ -43,6 +43,8 @@
 							<th class="bg-secondary">신고 카테고리</th>
 							<th class="bg-secondary">신고 내용</th>
 							<th class="bg-secondary">처리 유무</th>
+							<th class="bg-secondary">신고자 아이디</th>
+							<th class="bg-secondary">작성자 아이디</th>
 						</tr>
 						<c:forEach items="${declarationComplete }" var="report">
 						<tr>
@@ -52,6 +54,9 @@
 							<td class="bg-success"><c:out value="${report.rcat}"/></td>
 							<td class="bg-success"><c:out value="${report.rcontent}"/></td>
 							<td class="bg-success"><c:out value="${report.rcheck}"/></td>
+							<td class="bg-success"><c:out value="${report.mid}"/></td>
+							<td class="bg-success"><c:out value="${report.rid}"/></td>
+							
 						</tr>
 						</c:forEach>
 					</table>
