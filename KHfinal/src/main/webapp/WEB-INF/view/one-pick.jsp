@@ -46,7 +46,16 @@
 <link
 	href="${pageContext.request.contextPath}/resources/css/one-pick/style.css"
 	rel="stylesheet">
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
+<style>
+	.display-1 {
+		font-family: 'Noto Sans KR', Arial, sans-serif;
+	}
+</style>
 <body>
 	<!-- Spinner Start -->
 	<div id="spinner"
@@ -1061,20 +1070,13 @@
 						class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
 						<a href="index.html" class="navbar-brand">
 							<h1 class="m-0 text-white">
-								<i class="fa fa-user-tie me-2"></i>Startup
+								<i class="fa fa-user-tie me-2"></i>JJAPKOREA
 							</h1>
 						</a>
 						<p class="mt-3 mb-4">Lorem diam sit erat dolor elitr et, diam
 							lorem justo amet clita stet eos sit. Elitr dolor duo lorem, elitr
 							clita ipsum sea. Diam amet erat lorem stet eos. Diam amet et kasd
 							eos duo.</p>
-						<form action="">
-							<div class="input-group">
-								<input type="text" class="form-control border-white p-3"
-									placeholder="Your Email">
-								<button class="btn btn-dark">Sign Up</button>
-							</div>
-						</form>
 					</div>
 				</div>
 				<div class="col-lg-8 col-md-6">
@@ -1118,24 +1120,20 @@
 							</div>
 							<div
 								class="link-animated d-flex flex-column justify-content-start">
-								<a class="text-light mb-2" href="#">
+								<a class="text-light mb-2" href="${pageContext.request.contextPath}/one-pick">
 									<i class="bi bi-arrow-right text-primary me-2"></i>Home
 								</a>
-								<a class="text-light mb-2" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>About Us
+								<a class="text-light mb-2" href="${pageContext.request.contextPath}/jobPostingList/date">
+									<i class="bi bi-arrow-right text-primary me-2"></i>Jobs
 								</a>
-								<a class="text-light mb-2" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>Our Services
+								<a class="text-light mb-2" href="${pageContext.request.contextPath}/businessList">
+									<i class="bi bi-arrow-right text-primary me-2"></i>Companies
 								</a>
-								<a class="text-light mb-2" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>Meet The
-									Team
+								<a class="text-light mb-2" href="${pageContext.request.contextPath}/login/">
+									<i class="bi bi-arrow-right text-primary me-2"></i>Chats
 								</a>
-								<a class="text-light mb-2" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog
-								</a>
-								<a class="text-light" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>Contact Us
+								<a class="text-light mb-2" href="${pageContext.request.contextPath}/board/list">
+									<i class="bi bi-arrow-right text-primary me-2"></i>JobTalk
 								</a>
 							</div>
 						</div>
@@ -1146,24 +1144,14 @@
 							</div>
 							<div
 								class="link-animated d-flex flex-column justify-content-start">
-								<a class="text-light mb-2" href="#">
+								<a class="text-light mb-2" href="${pageContext.request.contextPath}/one-pick">
 									<i class="bi bi-arrow-right text-primary me-2"></i>Home
 								</a>
-								<a class="text-light mb-2" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>About Us
+								<a class="text-light mb-2" href="${pageContext.request.contextPath}/jobPostingList/date">
+									<i class="bi bi-arrow-right text-primary me-2"></i>Jobs
 								</a>
-								<a class="text-light mb-2" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>Our Services
-								</a>
-								<a class="text-light mb-2" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>Meet The
-									Team
-								</a>
-								<a class="text-light mb-2" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog
-								</a>
-								<a class="text-light" href="#">
-									<i class="bi bi-arrow-right text-primary me-2"></i>Contact Us
+								<a class="text-light mb-2" href="${pageContext.request.contextPath}/businessList">
+									<i class="bi bi-arrow-right text-primary me-2"></i>Companies
 								</a>
 							</div>
 						</div>
@@ -1180,7 +1168,7 @@
 						style="height: 75px;">
 						<p class="mb-0">
 							&copy;
-							<a class="text-white border-bottom" href="#">Your Site Name</a>
+							<a class="text-white border-bottom" href="#">JJAPKOREA</a>
 							. All Rights Reserved.
 
 							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->

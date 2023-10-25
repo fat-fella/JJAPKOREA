@@ -149,12 +149,7 @@ public class AdminController {
 		return mv;
 	}
 	
-	// 신고처리
-	@PostMapping("/declarationWait")
-	public void reportBoard(Criteria cri) {
-		service.declarationWait(cri);
-		
-	}
+
 	
 	
 	

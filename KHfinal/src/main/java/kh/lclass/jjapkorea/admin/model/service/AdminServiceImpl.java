@@ -156,4 +156,13 @@ public class AdminServiceImpl implements AdminService {
 //		return adminDao.getTotalAdmin(cri);
 //	}
 	
+	@Override
+	public int reportBoard(DeclarationDto declarationDto) throws Exception {
+		return adminDao.reportBoard(declarationDto);
+	}
+	
+	@Override
+	public List<DeclarationDto> reportsByUser(DeclarationDto declarationDto) throws Exception {
+		return adminDao.reportsByUser(declarationDto);
+	}
 }

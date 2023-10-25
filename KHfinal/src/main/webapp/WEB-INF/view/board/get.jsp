@@ -1,14 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>boardOne</title>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 <style>
 body {
 	font-family: Arial, sans-serif;
@@ -48,154 +55,152 @@ input[type="text"], textarea {
 }
 
 button {
-    padding: 1px 4px; /* 수정된 버튼 크기 */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #ffffff;
-    font-size: 11px;
-    transition: background-color 0.2s;
+	padding: 1px 4px; /* 수정된 버튼 크기 */
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: #007bff;
+	color: #ffffff;
+	font-size: 11px;
+	transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
 
 #bcontent {
-    background-color: #f7f7f7; /* 배경색 설정 */
-    border: 1px solid #e0e0e0; /* 테두리 설정 */
-    border-radius: 4px; /* 테두리 둥글게 만들기 */
-    padding: 12px; /* 여백 설정 */
-    font-size: 16px; /* 글꼴 크기 설정 */
-    color: #333333; /* 글자색 설정 */
+	background-color: #f7f7f7; /* 배경색 설정 */
+	border: 1px solid #e0e0e0; /* 테두리 설정 */
+	border-radius: 4px; /* 테두리 둥글게 만들기 */
+	padding: 12px; /* 여백 설정 */
+	font-size: 16px; /* 글꼴 크기 설정 */
+	color: #333333; /* 글자색 설정 */
 }
 
 /* 댓글 카드 스타일 */
 .replyCard {
-    border: 1px solid #ccc;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	margin: 10px 0;
+	padding: 10px;
+	background-color: #f9f9f9;
 }
 
 /* 댓글 작성자 스타일 */
 .updatewriter {
-    font-weight: bold;
-    color: #333;
+	font-weight: bold;
+	color: #333;
 }
 
 /* 댓글 내용 스타일 */
 .updatereplyContent {
-    margin: 10px 0;
-    color: #333;
+	margin: 10px 0;
+	color: #333;
 }
 
 /* 댓글 날짜 스타일 */
 .updatereplyDate {
-    color: #888;
+	color: #888;
 }
 
 /* 버튼 스타일 */
 .groupbtn {
-    margin: 10px 0;
+	margin: 10px 0;
 }
 
 /* 수정, 삭제 버튼 스타일 */
-.updatereply,
-.insertreplyreply,
-.submitreplyreply,
-.updateDoBtn {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 1px 4px;
-    margin-right: 5px;
-    cursor: pointer;
+.updatereply, .insertreplyreply, .submitreplyreply, .updateDoBtn {
+	background-color: #007BFF;
+	color: #fff;
+	border: none;
+	padding: 1px 4px;
+	margin-right: 5px;
+	cursor: pointer;
 }
 
-.updatereply:hover,
-.insertreplyreply:hover,
-.submitreplyreply:hover,
-.updateDoBtn:hover {
-    background-color: #0056b3;
+.updatereply:hover, .insertreplyreply:hover, .submitreplyreply:hover,
+	.updateDoBtn:hover {
+	background-color: #0056b3;
 }
 
 /* 더보기, 숨기기 버튼 스타일 */
-.moreReply,
-.hideReplies {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
+.moreReply, .hideReplies {
+	background-color: #007BFF;
+	color: #fff;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
 }
 
-.moreReply:hover,
-.hideReplies:hover {
-    background-color: #0056b3 ;
+.moreReply:hover, .hideReplies:hover {
+	background-color: #0056b3;
 }
 
 /* 대댓글 카드 스타일 */
 .replyreplycard {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f3f3f3;
-    margin-left: 20px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background-color: #f3f3f3;
+	margin-left: 20px;
 }
- /* 대댓글 목록 스타일 */
+/* 대댓글 목록 스타일 */
 .forAppendArea {
-    margin-left: 30px;
+	margin-left: 30px;
 }
 
 .forAppendArea {
-    padding: 10px;
-    background-color: #f3f3f3;
+	padding: 10px;
+	background-color: #f3f3f3;
 }
 
-.moreReply{
-    padding: 1px 4px; /* 수정된 버튼 크기 */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #ffffff;
-    font-size: 11px;
-    transition: background-color 0.2s;
+.moreReply {
+	padding: 1px 4px; /* 수정된 버튼 크기 */
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: #007bff;
+	color: #ffffff;
+	font-size: 11px;
+	transition: background-color 0.2s;
 }
+
 .moreReply:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
-
 </style>
 </head>
 <body>
-<div class="container">
-	<div class="content">
-		<div>
-			<div class="mb-3 mt-3">
-				<input type="hidden" class="form-control" id="boardNo"
-					name="boardNo" value="${bvo.bno}" disabled>
-			</div>
-			<form id="infoForm" action="${pageContext.request.contextPath }/board/update" method="get">
-			<h3><c:out value="${bvo.bno}"/>번글</h3>
-				<input type="hidden" name="bno" value="${bvo.bno}"> 
-				<label for="btitle">제목:</label> 
-				<input type="text" id="btitle" name="btitle" value="${bvo.btitle}" readonly> 
-				<br> 
-				<label for="bcontent">내용:</label>
-				<div id="bcontent" style="width: 97%; height: 300px;" readonly>${bvo.bcontent}</div>
-				<br> 
-				<label for="likehit">좋아요: (${bvo.likehit })</label>
-				<c:choose>
-				    <c:when test="${memberid eq bvo.mid}">
-				        <a href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
-				            <button id="btn-board-update">글 수정</button>
-				        </a>
-				        <button id="btn-board-delete">글 삭제</button>
-				    </c:when>
-				    <c:otherwise>
-				        <script>
+	<div class="container">
+		<div class="content">
+			<div>
+				<div class="mb-3 mt-3">
+					<input type="hidden" class="form-control" id="boardNo"
+						name="boardNo" value="${bvo.bno}" disabled>
+				</div>
+				<form id="infoForm"
+					action="${pageContext.request.contextPath }/board/update"
+					method="get">
+					<h3>
+						<c:out value="${bvo.bno}" />
+						번글
+					</h3>
+					<input type="hidden" name="bno" value="${bvo.bno}">
+					<label for="btitle">제목:</label>
+					<input type="text" id="btitle" name="btitle" value="${bvo.btitle}"
+						readonly>
+					<br> <label for="bcontent">내용:</label>
+					<div id="bcontent" style="width: 97%; height: 300px;" readonly>${bvo.bcontent}</div>
+					<br> <label for="likehit">좋아요: (${bvo.likehit })</label>
+					<c:choose>
+						<c:when test="${memberid eq bvo.mid}">
+							<a
+								href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
+								<button id="btn-board-update">글 수정</button>
+							</a>
+							<button id="btn-board-delete">글 삭제</button>
+						</c:when>
+						<c:otherwise>
+							<script>
 				            var btnUpdate = document.getElementById("btn-board-update");
 				            var btnDelete = document.getElementById("btn-board-delete");
 				            if (btnUpdate) {
@@ -205,91 +210,47 @@ button:hover {
 				                btnDelete.style.display = "none";
 			            	}
 				        </script>
-				    </c:otherwise>
-				</c:choose>
-				<button type="button" id="btn-board-list">글 목록으로 이동</button>
-				<button type="button" id="btn-board-dislike" style="display: none;" onclick="updateLike();">좋아요 취소</button>
-				<button type="button" id="btn-board-like"  onclick="updateLike();">좋아요</button>
-				<button type="button" id="btn-board-report" onclick="report()">게시글 신고</button>
-				<input type="hidden" id="bno" name="bno" value='<c:out value="${bvo.bno}"/>'>
-				<input type="hidden" name="pageNum" value='<c:out value="${cri.pageNum}"/>'>
-				<input type="hidden" name="amount" value='<c:out value="${cri.amount}"/>'>
-			 	<input type="hidden" name="type" value="${cri.type }">
-			 	<input type="hidden" name="keyword" value="${cri.keyword }">
-			</form>
-			
-			
-			<!-- 모달 창 -->
-	<div id="myModal" class="modal">
-	  <div class="modal-content">
-	    <span class="close">&times;</span>
-	    <select id="reasonSelect">
-	      <option value="reason1">Reason 1</option>
-	      <option value="reason2">Reason 2</option>
-	      <option value="reason3">Reason 3</option>
-	    </select>
-	    <textarea></textarea>
-	    <button id="submitBtn">제출</button>
-	  </div>
-	</div>
-			<script>
-			
-			
-			
-				function report(){
-					$.ajax({
-						url:"jjapkorea/admin/declarationWait",
-						data:{
-							bno:bno,
-							mid:mid
-						},
-						type:'post',
-						success: function () {
-							var modal = document.getElementById("myModal");
-							var btn = document.getElementById("myBtn");
-							var span = document.getElementsByClassName("close")[0];
+						</c:otherwise>
+					</c:choose>
+					<button type="button" id="btn-board-list">글 목록으로 이동</button>
+					<button type="button" id="btn-board-dislike" style="display: none;"
+						onclick="updateLike();">좋아요 취소</button>
+					<button type="button" id="btn-board-like" onclick="updateLike();">좋아요</button>
+					<button type="button" id="btn-board-report"
+						onclick="report('${bvo.bno}', '${bvo.mid}')">게시글 신고</button>
+					<input type="hidden" id="bno" name="bno"
+						value='<c:out value="${bvo.bno}"/>'>
+					<input type="hidden" name="pageNum"
+						value='<c:out value="${cri.pageNum}"/>'>
+					<input type="hidden" name="amount"
+						value='<c:out value="${cri.amount}"/>'>
+					<input type="hidden" name="type" value="${cri.type }">
+					<input type="hidden" name="keyword" value="${cri.keyword }">
+				</form>
 
-							btn.onclick = function() {
-							  modal.style.display = "block";
-							}
-
-							span.onclick = function() {
-							  modal.style.display = "none";
-							}
-
-							window.onclick = function(event) {
-							  if (event.target == modal) {
-							    modal.style.display = "none";
-							  }
-							}
-			            },
-			            error: function (){
-			            	alert('이미 신고하셨습니다.');
-			            }
-			            
-					});
-				}
-			</script>
-		<!-- 댓글 Area -->
-			<c:if test="${not empty memberid}">
-			    <div class="addreply">
-			        <div class="card">
-			            <form method="post" action="${pageContext.request.contextPath}/replyboard/insert">
-			                <div class="card-body addaddreply contenttextarea">
-			                    <label>댓글 작성자 : ${memberid}</label>
-			                    <textarea rows="3" class="col-xl-12" name="replyContent" class="replyContent"></textarea>
-			                    <button class="submitreply" type="button" onclick="submitreplyHandler()">댓글 작성</button>
-			                </div>
-			            </form>
-			        </div>
-			    </div>
-			</c:if>
-	<!-- 댓글 대댓글 리스트 -->
-			<div class="testappend"></div>
+				<!-- 댓글 Area -->
+				<c:if test="${not empty memberid}">
+					<div class="addreply">
+						<div class="card">
+							<form method="post"
+								action="${pageContext.request.contextPath}/replyboard/insert">
+								<div class="card-body addaddreply contenttextarea">
+									<label>댓글 작성자 : ${memberid}</label>
+									<textarea rows="3" class="col-xl-12" name="replyContent"
+										class="replyContent"></textarea>
+									<button class="submitreply" type="button"
+										onclick="submitreplyHandler()">댓글 작성</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</c:if>
+				<!-- 댓글 대댓글 리스트 -->
+				<div class="testappend"></div>
+			</div>
 		</div>
 	</div>
-</div>
-<script>
+	<script>
 	let form = $("#infoForm");
 /* ---------- 리스트로 ---------- */
 $("#btn-board-list").on("click", function(e){
@@ -774,5 +735,126 @@ function submitreplyreplyHandler() {
     });
 }
 </script>
+	<!-- 모달 창 -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close" id="closeBtn" data-dismiss="modal"
+				onclick="removeBackdrop()">&times;</span> <select id="reasonSelect">
+				<option value="1">스팸홍보/도배글입니다.</option>
+				<option value="2">음란물입니다.</option>
+				<option value="3">불법정보를 포함하고 있습니다.</option>
+				<option value="4">개인정보 노출 게시물입니다.</option>
+				<option value="5">욕설/혐오/차별적 표현입니다.</option>
+				<option value="6">불쾌한 표현이 있습니다.</option>
+				<option value="7">기타</option>
+			</select>
+			<textarea id="description" placeholder="사유를 입력해주세요"
+				style="width: 100%; max-width: 400px; height: 100px; padding: 5px; font-size: 14px; margin-top: 10px;"></textarea>
+
+			<button id="submitBtn">신고</button>
+		</div>
+	</div>
+
+	<script>
+	function report(bno, rid) {
+		console.log(bno, rid);
+		// 모달 창 열기
+		$('#myModal').modal('show');
+		// 모달 뒤 배경 생성
+	    $('<div class="modal-backdrop"></div>').appendTo('body');
+		
+	 	// "신고" 버튼 활성화 여부를 감시하고 업데이트
+        $("#reasonSelect").change(function() {
+            var selectedCategory = $("#reasonSelect").val();
+            // 1~7 중 하나를 선택한 경우 버튼 활성화, 그 외에는 비활성화
+        });
+	 	
+     	// 모달 창 내 "신고" 버튼 클릭 시 AJAX 요청을 보내기
+        $("#submitBtn").off("click").on("click", function() {
+			var selectedCategory = $("#reasonSelect").val();
+			var description = $("#description").val();
+			console.log(JSON.stringify({
+			    bno: bno,
+			    rid: rid,
+			    rCategory: selectedCategory,
+			    rContent: description
+			}));
+            
+			$.ajax({
+			    url: "${pageContext.request.contextPath}/board/declarationWait",
+			    type: "POST",
+			    data: JSON.stringify ({
+			        bno: bno, // 게시물 번호
+			        rid: rid, // 작성자 ID
+			        rCategory: selectedCategory,
+			        rContent: description
+			    }),
+			    contentType: "application/json",
+			    success: function (data) {
+			    	if(data === "success") {
+			    		alert("신고가 접수되었습니다.");
+			    		 $('#myModal').modal('hide');
+			    	} else if(data === "fail") {
+			        	alert("이미 신고하셨습니다.");
+			            $('#myModal').modal('hide');
+			        } else {
+			        	alert("본인 게시글은 신고할 수 없습니다.");
+			            $('#myModal').modal('hide');
+			        }
+			    },
+			    error: function (xhr, textStatus, errorThrown) {
+			        if (xhr.status === 401) {
+			            // HTTP 상태 코드가 401인 경우, 로그인이 필요한 경우 처리
+			            alert("로그인 후에 이용해주세요.");
+			            window.location.href = "${pageContext.request.contextPath}/login/";
+			        } else {
+			            // 그 외의 오류인 경우 처리
+			        	alert("서버 오류입니다.");
+			            $('#myModal').modal('hide');
+			        }
+			    }
+			});
+	    });
+	}
+	
+	// 초기화 함수 정의
+	function resetModal() {
+	    // 모달 창 내 필드 초기화 (예: 내용 지우기)
+	    $("#description").val("");
+	    // 모달 창을 닫음
+	    $('#myModal').modal('hide');
+	}
+	
+    window.onclick = function(event) {
+    	if (event.target == $('#myModal')[0]) {
+  		  $('#myModal').modal('hide'); // 모달 창 닫기
+  	  }
+	}
+
+	function removeBackdrop() {
+		$('.modal-backdrop').remove();
+	}
+	</script>
 </body>
+<style>
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+</style>
 </html>

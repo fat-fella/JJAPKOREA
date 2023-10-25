@@ -142,4 +142,12 @@ public class AdminDao {
 	public int delete(String adminId) {
 		return sqlSession.delete("admin.delete", adminId);
 	}
+	
+	public int reportBoard(DeclarationDto declarationDto) throws Exception {
+		return sqlSession.insert("declaration.reportBoard", declarationDto);
+	}
+	
+	public List<DeclarationDto> reportsByUser(DeclarationDto declarationDto) throws Exception {
+		return sqlSession.selectList("declaration.reportsByUser", declarationDto);
+	}
  }
