@@ -98,7 +98,7 @@ public class AdminController {
 	public ModelAndView declarationWait(ModelAndView mv, Criteria cri) {
 		logger.info("declarationWaitGET");
 		logger.info("cri : " + cri);
-		
+		System.out.println(service.declarationWait(cri)+"하하하");
 		mv.addObject("declarationWait", service.declarationWait(cri));
 		int total = service.getDeclarationWait(cri);
 		PageMakerDto pageMake = new PageMakerDto(cri, total);

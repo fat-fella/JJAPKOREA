@@ -45,15 +45,15 @@
 							<th class="bg-secondary">처리 유무</th>
 							<th class="bg-secondary">게시판 삭제</th>
 						</tr>
-						<c:forEach items="${declarationWait }" var="report">
+						<c:forEach items="${declarationWait}" var="report">
 						<tr>
-							<td class="bg-success"><c:out value="${report.rownum + ((pageMaker.cri.pageNum-1) * 10)}"/></td>
+							<%-- <td class="bg-success"><c:out value="${report.rownum + ((pageMaker.cri.pageNum-1) * 10)}"/></td> --%>
 							<td class="bg-success"><c:out value="${report.bno}"/></td>
 							<td class="bg-success"><c:out value="${report.btitle}"/></td>
-							<td class="bg-success"><c:out value="${report.rCategory}"/></td>
-							<td class="bg-success"><c:out value="${report.rContent}"/></td>
-							<td class="bg-success"><c:out value="${report.rCheck}"/></td>
-							<td class="bg-success"><c:out value="${report.rid}"/></td>
+							<td class="bg-success"><c:out value="${report.rcat}"/></td>
+							<td class="bg-success"><c:out value="${report.rcontent}"/></td>
+							<td class="bg-success"><c:out value="${report.rcheck}"/></td>
+							<%-- <td class="bg-success"><c:out value="${report.rid}"/></td> --%>
 							<td class="bg-success"><button class="delete_btn btn btn-outline-primary" value="${report.bno}">
 									게시판 삭제</button></td>
 						</tr>

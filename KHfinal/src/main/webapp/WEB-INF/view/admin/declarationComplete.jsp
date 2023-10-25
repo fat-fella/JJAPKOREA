@@ -46,12 +46,12 @@
 						</tr>
 						<c:forEach items="${declarationComplete }" var="report">
 						<tr>
-							<td class="bg-success"><c:out value="${report.rownum + ((pageMaker.cri.pageNum-1) * 10)}"/></td>
+							<%-- <td class="bg-success"><c:out value="${report.rownum + ((pageMaker.cri.pageNum-1) * 10)}"/></td> --%>
 							<td class="bg-success"><c:out value="${report.bno}"/></td>
 							<td class="bg-success"><c:out value="${report.btitle}"/></td>
-							<td class="bg-success"><c:out value="${report.rCategory}"/></td>
-							<td class="bg-success"><c:out value="${report.rContent}"/></td>
-							<td class="bg-success"><c:out value="${report.rCheck}"/></td>
+							<td class="bg-success"><c:out value="${report.rcat}"/></td>
+							<td class="bg-success"><c:out value="${report.rcontent}"/></td>
+							<td class="bg-success"><c:out value="${report.rcheck}"/></td>
 						</tr>
 						</c:forEach>
 					</table>

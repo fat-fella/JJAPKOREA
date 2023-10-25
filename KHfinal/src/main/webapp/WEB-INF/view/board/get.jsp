@@ -786,8 +786,8 @@ function submitreplyreplyHandler() {
 			    data: JSON.stringify ({
 			        bno: bno, // 게시물 번호
 			        rid: rid, // 작성자 ID
-			        rCategory: selectedCategory,
-			        rContent: description
+			        rcategory: selectedCategory,
+			        rcontent: description
 			    }),
 			    contentType: "application/json",
 			    success: function (data) {

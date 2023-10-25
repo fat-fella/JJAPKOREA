@@ -3,7 +3,7 @@
 <mapper namespace="declaration">
 	<insert id="reportBoard" parameterType="declarationDto">
 		insert into report (RNO, BNO, MID, RID, R_CATEGORY, R_CONTENT)
-		values (REPORT_SEQ.NEXTVAL, #{bno}, #{mid}, #{rid}, #{rCategory}, #{rContent})
+		values (REPORT_SEQ.NEXTVAL, #{bno}, #{mid}, #{rid}, #{rcategory}, #{rcontent})
 	</insert>
 	
 	<select id="reportsByUser" resultType="declarationDto">
