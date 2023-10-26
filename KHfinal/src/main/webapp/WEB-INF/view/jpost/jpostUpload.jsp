@@ -25,7 +25,7 @@
 			</div>
 		</div>
 	</header>
-	<form action="<%=request.getContextPath() %>business/jobpostingupload/register" method="POST"
+	<form action="<%=request.getContextPath() %>/business/jobpostingupload/register" method="POST"
 		id="jpostform">
 		<div class="jposthead">
 			<h2>채용공고 등록</h2>
