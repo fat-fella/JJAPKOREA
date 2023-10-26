@@ -27,36 +27,17 @@
                     <when test="type == 'A'.toString()">
                         mtype like '%'||#{keyword}||'%' 
                     </when>
+                    <when test="type == 'P'.toString()">
+						r.mid like '%'||#{keyword}||'%' 
+					</when>
+					<when test="type == 'L'.toString()">
+						b.btitle like '%'||#{keyword}||'%' 
+					</when>
                 </choose>
             </trim>
         </foreach>
     </trim>
 </sql>
-	<sql id="criteria2">
-		<trim prefix="AND (" suffix=")" prefixOverrides="OR">
-			<foreach collection="typeArr" item="type">
-				<trim prefix="OR">
-					<choose>
-						<when test="type == 'I'.toString()">
-							r.mid like '%'||#{keyword}||'%' 
-						</when>
-						<when test="type == 'N'.toString()">
-							pname like '%'||#{keyword}||'%' 
-						</when>
-						<when test="type == 'B'.toString()">
-							bname like '%'||#{keyword}||'%' 
-						</when>
-						<when test="type == 'A'.toString()">
-							mtype like '%'||#{keyword}||'%' 
-						</when>
-						<when test="type == 'B'.toString()">
-							btitle like '%'||#{keyword}||'%' 
-						</when>
-					</choose>
-				</trim>
-			</foreach>
-		</trim>
-	</sql>
 	<select id="personList" resultType="AdminDto">
 		<![CDATA[
 			select rownum, mid, pname, pemail, pphone, enabled, mtype from 
@@ -267,7 +248,7 @@
 		select count(*) from report r join board b on r.bno = b.bno and r.rid = b.mid
 		where r_check = 0
 		<if test="keyword != null">
-			and rownum > 0 <include refid="criteria2"></include>
+			and rownum > 0 <include refid="criteria"></include>
 		</if>
 	</select>
 	
