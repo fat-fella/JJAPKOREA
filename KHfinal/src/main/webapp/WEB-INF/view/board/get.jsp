@@ -269,15 +269,16 @@ button:hover {
 						<c:out value="${bvo.btitle}" />
 					</h3>
 				    <span style="color: #888; font-size: 11px;">
-						<fmt:formatDate value="${bwriteDate}" pattern="yyyy-MM-dd HH시 MM분" /> 작성
+						<fmt:formatDate value="${bwriteDate}" pattern="yyyy. MM. dd. a hh:mm" /> 작성
 				    </span>
 				    <hr style="border-top: 2px solid #888; margin: 20px 0;">
 					<input type="hidden" name="bno" value="${bvo.bno}">
 					<div id="bcontent" style="width: 100%; height: 400px; position: relative;" readonly>${bvo.bcontent}
-						 <a href="#" style="position: absolute; bottom: 5px; left: 5px;">${bvo.mid}<span style="color: #888; font-size: 10px;">&nbsp;&nbsp;작성자</span></a>
+						 <a href="#" style="position: absolute; bottom: 5px; left: 15px; font-weight: bold;">${bvo.mid}<span style="color: #888; font-size: 10px;">&nbsp;&nbsp;작성자</span></a>
 					</div>
 					<hr style="border-top: 2px solid #888; margin: 5px 0;">
-					<br> <label for="likehit">좋아요: (${bvo.likehit })</label>
+					<br> 
+					<label for="likehit">좋아요: (${bvo.likehit })</label>
 					<c:choose>
 						<c:when test="${memberid eq bvo.mid}">
 							<a
@@ -321,7 +322,7 @@ button:hover {
 							<form method="post"
 								action="${pageContext.request.contextPath}/replyboard/insert">
 								<div class="card-body addaddreply contenttextarea">
-									<textarea rows="3" cols="100" class="col-xl-12" name="replyContent"
+									<textarea rows="3" style="width: 100%;" class="col-xl-12" name="replyContent"
 										class="replyContent" placeholder="솔직하고 따듯한 댓글을 남겨주세요."></textarea>
 									<button class="submitreply" type="button"
 										onclick="submitreplyHandler()">댓글 작성
@@ -426,7 +427,12 @@ function updateLike() {
     });
 }
 
+
 /* ---------- 댓글 ---------- */
+function formatDate(date) {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' };
+    return new Date(date).toLocaleDateString(undefined, options);
+}
 let replyreplyleftpadding = "";
 window.onload = function () {
     replyreplyleftpadding = $(".cardwidth").width() * 0.03;
@@ -452,15 +458,16 @@ window.onload = function () {
             console.log(result);
             for (var i = 0; i < result.length; i++) {
                 if (result[i].rref == 0) {
+                	var formattedDate = formatDate(result[i].replyDate);
                     var htmlVal = '<div class="card replyCard" data-replytype="reply" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '"><div class="firstReply card" data-replyno="' + result[i].replyNo + '" data-writer="' + result[i].memberId + '">' 
                     if (result[i].memberId === "${bvo.mid}") {
                    	htmlVal += 			'<div class="updatewriter">' + result[i].memberId + '<span style="color: #888; font-size: 10px;">&nbsp;&nbsp;작성자</span>' + '</div>'}
                     else {
                    	htmlVal += 			'<div class="updatewriter">' + result[i].memberId + '</div>'}
                     htmlVal += 			'<div cla ss="updatereplyContent">' + result[i].replyContent + '</div>' 
-                    htmlVal += 			'<div class="updatereplyDate">' + result[i].replyDate + '</div>' 
+                    htmlVal += 			'<div class="updatereplyDate">' + formattedDate  + '&nbsp;&nbsp;작성' + '</div>' 
                     htmlVal += 			'<div class="groupbtn">' 
-                   	htmlVal += 				'<button class="updatereply">수정</button>' 
+                   	/* htmlVal += 				'<button class="updatereply">수정</button>'  */
                 	htmlVal += 				'<button class ="deletereply deletereply-button" onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
                  	htmlVal += 				'<button class="insertreplyreply">댓글</button>'
                 	htmlVal += 				'<button class="moreReply" id="moreReplyButton" data-type="more" data-replyno="' + result[i].replyNo + '">더보기</button>'
@@ -519,7 +526,7 @@ function moreReplyHandler(e) {
                         htmlVal += '<div class="updatereplyDate">' + result[i].replyDate + '</div>'
                         htmlVal += '<div class="groupbtn">';
                         if (result[i].memberId === "${memberid}") {
-                            htmlVal += '<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>';
+                            htmlVal += '<button class="deletereplyreply deletereply-button" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>';
                         }
                         htmlVal += '<button class="insertreplyreply">답글달기</button>';
                         htmlVal += '</div>';
@@ -629,10 +636,12 @@ function deletereplyHandler(forNumber) {
 /*  ---------- 답글 수정 ---------- */
 function updatereplyHandler(){
 		var replyWriter= $(this).parents(".replyCard").data("writer");
+		
 		if(replyWriter=="${memberid}"){
 		$(this).parents(".replyCard").find(".updatereplyContent").html("");
 		$(this).parents(".replyCard").find(".updatereplyDate").hide();
 		var updateContent ='<textarea rows="3" class="col-xl-12 replyContent" name="replyContent1"></textarea>'
+		
 		$(this).parents(".replyCard").find(".updatereplyContent").html(updateContent);	
 		 var updateDoBtn ='<button type="button" class="updateDoBtn">댓글 수정</button>'
 		$(this).parents(".groupbtn").html(updateDoBtn); 
