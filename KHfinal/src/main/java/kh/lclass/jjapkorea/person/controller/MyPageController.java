@@ -23,9 +23,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 import kh.lclass.jjapkorea.guest.model.dto.PersonDto;
 import kh.lclass.jjapkorea.guest.model.service.MemberService;
-import kh.lclass.jjapkorea.person.model.dto.ExperienceDto;
+import kh.lclass.jjapkorea.person.model.dto.ResumeWriteDto;
 import kh.lclass.jjapkorea.person.model.dto.ScrapDto;
 import kh.lclass.jjapkorea.person.model.service.MyPageService;
+import kh.lclass.jjapkorea.person.model.service.ResumeWriteService;
 import kh.lclass.jjapkorea.person.model.service.ScrapService;
 
 @Controller
@@ -36,6 +37,9 @@ public class MyPageController {
 
 	@Autowired
 	private ScrapService scrapService;
+	
+	@Autowired
+	ResumeWriteService resumeWriteService;
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -66,6 +70,9 @@ public class MyPageController {
 	    model.addAttribute("workDetails", workDetails);
 //	    model.addAttribute("workPname", workPname);
 		model.addAttribute("scrapList", scrapList);
+		
+		List<ResumeWriteDto> resumeList = resumeWriteService.getResumeById(mid);
+		model.addAttribute("resumeList", resumeList);
 		return "member/myPage";
 	}
 

@@ -1814,7 +1814,14 @@ $(document).ready(function() {
 
                 <div class="my-profile">
                     <div class="pie-chart" style="background: conic-gradient(rgb(0, 42, 255) 0%, rgb(0, 42, 255) 100%, rgb(244, 244, 244) 100%, rgb(244, 244, 244) 100%);">  <!-- 프로필 사진으로 이력서 작성 기준으로 %적용 -->
-                        <div class="profile-img"><p class="img"><img src="" alt=""></p></div>
+                    	<c:if test="${not empty resumeList}">
+                    		<c:forEach items="${resumeList}" var="item">
+	                    		<div class="profile-img"><p class="img"><img src="${item.imageUrl}" alt=""></p></div>
+	                    	</c:forEach>
+                    	</c:if>
+                    	<c:if test="${empty resumeList}">
+                    		<div class="profile-img"><p class="img"><img src="" alt=""></p></div>
+                    	</c:if>
                     </div>
                     <button class="profile-btn btnRegist" type="button"><span class="skip">사진편집</span></button>
                 </div>
