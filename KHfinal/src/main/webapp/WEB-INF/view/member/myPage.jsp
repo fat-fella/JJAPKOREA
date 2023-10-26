@@ -2554,7 +2554,7 @@ $(document).ready(function() {
                         </div>
                         <div class="desc">
                             <a class="devLinkRecruit"
-                                href="/Recruit/GI_Read/${item.JID}?Oem_Code=C1"
+                                href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
                                 target="_blank">
                                 <span class="cell">${item.CAREER}</span> <span
                                     class="cell">${item.USER_EDUCATION}</span> <span
