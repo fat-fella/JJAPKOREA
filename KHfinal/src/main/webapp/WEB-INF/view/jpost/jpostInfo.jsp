@@ -184,13 +184,9 @@
 							
 						</dl>
 						<p class="coBtn">
-							<a href="/Company/1824494/?C_IDX=807" target="_blank"
+							<a href="<%=request.getContextPath()%>/businessInfo?mid=${jobPosting.MID}" target="_blank"
 								title="기업정보(새창)" class="girBtn girBtn_3"
 								onclick="GA_Event('공고_PC', '기업정보상단', '기업정보_중앙일보㈜');"><span>기업정보</span></a>
-							<a href="/Recruit/Co_Read/15983790/CoRecruitLink" target="_blank"
-								title="새창" class="girBtn girBtn_3"
-								onclick="GA_Event('공고_PC', '기업정보상단', '진행중인채용보기_중앙일보㈜');"><span>진행중인
-									채용보기</span></a>
 						</p>
 					</div>
 					<div class="tbCoInfo">
