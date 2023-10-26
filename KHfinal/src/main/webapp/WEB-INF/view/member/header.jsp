@@ -276,8 +276,8 @@
 										</div>
 										<div class="lyRow">
 											<div class="btnRowWrap">
-												<form action="logout" method="post">
-													<a href="<%=request.getContextPath() %>//Login/Logout.asp" class="btnLogOut"
+												<form action="<%=request.getContextPath() %>/logout" method="post">
+													<a href="/Login/Logout.asp" class="btnLogOut"
 														onclick="GA_Event('공통_PC', 'gnb', '로그아웃');">로그아웃</a>
 												</form>
 											</div>
@@ -366,6 +366,20 @@
 		},
 		observer : true,
 		observeParents : true,
+		});
+		
+		document.addEventListener("DOMContentLoaded", function() {
+			// DOMContentLoaded 이벤트가 발생하면 실행될 코드
+			var btnLogOut = document.querySelector(".btnLogOut");
+			if (btnLogOut) {
+				btnLogOut.addEventListener("click", function(e) {
+					e.preventDefault(); // 버튼 클릭 시 기본 동작을 중단
+					var form = btnLogOut.closest("form"); // 가장 가까운 form 요소 찾기
+					if (form) {
+						form.submit(); // form 요소의 submit 호출
+					}
+				});
+			}
 		});
 	</script>
 </body>
