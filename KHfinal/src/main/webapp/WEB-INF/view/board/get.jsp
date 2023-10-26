@@ -78,7 +78,7 @@ button {
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
-	background-color: #007bff;
+	background-color: #3399ff;
 	color: #ffffff;
 	font-size: 11px;
 	transition: background-color 0.2s;
@@ -133,7 +133,8 @@ button:hover {
 }
 
 /* 버튼 스타일 */
-.groupbtn {
+.groupbtn button{
+ 	background-color: #3399ff;
 	margin: 10px 0;
 }
 
@@ -269,8 +270,7 @@ button:hover {
 					<label for="likehit">좋아요: (${bvo.likehit })</label>
 					<c:choose>
 						<c:when test="${memberid eq bvo.mid}">
-							<a
-								href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
+							<a href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
 								<button id="btn-board-update">글 수정</button>
 							</a>
 							<button id="btn-board-delete">글 삭제</button>
@@ -330,7 +330,12 @@ button:hover {
 let form = $("#infoForm");
 /* ---------- 리스트로 ---------- */
 $("#btn-board-list").on("click", function(e){
-	window.history.back();
+/* 	form.find("#bno").remove();
+	form.attr("action", "/jjapkorea/board/list");
+	form.submit(); */
+	/* window.history.back(); */
+	window.location.href = "/jjapkorea/board/list?bno=${bvo.bno}";
+	
 });
 /* ---------- 수정으로 ---------- */
 $("#btn-board-update").on("click", function(e){

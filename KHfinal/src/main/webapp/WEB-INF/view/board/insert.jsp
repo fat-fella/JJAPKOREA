@@ -116,10 +116,6 @@ form button[type="button"] {
     margin-left: 10px;
 }
 
-#btn-board-list {
-    background-color: #ccc;
-    margin-left: 10px;
-}
 </style>
 </head>
 <div class="wrap header">
