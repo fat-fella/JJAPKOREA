@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>로그인 | KH</title>
-<link rel="icon" href="resources/favicon.ico">
+<link rel="icon" href="<%=request.getContextPath()%>/resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/member/css/jobkh_login.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -101,11 +101,11 @@
 						<div class="join">
 							<div id="M_Alert" style="display: block;">
 								좋은 일을 찾으시나요? 회원가입하시고 다양한 혜택을 누리세요!
-								<a href="../../jjapkorea/signup/person" target="_new">회원가입</a>
+								<a href="<%=request.getContextPath()%>/signup/person" target="_new">회원가입</a>
 							</div>
 							<div id="Co_Alert" style="display: none;">
 								좋은 인재를 구하시나요? 회원가입하시고 다양한 혜택을 누리세요!
-								<a href="../../jjapkorea/signup/business" target="_new">회원가입</a>
+								<a href="<%=request.getContextPath()%>/signup/business" target="_new">회원가입</a>
 								<div class="text-balloon" style="display: none;">
 									신규가입 <span>3종</span> 쿠폰 제공!
 								</div>

@@ -51,14 +51,12 @@
 body {
     background-color: #f9f9f9;
     margin: 0;
-/*     padding: 20px; */
 }
 
 .title {
     text-align: center;
     margin-top: -53px;
     padding-bottom: 10px;
-/*     border-bottom: 2px solid #007bff; */
     font-family: Pretendard Variable, Pretendard, -apple-system,
 			BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI,
 			Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji,
@@ -122,11 +120,7 @@ a.button-link {
 /* 키워드가 없는 경우 버튼 스타일 */
 .btn-container-no-keyword {
   margin: 10px;
-  float: right; /* 오른쪽으로 이동 */
-}
-
-button {
-
+  float: right;
 }
 
 button:hover {
@@ -155,33 +149,6 @@ button.keyword:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* 모달 내용 스타일 */
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-}
-
-/* 지도 컨테이너 스타일 */
-#map {
-    width: 400px;
-    height: 300px;
-}
-
-/* 모달 닫기 버튼 스타일 */
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 3; /* 모달 닫기 버튼의 z-index를 설정하여 다른 요소 위에 표시합니다. */
 }
 
 /* 페이지 버튼 컨테이너 스타일 */
@@ -233,28 +200,24 @@ button.keyword:hover {
 /* 검색 */
 .search_area{
     display: flex;
-/*     display: inline-block; */
-/*     margin-top: 30px; */
     margin-left: 700px;
     align-items: center;
     justify-content: flex-end;
 }
- }
- .search_area input{
-    height: 30px;
-    width: 250px;
- }
- .search_area button{
-    width: 100px;
-    height: 36px;
- }
- .search_area select{
-	height: 35px;
- }
-</style>
 
+.search_area input{
+   	height: 30px;
+  	width: 250px;
+}
+.search_area button{
+   	width: 100px;
+   	height: 36px;
+}
+.search_area select{
+	height: 35px;
+}
+</style>
 </head>
-	    
 <div class="wrap header">
 	<div style="background-color:#ffffff">
     	<jsp:include page="/WEB-INF/view/member/header.jsp"></jsp:include>

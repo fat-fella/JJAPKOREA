@@ -117,9 +117,8 @@
 								<c:when test="${not empty mostScrappedJob}">
 									<c:forEach items="${mostScrappedJob}" var="item">
 										<h1 class="display-1 text-white mb-md-4 animated zoomIn">${item.RE_TITLE}</h1>
-										<a href="quote.html"
-											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
-											Quote</a>
+										<a href="<c:url value='/businessInfo'><c:param name='mid' value='${item.MID}'/></c:url>"
+											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Info</a>
 										<a
 											href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
 											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View
@@ -153,9 +152,8 @@
 								<c:when test="${not empty mostClickedJob}">
 									<c:forEach items="${mostClickedJob}" var="item">
 										<h1 class="display-1 text-white mb-md-4 animated zoomIn">${item.RE_TITLE}</h1>
-										<a href="quote.html"
-											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
-											Quote</a>
+										<a href="<c:url value='/businessInfo'><c:param name='mid' value='${item.MID}'/></c:url>"
+											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Info</a>
 										<a
 											href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
 											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View
@@ -189,9 +187,8 @@
 								<c:when test="${not empty highestSalaryJob}">
 									<c:forEach items="${highestSalaryJob}" var="item">
 										<h1 class="display-1 text-white mb-md-4 animated zoomIn">${item.RE_TITLE}</h1>
-										<a href="quote.html"
-											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free
-											Quote</a>
+										<a href="<c:url value='/businessInfo'><c:param name='mid' value='${item.MID}'/></c:url>"
+											class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Info</a>
 										<a
 											href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>"
 											class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">View
