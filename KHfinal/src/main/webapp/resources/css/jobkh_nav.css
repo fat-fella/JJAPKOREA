@@ -179,6 +179,7 @@ span.bdgs > span.d {
     border: 0.5px solid rgba(255,80,27,.5);
     background: #fff8f6;
     color: #ff501b;
+    padding : 6px;
 }
 
 span.bdgs > span.e {
@@ -305,7 +306,7 @@ span.rank-name {
 
 /* 2배 박스 h4 태그 폰트 설정 및 크기 설정 */
 div.box-double h4.box-tit {
-    font-size: 15px;
+    font-size: 21px;
     font-weight: bold;
     margin: 5px;
     padding: 5px;
@@ -325,7 +326,7 @@ span.post-txt {
     display: -webkit-box;
     color: #6a6a6a;
     font-weight: 400;
-    font-size: 9px;
+    font-size: 19px;
     line-height: 20px;
     height: 125px;
     margin: 5px;
