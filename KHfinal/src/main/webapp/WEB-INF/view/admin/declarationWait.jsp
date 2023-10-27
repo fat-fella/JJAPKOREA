@@ -21,6 +21,15 @@
 <script	src="${pageContext.request.contextPath }/resources/js/jquery-3.7.0.js"></script>
 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"	crossorigin="anonymous"></script>
 </head>
+<style>
+	.bg-secondary {
+		white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+	}
+	
+	.bg-success {
+		white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+	}
+</style>
 <body class="sb-nav-fixed">
 	<jsp:include page="./frame/nav.jsp"></jsp:include>
 	<div id="layoutSidenav">

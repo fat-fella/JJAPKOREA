@@ -119,34 +119,31 @@
 	
 	<select id="declarationWait" resultType="declarationDto">
 		<![CDATA[
-			select rownum, rno, bno, btitle, rid, mid, r_category, r_cat, r_content, r_check, enabled from 
-			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r.r_category, r_cat, r_content, r_check, m.enabled
-			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid join rcategory rc on r.r_category = rc.r_category
-			where rownum <= #{pageNum} * #{amount} and r_check = 0
+			SELECT r.rno, r.bno, b.btitle, r.rid, r.mid, r.r_category, rc.r_cat, r_content, r_check, m.enabled
+			FROM report r
+			LEFT JOIN board b ON r.bno = b.bno
+			LEFT JOIN member m ON r.rid = m.mid
+			JOIN rcategory rc ON r.r_category = rc.r_category
+			WHERE r_check = 0
 		]]>
-			<if test="keyword != null">
-				<include refid="criteria"></include> 
-			</if>
-		<![CDATA[
-			    )
-		where rn > (#{pageNum} -1) * #{amount}
-		]]>
+		<if test="keyword != null">
+			<include refid="criteria"></include> 
+		</if>
+		
 	</select>
 	
 	<select id="declarationComplete" resultType="declarationDto">
 		<![CDATA[
-			select rownum, rno, bno, btitle, rid, mid, r_category, r_cat, r_content, r_check, enabled from 
-			(select rownum as rn, rno, r.bno, btitle, r.rid, r.mid, r.r_category, r_cat, r_content, r_check, m.enabled
-			from report r left join board b on r.rid = b.mid left join member m on r.rid = m.mid join rcategory rc on r.r_category = rc.r_category
-			where rownum <= #{pageNum} * #{amount} and r_check = 1
+			SELECT r.rno, r.bno, b.btitle, r.rid, r.mid, r.r_category, rc.r_cat, r_content, r_check, m.enabled
+			FROM report r
+			LEFT JOIN board b ON r.bno = b.bno
+			LEFT JOIN member m ON r.rid = m.mid
+			JOIN rcategory rc ON r.r_category = rc.r_category
+			WHERE r_check = 0
 		]]>
-			<if test="keyword != null">
-				<include refid="criteria"></include> 
-			</if>
-		<![CDATA[
-			    )
-		where rn > (#{pageNum} -1) * #{amount}
-		]]>
+		<if test="keyword != null">
+			<include refid="criteria"></include> 
+		</if>
 	</select>
 	
 	<!-- 
