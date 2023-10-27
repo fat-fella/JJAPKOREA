@@ -125,10 +125,6 @@ a.button-link {
   float: right; /* 오른쪽으로 이동 */
 }
 
-button {
-
-}
-
 button:hover {
   background-color: #0056b3;
 }

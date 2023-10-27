@@ -30,7 +30,6 @@
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
 <link rel="icon" href="resources/favicon.ico">
-
 <script
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
 	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -79,7 +78,7 @@ button {
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
-	background-color: #007bff;
+	background-color: #3399ff;
 	color: #ffffff;
 	font-size: 11px;
 	transition: background-color 0.2s;
@@ -134,7 +133,8 @@ button:hover {
 }
 
 /* 버튼 스타일 */
-.groupbtn {
+.groupbtn button{
+ 	background-color: #3399ff;
 	margin: 10px 0;
 }
 
@@ -219,15 +219,6 @@ button:hover {
     position: relative;
 }
 
-.show-options {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: #fff;
-    padding: 5px 10px;
-    z-index: 1;
-    cursor: pointer;
-}
 .addreply {
     text-align: center;
 }
@@ -240,10 +231,8 @@ button:hover {
    padding: 1px 4px;
    margin-right: 4px;
 }
-
 </style>
 </head>
-
 <div class="wrap header">
 	<div style="background-color:#ffffff">
     	<jsp:include page="/WEB-INF/view/member/header.jsp"></jsp:include>
@@ -281,8 +270,7 @@ button:hover {
 					<label for="likehit">좋아요: (${bvo.likehit })</label>
 					<c:choose>
 						<c:when test="${memberid eq bvo.mid}">
-							<a
-								href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
+							<a href="${pageContext.request.contextPath}/board/update?bno=${bvo.bno}">
 								<button id="btn-board-update">글 수정</button>
 							</a>
 							<button id="btn-board-delete">글 삭제</button>
@@ -342,7 +330,12 @@ button:hover {
 let form = $("#infoForm");
 /* ---------- 리스트로 ---------- */
 $("#btn-board-list").on("click", function(e){
-	window.history.back();
+/* 	form.find("#bno").remove();
+	form.attr("action", "/jjapkorea/board/list");
+	form.submit(); */
+	/* window.history.back(); */
+	window.location.href = "/jjapkorea/board/list?bno=${bvo.bno}";
+	
 });
 /* ---------- 수정으로 ---------- */
 $("#btn-board-update").on("click", function(e){
@@ -469,7 +462,7 @@ window.onload = function () {
                     htmlVal += 			'<div class="groupbtn">' 
                    	/* htmlVal += 				'<button class="updatereply">수정</button>'  */
                 	htmlVal += 				'<button class ="deletereply deletereply-button" onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
-                 	htmlVal += 				'<button class="insertreplyreply">댓글</button>'
+                 	htmlVal += 				'<button class="insertreplyreply">댓글달기</button>'
                 	htmlVal += 				'<button class="moreReply" id="moreReplyButton" data-type="more" data-replyno="' + result[i].replyNo + '">더보기</button>'
                 	htmlVal += 			'</div>'  
                     htmlVal += 	  '</div>'  
@@ -577,8 +570,8 @@ function submitreplyHandler() {
                 htmlVal += '<div class="updatereplyDate">' + result[i].replyDate + '</div>'
                 htmlVal += '</div>'
                 htmlVal += '<div class="groupbtn">'
-                htmlVal += '<button class="updatereply">수정</button>'
-                htmlVal += '<button onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
+                /* htmlVal += '<button class="updatereply">수정</button>' */
+                htmlVal += '<button class="deletereply-button" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
                 htmlVal += '<button class="insertreply">댓글</button>'
                 htmlVal += '</div>';
                 htmlVal += '</div>'
@@ -748,7 +741,7 @@ function submitreplyreplyHandler() {
                             htmlVal += '<div class="updatereplyContent">' + result[i].replyContent + '</div>'
                             htmlVal += '<div class "updatereplyDate">' + result[i].replyDate + '</div>'
                             htmlVal += '<div class="groupbtn">'
-                            htmlVal +=		'<button class="deletereplyreply" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
+                            htmlVal +=		'<button class="deletereplyreply deletereply-button" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
                             htmlVal += 		'<button class="insertreplyreply">답글달기</button>'
                             htmlVal += '</div>'
                             $forAppendArea.append(htmlVal);
