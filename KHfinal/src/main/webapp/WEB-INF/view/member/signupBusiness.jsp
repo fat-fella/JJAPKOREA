@@ -48,7 +48,7 @@
 
 		<div id="header">
 			<h1>
-				<a href="index">
+				<a href="<%=request.getContextPath()%>/index">
 					<img
 						src="https://i.jobkorea.kr/content/images/member/gnb/h_logo_jobkorea.png"
 						alt="JOBKOREA x albamon">
@@ -68,8 +68,8 @@
 
 			<h3 class="skip">회원 형태별 가입</h3>
 			<ul class="snb f_clear">
-				<li class="person "><a href="person">개인회원</a></li>
-				<li class="corp on"><a href="business">기업회원</a></li>
+				<li class="person "><a href="<%=request.getContextPath()%>/signup/person">개인회원</a></li>
+				<li class="corp on"><a href="<%=request.getContextPath()%>/signup/business">기업회원</a></li>
 			</ul>
 		</div>
 
@@ -78,7 +78,7 @@
 			<h3 class="skip">기업 회원가입 정보</h3>
 			<fieldset>
 				<legend>기업 회원가입</legend>
-				<form action="business" method="POST" id="form" name="form">
+				<form action="<%=request.getContextPath()%>/signup/business" method="POST" id="form" name="form">
 					<!-- 기업 정보 -->
 					<div class="row row_group">
 						<h4>기업정보</h4>
