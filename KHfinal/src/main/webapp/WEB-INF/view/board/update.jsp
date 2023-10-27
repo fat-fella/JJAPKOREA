@@ -48,7 +48,12 @@ body {
 	display: none;
 	border: none;
 }
-
+.subSchArea {
+	display: none;
+}
+.subSchLink {
+	display: none;
+}
 .bcontainer {
     max-width: 800px;
     margin: 20px auto;
@@ -161,7 +166,6 @@ form button[type="button"] {
 	<input type="hidden" name="type" value="${cri.type }">
 	<input type="hidden" name="keyword" value="${cri.keyword }">
 </form>
-
 <script>   
 	let form = $("#infoForm");
 	/* ---------- 리스트로 ---------- */
@@ -171,7 +175,8 @@ form button[type="button"] {
 	
 	$("#btn-board-update").click(function(){
 	    if(confirm("글 수정하시겠습니까?")){
-	        $.ajax({
+	        $('[name=bcontent]').val(CKEDITOR.instances.bcontent.getData());
+	    	$.ajax({
 	            type: "post",
 	            url: "${pageContext.request.contextPath}/board/update",
 	            data: $("#frmBoard").serialize(),

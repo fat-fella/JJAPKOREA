@@ -73,6 +73,8 @@ input[type="text"], textarea {
 	color: #333333;
 }
 
+ 
+
 button {
 	padding: 3px 6px; /* 수정된 버튼 크기 */
 	border: none;
@@ -99,7 +101,6 @@ button:hover {
 
 .addreply{
 	margin-top: 25px;
-
 }
 
 .testappend {
@@ -135,7 +136,7 @@ button:hover {
 /* 버튼 스타일 */
 .groupbtn button{
  	background-color: #3399ff;
-	margin: 10px 0;
+	margin: 10px, 3px;
 }
 
 /* 수정, 삭제 버튼 스타일 */
@@ -231,6 +232,16 @@ button:hover {
    padding: 1px 4px;
    margin-right: 4px;
 }
+.addaddreply {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.addaddreply .replyContent {
+	margin-right: 20px;
+}
 </style>
 </head>
 <div class="wrap header">
@@ -242,7 +253,6 @@ button:hover {
 			BlinkMacSystemFont, system-ui, Roboto, Helvetca Neue, Segoe UI,
 			Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji,
 			Segoe UI Emoji, Segoe UI Symbol, sans-serif">
-			
 <div class="container">
 	<div class="bcontainer" style="max-width: 960px; position: relative; display: flex; flex-direction: column;">
 		<div class="content">
@@ -306,18 +316,16 @@ button:hover {
 			<!-- 댓글 Area -->
 				<c:if test="${not empty memberid}">
 					<div class="addreply">
-						<div class="card">
 							<form method="post"
 								action="${pageContext.request.contextPath}/replyboard/insert">
 								<div class="card-body addaddreply contenttextarea">
-									<textarea rows="3" style="width: 100%;" class="col-xl-12" name="replyContent"
+									<textarea rows="3" style="width: 920px; margin-right: 27px;" class="col-xl-12" name="replyContent"
 										class="replyContent" placeholder="솔직하고 따듯한 댓글을 남겨주세요."></textarea>
 									<button class="submitreply" type="button"
 										onclick="submitreplyHandler()">댓글 작성
 									</button>
 								</div>
 							</form>
-						</div>
 					</div>
 				</c:if>
 			<!-- 댓글 대댓글 리스트 -->

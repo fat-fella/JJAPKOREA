@@ -46,7 +46,12 @@ body {
 }
 .spNav{
 	display: none;
-	border: none;
+}
+.subSchArea {
+	display: none;
+}
+.subSchLink {
+	display: none;
 }
 
 .bcontainer {
@@ -183,11 +188,6 @@ $("#btn-board-insert").click(function() {
             error : ( request, status, error) => {
              	console.log("Ajax오류");
              	console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-             	/*
-            	console.log(request);
-            	console.log(status);
-            	console.log(error);
-            	*/
             	alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
            	}
         });

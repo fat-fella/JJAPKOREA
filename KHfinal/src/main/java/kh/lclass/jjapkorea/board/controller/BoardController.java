@@ -53,7 +53,6 @@ public class BoardController {
 	public String map() {
 		return "board/map";
 	}
-	
 	@GetMapping("/list")
 	public ModelAndView list(ModelAndView mv
 						, Criteria cri
