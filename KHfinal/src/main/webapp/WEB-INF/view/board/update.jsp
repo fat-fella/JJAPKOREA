@@ -41,6 +41,14 @@ body {
 	margin-left: 30px;
 }
 
+.userNav-item {
+	display: none;
+}
+
+#devMyPage {
+	display: none;
+}
+
 .search{
 	display: none;
 }
