@@ -1346,7 +1346,7 @@ $(document).ready(function() {
                 <div class="lyDetailCont">
 
                     <div class="lytitWrap">
-                        <a href="https://www.jobkorea.co.kr/Text_User/Scrap/All_List.asp"><strong class="lyTit sideSpAfter">스크랩 공고</strong></a>
+                        <a href="<%=request.getContextPath()%>/person/myPage"><strong class="lyTit sideSpAfter">스크랩 공고</strong></a>
                         <p class="total">총 <span class="num" id="scrapTotal"></span>건</p>
                     </div>
 
@@ -1368,13 +1368,13 @@ $(document).ready(function() {
             <!-- 스크랩 공고 // -->
 
             <strong class="titTotal">
-                <a href="javascript:return false;" class="link noData" data-target="#lyScrap"><span class="tx">스크랩 공고</span><span class="count">0</span></a>
+                <a href="<%=request.getContextPath()%>/person/myPage" class="link noData" data-target="#lyScrap"><span class="tx">스크랩 공고</span><span class="count">0</span></a>
             </strong>
         </div>
 
         <div class="viewBx">
             <strong class="titTotal">
-                <a href="javascript:return false;" class="link noData" data-target="#lyRecruit"><span class="tx">최근 본 공고</span><span class="count">0</span></a>
+                <a href="<%=request.getContextPath()%>/person/myPage" class="link noData" data-target="#lyRecruit"><span class="tx">최근 본 공고</span><span class="count">0</span></a>
 
             </strong>
         </div>
@@ -1383,7 +1383,7 @@ $(document).ready(function() {
         <div class="sideLyWrap" id="lyRecruit">
             <div class="lyDetailCont">
                 <div class="lytitWrap">
-                    <a href="https://www.jobkorea.co.kr/Recruit/GI/Recent_List"><strong class="lyTit sideSpAfter">최근 본 공고</strong></a>
+                    <a href="<%=request.getContextPath()%>/person/myPage"><strong class="lyTit sideSpAfter">최근 본 공고</strong></a>
                     <p class="total">총 <span class="num" id="recentTotal"></span>건</p>
                 </div>
 
