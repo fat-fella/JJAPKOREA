@@ -145,39 +145,36 @@
 
 	<script>
 		function loadOptions() {
-			var firstRecruitField = document
-					.getElementById("firstRecruitField");
-			var secondRecruitField = document
-					.getElementById("secondRecruitField");
+			var firstRecruitField = document.getElementById("firstRecruitField");
+			var secondRecruitField = document.getElementById("secondRecruitField");
 			var selectedOption = firstRecruitField.options[firstRecruitField.selectedIndex].value;
 			if (selectedOption == "선택해주세요") {
-				return;
+				return;   /*아무것도 선택 안 됐을 시 리턴*/
 			}
-			$
-					.ajax({
-						url : "/jjapkorea/business/jobpostingupload/getSecondRecruitField",
-						method : "POST",
-						data : {
-							selectedOption : selectedOption
-						},
-						dataType : "json",
-						success : function(response) {
-							console.log(response)
-							secondRecruitField.innerHTML = "";
+				$.ajax({
+					url : "/jjapkorea/business/jobpostingupload/getSecondRecruitField",
+					method : "POST",
+					data : {
+						selectedOption : selectedOption
+					},
+					dataType : "json",
+					success : function(response) {
+						console.log(response)
+						secondRecruitField.innerHTML = "";
 
-							for (var i = 0; i < response.length; i++) {
-								var option = document.createElement("option");
-								option.text = response[i].jobsmcat;
-								option.value = response[i].jobsmcd;
-								secondRecruitField.appendChild(option);
-							}
-						},
-						error : function(xhr, status, error) {
-							console.error("Error: " + error);
+						for (var i = 0; i < response.length; i++) {
+							var option = document.createElement("option");
+							option.text = response[i].jobsmcat;
+							option.value = response[i].jobsmcd;
+							secondRecruitField.appendChild(option);
 						}
-					});
-
+					},
+					error : function(xhr, status, error) {
+						console.error("Error: " + error);
+					}
+				});
 		}
+		
 		function loadSecondOptions() {
 			var secondRecruitField = document
 					.getElementById("secondRecruitField");
