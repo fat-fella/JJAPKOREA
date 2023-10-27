@@ -332,7 +332,7 @@
 /* 원픽 */
 
 .box-tit {
-  white-space: nowrap;
+/*   white-space: nowrap; */
   overflow: hidden;
   text-overflow: ellipsis;
 }
