@@ -104,39 +104,75 @@
 	</select>
 	
 	<select id="topTwoInfoByLikehit" resultType="java.util.Map">
-		select * from 
-		(select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit from board b join board_like l on b.bno = l.bno order by b.likehit desc) 
-		<![CDATA[where rownum <= 1]]>
+		WITH RankedBoard AS (
+		    SELECT b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit,
+		           DENSE_RANK() OVER (ORDER BY b.likehit DESC) AS rank
+		    FROM board b
+		    JOIN board_like l ON b.bno = l.bno
+		)
+		SELECT bno, btitle, BC, mid, likehit
+		FROM RankedBoard
+		WHERE rank = 1 AND ROWNUM = 1
 	</select>
 	
 	<select id="getNextTwoInfoByLikehit" resultType="java.util.Map">
-		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
-		from board b join board_like l on b.bno = l.bno) 
-		<![CDATA[where row_num > 1 and row_num <= 2]]>
+		WITH RankedBoard AS (
+		    SELECT b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit,
+		           DENSE_RANK() OVER (ORDER BY b.likehit DESC) AS rank
+		    FROM board b
+		    JOIN board_like l ON b.bno = l.bno
+		)
+		SELECT bno, btitle, BC, mid, likehit
+		FROM RankedBoard
+		WHERE rank = 2 AND ROWNUM = 1
 	</select>
 	
 	<select id="getNextTwoInfoByLikehit2" resultType="java.util.Map">
-		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
-		from board b join board_like l on b.bno = l.bno) 
-		<![CDATA[where row_num > 2 and row_num <= 3]]>
+		WITH RankedBoard AS (
+		    SELECT b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit,
+		           DENSE_RANK() OVER (ORDER BY b.likehit DESC) AS rank
+		    FROM board b
+		    JOIN board_like l ON b.bno = l.bno
+		)
+		SELECT bno, btitle, BC, mid, likehit
+		FROM RankedBoard
+		WHERE rank = 3 AND ROWNUM = 1
 	</select>
 	
 	<select id="getNextTwoInfoByLikehit3" resultType="java.util.Map">
-		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
-		from board b join board_like l on b.bno = l.bno) 
-		<![CDATA[where row_num > 3 and row_num <= 4]]>
+		WITH RankedBoard AS (
+		    SELECT b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit,
+		           DENSE_RANK() OVER (ORDER BY b.likehit DESC) AS rank
+		    FROM board b
+		    JOIN board_like l ON b.bno = l.bno
+		)
+		SELECT bno, btitle, BC, mid, likehit
+		FROM RankedBoard
+		WHERE rank = 4 AND ROWNUM = 1
 	</select>
 	
 	<select id="getNextTwoInfoByLikehit4" resultType="java.util.Map">
-		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
-		from board b join board_like l on b.bno = l.bno) 
-		<![CDATA[where row_num > 4 and row_num <= 5]]>
+		WITH RankedBoard AS (
+		    SELECT b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit,
+		           DENSE_RANK() OVER (ORDER BY b.likehit DESC) AS rank
+		    FROM board b
+		    JOIN board_like l ON b.bno = l.bno
+		)
+		SELECT bno, btitle, BC, mid, likehit
+		FROM RankedBoard
+		WHERE rank = 5 AND ROWNUM = 1
 	</select>
 	
 	<select id="getNextTwoInfoByLikehit5" resultType="java.util.Map">
-		select * from (select b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit, row_number() over (order by b.likehit desc) as row_num 
-		from board b join board_like l on b.bno = l.bno) 
-		<![CDATA[where row_num > 5 and row_num <= 6]]>
+		WITH RankedBoard AS (
+		    SELECT b.bno, b.btitle, to_char(b.bcontent) as BC, b.mid, b.likehit,
+		           DENSE_RANK() OVER (ORDER BY b.likehit DESC) AS rank
+		    FROM board b
+		    JOIN board_like l ON b.bno = l.bno
+		)
+		SELECT bno, btitle, BC, mid, likehit
+		FROM RankedBoard
+		WHERE rank = 6 AND ROWNUM = 1
 	</select>
 	
 	<select id="mostScrappedJob" resultType="java.util.Map">
