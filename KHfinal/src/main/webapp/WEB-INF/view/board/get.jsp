@@ -578,7 +578,6 @@ function submitreplyHandler() {
                 htmlVal += '<div class="updatereplyDate">' + result[i].replyDate + '</div>'
                 htmlVal += '</div>'
                 htmlVal += '<div class="groupbtn">'
-                /* htmlVal += '<button class="updatereply">수정</button>' */
                 htmlVal += '<button class="deletereply-button" onclick="deletereplyHandler(' + result[i].replyNo + ');">삭제</button>'
                 htmlVal += '<button class="insertreply">댓글</button>'
                 htmlVal += '</div>';
@@ -697,9 +696,6 @@ function updateDoBtnHandler(){
         $replyCard.append(addreplyreply);
         $(".submitreplyreply").click(submitreplyreplyHandler);
         $replyCard.find(".forAppendArea").css("display", "block");
-    } else {
-        $contentTextarea.remove(); // 입력창을 제거하여 숨김
-        location.reload(true);
     }
 }
 
