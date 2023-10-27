@@ -161,18 +161,21 @@ span.bdgs > span.a {
     border: 0.5px solid rgba(42,142,251,.5);
     color: #2a8efb;
     background-color: #f2f8ff;
+    padding : 3px;
 }
 
 span.bdgs > span.b {
     border: 0.5px solid rgba(198,142,0,.5);
     color: #c68e00;
     background-color: #fffbf1;
+    padding : 3px;
 }
 
 span.bdgs > span.c {
     border: 0.5px solid rgba(24,204,139,.5);
     background-color: #f2fcff;
     color: #18cc8b;
+    padding : 3px;
 }
 
 span.bdgs > span.d {
@@ -186,66 +189,77 @@ span.bdgs > span.e {
     color: #1f429d;
     background: #f2f6ff;
     border: 0.5px solid rgba(31,66,157,.5);
+    padding : 3px;
 }
 
 span.bdgs > span.i {
     color: #00a1ef;
     background: #f4fcff;
     border: 0.5px solid rgba(0,161,239,.5);
+    padding : 3px;
 }
 
 span.bdgs > span.j {
     color: #1ab0ba;
     background: #f2feff;
     border: 0.5px solid rgba(26,176,186,.5);
+    padding : 3px;    
 }
 
 span.bdgs > span.k {
     color: #7ba621;
     background: #fafff0;
     border: 0.5px solid rgba(123,166,33,.5);
+    padding : 3px;    
 }
 
 span.bdgs > span.l {
     color: #be8866;
     background: #fff9f5;
     border: 0.5px solid rgba(190,136,102,.5);
+    padding : 3px;
 }
 
 span.bdgs > span.m {
     color: #1b7794;
     background: #f1fcff;
     border: 0.5px solid rgba(27,119,148,.5);
+    padding : 3px;    
 }
 
 span.bdgs > span.n {
     color: #3748da;
     background: #f7f7ff;
     border: 0.5px solid rgba(55,72,218,.5);
+    padding : 3px;    
 }
 
 span.bdgs > span.o {
     color: #1b76ff;
     background: #f4f9ff;
     border: 0.5px solid rgba(27,118,255,.5);
+    padding : 3px;    
 }
 
 span.bdgs > span.p {
     color: #d6103f;
     background: #fff5f8;
     border: 0.5px solid rgba(214,16,63,.5);
+    padding : 3px;    
 }
 
 span.bdgs > span.q {
     color: #de8500;
     background: #fff9f0;
     border: 0.5px solid rgba(222,133,0,.5);
+    padding : 3px;    
 }
 
 span.bdgs > span.r, span.bdgs > span.s {
     color: #7645b5;
     background: #faf7ff;
     border: 0.5px solid rgba(118,69,181,.5);
+    padding : 3px;    
 }
 
 /* 2배 박스안 제목 폰트 설정 */
