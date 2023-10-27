@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>로그인 | KH</title>
-<link rel="icon" href="resources/favicon.ico">
+<link rel="icon" href="<%=request.getContextPath()%>/resources/favicon.ico">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/member/css/jobkh_login.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
