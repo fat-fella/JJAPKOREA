@@ -181,7 +181,7 @@
 	        SELECT * FROM (
 	            SELECT r.*, a.JID, a.BIZNAME, TO_CHAR(a.logo_img) as LOGO_IMAGE, a.USER_EDUCATION, a.SALARY
 	                , a.MIN_SALARY, a.MAX_SALARY, a.REGIST_DATE, a.CLOSE_DATE, a.RE_TITLE
-	                , a.CAREER, a.WORK_TYPE, a.EMP_TYPE_CODE, a.TODAY, a.DDAY
+	                , a.CAREER, a.WORK_TYPE, a.EMP_TYPE_CODE, a.TODAY, a.DDAY, a.MID
 	                , TO_CHAR(a.JPOSTDETAIL) AS JPOSTDETAIL, a.BADDRESS , a.BFORM, a.BFORM_NAME, a.COUNT
 	            FROM (SELECT * FROM (SELECT * FROM  BUSINESS b JOIN BUSINESSFORM b2 USING (bform))c JOIN INFO i USING (mid)) a
 	            JOIN "RFIELD" r ON r.RECRUIT_FIELD = a.RECRUIT_FIELD order by post_date desc
