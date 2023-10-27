@@ -147,7 +147,7 @@ div.box-img {
 span.bdgs {
     border-radius: 8px;
     font-size: 11px;
-    line-height: 30px;
+    margin: 5px;
 }
 
 span.bdgs > span.ut-bdg {
