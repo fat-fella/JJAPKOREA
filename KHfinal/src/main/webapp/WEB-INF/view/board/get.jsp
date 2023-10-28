@@ -19,20 +19,13 @@
 <title>취업톡톡상세</title>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/reset.css">
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" /> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_layout.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_header.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_nav.css">
-<link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/css/jobkh_main.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_main.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/jobkh_footer.css">
-<link rel="stylesheet"	href="<%=request.getContextPath()%>/resources/member/css/jobkh_mypage.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-	crossorigin="anonymous"></script>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/member/css/jobkh_mypage.css">
 <style>
 body {
     background-color: #f9f9f9;
@@ -321,14 +314,13 @@ button:hover {
 		</div>
 	</div>
 </div>
+<div class="wrap footer">
+	<jsp:include page="/WEB-INF/view/member/footer.jsp"></jsp:include>
+</div>
 <script>
 let form = $("#infoForm");
 /* ---------- 리스트로 ---------- */
 $("#btn-board-list").on("click", function(e){
-/* 	form.find("#bno").remove();
-	form.attr("action", "/jjapkorea/board/list");
-	form.submit(); */
-	/* window.history.back(); */
 	window.location.href = "/jjapkorea/board/list?bno=${bvo.bno}";
 	
 });
@@ -453,7 +445,6 @@ window.onload = function () {
                     htmlVal += 			'<div cla ss="updatereplyContent">' + result[i].replyContent + '</div>' 
                     htmlVal += 			'<div class="updatereplyDate">' + formattedDate  + '&nbsp;&nbsp;작성' + '</div>' 
                     htmlVal += 			'<div class="groupbtn">' 
-                   	/* htmlVal += 				'<button class="updatereply">수정</button>'  */
                 	htmlVal += 				'<button class ="deletereply deletereply-button" onclick="deletereplyHandler(\'' + result[i].replyNo + '\');">삭제</button>' 
                  	htmlVal += 				'<button class="insertreplyreply">댓글달기</button>'
                 	htmlVal += 				'<button class="moreReply" id="moreReplyButton" data-type="more" data-replyno="' + result[i].replyNo + '">더보기</button>'
@@ -798,6 +789,24 @@ function submitreplyreplyHandler() {
 			<button id="submitBtn">신고</button>
 		</div>
 	</div>
+    <div class="footer">
+        <jsp:include page="/WEB-INF/view/member/footer.jsp"></jsp:include>
+    </div>
+    
+<!-- BOOTSTRAP -->
+
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous">
+</script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous">
+</script>
+
+<!-- 신고 MODAL -->
 <script>
 	function report(bno, rid) {
 		console.log(bno, rid);
@@ -868,6 +877,12 @@ function submitreplyreplyHandler() {
 	    $('#myModal').modal('hide');
 	}
 	
+	$('#myModal').on('hidden.bs.modal', function (e) {
+	    $('.modal-backdrop').remove();
+	});
+	$('#myModal').on('show.bs.modal', function (e) {
+	    $("#description").val("");
+	});
     window.onclick = function(event) {
     	if (event.target == $('#myModal')[0]) {
   		  $('#myModal').modal('hide'); // 모달 창 닫기
@@ -889,11 +904,12 @@ function submitreplyreplyHandler() {
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
 }
-
 .modal-content {
 	position: absolute;
+	width: 450px;
+	height: 228px;
 	top: 50%;
-	left: 50%;
+    left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: white;
 	padding: 20px;
