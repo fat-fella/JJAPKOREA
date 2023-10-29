@@ -29,12 +29,12 @@ public class RoomController {
     		) throws Exception{
     	String mid = (String) principal.getName();
         log.info("# All Chat Rooms");
-// authority admin
+        // authority admin 
         if(mid.equals("admin")) {
         mv.addObject("list", chatRoomService.findAllRooms());
         }
         else {
-// authority  person
+        // authority  person
         mv.addObject("mylist", chatRoomService.findRoom(mid));
         }
         mv.setViewName("chat/rooms");
@@ -69,7 +69,7 @@ public class RoomController {
         mv.setViewName("chat/room");
         
         model.addAttribute("showChat", chatRoomService.showChat(roomId));
-        System.out.println("~!@!~!@!~@~@!~@!~Q@~!@~!@!~@"+roomId);
+//        System.out.println("~!@!~!@!~@~@!~@!~Q@~!@~!@!~@"+roomId);
         
         return mv;
     }

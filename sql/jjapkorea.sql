@@ -647,3 +647,9 @@ INSERT INTO RCATEGORY (r_category, r_cat) values ('7', '기타');
 
 INSERT INTO MEMBER (mid, mpw, mtype) VALUES ('admin', '$2y$04$1BoDp4za/DAyRhZrDOqKxe6OBCGImbhCWLX8ntKo5eVsMBFABz8JC', 'ROLE_ADMIN');
 COMMIT;
+
+
+
+
+
+ 

@@ -102,7 +102,7 @@
 
                 function sendMessage() {
                     var msg = document.getElementById("msg").value;
-                    if(msg !== '') {
+                    if(msg !== '') { /*빈 메세지가 아닐 경우 전송*/
                         console.log(username + ":" + msg);
                         stomp.send('/pub/chat/message', {}, JSON.stringify({
                             roomId : roomId,
