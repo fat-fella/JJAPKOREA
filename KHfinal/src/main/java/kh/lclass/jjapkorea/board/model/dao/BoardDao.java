@@ -59,6 +59,15 @@ public class BoardDao {
 			 return sqlSession.selectList("board.getListPage", cri);
 		}
 		
+	// 답글 선택
+		public BoardDto selectOneForReply(Integer bno) throws Exception{
+			return sqlSession.selectOne("board.selectOneJoinReply", bno);
+		}
+		
+		public int selectReply(BoardSelectReplyParam param) throws Exception{
+			return sqlSession.update("board.selectReply", param);
+		}
+		
 		public int boardhit(int bno) throws Exception{
 			return sqlSession.update("board.boardhit", bno);
 		}

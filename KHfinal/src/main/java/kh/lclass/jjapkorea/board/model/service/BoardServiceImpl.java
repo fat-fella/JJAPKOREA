@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import kh.lclass.jjapkorea.board.model.dao.BoardDao;
 import kh.lclass.jjapkorea.board.model.dto.BoardDto;
 import kh.lclass.jjapkorea.board.model.dto.BoardParam;
+import kh.lclass.jjapkorea.board.model.dto.BoardSelectReplyParam;
 import kh.lclass.jjapkorea.board.model.dto.Criteria;
 
 @Service
@@ -71,4 +72,11 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.boardReadCnt(param);
 	}
 
+	@Override
+	@Transactional
+	public BoardDto selectReply(BoardSelectReplyParam param) throws Exception {
+		boardDao.selectReply(param);
+		BoardDto selectReplyBoard = boardDao.selectOneForReply(param.getBno());
+		return selectReplyBoard;
+	}
 }
