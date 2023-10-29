@@ -122,7 +122,7 @@
                                             	<c:if test="${not empty topTwoInfoByDDay}">
                                             		<c:forEach items="${topTwoInfoByDDay}" var="item">
 		                                                <div class="box">
-		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
 		                                                        <span class="bdgs">
 		                                                            <span class="ut-bdg a">임박한 공고</span>
 		                                                        </span>
@@ -137,7 +137,7 @@
                                             	</c:if>
                                             	<c:if test="${empty topTwoInfoByDDay}">
                                             		<div class="box">
-	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12332" data-click-value="2" onclick="" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
 	                                                        <span class="bdgs">
 	                                                            <span class="ut-bdg a">이번주 공채</span>
 	                                                        </span>
@@ -149,7 +149,7 @@
 	                                                    </a>
 	                                                </div>
 	                                                <div class="box">
-	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12333" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12333" data-click-value="2" onclick="" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
 	                                                        <span class="bdgs">
 	                                                            <span class="ut-bdg a">이번주 공채</span>
 	                                                        </span>
@@ -166,7 +166,7 @@
                                             	<c:if test="${not empty getNextTwoInfoByDDay}">
                                             		<c:forEach items="${getNextTwoInfoByDDay}" var="item">
 		                                                <div class="box">
-		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+		                                                    <a href="<c:url value='/jobpostinginfo'><c:param name='jid' value='${item.JID}'/></c:url>" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
 		                                                        <span class="bdgs">
 		                                                            <span class="ut-bdg a">임박한 공고</span>
 		                                                        </span>
@@ -181,7 +181,7 @@
                                             	</c:if>
                                             	<c:if test="${empty getNextTwoInfoByDDay}">
                                             		<div class="box">
-	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12331" data-click-value="2" onclick="" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
 	                                                        <span class="bdgs">
 	                                                            <span class="ut-bdg a">이번주 공채</span>
 	                                                        </span>
@@ -193,7 +193,7 @@
 	                                                    </a>
 	                                                </div>
 	                                                <div class="box">
-	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12318" data-click-value="2" onclick="mainView.onContsHrefClick(this);" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
+	                                                    <a href="#" class="link clickcnt" data-cntnt-no="12318" data-click-value="2" onclick="" data-rcmdsvcagi-galabel="이번주 공채" target="_blank">
 	                                                        <span class="bdgs">
 	                                                            <span class="ut-bdg a">이번주 공채</span>
 	                                                        </span>
