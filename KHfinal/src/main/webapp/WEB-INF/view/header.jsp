@@ -295,12 +295,12 @@
 										<div class="myLists">
 											<ul>
 												<li>
-													<a href="https://www.jobkorea.co.kr/Corp/Main">
+													<a href="<%=request.getContextPath()%>/index">
 														<span class="tx">기업회원 홈</span>
 													</a>
 												</li>
 												<li>
-													<a href="business/jobpostingupload/list">
+													<a href="<%=request.getContextPath() %>/business/jobpostingupload/list">
 														<span class="tx">채용공고·지원자 관리</span>
 													</a>
 												</li>
