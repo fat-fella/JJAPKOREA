@@ -8,7 +8,7 @@
 <jsp:include page="/WEB-INF/view/msg/message.jsp"></jsp:include>
 <meta charset="UTF-8">
 <title>취업톡톡</title>
-<link rel="icon" href="resources/favicon.ico">
+<link rel="icon" href="<%=request.getContextPath()%>/resources/favicon.ico">
    
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/jobkh_findid.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/mypage/mypage_banner.promotion-sv.css">
@@ -45,7 +45,6 @@
 	rel="stylesheet"
 	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 	crossorigin="anonymous">
-<link rel="icon" href="resources/favicon.ico">
 
 <style>
 body {
