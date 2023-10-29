@@ -25,7 +25,4 @@ public interface BoardService {
 	public int getTotal(Criteria cri) throws Exception;
 	public List<BoardDto> getListPage(Criteria cri) throws Exception;
 	
-// 답글
-	public BoardDto selectReply(BoardSelectReplyParam param) throws Exception;
-	
 }
