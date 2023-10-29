@@ -126,6 +126,8 @@ public class WorknetApi {
                 businessDto.setBizname(getTextContentByTagName(ele, "company"));
                 // 사업자번호
                 businessDto.setBrno(getTextContentByTagName(ele, "busino"));
+                // 기업 형태
+                businessDto.setBform("3");
                 // 지원자학력
                 jobPostingDto.setUserEducation(getTextContentByTagName(ele, "maxEdubg"));
                 // 연봉
