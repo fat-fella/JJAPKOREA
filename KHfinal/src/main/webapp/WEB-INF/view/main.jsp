@@ -193,7 +193,7 @@
 									<img src="${item.LOGO_IMG}" alt="이미지">
 								</div>
 								<div class="compName" onclick="getinfo('${item.JID}')">${item.BIZNAME}</div>
-								<div class="recruitInfo" data-jid="${item.JID}"
+								<div class="recruitInfo"
 									onclick="getinfo('${item.JID}')">
 									${item.RE_TITLE}<br> <br>
 								</div>
