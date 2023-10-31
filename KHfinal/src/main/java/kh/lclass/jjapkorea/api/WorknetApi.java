@@ -21,6 +21,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
@@ -35,6 +37,7 @@ import kh.lclass.jjapkorea.business.model.service.JobPostingService;
 import kh.lclass.jjapkorea.guest.model.dto.BusinessDto;
 import kh.lclass.jjapkorea.guest.model.dto.MemberDto;
 
+@PropertySource("classpath:properties/jjap.properties")
 @Component
 public class WorknetApi {
 	@Autowired
@@ -50,6 +53,8 @@ public class WorknetApi {
 	private List<MemberDto> membersToRemove;
 	private List<BusinessDto> businessesToRemove;
 	private List<JobPostingDto> jobPostingsToRemove;
+	@Value("${authkey}")
+	private String authkey;
 	
     public static void main(String[] args){
     }
@@ -57,7 +62,7 @@ public class WorknetApi {
     public void getJobPostings() {
     	try {
             StringBuilder urlBuilder = new StringBuilder("http://openapi.work.go.kr/opi/opi/opia/wantedApi.do"); /* URL */
-            urlBuilder.append("?" + URLEncoder.encode("authKey", "UTF-8") + "=WNLBET6R0WPQK95R8VLU02VR1HJ"); /* Service Key */
+            urlBuilder.append("?" + URLEncoder.encode("authKey", "UTF-8") + authkey); /* Service Key */
             urlBuilder.append("&" + URLEncoder.encode("returnType", "UTF-8") + "=" + URLEncoder.encode("xml", "UTF-8")); /* 결과형식(xml) */
             urlBuilder.append("&" + URLEncoder.encode("callTp", "UTF-8") + "=" + URLEncoder.encode("L", "UTF-8")); /* L(목록), D(상세) */
             urlBuilder.append("&" + URLEncoder.encode("startPage", "UTF-8") + "=" + URLEncoder.encode("3", "UTF-8")); /* 페이지번호 - 수정4!! */
