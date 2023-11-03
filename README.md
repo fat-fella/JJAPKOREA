@@ -85,11 +85,15 @@
 - project members: 박유림, 이상훈, 조민지, 남궁하진
 
 
-## CONTENT
-<details><summary>Content</summary>
- - 프로젝트 설명 <br>
- - 개발환경 <br>
- - 개발기간 <br>
+## CONTENTS
+<details><summary>Contents</summary>
+ - [프로젝트 설명](#◾ 프로젝트 설명) <br>
+ - [개발환경](#◾ 개발환경) <br>
+ - [개발기간](#◾ 개발 기간) <br>
+ - [주요기능](#◾ 주요기능) <br>
+ - [담당기능](#◾ 담당기능) <br>
+ - [메인페이지](#◾ 메인페이지) <br>
+ - [기능구현](#◾ 기능구현) <br>
 </details>
 
 
