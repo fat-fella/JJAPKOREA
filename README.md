@@ -4,25 +4,32 @@
 <div align=center>	
 
 ***
-
-![TEAM](https://github.com/fat-fella/JJAPKOREA/assets/135290733/1fdf5d62-9c7c-4608-b889-8d85347932c7)
-![JJAPkorea_Mlogo_120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ba40d0c2-10d6-4ccc-a25f-be92e46b3080)
+로고 이미지
 
 ***
 # 프로젝트소개 
-
-![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
-
-
-![image](https://github.com/fat-fella/JJAPKOREA/assets/135290733/338854b2-502a-4dcb-b28c-b6fcc67068f0)
+팀원
 
 
 </div>
 
-### Development tools
+### 🔷 OS
+
+<div>
+  <img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white" alt="image" style="height: 20px; border-radius: 40px;">
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="image" style="height: 20px; border-radius: 40px;">
+</div>
+
+### 🔷 Development tools
+<div>
+  
+  <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white" alt="image" style="height: 20px; border-radius: 40px;">	
+  <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" alt="image" style="height: 20px; border-radius: 40px;">	
+
+</div>
 
 
-### Skills
+### 🔷 Skills
 ![image](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![image](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
 ![image](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
@@ -33,23 +40,17 @@
 ![image](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=black)
 ![image](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 
-### 상세서식작성 및 발표
+### 🔷 Team Communication
+![image](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
+![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![image](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
+
+### 🔷 Presentation
 ![image](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![image](https://img.shields.io/badge/Microsoft_PowerPoint-B7472A?style=for-the-badge&logo=microsoft-powerpoint&logoColor=white)
 ![image](https://img.shields.io/badge/Adobe%20Photoshop-31A8FF?logo=adobephotoshop&logoColor=fff&style=for-the-badge)
 ![image](https://img.shields.io/badge/Adobe%20After%20Effects-99F?logo=adobeaftereffects&logoColor=fff&style=for-the-badge)
 ![image](https://img.shields.io/badge/Adobe%20Premiere%20Pro-99F?logo=adobepremierepro&logoColor=fff&style=for-the-badge)
-
-### Team Communication
-![image](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
-![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
-![image](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
-
-### OS
-![image](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)
-![image](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-
-
 
 
 
