@@ -64,14 +64,22 @@
   Jjapkorea clones jobkorea.co.kr, a Korean jobposting website. this project includes implementing css and some main functions of the original
   website. <br>
  ## 제작환경:
-      - front-end : html5, css, javascript, jsp
-      - back-end : java(jdk11), Servlet
-      - api- front-end : jquery3.6, jstl1.2
-      - api- back-end : ojdbc8
-      - tool - configuration management : github - githubdesktop
-      - tool - IDE : eclipse ee
-      - tool - erd : erdcloud.com
-      - WAS - tomcat9.0
+      - 운영체제 : MacOS, Window 10
+      - 사용 언어 : Java, JavaScript, HTML5, CSS3, JSP&Servlet
+      - 프레임워크/라이브러리 : * Spring : Spring Framework (5.3.19), Lombok
+                              * DB : ojdbc8, commons-dbcp, MyBatis 3.5.11
+                              * Log : aspectj-weave, log4j, slf4j
+                              * Front-end: jQuery, Bootstrap5, Kakao Maps-API, CKEditor4
+                              * WebSocket: STOMP
+                              * File Upload: Cloudinary (File Server), commons-fileupload
+                              * JSON: Jackson, gson, json-simple
+                              * Data: WorkNet API
+                              * Log in: Kakao API, Naver API, Google API, Security
+        - DB : Oracle
+        - 툴 : STS3, DBeaver, SQL Developer, ERD Cloud, Oven, draw.io, Visual Studio Code, Chrome Developer Tool
+        - WAS : Tomcat 9
+        - 형상관리 : GitHub, GitHub Desktop
+
 
 ## 개발 기간
     3weeks
