@@ -96,9 +96,9 @@
 </details>
 
 
-## ◾ 프로젝트 설명
+## 프로젝트 설명
   잡코리아의 핵심 기능들을 최대한 유사하게 구현하여 사용자들이 편리하게 구직 활동을 할 수 있도록 지원하는 것이었습니다. 이를 위해 회원가입, 채용공고 등록, 이력서 등록 및 조회, 채용공고 검색, 커뮤니티 서비스 등과 같은 기능들을 중점적으로 개발하고 구현하였습니다. <br>
-## ◾ 개발환경:
+## 개발환경:
       - 운영체제 : MacOS, Window 10
       - 사용 언어 : Java, JavaScript, HTML5, CSS3, JSP&Servlet
       - 프레임워크/라이브러리 : Spring : Spring Framework (5.3.19), Lombok
@@ -116,10 +116,10 @@
         - 형상관리 : GitHub, GitHub Desktop
 
 
-## ◾ 개발 기간
+## 개발 기간
     2023-09-01 ~ 2023-10-28
 
-## ◾ 주요 기능 
+## 주요 기능 
   -	회원가입 및 계정:
     - 회원가입
     - 로그인/로그아웃
@@ -271,11 +271,11 @@
         
 ## 상세페이지  
 
-### ◾ 메인페이지 (index)
+### 메인페이지 (index)
 
 ![GIFMaker_me](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cf89a054-8b1b-42eb-9eb1-e1e52bf6d7e3)
 
-### ◾ 실시간 채팅 (STOMP)
+### 실시간 채팅 (STOMP)
 
 ![톡톡상담_채팅](https://github.com/fat-fella/JJAPKOREA/assets/135290733/6ad8d901-d706-44e6-b946-da34d6f1d10b)
 
