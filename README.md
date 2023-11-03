@@ -113,8 +113,8 @@
 
 
 ## URL
-    - original website : jobkorea.co.kr
-    - mainpage : jjapkorea/index
+    - 참고 페이지 : jobkorea.co.kr
+    - 메인페이지 : jjapkorea/index
     - login : jjapkorea/login
     - signup : jjapkorea/signup , jjapkorea/psignup
     - main page when logged in : jjapkorea/index/login
