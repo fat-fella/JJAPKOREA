@@ -81,19 +81,16 @@
 
 
 ## 개발 기간
-    3weeks
+    2023-09-01 ~ 2023-10-28
 
 ## 주요기능
-      - Login/Logout (individuals/companies)
-      - Sign up (individuals/companies)
-      - Parsing Open API (worknet) for job postings
-      - Infinite Scrolling
-      - Scrap
-      - Show scraped list in myPage
-      - Menu
-      - Infinite scrolling
-      - Category tabs
-      - Random images for job posting
+  -	회원가입 및 계정
+    	회원가입
+    	로그인/로그아웃
+    	자동 로그인
+    	SNS 계정 로그인
+    	개인정보 수정
+
 
 ## URL
     - original website : jobkorea.co.kr
