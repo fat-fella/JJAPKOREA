@@ -269,15 +269,21 @@
       
       2. 지도 API
         
-## ◾상세페이지  
+## 🔴 상세페이지  
 
-### ◾메인페이지 (index)
+
+### 📌 메인페이지 (index)
 
 ![GIFMaker_me](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cf89a054-8b1b-42eb-9eb1-e1e52bf6d7e3)
 
-### ◾실시간 채팅 (STOMP)
+### 📌 실시간 채팅 (STOMP)
 
 ![톡톡상담_채팅](https://github.com/fat-fella/JJAPKOREA/assets/135290733/6ad8d901-d706-44e6-b946-da34d6f1d10b)
+
+
+### 📌 API SNS LOGIN
+
+![api회원가입](https://github.com/fat-fella/JJAPKOREA/assets/135290733/a5b74f2f-26ce-42f8-a831-8e4f00ab7eac)
 
 
 <div align=center>	
