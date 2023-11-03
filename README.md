@@ -83,8 +83,8 @@
 
 ## 개발 기간
     2023-09-01 ~ 2023-10-28
-
-## <details><summary> 주요 기능 </summary>
+<details>
+<summary>##  주요 기능 </summary>
   -	회원가입 및 계정: 
     - 회원가입
     - 로그인/로그아웃
