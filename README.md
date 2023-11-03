@@ -1,17 +1,25 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffat-fella%2FJJAPKOREA%2F&count_bg=%2364CCFF&title_bg=%234D89FF&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://github.com/fat-fella/JJAPKOREA)
 
 
+
 <div align=center>	
 
 ***
-로고 이미지
+
+![TEAM](https://github.com/fat-fella/JJAPKOREA/assets/135290733/1fdf5d62-9c7c-4608-b889-8d85347932c7)
+![JJAPkorea_Mlogo_120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ba40d0c2-10d6-4ccc-a25f-be92e46b3080)
 
 ***
 # 프로젝트소개 
-팀원
+
+![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
+
+
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290733/338854b2-502a-4dcb-b28c-b6fcc67068f0)
 
 
 </div>
+
 
 ### 🔷 OS
 
