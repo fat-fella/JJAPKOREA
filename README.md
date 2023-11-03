@@ -87,9 +87,9 @@
 
 ##CONTENT
 <details><summary>Content</summary>
- - 프로젝트 설명
- - 개발환경
- - 개발기간
+ - 프로젝트 설명 <br>
+ - 개발환경 <br>
+ - 개발기간 <br>
 </details>
 
 
