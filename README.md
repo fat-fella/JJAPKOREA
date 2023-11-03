@@ -1,15 +1,13 @@
-  ![TEAM](https://github.com/fat-fella/JJAPKOREA/assets/135290733/1fdf5d62-9c7c-4608-b889-8d85347932c7)
-  ![JJAPkorea_Mlogo_120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ba40d0c2-10d6-4ccc-a25f-be92e46b3080)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffat-fella%2FJJAPKOREA%2F&count_bg=%2364CCFF&title_bg=%234D89FF&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://github.com/fat-fella/JJAPKOREA)
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffat-fella%2FJJAPKOREA%2Fhit-counter&count_bg=%2330ACFF&title_bg=%232579FF&icon=&icon_color=%23000000&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-
+![TEAM](https://github.com/fat-fella/JJAPKOREA/assets/135290733/1fdf5d62-9c7c-4608-b889-8d85347932c7)
+![JJAPkorea_Mlogo_120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ba40d0c2-10d6-4ccc-a25f-be92e46b3080)
+  
 
 # 프로젝트소개 
 
 ![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
 
-
-	https://github-readme-stats.vercel.app/api/top-langs/?fat-fella={fat-fella}&theme=blue-green
 
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/135290733/338854b2-502a-4dcb-b28c-b6fcc67068f0)
 
@@ -19,20 +17,16 @@
 
 ### Skills
 ![image](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-
 ![image](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-
 ![image](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
 ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![image](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+![image](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
 ![image](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=black)
 
-
-
-![image](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
-
 ![image](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+
 
 ### 상세서식작성 및 발표
 ![image](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
@@ -47,6 +41,7 @@
 
 
 ### Team Communication
+
 ![image](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
 ![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![image](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
@@ -56,6 +51,8 @@
 ### OS
 ![image](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)
 ![image](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+
+
 
 
 
