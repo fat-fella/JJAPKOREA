@@ -1,15 +1,16 @@
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffat-fella%2FJJAPKOREA%2F&count_bg=%2364CCFF&title_bg=%234D89FF&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://github.com/fat-fella/JJAPKOREA)
-
-***
-
 <div align=center>	
   
-![TEAM](https://github.com/fat-fella/JJAPKOREA/assets/135290733/1fdf5d62-9c7c-4608-b889-8d85347932c7)
-![JJAPkorea_Mlogo_120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ba40d0c2-10d6-4ccc-a25f-be92e46b3080)
+![header](https://capsule-render.vercel.app/api?type=Shark&color=auto&height=300&width=700&section=header&text=Final%20Team%20Projecta&fontSize=90)
 
 </div>
 
-***
+<div align=right>	
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffat-fella%2FJJAPKOREA%2F&count_bg=%2364CCFF&title_bg=%234D89FF&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://github.com/fat-fella/JJAPKOREA)
+
+</div>
+
+
 # 💬 프로젝트소개 
 
 <div align=center>	
@@ -257,3 +258,12 @@
 
 
 ![GIFMaker_me](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cf89a054-8b1b-42eb-9eb1-e1e52bf6d7e3)
+
+![fat-fella GitHub stats](https://github-readme-stats.vercel.app/api?fat-fella=anuraghazra&show_icons=true&theme=transparent)
+
+
+<div align=center>	
+  
+![footer](https://capsule-render.vercel.app/api?type=Waving&color=auto&height=100&width=700&section=footer&text=Thank%20you&fontSize=40)
+
+</div>
