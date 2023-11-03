@@ -112,15 +112,6 @@
 
 
 
-## URL
-    - 참고 페이지 : jobkorea.co.kr
-    - 메인페이지 : jjapkorea/index
-    - 로그인 : jjapkorea/login
-    - 개인/기업회원가입 : jjapkorea/signup , jjapkorea/psignup
-    - 마이페이지 : jjapkorea/mypage
-    - 원픽 : jjapkorea/onpick
-    - 
-
 
 
 
