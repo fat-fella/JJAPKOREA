@@ -148,6 +148,6 @@
       6. 이력서		- 이력서 등록 / 수정
       		- 프로필 이미지 등록 → cloudinary 서버에 저장
       		- 이력서 등록 시 입사 지원 가능
-      ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/ca4ff986-8600-4c45-9b87-dace3a7692eb)
+   
 
         
