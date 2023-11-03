@@ -1,6 +1,6 @@
 <div align=center>	
   
-![header](https://capsule-render.vercel.app/api?type=Shark&color=auto&height=300&width=700&section=header&text=Final%20Team%20Projecta&fontSize=90)
+![header](https://capsule-render.vercel.app/api?type=Shark&color=auto&height=300&width=700&section=header&text=Final%20Team%20Project&fontSize=90)
 
 </div>
 
