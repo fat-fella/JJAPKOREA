@@ -60,10 +60,10 @@
 - KH Final Project : JJAPKOREA
 - project members: 박유림, 이상훈, 조민지, 남궁하진
 
-## project description
+## 프로젝트 설명
   Jjapkorea clones jobkorea.co.kr, a Korean jobposting website. this project includes implementing css and some main functions of the original
   website. <br>
- ## followings are used for this project:
+ ## 제작환경:
       - front-end : html5, css, javascript, jsp
       - back-end : java(jdk11), Servlet
       - api- front-end : jquery3.6, jstl1.2
@@ -73,10 +73,10 @@
       - tool - erd : erdcloud.com
       - WAS - tomcat9.0
 
-## develpoment duration
+## 개발 기간
     3weeks
 
-## functions
+## 주요기능
       - Login/Logout (individuals/companies)
       - Sign up (individuals/companies)
       - Parsing Open API (worknet) for job postings
