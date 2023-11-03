@@ -1,3 +1,41 @@
+![TEAM](https://github.com/fat-fella/JJAPKOREA/assets/135290733/1fdf5d62-9c7c-4608-b889-8d85347932c7)
+![JJAPkorea_Mlogo_120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ba40d0c2-10d6-4ccc-a25f-be92e46b3080)
+
+
+# 프로젝트소개 
+
+![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
+
+
+
+
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290733/338854b2-502a-4dcb-b28c-b6fcc67068f0)
+
+
+## Development tools
+
+
+
+
+## Team Communication
+![image](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
+![image](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+
 # KHsemi
 - kh semi project : Jjapkorea
 - project members: 박유림, 이상훈
