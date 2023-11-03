@@ -1,19 +1,20 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Ffat-fella%2FJJAPKOREA%2F&count_bg=%2364CCFF&title_bg=%234D89FF&icon=&icon_color=%23FFFFFF&title=hits&edge_flat=false)](https://github.com/fat-fella/JJAPKOREA)
 
-
-
-<div align=center>	
-
 ***
 
+<div align=center>	
+  
 ![TEAM](https://github.com/fat-fella/JJAPKOREA/assets/135290733/1fdf5d62-9c7c-4608-b889-8d85347932c7)
 ![JJAPkorea_Mlogo_120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ba40d0c2-10d6-4ccc-a25f-be92e46b3080)
 
+</div>
+
 ***
-# 프로젝트소개 
+# 💬 프로젝트소개 
 
+<div align=center>	
+  
 ![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
-
 
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/135290733/338854b2-502a-4dcb-b28c-b6fcc67068f0)
 
@@ -75,13 +76,13 @@
 
 ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 
-# KHFinal
+# 💬 KHFinal
 - KH Final Project : JJAPKOREA
 - project members: 박유림, 이상훈, 조민지, 남궁하진
 
-## 프로젝트 설명
+## ◾ 프로젝트 설명
   잡코리아의 핵심 기능들을 최대한 유사하게 구현하여 사용자들이 편리하게 구직 활동을 할 수 있도록 지원하는 것이었습니다. 이를 위해 회원가입, 채용공고 등록, 이력서 등록 및 조회, 채용공고 검색, 커뮤니티 서비스 등과 같은 기능들을 중점적으로 개발하고 구현하였습니다. <br>
- ## 개발환경:
+## ◾ 개발환경:
       - 운영체제 : MacOS, Window 10
       - 사용 언어 : Java, JavaScript, HTML5, CSS3, JSP&Servlet
       - 프레임워크/라이브러리 : Spring : Spring Framework (5.3.19), Lombok
@@ -99,10 +100,10 @@
         - 형상관리 : GitHub, GitHub Desktop
 
 
-## 개발 기간
+## ◾ 개발 기간
     2023-09-01 ~ 2023-10-28
 
-##  주요 기능 
+## ◾ 주요 기능 
   -	회원가입 및 계정:
     - 회원가입
     - 로그인/로그아웃
@@ -140,9 +141,9 @@
 
 
 
-# 담당 기능
+# 💬 담당 기능
 
-박유림
+▪ 박유림
 
       1. 로그인		
         - security 사용
@@ -196,7 +197,7 @@
 
 
 
-이상훈
+▪ 이상훈
 
       1. 로고 이미지
         - Cloudinary
@@ -225,7 +226,7 @@
 
 
 
-조민지 
+▪ 조민지 
 
       1. SNS 로그인 API 적용
 
@@ -237,7 +238,7 @@
 
 
 
-남궁하진
+▪ 남궁하진
 
       1. 취업톡톡 (게시판)
         - 게시글 목록
@@ -252,7 +253,7 @@
       
       2. 지도 API
         
-# 메인페이지
+# ◾ 메인페이지
 
 
 ![GIFMaker_me](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cf89a054-8b1b-42eb-9eb1-e1e52bf6d7e3)
