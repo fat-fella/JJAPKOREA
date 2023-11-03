@@ -228,3 +228,6 @@
       
       2. 지도 API
         
+# 메인페이지
+
+![GIFMaker_me](https://github.com/fat-fella/JJAPKOREA/assets/130439230/74313745-a659-45bb-b89f-9fecea8c53ae)
