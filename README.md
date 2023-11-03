@@ -117,5 +117,35 @@
     - 메인페이지 : jjapkorea/index
     - 로그인 : jjapkorea/login
     - 개인/기업회원가입 : jjapkorea/signup , jjapkorea/psignup
-    - mypage : jjapkorea/mypage
-    - one pick : jjapkorea/onpick
+    - 마이페이지 : jjapkorea/mypage
+    - 원픽 : jjapkorea/onpick
+    - 
+
+
+
+
+## 담당 기능
+    - 박유림
+      1. 로그인		- security 사용
+
+      2. 아이디 / 비밀번호 찾기	- 아이디 / 임시 비밀번호 SMS 발송
+      
+      3. 회원 가입		- 개인 회원 가입 / 기업 회원 가입
+      		- 유효성 검사
+      		- 인증번호 SMS 발송
+      
+      4. 마이페이지	- 회원 정보 수정
+      		- 회원 탈퇴
+      		- 스크랩한 채용 공고 표시
+      
+      5. 메인 페이지	- 사용자 권한에 따라서 표시되는 헤더 상이
+      		- 기한이 임박한 채용 공고, 인기 게시글 표시
+      		- 워크넷 API 사용 → 기업 회원 가입
+      		- 채용 공고 스크랩 / 스크랩 해제
+      
+      6. 이력서		- 이력서 등록 / 수정
+      		- 프로필 이미지 등록 → cloudinary 서버에 저장
+      		- 이력서 등록 시 입사 지원 가능
+      ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/ca4ff986-8600-4c45-9b87-dace3a7692eb)
+
+        
