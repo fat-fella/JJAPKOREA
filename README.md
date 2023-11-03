@@ -259,9 +259,6 @@
 
 ![GIFMaker_me](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cf89a054-8b1b-42eb-9eb1-e1e52bf6d7e3)
 
-![fat-fella GitHub stats](https://github-readme-stats.vercel.app/api?fat-fella=anuraghazra&show_icons=true&theme=transparent)
-
-
 <div align=center>	
   
 ![footer](https://capsule-render.vercel.app/api?type=Waving&color=auto&height=100&width=700&section=footer&text=Thank%20you&fontSize=40)
