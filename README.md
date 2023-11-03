@@ -85,7 +85,7 @@
 - project members: 박유림, 이상훈, 조민지, 남궁하진
 
 
-##CONTENT
+## CONTENT
 <details><summary>Content</summary>
  - 프로젝트 설명 <br>
  - 개발환경 <br>
