@@ -2,6 +2,9 @@
   
 ![header](https://capsule-render.vercel.app/api?type=Shark&color=auto&height=300&width=700&section=header&text=Final%20Team%20Project&fontSize=90)
 
+![JJAPkorea_Mlogo_120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/35dccd02-44c9-4485-a01d-0b70714108a0)
+
+
 </div>
 
 <div align=right>	
