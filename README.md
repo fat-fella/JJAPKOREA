@@ -287,6 +287,9 @@ ERD
 </details>
 <br>
 <details><summary> 인기순/최신순 채용공고🔎 </summary>
+<img width="923" alt="스크린샷 2023-11-05 오전 12 26 35" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/f1ae52d1-0d3a-46de-a127-ed7a48487712">
+<img width="923" alt="스크린샷 2023-11-05 오전 12 26 20" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/c1121821-5b6c-44d1-94d0-1fe15fa00f40">
+
 
 </details>
 <br>
