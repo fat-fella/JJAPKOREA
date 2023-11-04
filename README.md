@@ -221,7 +221,7 @@
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 08 41" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/933276b5-e686-4ae2-a656-9bd9dbbe06d4">
 <details><summary> 로고 이미지🔎 </summary>
 
-![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/71446705-91ca-4ded-b010-92f240fa069d)
+![KakaoTalk_Photo_2023-10-30-02-14-23](https://github.com/fat-fella/JJAPKOREA/assets/130439230/735eaab4-4943-424e-befc-bf57f11a6155)
 
 세부내용
 <img width="923" alt="스크린샷 2023-11-04 오후 11 48 59" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/e7e1af41-ebe7-4f85-b869-0f421831b0ba">
