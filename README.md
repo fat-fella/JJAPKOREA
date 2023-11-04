@@ -249,6 +249,9 @@ ERD
 <img width="864" alt="스크린샷 2023-11-05 오전 12 12 00" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/4748d5f3-f617-4199-9af8-fc17eac1a857">
 <img width="925" alt="스크린샷 2023-11-05 오전 12 16 22" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/8fdff382-f9e6-4841-9392-812163ade447">
 
+채용공고 상세페이지
+<img width="741" alt="image" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/1346d96e-eb40-403b-adec-bf8070ad891e">
+<img width="922" alt="스크린샷 2023-11-05 오전 12 17 25" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/ef01fc4b-e91d-4c28-819a-779f7a3f9e09">
 
 
 
