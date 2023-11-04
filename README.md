@@ -364,12 +364,15 @@ ERD
 <br>
   
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/bf59df63-5751-439b-b299-b89754e669bc)
+**회원 목록에서 회원 계정 정지 가능**
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/4e1852a4-23f7-4863-a4e5-6e2f0c649ab4)
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/3e7b0248-2f21-4ffa-bdfa-14bf86a3f035)
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/69ef364c-6f04-4950-a707-53da80d0ed40)
+**게시판 신고 글 삭제처리**
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/1d2e629d-9c02-4675-9082-9b4c1bb53dee)
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/0568abd4-4486-4ccc-a2d3-2f10a1ebbd92)
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/1910c306-7c43-4cec-8d0d-9639a30aa88f)
+-----------------------------------------
 
 
 
