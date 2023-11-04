@@ -307,6 +307,7 @@
 ![KakaoTalk_Video_2023-10-30-02-46-51 (3)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d63677ce-5207-41de-97b4-6694704681d7)
 
 <br>
+
 **ERD**
 <img width="835" alt="스크린샷 2023-11-05 오전 12 12 54" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/6a719ea0-838b-4424-a07c-5a0d9327303b">
 <br>
