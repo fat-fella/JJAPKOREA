@@ -166,43 +166,43 @@
 # 💬 담당 기능
 
 <img width="1123" alt="스크린샷 2023-11-04 오후 11 02 05" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/87050f5f-0f6e-4d53-b0e9-df5b842acb38">
-<details><summary> 로그인 </summary>
+<details><summary> 로그인🔎 </summary>
 
 </details>
 <br>
-<details><summary> 아이디/비밀번호 찾기 </summary>
+<details><summary> 아이디/비밀번호 찾기🔎 </summary>
 
 </details>
 <br>
-<details><summary> 마이페이지 </summary>
+<details><summary> 마이페이지🔎 </summary>
 
 </details>
 <br>
-<details><summary> 이력서 </summary>
+<details><summary> 이력서🔎 </summary>
 
 </details>
 <br>
-<details><summary> 입사 지원 </summary>
+<details><summary> 입사 지원🔎 </summary>
 
 </details>
 <br>
-<details><summary> 기업정보 </summary>
+<details><summary> 기업정보🔎 </summary>
 
 </details>
 <br>
-<details><summary> 채용 공고 정보 </summary>
+<details><summary> 채용 공고 정보🔎 </summary>
 
 </details>
 <br>
-<details><summary> 검색 </summary>
+<details><summary> 검색🔎 </summary>
 
 </details>
 <br>
-<details><summary> 원픽 </summary>
+<details><summary> 원픽🔎 </summary>
 
 </details>
 <br>
-<details><summary> 신고 </summary>
+<details><summary> 신고🔎 </summary>
 
 </details>
 <br>
@@ -219,15 +219,15 @@
 
 
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 08 41" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/933276b5-e686-4ae2-a656-9bd9dbbe06d4">
-<details><summary> 로고 이미지 </summary>
+<details><summary> 로고 이미지🔎 </summary>
 
 </details>
 <br>
-<details><summary> 채용공고 </summary>
+<details><summary> 채용공고🔎 </summary>
 
 </details>
 <br>
-<details><summary> 톡톡상담 </summary>
+<details><summary> 톡톡상담🔎 </summary>
   
 ![톡톡상담_채팅](https://github.com/fat-fella/JJAPKOREA/assets/135290733/6ad8d901-d706-44e6-b946-da34d6f1d10b)
 
@@ -247,11 +247,11 @@ ERD
   
 </details>
 <br>
-<details><summary> 인기순/최신순 채용공고 </summary>
+<details><summary> 인기순/최신순 채용공고🔎 </summary>
 
 </details>
 <br>
-<details><summary> 관리자 페이지 </summary>
+<details><summary> 관리자 페이지🔎 </summary>
 
 </details>
 <br>
@@ -266,15 +266,15 @@ ERD
 
 
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 12 09" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/502e2740-f53f-4b00-8c6a-f2c7a6f14041">
-<details><summary> SNS 로그인 API 적용 </summary>
+<details><summary> SNS 로그인 API 적용🔎 </summary>
 
 </details>
 <br>
-<details><summary> MyPage </summary>
+<details><summary> MyPage🔎 </summary>
 
 </details>
 <br>
-<details><summary> CSS </summary>
+<details><summary> CSS🔎 </summary>
 
 </details>
 <br>
@@ -286,11 +286,11 @@ ERD
 
 
 <img width="1122" alt="스크린샷 2023-11-04 오후 11 17 47" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/e9106bed-c00f-4729-861b-28a1806c4823">
-<details><summary> 취업톡톡 (게시판) </summary>
+<details><summary> 취업톡톡 (게시판🔎) </summary>
 
 </details>
 <br>
-<details><summary> 지도 API </summary>
+<details><summary> 지도 API🔎 </summary>
 
 </details>
 <br>
