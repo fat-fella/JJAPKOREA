@@ -82,6 +82,7 @@
 
 
 
+
 ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 
 # 💬 KHFinal
@@ -229,6 +230,20 @@
 <details><summary> 톡톡상담 </summary>
   
 ![톡톡상담_채팅](https://github.com/fat-fella/JJAPKOREA/assets/135290733/6ad8d901-d706-44e6-b946-da34d6f1d10b)
+
+세부내용
+<img width="1123" alt="스크린샷 2023-11-04 오후 11 43 09" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/bb4ab0fb-fefa-4062-a03f-da539fbd225e">
+
+ERD
+<img width="1126" alt="스크린샷 2023-11-04 오후 11 42 04" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/85e475dd-9087-4f4d-94ae-9f5e82d904ea">
+
+구현 코드
+<img width="1123" alt="스크린샷 2023-11-04 오후 11 44 12" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/df942c9c-a223-492e-afce-381c2a3adb7f">
+<img width="1124" alt="스크린샷 2023-11-04 오후 11 44 33" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/981cf297-661a-43e6-af4f-ba5a33aab2ae">
+<img width="1122" alt="스크린샷 2023-11-04 오후 11 44 50" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/7241b29f-917b-4fc9-b605-86b18e6022e0">
+<img width="1122" alt="스크린샷 2023-11-04 오후 11 45 08" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/b407ecb6-a286-485a-b0fb-20b616567074">
+
+
   
 </details>
 <br>
