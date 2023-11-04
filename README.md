@@ -221,6 +221,18 @@
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 08 41" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/933276b5-e686-4ae2-a656-9bd9dbbe06d4">
 <details><summary> 로고 이미지🔎 </summary>
 
+![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/71446705-91ca-4ded-b010-92f240fa069d)
+
+세부내용
+<img width="923" alt="스크린샷 2023-11-04 오후 11 48 59" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/e7e1af41-ebe7-4f85-b869-0f421831b0ba">
+
+자동회원가입
+<img width="923" alt="스크린샷 2023-11-04 오후 11 50 10" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/9d90aa5b-4166-4e7e-bd95-7aadcefc7c16">
+
+
+
+
+
 </details>
 <br>
 <details><summary> 채용공고🔎 </summary>
