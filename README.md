@@ -164,11 +164,54 @@
 
 # 💬 담당 기능
 
-<details><summary>▪ 박유림</summary>
-📌 기능 바로가기 <br><br><br>
 <img width="1123" alt="스크린샷 2023-11-04 오후 11 02 05" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/87050f5f-0f6e-4d53-b0e9-df5b842acb38">
+<details><summary> 로그인 </summary>
+
 </details>
-<br><br>
+<br>
+<details><summary> 아이디/비밀번호 찾기 </summary>
+
+</details>
+<br>
+<details><summary> 마이페이지 </summary>
+
+</details>
+<br>
+<details><summary> 이력서 </summary>
+
+</details>
+<br>
+<details><summary> 입사 지원 </summary>
+
+</details>
+<br>
+<details><summary> 기업정보 </summary>
+
+</details>
+<br>
+<details><summary> 채용 공고 정보 </summary>
+
+</details>
+<br>
+<details><summary> 검색 </summary>
+
+</details>
+<br>
+<details><summary> 원픽 </summary>
+
+</details>
+<br>
+<details><summary> 신고 </summary>
+
+</details>
+<br>
+
+
+
+
+
+
+
 
 
 
