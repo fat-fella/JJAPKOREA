@@ -129,7 +129,7 @@
 ## 기획
 >기획
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/38e7d8ae-8874-49a6-beb4-0eecf79a872f)
-<details><summary>**<u>기획 보기🔎</u>**</summary>
+<details><summary> **<u> 기획 보기🔎 </u>** </summary>
     
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/e6cc3e5c-4628-4280-8253-677603ea1f35)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/a23dfb7c-f1f6-4035-8ec3-330207b4e7ec)
