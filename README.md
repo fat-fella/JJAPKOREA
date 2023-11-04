@@ -128,34 +128,52 @@
 
 ## 기획
 >기획
-  
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/38e7d8ae-8874-49a6-beb4-0eecf79a872f)
+<details><summary>기획 보기</summary>
+    
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/e6cc3e5c-4628-4280-8253-677603ea1f35)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/a23dfb7c-f1f6-4035-8ec3-330207b4e7ec)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/bcbc1620-117b-4c21-9516-a462fa09542a)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/26fae102-7599-42f2-9cf7-40837941a968)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/f912de72-2c59-42b9-93bd-38b24eaea98b)
+</details>
 <br>
 
 >요구사항 정의서
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/8ed038a4-2b01-466d-a631-57f6171d41ab)
+<details><summary>요구사항 정의서 보기</summary>
+
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/4a7590b6-5744-46c4-92e4-86313bbe35e2)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d1e781d7-2b7a-4f9c-9259-87d4f4647ea5)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cd252046-3e9e-4b46-bf1f-7c56e133664c)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/b126866b-08ee-4b2d-bbfa-b3da8a7ef3ae)
+</details>
+
 <br>
 
 >ERD
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/5a33ec28-c80b-4b12-bde7-8a379d385c66)
+<details><summary>ERD 보기</summary>
+  
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/977cc9b0-d1ee-47d0-9b3d-5686ff532fc6)
 >![jjapkorea (5)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/08039ec7-8652-487c-9e8e-3ec00071f2ed)
+</details>
+
 <br>
 
 >클래스매핑
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/7ce7bf22-3e7b-4f84-b9fa-2b663b8bc3fb)
 <details><summary>클래스매핑 보기</summary>
   
->![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/7ce7bf22-3e7b-4f84-b9fa-2b663b8bc3fb)
-
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/6f486c4b-a5c9-4d32-b49c-8ce39a8db3de)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/ba08bbe8-c2d4-4a0d-84d9-d99c57c55dab)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/3c6ad5c8-b930-4bd2-98ce-659e91d32b89)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/642913a9-e99c-46b9-906f-3934c99a1a7b)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/26ee64bc-a616-46a5-8feb-06beb1ed2707)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/83115391-ba11-44ec-8abb-2fe4f6571705)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/b7c7c57b-3c58-4e86-8394-75887fda6b77)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/c9c111ea-9840-42e7-b4bb-199f512cb84a)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/564030c2-ff3c-488e-8e29-031c38253dd6)
 </details>
 
 
