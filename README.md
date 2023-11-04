@@ -253,6 +253,11 @@ ERD
 <img width="741" alt="image" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/1346d96e-eb40-403b-adec-bf8070ad891e">
 <img width="922" alt="스크린샷 2023-11-05 오전 12 17 25" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/ef01fc4b-e91d-4c28-819a-779f7a3f9e09">
 
+채용분야 선택
+<img width="924" alt="스크린샷 2023-11-05 오전 12 23 04" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/1a7e0474-77a4-4eca-83ce-afde56604350">
+
+클라우디너리 파일 업로드
+<img width="846" alt="image" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/b0a9f5fa-47ae-4d38-bf87-a98887a8fbc8">
 
 
 
