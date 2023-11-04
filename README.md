@@ -216,22 +216,54 @@
 
 
 
-<details><summary>▪ 이상훈</summary>
-📌 기능 바로가기 <br><br><br>
+
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 08 41" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/933276b5-e686-4ae2-a656-9bd9dbbe06d4">
+<details><summary> 로고 이미지 </summary>
+
 </details>
-<br><br>
+<br>
+<details><summary> 채용공고 </summary>
+
+</details>
+<br>
+<details><summary> 톡톡상담 </summary>
+
+</details>
+<br>
+<details><summary> 인기순/최신순 채용공고 </summary>
+
+</details>
+<br>
+<details><summary> 관리자 페이지 </summary>
+
+</details>
+<br>
+
+
+
 
       
 
 
 
 
-<details><summary>▪ 조민지 </summary>
-📌 기능 바로가기 <br><br><br>
+
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 12 09" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/502e2740-f53f-4b00-8c6a-f2c7a6f14041">
+<details><summary> SNS 로그인 API 적용 </summary>
+
 </details>
-<br><br>
+<br>
+<details><summary> MyPage </summary>
+
+</details>
+<br>
+<details><summary> CSS </summary>
+
+</details>
+<br>
+
+
+
 
 
 
