@@ -166,13 +166,15 @@
 ▪ 박유림
 
 <img width="1123" alt="스크린샷 2023-11-04 오후 11 02 05" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/87050f5f-0f6e-4d53-b0e9-df5b842acb38">
-
+<br><br>
 
 
 
 
 ▪ 이상훈
+
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 08 41" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/933276b5-e686-4ae2-a656-9bd9dbbe06d4">
+<br><br>
 
       
 
