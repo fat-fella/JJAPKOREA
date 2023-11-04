@@ -236,6 +236,10 @@
 </details>
 <br>
 <details><summary> 채용공고🔎 </summary>
+  
+![KakaoTalk_Video_2023-10-30-02-46-51 (2)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/de913f03-3a77-4285-9994-83dca5239fab)
+
+
 
 </details>
 <br>
