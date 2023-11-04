@@ -289,11 +289,21 @@ ERD
 <details><summary> 인기순/최신순 채용공고🔎 </summary>
 <img width="923" alt="스크린샷 2023-11-05 오전 12 26 35" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/f1ae52d1-0d3a-46de-a127-ed7a48487712">
 <img width="923" alt="스크린샷 2023-11-05 오전 12 26 20" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/c1121821-5b6c-44d1-94d0-1fe15fa00f40">
+<img width="924" alt="스크린샷 2023-11-05 오전 12 27 18" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/6f923507-752a-4de6-9266-eb8d1726129d">
 
 
 </details>
 <br>
 <details><summary> 관리자 페이지🔎 </summary>
+세부내용
+<img width="922" alt="스크린샷 2023-11-05 오전 12 27 52" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/606bca66-ae71-41fa-90f2-81781d76fa1b">
+ERD
+<img width="924" alt="스크린샷 2023-11-05 오전 12 28 19" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/7008a80e-9712-44c7-b8aa-97048f4195e6">
+<br>
+  
+![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/bf59df63-5751-439b-b299-b89754e669bc)
+
+
 
 </details>
 <br>
