@@ -164,9 +164,10 @@
 
 # 💬 담당 기능
 
-▪ 박유림
+<details><summary>▪ 박유림</summary>
 
 <img width="1123" alt="스크린샷 2023-11-04 오후 11 02 05" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/87050f5f-0f6e-4d53-b0e9-df5b842acb38">
+<details>
 <br><br>
 
 
