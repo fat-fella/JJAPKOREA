@@ -149,7 +149,14 @@
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/5a33ec28-c80b-4b12-bde7-8a379d385c66)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/977cc9b0-d1ee-47d0-9b3d-5686ff532fc6)
 >![jjapkorea (5)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/08039ec7-8652-487c-9e8e-3ec00071f2ed)
+<br>
 
+>클래스매핑
+<details><summary>클래스매핑 보기</summary>
+  
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/7ce7bf22-3e7b-4f84-b9fa-2b663b8bc3fb)
+
+</details>
 
 
 
