@@ -127,7 +127,7 @@
     2023-09-01 ~ 2023-10-28
 
 ## 기획
-><details><summary>기획</summary>
+>기획
   
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/38e7d8ae-8874-49a6-beb4-0eecf79a872f)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/e6cc3e5c-4628-4280-8253-677603ea1f35)
@@ -135,14 +135,29 @@
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/bcbc1620-117b-4c21-9516-a462fa09542a)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/26fae102-7599-42f2-9cf7-40837941a968)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/f912de72-2c59-42b9-93bd-38b24eaea98b)
-</details>
-
-
-
-
+<br>
 
 >요구사항 정의서
->
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/8ed038a4-2b01-466d-a631-57f6171d41ab)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/4a7590b6-5744-46c4-92e4-86313bbe35e2)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d1e781d7-2b7a-4f9c-9259-87d4f4647ea5)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cd252046-3e9e-4b46-bf1f-7c56e133664c)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/b126866b-08ee-4b2d-bbfa-b3da8a7ef3ae)
+<br>
+
+>ERD
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/5a33ec28-c80b-4b12-bde7-8a379d385c66)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/977cc9b0-d1ee-47d0-9b3d-5686ff532fc6)
+>![jjapkorea (5)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/08039ec7-8652-487c-9e8e-3ec00071f2ed)
+
+
+
+
+
+
+
+
+
 
 
 ## ◾주요 기능 
