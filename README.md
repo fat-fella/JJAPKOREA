@@ -236,17 +236,19 @@
 </details>
 <br>
 <details><summary> 채용공고🔎 </summary>
-  
-![KakaoTalk_Video_2023-10-30-02-46-51 (3)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d63677ce-5207-41de-97b4-6694704681d7)
 
 세부내용
 <img width="924" alt="스크린샷 2023-11-05 오전 12 08 07" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/9c336336-9738-425b-ad61-ac3cf9728116">
-
-리스트
-<img width="864" alt="스크린샷 2023-11-05 오전 12 12 00" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/4748d5f3-f617-4199-9af8-fc17eac1a857">
+  
+![KakaoTalk_Video_2023-10-30-02-46-51 (3)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d63677ce-5207-41de-97b4-6694704681d7)
 
 ERD
 <img width="835" alt="스크린샷 2023-11-05 오전 12 12 54" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/6a719ea0-838b-4424-a07c-5a0d9327303b">
+
+채용공고 관리
+<img width="864" alt="스크린샷 2023-11-05 오전 12 12 00" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/4748d5f3-f617-4199-9af8-fc17eac1a857">
+<img width="925" alt="스크린샷 2023-11-05 오전 12 16 22" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/8fdff382-f9e6-4841-9392-812163ade447">
+
 
 
 
