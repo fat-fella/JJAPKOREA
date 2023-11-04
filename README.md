@@ -129,7 +129,7 @@
 ## 기획
 >기획
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/38e7d8ae-8874-49a6-beb4-0eecf79a872f)
-<details><summary>기획 보기</summary>
+<details><summary>**<u>기획 보기🔎</u>**</summary>
     
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/e6cc3e5c-4628-4280-8253-677603ea1f35)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/a23dfb7c-f1f6-4035-8ec3-330207b4e7ec)
@@ -141,7 +141,7 @@
 
 >요구사항 정의서
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/8ed038a4-2b01-466d-a631-57f6171d41ab)
-<details><summary>요구사항 정의서 보기</summary>
+<details><summary>**<u>요구사항 정의서 보기🔎</u>**</summary>
 
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/4a7590b6-5744-46c4-92e4-86313bbe35e2)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d1e781d7-2b7a-4f9c-9259-87d4f4647ea5)
@@ -153,7 +153,7 @@
 
 >ERD
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/5a33ec28-c80b-4b12-bde7-8a379d385c66)
-<details><summary>ERD 보기</summary>
+<details><summary>**<u>ERD 보기🔎</u>**</summary>
   
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/977cc9b0-d1ee-47d0-9b3d-5686ff532fc6)
 >![jjapkorea (5)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/08039ec7-8652-487c-9e8e-3ec00071f2ed)
@@ -163,7 +163,7 @@
 
 >클래스매핑
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/7ce7bf22-3e7b-4f84-b9fa-2b663b8bc3fb)
-<details><summary>클래스매핑 보기</summary>
+<details><summary> **<u>클래스매핑 보기🔎 </u>**</summary>
   
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/6f486c4b-a5c9-4d32-b49c-8ce39a8db3de)
 >![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/ba08bbe8-c2d4-4a0d-84d9-d99c57c55dab)
