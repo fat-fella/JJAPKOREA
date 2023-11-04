@@ -267,11 +267,18 @@
 
 
 
-<details><summary>▪ 남궁하진</summary>
-📌 기능 바로가기 <br><br><br>
+
 <img width="1122" alt="스크린샷 2023-11-04 오후 11 17 47" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/e9106bed-c00f-4729-861b-28a1806c4823">
+<details><summary> 취업톡톡 (게시판) </summary>
+
 </details>
-<br><br>
+<br>
+<details><summary> 지도 API </summary>
+
+</details>
+<br>
+
+
 
 
 ## 🔴 상세페이지  
