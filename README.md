@@ -220,7 +220,7 @@
 
 
 
-### 📌 메인페이지
+## 📌 메인페이지
 
 ![GIFMaker_me](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cf89a054-8b1b-42eb-9eb1-e1e52bf6d7e3)
 
