@@ -126,7 +126,23 @@
 ## ◾개발 기간
     2023-09-01 ~ 2023-10-28
 
-## 기획 
+## 기획
+><details><summary>기획</summary>
+  
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/38e7d8ae-8874-49a6-beb4-0eecf79a872f)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/e6cc3e5c-4628-4280-8253-677603ea1f35)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/a23dfb7c-f1f6-4035-8ec3-330207b4e7ec)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/bcbc1620-117b-4c21-9516-a462fa09542a)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/26fae102-7599-42f2-9cf7-40837941a968)
+>![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/f912de72-2c59-42b9-93bd-38b24eaea98b)
+</details>
+
+
+
+
+
+>요구사항 정의서
+>
 
 
 ## ◾주요 기능 
