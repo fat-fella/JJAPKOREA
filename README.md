@@ -165,7 +165,7 @@
 # 💬 담당 기능
 
 <details><summary>▪ 박유림</summary>
-
+기능 바로가기 <br>
 <img width="1123" alt="스크린샷 2023-11-04 오후 11 02 05" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/87050f5f-0f6e-4d53-b0e9-df5b842acb38">
 </details>
 <br><br>
@@ -173,9 +173,10 @@
 
 
 
-▪ 이상훈
-
+<details><summary>▪ 이상훈</summary>
+기능 바로가기 <br>
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 08 41" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/933276b5-e686-4ae2-a656-9bd9dbbe06d4">
+</details>
 <br><br>
 
       
@@ -183,28 +184,21 @@
 
 
 
-▪ 조민지 
-
+<details><summary>▪ 조민지 </summary>
+기능 바로가기 <br>
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 12 09" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/502e2740-f53f-4b00-8c6a-f2c7a6f14041">
+</details>
 <br><br>
 
 
 
-▪ 남궁하진
+<details><summary>▪ 남궁하진</summary>
+기능 바로가기 <br>
+<img width="1122" alt="스크린샷 2023-11-04 오후 11 17 47" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/e9106bed-c00f-4729-861b-28a1806c4823">
+</details>
+<br><br>
 
-      1. 취업톡톡 (게시판)
-        - 게시글 목록
-        - 페이징
-        - 게시글 검색
-        - 글 등록
-        - 상세페이지
-        - 글 삭제
-        - 글 수정
-        - 글 좋아요
-        - 댓글
-      
-      2. 지도 API
-        
+
 ## 🔴 상세페이지  
 
 
