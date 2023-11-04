@@ -227,7 +227,8 @@
 </details>
 <br>
 <details><summary> 톡톡상담 </summary>
-
+![톡톡상담_채팅](https://github.com/fat-fella/JJAPKOREA/assets/135290733/6ad8d901-d706-44e6-b946-da34d6f1d10b)
+  
 </details>
 <br>
 <details><summary> 인기순/최신순 채용공고 </summary>
@@ -281,7 +282,7 @@
 
 
 
-## 🔴 상세페이지  
+
 
 
 ### 📌 메인페이지 (index)
