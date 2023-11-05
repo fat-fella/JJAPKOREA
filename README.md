@@ -470,9 +470,7 @@ ERD<br>
 
 
 
-
-
-<img width="1124" alt="스크린샷 2023-11-04 오후 11 12 09" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/502e2740-f53f-4b00-8c6a-f2c7a6f14041">
+<img width="1124" alt="스크린샷 2023-11-04 오후 11 12 09" src="https://github.com/fat-fella/JJAPKOREA/assets/135290733/932d262f-c6a7-4297-98c7-91f585b1ed37">
 <details><summary> SNS 로그인 API 적용🔎 </summary>
 📌 API SNS LOGIN
 
