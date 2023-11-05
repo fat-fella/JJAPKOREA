@@ -474,6 +474,13 @@ ERD<br>
 <details><summary> SNS 로그인 API 적용🔎 </summary>
 📌 API SNS LOGIN
 
+![슬라이드117](https://github.com/fat-fella/JJAPKOREA/assets/135290733/305f4ef4-4305-4358-b466-dd1c681b0ea5)
+![슬라이드118](https://github.com/fat-fella/JJAPKOREA/assets/135290733/5aecd0be-c9af-4325-ad95-dfe007703dcb)
+![슬라이드119](https://github.com/fat-fella/JJAPKOREA/assets/135290733/862bb6fe-4b30-408f-b0a7-71a5bc2d7524)
+![슬라이드120](https://github.com/fat-fella/JJAPKOREA/assets/135290733/5b057076-e97c-4df0-93ab-9525daac15b3)
+![슬라이드121](https://github.com/fat-fella/JJAPKOREA/assets/135290733/e3ce2b7e-a962-4381-b411-7a00fdf08526)
+
+### 구동화면
 ![api회원가입](https://github.com/fat-fella/JJAPKOREA/assets/135290733/a5b74f2f-26ce-42f8-a831-8e4f00ab7eac)
 </details>
 <br>
