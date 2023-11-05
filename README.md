@@ -475,7 +475,8 @@ ERD<br>
 
 
 
-<img width="1124" alt="스크린샷 2023-11-04 오후 11 12 09" src="https://github.com/fat-fella/JJAPKOREA/assets/135290733/932d262f-c6a7-4297-98c7-91f585b1ed37">
+![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/e2bfedae-a3f3-4d7d-a66f-173107a187ba)
+
 <details><summary> SNS 로그인 API 적용🔎 </summary>
 📌 API SNS LOGIN
 
@@ -506,7 +507,8 @@ ERD<br>
 
 
 
-<img width="1122" alt="스크린샷 2023-11-04 오후 11 17 47" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/e9106bed-c00f-4729-861b-28a1806c4823">
+![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/1bbfb8a2-2b41-4ec1-8cf9-e096df5798dd)
+
 <details><summary> 취업톡톡 (게시판🔎) </summary>
 
  📌 취업톡톡
