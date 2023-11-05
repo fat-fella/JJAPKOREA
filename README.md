@@ -486,6 +486,8 @@ ERD<br>
 
 
 
+### 📌 일반회원가입
+![일반회원가입-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/03de048b-0eb8-4ea2-bb7d-87e9afacae9b)
 
 
 ### 📌 이력서
