@@ -145,10 +145,7 @@
 
 <details><summary> 요구사항 정의서 보기🔎 </summary>
   
->![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/4a7590b6-5744-46c4-92e4-86313bbe35e2)
->![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d1e781d7-2b7a-4f9c-9259-87d4f4647ea5)
->![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/cd252046-3e9e-4b46-bf1f-7c56e133664c)
->![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/b126866b-08ee-4b2d-bbfa-b3da8a7ef3ae)
+
 </details>
 
 <br>
