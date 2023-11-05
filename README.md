@@ -238,13 +238,23 @@
 </details>
 <br>
 <details><summary> 회원가입🔎 </summary>
+ERD<br>
+<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/41221d28-a602-4067-a1cc-ab586b33eef7">
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/5142e481-191b-460b-886b-cc5081393a71">
 </details>
+<br>
 <details><summary> 마이페이지🔎 </summary>
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/a7638b55-30ca-4bba-bee9-5ba5a8afc5fb">
 </details>
 <br>
+<details><summary> 스크랩🔎 </summary>
+<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/de989513-80bc-4b9e-84dc-0b38d36d4d04">
+<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/1753b2e8-c591-4d54-ad82-1204b98fc0f0">
+</details>
+<br>
 <details><summary> 이력서🔎 </summary>
+ERD<br>
+<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/9e0ead26-e57c-432f-ae12-9f1ac80ea577">
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/eda6b6ba-b4c0-48a5-869e-593a3a7011a2">
 </details>
 <br>
@@ -253,7 +263,9 @@
 </details>
 <br>
 <details><summary> 기업정보🔎 </summary>
+기업정보<br>
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/741791c4-9c51-478c-9fc3-290cbc46fdfe">
+<br>상세기업정보<br>
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/caf57899-aca2-4cfa-a5ca-98f7e60c41b8">
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/908d9704-a319-4195-8d20-253608e33354">
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/0a2aee61-d270-4587-9064-0931e601f5ec">
@@ -264,7 +276,9 @@
 </details>
 <br>
 <details><summary> 검색🔎 </summary>
+검색<br>
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/2b9facec-8ff9-47bd-8b9e-ee31e5a885dd">
+<br>상세검색<br>
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/3e181d61-ee22-46ed-a268-137565850e7e">
 </details>
 <br>
