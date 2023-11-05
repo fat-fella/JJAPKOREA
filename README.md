@@ -481,6 +481,8 @@ ERD<br>
 <br>
 <details><summary> MyPage🔎 </summary>
 
+![마이페이지 직업표시-1](https://github.com/fat-fella/JJAPKOREA/assets/135290733/de65e778-7c69-42fd-a21a-c516cc4a389a)
+
 </details>
 <br>
 <details><summary> CSS🔎 </summary>
