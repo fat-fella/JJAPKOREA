@@ -326,7 +326,8 @@ ERD<br>
 
 
 
-<img width="1124" alt="스크린샷 2023-11-04 오후 11 08 41" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/933276b5-e686-4ae2-a656-9bd9dbbe06d4">
+![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/3759abea-383f-40e8-a402-398f67d8e9af)
+
 <details><summary> 로고 이미지🔎 </summary>
 
 ![KakaoTalk_Photo_2023-10-30-02-14-23](https://github.com/fat-fella/JJAPKOREA/assets/130439230/735eaab4-4943-424e-befc-bf57f11a6155)
