@@ -521,29 +521,9 @@ ERD<br>
 ![일반회원가입-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/03de048b-0eb8-4ea2-bb7d-87e9afacae9b)
 
 
-### 📌 이력서
-
-![이력서-7](https://github.com/fat-fella/JJAPKOREA/assets/135290733/bbfcb76b-d905-4409-a135-008cf8384694)
-
-
-### 📌 실시간 채팅 (STOMP)
-
-![톡톡상담_채팅](https://github.com/fat-fella/JJAPKOREA/assets/135290733/6ad8d901-d706-44e6-b946-da34d6f1d10b)
-
-
-### 📌 API SNS LOGIN
-
-![api회원가입](https://github.com/fat-fella/JJAPKOREA/assets/135290733/a5b74f2f-26ce-42f8-a831-8e4f00ab7eac)
 
 ### 📌 기업등록
 ![기업등록-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/10f8d7bd-21fd-42bb-a710-1300d1c21054)
-
-### 📌 기업지원 (메일링)
-![기업지원_메일링-1](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ec52e337-8f59-4c6e-b2c5-d56c3aa16ea0)
-
-
-### 📌 취업톡톡
-![취업톡톡-1](https://github.com/fat-fella/JJAPKOREA/assets/135290733/a87e68a4-8d83-4e3d-9177-74d531c9bd77)
 
 
 <div align=center>	
