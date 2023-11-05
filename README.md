@@ -507,6 +507,10 @@ ERD<br>
 ### 📌 기업등록
 ![기업등록-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/10f8d7bd-21fd-42bb-a710-1300d1c21054)
 
+### 📌 기업지원 (메일링)
+![기업지원_메일링-1](https://github.com/fat-fella/JJAPKOREA/assets/135290733/ec52e337-8f59-4c6e-b2c5-d56c3aa16ea0)
+
+
 ### 📌 취업톡톡
 ![취업톡톡-1](https://github.com/fat-fella/JJAPKOREA/assets/135290733/a87e68a4-8d83-4e3d-9177-74d531c9bd77)
 
