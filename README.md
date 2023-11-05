@@ -517,10 +517,6 @@ ERD<br>
 
 
 
-### 📌 일반회원가입
-![일반회원가입-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/03de048b-0eb8-4ea2-bb7d-87e9afacae9b)
-
-
 
 ### 📌 기업등록
 ![기업등록-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/10f8d7bd-21fd-42bb-a710-1300d1c21054)
