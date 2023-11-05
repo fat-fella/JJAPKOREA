@@ -337,11 +337,12 @@ ERD<br>
 
 ![KakaoTalk_Photo_2023-10-30-02-14-23](https://github.com/fat-fella/JJAPKOREA/assets/130439230/735eaab4-4943-424e-befc-bf57f11a6155)
 
-**세부내용**
+**세부내용**<br>
 <img width="923" alt="스크린샷 2023-11-04 오후 11 48 59" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/e7e1af41-ebe7-4f85-b869-0f421831b0ba">
 <br>
 
-**자동회원가입**
+
+**자동회원가입** <br>
 <img width="923" alt="스크린샷 2023-11-04 오후 11 50 10" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/9d90aa5b-4166-4e7e-bd95-7aadcefc7c16">
 <br>
 
@@ -353,39 +354,43 @@ ERD<br>
 <br>
 <details><summary> 채용공고🔎 </summary>
 
-**세부내용**
+**세부내용** 
+<br>
+
 <img width="924" alt="스크린샷 2023-11-05 오전 12 08 07" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/9c336336-9738-425b-ad61-ac3cf9728116">
 
 
 📌 기업등록 요약
+<br>
 ![기업등록-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/10f8d7bd-21fd-42bb-a710-1300d1c21054)
 
   
 📌 기업등록 상세
+<br>
 
 ![KakaoTalk_Video_2023-10-30-02-46-51 (3)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d63677ce-5207-41de-97b4-6694704681d7)
 
 <br>
 
-**ERD**
+**ERD**<br>
 <img width="835" alt="스크린샷 2023-11-05 오전 12 12 54" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/6a719ea0-838b-4424-a07c-5a0d9327303b">
 <br>
 
-**채용공고 관리**
+**채용공고 관리**<br>
 <img width="864" alt="스크린샷 2023-11-05 오전 12 12 00" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/4748d5f3-f617-4199-9af8-fc17eac1a857">
 <img width="925" alt="스크린샷 2023-11-05 오전 12 16 22" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/8fdff382-f9e6-4841-9392-812163ade447">
 <br>
 
-**채용공고 상세페이지**
+**채용공고 상세페이지**<br>
 <img width="741" alt="image" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/1346d96e-eb40-403b-adec-bf8070ad891e">
 <img width="922" alt="스크린샷 2023-11-05 오전 12 17 25" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/ef01fc4b-e91d-4c28-819a-779f7a3f9e09">
 <br>
 
-**채용분야 선택**
+**채용분야 선택**<br>
 <img width="924" alt="스크린샷 2023-11-05 오전 12 23 04" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/1a7e0474-77a4-4eca-83ce-afde56604350">
 <br>
 
-**클라우디너리 파일 업로드**
+**클라우디너리 파일 업로드**<br>
 <img width="846" alt="image" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/b0a9f5fa-47ae-4d38-bf87-a98887a8fbc8">
 <br>
 
@@ -397,12 +402,18 @@ ERD<br>
 ![톡톡상담_채팅](https://github.com/fat-fella/JJAPKOREA/assets/135290733/6ad8d901-d706-44e6-b946-da34d6f1d10b)
 <br>
 **세부내용**
+<br>
+
 <img width="1123" alt="스크린샷 2023-11-04 오후 11 43 09" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/bb4ab0fb-fefa-4062-a03f-da539fbd225e">
 <br>
 **ERD**
+<br>
+
 <img width="1126" alt="스크린샷 2023-11-04 오후 11 42 04" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/85e475dd-9087-4f4d-94ae-9f5e82d904ea">
 <br>
 **구현 코드**
+<br>
+
 <img width="1123" alt="스크린샷 2023-11-04 오후 11 44 12" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/df942c9c-a223-492e-afce-381c2a3adb7f">
 <img width="1124" alt="스크린샷 2023-11-04 오후 11 44 33" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/981cf297-661a-43e6-af4f-ba5a33aab2ae">
 <img width="1122" alt="스크린샷 2023-11-04 오후 11 44 50" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/7241b29f-917b-4fc9-b605-86b18e6022e0">
@@ -421,10 +432,16 @@ ERD<br>
 </details>
 <br>
 <details><summary> 관리자 페이지🔎 </summary>
-**세부내용**
+
+  **세부내용**
+<br>
+  
 <img width="922" alt="스크린샷 2023-11-05 오전 12 27 52" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/606bca66-ae71-41fa-90f2-81781d76fa1b">
   <br>
+  
 **ERD**
+<br>
+
 <img width="924" alt="스크린샷 2023-11-05 오전 12 28 19" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/7008a80e-9712-44c7-b8aa-97048f4195e6">
 <br>
   
@@ -432,11 +449,15 @@ ERD<br>
 <br>
 
 **회원 목록에서 회원 계정 정지 가능**
+<br>
+
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/4e1852a4-23f7-4863-a4e5-6e2f0c649ab4)
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/3e7b0248-2f21-4ffa-bdfa-14bf86a3f035)
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/69ef364c-6f04-4950-a707-53da80d0ed40)
 <br>
 **게시판 신고 글 삭제처리**
+<br>
+
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/1d2e629d-9c02-4675-9082-9b4c1bb53dee)
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/0568abd4-4486-4ccc-a2d3-2f10a1ebbd92)
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/1910c306-7c43-4cec-8d0d-9639a30aa88f)
@@ -448,6 +469,9 @@ ERD<br>
 
 </details>
 <br>
+
+
+
 
 
 
