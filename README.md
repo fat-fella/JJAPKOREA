@@ -229,43 +229,54 @@
 
 <img width="1123" alt="스크린샷 2023-11-04 오후 11 02 05" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/87050f5f-0f6e-4d53-b0e9-df5b842acb38">
 <details><summary> 로그인🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/5df66ed9-611e-423a-b8a1-bf13f1167323)
 </details>
 <br>
 <details><summary> 아이디/비밀번호 찾기🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/f4385500-b77a-416a-9860-7a0eec7f5e79)
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/55abb9ae-3aed-4358-9210-826c81a8d9c2)
 </details>
 <br>
+<details><summary> 회원가입🔎 </summary>
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/5142e481-191b-460b-886b-cc5081393a71)
+</details>
 <details><summary> 마이페이지🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/a7638b55-30ca-4bba-bee9-5ba5a8afc5fb)
 </details>
 <br>
 <details><summary> 이력서🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/eda6b6ba-b4c0-48a5-869e-593a3a7011a2)
 </details>
 <br>
 <details><summary> 입사 지원🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/401d0045-ab8d-48c1-8650-24c78ef3c589)
 </details>
 <br>
 <details><summary> 기업정보🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/741791c4-9c51-478c-9fc3-290cbc46fdfe)
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/caf57899-aca2-4cfa-a5ca-98f7e60c41b8)
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/908d9704-a319-4195-8d20-253608e33354)
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/0a2aee61-d270-4587-9064-0931e601f5ec)
 </details>
 <br>
 <details><summary> 채용 공고 정보🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/d0e52049-d798-4e2b-927c-41dd865ceafa)
 </details>
 <br>
 <details><summary> 검색🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/2b9facec-8ff9-47bd-8b9e-ee31e5a885dd)
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/3e181d61-ee22-46ed-a268-137565850e7e)
 </details>
 <br>
 <details><summary> 원픽🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/8bd34805-dc99-4ddf-ad64-0f4bcaeaf33d)
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/5ca72dd5-fea9-4849-8862-1eea4a193087)
 </details>
 <br>
 <details><summary> 신고🔎 </summary>
-
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/c33aa5cd-7c5a-4061-87c8-d6858dabcb38)
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/70747933-a2bd-460f-8f22-10d497753223)
+![image](https://github.com/fat-fella/JJAPKOREA/assets/135290743/72425910-bab6-4ca3-b2a2-b5ec7b19393a)
 </details>
 <br>
 
