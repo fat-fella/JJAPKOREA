@@ -23,7 +23,6 @@
 
 ![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
 
-![kh 2차 템플릿_발표용_ver1 1](https://github.com/fat-fella/JJAPKOREA/assets/135290733/d09e4f16-ff59-406b-b3b9-be5639664285)
 
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/135290733/338854b2-502a-4dcb-b28c-b6fcc67068f0)
 
