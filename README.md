@@ -355,7 +355,14 @@ ERD<br>
 
 **세부내용**
 <img width="924" alt="스크린샷 2023-11-05 오전 12 08 07" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/9c336336-9738-425b-ad61-ac3cf9728116">
+
+
+📌 기업등록 요약
+![기업등록-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/10f8d7bd-21fd-42bb-a710-1300d1c21054)
+
   
+📌 기업등록 상세
+
 ![KakaoTalk_Video_2023-10-30-02-46-51 (3)](https://github.com/fat-fella/JJAPKOREA/assets/130439230/d63677ce-5207-41de-97b4-6694704681d7)
 
 <br>
@@ -518,8 +525,6 @@ ERD<br>
 
 
 
-### 📌 기업등록
-![기업등록-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/10f8d7bd-21fd-42bb-a710-1300d1c21054)
 
 
 <div align=center>	
