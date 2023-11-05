@@ -21,11 +21,11 @@
 <div align=center>	
   
 
-![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
-
-
 ![image](https://github.com/fat-fella/JJAPKOREA/assets/135290733/338854b2-502a-4dcb-b28c-b6fcc67068f0)
 
+
+
+![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
 
 </div>
 
