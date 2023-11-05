@@ -489,6 +489,7 @@ ERD<br>
 
 
 ### 📌 이력서
+
 ![이력서-7](https://github.com/fat-fella/JJAPKOREA/assets/135290733/bbfcb76b-d905-4409-a135-008cf8384694)
 
 
@@ -501,6 +502,8 @@ ERD<br>
 
 ![api회원가입](https://github.com/fat-fella/JJAPKOREA/assets/135290733/a5b74f2f-26ce-42f8-a831-8e4f00ab7eac)
 
+### 📌 기업등록
+![기업등록-2](https://github.com/fat-fella/JJAPKOREA/assets/135290733/10f8d7bd-21fd-42bb-a710-1300d1c21054)
 
 
 
