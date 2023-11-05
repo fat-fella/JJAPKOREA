@@ -488,7 +488,8 @@ ERD<br>
 
 
 
-
+### 📌 이력서
+![이력서](https://github.com/fat-fella/JJAPKOREA/assets/135290733/88945116-0863-45f8-a316-c19f3b641c14)
 
 ### 📌 실시간 채팅 (STOMP)
 
@@ -498,6 +499,8 @@ ERD<br>
 ### 📌 API SNS LOGIN
 
 ![api회원가입](https://github.com/fat-fella/JJAPKOREA/assets/135290733/a5b74f2f-26ce-42f8-a831-8e4f00ab7eac)
+
+
 
 
 <div align=center>	
