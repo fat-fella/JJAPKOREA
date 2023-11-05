@@ -222,7 +222,8 @@
 
 # 💬 담당 기능
 
-<img width="1123" alt="스크린샷 2023-11-04 오후 11 02 05" src="https://github.com/fat-fella/JJAPKOREA/assets/130439230/87050f5f-0f6e-4d53-b0e9-df5b842acb38">
+![image](https://github.com/fat-fella/JJAPKOREA/assets/130439230/5c49ae9a-3147-43c8-862d-cac8d59bdc93)
+
 <details><summary> 로그인🔎 </summary>
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/5df66ed9-611e-423a-b8a1-bf13f1167323">
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/1da23852-7fbe-4fb6-809e-e6556c269c0f">
