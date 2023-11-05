@@ -240,7 +240,7 @@
 <details><summary> 회원가입🔎 </summary>
 ERD<br>
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/41221d28-a602-4067-a1cc-ab586b33eef7">
-<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/5142e481-191b-460b-886b-cc5081393a71">
+<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290733/03de048b-0eb8-4ea2-bb7d-87e9afacae9b">
 </details>
 <br>
 <details><summary> 마이페이지🔎 </summary>
@@ -255,11 +255,11 @@ ERD<br>
 <details><summary> 이력서🔎 </summary>
 ERD<br>
 <img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/9e0ead26-e57c-432f-ae12-9f1ac80ea577">
-<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/eda6b6ba-b4c0-48a5-869e-593a3a7011a2">
+<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290733/bbfcb76b-d905-4409-a135-008cf8384694">
 </details>
 <br>
 <details><summary> 입사 지원🔎 </summary>
-<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290743/401d0045-ab8d-48c1-8650-24c78ef3c589">
+<img width="923" alt="" src="https://github.com/fat-fella/JJAPKOREA/assets/135290733/ec52e337-8f59-4c6e-b2c5-d56c3aa16ea0">
 </details>
 <br>
 <details><summary> 기업정보🔎 </summary>
