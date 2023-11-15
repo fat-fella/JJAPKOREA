@@ -646,6 +646,18 @@ INSERT INTO RCATEGORY (r_category, r_cat) values ('6', '불쾌한 표현이 있�
 INSERT INTO RCATEGORY (r_category, r_cat) values ('7', '기타');
 
 INSERT INTO MEMBER (mid, mpw, mtype) VALUES ('admin', '$2y$04$1BoDp4za/DAyRhZrDOqKxe6OBCGImbhCWLX8ntKo5eVsMBFABz8JC', 'ROLE_ADMIN');
+
+insert into businessform values (1, '대기업');
+insert into businessform values (2, '대기업 계열사·자회사');
+insert into businessform values (3, '중소기업(300명이하)');
+insert into businessform values (4, '중견기업(300명이상)');
+insert into businessform values (5, '벤처기업');
+insert into businessform values (6, '외국계(외국 투자기업)');
+insert into businessform values (7, '외국계(외국 법인기업)');
+insert into businessform values (8, '국내 공공기관·공기업');
+insert into businessform values (9, '비영리단체·협회·교육재단');
+insert into businessform values (10, '외국 기관·비영리기구·단체');
+
 COMMIT;
 
 
