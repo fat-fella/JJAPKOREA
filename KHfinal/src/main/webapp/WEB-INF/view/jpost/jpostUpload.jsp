@@ -152,7 +152,7 @@
 				return;   /*아무것도 선택 안 됐을 시 리턴*/
 			}
 				$.ajax({
-					url : "/jjapkorea/business/jobpostingupload/getSecondRecruitField",
+					url : "${pageContext.request.contextPath}/business/jobpostingupload/getSecondRecruitField",
 					method : "POST",
 					data : {
 						selectedOption : selectedOption
@@ -186,7 +186,7 @@
 			}
 			$
 					.ajax({
-						url : "/jjapkorea/business/jobpostingupload/getThirdRecruitField",
+						url : "${pageContext.request.contextPath}/business/jobpostingupload/getThirdRecruitField",
 						method : "POST",
 						data : {
 							selectedOption : selectedOption
@@ -218,7 +218,7 @@
 			}
 			$
 					.ajax({
-						url : "/jjapkorea/business/jobpostingupload/getFourthRecruitField",
+						url : "${pageContext.request.contextPath}/business/jobpostingupload/getFourthRecruitField",
 						method : "POST",
 						data : {
 							selectedOption : selectedOption

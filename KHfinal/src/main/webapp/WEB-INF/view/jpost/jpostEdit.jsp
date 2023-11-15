@@ -26,7 +26,7 @@
 <body>
 	<header>
 		<div class="container">
-			<a href="index" class="logo linkLogo"> <img
+			<a href="<%=request.getContextPath()%>/index" class="logo linkLogo"> <img
 				src="<%=request.getContextPath()%>/resources/images/짭코리아3.png"
 				alt="JJAPKOREA" class="logoimg"></a>
 			<div class="links">
@@ -172,7 +172,7 @@
 			}
 			$
 					.ajax({
-						url : "/jjapkorea/business/jobpostingupload/getSecondRecruitField",
+						url : "${pageContext.request.contextPath}/business/jobpostingupload/getSecondRecruitField",
 						method : "POST",
 						data : {
 							selectedOption : selectedOption
@@ -206,7 +206,7 @@
 			}
 			$
 					.ajax({
-						url : "/jjapkorea/business/jobpostingupload/getThirdRecruitField",
+						url : "${pageContext.request.contextPath}/business/jobpostingupload/getThirdRecruitField",
 						method : "POST",
 						data : {
 							selectedOption : selectedOption
@@ -238,7 +238,7 @@
 			}
 			$
 					.ajax({
-						url : "/jjapkorea/business/jobpostingupload/getFourthRecruitField",
+						url : "${pageContext.request.contextPath}/business/jobpostingupload/getFourthRecruitField",
 						method : "POST",
 						data : {
 							selectedOption : selectedOption
