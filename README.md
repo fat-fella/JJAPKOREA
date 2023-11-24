@@ -28,14 +28,15 @@
 ![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
 
 <br>Link: https://jjapkorea.site/index
-<br>[테스트용]
-<br>●개인회원 : 
-<br>ID : asdf
-<br>PW : asdf
+[테스트용]
 
-<br>●기업회원 : 
-<br>ID : zxcv
-<br>PW : zxcv
+●개인회원 : 
+ID : asdf
+PW : asdf
+
+●기업회원 : 
+ID : zxcv
+PW : zxcv
 
 </div>
 
