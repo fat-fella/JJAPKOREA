@@ -160,9 +160,9 @@
 						var ordercount = document.getElementById("order");
 						var selectedOption = ordercount.options[ordercount.selectedIndex].value;
 								if(selectedOption == "인기순"){
-									window.location.href="/jjapkorea/jobPostingList/count";
+									window.location.href="${pageContext.request.contextPath}/jobPostingList/count";
 								} else{
-									window.location.href="/jjapkorea/jobPostingList/date";
+									window.location.href="${pageContext.request.contextPath}/jobPostingList/date";
 								}
 							}
 						</script>
