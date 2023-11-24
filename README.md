@@ -29,8 +29,8 @@
 
 <br>Link: https://jjapkorea.site/index
 <br>[테스트용]
-ID: pyr980227
-PW: Pyr980227!
+<br>ID: asdf
+<br>PW: asdf
 
 </div>
 
