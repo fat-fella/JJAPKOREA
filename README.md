@@ -27,7 +27,7 @@
 
 ![팀원](https://github.com/fat-fella/JJAPKOREA/assets/135290733/3b9979c9-e283-4633-8080-12a2a3aae8d7)
 
-Link: https://jjapkorea.site/index
+URL: https://jjapkorea.site/index
 
 [테스트용]
 
