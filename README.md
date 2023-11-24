@@ -29,8 +29,13 @@
 
 <br>Link: https://jjapkorea.site/index
 <br>[테스트용]
-<br>ID: asdf
-<br>PW: asdf
+<br>●개인회원 : 
+<br>ID : asdf
+<br>PW : asdf
+
+<br>●기업회원 : 
+<br>ID : zxcv
+<br>PW : zxcv
 
 </div>
 
