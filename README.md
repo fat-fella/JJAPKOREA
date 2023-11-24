@@ -104,7 +104,7 @@
 ## ◾프로젝트 설명
   잡코리아의 핵심 기능들을 최대한 유사하게 구현하여 사용자들이 편리하게 구직 활동을 할 수 있도록 지원하는 것이었습니다. 이를 위해 회원가입, 채용공고 등록, 이력서 등록 및 조회, 채용공고 검색, 커뮤니티 서비스 등과 같은 기능들을 중점적으로 개발하고 구현하였습니다. <br>
 ## ◾개발환경:
-      - 운영체제 : MacOS, Window 10
+      - 운영체제 : MacOS, Window 10, AWS EC2 - Ubuntu
       - 사용 언어 : Java, JavaScript, HTML5, CSS3, JSP&Servlet
       - 프레임워크/라이브러리 : Spring : Spring Framework (5.3.19), Lombok
                               DB : ojdbc8, commons-dbcp, MyBatis 3.5.11
